@@ -38,19 +38,23 @@ def main():
         forwarded,audit=proxy.compact(payload)
         assert forwarded['messages'][-1]['content']==query
         assert 'release uses port 8090' in json.dumps(forwarded['messages']),'Compaction dropped the evidence'
-        assert audit['native_input_tokens']+128<=proxy.WINDOW
+        assert audit['native_input_tokens']<=audit['target_tokens']
+        assert audit['native_input_tokens']+128+proxy.DECODER_HEADROOM<=proxy.WINDOW
         request=urllib.request.Request('http://127.0.0.1:8090/v1/messages',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json','Authorization':'Bearer '+gateway_key()})
         with urllib.request.urlopen(request,timeout=900) as response:
             output=json.load(response)
         live=[json.loads(line) for line in (ROOT/'evidence/gateway-audit.jsonl').read_text().splitlines() if line.strip()]
         live=next(row for row in reversed(live) if row.get('compaction_input_sha256')==proxy.compaction_digest(payload))
         assert live['native_input_tokens']==audit['native_input_tokens'],'Live and independently calculated compaction counts differ'
+        assert live['target_tokens']==audit['target_tokens']
+        assert live['budget_policy']=='request_adaptive_ratio'
         usage=output.get('usage',{})
         assert usage.get('input_tokens',0)+usage.get('cache_read_input_tokens',0)==live['native_input_tokens'],'Provider usage differs from native count'
         answer=''.join(b.get('text','') for b in output.get('content',[]))
         records.append({'minimum_raw_native_tokens':size,'raw_native_tokens':raw_native,'serialized_bytes':len(json.dumps(payload).encode()),'audit':audit,'live_audit':live,'answer':answer,'passed':'PORT=8090' in answer,'seconds':round(time.monotonic()-started,2),'usage':output.get('usage')})
         (ROOT/'evidence/context-acceptance.json').write_text(json.dumps(records,indent=2))
         print(json.dumps(records[-1]),flush=True)
+    assert records[0]['audit']['target_tokens'] < records[1]['audit']['target_tokens'], 'Different raw requests must select different budgets under one configuration'
     raise SystemExit(0 if all(r['passed'] for r in records) else 1)
 
 if __name__=='__main__': main()

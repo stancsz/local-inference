@@ -18,15 +18,17 @@ def main():
     receipt['vmwp_allocation_counters']=counters if isinstance(counters,list) else [counters]
     receipt['allocation_counter_caveat']='WSL VM allocation counters can overlap; they are not physical GPU totals or per-model accounting.'
     code="""import json,hashlib,pathlib,importlib.metadata,sift.dynamic
-files={n:hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest() for n in ['/app/budget.py','/app/gateway.py',sift.dynamic.__file__]}
-print(json.dumps({'files':files,'litellm':importlib.metadata.version('litellm')}))
+paths=['/app/budget.py','/app/gateway.py',sift.dynamic.__file__]
+files={n:hashlib.sha256(pathlib.Path(n).read_text(encoding='utf-8').encode()).hexdigest() for n in paths}
+raw_files={n:hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest() for n in paths}
+print(json.dumps({'files':files,'raw_files':raw_files,'litellm':importlib.metadata.version('litellm')}))
 """
     container=json.loads(subprocess.check_output(['docker','exec','local-inference-gateway-1','python','-c',code],text=True))
-    local={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in ['app/budget.py','app/gateway.py']}
+    local={n:hashlib.sha256((ROOT/n).read_text(encoding='utf-8').encode()).hexdigest() for n in ['app/budget.py','app/gateway.py']}
     assert all(container['files']['/'+n]==value for n,value in local.items())
-    sift_sha=hashlib.sha256((ROOT.parent/'sift/src/sift/dynamic.py').read_bytes()).hexdigest()
+    sift_sha=hashlib.sha256((ROOT.parent/'sift/src/sift/dynamic.py').read_text(encoding='utf-8').encode()).hexdigest()
     assert sift_sha in container['files'].values()
-    (ROOT/'evidence/runtime-source-parity.json').write_text(json.dumps({'passed':True,'local_app_hashes':local,'container':container,'sift_dynamic_sha256':sift_sha},indent=2))
+    (ROOT/'evidence/runtime-source-parity.json').write_text(json.dumps({'passed':True,'hash_scope':'UTF-8 source text with universal newlines; raw container hashes also retained. Git checkout CRLF/LF differences are normalized, no other whitespace changes.','local_app_hashes':local,'container':container,'sift_dynamic_sha256':sift_sha},indent=2))
     (ROOT/'evidence/runtime-vram.json').write_text(json.dumps(receipt,indent=2))
     print(json.dumps(receipt,indent=2))
 

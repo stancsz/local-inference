@@ -1,0 +1,33 @@
+{
+  "route": "http://127.0.0.1:4000/v1",
+  "model": "default",
+  "cli_exit": {
+    "exit_code": 1,
+    "alias": "local-inference-qa-92896618ddc3",
+    "route": "http://127.0.0.1:4000",
+    "model": "default"
+  },
+  "cli_terminal_subtype": "error_max_turns",
+  "cli_native_checks": {
+    "focused": "38 passed",
+    "sift_dynamic": "18 passed",
+    "local_smoke": true,
+    "openai_smoke": true
+  },
+  "completion_method": "One text-only API finalization on the same configured route using complete captured nonauthor source/tool observations; no additional tools or product edits.",
+  "finish_reason": "stop",
+  "verdict_text": "## Verdict: READY \u2014 bounded local integration and published setup\n\n### Checks run\nFrom `C:/Users/stanc/github/local-inference`:\n\n- `python -m pytest tests ../sift/tests/test_dynamic.py -q` \u2014 **38 passed**\n- `python scripts/local_smoke.py` \u2014 **passed** native text and tool continuation\n- `python scripts/openai_smoke.py` \u2014 **passed** JSON-schema and token-limit checks\n\nNo Docker restarts, model/provider switches, Claude task reruns, or network operations were performed by this review.\n\n### Findings\n1. **Minor \u2014 non-monotonic adaptive target**  \n   `../sift/src/sift/dynamic.py:139-150`: once native raw size exceeds the 32,768 anchor, `ceil(raw / 8)` can fall below 24,576 and be clamped upward. Thus a request just above the anchor may receive a **smaller** target than one at the anchor. If protected current work exceeds that reduced target, it fails closed despite potentially fitting the loaded window. This remains bounded and protected, but wastes context and may produce avoidable 422s for protected work between 24,576 and the available ceiling.\n\n2. **Minor residual resource-bound gap**  \n   `app/budget.py:55-81` and `../sift/src/sift/dynamic.py:130-137`: the pre-count character/node guard covers `messages` (including Anthropic system content), but not separately supplied `tools` schemas. Tool definitions are preserved and counted natively, yet can bypass the intended pre-count traversal bound. The raw token limit still fails closed after counting. Deployment ingress body limits remain advisable.\n\n3. **No documentation blocker found**  \n   `README.md` and `docs/SETUP.md` accurately distinguish:\n   - daily full-output budget **24,576\u201336,608** from the optional **69,888** profile reaching 65,536;\n   - optional-profile runtime delta slightly above **14 decimal GB**;\n   - native 64k capacity receipts from adaptive offline/live probes;\n   - short-prompt, two-sample, 256-output decode measurements from task throughput;\n   - **99% cloud reduction as unachieved target**;\n   - the **1.63% mixed-workload cloud share** as accounting, not a savings baseline.\n\n### Scope limits\nThis verdict covers only the bounded local adaptive Sift/LiteLLM/llama.cpp integration and published setup claims. It does not certify broad model quality, retention equivalence, universal hardware compatibility, unattended operation, public-gateway safety, dollar savings, or simultaneous 64k operation under 14 decimal GB.",
+  "usage": {
+    "completion_tokens": 1049,
+    "prompt_tokens": 30857,
+    "total_tokens": 31906,
+    "completion_tokens_details": {
+      "reasoning_tokens": 499
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 128
+    },
+    "total_characters": 0
+  },
+  "limits": "Bounded local integration and setup review only; no model-quality equivalence, 99percent savings, or simultaneous64k-under14GB claim."
+}

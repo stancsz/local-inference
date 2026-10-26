@@ -8,17 +8,21 @@ import urllib.request
 
 ROOT=Path(__file__).resolve().parents[1]
 REPO='unsloth/Qwen3.8-27B-GGUF'
+REVISION='4ca720788d1e01f1bff70c033e0d0028fd02e502'
 FILES=['MTP/mtp-Qwen3.8-27B-Q4_0.gguf','Qwen3.8-27B-UD-IQ3_XXS.gguf']
 CHUNK=32*1024*1024
 
 def main():
-    meta=json.load(urllib.request.urlopen(f'https://huggingface.co/api/models/{REPO}?blobs=true',timeout=30))
+    meta=json.load(urllib.request.urlopen(f'https://huggingface.co/api/models/{REPO}/revision/{REVISION}?blobs=true',timeout=30))
+    if meta['sha']!=REVISION:
+        raise ValueError('Model metadata revision mismatch')
+    (ROOT/'models').mkdir(parents=True,exist_ok=True)
     records=[]
     for name in FILES:
         item=next(x for x in meta['siblings'] if x['rfilename']==name)
         size=item['size']
         sha=item['lfs']['sha256']
-        directory=ROOT/'tmp/chunks'/Path(name).stem
+        directory=ROOT/'tmp/chunks'/REVISION/Path(name).stem
         directory.mkdir(parents=True,exist_ok=True)
         def get_chunk(start):
             end=min(size,start+CHUNK)-1

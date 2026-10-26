@@ -1,16 +1,22 @@
 {
   "passed": true,
+  "hash_scope": "UTF-8 source text with universal newlines; raw container hashes also retained. Git checkout CRLF/LF differences are normalized, no other whitespace changes.",
   "local_app_hashes": {
-    "app/budget.py": "3c6a3ff6253725bc05b818b126d6c1c216a0e48b245bf3485e18817af9d3b309",
+    "app/budget.py": "a8538f997cccbbb0ed696c5ce0178909023fb079ad5cd0bae183f48c69663dc3",
     "app/gateway.py": "bc2286248c3d80961b48fdc3ad0140dc90089e7ab448af34f6a794a4be85c037"
   },
   "container": {
     "files": {
-      "/app/budget.py": "3c6a3ff6253725bc05b818b126d6c1c216a0e48b245bf3485e18817af9d3b309",
+      "/app/budget.py": "a8538f997cccbbb0ed696c5ce0178909023fb079ad5cd0bae183f48c69663dc3",
       "/app/gateway.py": "bc2286248c3d80961b48fdc3ad0140dc90089e7ab448af34f6a794a4be85c037",
-      "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "eafa67bd5278eb894655ae8faf164aea59388f6f90c56aed2a2ea0a68bd5cb1d"
+      "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503"
+    },
+    "raw_files": {
+      "/app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+      "/app/gateway.py": "bc2286248c3d80961b48fdc3ad0140dc90089e7ab448af34f6a794a4be85c037",
+      "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503"
     },
     "litellm": "1.106.4"
   },
-  "sift_dynamic_sha256": "eafa67bd5278eb894655ae8faf164aea59388f6f90c56aed2a2ea0a68bd5cb1d"
+  "sift_dynamic_sha256": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503"
 }

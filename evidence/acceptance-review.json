@@ -1,26 +1,15 @@
 {
-  "verdict": "PASS for these three actual artifacts",
+  "verdict": "PASS for the three current actual artifacts",
   "owner": "commander",
   "source_snapshots_verified": true,
-  "exact_model_audit_schema_verified": true,
-  "filename_quantization_mapping_verified": true,
-  "host_snapshot_older_than_runtime_verified": true,
-  "exact_runbook_command_lines_verified": true,
-  "budget_math": {
-    "total": 40960,
-    "output": 4096,
-    "decoder_guard": 256,
-    "available_input": 36608,
-    "selected_input": 32768
-  },
-  "markdown_words": {
-    "vram-plan": 225,
-    "operator-guide": 115
-  },
+  "native_edit_reconstruction_verified": true,
+  "model_arithmetic_and_quantization_mapping_verified": true,
+  "process_rows_verified": true,
+  "adaptive_runbook_verified": true,
   "artifact_hashes": {
-    "vram-plan": "8ebe98377a0914bc46ad2ba4e2bc0e16fe810ca4af4d95112ca670bc544685c5",
-    "model-audit": "1e9283c67e804e767c68f2b35a4281cf58f20fd8339616fde97620bf10012881",
-    "operator-guide": "10a9b0a689c1f95ba3d3d8299306193dc8c17c67568456c54c73992ea231cf22"
+    "model-audit": "a5961527932539e512de8480d25c4f474a3ce0364bd60287bd0b3a7da3fcccc4",
+    "operator-guide": "5a2f73aeebc650178493c4bdbdef01c93b18414e40d0a704aacc8451efa35525",
+    "vram-plan": "ea7e08a61dfe292cf257a5c91aa164b34ec29f75f6015263a62ff4e849bccd4c"
   },
-  "limits": "Bounded real-task acceptance; no universal semantic grader or general reliability guarantee."
+  "limits": "Parent factual acceptance of three artifacts; no general model reliability claim."
 }

@@ -1,6 +1,6 @@
 {
   "text": {
-    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfMEU1SklmeHpDdTN1Q3g5M0cyUHdvZTdjcml1OUZUMWg=",
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfQ2tKZ21URnlRY3Z4cGdkWTViSDFUVk8wZnE5Q0k2dGU=",
     "type": "message",
     "role": "assistant",
     "model": "qwen3.8-27b",
@@ -19,8 +19,15 @@
     "stop_reason": "end_turn",
     "stop_details": null
   },
+  "protected_overflow": {
+    "status": 422,
+    "detail": "{\"type\":\"error\",\"error\":{\"type\":\"api_error\",\"message\":\"Sift: active turn and instructions exceed target\"}}",
+    "fixture": "'locked ' repeated 45000 times",
+    "characters": 315000,
+    "sha256": "f47148e332e3b0499be7e7994b458c869755f4bbf0f87d7756d60ac2716ecb59"
+  },
   "tool": {
-    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfaTkwUDZFd0U4QWFaV0Uzano0eTk5TXdaOTU4dnhhdzI=",
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfT2JKZ3A0T0FwMk5TVDkwbmFNQlR2Z2VuRFhTTmtpUHg=",
     "type": "message",
     "role": "assistant",
     "model": "qwen3.8-27b",
@@ -33,7 +40,7 @@
     "content": [
       {
         "type": "tool_use",
-        "id": "call_n1fbrFGe5GlTCkrJnhY2orXhrvetIzWc",
+        "id": "call_UXCnb7FpoRYh5Cqeifjp62zZaP6sBX2J",
         "name": "route_marker",
         "input": {
           "marker": "LOCAL_QWEN_TOOL_OK"
@@ -44,7 +51,7 @@
     "stop_details": null
   },
   "continuation": {
-    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfOXV0ZXJ1ZjVwVjYxc3lWVWtpSTN3MXJ2T0ljY2F5cHI=",
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfTjl3WXFZbU9uNkJPMEM5bmNqYzZMMWZnOVprQ0NpUTM=",
     "type": "message",
     "role": "assistant",
     "model": "qwen3.8-27b",
@@ -63,7 +70,7 @@
     "stop_reason": "end_turn",
     "stop_details": null
   },
-  "seconds": 4.234,
+  "seconds": 2.089,
   "passed": true,
   "endpoint": "http://127.0.0.1:8090/v1/messages"
 }

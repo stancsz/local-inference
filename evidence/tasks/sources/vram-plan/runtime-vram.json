@@ -1,9 +1,9 @@
 {
-  "captured_at": "2026-10-26T19:43:55.212792+00:00",
+  "captured_at": "2026-10-26T20:52:53.416032+00:00",
   "baseline_host_used_mib": 1509,
-  "loaded_host_used_mib": 14493,
-  "observed_inference_delta_mib": 12984,
-  "observed_inference_delta_bytes": 13614710784,
+  "loaded_host_used_mib": 14661,
+  "observed_inference_delta_mib": 13152,
+  "observed_inference_delta_bytes": 13790871552,
   "under_14_decimal_GB_by_delta": true,
   "caveat": "Host delta includes runtime caches/buffers and possible unrelated desktop drift; not per-allocation accounting.",
   "runtime": {
@@ -13,5 +13,23 @@
     "model_path": "/models/Qwen3.8-27B-UD-IQ3_XXS.gguf",
     "total_slots": 1
   },
-  "context_window": 40960
+  "context_window": 40960,
+  "vmwp_allocation_counters": [
+    {
+      "instance": "pid_7688_luid_0x00000000_0x0000E573_phys_0",
+      "dedicated_bytes": 13803126784,
+      "shared_bytes": 115343360
+    },
+    {
+      "instance": "pid_7688_luid_0x00000000_0x0000E573_phys_0#1",
+      "dedicated_bytes": 24059904,
+      "shared_bytes": 23838720
+    },
+    {
+      "instance": "pid_7688_luid_0x00000000_0x0000E573_phys_0#2",
+      "dedicated_bytes": 0,
+      "shared_bytes": 0
+    }
+  ],
+  "allocation_counter_caveat": "WSL VM allocation counters can overlap; they are not physical GPU totals or per-model accounting."
 }

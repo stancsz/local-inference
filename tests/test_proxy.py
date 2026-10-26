@@ -81,4 +81,30 @@ class ProxyBudgetTests(unittest.TestCase):
     def test_openai_top_level_system_is_rejected(self):
         with self.assertRaises(ValueError): proxy.compact(self.payload(),'openai')
 
+    def test_adaptive_budgets_and_downstream_limits_in_both_protocols(self):
+        def native(payload, protocol):
+            return (len(json.dumps(payload)) + 3)//4
+        for protocol in ('anthropic','openai'):
+            targets=[]
+            for repeats in (1000,4000):
+                payload=self.payload()
+                payload['tools']=[{'name':'Read','description':'read facts','input_schema':{'type':'object'}}]
+                history=[]
+                for index in range(20):
+                    history.extend([{'role':'user','content':f'Record {index}: '+'Historical fact. '*repeats},
+                                    {'role':'assistant','content':'Recorded.'}])
+                payload['messages']=history+payload['messages']
+                if protocol=='openai':
+                    payload['messages'].insert(0,{'role':'system','content':payload.pop('system')})
+                with patch.object(proxy,'count',side_effect=native):
+                    forwarded,audit=proxy.compact(payload,protocol)
+                self.assertEqual(forwarded['messages'][-1],payload['messages'][-1])
+                self.assertEqual(forwarded['tools'],payload['tools'])
+                self.assertLessEqual(audit['native_input_tokens'],audit['target_tokens'])
+                self.assertLessEqual(audit['native_input_tokens']+forwarded['max_tokens']+256,proxy.WINDOW)
+                if protocol=='anthropic': self.assertEqual(forwarded['system'],payload['system'])
+                else: self.assertEqual(forwarded['messages'][0],payload['messages'][0])
+                targets.append(audit['target_tokens'])
+            self.assertEqual(targets,[24576,proxy.WINDOW-4096-256])
+
 if __name__=='__main__': unittest.main()

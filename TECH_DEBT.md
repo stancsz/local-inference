@@ -1,0 +1,6 @@
+# Scoped follow-ups
+
+- **Adaptive anchor discontinuity:** Sift's short-request anchor is 32,768, while larger requests use an 8:1 ratio with a 24,576 floor. A request just above the anchor can therefore receive a smaller target and fail closed despite fitting the loaded window. The current deterministic policy is documented and bounded. A later policy improvement should preserve small fitting requests or grow to a protected-content floor, with threshold/whole-tool-group tests; do not infer task difficulty from keywords.
+- **Tool-schema pre-count bounds:** Sift's character/node traversal bound covers its message view (including Anthropic system content), while separately supplied tool schemas enter the native full-request counter. Oversized schemas fail the raw/context checks after counting but can consume tokenizer resources first. Consider a full-request traversal/ingress bound before native I/O if supporting untrusted or multi-user callers. The current product binds to loopback and is documented as a personal one-slot stack.
+
+Both were nonblocking findings in [the bounded integration review](evidence/integration-review.json); neither changes the memory, quality or savings limits in VERIFICATION.md.

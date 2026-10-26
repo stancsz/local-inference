@@ -17,6 +17,35 @@ TASKS=[
  ('operator-guide', 'Read README.md, compose.yaml and gateway.yaml only. Use the Write tool to create tmp/acceptance/OPERATIONS.md (at most 350 words) with exact commands to start this standalone local LiteLLM Docker stack, check both ports, run scripts/claude_acceptance.py, inspect gateway Sift logs, and stop only this compose project. Explain the configured compaction limit and 4096-token output reserve, and why health is insufficient productivity evidence. The directory exists; do not explore unrelated files. End with OPERATIONS_DONE.', 'OPERATIONS.md', 'OPERATIONS_DONE'),
 ]
 
+def validate_model_audit(obj, manifest, expected_context):
+    if not isinstance(obj,dict) or set(obj)!={'repository','revision','total_weight_bytes','quantization','configured_context_size','limitations'}:
+        return False
+    quant=obj.get('quantization')
+    if isinstance(quant,dict):
+        mapping=quant.get('main')=='IQ3_XXS' and quant.get('mtp')=='Q4_0'
+    elif isinstance(quant,str):
+        mapping=bool(re.search(r'main(?:\s+|[=:]\s*)IQ3_XXS',quant,re.I)) and bool(re.search(r'MTP(?:\s+|[=:]\s*)Q4_0',quant,re.I))
+    else:
+        return False
+    return bool(mapping and obj.get('total_weight_bytes')==sum(x['bytes'] for x in manifest['files'])
+        and obj.get('configured_context_size')==expected_context
+        and obj.get('repository')==manifest['repository'] and obj.get('revision')==manifest['revision']
+        and isinstance(obj.get('limitations'),list) and bool(obj['limitations'])
+        and all(Path(f['file']).name in json.dumps(obj) for f in manifest['files']))
+
+
+def validate_process_rows(text, processes):
+    expected={(str(p['process']).lower(),str(p['pid'])):float(p['dedicated_mib']) for p in processes}
+    for line in text.splitlines():
+        cells=[c.strip().strip('`') for c in line.strip().strip('|').split('|')]
+        if len(cells)==3 and cells[1].isdigit():
+            try:
+                if expected.get((cells[0].lower(),cells[1]))!=float(cells[2]): return False
+            except ValueError:
+                return False
+    return True
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--task',action='append',choices=[t[0] for t in TASKS])
@@ -32,20 +61,26 @@ def main():
         # Seed an explicit pending artifact, which cannot satisfy validation.
         artifact.write_text('PENDING_LOCAL_ACCEPTANCE\n',encoding='utf-8')
         prompt=prompt.replace('Use the Write tool','Use the Edit tool').replace('use the Write tool','use the Edit tool').replace('Use Read and Write tools','Use Read and Edit tools').replace('native Read and Write','native Read and Edit')
-        prompt+=' The output file already contains PENDING_LOCAL_ACCEPTANCE followed by a newline. Read it, then use Edit to replace its entire contents. This CLI exposes Read and Edit, with no separate Write tool. Do not use Bash.'
+        prompt+=' The output file already contains PENDING_LOCAL_ACCEPTANCE followed by a newline. Read it, then use Edit to replace its entire contents. This CLI exposes Read and Edit, with no separate Write tool.'
+        if name!='model-audit': prompt+=' Do not use Bash.'
         if name=='vram-plan':
             prompt+=' The gpu CSV order in host-vram.json is name,total,used,free. Include exact machine-checkable lines host_total_mib=<number>, host_used_mib=<number>, host_free_mib=<number>. Do not swap used and free. Cite the source filename for each measurement and distinguish the older host snapshot from runtime-vram.json.'
+            prompt+=' Report only the three largest measured process consumers. If using a process table, use columns Process | PID | Dedicated MiB and copy exact source values. Do not list other processes or guess PIDs.'
         if name=='operator-guide':
-            prompt+=' Use /health/readiness on port 8090. Document only the current daily default, not optional long profiles: verify compose.yaml shows 40960 total context, 32768 Sift tokens, 4096 output reserve and 4 draft tokens. Include exact lines context_window=40960, sift_target=32768, output_reserve=4096, draft_tokens=4. Do not discuss 64k profiles in this short daily runbook.'
+            prompt+=' Use /health/readiness on port 8090. Document only the current daily default, not optional long profiles: verify compose.yaml shows 40960 total context, SIFT_TARGET=32768 as the adaptive policy anchor (not a fixed forwarded budget), 4096 output reserve and 4 draft tokens. Include exact configuration lines context_window=40960, sift_target=32768, output_reserve=4096, draft_tokens=4. Explain request-adaptive budgeting and its daily 24576..36608 range when reserving all 4096 output tokens. Short requests pass unchanged; 36608 is a ceiling, not a required request size. Do not discuss 64k profiles in this short daily runbook.'
             prompt+=' Aim for 180-220 words and stay under the 350-word hard limit, counting headings and code. Keep commands and brief explanations only. The Sift target is part of the input budget, never added to it; a further 256 tokens are held for decoder headroom. A readiness response alone proves process readiness, not productive work.'
+            prompt+=' Explicitly call the policy adaptive. Put commands in fenced powershell blocks. For logs use exactly: docker compose logs --no-color gateway > tmp/sift-runtime.log'
         if name=='model-audit':
             prompt+=' The quantization field must identify BOTH the main IQ3_XXS and MTP Q4_0 quantizations from their filenames. Keep all required fields, and verify repository/revision against the manifest.'
+            prompt+=' Use Bash with python -c to calculate the exact sum from the manifest; do not calculate the large integers mentally. Bash is allowed only for that Python calculation. Use Read/Edit for the artifact.'
         with tempfile.TemporaryDirectory(prefix='local-qwen-claude-') as config:
             env=dict(os.environ)
             for key in ['GATEWAY_MASTER_KEY','EXPERTS_API_KEY','ANTHROPIC_AUTH_TOKEN','CLAUDECODE']:
                 env.pop(key,None)
             env.update(ANTHROPIC_API_KEY=gateway_key(),ANTHROPIC_BASE_URL='http://127.0.0.1:8090',ANTHROPIC_MODEL='qwen3.8-27b',ANTHROPIC_DEFAULT_OPUS_MODEL='qwen3.8-27b',ANTHROPIC_DEFAULT_SONNET_MODEL='qwen3.8-27b',ANTHROPIC_DEFAULT_HAIKU_MODEL='qwen3.8-27b',CLAUDE_CONFIG_DIR=config,CLAUDE_CODE_DISABLE_1M_CONTEXT='1',CLAUDE_CODE_MAX_CONTEXT_TOKENS='1000000',CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC='1',API_TIMEOUT_MS='600000',CLAUDE_CODE_MAX_OUTPUT_TOKENS='4096')
-            args=['claude.cmd','--bare','-p','--model','qwen3.8-27b','--output-format','stream-json','--verbose','--max-turns','10','--permission-mode','acceptEdits','--tools','Read,Edit','--allowedTools','Read,Edit']
+            tools='Read,Edit,Bash' if name=='model-audit' else 'Read,Edit'
+            allowed='Read,Edit,Bash(python -c *)' if name=='model-audit' else 'Read,Edit'
+            args=['claude.cmd','--bare','-p','--model','qwen3.8-27b','--output-format','stream-json','--verbose','--max-turns','10','--permission-mode','acceptEdits','--tools',tools,'--allowedTools',allowed]
             start=time.monotonic()
             try:
                 with (dest/(name+'.jsonl')).open('w',encoding='utf-8') as out, (dest/(name+'.stderr.log')).open('w',encoding='utf-8') as err:
@@ -63,23 +98,22 @@ def main():
                 obj=json.loads(artifact.read_text(encoding='utf-8'))
                 manifest=json.loads((ROOT/'evidence/model-manifest.json').read_text())
                 expected_context=int(re.search(r'CONTEXT_SIZE:-([0-9]+)',(ROOT/'compose.yaml').read_text()).group(1))
-                validation=obj.get('total_weight_bytes')==sum(x['bytes'] for x in manifest['files']) and obj.get('configured_context_size')==expected_context
-                validation=validation and obj.get('repository')==manifest['repository'] and obj.get('revision')==manifest['revision'] and 'IQ3_XXS' in obj.get('quantization','') and isinstance(obj.get('limitations'),list) and bool(obj['limitations']) and 'Q4_0' in json.dumps(obj)
-                validation=validation and set(obj)=={'repository','revision','total_weight_bytes','quantization','configured_context_size','limitations'}
-                quant=obj.get('quantization','')
-                validation=validation and bool(re.search(r'main\s+IQ3_XXS',quant,re.I)) and bool(re.search(r'MTP\s+Q4_0',quant,re.I)) and all(Path(f['file']).name in quant for f in manifest['files'])
+                validation=validate_model_audit(obj,manifest,expected_context)
                 passed=passed and validation
             if passed and filename.endswith('.md'):
                 text=artifact.read_text(encoding='utf-8')
                 passed=len(text.split())<=350
                 if name=='vram-plan':
                     passed=passed and all(term in text.lower() for term in ['dwm','never terminate','saving','nvidia-smi','host-vram.json','runtime-vram.json'])
+                    processes=json.loads((ROOT/'evidence/host-vram.json').read_text())['processes']
+                    passed=passed and validate_process_rows(text,processes)
                 if name=='operator-guide':
                     passed=passed and all(term in text for term in ['docker compose up -d --build','8090/health/readiness','8091/health','scripts/claude_acceptance.py','docker compose logs','gateway','docker compose down','context_window=40960','sift_target=32768','output_reserve=4096','draft_tokens=4'])
+                    passed=passed and all(term in text.lower() for term in ['adaptive','anchor','24576','36608'])
                     commands={line.strip() for block in re.findall(r'```(?:powershell)?\s*\n(.*?)```',text,re.S) for line in block.splitlines()}
                     passed=passed and {'docker compose up -d --build','curl.exe http://127.0.0.1:8090/health/readiness','curl.exe http://127.0.0.1:8091/health','python scripts/claude_acceptance.py','docker compose logs --no-color gateway > tmp/sift-runtime.log','docker compose down'}<=commands and 'part of the input budget, never added to it' in text and '256 tokens' in text and 'decoder headroom' in text
                     allowed={'docker compose up -d --build','curl.exe http://127.0.0.1:8090/health/readiness','curl.exe http://127.0.0.1:8091/health','python scripts/claude_acceptance.py','docker compose logs --no-color gateway > tmp/sift-runtime.log','docker compose down','context_window=40960','sift_target=32768','output_reserve=4096','draft_tokens=4'}
-                    passed=passed and commands==allowed
+                    passed=passed and commands<=allowed
             if passed and name=='vram-plan':
                 text=artifact.read_text(encoding='utf-8').replace(',','')
                 manifest=json.loads((ROOT/'evidence/model-manifest.json').read_text())

@@ -1,0 +1,23 @@
+{
+  "role": "advisor",
+  "requested_model": "default",
+  "returned_model": "default",
+  "packet_sha256": "a6b5c6f0cfd158d50ec6aa4d4ce6580ad7e6a8a8b7e406f3e433b83f031bcf74",
+  "packet_characters": 3122,
+  "usage": {
+    "completion_tokens": 797,
+    "prompt_tokens": 913,
+    "total_tokens": 1710,
+    "completion_tokens_details": {
+      "reasoning_tokens": 512
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 189
+    },
+    "total_characters": 0
+  },
+  "finish_reason": "stop",
+  "answer": "**Verdict:** No concrete unsafe-budget or protection regression is demonstrated by the supplied evidence.\n\nThe native path appears to enforce a conservative ceiling of `context_window - output_reserve - fixed_tokens`, includes system/tools/template in the native count, and the gateway independently recounts the final full request, rejecting `count + output + 256 > window`. The reported native examples remain within the stated limits, and the CLI worker\u2019s initial pre-count guard bypass was repaired by the parent.\n\n**Material limits:**\n- This is not an independent replay; it does not establish equivalence between the native counter and gateway recount.\n- The gateway\u2019s 256-token guard is evidenced only as a rejection rule, not as exhaustive coverage of every final-request mutation.\n- No general quality, cloud-cost savings, or full integration guarantee is established.\n- The supplied facts do not show whether `fixed_tokens` overlaps with system/tools/template counted by the native counter.\n\n**Next distinguishing check:** Run one adversarial case where compaction/native output changes system, tool, template, or other reserved content, then compare the native final count with the gateway\u2019s full-request recount. Fail closed if they differ by more than the reserved guard margin.\n\n**Stop condition:** Stop the native path\u2014or retain the parent\u2019s pre-count guard\u2014if the final gateway recount rejects a request that native accounting accepted, or if the two counters cannot be shown equivalent for all reserved-content mutations.",
+  "usage_scope": "Provider-reported token usage; no dollar-savings claim.",
+  "review_scope": "Read-only review of supplied policy excerpt and reported evidence; no independent test execution or full-source certification."
+}

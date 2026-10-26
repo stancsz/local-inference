@@ -1,53 +1,36 @@
-# Local LiteLLM operations
+# Standalone Local LiteLLM Operations
 
-## Start
+## Start the stack
 
 ```powershell
 docker compose up -d --build
 ```
 
-## Check ports
+## Check both ports
 
 ```powershell
 curl.exe http://127.0.0.1:8090/health/readiness
 curl.exe http://127.0.0.1:8091/health
 ```
 
-8090 is the LiteLLM gateway; 8091 is llama.cpp diagnostics.
-
-## Acceptance
+## Run acceptance
 
 ```powershell
 python scripts/claude_acceptance.py
 ```
 
-## Gateway Sift logs
+## Inspect gateway Sift logs
 
 ```powershell
 docker compose logs --no-color gateway > tmp/sift-runtime.log
 ```
 
-## Stop
+## Stop only this compose project
 
 ```powershell
 docker compose down
 ```
 
-This stops only the `local-inference` project.
+## Compaction limit and output reserve
 
-## Budget
-
-Daily defaults in `compose.yaml`:
-
-```
-context_window=40960
-sift_target=32768
-output_reserve=4096
-draft_tokens=4
-```
-
-The 32,768-token Sift target is part of the input budget, never added to it. A further 256 tokens are held for decoder headroom.
-
-## Why health is not productivity evidence
-
-A readiness response alone proves process readiness, not productive work.
+Daily defaults: context_window=40960, sift_target=32768, output_reserve=4096, draft_tokens=4. The adaptive Sift policy uses 32768 as its anchor, not a fixed forwarded budget; the target is part of the input budget, never added to it. With all 4096 output tokens reserved, the adaptive range is 24576..36608. A further 256 tokens are held for decoder headroom. Short requests pass unchanged; 36608 is a ceiling, not a required request size. A readiness response alone proves process readiness, not productive work.

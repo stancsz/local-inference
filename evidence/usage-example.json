@@ -1,0 +1,52 @@
+{
+  "local_tokens": 103441,
+  "cloud_advisor_tokens": 1710,
+  "cloud_token_share_percent": 1.6262327509961865,
+  "cloud_share_at_most_one_percent": false,
+  "cloud_token_reduction_percent": null,
+  "scope": "Supplied provider usage only, including failed attempts when supplied. Cloud share is not savings against an equivalent cloud-only run. Include every retry/failed receipt; missing usage prevents a complete accounting claim. Electricity, hardware and price differences are excluded.",
+  "receipts": [
+    {
+      "role": "local",
+      "path": "tmp\\adaptive\\vram-attempt1\\vram-plan.jsonl",
+      "tokens": 20992,
+      "sha256": "89f74151c506bd3f00f00dc1e3c71d9c58384eb75fe6238134e73458f1863f9b"
+    },
+    {
+      "role": "local",
+      "path": "tmp\\adaptive\\attempt1\\model-audit.jsonl",
+      "tokens": 10836,
+      "sha256": "8f2302868cf5a0b9012e5068b06cd61dae4554379c59726c7ae31865a35fa608"
+    },
+    {
+      "role": "local",
+      "path": "tmp\\adaptive\\attempt1\\operator-guide.jsonl",
+      "tokens": 18106,
+      "sha256": "35f107dad2bab50b06848af76bec9fc5f67c57763b1475379cd662d1c707e45f"
+    },
+    {
+      "role": "local",
+      "path": "tmp\\acceptance\\vram-plan.jsonl",
+      "tokens": 15217,
+      "sha256": "65f93ab7fa29fc4ac5f60e219f5c6a13a391ff335e64b25c91a33cfa431be46f"
+    },
+    {
+      "role": "local",
+      "path": "tmp\\acceptance\\model-audit.jsonl",
+      "tokens": 12355,
+      "sha256": "65970c89d5ab98b455d7a9bc0152753df0f64d486b0148935c5361bc1dbe8511"
+    },
+    {
+      "role": "local",
+      "path": "tmp\\acceptance\\operator-guide.jsonl",
+      "tokens": 25935,
+      "sha256": "1986747ec777af382c03a335e16696ba606fc1969f88e2a657d8bb3dbbc84662"
+    },
+    {
+      "role": "advisor",
+      "path": "evidence\\advisor-example.json",
+      "tokens": 1710,
+      "sha256": "bda212d6151ae2b27072c7dba0a56f96fb29311b12ecd4bcaae6e22c97e6f4cb"
+    }
+  ]
+}

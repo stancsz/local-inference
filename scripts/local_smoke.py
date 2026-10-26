@@ -1,5 +1,6 @@
 """Prove text and native tool continuation through this gateway only."""
 import json
+import hashlib
 from pathlib import Path
 import time
 import http.client
@@ -36,6 +37,19 @@ def main():
     body.pop('tool_choice')
     final=request(body)
     assert 'LOCAL_QWEN_TOOL_OK' in json.dumps(final['content'])
+    protected='locked '*45000
+    oversized={'model':'qwen3.8-27b','max_tokens':4096,
+        'system':'Preserve all of the current task.', 'messages':[{'role':'user','content':protected}]}
+    try:
+        request(oversized)
+    except urllib.error.HTTPError as error:
+        detail=error.read().decode()
+        assert error.code==422 and 'Sift' in detail,detail
+        receipts['protected_overflow']={'status':error.code,'detail':detail,
+            'fixture':"'locked ' repeated 45000 times", 'characters':len(protected),
+            'sha256':hashlib.sha256(protected.encode()).hexdigest()}
+    else:
+        raise AssertionError('Oversized protected current task was forwarded')
     receipts.update(tool=tool,continuation=final,seconds=round(time.monotonic()-start,3),passed=True,endpoint='http://127.0.0.1:8090/v1/messages')
     (ROOT/'evidence/local-smoke.json').write_text(json.dumps(receipts,indent=2))
     print('Local gateway text and tool continuation passed',flush=True)

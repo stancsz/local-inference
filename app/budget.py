@@ -2,6 +2,7 @@
 from copy import deepcopy
 import json
 import hashlib
+import math
 import os
 import time
 import urllib.error
@@ -12,10 +13,16 @@ from sift.dynamic import compact_dynamic
 
 BASE = os.environ.get('INFERENCE_URL', 'http://127.0.0.1:8091')
 WINDOW = int(os.environ.get('CONTEXT_SIZE', '40960'))
+# TARGET is the anchor working set: requests that already fit it are forwarded
+# unchanged. Larger requests get a request-adaptive budget derived from their
+# own native size (see sift.dynamic.compact_dynamic).
 TARGET = int(os.environ.get('SIFT_TARGET', '32768'))
+RATIO = float(os.environ.get('SIFT_COMPRESSION_RATIO', '8'))
 DECODER_HEADROOM=256
 if WINDOW < 28928 or not 24576 <= TARGET <= 65536:
     raise RuntimeError('Require CONTEXT_SIZE >= 28928 and SIFT_TARGET in 24576..65536')
+if not math.isfinite(RATIO) or RATIO < 1:
+    raise RuntimeError('Require SIFT_COMPRESSION_RATIO to be finite and >= 1')
 OPENER = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 
 def upstream(path, payload=None):
@@ -66,9 +73,12 @@ def compact(payload, protocol='anthropic'):
     started = time.monotonic()
     # The counter includes tools/system/template. fixed_tokens reserves only
     # decoder headroom, not prompt overhead. All units are native tokens.
+    # The budget is request-adaptive: the anchor TARGET is used for requests
+    # that already fit it, and larger requests get a working set derived from
+    # their own native size, bounded by the window's available tokens.
     result = compact_dynamic(messages, native, context_window=WINDOW,
         output_reserve=output, preferred_target=TARGET, fixed_tokens=DECODER_HEADROOM,
-        raw_limit=1_050_000, protocol=protocol)
+        raw_limit=1_050_000, compression_ratio=RATIO, protocol=protocol)
     p=restore(result.messages)
     actual = count(p,protocol)
     if actual + output + DECODER_HEADROOM > WINDOW:
@@ -77,7 +87,9 @@ def compact(payload, protocol='anthropic'):
         compaction_input_sha256=compaction_digest(payload),
         compaction_seconds=round(time.monotonic()-started,4),
         selection_counting='native full-request tokenizer', tokenizer_calls=len(cache)+1,
-        raw_native_token_limit=1_050_000, decoder_headroom=DECODER_HEADROOM)
+        raw_native_token_limit=1_050_000, decoder_headroom=DECODER_HEADROOM,
+        context_window=WINDOW, budget_policy='request_adaptive_ratio',
+        compression_ratio=RATIO, anchor_tokens=TARGET)
     return p, audit
 
 def compaction_digest(payload):

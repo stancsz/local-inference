@@ -1,9 +1,9 @@
 {
-  "captured_at": "2026-10-26T20:22:48.375839+00:00",
+  "captured_at": "2026-10-26T20:58:16.747231+00:00",
   "baseline_host_used_mib": 1509,
-  "loaded_host_used_mib": 14678,
-  "observed_inference_delta_mib": 13169,
-  "observed_inference_delta_bytes": 13808697344,
+  "loaded_host_used_mib": 14655,
+  "observed_inference_delta_mib": 13146,
+  "observed_inference_delta_bytes": 13784580096,
   "under_14_decimal_GB_by_delta": true,
   "caveat": "Host delta includes runtime caches/buffers and possible unrelated desktop drift; not per-allocation accounting.",
   "runtime": {

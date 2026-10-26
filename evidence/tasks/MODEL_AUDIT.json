@@ -2,11 +2,15 @@
   "repository": "unsloth/Qwen3.8-27B-GGUF",
   "revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
   "total_weight_bytes": 12304451360,
-  "quantization": "main IQ3_XXS (Qwen3.8-27B-UD-IQ3_XXS.gguf) and MTP Q4_0 (mtp-Qwen3.8-27B-Q4_0.gguf)",
+  "quantization": {
+    "main": "IQ3_XXS",
+    "mtp": "Q4_0"
+  },
   "configured_context_size": 40960,
   "limitations": [
-    "total_weight_bytes is a sum of the downloaded file sizes in the manifest, not measured GPU residency",
-    "configured_context_size is the compose default (${CONTEXT_SIZE:-40960}); the gateway SIFT_TARGET default is 32768",
-    "GPU residency is not inferred from file size; actual VRAM usage is unknown from these inputs"
+    "total_weight_bytes is the sum of the manifest's downloaded model (10934860704) and MTP (1369590656) file byte counts; it is a download/manifest size, not a measured GPU residency figure.",
+    "No GPU residency or memory-usage value is inferred from these file sizes; the audit records file byte counts only.",
+    "configured_context_size is the compose.yaml default (${CONTEXT_SIZE:-40960}); it is the configured default and not a measured runtime context.",
+    "Quantizations are identified from the manifest filenames (Qwen3.8-27B-UD-IQ3_XXS.gguf and mtp-Qwen3.8-27B-Q4_0.gguf); they are filename-derived labels, not independently measured quantization properties."
   ]
 }

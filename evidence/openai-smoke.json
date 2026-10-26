@@ -32,8 +32,8 @@
     }
   },
   "response": {
-    "id": "chatcmpl-0VONdSYdA8Wm87STnNN4fZjyB9kyKJXu",
-    "created": 1793046167,
+    "id": "chatcmpl-YZ03FfCZL1h1yLxkWIsmkuHdzcGKUnot",
+    "created": 1793048512,
     "model": "qwen3.8-27b",
     "object": "chat.completion",
     "system_fingerprint": "b11610-091b6a7fc",
@@ -62,13 +62,13 @@
     "timings": {
       "cache_n": 18,
       "prompt_n": 4,
-      "prompt_ms": 314.261,
-      "prompt_per_token_ms": 78.56525,
-      "prompt_per_second": 12.728273632426548,
+      "prompt_ms": 468.019,
+      "prompt_per_token_ms": 117.00475,
+      "prompt_per_second": 8.546661567158598,
       "predicted_n": 15,
-      "predicted_ms": 680.652,
-      "predicted_per_token_ms": 48.618,
-      "predicted_per_second": 20.56851371919865,
+      "predicted_ms": 624.933,
+      "predicted_per_token_ms": 44.63807142857143,
+      "predicted_per_second": 22.402401537444813,
       "draft_n": 40,
       "draft_n_accepted": 4
     }
@@ -86,8 +86,8 @@
     "temperature": 0
   },
   "cap_response": {
-    "id": "chatcmpl-45Cz9P7gPQy4mj9ky3OuWUHZ5jNDRsS0",
-    "created": 1793046168,
+    "id": "chatcmpl-gU919e3xId3yD6p7zskdalYzhn8GVaOi",
+    "created": 1793048512,
     "model": "qwen3.8-27b",
     "object": "chat.completion",
     "system_fingerprint": "b11610-091b6a7fc",
@@ -116,13 +116,13 @@
     "timings": {
       "cache_n": 30,
       "prompt_n": 4,
-      "prompt_ms": 216.076,
-      "prompt_per_token_ms": 54.019,
-      "prompt_per_second": 18.51200503526537,
+      "prompt_ms": 147.117,
+      "prompt_per_token_ms": 36.77925,
+      "prompt_per_second": 27.189243935099277,
       "predicted_n": 16,
-      "predicted_ms": 155.37,
-      "predicted_per_token_ms": 10.358,
-      "predicted_per_second": 96.54373431164318,
+      "predicted_ms": 132.261,
+      "predicted_per_token_ms": 8.8174,
+      "predicted_per_second": 113.412116950575,
       "draft_n": 12,
       "draft_n_accepted": 12
     }

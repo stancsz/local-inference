@@ -26,6 +26,7 @@ services:
       INFERENCE_URL: http://inference:8080
       CONTEXT_SIZE: '${CONTEXT_SIZE:-40960}'
       SIFT_TARGET: '${SIFT_TARGET:-32768}'
+      SIFT_COMPRESSION_RATIO: '${SIFT_COMPRESSION_RATIO:-8}'
     ports:
       - '127.0.0.1:8090:8090'
     volumes:

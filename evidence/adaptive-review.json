@@ -1,0 +1,99 @@
+{
+  "captured_at": "2026-10-26T21:00:40.867384+00:00",
+  "owner": "parent commander",
+  "verdict": "PASS for bounded daily adaptive local workflow; nonauthor review READY for local integration and published setup",
+  "worker": {
+    "exit_code": 1,
+    "alias": "local-inference-worker-7fd1c33b3013",
+    "route": "http://127.0.0.1:4000",
+    "model": "default",
+    "write_enabled_implementation_workers": 1,
+    "terminal_subtype": "error_max_turns",
+    "turns": 25,
+    "handoff_complete": false,
+    "key_revoked_and_absent": true,
+    "configured_key_max_budget": 0.5,
+    "cli_reported_cost_usd": 1.2551550000000002,
+    "cost_caveat": "CLI estimate is not a verified gateway/provider bill or proof of a hard spend cap."
+  },
+  "parent_findings_repaired": [
+    "Initial adaptive raw count bypassed existing pre-count resource bounds.",
+    "Missing policy tests/docs completed after worker turn limit.",
+    "Mental byte sum corrected with native Python calculator.",
+    "Semantic audit validator now accepts explicit typed main/MTP mappings while rejecting wrong arithmetic and swapped mappings.",
+    "One copied process PID caught by parent; final report re-run with top-three source rows and source-based validator."
+  ],
+  "checks": {
+    "focused_tests": "38 passed",
+    "sift_suite": "553 passed, 1 skipped",
+    "local_smoke": "text, native tool continuation and protected-current-task 422",
+    "openai_smoke": "schema const, exact16 output cap and invalid-system422",
+    "claude_tasks": [
+      {
+        "task": "model-audit",
+        "passed": true,
+        "seconds": 21.3,
+        "artifact_sha256": "a5961527932539e512de8480d25c4f474a3ce0364bd60287bd0b3a7da3fcccc4"
+      },
+      {
+        "task": "operator-guide",
+        "passed": true,
+        "seconds": 16.2,
+        "artifact_sha256": "5a2f73aeebc650178493c4bdbdef01c93b18414e40d0a704aacc8451efa35525"
+      },
+      {
+        "task": "vram-plan",
+        "passed": true,
+        "seconds": 17.26,
+        "artifact_sha256": "ea7e08a61dfe292cf257a5c91aa164b34ec29f75f6015263a62ff4e849bccd4c"
+      }
+    ],
+    "context_requests": [
+      {
+        "raw": 257539,
+        "target": 32193,
+        "forwarded": 32053,
+        "output_reserve": 128,
+        "headroom": 256,
+        "passed": true
+      },
+      {
+        "raw": 1001638,
+        "target": 40576,
+        "forwarded": 33300,
+        "output_reserve": 128,
+        "headroom": 256,
+        "passed": true
+      }
+    ],
+    "source_parity": true
+  },
+  "limits": [
+    "Daily full-output range24576..36608; raw probes with128 output allow40576.",
+    "Larger-window adaptive budget has offline tests; existing64k+4k native backend capacity receipt is unchanged and memory exceeds14decimalGB including buffers.",
+    "Three tasks and synthetic one-fact retention probes do not prove broad quality or equivalent retention.",
+    "Advisor example is a limited review of supplied evidence, not integration certification.",
+    "No99percent cloud savings or equivalent cloud-only baseline is established."
+  ],
+  "nonauthor_review": {
+    "receipt": "evidence/integration-review.json",
+    "decision": "READY",
+    "native_checks": {
+      "focused": "38 passed",
+      "sift_dynamic": "18 passed",
+      "local_smoke": true,
+      "openai_smoke": true
+    },
+    "method": "One text-only API finalization on the same configured route using complete captured nonauthor source/tool observations; no additional tools or product edits.",
+    "cli_handoff_complete": false,
+    "minor_findings_recorded": "TECH_DEBT.md"
+  },
+  "reviewed_source_hashes": {
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "bc2286248c3d80961b48fdc3ad0140dc90089e7ab448af34f6a794a4be85c037",
+    "compose.yaml": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+    "scripts/advisor.py": "2cc1b200be1dc47dbdd3cd80b3434270526a6dc0ba38b29835a2579ad912e113",
+    "scripts/usage_report.py": "74f38968786d231c016bb3145cd3da8abb25b29bd4ae0a53209fbae24607c38f",
+    "scripts/download_ranges.py": "e0f831395e1db19605481a08ba69272250e66866aa86c8b63502acf9b310458f"
+  }
+}
