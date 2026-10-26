@@ -4,6 +4,19 @@ An independent, minimal LiteLLM gateway serving Dockerized Qwen3.8-27B IQ3_XXS +
 
 **Status: the recommended local workflow is running and verified on this host.** Live text/tool continuation, three Claude productivity tasks, 256k/1M compaction and exact 64k+4k capacity have receipts. See [verification and limits](VERIFICATION.md), [GOAL.md](GOAL.md), and [evidence](evidence). These bounded tests do not establish general task quality or information-retention parity.
 
+## Measured speed on RTX 5070 Ti
+
+**103.45 tok/s average decode, peaking at 104.09 tok/s**, with Qwen3.8-27B IQ3_XXS + Q4 MTP, four draft tokens and the recommended 40,960-token context window.
+
+| Context profile | MTP draft tokens | Average decode | Raw receipts |
+| --- | --- | --- | --- |
+| 40k daily | 4 (recommended) | **103.45 tok/s** | [Two samples](evidence/benchmark-mtp4-40k.json) |
+| 40k daily | 2 | 91.60 tok/s | [Two samples](evidence/benchmark-mtp2-40k.json) |
+| 64k-input | 2 | 91.18 tok/s | [Two samples](evidence/benchmark-mtp-64k-ubatch64.json) |
+| 64k-input | Disabled | 49.92 tok/s | [Two samples](evidence/benchmark-no-mtp-64k-ubatch64.json) |
+
+The matched larger-window comparison measured **1.83× faster decode with MTP** ([summary](evidence/benchmark-summary.json)). Each row contains two sequential short-prompt runs generating 256 tokens each, one cold and one cached. The context profiles describe capacity; these runs did not fill that window. Rates measure backend token generation, excluding Sift compaction and prompt processing; they do not measure end-to-end Claude task throughput or establish equal output quality. See [verification](VERIFICATION.md) for the separate long-context and real-task results.
+
 ## Setup
 
 Requirements: Docker Desktop with Linux GPU support, NVIDIA driver, Python 3.11+, PowerShell, Claude Code CLI, and approximately 50 GB free disk for images, staged weights and resumable chunks. Keep the two repositories beside each other:
