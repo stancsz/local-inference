@@ -6,7 +6,7 @@ services:
     ports:
       - '127.0.0.1:8091:8080'
     volumes:
-      - ./models:/models:ro
+      - model-cache:/models:ro
     command:
       - --model
       - /models/Qwen3.8-27B-UD-IQ3_XXS.gguf
@@ -17,28 +17,29 @@ services:
       - --port
       - '8080'
       - --ctx-size
-      - '${CONTEXT_SIZE:-28672}'
+      - '${CONTEXT_SIZE:-69632}'
       - --parallel
       - '1'
       - --n-gpu-layers
-      - '${GPU_LAYERS:-48}'
+      - '${GPU_LAYERS:-99}'
       - --fit
       - 'off'
       - --flash-attn
       - 'on'
       - --cache-type-k
-      - q8_0
+      - q4_0
       - --cache-type-v
-      - q8_0
+      - q4_0
       - --batch-size
       - '256'
       - --ubatch-size
-      - '128'
+      - '${UBATCH_SIZE:-64}'
+      - --no-context-shift
       - --jinja
       - --reasoning-budget
       - '0'
       - --chat-template-kwargs
-      - '{"reasoning_effort":"none"}'
+      - '{"reasoning_effort":"low","enable_thinking":false}'
       - --temp
       - '0.7'
       - --top-p
@@ -52,20 +53,32 @@ services:
       - --model-draft
       - /models/mtp-Qwen3.8-27B-Q4_0.gguf
       - --gpu-layers-draft
-      - '${DRAFT_GPU_LAYERS:-0}'
+      - '${DRAFT_GPU_LAYERS:-99}'
       - --spec-draft-n-max
       - '${DRAFT_TOKENS:-2}'
+      - --cache-type-k-draft
+      - q4_0
+      - --cache-type-v-draft
+      - q4_0
+      - --no-reasoning-preserve
     restart: 'no'
-  sift:
+  gateway:
     build:
       context: ..
-      dockerfile: local-inference/docker/sift.Dockerfile
+      dockerfile: local-inference/docker/gateway.Dockerfile
     environment:
+      LITELLM_MASTER_KEY: '${LOCAL_GATEWAY_KEY:?Run python scripts/setup_env.py}'
       INFERENCE_URL: http://inference:8080
-      CONTEXT_SIZE: '${CONTEXT_SIZE:-28672}'
-      SIFT_TARGET: '${SIFT_TARGET:-24576}'
+      CONTEXT_SIZE: '${CONTEXT_SIZE:-69632}'
+      SIFT_TARGET: '${SIFT_TARGET:-32768}'
     ports:
       - '127.0.0.1:8090:8090'
+    volumes:
+      - ./evidence:/evidence
     depends_on:
       - inference
     restart: 'no'
+volumes:
+  model-cache:
+    name: local-inference-models
+    external: true
