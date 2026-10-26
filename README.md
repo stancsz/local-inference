@@ -10,6 +10,8 @@ An independent, minimal LiteLLM gateway serving Dockerized Qwen3.8-27B IQ3_XXS +
 
 **Status: the recommended local workflow is running and verified on this host.** Live text/tool continuation, three Claude productivity tasks, 256k/1M compaction and exact 64k+4k capacity have receipts. See [verification and limits](VERIFICATION.md), [GOAL.md](GOAL.md), and [evidence](evidence). These bounded tests do not establish general task quality or information-retention parity.
 
+A [21-session native CLI stress campaign](docs/STRESS.md) is in progress against a frozen newer Sift candidate, using local Qwen with Claude Code, OpenCode and Codex. Its final acceptance is pending; it is separate from the completed baseline checks above.
+
 ## Lower cloud usage, explicit tradeoffs
 
 - **Local execution:** OpenAI-compatible Chat Completions and Anthropic Messages for the local Qwen model; Claude Code launcher included.

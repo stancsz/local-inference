@@ -19,6 +19,12 @@ class ModelAuditAcceptanceTests(unittest.TestCase):
     def test_correct_explicit_quantization_mapping_is_accepted(self):
         self.assertTrue(validate_model_audit(self.artifact,self.manifest,40960))
 
+    def test_optional_artifact_mapping_must_match_manifest(self):
+        artifact=dict(self.artifact,artifacts={'main_gguf':'Qwen3.8-27B-UD-IQ3_XXS.gguf','mtp_gguf':'mtp-Qwen3.8-27B-Q4_0.gguf'})
+        self.assertTrue(validate_model_audit(artifact,self.manifest,40960))
+        artifact['artifacts']['main_gguf']='wrong.gguf'
+        self.assertFalse(validate_model_audit(artifact,self.manifest,40960))
+
     def test_wrong_arithmetic_quantization_and_context_are_rejected(self):
         for change in ({'total_weight_bytes':12304457360},
                        {'quantization':{'main':'Q4_0','mtp':'IQ3_XXS'}},

@@ -1,0 +1,79 @@
+{
+  "accepted": false,
+  "client": "claude",
+  "client_version": "2.1.251 (Claude Code)",
+  "task": "engineering",
+  "seed": 831,
+  "minimum_seconds": 185,
+  "model": "default",
+  "upstream": "http://127.0.0.1:8090/v1",
+  "target": 32768,
+  "source_sha256": {
+    "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "stress.cli_acceptance": "6ff19c14cd9a653b296ff1d92f45ac2c1c9502fd9e11e566c5cf4ff518af7e46"
+  },
+  "turns": [
+    {
+      "number": 1,
+      "accepted": false,
+      "duration_seconds": 1.811,
+      "client_exit": 1,
+      "timed_out": false,
+      "native": {
+        "terminal_success": false,
+        "calls": 0,
+        "completed": 0,
+        "successful_tools": [],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [],
+        "written_files": [],
+        "baseline_failed": false,
+        "final_passed": false,
+        "workflow_ordered": false
+      },
+      "hidden_tests_exit": 1,
+      "historical_gold_passed": false,
+      "public_tests_sha256": "3b8aafb21fae022b26b83bbd58751fb20bd4c7047993d9dbac3c230e6092672a"
+    }
+  ],
+  "audits": [
+    {
+      "compacted": true,
+      "input_tokens": 113147,
+      "forwarded_tokens": 26754,
+      "omitted_estimated_tokens": 86393,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 0,
+      "upstream_status": 400
+    }
+  ],
+  "active_client_seconds": 1.811,
+  "elapsed_seconds": 2.322,
+  "session_id": "c307d816-bd65-4537-b639-8af755494e9a",
+  "failure": "native turn, hidden tests, history fact, or session continuity failed"
+}

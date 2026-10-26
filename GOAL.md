@@ -1,5 +1,13 @@
 # Productive local inference with Sift
 
+## Active stress campaign
+
+User requests the recent Sift version through local Qwen :8090 using OpenCode, Claude Code and Codex, with at least 21 persisted sessions, three evolving engineering/productivity task types, multiple real user/tool turns, and more than 180 active client seconds per accepted session. No idle padding or cloud inference substitution. Plan seven sessions per client, rotating engineering, configuration migration and daily CSV processing; hidden tests, immutable historical fact, complete tool groups, exact session IDs, timing and source hashes are required. Preserve every failed attempt rather than counting attempts as passes.
+
+Published Sift main remains e62ed81. New candidate is an uncommitted snapshot of D:/github/Sift codex/issue-59-error-code, recorded in evidence/stress-candidate.json; its source tree is preserved. Snapshot reconstruction from the recorded base+patch was independently exercised. Candidate offline tests: 575 passed/1 skipped initially; two Git-metadata fixture failures passed after correcting only the snapshot Git context. All three native CLI preflights passed, as did streamed Responses function/custom-tool continuation and exact native counts. Local tests: 24 passed (plus the candidate's dynamic tests in its suite).
+
+Campaign RUNNING, not complete: Claude and OpenCode engineering sessions each accepted with 9 turns, at 1040.878 and 1067.216 active seconds respectively. Their native traces were independently replayed by the publication checker. Codex engineering is the next live case after restoring a missing sandbox-readiness helper; its zero-turn setup failure is preserved and excluded. The controller schedules 21 samples sequentially and preserves failed attempts; final trace review and acceptance-rate/latency reporting remain required. Live status: evidence/stress-campaign.json; published point-in-time status: evidence/stress-checkpoint.json. Current controller uses a real process handle and process-scoped wakefulness; monitoring records host GPU occupancy. Root source and the gateway image are frozen for the matrix. See docs/STRESS.md. Earlier completion sections below describe the previous milestone only.
+
 ## Ask
 Run Qwen3.8 27B, 3/4-bit quantization and MTP, in Docker on this Windows host. Sift is a mandatory CPU compaction prerequisite for 256k-1M working histories, forwarding a dynamic 24k-64k working set. Commit and push scoped milestones in both repositories.
 

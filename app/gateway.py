@@ -3,6 +3,7 @@ import asyncio
 import json
 import threading
 import os
+import time
 from fastapi import HTTPException
 from litellm.integrations.custom_logger import CustomLogger
 from sift import CompactionError
@@ -12,16 +13,38 @@ PROTOCOLS={'completion':'openai','acompletion':'openai','anthropic_messages':'an
 FIELDS={'model','messages','system','tools','tool_choice','max_tokens','max_completion_tokens','temperature','top_p','stop','stop_sequences','response_format','seed','reasoning_effort','thinking','parallel_tool_calls'}
 
 class LocalSift(CustomLogger):
-    def __init__(self):
+    def __init__(self,wait_seconds=15):
         super().__init__()
         self.slot=threading.BoundedSemaphore(1)
+        self.wait_seconds=wait_seconds
 
     async def async_pre_call_hook(self,user_api_key_dict,cache,data,call_type):
+        if call_type in {'responses','aresponses'}:
+            # This dedicated alias translates to Chat Completions on this same
+            # gateway. The inner qwen route performs mandatory native Sift.
+            # Never hold the slot while waiting for the inner request.
+            if data.get('model')!='qwen3.8-27b-codex':
+                raise HTTPException(422,detail='Responses requires the local qwen3.8-27b-codex bridge alias')
+            if data.get('previous_response_id') or data.get('conversation'):
+                raise HTTPException(422,detail='Local Responses requires complete stateless input')
+            if data.get('use_chat_completions_api',True) is not True:
+                raise HTTPException(422,detail='Local Responses must use the guarded Chat bridge')
+            output=data.get('max_output_tokens',4096)
+            if type(output) is not int or not 0<output<=4096:
+                raise HTTPException(422,detail='max_output_tokens must be an integer in 1..4096')
+            data['max_output_tokens']=output
+            data['use_chat_completions_api']=True
+            data['api_base']='http://127.0.0.1:8090/v1'
+            data['api_key']=os.environ['LITELLM_MASTER_KEY']
+            return data
         protocol=PROTOCOLS.get(call_type)
         if protocol is None:
             raise HTTPException(422,detail='Local gateway supports Chat Completions and Anthropic Messages only')
-        if not self.slot.acquire(blocking=False):
-            raise HTTPException(429,detail='Sift busy',headers={'Retry-After':'1'})
+        deadline=time.monotonic()+self.wait_seconds
+        while not self.slot.acquire(blocking=False):
+            if time.monotonic()>=deadline:
+                raise HTTPException(429,detail='Sift busy',headers={'Retry-After':'1'})
+            await asyncio.sleep(.05)
         def run():
             try:
                 payload={k:v for k,v in data.items() if k in FIELDS}

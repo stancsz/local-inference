@@ -1,4 +1,16 @@
 model_list:
+  - model_name: qwen3.8-27b-codex
+    litellm_params:
+      model: openai/qwen3.8-27b
+      api_base: http://127.0.0.1:8090/v1
+      api_key: os.environ/LITELLM_MASTER_KEY
+      use_chat_completions_api: true
+      max_tokens: 4096
+    model_info:
+      mode: chat
+      max_input_tokens: 1000000
+      max_output_tokens: 4096
+      supports_function_calling: true
   - model_name: qwen3.8-27b
     litellm_params:
       model: openai/qwen3.8-27b

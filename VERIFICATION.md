@@ -1,5 +1,7 @@
 # Verified local workflow — 2026-10-26
 
+Current follow-up: [native CLI stress campaign](docs/STRESS.md) is running against a frozen uncommitted newer Sift candidate. Its final acceptance is pending. The first accepted session has nine turns and 1040.878 active seconds; this does not establish the requested full 21-session outcome. Runtime/source and task receipts are being refreshed, so the historical baseline reconciliation below must not be read as final acceptance of that campaign. The latest host delta includes additional desktop occupancy; [stress memory snapshot](evidence/stress-runtime-vram.json) records a 14.44 GB host delta versus the older baseline and an unchanged main WSL dedicated counter of 13.80 GB, with overlapping-counter caveats.
+
 The running product is an independent LiteLLM gateway at `127.0.0.1:8090` with mandatory CPU Sift compaction, backed by GPU llama.cpp. Its Docker network/configuration has no Subroute, cloud fallback, database, or Redis dependency. Development workers used Subroute separately; they are not product services.
 
 ## Recommended profile

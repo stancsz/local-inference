@@ -3,20 +3,38 @@
   "hash_scope": "UTF-8 source text with universal newlines; raw container hashes also retained. Git checkout CRLF/LF differences are normalized, no other whitespace changes.",
   "local_app_hashes": {
     "app/budget.py": "a8538f997cccbbb0ed696c5ce0178909023fb079ad5cd0bae183f48c69663dc3",
-    "app/gateway.py": "bc2286248c3d80961b48fdc3ad0140dc90089e7ab448af34f6a794a4be85c037"
+    "app/gateway.py": "606c44dcccf7b1c40617696da6402b18848d401e6fe703bf6efafda4456cd2df",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
   },
+  "sift_source": "tmp\\stress\\sift-candidate",
   "container": {
     "files": {
       "/app/budget.py": "a8538f997cccbbb0ed696c5ce0178909023fb079ad5cd0bae183f48c69663dc3",
-      "/app/gateway.py": "bc2286248c3d80961b48fdc3ad0140dc90089e7ab448af34f6a794a4be85c037",
-      "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503"
+      "/app/gateway.py": "606c44dcccf7b1c40617696da6402b18848d401e6fe703bf6efafda4456cd2df",
+      "/app/gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255",
+      "/usr/local/lib/python3.12/site-packages/sift/__init__.py": "f60ed7e806a2177ea331eae06042dcc533b0e8c05c3bacd461caee2d778dd218",
+      "/usr/local/lib/python3.12/site-packages/sift/core.py": "73f241d5493331c6e3ae732cea322238dabf935b5e5bf9469357f4f6a7a8a8a7",
+      "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503",
+      "/usr/local/lib/python3.12/site-packages/sift/litellm_proxy.py": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+      "/usr/local/lib/python3.12/site-packages/sift/litellm_responses.py": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03"
     },
     "raw_files": {
       "/app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
-      "/app/gateway.py": "bc2286248c3d80961b48fdc3ad0140dc90089e7ab448af34f6a794a4be85c037",
-      "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503"
+      "/app/gateway.py": "606c44dcccf7b1c40617696da6402b18848d401e6fe703bf6efafda4456cd2df",
+      "/app/gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255",
+      "/usr/local/lib/python3.12/site-packages/sift/__init__.py": "f60ed7e806a2177ea331eae06042dcc533b0e8c05c3bacd461caee2d778dd218",
+      "/usr/local/lib/python3.12/site-packages/sift/core.py": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+      "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+      "/usr/local/lib/python3.12/site-packages/sift/litellm_proxy.py": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+      "/usr/local/lib/python3.12/site-packages/sift/litellm_responses.py": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03"
     },
     "litellm": "1.106.4"
   },
-  "sift_dynamic_sha256": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503"
+  "sift_hashes": {
+    "__init__.py": "f60ed7e806a2177ea331eae06042dcc533b0e8c05c3bacd461caee2d778dd218",
+    "core.py": "73f241d5493331c6e3ae732cea322238dabf935b5e5bf9469357f4f6a7a8a8a7",
+    "dynamic.py": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503",
+    "litellm_proxy.py": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "litellm_responses.py": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03"
+  }
 }

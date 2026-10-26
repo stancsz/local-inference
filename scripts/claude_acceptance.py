@@ -18,8 +18,13 @@ TASKS=[
 ]
 
 def validate_model_audit(obj, manifest, expected_context):
-    if not isinstance(obj,dict) or set(obj)!={'repository','revision','total_weight_bytes','quantization','configured_context_size','limitations'}:
+    required={'repository','revision','total_weight_bytes','quantization','configured_context_size','limitations'}
+    if not isinstance(obj,dict) or not required<=set(obj)<=required|{'artifacts'}:
         return False
+    if 'artifacts' in obj:
+        expected={'main_gguf':next(Path(f['file']).name for f in manifest['files'] if not f['file'].startswith('MTP/')),
+                  'mtp_gguf':next(Path(f['file']).name for f in manifest['files'] if f['file'].startswith('MTP/'))}
+        if obj['artifacts']!=expected:return False
     quant=obj.get('quantization')
     if isinstance(quant,dict):
         mapping=quant.get('main')=='IQ3_XXS' and quant.get('mtp')=='Q4_0'
@@ -72,6 +77,7 @@ def main():
             prompt+=' Explicitly call the policy adaptive. Put commands in fenced powershell blocks. For logs use exactly: docker compose logs --no-color gateway > tmp/sift-runtime.log'
         if name=='model-audit':
             prompt+=' The quantization field must identify BOTH the main IQ3_XXS and MTP Q4_0 quantizations from their filenames. Keep all required fields, and verify repository/revision against the manifest.'
+            prompt+=' Include both exact GGUF basenames somewhere in the JSON so each label is traceable to its artifact. Do not infer Sift policy from SIFT_TARGET alone; omit that discussion unless you read README.md to verify its adaptive meaning.'
             prompt+=' Use Bash with python -c to calculate the exact sum from the manifest; do not calculate the large integers mentally. Bash is allowed only for that Python calculation. Use Read/Edit for the artifact.'
         with tempfile.TemporaryDirectory(prefix='local-qwen-claude-') as config:
             env=dict(os.environ)

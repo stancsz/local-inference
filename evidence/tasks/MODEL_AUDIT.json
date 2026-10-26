@@ -6,11 +6,14 @@
     "main": "IQ3_XXS",
     "mtp": "Q4_0"
   },
+  "artifacts": {
+    "main_gguf": "Qwen3.8-27B-UD-IQ3_XXS.gguf",
+    "mtp_gguf": "mtp-Qwen3.8-27B-Q4_0.gguf"
+  },
   "configured_context_size": 40960,
   "limitations": [
-    "total_weight_bytes is the sum of the manifest's downloaded model (10934860704) and MTP (1369590656) file byte counts; it is a download/manifest size, not a measured GPU residency figure.",
-    "No GPU residency or memory-usage value is inferred from these file sizes; the audit records file byte counts only.",
-    "configured_context_size is the compose.yaml default (${CONTEXT_SIZE:-40960}); it is the configured default and not a measured runtime context.",
-    "Quantizations are identified from the manifest filenames (Qwen3.8-27B-UD-IQ3_XXS.gguf and mtp-Qwen3.8-27B-Q4_0.gguf); they are filename-derived labels, not independently measured quantization properties."
+    "total_weight_bytes is the sum of the downloaded main and MTP GGUF file sizes (10934860704 + 1369590656) from the manifest; it is not a measurement of GPU residency",
+    "configured_context_size is the compose.yaml default (CONTEXT_SIZE default 40960); the actual runtime value may be overridden by the environment",
+    "GPU residency is not inferred from file size; no measured residency value is asserted here"
   ]
 }

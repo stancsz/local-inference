@@ -1,14 +1,13 @@
 {
   "text": {
-    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfQ2tKZ21URnlRY3Z4cGdkWTViSDFUVk8wZnE5Q0k2dGU=",
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3Bfejg2NGF5WnVoSlRnTmZ6VGhZUnhKQ0U5TFhtdTFjSk8=",
     "type": "message",
     "role": "assistant",
     "model": "qwen3.8-27b",
     "stop_sequence": null,
     "usage": {
-      "input_tokens": 4,
-      "output_tokens": 8,
-      "cache_read_input_tokens": 17
+      "input_tokens": 21,
+      "output_tokens": 8
     },
     "content": [
       {
@@ -27,20 +26,19 @@
     "sha256": "f47148e332e3b0499be7e7994b458c869755f4bbf0f87d7756d60ac2716ecb59"
   },
   "tool": {
-    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfT2JKZ3A0T0FwMk5TVDkwbmFNQlR2Z2VuRFhTTmtpUHg=",
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfNWJYd21rQ0lHZmQ2bDVzeU5SQ2lTZFhHaGFQam5xMU8=",
     "type": "message",
     "role": "assistant",
     "model": "qwen3.8-27b",
     "stop_sequence": null,
     "usage": {
-      "input_tokens": 4,
-      "output_tokens": 32,
-      "cache_read_input_tokens": 285
+      "input_tokens": 289,
+      "output_tokens": 32
     },
     "content": [
       {
         "type": "tool_use",
-        "id": "call_UXCnb7FpoRYh5Cqeifjp62zZaP6sBX2J",
+        "id": "call_sG5GdC6JxSDXeuGL2X8pLWRlGXuUcN7m",
         "name": "route_marker",
         "input": {
           "marker": "LOCAL_QWEN_TOOL_OK"
@@ -51,7 +49,7 @@
     "stop_details": null
   },
   "continuation": {
-    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfTjl3WXFZbU9uNkJPMEM5bmNqYzZMMWZnOVprQ0NpUTM=",
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfZXFYU29UZE83aHVBNzAwRWl6Zmd0SGV2Q2o4Z2hGd3o=",
     "type": "message",
     "role": "assistant",
     "model": "qwen3.8-27b",
@@ -70,7 +68,7 @@
     "stop_reason": "end_turn",
     "stop_details": null
   },
-  "seconds": 2.089,
+  "seconds": 2.937,
   "passed": true,
   "endpoint": "http://127.0.0.1:8090/v1/messages"
 }

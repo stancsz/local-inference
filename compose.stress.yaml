@@ -1,0 +1,6 @@
+services:
+  gateway:
+    image: local-inference-gateway:stress-candidate
+    build:
+      context: ..
+      dockerfile: local-inference/docker/stress-gateway.Dockerfile

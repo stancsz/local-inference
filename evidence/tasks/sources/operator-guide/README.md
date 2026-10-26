@@ -40,7 +40,7 @@ Requirements: Docker Desktop with Linux GPU support, NVIDIA driver, Python 3.11+
 git clone https://github.com/stancsz/local-inference.git
 git clone https://github.com/stancsz/sift.git
 cd sift
-git checkout 89c891640bc2647012d9eef9762571a13d1e04b5
+git checkout e62ed81d8fbf07b076a2cf5c8a9f94f61f509105
 cd ../local-inference
 python scripts/setup_env.py
 python scripts/download_ranges.py
@@ -80,7 +80,7 @@ docker compose down
 
 Use `python scripts/claude_local.py` for normal interactive work, or append CLI flags such as `-p "your task"`. The wrapper isolates local configuration and credentials and preserves the invoking working directory. Tests use temporary isolated configuration and process-local environment variables; they do not modify the user's saved model or API configuration. Outputs, native event streams, and stderr are under `tmp/acceptance`; the durable summary is `evidence/claude-acceptance.json`. Accepted files and the source snapshots actually read are published under `evidence/tasks`, with SHA256s and successful native-edit reconstruction. This installed Claude CLI exposes a unified `Edit` tool. The parent inspects report quality separately; validators do not promise universal semantic grading.
 
-The context test established 257,539 and 1,001,638 native raw input tokens, reduced to 32,689 and 32,648 native forwarded tokens, with the required evidence retained and answered correctly. Selection took about 1.2 and 2.6 seconds in the initial runtime receipts. Live gateway audits are correlated by SHA-256 and matched against independent compaction counts and provider usage. This is a synthetic retention probe, separate from the three real CLI productivity tasks; it does not prove general semantic equivalence. A mandatory latest request too large to fit fails closed. The raw ceiling is 1,050,000 native tokens; Sift retains its pre-count character/node bounds.
+The adaptive context test established 257,539 and 1,001,638 native raw input tokens. It chose different budgets of 32,193 and 40,576 and forwarded 32,053 and 33,300 tokens, respectively, with the required evidence retained and answered correctly. These probes requested 128 output tokens; reserving all 4,096 lowers the daily ceiling to 36,608. Live gateway audits are correlated by SHA-256 and matched against independent compaction counts and provider usage. This is a synthetic retention probe, separate from the three real CLI productivity tasks; it does not prove general semantic equivalence. A mandatory latest request too large to fit fails closed. The raw ceiling is 1,050,000 native tokens; Sift retains its pre-count character/node bounds.
 
 ## Host VRAM
 
@@ -96,4 +96,4 @@ The supported local profile disables thinking. OpenAI `max_completion_tokens` is
 - [GGUF weights and MTP artifacts](https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/tree/main)
 - [MTP guide](https://unsloth.ai/docs/models/mtp)
 - [llama.cpp native Messages and token-count endpoints](https://github.com/ggml-org/llama.cpp/tree/master/tools/server)
-- [Sift dynamic API](https://github.com/stancsz/sift/pull/57)
+- [Sift request-adaptive budgets](https://github.com/stancsz/sift/pull/58)

@@ -1,0 +1,608 @@
+{
+  "captured_at": "2026-10-26T23:13:45.062816+00:00",
+  "cli_preflights": [
+    {
+      "client": "claude",
+      "model": "qwen3.8-27b",
+      "upstream": "http://127.0.0.1:8090/v1",
+      "exit": 0,
+      "native": {
+        "terminal_success": true,
+        "calls": 1,
+        "completed": 1,
+        "successful_tools": [
+          "Read"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [],
+        "written_files": [],
+        "baseline_failed": false,
+        "final_passed": false,
+        "workflow_ordered": false
+      },
+      "audits": [
+        {
+          "compacted": true,
+          "input_tokens": 112945,
+          "forwarded_tokens": 26551,
+          "omitted_estimated_tokens": 86394,
+          "preserved_recent_turns": 0,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 512,
+          "method": "query_aware_extract",
+          "counting_tool_schema_items_filled": false,
+          "counting_responses_tools_translated": false,
+          "counting_responses_catalog_serialized": false,
+          "counting_tool_floor_adjustment": 288,
+          "counting_reasoning_content_floor_applied": false,
+          "protocol": "anthropic_messages",
+          "input_shapes": [
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "role"
+              ]
+            }
+          ],
+          "gold_retained": true,
+          "tool_results": 0,
+          "upstream_status": 200
+        },
+        {
+          "compacted": true,
+          "input_tokens": 113001,
+          "forwarded_tokens": 26607,
+          "omitted_estimated_tokens": 86394,
+          "preserved_recent_turns": 0,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 512,
+          "method": "query_aware_extract",
+          "counting_tool_schema_items_filled": false,
+          "counting_responses_tools_translated": false,
+          "counting_responses_catalog_serialized": false,
+          "counting_tool_floor_adjustment": 288,
+          "counting_reasoning_content_floor_applied": false,
+          "protocol": "anthropic_messages",
+          "input_shapes": [
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "role"
+              ]
+            },
+            {
+              "role": "assistant",
+              "keys": [
+                "content",
+                "role"
+              ]
+            },
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "role"
+              ]
+            }
+          ],
+          "gold_retained": true,
+          "tool_results": 1,
+          "upstream_status": 200
+        }
+      ],
+      "passed": true,
+      "final_answer": "Marker: `LOCAL_QWEN_CLAUDE_TOOLS_OK`\nAPPROVED acceptance_delay_seconds: `37`",
+      "native_trace": "evidence/stress-preflight/claude.jsonl.gz",
+      "raw_sha256": "e844486135ee05504c2c925b136802f092bfce9048cf962dc6d56226ddc12cd5"
+    },
+    {
+      "client": "opencode",
+      "model": "qwen3.8-27b",
+      "upstream": "http://127.0.0.1:8090/v1",
+      "exit": 0,
+      "native": {
+        "terminal_success": true,
+        "calls": 1,
+        "completed": 1,
+        "successful_tools": [
+          "read"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [],
+        "written_files": [],
+        "baseline_failed": false,
+        "final_passed": false,
+        "workflow_ordered": false
+      },
+      "audits": [
+        {
+          "compacted": true,
+          "input_tokens": 112198,
+          "forwarded_tokens": 25804,
+          "omitted_estimated_tokens": 86394,
+          "preserved_recent_turns": 1,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 512,
+          "method": "query_aware_extract",
+          "counting_tool_schema_items_filled": false,
+          "counting_responses_tools_translated": false,
+          "counting_responses_catalog_serialized": false,
+          "counting_tool_floor_adjustment": 0,
+          "counting_reasoning_content_floor_applied": false,
+          "protocol": "acompletion",
+          "input_shapes": [
+            {
+              "role": "system",
+              "keys": [
+                "content",
+                "role"
+              ]
+            },
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "role"
+              ]
+            },
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "role"
+              ]
+            }
+          ],
+          "gold_retained": true,
+          "tool_results": 0,
+          "upstream_status": 200
+        },
+        {
+          "compacted": true,
+          "input_tokens": 117084,
+          "forwarded_tokens": 30690,
+          "omitted_estimated_tokens": 86394,
+          "preserved_recent_turns": 0,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 512,
+          "method": "query_aware_extract",
+          "counting_tool_schema_items_filled": false,
+          "counting_responses_tools_translated": false,
+          "counting_responses_catalog_serialized": false,
+          "counting_tool_floor_adjustment": 642,
+          "counting_reasoning_content_floor_applied": false,
+          "protocol": "acompletion",
+          "input_shapes": [
+            {
+              "role": "system",
+              "keys": [
+                "content",
+                "role"
+              ]
+            },
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "role"
+              ]
+            }
+          ],
+          "gold_retained": true,
+          "tool_results": 0,
+          "upstream_status": 200
+        },
+        {
+          "compacted": true,
+          "input_tokens": 117212,
+          "forwarded_tokens": 30818,
+          "omitted_estimated_tokens": 86394,
+          "preserved_recent_turns": 0,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 512,
+          "method": "query_aware_extract",
+          "counting_tool_schema_items_filled": false,
+          "counting_responses_tools_translated": false,
+          "counting_responses_catalog_serialized": false,
+          "counting_tool_floor_adjustment": 642,
+          "counting_reasoning_content_floor_applied": false,
+          "protocol": "acompletion",
+          "input_shapes": [
+            {
+              "role": "system",
+              "keys": [
+                "content",
+                "role"
+              ]
+            },
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "role"
+              ]
+            },
+            {
+              "role": "assistant",
+              "keys": [
+                "content",
+                "role",
+                "tool_calls"
+              ]
+            },
+            {
+              "role": "tool",
+              "keys": [
+                "content",
+                "role",
+                "tool_call_id"
+              ]
+            }
+          ],
+          "gold_retained": true,
+          "tool_results": 1,
+          "upstream_status": 200
+        }
+      ],
+      "passed": true,
+      "final_answer": "Marker: LOCAL_QWEN_OPENCODE_TOOLS_OK\n\nAPPROVED acceptance_delay_seconds: 37",
+      "native_trace": "evidence/stress-preflight/opencode.jsonl.gz",
+      "raw_sha256": "7772faa2044840dcb6768758bdb0bed0205203531520d7d61bd53e189bf7d4c6"
+    },
+    {
+      "client": "codex",
+      "model": "qwen3.8-27b-codex",
+      "upstream": "http://127.0.0.1:8090/v1",
+      "exit": 0,
+      "native": {
+        "terminal_success": true,
+        "calls": 1,
+        "completed": 1,
+        "successful_tools": [
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [],
+        "written_files": [],
+        "baseline_failed": false,
+        "final_passed": false,
+        "workflow_ordered": false
+      },
+      "audits": [
+        {
+          "compacted": true,
+          "input_tokens": 123604,
+          "forwarded_tokens": 32739,
+          "omitted_estimated_tokens": 90865,
+          "preserved_recent_turns": 1,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 421,
+          "method": "query_aware_extract",
+          "counting_tool_schema_items_filled": false,
+          "counting_responses_tools_translated": true,
+          "counting_responses_catalog_serialized": false,
+          "counting_tool_floor_adjustment": 656,
+          "counting_reasoning_content_floor_applied": false,
+          "protocol": "aresponses",
+          "input_shapes": [
+            {
+              "role": "developer",
+              "keys": [
+                "content",
+                "id",
+                "role",
+                "type"
+              ],
+              "type": "message"
+            },
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "id",
+                "role",
+                "type"
+              ],
+              "type": "message"
+            },
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "id",
+                "role",
+                "type"
+              ],
+              "type": "message"
+            }
+          ],
+          "gold_retained": true,
+          "tool_results": 0,
+          "upstream_status": 200
+        },
+        {
+          "compacted": true,
+          "input_tokens": 123696,
+          "forwarded_tokens": 32733,
+          "omitted_estimated_tokens": 90963,
+          "preserved_recent_turns": 1,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 419,
+          "method": "query_aware_extract",
+          "counting_tool_schema_items_filled": false,
+          "counting_responses_tools_translated": true,
+          "counting_responses_catalog_serialized": false,
+          "counting_tool_floor_adjustment": 656,
+          "counting_reasoning_content_floor_applied": false,
+          "protocol": "aresponses",
+          "input_shapes": [
+            {
+              "role": "developer",
+              "keys": [
+                "content",
+                "id",
+                "role",
+                "type"
+              ],
+              "type": "message"
+            },
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "id",
+                "role",
+                "type"
+              ],
+              "type": "message"
+            },
+            {
+              "role": "user",
+              "keys": [
+                "content",
+                "id",
+                "role",
+                "type"
+              ],
+              "type": "message"
+            },
+            {
+              "role": "function_call",
+              "keys": [
+                "arguments",
+                "call_id",
+                "id",
+                "name",
+                "type"
+              ],
+              "type": "function_call"
+            },
+            {
+              "role": "function_call_output",
+              "keys": [
+                "call_id",
+                "id",
+                "output",
+                "type"
+              ],
+              "type": "function_call_output"
+            }
+          ],
+          "gold_retained": true,
+          "tool_results": 1,
+          "upstream_status": 200
+        }
+      ],
+      "passed": true,
+      "final_answer": "Marker: `LOCAL_QWEN_CODEX_TOOLS_OK`\n\nAPPROVED `acceptance_delay_seconds`: 37",
+      "native_trace": "evidence/stress-preflight/codex.jsonl.gz",
+      "raw_sha256": "1b01a065d67deab4f9e160fed2a47015ea6e80ed1992bdf5824a45fef517b792"
+    }
+  ],
+  "offline_candidate": {
+    "initial": "575 passed, 1 skipped, 2 Git-context fixture failures",
+    "affected_recheck": "2 passed after setting correct base Git metadata; no candidate source changes"
+  },
+  "local_tests": "24 passed",
+  "legacy_tasks": [
+    {
+      "task": "vram-plan",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 15.4,
+      "native_tools": [
+        "Read",
+        "Read",
+        "Read",
+        "Read",
+        "Edit"
+      ],
+      "artifact": "tmp\\acceptance\\vram-plan.md",
+      "arithmetic_valid": true,
+      "usage": {
+        "input_tokens": 4405,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 9423,
+        "output_tokens": 765,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "published_artifact": "evidence/tasks/VRAM_PLAN.md",
+      "artifact_sha256": "5eecf53785ef6ba26172337d6478a6a4ec233dcfe4fbe330e45413c71e63f849",
+      "native_edit_reconstruction_matches": true,
+      "source_snapshots": [
+        {
+          "original": "evidence/host-vram.json",
+          "snapshot": "evidence/tasks/sources/vram-plan/host-vram.json",
+          "sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55",
+          "complete_native_read": true,
+          "before_first_artifact_edit": true
+        },
+        {
+          "original": "evidence/runtime-vram.json",
+          "snapshot": "evidence/tasks/sources/vram-plan/runtime-vram.json",
+          "sha256": "3a61fe8e24b322a647a8d565f45f313954e761b8dd132be35596f659dfe8da45",
+          "complete_native_read": true,
+          "before_first_artifact_edit": true
+        },
+        {
+          "original": "evidence/model-manifest.json",
+          "snapshot": "evidence/tasks/sources/vram-plan/model-manifest.json",
+          "sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+          "complete_native_read": true,
+          "before_first_artifact_edit": true
+        }
+      ]
+    },
+    {
+      "task": "operator-guide",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 16.32,
+      "native_tools": [
+        "Read",
+        "Read",
+        "Read",
+        "Read",
+        "Edit"
+      ],
+      "artifact": "tmp\\acceptance\\OPERATIONS.md",
+      "arithmetic_valid": null,
+      "usage": {
+        "input_tokens": 6216,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 13470,
+        "output_tokens": 620,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "published_artifact": "evidence/tasks/OPERATIONS.md",
+      "artifact_sha256": "1d14f3cae025de190fe102d58a74a5c6b0801a0d297f6bf6335d052653896720",
+      "native_edit_reconstruction_matches": true,
+      "source_snapshots": [
+        {
+          "original": "compose.yaml",
+          "snapshot": "evidence/tasks/sources/operator-guide/compose.yaml",
+          "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+          "complete_native_read": true,
+          "before_first_artifact_edit": true
+        },
+        {
+          "original": "gateway.yaml",
+          "snapshot": "evidence/tasks/sources/operator-guide/gateway.yaml",
+          "sha256": "c73b6ef22545aa12f27362b7b2b7b60028c5f7fa024a721e58e07cacef70b9d4",
+          "complete_native_read": true,
+          "before_first_artifact_edit": true
+        },
+        {
+          "original": "README.md",
+          "snapshot": "evidence/tasks/sources/operator-guide/README.md",
+          "sha256": "89a3b4e5f0ad3f5d0ccd6a557053233ca7fa3d32f3af7cd21f8a27081d13063a",
+          "complete_native_read": true,
+          "before_first_artifact_edit": true
+        }
+      ]
+    },
+    {
+      "task": "model-audit",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.62,
+      "native_tools": [
+        "Read",
+        "Read",
+        "Read",
+        "Bash",
+        "Edit"
+      ],
+      "artifact": "tmp\\acceptance\\model-audit.json",
+      "arithmetic_valid": true,
+      "usage": {
+        "input_tokens": 3334,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 11017,
+        "output_tokens": 911,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "",
+        "iterations": [],
+        "speed": "standard"
+      },
+      "validation_reassessment": "Correct native artifact retained. Optional artifacts mapping was rejected by the legacy exact-six-key validator; accepted only after exact manifest basename validation and negative regression tests.",
+      "published_artifact": "evidence/tasks/MODEL_AUDIT.json",
+      "artifact_sha256": "634861eb588d12a9d5c69d59b8707159b5fe21fa1fb264f35ab850ad50be8c96",
+      "native_edit_reconstruction_matches": true,
+      "source_snapshots": [
+        {
+          "original": "evidence/model-manifest.json",
+          "snapshot": "evidence/tasks/sources/model-audit/model-manifest.json",
+          "sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+          "complete_native_read": true,
+          "before_first_artifact_edit": true
+        },
+        {
+          "original": "compose.yaml",
+          "snapshot": "evidence/tasks/sources/model-audit/compose.yaml",
+          "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+          "complete_native_read": true,
+          "before_first_artifact_edit": true
+        }
+      ]
+    }
+  ],
+  "setup_failures_preserved": [
+    "Claude initial background-title request overlapped and returned429; bounded native Sift admission wait and nonessential traffic setting corrected it.",
+    "Codex initial profile advertised unsupported web search; disabled in isolated local profile.",
+    "First long-session launcher used default alias; corrected to explicit local Qwen aliases before qualifying run.",
+    "Legacy model-audit validator rejected a correct explicit artifact mapping; optional mapping now requires exact manifest values and negative tests."
+  ],
+  "scope": "Preflights and one completed long session do not establish the full21-session outcome."
+}

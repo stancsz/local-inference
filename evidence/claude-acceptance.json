@@ -1,128 +1,9 @@
 [
   {
-    "task": "model-audit",
-    "passed": true,
-    "exit_code": 0,
-    "seconds": 21.3,
-    "native_tools": [
-      "Read",
-      "Read",
-      "Read",
-      "Bash",
-      "Edit"
-    ],
-    "artifact": "tmp\\acceptance\\model-audit.json",
-    "arithmetic_valid": true,
-    "usage": {
-      "input_tokens": 3364,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 7978,
-      "output_tokens": 1013,
-      "output_tokens_details": {
-        "thinking_tokens": 0
-      },
-      "server_tool_use": {
-        "web_search_requests": 0,
-        "web_fetch_requests": 0
-      },
-      "service_tier": "standard",
-      "cache_creation": {
-        "ephemeral_1h_input_tokens": 0,
-        "ephemeral_5m_input_tokens": 0
-      },
-      "inference_geo": "",
-      "iterations": [],
-      "speed": "standard"
-    },
-    "validation_reassessment": "Parent verified correct calculator result and explicit main/MTP dictionary mapping. Previous validator incorrectly required quantization to be a string. Artifact unchanged.",
-    "published_artifact": "evidence/tasks/MODEL_AUDIT.json",
-    "artifact_sha256": "a5961527932539e512de8480d25c4f474a3ce0364bd60287bd0b3a7da3fcccc4",
-    "native_edit_reconstruction_matches": true,
-    "source_snapshots": [
-      {
-        "original": "compose.yaml",
-        "snapshot": "evidence/tasks/sources/model-audit/compose.yaml",
-        "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
-        "complete_native_read": true,
-        "before_first_artifact_edit": true
-      },
-      {
-        "original": "evidence/model-manifest.json",
-        "snapshot": "evidence/tasks/sources/model-audit/model-manifest.json",
-        "sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
-        "complete_native_read": true,
-        "before_first_artifact_edit": true
-      }
-    ]
-  },
-  {
-    "task": "operator-guide",
-    "passed": true,
-    "exit_code": 0,
-    "seconds": 16.2,
-    "native_tools": [
-      "Read",
-      "Read",
-      "Read",
-      "Read",
-      "Edit",
-      "Read"
-    ],
-    "artifact": "tmp\\acceptance\\OPERATIONS.md",
-    "arithmetic_valid": null,
-    "usage": {
-      "input_tokens": 6313,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 19032,
-      "output_tokens": 590,
-      "output_tokens_details": {
-        "thinking_tokens": 0
-      },
-      "server_tool_use": {
-        "web_search_requests": 0,
-        "web_fetch_requests": 0
-      },
-      "service_tier": "standard",
-      "cache_creation": {
-        "ephemeral_1h_input_tokens": 0,
-        "ephemeral_5m_input_tokens": 0
-      },
-      "inference_geo": "",
-      "iterations": [],
-      "speed": "standard"
-    },
-    "published_artifact": "evidence/tasks/OPERATIONS.md",
-    "artifact_sha256": "5a2f73aeebc650178493c4bdbdef01c93b18414e40d0a704aacc8451efa35525",
-    "native_edit_reconstruction_matches": true,
-    "source_snapshots": [
-      {
-        "original": "compose.yaml",
-        "snapshot": "evidence/tasks/sources/operator-guide/compose.yaml",
-        "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
-        "complete_native_read": true,
-        "before_first_artifact_edit": true
-      },
-      {
-        "original": "README.md",
-        "snapshot": "evidence/tasks/sources/operator-guide/README.md",
-        "sha256": "b1ad5a72c4bc0db0935300278a9defba4d3ba234257dafc8a64ca005746cc2e8",
-        "complete_native_read": true,
-        "before_first_artifact_edit": true
-      },
-      {
-        "original": "gateway.yaml",
-        "snapshot": "evidence/tasks/sources/operator-guide/gateway.yaml",
-        "sha256": "49ac7ed748988e5826c39b42c08e69053f180aedb1ec036784c461797fa2e9ba",
-        "complete_native_read": true,
-        "before_first_artifact_edit": true
-      }
-    ]
-  },
-  {
     "task": "vram-plan",
     "passed": true,
     "exit_code": 0,
-    "seconds": 17.26,
+    "seconds": 15.4,
     "native_tools": [
       "Read",
       "Read",
@@ -133,10 +14,10 @@
     "artifact": "tmp\\acceptance\\vram-plan.md",
     "arithmetic_valid": true,
     "usage": {
-      "input_tokens": 4640,
+      "input_tokens": 4405,
       "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 9654,
-      "output_tokens": 923,
+      "cache_read_input_tokens": 9423,
+      "output_tokens": 765,
       "output_tokens_details": {
         "thinking_tokens": 0
       },
@@ -154,7 +35,7 @@
       "speed": "standard"
     },
     "published_artifact": "evidence/tasks/VRAM_PLAN.md",
-    "artifact_sha256": "ea7e08a61dfe292cf257a5c91aa164b34ec29f75f6015263a62ff4e849bccd4c",
+    "artifact_sha256": "5eecf53785ef6ba26172337d6478a6a4ec233dcfe4fbe330e45413c71e63f849",
     "native_edit_reconstruction_matches": true,
     "source_snapshots": [
       {
@@ -167,7 +48,7 @@
       {
         "original": "evidence/runtime-vram.json",
         "snapshot": "evidence/tasks/sources/vram-plan/runtime-vram.json",
-        "sha256": "201658ed30470b055b2c6d56145a89186247da791ee546d8af5fb985dbe3e18c",
+        "sha256": "3a61fe8e24b322a647a8d565f45f313954e761b8dd132be35596f659dfe8da45",
         "complete_native_read": true,
         "before_first_artifact_edit": true
       },
@@ -175,6 +56,124 @@
         "original": "evidence/model-manifest.json",
         "snapshot": "evidence/tasks/sources/vram-plan/model-manifest.json",
         "sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      }
+    ]
+  },
+  {
+    "task": "operator-guide",
+    "passed": true,
+    "exit_code": 0,
+    "seconds": 16.32,
+    "native_tools": [
+      "Read",
+      "Read",
+      "Read",
+      "Read",
+      "Edit"
+    ],
+    "artifact": "tmp\\acceptance\\OPERATIONS.md",
+    "arithmetic_valid": null,
+    "usage": {
+      "input_tokens": 6216,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 13470,
+      "output_tokens": 620,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "",
+      "iterations": [],
+      "speed": "standard"
+    },
+    "published_artifact": "evidence/tasks/OPERATIONS.md",
+    "artifact_sha256": "1d14f3cae025de190fe102d58a74a5c6b0801a0d297f6bf6335d052653896720",
+    "native_edit_reconstruction_matches": true,
+    "source_snapshots": [
+      {
+        "original": "compose.yaml",
+        "snapshot": "evidence/tasks/sources/operator-guide/compose.yaml",
+        "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      },
+      {
+        "original": "gateway.yaml",
+        "snapshot": "evidence/tasks/sources/operator-guide/gateway.yaml",
+        "sha256": "c73b6ef22545aa12f27362b7b2b7b60028c5f7fa024a721e58e07cacef70b9d4",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      },
+      {
+        "original": "README.md",
+        "snapshot": "evidence/tasks/sources/operator-guide/README.md",
+        "sha256": "89a3b4e5f0ad3f5d0ccd6a557053233ca7fa3d32f3af7cd21f8a27081d13063a",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      }
+    ]
+  },
+  {
+    "task": "model-audit",
+    "passed": true,
+    "exit_code": 0,
+    "seconds": 20.62,
+    "native_tools": [
+      "Read",
+      "Read",
+      "Read",
+      "Bash",
+      "Edit"
+    ],
+    "artifact": "tmp\\acceptance\\model-audit.json",
+    "arithmetic_valid": true,
+    "usage": {
+      "input_tokens": 3334,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 11017,
+      "output_tokens": 911,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "",
+      "iterations": [],
+      "speed": "standard"
+    },
+    "validation_reassessment": "Correct native artifact retained. Optional artifacts mapping was rejected by the legacy exact-six-key validator; accepted only after exact manifest basename validation and negative regression tests.",
+    "published_artifact": "evidence/tasks/MODEL_AUDIT.json",
+    "artifact_sha256": "634861eb588d12a9d5c69d59b8707159b5fe21fa1fb264f35ab850ad50be8c96",
+    "native_edit_reconstruction_matches": true,
+    "source_snapshots": [
+      {
+        "original": "evidence/model-manifest.json",
+        "snapshot": "evidence/tasks/sources/model-audit/model-manifest.json",
+        "sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      },
+      {
+        "original": "compose.yaml",
+        "snapshot": "evidence/tasks/sources/model-audit/compose.yaml",
+        "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
         "complete_native_read": true,
         "before_first_artifact_edit": true
       }
