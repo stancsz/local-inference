@@ -1,0 +1,11 @@
+{
+  "accepted": false,
+  "counted": false,
+  "state": "cancelled_by_parent",
+  "reason": "Parent trace replay identified unsupported absolute workspace write paths; halt this test before changing frozen harness source.",
+  "pid": 3028,
+  "captured_at": "2026-10-26T23:26:15.4634918Z",
+  "partial_native_stream_available": false,
+  "source_epoch": "39-test relative-only parser",
+  "upstream": "http://127.0.0.1:8090/v1"
+}

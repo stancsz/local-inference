@@ -29,7 +29,7 @@ def publish(path):
         assert not any(s and len(s)>12 and s.encode() in blob for s in secrets),'Credential found in native evidence'
         events=parse_events(blob.decode('utf-8'))
         assert session_id(record['client'],events)==record['session_id']
-        assert native_evidence(record['client'],events)==turn['native']
+        assert native_evidence(record['client'],events,path.parent/'workspace')==turn['native']
         assert turn['accepted'] and turn['hidden_tests_exit']==0 and turn['historical_gold_passed']
         expected=stage(record['task'],index,record['seed']+index)['tests'].encode()
         # The controller writes public fixture text using Windows newlines.

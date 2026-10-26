@@ -116,7 +116,7 @@ def run(args):
                       "as a standalone shell tool call (PowerShell may prefix &); no cd, redirection, pipes or combined commands. "
                       "A baseline failure is expected when requirements expand. Continue to fix it, then execute final tests and report actual results.")
             if args.client == "codex":
-                prompt = prompt.replace("native Read tools", "native shell reads").replace("native Edit tools", "native apply_patch").replace("native Write tool", "native apply_patch")
+                prompt = prompt.replace("native Read tools", "native shell reads").replace("native Edit tools", "native apply_patch or standalone PowerShell Set-Content -Path FILE -Value CONTENT").replace("native Edit", "native apply_patch or standalone PowerShell Set-Content -Path FILE -Value CONTENT")
             command, env = child_command(args.client, executable(args.client), root / "client-home",
                                          f"http://127.0.0.1:{port}/v1", args.model, prompt,
                                          persist=True, session_id=identifier)
@@ -146,7 +146,7 @@ def run(args):
             returned_id = session_id(args.client, events)
             if identifier is None:
                 identifier = returned_id
-            native = native_evidence(args.client, events)
+            native = native_evidence(args.client, events, workspace)
             # A second, different set of cases is never shown to the agent.
             hidden = stage(args.task, number, args.seed + number + 100003)["tests"]
             checked = subprocess.run([sys.executable, "-c", hidden], cwd=workspace, capture_output=True, text=True, timeout=15)

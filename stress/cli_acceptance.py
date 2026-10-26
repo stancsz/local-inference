@@ -40,10 +40,58 @@ def inject_history(data: dict, lines: int = 8000) -> dict:
     return result
 
 
-def native_evidence(client: str, events: list[dict]) -> dict:
+FIXTURE_WRITE_NAMES = ("task.py", "evidence.json")
+
+
+def unwrap_shell_command(command: str) -> str:
+    """Strip the Windows PowerShell launcher wrapper from a native shell call."""
+    wrapper = re.match(r'''^["'][^\r\n]*?(?:pwsh|powershell)\.exe["']\s+(?:-NoProfile\s+)?-Command\s+''',
+                       command, re.I)
+    if wrapper:
+        body = command[wrapper.end():].strip()
+        # CLI-rendered PowerShell arguments can concatenate quoted pieces
+        # (e.g. -NoNewline:"'$false'). Only unwrap the launcher and opening
+        # argument quote; the writer recognizer inspects its leading syntax.
+        if body.startswith(('"', "'")):
+            quote = body[0]
+            body = body[1:-1] if body.endswith(quote) else body[1:]
+        return body.strip()
+    return command.strip()
+
+
+def shell_write_targets(command: str) -> list[str]:
+    """Recognize the observed standalone native PowerShell fixture writer.
+
+    Fail closed for other shell forms, prose, paths outside this workspace,
+    and merely mentioning a writer inside an argument to another command.
+    """
+    text = unwrap_shell_command(command)
+    match = re.match(r'''^Set-Content\s+-(?:Path|LiteralPath)\s+("[^"]+"|'[^']+'|[^\s;"'|&<>]+)\s+-Value\s+''', text, re.I)
+    return [match.group(1)] if match else []
+
+
+def fixture_write_name(path: str, workspace: Path | None = None) -> str | None:
+    """The exact fixture file name a shell write targets, if any."""
+    name = str(path).strip().strip('"').strip("'").replace("\\", "/")
+    name = re.sub('/+', '/', name)
+    if name.startswith('./'):
+        name = name[2:]
+    if name in FIXTURE_WRITE_NAMES:
+        return name
+    if workspace is not None:
+        base = re.sub('/+', '/', workspace.resolve().as_posix()).rstrip('/')
+        for filename in FIXTURE_WRITE_NAMES:
+            if os.path.normcase(name) == os.path.normcase(base + '/' + filename):
+                return filename
+    return None
+
+
+def native_evidence(client: str, events: list[dict], workspace: Path | None = None) -> dict:
     calls, completed = {}, {}
     outputs = {}
     shell_reads = {}
+    shell_writes = {}
+    shell_write_last = {}
     terminal = False
     errors = []
     for index, event in enumerate(events):
@@ -74,6 +122,15 @@ def native_evidence(client: str, events: list[dict]) -> dict:
                     for filename in ("task.py", "test_task.py"):
                         if filename in command:
                             shell_reads.setdefault(filename, index)
+                # The native CLI also exposes genuine file writes as command
+                # executions. Only completed, successful writes to an exact
+                # fixture path are evidence; prose and failed writes are not.
+                if completed[key]:
+                    for target in shell_write_targets(command):
+                        filename = fixture_write_name(target, workspace)
+                        if filename:
+                            shell_writes.setdefault(filename, index)
+                            shell_write_last[filename] = index
             if event.get("type") == "item.completed" and item.get("type") == "file_change":
                 key = item["id"]
                 calls[key] = {"name": "Edit", "input": {"paths": [c.get("path", "") for c in item.get("changes", [])]}, "index": index}
@@ -96,18 +153,20 @@ def native_evidence(client: str, events: list[dict]) -> dict:
             if event.get("type") == "step_finish":
                 terminal = part.get("reason") == "stop"
     successful = [calls[key]["name"] for key, ok in completed.items() if ok and key in calls]
-    read_files, written_files, first_writes, baselines, finals = dict(shell_reads), {}, {}, [], []
+    read_files, written_files, first_writes, baselines, finals = dict(shell_reads), dict(shell_write_last), dict(shell_writes), [], []
     for key, call in calls.items():
         name, arguments, index = call["name"].lower(), call["input"], call["index"]
         paths = arguments.get("paths") or [arguments.get("file_path", arguments.get("filePath", arguments.get("path", "")))]
         for path in paths:
             filename = str(path).replace("\\", "/").rsplit("/", 1)[-1]
+            if client == "codex" and name in {"write", "edit"}:
+                filename = fixture_write_name(path, workspace)
             if completed.get(key):
                 if name == "read" and filename in {"task.py", "test_task.py"}:
                     read_files.setdefault(filename, index)
                 if name in {"write", "edit"} and filename in {"task.py", "evidence.json"}:
-                    written_files[filename] = index
-                    first_writes.setdefault(filename, index)
+                    written_files[filename] = max(written_files.get(filename, index), index)
+                    first_writes[filename] = min(first_writes.get(filename, index), index)
         command = arguments.get("command", "")
         if isinstance(command, str):
             wrapper = re.fullmatch(r'''["'].*?(?:pwsh|powershell)\.exe["']\s+(?:-NoProfile\s+)?-Command\s+(["'])(.*)\1''', command, re.I | re.S)

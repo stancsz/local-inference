@@ -1,0 +1,12 @@
+{
+  "state": "fresh_codex_session_running",
+  "pid": 111592,
+  "captured_at": "2026-10-26T23:27:31.8373902Z",
+  "route": "http://127.0.0.1:8090/v1",
+  "receipt": "tmp/stress/sessions/codex-engineering-validated-parser/result.json",
+  "log": "tmp/stress/codex-validated-parser.log",
+  "matrix_state": "paused_pending_recovery",
+  "historical_accepted_sessions": 2,
+  "minimum_turns": 9,
+  "minimum_active_seconds": 185
+}

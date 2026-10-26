@@ -1,0 +1,115 @@
+{
+  "route": "http://127.0.0.1:4000/v1",
+  "model": "default",
+  "write_workers_dispatched": 1,
+  "scope": "bounded repair only; task acceptance remains local Qwen :8090",
+  "handoff": "INCOMPLETE: error_max_turns. Parent reviewed and completed the patch.",
+  "exit": {
+    "exit_code": 1,
+    "alias": "local-inference-worker-430516ccae50",
+    "route": "http://127.0.0.1:4000",
+    "model": "default"
+  },
+  "revocation": {
+    "alias": "local-inference-worker-430516ccae50",
+    "revoked": true
+  },
+  "native_result": {
+    "is_error": true,
+    "duration_api_ms": 110582,
+    "num_turns": 25,
+    "stop_reason": "tool_use",
+    "session_id": "24cbe43c-5398-4fa0-bd83-87a32d9cafea",
+    "total_cost_usd": 0.990725,
+    "usage": {
+      "input_tokens": 49245,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 652800,
+      "output_tokens": 16724,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "",
+      "iterations": [],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "default": {
+        "inputTokens": 49245,
+        "outputTokens": 16724,
+        "cacheReadInputTokens": 652800,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.990725,
+        "contextWindow": 256000,
+        "maxOutputTokens": 32000,
+        "canonicalModel": "default",
+        "provider": "firstParty",
+        "costBasis": "unknown"
+      }
+    },
+    "permission_denials": [
+      {
+        "tool_name": "Bash",
+        "tool_use_id": "call_de3f533e02d447aa9db8e232",
+        "tool_input": {
+          "command": "cd C:/Users/stanc/github/local-inference && grep -o -i \"patch[^\\\"]\\{0,120\\}\" tmp/stress/sessions/codex-engineering-r0-attempt-1793056407/turn-00.jsonl | head -20; echo ===; cat tmp/stress/sessions/codex-engineering-r0-attempt-1793056407/turn-00.stderr.txt | head -40",
+          "description": "Search patch mentions in trace"
+        }
+      },
+      {
+        "tool_name": "Bash",
+        "tool_use_id": "call_e0f1eb15d5144e2fbd304473",
+        "tool_input": {
+          "command": "cd C:/Users/stanc/github/local-inference && ls ~/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/ 2>/dev/null; which codex.cmd; ls ~/AppData/Roaming/npm/node_modules/@openai/codex 2>/dev/null",
+          "description": "Locate codex install"
+        }
+      }
+    ],
+    "terminal_reason": "max_turns",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "subtype": "error_max_turns",
+    "errors": [
+      "Reached maximum number of turns (24)"
+    ],
+    "type": "result",
+    "duration_ms": 126727,
+    "uuid": "09327b29-01ed-4e76-ac87-064f760582d3",
+    "queued_turn_count": 0
+  },
+  "raw_trace_sha256": "f423757f92915e2e54a7a30c5a16bcd6a4f8bbc96daac73537d9d5a9faf76b2e"
+}
