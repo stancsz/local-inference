@@ -10,6 +10,8 @@ An accepted session must have over 180 active client seconds (configured minimum
 
 The first accepted Claude and OpenCode sessions completed nine turns each in **1,040.878 and 1,067.216 active seconds** respectively. This is a substantial long-context stress workload, not the short-prompt 103 tok/s decode benchmark. The remaining matrix is running; no 21-session acceptance claim is made yet. Live local state is `evidence/stress-campaign.json`; the published checkpoint is [stress-checkpoint.json](../evidence/stress-checkpoint.json). Completed traces are compressed and verified by `python -m stress.publish`, with hashes in [stress-published.json](../evidence/stress-published.json). In-progress receipts and native streams remain under ignored `tmp/stress/sessions/`.
 
+After the Codex corrections below, a fresh engineering session passed all nine turns in **863.291 active seconds**. Parent review replayed all native turns and reran nine hidden-test stages with another seed against its final implementation; [acceptance receipt](../evidence/stress-codex-parent-acceptance.json). The corrected-epoch 21-session matrix has resumed and will reuse this matching Codex receipt. Earlier Claude/OpenCode samples retain their original source hashes and are historical, rather than corrected-epoch passes. Full matrix acceptance remains pending.
+
 ## Route and versions
 
 ```text

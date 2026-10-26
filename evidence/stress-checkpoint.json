@@ -1,83 +1,34 @@
 {
-  "state": "attention_required",
-  "controller_pid": 94888,
+  "state": "running",
+  "controller_pid": 260152,
   "upstream": "http://127.0.0.1:8090/v1",
   "controller_sha256": "0fe9636f78a30629ee41f6130a4046b31cbcbe7954a2adaad2dd99844ece0713",
   "planned_sessions": 21,
   "minimum_active_seconds": 185,
   "minimum_user_turns": 9,
-  "gateway_image": "sha256:edefe55b6d226ad4eeaf873e4cb8728c332af099453aa40a8dd1590024d3e60b",
+  "gateway_image": "sha256:0441d3d28a6cb1411f4e390eb95cb2786e87fb9dab03b7f3cffba60d632e3189",
   "source_sha256": {
     "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
     "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
     "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
     "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
     "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
-    "stress.cli_acceptance": "6ff19c14cd9a653b296ff1d92f45ac2c1c9502fd9e11e566c5cf4ff518af7e46",
-    "stress.cli_campaign": "f12596b0d025104b597fdd6b36f5ee5438bab146eaab281a9cae8f853acd7626",
+    "stress.cli_acceptance": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
     "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
-    "app/gateway.py": "606c44dcccf7b1c40617696da6402b18848d401e6fe703bf6efafda4456cd2df",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
     "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
   },
-  "sessions": [
-    {
-      "case": {
-        "client": "claude",
-        "task": "engineering",
-        "seed": 831,
-        "repeat": 0
-      },
-      "receipt": "tmp/stress/sessions/claude-engineering-002/result.json",
-      "sha256": "76b810542cda6d935f08c8c4dd3364e501c215080b51195dac8c332992fdef93",
-      "accepted": true,
-      "qualifying_long_session": true,
-      "active_client_seconds": 1040.878,
-      "turns": 9,
-      "failure": null,
-      "reused_existing_accepted_receipt": true
-    },
-    {
-      "case": {
-        "client": "opencode",
-        "task": "engineering",
-        "seed": 931,
-        "repeat": 0
-      },
-      "receipt": "tmp/stress/sessions/opencode-engineering-r0/result.json",
-      "sha256": "dfb3c8535cbfabb2c45871e67afbda0dd437d55761cb62f1c32c9b5a5708859f",
-      "accepted": true,
-      "qualifying_long_session": true,
-      "active_client_seconds": 1067.216,
-      "turns": 9,
-      "failure": null,
-      "reused_existing_accepted_receipt": true
-    },
-    {
-      "case": {
-        "client": "codex",
-        "task": "engineering",
-        "seed": 1031,
-        "repeat": 0
-      },
-      "receipt": "tmp/stress/sessions/codex-engineering-r0-attempt-1793056407/result.json",
-      "sha256": "01c5687d22e39c4aa8dfaf435a4e6024e346d1fde02465cbe315548b9d3e8eac",
-      "accepted": false,
-      "qualifying_long_session": false,
-      "active_client_seconds": 148.0,
-      "turns": 1,
-      "failure": "native turn, hidden tests, history fact, or session continuity failed",
-      "reused_existing_accepted_receipt": false
-    }
-  ],
+  "sessions": [],
   "scope": "Frozen uncommitted Sift candidate; real native CLIs in synthetic evolving workspaces. First-stage Sift hook uses LiteLLM counting; final gateway Sift uses the backend native full-request counter. No scripted idle padding or cloud inference.",
-  "updated_at": "2026-10-26T23:15:55.939009+00:00",
-  "accepted_sessions": 2,
-  "qualifying_long_sessions": 2,
+  "updated_at": "2026-10-26T23:57:16.369830+00:00",
+  "accepted_sessions": 0,
+  "qualifying_long_sessions": 0,
   "current_case": {
-    "index": 3,
-    "client": "codex",
+    "index": 1,
+    "client": "claude",
     "task": "engineering",
-    "seed": 1031,
+    "seed": 831,
     "repeat": 0
   }
 }
