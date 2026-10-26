@@ -3,7 +3,7 @@ from copy import deepcopy
 
 import pytest
 
-from stress.cli_acceptance import native_evidence, fixture_write_name, shell_write_targets
+from stress.cli_acceptance import native_evidence, fixture_write_name, shell_write_targets, child_command
 
 
 def command(identifier, text, output="", exit_code=0):
@@ -84,3 +84,16 @@ def test_absolute_writes_must_match_exact_workspace(tmp_path):
     assert not native_evidence('codex', events, tmp_path / 'other')['workflow_ordered']
     events[2]['item']['command'] = f'Set-Content -Path "{inside}/../task.py" -Value x'
     assert not native_evidence('codex', events, inside)['workflow_ordered']
+
+
+def test_codex_resume_keeps_explicit_workspace_permissions(tmp_path):
+    home = tmp_path / 'client-home'
+    home.mkdir()
+    (home / 'models.json').write_text('{}')
+    for identifier in (None, '00000000-0000-0000-0000-000000000001'):
+        command, env = child_command('codex', 'codex', home, 'http://127.0.0.1:12345/v1',
+            'qwen3.8-27b-codex', 'test', persist=True, session_id=identifier)
+        assert 'sandbox_mode="workspace-write"' in command
+        assert '--dangerously-bypass-approvals-and-sandbox' not in command
+        assert 'model_providers.sift_acceptance.base_url="http://127.0.0.1:12345/v1"' in command
+        assert ('resume' in command) == bool(identifier)

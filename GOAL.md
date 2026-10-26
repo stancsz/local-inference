@@ -10,6 +10,8 @@ Campaign recovery IN PROGRESS, not complete: Claude and OpenCode engineering ses
 
 Recovery follow-up: corrected native workflow recognition passed a real Codex turn, then native resume exposed a separate Qwen template error: a later developer instruction was rejected with local HTTP 500. The alias-scoped bridge now retains all caller instruction texts in a leading protected block before native Sift counting. 43 local tests and streamed function/custom continuations with late instructions passed; gateway-only rebuild and source parity are verified. Fresh local/OpenAI smokes and three Claude artifacts passed (two exact-format precheck failures are retained). The 256k/1M context checks precede the next fresh Codex session; the current state and actual process IDs are in evidence/stress-recovery-status.json. No final Codex multi-turn acceptance is claimed yet.
 
+The rebuilt gateway passed both fresh context checks. A real resumed Codex turn then reached local inference but exposed a read-only default from exec resume: the initial invocation's --sandbox flag was not enough with ignored user config. Explicit process-only sandbox_mode=workspace-write now applies on both paths, with a regression test and 44 local tests passing. That denied-write attempt remains rejected, including its hidden-test failure; a new frozen session is running, still pending nine-turn acceptance. See evidence/stress-resume-permissions.json.
+
 ## Ask
 Run Qwen3.8 27B, 3/4-bit quantization and MTP, in Docker on this Windows host. Sift is a mandatory CPU compaction prerequisite for 256k-1M working histories, forwarding a dynamic 24k-64k working set. Commit and push scoped milestones in both repositories.
 

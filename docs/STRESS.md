@@ -25,6 +25,8 @@ Codex uses a dedicated `qwen3.8-27b-codex` Responses alias. LiteLLM converts it 
 
 Native Codex resume can append developer instructions after completed conversation turns. Qwen's template rejects that position. The dedicated bridge preserves their text in input order alongside existing leading instructions, before the inner Sift/native counter; it leaves user/tool history in its original order. Unsupported instruction content fails closed. This is an explicit local-model compatibility adaptation, not a claim that instruction timing is unchanged for every model. The new gateway image and harness source hashes define another campaign epoch; previous rejected resume receipts stay rejected.
 
+With user configuration ignored, Codex resume also requires an explicit process-only `sandbox_mode="workspace-write"`; the initial exec's `--sandbox` flag alone did not retain write access here. The harness sets both paths explicitly. No sandbox bypass or global configuration change is used. A native denied-write/hidden-test failure is preserved in [the permission receipt](../evidence/stress-resume-permissions.json); 44 local tests include the initial/resume command regression.
+
 Observed CLI versions: Claude Code 2.1.251, OpenCode 1.15.10 and Codex CLI 0.154.0. The host test dependencies are pinned in [requirements-stress.txt](../requirements-stress.txt). The normal GPU model profile is unchanged: 40,960 total context, up to 4,096 output tokens and 256 decoder-headroom tokens, one slot and four MTP draft tokens.
 
 ## Reproduce

@@ -361,6 +361,7 @@ def child_command(client: str, exe: str, home: Path, base: str, model: str, prom
         settings = {
             "model_provider": "sift_acceptance", "model_catalog_json": str(catalog),
             "model_context_window": 256000, "model_auto_compact_token_limit": 240000,
+            "sandbox_mode": "workspace-write",
             "approval_policy": "never", "features.shell_tool": True, "features.apps": False,
             "web_search":"disabled",
             "features.plugins": False, "features.multi_agent": False,
