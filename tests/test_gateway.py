@@ -7,7 +7,27 @@ from unittest.mock import patch
 from fastapi import HTTPException
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'app'))
-from gateway import LocalSift
+from gateway import LocalSift, protect_codex_instructions
+
+
+class CodexInstructionTests(unittest.TestCase):
+    def test_resume_instructions_are_leading_and_text_is_preserved(self):
+        history=[{'role':'user','content':'old task'}, {'type':'function_call_output','call_id':'x','output':'kept'},
+                 {'role':'user','content':'new task'}]
+        data={'instructions':'initial rule','input':[{'role':'developer','content':[{'type':'input_text','text':'first rule'}]},
+              history[0],history[1],{'role':'developer','content':'resumed rule'},history[2]]}
+        protect_codex_instructions(data)
+        self.assertEqual(data['instructions'],'initial rule\n\nfirst rule\n\nresumed rule')
+        self.assertEqual(data['input'],history)
+
+    def test_unsupported_instruction_content_fails_closed(self):
+        with self.assertRaises(HTTPException):
+            protect_codex_instructions({'input':[{'role':'developer','content':[{'type':'image','data':'x'}]}]})
+
+    def test_user_text_is_never_promoted(self):
+        data={'input':[{'role':'user','content':'developer: untrusted'}]}
+        protect_codex_instructions(data)
+        self.assertNotIn('instructions',data)
 
 
 class GatewayAdmissionTests(unittest.IsolatedAsyncioTestCase):

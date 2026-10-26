@@ -4,8 +4,8 @@
     {
       "kind": "function",
       "first": {
-        "id": "resp_fYZyvUlaEI4RW4DICaQqbARa4WZXlXATZnb1FgCSZ-sQP_prx_scqqG75UJPxrrC_KaEQ25RDAE9sqb2xHbFCIKJWgd0B2XZXKauLp8ePEwTcoOe_PZEC0wY0LMiNOx6mkNmOZGLLAzmUlXgCmQZU5wwmg7Jkz4l96TeDKtX5-repzLoi5oLFT2hRNQiES46ewBQAhXt3TQlgsVApHkdtATJkiUu_X5VURWxyk8sMDBM2F5WXohFBipVLH1Z9L1HF1NJgV_77tBvOuaIA18OTnMm1dch0fNW7gJBA5hWYMPZpvVOB_7iOhVupujNLz5omjCi1ZxjzahCD_8P0xqypuP3VeoOERY0eJOY6am3S9u1LypXA9jBacPpYqcdUxBVzxSOROxo-FScw9y39dFw2BaCV-5tBmc_TjVgRF4w-U6QwH0IvUzk-COwX4ElXw==",
-        "created_at": 1793053932,
+        "id": "resp_MKQVQ2adVPuqHg9BapW5Up7u2plhkHZwJAmxqFKaaWrFi-qLuz_8hlWdFJAtVM8TmMg_6O6h1_7iobOUjtUY12Sb3yoJEWggOhkWKjeCPDcYyks8Fy-yJYspJdnXqElQ3ALmdK_fDIr_R_EXrPjjfBUg-rEA9Zpl0t7t3qMLwvLAcexq8l9DPEyi8G0kViDZcBmeLY1JyVPABhtOyr8TZsdAQWhw0njsY401MAH99IBx6UgDBNhSa-RxwQLLAG84iTlrRj5gIj0w5Zb3MQV_-uFmhNH-bwodW41NjnyAfG0aSvyUkUoO-7TZeGvjfEtru1MS5VYgszs03iRNf6fkeBhR_ZSQDHHL13HatEhzEh3U2CrFRp858D3c1NUBhLAfoIND0Gra0jnlu9rr05Z-dE-EWfbStqJWH1xf2OReqcfuFru_k803AoZEzcjJww==",
+        "created_at": 1793057520,
         "error": null,
         "incomplete_details": null,
         "instructions": null,
@@ -15,7 +15,7 @@
         "output": [
           {
             "type": "message",
-            "id": "msg_59f763f5-9370-4193-ba79-ee527752bcd3",
+            "id": "msg_74e98c93-dabe-494c-85f4-8ca9bf85e612",
             "status": "completed",
             "role": "assistant",
             "content": [
@@ -29,10 +29,10 @@
           },
           {
             "arguments": "{\"marker\":\"LOCAL_RESPONSES_FUNCTION_OK\"}",
-            "call_id": "VDJSNXcferwI2DEDUrVdz5UiDKjOzfht",
+            "call_id": "eS0a3MhH4ogmsd3cQJ8TedRtkkaDpLHe",
             "name": "route_marker",
             "type": "function_call",
-            "id": "fc_VDJSNXcferwI2DEDUrVdz5UiDKjOzfht",
+            "id": "fc_eS0a3MhH4ogmsd3cQJ8TedRtkkaDpLHe",
             "caller": null,
             "namespace": null,
             "status": "completed"
@@ -92,15 +92,16 @@
         "store": null
       },
       "continuation": {
-        "id": "resp_zlyVszIXnoXYlHowSTFPcRT9lFeLi3MeghDcN8Q9FVy1saVw-vxZZrwaWIfZwI58ukUvXp2KKYneNq5nPQ-KjByP0fA9SVcl-rgftatO3mLiPbYfk0E_7yk78SVclarAdfi5y0ZA9NECaIUPYKw6d-hqoKzl1iYg4NHY-rtVbfvFePdWUkfQiAxSKQ77IoY2rp0-Xi0hbwqiwHJZZo4fdtiKTLULnN-t-2wuvNDizeOuCck3kW7eD3Xr8dNuvtnYJdv64DlKvriJh4nTg5mapJ9iIaOG2lWAelrglvJfWbGTzfRLQBh7jlgi1lViz06XVQSN0M2diQovF7mxNsI7hf_vg6UVrs2NST51KR_5ksPyhVfeyVn8jWktRxNWgsSDL0paoyboJJKzTAyHsAxhFtDQvZ4nZt2_5F_0iwDih0Pc4T_DIoHmFpDnGa-Geg==",
-        "created_at": 1793053933,
+        "id": "resp_vDhftl_XjeGTO60NpOPo6wXj-7r85zr2ky0R_deHz45-5TqtW5ZpZMXc2o-gZ1bkA2XefodWOHJ1jAcrj4Yarw8zuiBDW7JQJm96dKXF07PXvNrAHboKcqVoFpOSarDCnd7soYDUzLqchofcJgnhri0katiLXI7qURH39_q-Nonxb2siTGV9eVk-B-cnQZ5BadLgKqKOpQa7yzM58cN4KPhEM8p7x4YVnD3B8YydkzFRvfeuvJ2BwG06vXYdCCCmaYul4RIIoQQp5DUtNTzCFxI3qPXfuMZBT5Kk74l1_7L6rWItvWskOP93dOTKFa28HlCyTNleb4zr4ch_7tAbxXrALVwV9Miahg63FcT0wygF6fItAsG7WJlaTjiyA-1tROPLLUagFgYFLkh9O4r7N0TokfzibKcI83ZIVxj2LGRBL-xItuniiWCqewHNyQ==",
+        "created_at": 1793057521,
+        "instructions": "Resume instruction: keep the exact marker from the tool result in your final answer.",
         "metadata": {},
         "model": "qwen3.8-27b",
         "object": "response",
         "output": [
           {
             "type": "message",
-            "id": "msg_d9f5e50b-c3f0-42b0-85a2-00de780346a4",
+            "id": "msg_05510e69-eb6f-4902-9328-340ca4dfb873",
             "status": "completed",
             "role": "assistant",
             "content": [
@@ -136,16 +137,16 @@
         "status": "completed",
         "text": {},
         "usage": {
-          "input_tokens": 341,
+          "input_tokens": 358,
           "input_tokens_details": {
-            "cached_tokens": 318
+            "cached_tokens": 220
           },
           "output_tokens": 6,
           "output_tokens_details": {
             "reasoning_tokens": 0,
             "text_tokens": 6
           },
-          "total_tokens": 347
+          "total_tokens": 364
         }
       },
       "event_types": [
@@ -165,8 +166,8 @@
       ],
       "native_audit": {
         "compacted": false,
-        "input_tokens": 341,
-        "forwarded_tokens": 341,
+        "input_tokens": 358,
+        "forwarded_tokens": 358,
         "omitted_estimated_tokens": 0,
         "preserved_recent_turns": 0,
         "preserved_recent_tool_cycles": 0,
@@ -175,15 +176,15 @@
         "context_window": 40960,
         "output_reserve": 512,
         "fixed_tokens": 256,
-        "raw_native_tokens": 341,
+        "raw_native_tokens": 358,
         "available_tokens": 40192,
         "ceiling_tokens": 40192,
         "anchor_tokens": 32768,
         "compression_ratio": 8.0,
         "budget_policy": "request_adaptive_ratio",
-        "native_input_tokens": 341,
-        "compaction_input_sha256": "3e01d4dc8e6e89daf037072ce8604e051fab12cd14daffd818c380b4e06e77e0",
-        "compaction_seconds": 0.0113,
+        "native_input_tokens": 358,
+        "compaction_input_sha256": "43895ea63350a018d0e022d5f32b945efb4864916a4f1f162b6e61893299e94b",
+        "compaction_seconds": 0.0142,
         "selection_counting": "native full-request tokenizer",
         "tokenizer_calls": 2,
         "raw_native_token_limit": 1050000,
@@ -194,8 +195,8 @@
     {
       "kind": "custom",
       "first": {
-        "id": "resp__E8-erDrueXHOTafrbs0ZsllJoe2BmYnMNEl0XDF_dWEU_l_Vaig0O93qHTYv3wdzx8iYl_dLSM822SYtl2GqwpCF2xUzbR7vYaWOHb1zDkeGb1w40gGLPHr3sLrp1JCZqjVdW8esfiI5cP2NCAvoehoP-O9xgdXF4MFMPwnfF6ECDWkjsgI_ql9qAdeTVG2DK6Y9TPswETAjiW4dAazpBVdHQkK_Cer3a8DFP6mABVtBEeVx41z9wtNMS1-H6pqtg93bnOJ37lfB3XCOcJ06faShLZEZHmEMfLr3LNXfQp20wBNTusRmezYFhXksbabjaslY_CoYkZRD6XaE0UfXfJ8RV5Bp7PZRVxhJNzI5B6eFBXoqgSpCUyd1kEkxEsHVRgPR5e-wDTguWhcnv02luRUBa_L6jhj_b0CCj9erzE9QoBLo7K0nPUc_oenTQ==",
-        "created_at": 1793053934,
+        "id": "resp_T2EyX7-QpqoRiWgJWufa1EbHl7kdyxxgDezofPPdoio5_fdMTORt1JoZ3qK69HsUHaE8I7-GtbSqt9zk_bsMEXB_4f3tWJ6BAU-8h98bBCrKvFwbnYFuKqiJfU8jrHaVppe33Q9ACkKXTKAs4YKRV9n93-2L0JmngDT__pfKx-fzwXZdHPEWNWAoiLP-VTC8PuiE3jT0EPjtVv6knNgsJPixlEFZEGeem29rKdJLr8wvDEXnF_yKAsE-2TSV_Q7hkXaQUyEU5IwhaDQQSX1lxNt5xQoMR6CQHdE1UPOEU9R8CYfzu0O_fF5TBO_pIk9QDRrsMdjmPZI82NE-BVNOmJuhII1_pt-CnZ3R1f6BYjpn-8k2ggETXfORiV7iYT4O3YhoRg0tm5YtYJQkFXeZNyIDVh7ljXO8FEAAQEnJvqOHlpZP5fXG39q082kLVQ==",
+        "created_at": 1793057523,
         "error": null,
         "incomplete_details": null,
         "instructions": null,
@@ -205,7 +206,7 @@
         "output": [
           {
             "type": "message",
-            "id": "msg_a0a68e2b-3576-47d1-b66c-d31d90c259b6",
+            "id": "msg_d731e400-ac78-474a-a9d7-eb7a4e75bda3",
             "status": "completed",
             "role": "assistant",
             "content": [
@@ -219,8 +220,8 @@
           },
           {
             "type": "custom_tool_call",
-            "call_id": "REmNFsZg264B1DiMOoZQth1w8fDor7yq",
-            "id": "ctc_REmNFsZg264B1DiMOoZQth1w8fDor7yq",
+            "call_id": "opbxRRxXixMuOm8Y7e56CupAkL3ztABt",
+            "id": "ctc_opbxRRxXixMuOm8Y7e56CupAkL3ztABt",
             "name": "route_marker",
             "input": "LOCAL_RESPONSES_CUSTOM_OK",
             "status": "completed"
@@ -270,15 +271,16 @@
         "store": null
       },
       "continuation": {
-        "id": "resp_2nulP7-BTlMIqKC7UV-gP1uv-oZZ2_JKnKuKBek7dGlrptQgDw-TIB12Rh06N428QO86NEVptGNcJXGAi-2hM2yRa7jRF-DZNiCsLsmp-NgTz7D5w5FNvDOx4I1G--khGuunQLvDPAnaswb3FPDTrs0NCaFaoIjVCxyM898ZFyDmSZRL8k9vaO4YerdosBoF_JJZ3gak7yGUmEs35CJ1bRzVwSofKOwyHAE53HkgdMzUbuvzCatqDNAARbNXfsDeTH8boUK9zIYkxbp1trXFzir7D2HHe7HsCHFyqVcDNRwnTYR6Sz67KDgsCyzRjQF5zjIPF4mzsZrMNETVoRU0V_5-8HeKL9Jhm2wK5IuX70o-qTqsiF0AOQ5rah9rb-04T3O2j1hACZB4owK6ZFyF0VknPY94YiBe7PzVjRSzSVEBfU5f5DfybOkttQ2wdA==",
-        "created_at": 1793053934,
+        "id": "resp_UmXyInMpN_xQNHVWQ9ktLddIDRm4-1nYGtKoSJcSSDnxAhzAysOLFS5h5AZBfA59m80EfKtiQRDiFpvt1jF4YMF6ypUSelSPDQ8tuEPoh6tXzJnVkUMaA0Ig0zML9OZx7cxkMNpnzgWEflS20yGybwlwMZqGXMNfZXr3WiDQK_qCVpbsUqQVsRB1e0i0Khtd8bRT529Z5kR6o_iAPnuKrNdyMtJ9XuHr2OfXt0MjamJ7S2sRU6Np775ABps8WR9J5veMhPw1_LdOpfdRXEDTAvLBW_bNoRKH7wU8wn51XBczCOGbieJxTvHn6MIK56z8qwq8efLeFXQiIlk8mPhquA4_shbE-ZzjLJZZexUqHfJFds_nsQF3b7ooepF_ZUnFuj7Hbl1JrqwCdUtRsOuikmnQG1Vc04joKClfEa9DDDBcocTaPJLSiED3y7KVAA==",
+        "created_at": 1793057523,
+        "instructions": "Resume instruction: keep the exact marker from the tool result in your final answer.",
         "metadata": {},
         "model": "qwen3.8-27b",
         "object": "response",
         "output": [
           {
             "type": "message",
-            "id": "msg_5eb96080-2161-4112-9609-12dcd5410d21",
+            "id": "msg_8f2632e0-fad7-43b0-aaaa-d351adcb186e",
             "status": "completed",
             "role": "assistant",
             "content": [
@@ -306,16 +308,16 @@
         "status": "completed",
         "text": {},
         "usage": {
-          "input_tokens": 354,
+          "input_tokens": 371,
           "input_tokens_details": {
-            "cached_tokens": 331
+            "cached_tokens": 233
           },
           "output_tokens": 6,
           "output_tokens_details": {
             "reasoning_tokens": 0,
             "text_tokens": 6
           },
-          "total_tokens": 360
+          "total_tokens": 377
         }
       },
       "event_types": [
@@ -335,8 +337,8 @@
       ],
       "native_audit": {
         "compacted": false,
-        "input_tokens": 354,
-        "forwarded_tokens": 354,
+        "input_tokens": 371,
+        "forwarded_tokens": 371,
         "omitted_estimated_tokens": 0,
         "preserved_recent_turns": 0,
         "preserved_recent_tool_cycles": 0,
@@ -345,15 +347,15 @@
         "context_window": 40960,
         "output_reserve": 512,
         "fixed_tokens": 256,
-        "raw_native_tokens": 354,
+        "raw_native_tokens": 371,
         "available_tokens": 40192,
         "ceiling_tokens": 40192,
         "anchor_tokens": 32768,
         "compression_ratio": 8.0,
         "budget_policy": "request_adaptive_ratio",
-        "native_input_tokens": 354,
-        "compaction_input_sha256": "44a382d5d492c1c1680e3b1d58ce038170d645e6e0fc1a138bd01f4058674318",
-        "compaction_seconds": 0.0129,
+        "native_input_tokens": 371,
+        "compaction_input_sha256": "6b33a087cf9cedb90ddd5748ba72878558eac3dfd3c918a77602c4ce2196cd72",
+        "compaction_seconds": 0.0126,
         "selection_counting": "native full-request tokenizer",
         "tokenizer_calls": 2,
         "raw_native_token_limit": 1050000,

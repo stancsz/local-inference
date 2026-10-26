@@ -1,44 +1,40 @@
-# local-inference operations
+# Local LiteLLM stack operations
 
 ## Start
+
 ```powershell
 docker compose up -d --build
 ```
 
 ## Check both ports
+
 ```powershell
 curl.exe http://127.0.0.1:8090/health/readiness
 curl.exe http://127.0.0.1:8091/health
 ```
 
-## Acceptance
+## Run acceptance
+
 ```powershell
 python scripts/claude_acceptance.py
 ```
 
-## Sift logs
+## Inspect gateway Sift logs
+
 ```powershell
 docker compose logs --no-color gateway > tmp/sift-runtime.log
 ```
 
-## Stop this project only
+## Stop only this compose project
+
 ```powershell
 docker compose down
 ```
 
-## Budget policy
+## Daily defaults
 
-The daily default is adaptive. The gateway loads:
+`context_window=40960`, `sift_target=32768`, `output_reserve=4096`, `draft_tokens=4`.
 
-```
-context_window=40960
-sift_target=32768
-output_reserve=4096
-draft_tokens=4
-```
+The adaptive Sift policy anchors at `sift_target=32768`. That target is part of the input budget, never added to it; a further 256 tokens are held for decoder headroom. Short requests within the anchor pass unchanged. Larger histories use `ceil(native_raw_tokens / 8)`, bounded to 24576..36608 when all 4096 output tokens are reserved. 36608 is a ceiling, not a required request size.
 
-`sift_target=32768` is the adaptive policy anchor, not a fixed forwarded budget. Requests at or below it pass unchanged when they also fit the loaded window. Larger histories use `ceil(native_raw_tokens / 8)`, bounded to `context_window - requested_output - 256`. With all 4096 output tokens reserved, the daily input budget ranges 24576..36608. The 36608 figure is a ceiling, not a required request size. The Sift target is part of the input budget, never added to it; a further 256 tokens are held for decoder headroom.
-
-## Why health is not productivity evidence
-
-`/health/readiness` proves process readiness only. It does not prove the model generates correct, useful output. Use `claude_acceptance.py` for productive-work evidence.
+A readiness response alone proves process readiness, not productive work.

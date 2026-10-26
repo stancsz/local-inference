@@ -23,6 +23,8 @@ The test adapter injects an older 8,000-record archive and exercises Sift's CLI 
 
 Codex uses a dedicated `qwen3.8-27b-codex` Responses alias. LiteLLM converts it to Chat Completions and re-enters the guarded local Qwen route. Native function/custom-tool streaming continuation and final token-count parity passed preflight. Opaque server-held Responses histories are rejected. Codex uses a conventional tool profile copied from its own installed catalog; code-mode-only behavior is not claimed. Web search is disabled for this local model. Claude/OpenCode profiles are also isolated; global settings and credentials are not changed.
 
+Native Codex resume can append developer instructions after completed conversation turns. Qwen's template rejects that position. The dedicated bridge preserves their text in input order alongside existing leading instructions, before the inner Sift/native counter; it leaves user/tool history in its original order. Unsupported instruction content fails closed. This is an explicit local-model compatibility adaptation, not a claim that instruction timing is unchanged for every model. The new gateway image and harness source hashes define another campaign epoch; previous rejected resume receipts stay rejected.
+
 Observed CLI versions: Claude Code 2.1.251, OpenCode 1.15.10 and Codex CLI 0.154.0. The host test dependencies are pinned in [requirements-stress.txt](../requirements-stress.txt). The normal GPU model profile is unchanged: 40,960 total context, up to 4,096 output tokens and 256 decoder-headroom tokens, one slot and four MTP draft tokens.
 
 ## Reproduce

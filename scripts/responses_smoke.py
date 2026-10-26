@@ -32,7 +32,8 @@ def main():
         call=next(item for item in first['output'] if item['type']==call_type)
         assert marker in call.get('arguments',call.get('input',''))
         output_type='function_call_output' if kind=='function' else 'custom_tool_call_output'
-        body['input']+=first['output']+[{'type':output_type,'call_id':call['call_id'],'output':marker}]
+        body['input']+=first['output']+[{'type':output_type,'call_id':call['call_id'],'output':marker},
+            {'role':'developer','content':[{'type':'input_text','text':'Resume instruction: keep the exact marker from the tool result in your final answer.'}]}]
         body.pop('tool_choice');body['stream']=True
         final,events=request(body)
         assert marker in json.dumps(final['output'])

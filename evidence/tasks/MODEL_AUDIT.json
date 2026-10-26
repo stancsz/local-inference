@@ -6,14 +6,14 @@
     "main": "IQ3_XXS",
     "mtp": "Q4_0"
   },
+  "configured_context_size": 40960,
+  "limitations": [
+    "Total weight bytes (12304451360) is the sum of the two downloaded GGUF file sizes from the manifest; it is not a measurement of GPU residency.",
+    "Configured context size is the compose.yaml default (CONTEXT_SIZE default 40960), not a measured runtime value.",
+    "Quantization labels are derived from the manifest GGUF filenames; they describe the artifacts, not measured inference behavior."
+  ],
   "artifacts": {
     "main_gguf": "Qwen3.8-27B-UD-IQ3_XXS.gguf",
     "mtp_gguf": "mtp-Qwen3.8-27B-Q4_0.gguf"
-  },
-  "configured_context_size": 40960,
-  "limitations": [
-    "total_weight_bytes is the sum of the downloaded main and MTP GGUF file sizes (10934860704 + 1369590656) from the manifest; it is not a measurement of GPU residency",
-    "configured_context_size is the compose.yaml default (CONTEXT_SIZE default 40960); the actual runtime value may be overridden by the environment",
-    "GPU residency is not inferred from file size; no measured residency value is asserted here"
-  ]
+  }
 }

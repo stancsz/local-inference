@@ -1,12 +1,13 @@
 {
-  "state": "fresh_codex_session_running",
-  "pid": 111592,
-  "captured_at": "2026-10-26T23:27:31.8373902Z",
+  "state": "fresh_codex_resume_session_running",
+  "pid": 127356,
+  "captured_at": "2026-10-26T23:37:55.6978131Z",
+  "driver_exec_session": 74932,
   "route": "http://127.0.0.1:8090/v1",
-  "receipt": "tmp/stress/sessions/codex-engineering-validated-parser/result.json",
-  "log": "tmp/stress/codex-validated-parser.log",
   "matrix_state": "paused_pending_recovery",
   "historical_accepted_sessions": 2,
   "minimum_turns": 9,
-  "minimum_active_seconds": 185
+  "minimum_active_seconds": 185,
+  "receipt": "tmp/stress/sessions/codex-engineering-resume-compatible/result.json",
+  "gateway_image": "sha256:0441d3d28a6cb1411f4e390eb95cb2786e87fb9dab03b7f3cffba60d632e3189"
 }

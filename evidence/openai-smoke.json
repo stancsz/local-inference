@@ -32,8 +32,8 @@
     }
   },
   "response": {
-    "id": "chatcmpl-Ph0PoaLMAMK8Uupy7z4bYnfTyoQ8rCFJ",
-    "created": 1793053930,
+    "id": "chatcmpl-35ZeJk4RI37TheJtb9RQnTa2AR57Owiz",
+    "created": 1793057592,
     "model": "qwen3.8-27b",
     "object": "chat.completion",
     "system_fingerprint": "b11610-091b6a7fc",
@@ -62,13 +62,13 @@
     "timings": {
       "cache_n": 0,
       "prompt_n": 22,
-      "prompt_ms": 250.471,
-      "prompt_per_token_ms": 11.385045454545455,
-      "prompt_per_second": 87.83451976476319,
+      "prompt_ms": 289.888,
+      "prompt_per_token_ms": 13.176727272727272,
+      "prompt_per_second": 75.89137873937521,
       "predicted_n": 15,
-      "predicted_ms": 687.648,
-      "predicted_per_token_ms": 49.117714285714285,
-      "predicted_per_second": 20.35925357159477,
+      "predicted_ms": 666.194,
+      "predicted_per_token_ms": 47.58528571428571,
+      "predicted_per_second": 21.01489956379073,
       "draft_n": 40,
       "draft_n_accepted": 4
     }
@@ -86,8 +86,8 @@
     "temperature": 0
   },
   "cap_response": {
-    "id": "chatcmpl-grOF17jUczx0oSapJeiIWnqsavGcnFQX",
-    "created": 1793053931,
+    "id": "chatcmpl-5OaQJ6bNuKQM3y0xnIZtsMH2a3gghAHg",
+    "created": 1793057593,
     "model": "qwen3.8-27b",
     "object": "chat.completion",
     "system_fingerprint": "b11610-091b6a7fc",
@@ -116,13 +116,13 @@
     "timings": {
       "cache_n": 0,
       "prompt_n": 34,
-      "prompt_ms": 190.489,
-      "prompt_per_token_ms": 5.602617647058824,
-      "prompt_per_second": 178.4879966822231,
+      "prompt_ms": 214.315,
+      "prompt_per_token_ms": 6.303382352941177,
+      "prompt_per_second": 158.644985185358,
       "predicted_n": 16,
-      "predicted_ms": 143.459,
-      "predicted_per_token_ms": 9.563933333333333,
-      "predicted_per_second": 104.5594908649858,
+      "predicted_ms": 136.57,
+      "predicted_per_token_ms": 9.104666666666667,
+      "predicted_per_second": 109.8337848722267,
       "draft_n": 12,
       "draft_n_accepted": 12
     }

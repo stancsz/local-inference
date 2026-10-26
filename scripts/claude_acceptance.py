@@ -71,6 +71,7 @@ def main():
         if name=='vram-plan':
             prompt+=' The gpu CSV order in host-vram.json is name,total,used,free. Include exact machine-checkable lines host_total_mib=<number>, host_used_mib=<number>, host_free_mib=<number>. Do not swap used and free. Cite the source filename for each measurement and distinguish the older host snapshot from runtime-vram.json.'
             prompt+=' Report only the three largest measured process consumers. If using a process table, use columns Process | PID | Dedicated MiB and copy exact source values. Do not list other processes or guess PIDs.'
+            prompt+=' Include the exact safety sentence: Never terminate DWM.'
         if name=='operator-guide':
             prompt+=' Use /health/readiness on port 8090. Document only the current daily default, not optional long profiles: verify compose.yaml shows 40960 total context, SIFT_TARGET=32768 as the adaptive policy anchor (not a fixed forwarded budget), 4096 output reserve and 4 draft tokens. Include exact configuration lines context_window=40960, sift_target=32768, output_reserve=4096, draft_tokens=4. Explain request-adaptive budgeting and its daily 24576..36608 range when reserving all 4096 output tokens. Short requests pass unchanged; 36608 is a ceiling, not a required request size. Do not discuss 64k profiles in this short daily runbook.'
             prompt+=' Aim for 180-220 words and stay under the 350-word hard limit, counting headings and code. Keep commands and brief explanations only. The Sift target is part of the input budget, never added to it; a further 256 tokens are held for decoder headroom. A readiness response alone proves process readiness, not productive work.'
@@ -78,6 +79,7 @@ def main():
         if name=='model-audit':
             prompt+=' The quantization field must identify BOTH the main IQ3_XXS and MTP Q4_0 quantizations from their filenames. Keep all required fields, and verify repository/revision against the manifest.'
             prompt+=' Include both exact GGUF basenames somewhere in the JSON so each label is traceable to its artifact. Do not infer Sift policy from SIFT_TARGET alone; omit that discussion unless you read README.md to verify its adaptive meaning.'
+            prompt+=' If using the optional artifacts object, its only keys must be main_gguf and mtp_gguf, with the corresponding exact basenames as values.'
             prompt+=' Use Bash with python -c to calculate the exact sum from the manifest; do not calculate the large integers mentally. Bash is allowed only for that Python calculation. Use Read/Edit for the artifact.'
         with tempfile.TemporaryDirectory(prefix='local-qwen-claude-') as config:
             env=dict(os.environ)

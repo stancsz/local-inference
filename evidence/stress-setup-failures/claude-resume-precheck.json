@@ -1,0 +1,140 @@
+[
+  {
+    "task": "vram-plan",
+    "passed": false,
+    "exit_code": 0,
+    "seconds": 21.93,
+    "native_tools": [
+      "Read",
+      "Read",
+      "Read",
+      "Read",
+      "Edit",
+      "Edit"
+    ],
+    "artifact": "tmp\\acceptance\\vram-plan.md",
+    "arithmetic_valid": null,
+    "usage": {
+      "input_tokens": 4614,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 13759,
+      "output_tokens": 1270,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "",
+      "iterations": [],
+      "speed": "standard"
+    }
+  },
+  {
+    "task": "model-audit",
+    "passed": false,
+    "exit_code": 0,
+    "seconds": 21.49,
+    "native_tools": [
+      "Read",
+      "Read",
+      "Read",
+      "Bash",
+      "Edit",
+      "Read"
+    ],
+    "artifact": "tmp\\acceptance\\model-audit.json",
+    "arithmetic_valid": false,
+    "usage": {
+      "input_tokens": 3547,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 11063,
+      "output_tokens": 988,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "",
+      "iterations": [],
+      "speed": "standard"
+    }
+  },
+  {
+    "task": "operator-guide",
+    "passed": true,
+    "exit_code": 0,
+    "seconds": 19.15,
+    "native_tools": [
+      "Read",
+      "Read",
+      "Read",
+      "Read",
+      "Edit",
+      "Read",
+      "Edit"
+    ],
+    "artifact": "tmp\\acceptance\\OPERATIONS.md",
+    "arithmetic_valid": null,
+    "usage": {
+      "input_tokens": 6923,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 26415,
+      "output_tokens": 886,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "",
+      "iterations": [],
+      "speed": "standard"
+    },
+    "published_artifact": "evidence/tasks/OPERATIONS.md",
+    "artifact_sha256": "48c2719a36c238250b43dc7524d7a08f68614686235ba19c080d09478597a8b8",
+    "native_edit_reconstruction_matches": true,
+    "source_snapshots": [
+      {
+        "original": "compose.yaml",
+        "snapshot": "evidence/tasks/sources/operator-guide/compose.yaml",
+        "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      },
+      {
+        "original": "README.md",
+        "snapshot": "evidence/tasks/sources/operator-guide/README.md",
+        "sha256": "1fcf6dde57e42c90ecbfcd27879907f39de4b5809acf972e49fb0fd01a43a611",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      },
+      {
+        "original": "gateway.yaml",
+        "snapshot": "evidence/tasks/sources/operator-guide/gateway.yaml",
+        "sha256": "c73b6ef22545aa12f27362b7b2b7b60028c5f7fa024a721e58e07cacef70b9d4",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      }
+    ]
+  }
+]

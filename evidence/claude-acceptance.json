@@ -1,85 +1,25 @@
 [
   {
-    "task": "vram-plan",
-    "passed": true,
-    "exit_code": 0,
-    "seconds": 15.4,
-    "native_tools": [
-      "Read",
-      "Read",
-      "Read",
-      "Read",
-      "Edit"
-    ],
-    "artifact": "tmp\\acceptance\\vram-plan.md",
-    "arithmetic_valid": true,
-    "usage": {
-      "input_tokens": 4405,
-      "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 9423,
-      "output_tokens": 765,
-      "output_tokens_details": {
-        "thinking_tokens": 0
-      },
-      "server_tool_use": {
-        "web_search_requests": 0,
-        "web_fetch_requests": 0
-      },
-      "service_tier": "standard",
-      "cache_creation": {
-        "ephemeral_1h_input_tokens": 0,
-        "ephemeral_5m_input_tokens": 0
-      },
-      "inference_geo": "",
-      "iterations": [],
-      "speed": "standard"
-    },
-    "published_artifact": "evidence/tasks/VRAM_PLAN.md",
-    "artifact_sha256": "5eecf53785ef6ba26172337d6478a6a4ec233dcfe4fbe330e45413c71e63f849",
-    "native_edit_reconstruction_matches": true,
-    "source_snapshots": [
-      {
-        "original": "evidence/host-vram.json",
-        "snapshot": "evidence/tasks/sources/vram-plan/host-vram.json",
-        "sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55",
-        "complete_native_read": true,
-        "before_first_artifact_edit": true
-      },
-      {
-        "original": "evidence/runtime-vram.json",
-        "snapshot": "evidence/tasks/sources/vram-plan/runtime-vram.json",
-        "sha256": "3a61fe8e24b322a647a8d565f45f313954e761b8dd132be35596f659dfe8da45",
-        "complete_native_read": true,
-        "before_first_artifact_edit": true
-      },
-      {
-        "original": "evidence/model-manifest.json",
-        "snapshot": "evidence/tasks/sources/vram-plan/model-manifest.json",
-        "sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
-        "complete_native_read": true,
-        "before_first_artifact_edit": true
-      }
-    ]
-  },
-  {
     "task": "operator-guide",
     "passed": true,
     "exit_code": 0,
-    "seconds": 16.32,
+    "seconds": 19.15,
     "native_tools": [
       "Read",
       "Read",
       "Read",
+      "Read",
+      "Edit",
       "Read",
       "Edit"
     ],
     "artifact": "tmp\\acceptance\\OPERATIONS.md",
     "arithmetic_valid": null,
     "usage": {
-      "input_tokens": 6216,
+      "input_tokens": 6923,
       "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 13470,
-      "output_tokens": 620,
+      "cache_read_input_tokens": 26415,
+      "output_tokens": 886,
       "output_tokens_details": {
         "thinking_tokens": 0
       },
@@ -97,7 +37,7 @@
       "speed": "standard"
     },
     "published_artifact": "evidence/tasks/OPERATIONS.md",
-    "artifact_sha256": "1d14f3cae025de190fe102d58a74a5c6b0801a0d297f6bf6335d052653896720",
+    "artifact_sha256": "48c2719a36c238250b43dc7524d7a08f68614686235ba19c080d09478597a8b8",
     "native_edit_reconstruction_matches": true,
     "source_snapshots": [
       {
@@ -108,40 +48,40 @@
         "before_first_artifact_edit": true
       },
       {
-        "original": "gateway.yaml",
-        "snapshot": "evidence/tasks/sources/operator-guide/gateway.yaml",
-        "sha256": "c73b6ef22545aa12f27362b7b2b7b60028c5f7fa024a721e58e07cacef70b9d4",
+        "original": "README.md",
+        "snapshot": "evidence/tasks/sources/operator-guide/README.md",
+        "sha256": "1fcf6dde57e42c90ecbfcd27879907f39de4b5809acf972e49fb0fd01a43a611",
         "complete_native_read": true,
         "before_first_artifact_edit": true
       },
       {
-        "original": "README.md",
-        "snapshot": "evidence/tasks/sources/operator-guide/README.md",
-        "sha256": "89a3b4e5f0ad3f5d0ccd6a557053233ca7fa3d32f3af7cd21f8a27081d13063a",
+        "original": "gateway.yaml",
+        "snapshot": "evidence/tasks/sources/operator-guide/gateway.yaml",
+        "sha256": "c73b6ef22545aa12f27362b7b2b7b60028c5f7fa024a721e58e07cacef70b9d4",
         "complete_native_read": true,
         "before_first_artifact_edit": true
       }
     ]
   },
   {
-    "task": "model-audit",
+    "task": "vram-plan",
     "passed": true,
     "exit_code": 0,
-    "seconds": 20.62,
+    "seconds": 15.22,
     "native_tools": [
       "Read",
       "Read",
       "Read",
-      "Bash",
+      "Read",
       "Edit"
     ],
-    "artifact": "tmp\\acceptance\\model-audit.json",
+    "artifact": "tmp\\acceptance\\vram-plan.md",
     "arithmetic_valid": true,
     "usage": {
-      "input_tokens": 3334,
+      "input_tokens": 4345,
       "cache_creation_input_tokens": 0,
-      "cache_read_input_tokens": 11017,
-      "output_tokens": 911,
+      "cache_read_input_tokens": 5557,
+      "output_tokens": 723,
       "output_tokens_details": {
         "thinking_tokens": 0
       },
@@ -158,9 +98,71 @@
       "iterations": [],
       "speed": "standard"
     },
-    "validation_reassessment": "Correct native artifact retained. Optional artifacts mapping was rejected by the legacy exact-six-key validator; accepted only after exact manifest basename validation and negative regression tests.",
+    "published_artifact": "evidence/tasks/VRAM_PLAN.md",
+    "artifact_sha256": "37c3f45953cdbdeabf6ab93294c9434daa5f46674fe1d5bbf7a847bb2fbd7aec",
+    "native_edit_reconstruction_matches": true,
+    "source_snapshots": [
+      {
+        "original": "evidence/host-vram.json",
+        "snapshot": "evidence/tasks/sources/vram-plan/host-vram.json",
+        "sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      },
+      {
+        "original": "evidence/runtime-vram.json",
+        "snapshot": "evidence/tasks/sources/vram-plan/runtime-vram.json",
+        "sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      },
+      {
+        "original": "evidence/model-manifest.json",
+        "snapshot": "evidence/tasks/sources/vram-plan/model-manifest.json",
+        "sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+        "complete_native_read": true,
+        "before_first_artifact_edit": true
+      }
+    ]
+  },
+  {
+    "task": "model-audit",
+    "passed": true,
+    "exit_code": 0,
+    "seconds": 20.57,
+    "native_tools": [
+      "Read",
+      "Read",
+      "Read",
+      "Bash",
+      "Edit",
+      "Bash"
+    ],
+    "artifact": "tmp\\acceptance\\model-audit.json",
+    "arithmetic_valid": true,
+    "usage": {
+      "input_tokens": 3351,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 11472,
+      "output_tokens": 915,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "",
+      "iterations": [],
+      "speed": "standard"
+    },
     "published_artifact": "evidence/tasks/MODEL_AUDIT.json",
-    "artifact_sha256": "634861eb588d12a9d5c69d59b8707159b5fe21fa1fb264f35ab850ad50be8c96",
+    "artifact_sha256": "f81a42b822724d8e31def30cd0a65ffe09dc31ae537571a5a896b80f86dc9284",
     "native_edit_reconstruction_matches": true,
     "source_snapshots": [
       {

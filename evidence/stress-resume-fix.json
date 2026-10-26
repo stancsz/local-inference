@@ -1,0 +1,960 @@
+{
+  "captured_at": "2026-10-26T23:38:36.789128+00:00",
+  "root_cause": "Codex resume sends a later developer instruction; local Qwen apply-template rejected it with System message must be at the beginning. Native parser correction passed first live turn.",
+  "correction": "Only the dedicated Codex Responses alias gathers caller instruction text into the leading protected instructions field before native Sift; user/tool history order is preserved. Unknown instruction content fails closed.",
+  "source_sha256": {
+    "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "stress.cli_acceptance": "391554ce21e01920f6c9743f202b41df8d530b38e615c49ae934d933cd599226",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  },
+  "offline_tests": "43 passed",
+  "gateway_image": "sha256:0441d3d28a6cb1411f4e390eb95cb2786e87fb9dab03b7f3cffba60d632e3189",
+  "checks": {
+    "local-smoke.json": {
+      "text": {
+        "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfOWE0eUpWRkVvM3hVSVo4QnBIT2VKZnN3bjZGbFZwRm0=",
+        "type": "message",
+        "role": "assistant",
+        "model": "qwen3.8-27b",
+        "stop_sequence": null,
+        "usage": {
+          "input_tokens": 21,
+          "output_tokens": 8
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "LOCAL_QWEN_SIFT_OK"
+          }
+        ],
+        "stop_reason": "end_turn",
+        "stop_details": null
+      },
+      "protected_overflow": {
+        "status": 422,
+        "detail": "{\"type\":\"error\",\"error\":{\"type\":\"api_error\",\"message\":\"Sift: active turn and instructions exceed target\"}}",
+        "fixture": "'locked ' repeated 45000 times",
+        "characters": 315000,
+        "sha256": "f47148e332e3b0499be7e7994b458c869755f4bbf0f87d7756d60ac2716ecb59"
+      },
+      "tool": {
+        "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfT3A3amxyanJDUHFwVnlYSlRkRUR3Y0xwelROMmNMaFk=",
+        "type": "message",
+        "role": "assistant",
+        "model": "qwen3.8-27b",
+        "stop_sequence": null,
+        "usage": {
+          "input_tokens": 289,
+          "output_tokens": 32
+        },
+        "content": [
+          {
+            "type": "tool_use",
+            "id": "call_TEEcGTB2nJlUBawJBF9Ae0K5fQXR362b",
+            "name": "route_marker",
+            "input": {
+              "marker": "LOCAL_QWEN_TOOL_OK"
+            }
+          }
+        ],
+        "stop_reason": "tool_use",
+        "stop_details": null
+      },
+      "continuation": {
+        "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3Bfd05WZGhHZHFlWG9uOVJsNEJwRXdYWmFiRmhCYTlCQ1Q=",
+        "type": "message",
+        "role": "assistant",
+        "model": "qwen3.8-27b",
+        "stop_sequence": null,
+        "usage": {
+          "input_tokens": 24,
+          "output_tokens": 7,
+          "cache_read_input_tokens": 320
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "LOCAL_QWEN_TOOL_OK"
+          }
+        ],
+        "stop_reason": "end_turn",
+        "stop_details": null
+      },
+      "seconds": 3.189,
+      "passed": true,
+      "endpoint": "http://127.0.0.1:8090/v1/messages"
+    },
+    "openai-smoke.json": {
+      "passed": true,
+      "request": {
+        "model": "qwen3.8-27b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Return the JSON object required by the response schema."
+          }
+        ],
+        "max_completion_tokens": 128,
+        "seed": 42,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "marker",
+            "strict": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "marker": {
+                  "type": "string",
+                  "const": "LOCAL_OPENAI_OK"
+                }
+              },
+              "required": [
+                "marker"
+              ],
+              "additionalProperties": false
+            }
+          }
+        }
+      },
+      "response": {
+        "id": "chatcmpl-35ZeJk4RI37TheJtb9RQnTa2AR57Owiz",
+        "created": 1793057592,
+        "model": "qwen3.8-27b",
+        "object": "chat.completion",
+        "system_fingerprint": "b11610-091b6a7fc",
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "content": "{\"marker\": \"LOCAL_OPENAI_OK\"}",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "refusal": null
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 15,
+          "prompt_tokens": 22,
+          "total_tokens": 37,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 22,
+          "prompt_ms": 289.888,
+          "prompt_per_token_ms": 13.176727272727272,
+          "prompt_per_second": 75.89137873937521,
+          "predicted_n": 15,
+          "predicted_ms": 666.194,
+          "predicted_per_token_ms": 47.58528571428571,
+          "predicted_per_second": 21.01489956379073,
+          "draft_n": 40,
+          "draft_n_accepted": 4
+        }
+      },
+      "schema_assertion": true,
+      "cap_request": {
+        "model": "qwen3.8-27b",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Count from 1 to 1000, one number per line. Keep going until the limit."
+          }
+        ],
+        "max_completion_tokens": 16,
+        "temperature": 0
+      },
+      "cap_response": {
+        "id": "chatcmpl-5OaQJ6bNuKQM3y0xnIZtsMH2a3gghAHg",
+        "created": 1793057593,
+        "model": "qwen3.8-27b",
+        "object": "chat.completion",
+        "system_fingerprint": "b11610-091b6a7fc",
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "content": "1\n2\n3\n4\n5\n6\n7\n8\n",
+              "role": "assistant",
+              "provider_specific_fields": {
+                "refusal": null
+              }
+            },
+            "provider_specific_fields": {}
+          }
+        ],
+        "usage": {
+          "completion_tokens": 16,
+          "prompt_tokens": 34,
+          "total_tokens": 50,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 34,
+          "prompt_ms": 214.315,
+          "prompt_per_token_ms": 6.303382352941177,
+          "prompt_per_second": 158.644985185358,
+          "predicted_n": 16,
+          "predicted_ms": 136.57,
+          "predicted_per_token_ms": 9.104666666666667,
+          "predicted_per_second": 109.8337848722267,
+          "draft_n": 12,
+          "draft_n_accepted": 12
+        }
+      },
+      "output_limit_assertion": true,
+      "invalid_top_level_system_status": 422,
+      "purpose": "Submitted schema yields the exact const absent from user text; a long-generation request stops at the exact requested 16-token limit; malformed OpenAI system is rejected"
+    },
+    "responses-smoke.json": {
+      "passed": true,
+      "checks": [
+        {
+          "kind": "function",
+          "first": {
+            "id": "resp_MKQVQ2adVPuqHg9BapW5Up7u2plhkHZwJAmxqFKaaWrFi-qLuz_8hlWdFJAtVM8TmMg_6O6h1_7iobOUjtUY12Sb3yoJEWggOhkWKjeCPDcYyks8Fy-yJYspJdnXqElQ3ALmdK_fDIr_R_EXrPjjfBUg-rEA9Zpl0t7t3qMLwvLAcexq8l9DPEyi8G0kViDZcBmeLY1JyVPABhtOyr8TZsdAQWhw0njsY401MAH99IBx6UgDBNhSa-RxwQLLAG84iTlrRj5gIj0w5Zb3MQV_-uFmhNH-bwodW41NjnyAfG0aSvyUkUoO-7TZeGvjfEtru1MS5VYgszs03iRNf6fkeBhR_ZSQDHHL13HatEhzEh3U2CrFRp858D3c1NUBhLAfoIND0Gra0jnlu9rr05Z-dE-EWfbStqJWH1xf2OReqcfuFru_k803AoZEzcjJww==",
+            "created_at": 1793057520,
+            "error": null,
+            "incomplete_details": null,
+            "instructions": null,
+            "metadata": {},
+            "model": "qwen3.8-27b-codex",
+            "object": "response",
+            "output": [
+              {
+                "type": "message",
+                "id": "msg_74e98c93-dabe-494c-85f4-8ca9bf85e612",
+                "status": "completed",
+                "role": "assistant",
+                "content": [
+                  {
+                    "type": "output_text",
+                    "text": "",
+                    "annotations": []
+                  }
+                ],
+                "phase": null
+              },
+              {
+                "arguments": "{\"marker\":\"LOCAL_RESPONSES_FUNCTION_OK\"}",
+                "call_id": "eS0a3MhH4ogmsd3cQJ8TedRtkkaDpLHe",
+                "name": "route_marker",
+                "type": "function_call",
+                "id": "fc_eS0a3MhH4ogmsd3cQJ8TedRtkkaDpLHe",
+                "caller": null,
+                "namespace": null,
+                "status": "completed"
+              }
+            ],
+            "parallel_tool_calls": false,
+            "temperature": null,
+            "tool_choice": {
+              "name": "route_marker",
+              "type": "function"
+            },
+            "tools": [
+              {
+                "name": "route_marker",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "marker": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "marker"
+                  ]
+                },
+                "strict": null,
+                "type": "function",
+                "allowed_callers": null,
+                "defer_loading": null,
+                "description": "Return the exact harmless marker",
+                "output_schema": null
+              }
+            ],
+            "top_p": null,
+            "max_output_tokens": 512,
+            "previous_response_id": null,
+            "reasoning": null,
+            "status": "completed",
+            "text": {},
+            "truncation": null,
+            "usage": {
+              "input_tokens": 288,
+              "input_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 0,
+                "cached_tokens_details": null,
+                "image_tokens": null,
+                "text_tokens": null,
+                "video_tokens": null
+              },
+              "output_tokens": 31,
+              "output_tokens_details": null,
+              "total_tokens": 319,
+              "cost": null
+            },
+            "user": null,
+            "store": null
+          },
+          "continuation": {
+            "id": "resp_vDhftl_XjeGTO60NpOPo6wXj-7r85zr2ky0R_deHz45-5TqtW5ZpZMXc2o-gZ1bkA2XefodWOHJ1jAcrj4Yarw8zuiBDW7JQJm96dKXF07PXvNrAHboKcqVoFpOSarDCnd7soYDUzLqchofcJgnhri0katiLXI7qURH39_q-Nonxb2siTGV9eVk-B-cnQZ5BadLgKqKOpQa7yzM58cN4KPhEM8p7x4YVnD3B8YydkzFRvfeuvJ2BwG06vXYdCCCmaYul4RIIoQQp5DUtNTzCFxI3qPXfuMZBT5Kk74l1_7L6rWItvWskOP93dOTKFa28HlCyTNleb4zr4ch_7tAbxXrALVwV9Miahg63FcT0wygF6fItAsG7WJlaTjiyA-1tROPLLUagFgYFLkh9O4r7N0TokfzibKcI83ZIVxj2LGRBL-xItuniiWCqewHNyQ==",
+            "created_at": 1793057521,
+            "instructions": "Resume instruction: keep the exact marker from the tool result in your final answer.",
+            "metadata": {},
+            "model": "qwen3.8-27b",
+            "object": "response",
+            "output": [
+              {
+                "type": "message",
+                "id": "msg_05510e69-eb6f-4902-9328-340ca4dfb873",
+                "status": "completed",
+                "role": "assistant",
+                "content": [
+                  {
+                    "type": "output_text",
+                    "text": "LOCAL_RESPONSES_FUNCTION_OK",
+                    "annotations": []
+                  }
+                ]
+              }
+            ],
+            "parallel_tool_calls": false,
+            "tool_choice": "auto",
+            "tools": [
+              {
+                "name": "route_marker",
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "marker": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "marker"
+                  ]
+                },
+                "type": "function",
+                "description": "Return the exact harmless marker"
+              }
+            ],
+            "max_output_tokens": 512,
+            "status": "completed",
+            "text": {},
+            "usage": {
+              "input_tokens": 358,
+              "input_tokens_details": {
+                "cached_tokens": 220
+              },
+              "output_tokens": 6,
+              "output_tokens_details": {
+                "reasoning_tokens": 0,
+                "text_tokens": 6
+              },
+              "total_tokens": 364
+            }
+          },
+          "event_types": [
+            "response.created",
+            "response.in_progress",
+            "response.output_item.added",
+            "response.content_part.added",
+            "response.output_text.delta",
+            "response.output_text.delta",
+            "response.output_text.delta",
+            "response.output_text.delta",
+            "response.output_text.delta",
+            "response.output_text.done",
+            "response.content_part.done",
+            "response.output_item.done",
+            "response.completed"
+          ],
+          "native_audit": {
+            "compacted": false,
+            "input_tokens": 358,
+            "forwarded_tokens": 358,
+            "omitted_estimated_tokens": 0,
+            "preserved_recent_turns": 0,
+            "preserved_recent_tool_cycles": 0,
+            "selected_excerpts": 0,
+            "target_tokens": 32768,
+            "context_window": 40960,
+            "output_reserve": 512,
+            "fixed_tokens": 256,
+            "raw_native_tokens": 358,
+            "available_tokens": 40192,
+            "ceiling_tokens": 40192,
+            "anchor_tokens": 32768,
+            "compression_ratio": 8.0,
+            "budget_policy": "request_adaptive_ratio",
+            "native_input_tokens": 358,
+            "compaction_input_sha256": "43895ea63350a018d0e022d5f32b945efb4864916a4f1f162b6e61893299e94b",
+            "compaction_seconds": 0.0142,
+            "selection_counting": "native full-request tokenizer",
+            "tokenizer_calls": 2,
+            "raw_native_token_limit": 1050000,
+            "decoder_headroom": 256
+          },
+          "passed": true
+        },
+        {
+          "kind": "custom",
+          "first": {
+            "id": "resp_T2EyX7-QpqoRiWgJWufa1EbHl7kdyxxgDezofPPdoio5_fdMTORt1JoZ3qK69HsUHaE8I7-GtbSqt9zk_bsMEXB_4f3tWJ6BAU-8h98bBCrKvFwbnYFuKqiJfU8jrHaVppe33Q9ACkKXTKAs4YKRV9n93-2L0JmngDT__pfKx-fzwXZdHPEWNWAoiLP-VTC8PuiE3jT0EPjtVv6knNgsJPixlEFZEGeem29rKdJLr8wvDEXnF_yKAsE-2TSV_Q7hkXaQUyEU5IwhaDQQSX1lxNt5xQoMR6CQHdE1UPOEU9R8CYfzu0O_fF5TBO_pIk9QDRrsMdjmPZI82NE-BVNOmJuhII1_pt-CnZ3R1f6BYjpn-8k2ggETXfORiV7iYT4O3YhoRg0tm5YtYJQkFXeZNyIDVh7ljXO8FEAAQEnJvqOHlpZP5fXG39q082kLVQ==",
+            "created_at": 1793057523,
+            "error": null,
+            "incomplete_details": null,
+            "instructions": null,
+            "metadata": {},
+            "model": "qwen3.8-27b-codex",
+            "object": "response",
+            "output": [
+              {
+                "type": "message",
+                "id": "msg_d731e400-ac78-474a-a9d7-eb7a4e75bda3",
+                "status": "completed",
+                "role": "assistant",
+                "content": [
+                  {
+                    "type": "output_text",
+                    "text": "",
+                    "annotations": []
+                  }
+                ],
+                "phase": null
+              },
+              {
+                "type": "custom_tool_call",
+                "call_id": "opbxRRxXixMuOm8Y7e56CupAkL3ztABt",
+                "id": "ctc_opbxRRxXixMuOm8Y7e56CupAkL3ztABt",
+                "name": "route_marker",
+                "input": "LOCAL_RESPONSES_CUSTOM_OK",
+                "status": "completed"
+              }
+            ],
+            "parallel_tool_calls": false,
+            "temperature": null,
+            "tool_choice": {
+              "name": "route_marker",
+              "type": "custom"
+            },
+            "tools": [
+              {
+                "name": "route_marker",
+                "type": "custom",
+                "allowed_callers": null,
+                "defer_loading": null,
+                "description": "Return the exact harmless marker",
+                "format": {
+                  "type": "text"
+                }
+              }
+            ],
+            "top_p": null,
+            "max_output_tokens": 512,
+            "previous_response_id": null,
+            "reasoning": null,
+            "status": "completed",
+            "text": {},
+            "truncation": null,
+            "usage": {
+              "input_tokens": 301,
+              "input_tokens_details": {
+                "audio_tokens": null,
+                "cached_tokens": 0,
+                "cached_tokens_details": null,
+                "image_tokens": null,
+                "text_tokens": null,
+                "video_tokens": null
+              },
+              "output_tokens": 31,
+              "output_tokens_details": null,
+              "total_tokens": 332,
+              "cost": null
+            },
+            "user": null,
+            "store": null
+          },
+          "continuation": {
+            "id": "resp_UmXyInMpN_xQNHVWQ9ktLddIDRm4-1nYGtKoSJcSSDnxAhzAysOLFS5h5AZBfA59m80EfKtiQRDiFpvt1jF4YMF6ypUSelSPDQ8tuEPoh6tXzJnVkUMaA0Ig0zML9OZx7cxkMNpnzgWEflS20yGybwlwMZqGXMNfZXr3WiDQK_qCVpbsUqQVsRB1e0i0Khtd8bRT529Z5kR6o_iAPnuKrNdyMtJ9XuHr2OfXt0MjamJ7S2sRU6Np775ABps8WR9J5veMhPw1_LdOpfdRXEDTAvLBW_bNoRKH7wU8wn51XBczCOGbieJxTvHn6MIK56z8qwq8efLeFXQiIlk8mPhquA4_shbE-ZzjLJZZexUqHfJFds_nsQF3b7ooepF_ZUnFuj7Hbl1JrqwCdUtRsOuikmnQG1Vc04joKClfEa9DDDBcocTaPJLSiED3y7KVAA==",
+            "created_at": 1793057523,
+            "instructions": "Resume instruction: keep the exact marker from the tool result in your final answer.",
+            "metadata": {},
+            "model": "qwen3.8-27b",
+            "object": "response",
+            "output": [
+              {
+                "type": "message",
+                "id": "msg_8f2632e0-fad7-43b0-aaaa-d351adcb186e",
+                "status": "completed",
+                "role": "assistant",
+                "content": [
+                  {
+                    "type": "output_text",
+                    "text": "LOCAL_RESPONSES_CUSTOM_OK",
+                    "annotations": []
+                  }
+                ]
+              }
+            ],
+            "parallel_tool_calls": false,
+            "tool_choice": "auto",
+            "tools": [
+              {
+                "name": "route_marker",
+                "type": "custom",
+                "description": "Return the exact harmless marker",
+                "format": {
+                  "type": "text"
+                }
+              }
+            ],
+            "max_output_tokens": 512,
+            "status": "completed",
+            "text": {},
+            "usage": {
+              "input_tokens": 371,
+              "input_tokens_details": {
+                "cached_tokens": 233
+              },
+              "output_tokens": 6,
+              "output_tokens_details": {
+                "reasoning_tokens": 0,
+                "text_tokens": 6
+              },
+              "total_tokens": 377
+            }
+          },
+          "event_types": [
+            "response.created",
+            "response.in_progress",
+            "response.output_item.added",
+            "response.content_part.added",
+            "response.output_text.delta",
+            "response.output_text.delta",
+            "response.output_text.delta",
+            "response.output_text.delta",
+            "response.output_text.delta",
+            "response.output_text.done",
+            "response.content_part.done",
+            "response.output_item.done",
+            "response.completed"
+          ],
+          "native_audit": {
+            "compacted": false,
+            "input_tokens": 371,
+            "forwarded_tokens": 371,
+            "omitted_estimated_tokens": 0,
+            "preserved_recent_turns": 0,
+            "preserved_recent_tool_cycles": 0,
+            "selected_excerpts": 0,
+            "target_tokens": 32768,
+            "context_window": 40960,
+            "output_reserve": 512,
+            "fixed_tokens": 256,
+            "raw_native_tokens": 371,
+            "available_tokens": 40192,
+            "ceiling_tokens": 40192,
+            "anchor_tokens": 32768,
+            "compression_ratio": 8.0,
+            "budget_policy": "request_adaptive_ratio",
+            "native_input_tokens": 371,
+            "compaction_input_sha256": "6b33a087cf9cedb90ddd5748ba72878558eac3dfd3c918a77602c4ce2196cd72",
+            "compaction_seconds": 0.0126,
+            "selection_counting": "native full-request tokenizer",
+            "tokenizer_calls": 2,
+            "raw_native_token_limit": 1050000,
+            "decoder_headroom": 256
+          },
+          "passed": true
+        }
+      ]
+    },
+    "claude-acceptance.json": [
+      {
+        "task": "operator-guide",
+        "passed": true,
+        "exit_code": 0,
+        "seconds": 19.15,
+        "native_tools": [
+          "Read",
+          "Read",
+          "Read",
+          "Read",
+          "Edit",
+          "Read",
+          "Edit"
+        ],
+        "artifact": "tmp\\acceptance\\OPERATIONS.md",
+        "arithmetic_valid": null,
+        "usage": {
+          "input_tokens": 6923,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 26415,
+          "output_tokens": 886,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "published_artifact": "evidence/tasks/OPERATIONS.md",
+        "artifact_sha256": "48c2719a36c238250b43dc7524d7a08f68614686235ba19c080d09478597a8b8",
+        "native_edit_reconstruction_matches": true,
+        "source_snapshots": [
+          {
+            "original": "compose.yaml",
+            "snapshot": "evidence/tasks/sources/operator-guide/compose.yaml",
+            "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+            "complete_native_read": true,
+            "before_first_artifact_edit": true
+          },
+          {
+            "original": "README.md",
+            "snapshot": "evidence/tasks/sources/operator-guide/README.md",
+            "sha256": "1fcf6dde57e42c90ecbfcd27879907f39de4b5809acf972e49fb0fd01a43a611",
+            "complete_native_read": true,
+            "before_first_artifact_edit": true
+          },
+          {
+            "original": "gateway.yaml",
+            "snapshot": "evidence/tasks/sources/operator-guide/gateway.yaml",
+            "sha256": "c73b6ef22545aa12f27362b7b2b7b60028c5f7fa024a721e58e07cacef70b9d4",
+            "complete_native_read": true,
+            "before_first_artifact_edit": true
+          }
+        ]
+      },
+      {
+        "task": "vram-plan",
+        "passed": true,
+        "exit_code": 0,
+        "seconds": 15.22,
+        "native_tools": [
+          "Read",
+          "Read",
+          "Read",
+          "Read",
+          "Edit"
+        ],
+        "artifact": "tmp\\acceptance\\vram-plan.md",
+        "arithmetic_valid": true,
+        "usage": {
+          "input_tokens": 4345,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 5557,
+          "output_tokens": 723,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "published_artifact": "evidence/tasks/VRAM_PLAN.md",
+        "artifact_sha256": "37c3f45953cdbdeabf6ab93294c9434daa5f46674fe1d5bbf7a847bb2fbd7aec",
+        "native_edit_reconstruction_matches": true,
+        "source_snapshots": [
+          {
+            "original": "evidence/host-vram.json",
+            "snapshot": "evidence/tasks/sources/vram-plan/host-vram.json",
+            "sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55",
+            "complete_native_read": true,
+            "before_first_artifact_edit": true
+          },
+          {
+            "original": "evidence/runtime-vram.json",
+            "snapshot": "evidence/tasks/sources/vram-plan/runtime-vram.json",
+            "sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731",
+            "complete_native_read": true,
+            "before_first_artifact_edit": true
+          },
+          {
+            "original": "evidence/model-manifest.json",
+            "snapshot": "evidence/tasks/sources/vram-plan/model-manifest.json",
+            "sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+            "complete_native_read": true,
+            "before_first_artifact_edit": true
+          }
+        ]
+      },
+      {
+        "task": "model-audit",
+        "passed": true,
+        "exit_code": 0,
+        "seconds": 20.57,
+        "native_tools": [
+          "Read",
+          "Read",
+          "Read",
+          "Bash",
+          "Edit",
+          "Bash"
+        ],
+        "artifact": "tmp\\acceptance\\model-audit.json",
+        "arithmetic_valid": true,
+        "usage": {
+          "input_tokens": 3351,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 11472,
+          "output_tokens": 915,
+          "output_tokens_details": {
+            "thinking_tokens": 0
+          },
+          "server_tool_use": {
+            "web_search_requests": 0,
+            "web_fetch_requests": 0
+          },
+          "service_tier": "standard",
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          },
+          "inference_geo": "",
+          "iterations": [],
+          "speed": "standard"
+        },
+        "published_artifact": "evidence/tasks/MODEL_AUDIT.json",
+        "artifact_sha256": "f81a42b822724d8e31def30cd0a65ffe09dc31ae537571a5a896b80f86dc9284",
+        "native_edit_reconstruction_matches": true,
+        "source_snapshots": [
+          {
+            "original": "evidence/model-manifest.json",
+            "snapshot": "evidence/tasks/sources/model-audit/model-manifest.json",
+            "sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+            "complete_native_read": true,
+            "before_first_artifact_edit": true
+          },
+          {
+            "original": "compose.yaml",
+            "snapshot": "evidence/tasks/sources/model-audit/compose.yaml",
+            "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+            "complete_native_read": true,
+            "before_first_artifact_edit": true
+          }
+        ]
+      }
+    ],
+    "context-acceptance.json": [
+      {
+        "minimum_raw_native_tokens": 256000,
+        "raw_native_tokens": 257539,
+        "serialized_bytes": 1566709,
+        "audit": {
+          "compacted": true,
+          "input_tokens": 257539,
+          "forwarded_tokens": 32053,
+          "omitted_estimated_tokens": 225486,
+          "preserved_recent_turns": 3,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 152,
+          "method": "query_aware_extract",
+          "target_tokens": 32193,
+          "context_window": 40960,
+          "output_reserve": 128,
+          "fixed_tokens": 256,
+          "raw_native_tokens": 257539,
+          "available_tokens": 40576,
+          "ceiling_tokens": 40576,
+          "anchor_tokens": 32768,
+          "compression_ratio": 8.0,
+          "budget_policy": "request_adaptive_ratio",
+          "native_input_tokens": 32053,
+          "compaction_input_sha256": "f7a8138bf7317a14c98c5720edcab5aa91c9d59e7645b80f9cfcda8e134d58e1",
+          "compaction_seconds": 1.2803,
+          "selection_counting": "native full-request tokenizer",
+          "tokenizer_calls": 16,
+          "raw_native_token_limit": 1050000,
+          "decoder_headroom": 256
+        },
+        "live_audit": {
+          "compacted": true,
+          "input_tokens": 257539,
+          "forwarded_tokens": 32053,
+          "omitted_estimated_tokens": 225486,
+          "preserved_recent_turns": 3,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 152,
+          "method": "query_aware_extract",
+          "target_tokens": 32193,
+          "context_window": 40960,
+          "output_reserve": 128,
+          "fixed_tokens": 256,
+          "raw_native_tokens": 257539,
+          "available_tokens": 40576,
+          "ceiling_tokens": 40576,
+          "anchor_tokens": 32768,
+          "compression_ratio": 8.0,
+          "budget_policy": "request_adaptive_ratio",
+          "native_input_tokens": 32053,
+          "compaction_input_sha256": "f7a8138bf7317a14c98c5720edcab5aa91c9d59e7645b80f9cfcda8e134d58e1",
+          "compaction_seconds": 1.2298,
+          "selection_counting": "native full-request tokenizer",
+          "tokenizer_calls": 16,
+          "raw_native_token_limit": 1050000,
+          "decoder_headroom": 256
+        },
+        "answer": "PORT=8090",
+        "passed": true,
+        "seconds": 39.36,
+        "usage": {
+          "input_tokens": 32053,
+          "output_tokens": 7
+        }
+      },
+      {
+        "minimum_raw_native_tokens": 1000000,
+        "raw_native_tokens": 1001638,
+        "serialized_bytes": 6104799,
+        "audit": {
+          "compacted": true,
+          "input_tokens": 1001638,
+          "forwarded_tokens": 33300,
+          "omitted_estimated_tokens": 968338,
+          "preserved_recent_turns": 0,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 210,
+          "method": "query_aware_extract",
+          "target_tokens": 40576,
+          "context_window": 40960,
+          "output_reserve": 128,
+          "fixed_tokens": 256,
+          "raw_native_tokens": 1001638,
+          "available_tokens": 40576,
+          "ceiling_tokens": 40576,
+          "anchor_tokens": 32768,
+          "compression_ratio": 8.0,
+          "budget_policy": "request_adaptive_ratio",
+          "native_input_tokens": 33300,
+          "compaction_input_sha256": "bb39b5b50b38925c887b80d1d077242a107eb554e38c7cfadf9a2e65023aef4e",
+          "compaction_seconds": 2.7321,
+          "selection_counting": "native full-request tokenizer",
+          "tokenizer_calls": 13,
+          "raw_native_token_limit": 1050000,
+          "decoder_headroom": 256
+        },
+        "live_audit": {
+          "compacted": true,
+          "input_tokens": 1001638,
+          "forwarded_tokens": 33300,
+          "omitted_estimated_tokens": 968338,
+          "preserved_recent_turns": 0,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 210,
+          "method": "query_aware_extract",
+          "target_tokens": 40576,
+          "context_window": 40960,
+          "output_reserve": 128,
+          "fixed_tokens": 256,
+          "raw_native_tokens": 1001638,
+          "available_tokens": 40576,
+          "ceiling_tokens": 40576,
+          "anchor_tokens": 32768,
+          "compression_ratio": 8.0,
+          "budget_policy": "request_adaptive_ratio",
+          "native_input_tokens": 33300,
+          "compaction_input_sha256": "bb39b5b50b38925c887b80d1d077242a107eb554e38c7cfadf9a2e65023aef4e",
+          "compaction_seconds": 2.9393,
+          "selection_counting": "native full-request tokenizer",
+          "tokenizer_calls": 13,
+          "raw_native_token_limit": 1050000,
+          "decoder_headroom": 256
+        },
+        "answer": "PORT=8090",
+        "passed": true,
+        "seconds": 44.44,
+        "usage": {
+          "input_tokens": 33290,
+          "output_tokens": 7,
+          "cache_read_input_tokens": 10
+        }
+      }
+    ],
+    "runtime-source-parity.json": {
+      "passed": true,
+      "hash_scope": "UTF-8 source text with universal newlines; raw container hashes also retained. Git checkout CRLF/LF differences are normalized, no other whitespace changes.",
+      "local_app_hashes": {
+        "app/budget.py": "a8538f997cccbbb0ed696c5ce0178909023fb079ad5cd0bae183f48c69663dc3",
+        "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+        "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+      },
+      "sift_source": "tmp\\stress\\sift-candidate",
+      "container": {
+        "files": {
+          "/app/budget.py": "a8538f997cccbbb0ed696c5ce0178909023fb079ad5cd0bae183f48c69663dc3",
+          "/app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+          "/app/gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255",
+          "/usr/local/lib/python3.12/site-packages/sift/__init__.py": "f60ed7e806a2177ea331eae06042dcc533b0e8c05c3bacd461caee2d778dd218",
+          "/usr/local/lib/python3.12/site-packages/sift/core.py": "73f241d5493331c6e3ae732cea322238dabf935b5e5bf9469357f4f6a7a8a8a7",
+          "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503",
+          "/usr/local/lib/python3.12/site-packages/sift/litellm_proxy.py": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+          "/usr/local/lib/python3.12/site-packages/sift/litellm_responses.py": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03"
+        },
+        "raw_files": {
+          "/app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+          "/app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+          "/app/gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255",
+          "/usr/local/lib/python3.12/site-packages/sift/__init__.py": "f60ed7e806a2177ea331eae06042dcc533b0e8c05c3bacd461caee2d778dd218",
+          "/usr/local/lib/python3.12/site-packages/sift/core.py": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+          "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+          "/usr/local/lib/python3.12/site-packages/sift/litellm_proxy.py": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+          "/usr/local/lib/python3.12/site-packages/sift/litellm_responses.py": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03"
+        },
+        "litellm": "1.106.4"
+      },
+      "sift_hashes": {
+        "__init__.py": "f60ed7e806a2177ea331eae06042dcc533b0e8c05c3bacd461caee2d778dd218",
+        "core.py": "73f241d5493331c6e3ae732cea322238dabf935b5e5bf9469357f4f6a7a8a8a7",
+        "dynamic.py": "1c7af772d648d94b15df7042daeb55b0cebf79f5e8e2b9a40bb60499df3f3503",
+        "litellm_proxy.py": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+        "litellm_responses.py": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03"
+      }
+    }
+  },
+  "full_codex_session": "pending; see stress-recovery-status.json",
+  "failed_prechecks": "Two exact-format Claude failures retained in stress-setup-failures/claude-resume-precheck.json; clarified prompts, unchanged validators, corrected live reruns passed. Context first shell import failed before inference; corrected candidate PYTHONPATH rerun passed."
+}
