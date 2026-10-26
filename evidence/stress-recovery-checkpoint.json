@@ -1,0 +1,14 @@
+{
+  "state": "waiting_for_verified_nine_turn_pilot",
+  "pid": 110236,
+  "captured_at": "2026-10-26T23:47:41.746737+00:00",
+  "driver_exec_session": 13591,
+  "route": "http://127.0.0.1:8090/v1",
+  "matrix_state": "paused_pending_recovery",
+  "historical_accepted_sessions": 2,
+  "minimum_turns": 9,
+  "minimum_active_seconds": 185,
+  "receipt": "tmp/stress/sessions/codex-engineering-resume-writable/result.json",
+  "gateway_image": "sha256:0441d3d28a6cb1411f4e390eb95cb2786e87fb9dab03b7f3cffba60d632e3189",
+  "watcher_pid": 104272
+}

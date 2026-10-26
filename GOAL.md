@@ -12,6 +12,8 @@ Recovery follow-up: corrected native workflow recognition passed a real Codex tu
 
 The rebuilt gateway passed both fresh context checks. A real resumed Codex turn then reached local inference but exposed a read-only default from exec resume: the initial invocation's --sandbox flag was not enough with ignored user config. Explicit process-only sandbox_mode=workspace-write now applies on both paths, with a regression test and 44 local tests passing. That denied-write attempt remains rejected, including its hidden-test failure; a new frozen session is running, still pending nine-turn acceptance. See evidence/stress-resume-permissions.json.
 
+Verified recovery progress: codex-engineering-resume-writable has passed its first two real turns, including native writes after resume, hidden tests and history retention, under one session ID, with 266.36 active seconds. Full nine-turn acceptance remains pending. A separate watcher holds the actual pilot process handle; it will require accepted nine-turn receipt, frozen-source/runtime identity, native-trace replay and an independent final hidden-test rerun before starting the remaining matrix. It fails closed into attention_required if any check fails. The live pilot and watcher PIDs are recorded in evidence/stress-recovery-status.json; its committed snapshot is evidence/stress-recovery-checkpoint.json. This is an active verified wait, not full stress completion.
+
 ## Ask
 Run Qwen3.8 27B, 3/4-bit quantization and MTP, in Docker on this Windows host. Sift is a mandatory CPU compaction prerequisite for 256k-1M working histories, forwarding a dynamic 24k-64k working set. Commit and push scoped milestones in both repositories.
 
