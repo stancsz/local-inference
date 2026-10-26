@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import hashlib
 import urllib.request
 from datetime import datetime, timezone
 
@@ -12,6 +13,20 @@ def main():
     used=int(subprocess.check_output(['nvidia-smi','--query-gpu=memory.used','--format=csv,noheader,nounits'],text=True).strip())
     with urllib.request.urlopen('http://127.0.0.1:8091/props') as response: props=json.load(response)
     receipt={'captured_at':datetime.now(timezone.utc).isoformat(),'baseline_host_used_mib':baseline,'loaded_host_used_mib':used,'observed_inference_delta_mib':used-baseline,'observed_inference_delta_bytes':(used-baseline)*1024**2,'under_14_decimal_GB_by_delta':(used-baseline)*1024**2<14_000_000_000,'caveat':'Host delta includes runtime caches/buffers and possible unrelated desktop drift; not per-allocation accounting.','runtime':{k:props[k] for k in ('build_info','model_alias','model_ftype','model_path','total_slots')},'context_window':props['default_generation_settings']['n_ctx']}
+    command="Get-CimInstance Win32_PerfFormattedData_GPUPerformanceCounters_GPUProcessMemory | ForEach-Object { if ($_.Name -match '^pid_(\\d+)_') { $process = Get-Process -Id ([int]$Matches[1]) -ErrorAction SilentlyContinue; if ($process.ProcessName -eq 'vmwp') { [pscustomobject]@{instance=$_.Name; dedicated_bytes=[long]$_.DedicatedUsage; shared_bytes=[long]$_.SharedUsage} } } } | ConvertTo-Json -Compress"
+    counters=json.loads(subprocess.check_output(['pwsh','-NoProfile','-Command',command],text=True))
+    receipt['vmwp_allocation_counters']=counters if isinstance(counters,list) else [counters]
+    receipt['allocation_counter_caveat']='WSL VM allocation counters can overlap; they are not physical GPU totals or per-model accounting.'
+    code="""import json,hashlib,pathlib,importlib.metadata,sift.dynamic
+files={n:hashlib.sha256(pathlib.Path(n).read_bytes()).hexdigest() for n in ['/app/budget.py','/app/gateway.py',sift.dynamic.__file__]}
+print(json.dumps({'files':files,'litellm':importlib.metadata.version('litellm')}))
+"""
+    container=json.loads(subprocess.check_output(['docker','exec','local-inference-gateway-1','python','-c',code],text=True))
+    local={n:hashlib.sha256((ROOT/n).read_bytes()).hexdigest() for n in ['app/budget.py','app/gateway.py']}
+    assert all(container['files']['/'+n]==value for n,value in local.items())
+    sift_sha=hashlib.sha256((ROOT.parent/'sift/src/sift/dynamic.py').read_bytes()).hexdigest()
+    assert sift_sha in container['files'].values()
+    (ROOT/'evidence/runtime-source-parity.json').write_text(json.dumps({'passed':True,'local_app_hashes':local,'container':container,'sift_dynamic_sha256':sift_sha},indent=2))
     (ROOT/'evidence/runtime-vram.json').write_text(json.dumps(receipt,indent=2))
     print(json.dumps(receipt,indent=2))
 

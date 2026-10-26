@@ -9,7 +9,7 @@ from sift import CompactionError
 from budget import compact
 
 PROTOCOLS={'completion':'openai','acompletion':'openai','anthropic_messages':'anthropic','aanthropic_messages':'anthropic'}
-FIELDS={'model','messages','system','tools','tool_choice','max_tokens','temperature','top_p','stop','stop_sequences'}
+FIELDS={'model','messages','system','tools','tool_choice','max_tokens','max_completion_tokens','temperature','top_p','stop','stop_sequences','response_format','seed','reasoning_effort','thinking','parallel_tool_calls'}
 
 class LocalSift(CustomLogger):
     def __init__(self):
@@ -28,28 +28,28 @@ class LocalSift(CustomLogger):
                 forwarded,audit=compact(payload,protocol)
                 data['messages']=forwarded['messages']
                 data['max_tokens']=forwarded['max_tokens']
+                data.pop('max_completion_tokens',None)
                 if 'system' in forwarded: data['system']=forwarded['system']
                 data.setdefault('metadata',{})['local_sift']=audit
                 print(json.dumps({'event':'local_sift',**audit}),flush=True)
-                with open(os.environ.get('SIFT_AUDIT_PATH','/evidence/gateway-audit.jsonl'),'a',encoding='utf-8') as stream:
-                    stream.write(json.dumps(audit)+'\n')
+                try:
+                    with open(os.environ.get('SIFT_AUDIT_PATH','/evidence/gateway-audit.jsonl'),'a',encoding='utf-8') as stream:
+                        stream.write(json.dumps(audit)+'\n')
+                except OSError:
+                    print(json.dumps({'event':'audit_write_failed','compaction_input_sha256':audit['compaction_input_sha256']}),flush=True)
                 return data
             except (CompactionError,ValueError,TypeError,KeyError) as error:
                 raise HTTPException(422,detail=f'Sift: {error}') from error
             finally:
                 self.slot.release()
         # Slot is held by the running worker even if the client disconnects.
-        task=asyncio.get_running_loop().run_in_executor(None,run)
+        try:
+            task=asyncio.get_running_loop().run_in_executor(None,run)
+        except BaseException:
+            self.slot.release()
+            raise
         task.add_done_callback(lambda future: None if future.cancelled() else future.exception())
         await asyncio.wait((task,))
         return task.result()
-
-    async def async_post_call_response_headers_hook(self,data,user_api_key_dict,response,request_headers=None,litellm_call_info=None):
-        metadata=data.get('litellm_metadata') or data.get('metadata') or {}
-        audit=metadata.get('local_sift')
-        if not audit: return None
-        return {'x-local-sift-native-input-tokens':str(audit['native_input_tokens']),
-                'x-local-sift-target':str(audit['target_tokens']),
-                'x-local-sift-compacted':str(audit['compacted']).lower()}
 
 local_sift=LocalSift()

@@ -14,15 +14,16 @@
       "selected_excerpts": 156,
       "method": "query_aware_extract",
       "target_tokens": 32768,
-      "context_window": 69632,
+      "context_window": 40960,
       "output_reserve": 128,
-      "fixed_tokens": 0,
+      "fixed_tokens": 256,
       "native_input_tokens": 32689,
-      "raw_request_sha256": "264240c455c708454de095a825c8b95fe1d8f816bdfc3b04b21754691ba91713",
-      "compaction_seconds": 1.239,
+      "compaction_input_sha256": "f7a8138bf7317a14c98c5720edcab5aa91c9d59e7645b80f9cfcda8e134d58e1",
+      "compaction_seconds": 1.1494,
       "selection_counting": "native full-request tokenizer",
       "tokenizer_calls": 15,
-      "raw_native_token_limit": 1050000
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
     },
     "live_audit": {
       "compacted": true,
@@ -35,22 +36,24 @@
       "selected_excerpts": 156,
       "method": "query_aware_extract",
       "target_tokens": 32768,
-      "context_window": 69632,
+      "context_window": 40960,
       "output_reserve": 128,
-      "fixed_tokens": 0,
+      "fixed_tokens": 256,
       "native_input_tokens": 32689,
-      "raw_request_sha256": "264240c455c708454de095a825c8b95fe1d8f816bdfc3b04b21754691ba91713",
-      "compaction_seconds": 1.1615,
+      "compaction_input_sha256": "f7a8138bf7317a14c98c5720edcab5aa91c9d59e7645b80f9cfcda8e134d58e1",
+      "compaction_seconds": 1.0888,
       "selection_counting": "native full-request tokenizer",
       "tokenizer_calls": 15,
-      "raw_native_token_limit": 1050000
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
     },
     "answer": "PORT=8090",
     "passed": true,
-    "seconds": 32.64,
+    "seconds": 3.18,
     "usage": {
-      "input_tokens": 32689,
-      "output_tokens": 7
+      "input_tokens": 4,
+      "output_tokens": 7,
+      "cache_read_input_tokens": 32685
     }
   },
   {
@@ -68,15 +71,16 @@
       "selected_excerpts": 205,
       "method": "query_aware_extract",
       "target_tokens": 32768,
-      "context_window": 69632,
+      "context_window": 40960,
       "output_reserve": 128,
-      "fixed_tokens": 0,
+      "fixed_tokens": 256,
       "native_input_tokens": 32648,
-      "raw_request_sha256": "28c256efbb0e6ac92bff6d1b5fb8c84c5f8ce7223870883c35128fcd552ef639",
-      "compaction_seconds": 2.927,
+      "compaction_input_sha256": "bb39b5b50b38925c887b80d1d077242a107eb554e38c7cfadf9a2e65023aef4e",
+      "compaction_seconds": 2.573,
       "selection_counting": "native full-request tokenizer",
       "tokenizer_calls": 13,
-      "raw_native_token_limit": 1050000
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
     },
     "live_audit": {
       "compacted": true,
@@ -89,23 +93,24 @@
       "selected_excerpts": 205,
       "method": "query_aware_extract",
       "target_tokens": 32768,
-      "context_window": 69632,
+      "context_window": 40960,
       "output_reserve": 128,
-      "fixed_tokens": 0,
+      "fixed_tokens": 256,
       "native_input_tokens": 32648,
-      "raw_request_sha256": "28c256efbb0e6ac92bff6d1b5fb8c84c5f8ce7223870883c35128fcd552ef639",
-      "compaction_seconds": 2.5765,
+      "compaction_input_sha256": "bb39b5b50b38925c887b80d1d077242a107eb554e38c7cfadf9a2e65023aef4e",
+      "compaction_seconds": 2.5056,
       "selection_counting": "native full-request tokenizer",
       "tokenizer_calls": 13,
-      "raw_native_token_limit": 1050000
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
     },
     "answer": "PORT=8090",
     "passed": true,
-    "seconds": 36.59,
+    "seconds": 7.31,
     "usage": {
-      "input_tokens": 32638,
+      "input_tokens": 4,
       "output_tokens": 7,
-      "cache_read_input_tokens": 10
+      "cache_read_input_tokens": 32644
     }
   }
 ]

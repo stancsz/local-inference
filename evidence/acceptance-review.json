@@ -1,0 +1,26 @@
+{
+  "verdict": "PASS for these three actual artifacts",
+  "owner": "commander",
+  "source_snapshots_verified": true,
+  "exact_model_audit_schema_verified": true,
+  "filename_quantization_mapping_verified": true,
+  "host_snapshot_older_than_runtime_verified": true,
+  "exact_runbook_command_lines_verified": true,
+  "budget_math": {
+    "total": 40960,
+    "output": 4096,
+    "decoder_guard": 256,
+    "available_input": 36608,
+    "selected_input": 32768
+  },
+  "markdown_words": {
+    "vram-plan": 225,
+    "operator-guide": 115
+  },
+  "artifact_hashes": {
+    "vram-plan": "8ebe98377a0914bc46ad2ba4e2bc0e16fe810ca4af4d95112ca670bc544685c5",
+    "model-audit": "1e9283c67e804e767c68f2b35a4281cf58f20fd8339616fde97620bf10012881",
+    "operator-guide": "10a9b0a689c1f95ba3d3d8299306193dc8c17c67568456c54c73992ea231cf22"
+  },
+  "limits": "Bounded real-task acceptance; no universal semantic grader or general reliability guarantee."
+}

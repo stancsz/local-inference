@@ -26,6 +26,11 @@ class ProxyBudgetTests(unittest.TestCase):
         with patch.object(proxy,'count',side_effect=[80,proxy.WINDOW]):
             with self.assertRaises(CompactionError): proxy.compact(self.payload())
 
+    def test_reserves_speculative_decoder_headroom(self):
+        # Fits input+output, but leaves only 128 tokens for a 256-token guard.
+        with patch.object(proxy,'count',side_effect=[80,proxy.WINDOW-4096-128]):
+            with self.assertRaises(CompactionError): proxy.compact(self.payload())
+
     def test_schema_overhead_can_exhaust_minimum_budget(self):
         with patch.object(proxy,'count',return_value=proxy.WINDOW):
             with self.assertRaises(CompactionError): proxy.compact(self.payload())
@@ -50,5 +55,30 @@ class ProxyBudgetTests(unittest.TestCase):
             payload['max_tokens']=value
             with self.subTest(value=value), self.assertRaises((ValueError,TypeError)):
                 proxy.compact(payload)
+
+    def test_openai_completion_budget_is_normalized(self):
+        payload=self.payload()
+        payload.pop('max_tokens')
+        payload.pop('system')
+        payload['max_completion_tokens']=128
+        with patch.object(proxy,'count',return_value=80):
+            forwarded,_=proxy.compact(payload,'openai')
+        self.assertEqual(forwarded['max_tokens'],128)
+        self.assertNotIn('max_completion_tokens',forwarded)
+
+    def test_audit_identity_separates_tool_choice_and_schema(self):
+        original=self.payload()
+        other=dict(original,tool_choice={'type':'tool','name':'Read'})
+        self.assertNotEqual(proxy.compaction_digest(original),proxy.compaction_digest(other))
+        other=dict(original,response_format={'type':'json_object'})
+        self.assertNotEqual(proxy.compaction_digest(original),proxy.compaction_digest(other))
+
+    def test_audit_identity_separates_output_limit_aliases(self):
+        original=self.payload()
+        original.pop('max_tokens')
+        self.assertNotEqual(proxy.compaction_digest(dict(original,max_completion_tokens=128)),proxy.compaction_digest(dict(original,max_completion_tokens=256)))
+
+    def test_openai_top_level_system_is_rejected(self):
+        with self.assertRaises(ValueError): proxy.compact(self.payload(),'openai')
 
 if __name__=='__main__': unittest.main()

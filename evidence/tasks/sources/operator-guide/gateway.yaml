@@ -1,0 +1,21 @@
+model_list:
+  - model_name: qwen3.8-27b
+    litellm_params:
+      model: openai/qwen3.8-27b
+      api_base: http://inference:8080/v1
+      api_key: local-only
+      max_tokens: 4096
+    model_info:
+      mode: chat
+      max_input_tokens: 1000000
+      max_output_tokens: 4096
+      supports_function_calling: true
+litellm_settings:
+  callbacks: [gateway.local_sift]
+  drop_params: true
+  request_timeout: 600
+  num_retries: 0
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  disable_spend_logs: true
+  disable_error_logs: true

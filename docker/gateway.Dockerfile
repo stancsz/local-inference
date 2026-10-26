@@ -1,5 +1,6 @@
 FROM python:3.12-slim
-COPY sift /opt/sift
+COPY sift/pyproject.toml sift/README.md sift/LICENSE /opt/sift/
+COPY sift/src /opt/sift/src
 RUN pip install --no-cache-dir /opt/sift
 RUN pip install --no-cache-dir 'litellm[proxy]==1.106.4'
 COPY local-inference/app /app

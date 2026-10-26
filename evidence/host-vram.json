@@ -1,0 +1,115 @@
+{
+  "captured_at": "2026-10-26T19:00:03.2730901Z",
+  "gpu": [
+    "NVIDIA GeForce RTX 5070 Ti, 16303 MiB, 2005 MiB, 13991 MiB"
+  ],
+  "processes": [
+    {
+      "pid": 195736,
+      "process": "dwm",
+      "dedicated_mib": 1688.2
+    },
+    {
+      "pid": 57080,
+      "process": "ChatGPT",
+      "dedicated_mib": 368.7
+    },
+    {
+      "pid": 311156,
+      "process": "chrome",
+      "dedicated_mib": 283.3
+    },
+    {
+      "pid": 8780,
+      "process": "explorer",
+      "dedicated_mib": 231.5
+    },
+    {
+      "pid": 201224,
+      "process": "WeChatAppEx",
+      "dedicated_mib": 218.5
+    },
+    {
+      "pid": 1144,
+      "process": "csrss",
+      "dedicated_mib": 166.8
+    },
+    {
+      "pid": 225056,
+      "process": "Spotify",
+      "dedicated_mib": 45.6
+    },
+    {
+      "pid": 37576,
+      "process": "WindowsTerminal",
+      "dedicated_mib": 42.9
+    },
+    {
+      "pid": 305480,
+      "process": "CHXSmartScreen",
+      "dedicated_mib": 33.8
+    },
+    {
+      "pid": 282312,
+      "process": "Docker Desktop",
+      "dedicated_mib": 28.4
+    },
+    {
+      "pid": 23096,
+      "process": "Creative Cloud UI Helper",
+      "dedicated_mib": 27.7
+    },
+    {
+      "pid": 2024,
+      "process": "ShellExperienceHost",
+      "dedicated_mib": 27.3
+    },
+    {
+      "pid": 12388,
+      "process": "msedgewebview2",
+      "dedicated_mib": 25.0
+    },
+    {
+      "pid": 10388,
+      "process": "StartMenuExperienceHost",
+      "dedicated_mib": 24.5
+    },
+    {
+      "pid": 7688,
+      "process": "vmwp",
+      "dedicated_mib": 22.9
+    },
+    {
+      "pid": 14788,
+      "process": "Taskmgr",
+      "dedicated_mib": 19.5
+    },
+    {
+      "pid": 10364,
+      "process": "SearchHost",
+      "dedicated_mib": 18.8
+    },
+    {
+      "pid": 185568,
+      "process": "SystemSettings",
+      "dedicated_mib": 18.4
+    },
+    {
+      "pid": 201172,
+      "process": "promecefpluginhost",
+      "dedicated_mib": 17.3
+    },
+    {
+      "pid": 196132,
+      "process": "claude",
+      "dedicated_mib": 17.2
+    }
+  ],
+  "notes": [
+    "WDDM process counters may overlap; do not sum as physical GPU usage.",
+    "DWM is the desktop compositor: avoid terminating it.",
+    "Close unused browser tabs or disable browser acceleration after saving work.",
+    "Use a lower resolution or fewer active displays to reduce compositor surfaces.",
+    "Inference can offload weights or KV cache to RAM, at a measurable throughput cost."
+  ]
+}

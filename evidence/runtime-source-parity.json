@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "local_app_hashes": {
+    "app/budget.py": "3c6a3ff6253725bc05b818b126d6c1c216a0e48b245bf3485e18817af9d3b309",
+    "app/gateway.py": "bc2286248c3d80961b48fdc3ad0140dc90089e7ab448af34f6a794a4be85c037"
+  },
+  "container": {
+    "files": {
+      "/app/budget.py": "3c6a3ff6253725bc05b818b126d6c1c216a0e48b245bf3485e18817af9d3b309",
+      "/app/gateway.py": "bc2286248c3d80961b48fdc3ad0140dc90089e7ab448af34f6a794a4be85c037",
+      "/usr/local/lib/python3.12/site-packages/sift/dynamic.py": "eafa67bd5278eb894655ae8faf164aea59388f6f90c56aed2a2ea0a68bd5cb1d"
+    },
+    "litellm": "1.106.4"
+  },
+  "sift_dynamic_sha256": "eafa67bd5278eb894655ae8faf164aea59388f6f90c56aed2a2ea0a68bd5cb1d"
+}

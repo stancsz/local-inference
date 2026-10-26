@@ -41,10 +41,9 @@ def main():
         assert audit['native_input_tokens']+128<=proxy.WINDOW
         request=urllib.request.Request('http://127.0.0.1:8090/v1/messages',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json','Authorization':'Bearer '+gateway_key()})
         with urllib.request.urlopen(request,timeout=900) as response:
-            native_header=response.headers.get('x-local-sift-native-input-tokens')
             output=json.load(response)
         live=[json.loads(line) for line in (ROOT/'evidence/gateway-audit.jsonl').read_text().splitlines() if line.strip()]
-        live=next(row for row in reversed(live) if row.get('raw_request_sha256')==proxy.request_digest(payload))
+        live=next(row for row in reversed(live) if row.get('compaction_input_sha256')==proxy.compaction_digest(payload))
         assert live['native_input_tokens']==audit['native_input_tokens'],'Live and independently calculated compaction counts differ'
         usage=output.get('usage',{})
         assert usage.get('input_tokens',0)+usage.get('cache_read_input_tokens',0)==live['native_input_tokens'],'Provider usage differs from native count'

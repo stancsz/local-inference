@@ -1,0 +1,74 @@
+[
+  {
+    "iteration": 0,
+    "seconds": 3.229,
+    "usage": {
+      "completion_tokens": 256,
+      "prompt_tokens": 43,
+      "total_tokens": 299,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 43,
+      "prompt_ms": 202.157,
+      "prompt_per_token_ms": 4.701325581395349,
+      "prompt_per_second": 212.7059661550181,
+      "predicted_n": 256,
+      "predicted_ms": 2480.503,
+      "predicted_per_token_ms": 9.72746274509804,
+      "predicted_per_second": 102.80173013296093,
+      "draft_n": 242,
+      "draft_n_accepted": 194
+    },
+    "host_gpu_mib": "14491 MiB, 1505 MiB",
+    "response": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport json\nimport sys\nfrom collections import defaultdict\n\n\ndef count_http_errors_by_service(jsonl_path: str) -> None:\n    \"\"\"\n    Read a JSONL log file, count HTTP errors (status >= 400) by service,\n    and print a sorted JSON summary.\n\n    Args:\n        jsonl_path: Path to the JSONL log file.\n    \"\"\"\n    error_counts = defaultdict(int)\n\n    try:\n        with open(jsonl_path, \"r\", encoding=\"utf-8\") as f:\n            for line_num, line in enumerate(f, start=1):\n                line = line.strip()\n                if not line:\n                    continue\n                try:\n                    entry = json.loads(line)\n                except json.JSONDecodeError as e:\n                    print(f\"Warning: Skipping malformed JSON on line {line_num}: {e}\", file=sys.stderr)\n                    continue\n\n                # Extract service name and HTTP status\n                service = entry.get(\"service\", \"unknown\")\n                status = entry.get(\"status\")\n\n                if status is None:\n                    continue\n\n                try:\n                    status_code = int(status)\n                except (ValueError, TypeError"
+        }
+      }
+    ]
+  },
+  {
+    "iteration": 1,
+    "seconds": 2.838,
+    "usage": {
+      "completion_tokens": 256,
+      "prompt_tokens": 43,
+      "total_tokens": 299,
+      "prompt_tokens_details": {
+        "cached_tokens": 39
+      }
+    },
+    "timings": {
+      "cache_n": 39,
+      "prompt_n": 4,
+      "prompt_ms": 172.506,
+      "prompt_per_token_ms": 43.1265,
+      "prompt_per_second": 23.187599271909384,
+      "predicted_n": 256,
+      "predicted_ms": 2449.773,
+      "predicted_per_token_ms": 9.606952941176472,
+      "predicted_per_second": 104.09127702852467,
+      "draft_n": 238,
+      "draft_n_accepted": 195
+    },
+    "host_gpu_mib": "14491 MiB, 1505 MiB",
+    "response": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport json\nimport sys\nfrom collections import defaultdict\n\n\ndef count_http_errors_by_service(jsonl_path: str) -> None:\n    \"\"\"\n    Read a JSONL log file, count HTTP errors (status >= 400) by service,\n    and print a sorted JSON summary.\n\n    Args:\n        jsonl_path: Path to the JSONL log file.\n    \"\"\"\n    error_counts = defaultdict(int)\n\n    try:\n        with open(jsonl_path, \"r\", encoding=\"utf-8\") as f:\n            for line_num, line in enumerate(f, start=1):\n                line = line.strip()\n                if not line:\n                    continue\n                try:\n                    entry = json.loads(line)\n                except json.JSONDecodeError as e:\n                    print(f\"Warning: Skipping malformed JSON on line {line_num}: {e}\", file=sys.stderr)\n                    continue\n\n                # Extract service name and HTTP status\n                service = entry.get(\"service\", \"unknown\")\n                status = entry.get(\"status\")\n\n                if status is None:\n                    continue\n\n                try:\n                    status_code = int(status)\n                except (ValueError, TypeError"
+        }
+      }
+    ]
+  }
+]

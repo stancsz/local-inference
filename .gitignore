@@ -4,3 +4,4 @@ models/
 tmp/
 __pycache__/
 *.pyc
+/evidence/gateway-audit.jsonl

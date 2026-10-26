@@ -11,8 +11,11 @@ from sift import CompactionError
 from sift.dynamic import compact_dynamic
 
 BASE = os.environ.get('INFERENCE_URL', 'http://127.0.0.1:8091')
-WINDOW = int(os.environ.get('CONTEXT_SIZE', '69632'))
+WINDOW = int(os.environ.get('CONTEXT_SIZE', '40960'))
 TARGET = int(os.environ.get('SIFT_TARGET', '32768'))
+DECODER_HEADROOM=256
+if WINDOW < 28928 or not 24576 <= TARGET <= 65536:
+    raise RuntimeError('Require CONTEXT_SIZE >= 28928 and SIFT_TARGET in 24576..65536')
 OPENER = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 
 def upstream(path, payload=None):
@@ -32,7 +35,12 @@ def count(payload, protocol='anthropic'):
 def compact(payload, protocol='anthropic'):
     """Budget and select using the backend's native full-request tokenizer."""
     p = deepcopy(payload)
-    output = p.get('max_tokens', 4096)
+    if protocol=='openai' and p.get('system'):
+        raise ValueError('OpenAI system instructions belong in messages, not a top-level system field')
+    output = p.get('max_tokens',p.get('max_completion_tokens',4096))
+    if 'max_completion_tokens' in p and p['max_completion_tokens']!=output:
+        raise ValueError('Conflicting output token limits')
+    p.pop('max_completion_tokens',None)
     if type(output) is not int or not 0 < output <= 4096:
         raise ValueError('max_tokens must be an integer in 1..4096')
     p['max_tokens'] = output
@@ -51,28 +59,33 @@ def compact(payload, protocol='anthropic'):
         return request
     def native(items):
         request=restore(items)
-        digest=request_digest(request)
+        digest=compaction_digest(request)
         if digest not in cache:
             cache[digest]=count(request,protocol)
         return cache[digest]
     started = time.monotonic()
-    # The counter already includes tools/system/template: subtracting fixed
-    # overhead again would double-count it. All target units are native tokens.
+    # The counter includes tools/system/template. fixed_tokens reserves only
+    # decoder headroom, not prompt overhead. All units are native tokens.
     result = compact_dynamic(messages, native, context_window=WINDOW,
-        output_reserve=output, preferred_target=TARGET, fixed_tokens=0,
+        output_reserve=output, preferred_target=TARGET, fixed_tokens=DECODER_HEADROOM,
         raw_limit=1_050_000, protocol=protocol)
     p=restore(result.messages)
     actual = count(p,protocol)
-    if actual + output > WINDOW:
+    if actual + output + DECODER_HEADROOM > WINDOW:
         raise CompactionError('native tokenizer count exceeds available context')
     audit = dict(result.audit, native_input_tokens=actual, output_reserve=output,
-        raw_request_sha256=request_digest(payload),
+        compaction_input_sha256=compaction_digest(payload),
         compaction_seconds=round(time.monotonic()-started,4),
         selection_counting='native full-request tokenizer', tokenizer_calls=len(cache)+1,
-        raw_native_token_limit=1_050_000)
+        raw_native_token_limit=1_050_000, decoder_headroom=DECODER_HEADROOM)
     return p, audit
 
-def request_digest(payload):
-    fields={k:payload.get(k,default) for k,default in [('messages',[]),('system',None),('tools',[]),('max_tokens',4096)]}
-    return hashlib.sha256(json.dumps(fields,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
+def compaction_digest(payload):
+    """Identity of Sift's count/selection view, not a full provider-request hash.
 
+    Sampling-only parameters outside this projection do not change which
+    history Sift selects. The digest correlates compaction counts, not outputs.
+    """
+    fields={k:payload.get(k,default) for k,default in [('model','qwen3.8-27b'),('messages',[]),('system',None),('tools',[]),('max_tokens',4096),('tool_choice',None),('stop',None),('stop_sequences',None),('response_format',None),('seed',None),('reasoning_effort',None),('thinking',None),('parallel_tool_calls',None),('temperature',None),('top_p',None)]}
+    fields['max_completion_tokens']=payload.get('max_completion_tokens')
+    return hashlib.sha256(json.dumps(fields,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()

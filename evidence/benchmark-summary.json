@@ -1,0 +1,14 @@
+[
+  {
+    "mtp_label": "mtp-64k-ubatch64",
+    "baseline_label": "no-mtp-64k-ubatch64",
+    "samples_per_arm": 2,
+    "mtp_decode_tps": 91.18086819608132,
+    "baseline_decode_tps": 49.92005800056137,
+    "decode_speedup": 1.8265377054460945,
+    "mtp_mean_wall_seconds": 3.4815,
+    "baseline_mean_wall_seconds": 5.6285,
+    "output_tokens_per_sample": 256,
+    "scope": "Sequential short-prompt microbenchmark, one cold/one cached sample per arm. Outputs are not identical; this is not correctness-parity or general productivity evidence."
+  }
+]

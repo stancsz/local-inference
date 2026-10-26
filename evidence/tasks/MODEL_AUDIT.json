@@ -1,0 +1,12 @@
+{
+  "repository": "unsloth/Qwen3.8-27B-GGUF",
+  "revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+  "total_weight_bytes": 12304451360,
+  "quantization": "main IQ3_XXS (Qwen3.8-27B-UD-IQ3_XXS.gguf) and MTP Q4_0 (mtp-Qwen3.8-27B-Q4_0.gguf)",
+  "configured_context_size": 40960,
+  "limitations": [
+    "total_weight_bytes is a sum of the downloaded file sizes in the manifest, not measured GPU residency",
+    "configured_context_size is the compose default (${CONTEXT_SIZE:-40960}); the gateway SIFT_TARGET default is 32768",
+    "GPU residency is not inferred from file size; actual VRAM usage is unknown from these inputs"
+  ]
+}

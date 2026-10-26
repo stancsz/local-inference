@@ -1,0 +1,39 @@
+name: local-inference
+services:
+  inference:
+    image: ghcr.io/ggml-org/llama.cpp@sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea
+    gpus: all
+    ports:
+      - '127.0.0.1:8091:8080'
+    volumes:
+      - model-cache:/models:ro
+      - ./docker/start-inference.sh:/start-inference.sh:ro
+    entrypoint: ['/bin/sh', '/start-inference.sh']
+    environment:
+      CONTEXT_SIZE: '${CONTEXT_SIZE:-40960}'
+      GPU_LAYERS: '${GPU_LAYERS:-99}'
+      DRAFT_GPU_LAYERS: '${DRAFT_GPU_LAYERS:-99}'
+      DRAFT_TOKENS: '${DRAFT_TOKENS:-4}'
+      UBATCH_SIZE: '${UBATCH_SIZE:-64}'
+      SPEC_TYPE: '${SPEC_TYPE:-draft-mtp}'
+    restart: 'no'
+  gateway:
+    build:
+      context: ..
+      dockerfile: local-inference/docker/gateway.Dockerfile
+    environment:
+      LITELLM_MASTER_KEY: '${LOCAL_GATEWAY_KEY:?Run python scripts/setup_env.py}'
+      INFERENCE_URL: http://inference:8080
+      CONTEXT_SIZE: '${CONTEXT_SIZE:-40960}'
+      SIFT_TARGET: '${SIFT_TARGET:-32768}'
+    ports:
+      - '127.0.0.1:8090:8090'
+    volumes:
+      - ./evidence:/evidence
+    depends_on:
+      - inference
+    restart: 'no'
+volumes:
+  model-cache:
+    name: local-inference-models
+    external: true

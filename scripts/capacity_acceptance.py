@@ -11,12 +11,17 @@ def post(path,body):
     with urllib.request.urlopen(req,timeout=900) as response: return json.load(response)
 
 def main():
+    with urllib.request.urlopen('http://127.0.0.1:8091/props') as response:
+        props=json.load(response)
+    context=props['default_generation_settings']['n_ctx']
+    if context<69888:
+        raise SystemExit('Enable the documented CONTEXT_SIZE=69888 capacity profile before this synthetic test')
     unit=post('/tokenize',{'content':'Deployment log record: service healthy, request complete.\n','add_special':False})['tokens']
     tokens=(unit*(65536//len(unit)+1))[:65536]
     start=time.monotonic()
     result=post('/completion',{'prompt':tokens,'n_predict':4096,'ignore_eos':True,'temperature':0,'seed':42,'cache_prompt':False})
     receipt={k:v for k,v in result.items() if k not in ('content','tokens','generation_settings','prompt')}
-    receipt.update(input_token_ids=len(tokens),seconds=round(time.monotonic()-start,3),host_gpu_mib=subprocess.check_output(['nvidia-smi','--query-gpu=memory.used,memory.free','--format=csv,noheader'],text=True).strip(),purpose='Synthetic exact capacity; no claim of productivity or coherent long output')
+    receipt.update(input_token_ids=len(tokens),runtime_context_window=context,runtime_build=props['build_info'],seconds=round(time.monotonic()-start,3),host_gpu_mib=subprocess.check_output(['nvidia-smi','--query-gpu=memory.used,memory.free','--format=csv,noheader'],text=True).strip(),purpose='Synthetic exact capacity; no claim of productivity or coherent long output')
     receipt['passed']=len(tokens)==65536 and result.get('tokens_predicted')==4096 and result.get('truncated') is False
     (ROOT/'evidence/capacity-64k-4k.json').write_text(json.dumps(receipt,indent=2))
     print(json.dumps(receipt),flush=True)
