@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "sealed": true,
+  "sealed_at": "2026-10-27T07:24:09.492028+00:00",
+  "intent": "Two genuinely new non-expense prospective sessions, not replacement expense attempts or recovery-session promotion.",
+  "original_matrix": {
+    "terminal_attempts": 22,
+    "qualifying_sessions": 19,
+    "required": 21,
+    "shortfall": 2,
+    "receipt": "evidence/stress-campaign.json",
+    "raw_sha256": "9729861da13a42437ee8fae41a2b9283f58f720a69cf7dff3b29e67c63329778"
+  },
+  "implementation_epoch": "Exact frozen original Sift, native proxy and gateway source hashes/image",
+  "workload_epoch": "supplement-v1; new workload/driver hashes are distinct and must remain visible",
+  "gateway_image": "sha256:0441d3d28a6cb1411f4e390eb95cb2786e87fb9dab03b7f3cffba60d632e3189",
+  "original_source_sha256": {
+    "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "stress.cli_acceptance": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  },
+  "new_source_sha256": {
+    "stress/supplement_tasks_v1.py": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb",
+    "stress/supplement_campaign_v1.py": "1d49afba11a293cc086e62c36acc61779dfd3b38dc4345c4a9904cb4b6e4efa2",
+    "stress/supplement_controller_v1.py": "115182a7ef5f99bd5a6088b0100b3c2c01adb706f2ce0fc3aa58e765380e9dc5",
+    "tests/test_supplement_tasks.py": "a4d3b35071950f994a63cf594793104bca2498c127b979477a0dd7c29e93a7c3"
+  },
+  "task_endpoint": "http://127.0.0.1:8090/v1",
+  "cases": [
+    {
+      "id": "opencode-incident-log-v1",
+      "client": "opencode",
+      "task": "incident_log",
+      "seed": 2026102701
+    },
+    {
+      "id": "codex-release-manifest-v1",
+      "client": "codex",
+      "task": "release_manifest",
+      "seed": 2026102702
+    }
+  ],
+  "contracts": {
+    "incident_log": [
+      "Implement audit_events(jsonl_text): ignore blank lines; return {'count':int,'ok':int,'errors':int,'total_duration_ms':number,'services':dict}. Each JSON object has service,status,duration_ms. Count statuses 'ok' and 'error'.",
+      "Strip service whitespace, preserve case and first-seen service order; group matching stripped service names.",
+      "Invalid JSON, non-object rows, missing required fields and non-string text raise ValueError. Extra metadata is allowed.",
+      "service must be a nonempty stripped string; status exactly 'ok' or 'error'; duration_ms finite nonnegative int/float excluding bool. All invalid fields raise ValueError.",
+      "services maps each name to exactly {'count':int,'errors':int,'duration_ms':number}; preserve inputs and aggregate before reporting.",
+      "Empty/blank logs return zero counts and empty services; accept zero durations and Unicode services; be deterministic.",
+      "Implement audit_file(path): read UTF8 JSONL and return audit_events output without modifying the file.",
+      "Implement render_markdown(report): deterministic string beginning '# Incident summary\\n'; include lines 'Count: <count>', 'OK: <ok>', 'Errors: <errors>' and service names.",
+      "Keep all earlier behavior for new seeded batches and repeated rendering; do not hardcode fixture values."
+    ],
+    "release_manifest": [
+      "Implement audit_manifest(records) accepting iterable of dictionaries and returning {'files':int,'bytes':int,'components':dict,'paths':sortedlist}. Required fields path,size_bytes,sha256; optional component defaults 'app'.",
+      "Paths are sorted; component strings are stripped and grouped case-sensitively in first-seen order; components map to exactly {'files':int,'bytes':int}.",
+      "path must be nonempty relative POSIX text: reject absolute paths, backslashes, empty segments, '.' and '..' segments, and duplicate paths with ValueError.",
+      "size_bytes nonnegative int excluding bool; sha256 exactly64 hexadecimal characters (case-insensitive); component nonempty string. Missing/unknown keys, invalid records or fields raise ValueError.",
+      "Support generators and independent output dictionaries; never mutate records. Empty manifest has zero counts and empty components/paths.",
+      "Implement compare_manifests(old,new)->{'added':sortedpaths,'removed':sortedpaths,'changed':sortedpaths}; changed means size, lowercase SHA or stripped/default component differs. Validate both sides; no input mutation.",
+      "Implement audit_file(path): read UTF8 JSON array and return audit_manifest result without changing the file; invalid JSON/root raises ValueError.",
+      "Implement render_markdown(report): deterministic string beginning '# Release manifest\\n', with lines 'Files: <files>', 'Bytes: <bytes>' and component names.",
+      "Preserve all earlier behavior across new seeded paths, hashes and component changes; no hardcoded fixture values."
+    ]
+  },
+  "acceptance": {
+    "minimum_active_seconds_exclusive": 180,
+    "runner_minimum_seconds": 185,
+    "minimum_user_turns": 9,
+    "max_user_turns": 32,
+    "per_turn_timeout_seconds": 240,
+    "target_tokens": 32768,
+    "native_terminal": true,
+    "native_tool_continuation": true,
+    "first_turn_ordered_read_baseline_write_final": true,
+    "same_persistent_session": true,
+    "immutable_public_tests": true,
+    "hidden_seed_offset": 100003,
+    "parent_seed_offset": 200003,
+    "historical_fact_retention": true,
+    "compaction_and_native_context_limits": true,
+    "protected_source_identity": true,
+    "no_solution_reference_reads": true,
+    "no_time_padding": true
+  },
+  "outcome_policy": "Exactly these2 cases, once each. Failure remains terminal, no replacements/seeds/rerolls/time extensions. Collect both unless source/runtime provenance changes. Candidate aggregate is19+independently qualifying supplement cases; original19/22 matrix never rewritten. Final nonauthor review must judge eligibility and full goal.",
+  "known_limits": [
+    "Synthetic isolated engineering/productivity fixtures with real native CLI tools, not a trial in a production repository.",
+    "Original12/19 posthoc contract failures and residual expense-generation defects stay visible; this supplement is not an expense recovery.",
+    "Only function/runtime-compatible aggregate session count is proposed. Workload epochs and quality denominators remain separate.",
+    "No new simultaneous64k/under14GB, continuous-memory, unattended-production or universal-quality claim."
+  ],
+  "setup_checks": {
+    "oracle_and_preservation_tests": 24,
+    "project_suite": "234 passed in18.22s",
+    "runner_acceptance": "AST of run() matches frozen original after normalizing only task import and corrected route error text"
+  },
+  "advice": {
+    "decision_changed": true,
+    "prior_intended_action": "Full new21-case epoch",
+    "chosen": "Preregistered two-case genuinely new supplement",
+    "council_route": "gemini-3.8-flash-advisor",
+    "primary_route": "default",
+    "council": "Recommends two new qualifying sessions while preserving old failures/counts and full coverage.",
+    "primary_limit": "Assessment truncated after48 words; incomplete, not an acceptance verdict.",
+    "provider_usage": {
+      "completion_tokens": 415,
+      "prompt_tokens": 1111,
+      "total_tokens": 1526,
+      "completion_tokens_details": {
+        "audio_tokens": 0,
+        "reasoning_tokens": 331,
+        "image_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "video_tokens": 0,
+        "cache_creation_tokens": 0
+      },
+      "cost": 0,
+      "is_byok": true,
+      "cost_details": {
+        "upstream_inference_cost": 0.00041565,
+        "upstream_inference_prompt_cost": 0.00016665,
+        "upstream_inference_completions_cost": 0.000249
+      }
+    },
+    "authority": "Advice only. Parent chooses; final independent review still required."
+  },
+  "supporting_worker": {
+    "route": "http://127.0.0.1:4000",
+    "model": "default",
+    "count": 1,
+    "complete": false,
+    "reason": "Five-minute artifact checkpoint missed; three stub files unchanged. Child process tree stopped by host wrapper; process exit1. Parent implemented source and tests.",
+    "revocation": {
+      "alias": "local-inference-worker-016fc767ac90",
+      "revoked": true
+    }
+  },
+  "captures": [
+    {
+      "file": "evidence/supplement-v1-setup/supplement-worker-worker.jsonl.gz",
+      "raw_sha256": "830cb3a26d112eb79bd8e24e798c5c7c5ca065c5517e18f21b63d8da17572a54"
+    },
+    {
+      "file": "evidence/supplement-v1-setup/supplement-worker-worker.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "file": "evidence/supplement-v1-setup/supplement-worker-worker-smoke.json.gz",
+      "raw_sha256": "af3b7a64d94202cdbc92b45e02d074764d55761aecc5aab0a3e1fa79f85d661d"
+    },
+    {
+      "file": "evidence/supplement-v1-setup/supplement-worker-worker-tool-smoke.json.gz",
+      "raw_sha256": "d19520b0ab674ec54c34810e706ab4c55f0e917420fbbb63d39c0fab6764ad3d"
+    },
+    {
+      "file": "evidence/supplement-v1-setup/supplement-full-suite.txt.gz",
+      "raw_sha256": "63c8783965fc4df04d37f2fb95860d34991c07690b789ba8bbefe56347411bdb"
+    },
+    {
+      "file": "evidence/supplement-v1-setup/supplement-oracle-tests.txt.gz",
+      "raw_sha256": "56384a864d6b7736a5a2d86a1f25b85f2eb70a9ac67497dc99a4ed29e8eeea5a"
+    },
+    {
+      "file": "evidence/supplement-v1-setup/goal-continuation-advice.json.gz",
+      "raw_sha256": "dc07960c53d5a96b801838d6b91a04c3485041aac219f6928156db4ba822cfd5"
+    },
+    {
+      "file": "evidence/supplement-v1-setup/goal-continuation-advisor.txt.gz",
+      "raw_sha256": "d054b71854b392438ccbd8c33746b0039bfa809799f4a5e40a65c3e389fc5884"
+    }
+  ],
+  "full_goal_complete": false,
+  "final_independent_acceptance": "pending"
+}

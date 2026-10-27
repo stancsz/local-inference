@@ -20,3 +20,9 @@
 /recovery/generation_feedback_v2.py -text
 /tests/test_generation_feedback.py -text
 /evidence/feedback-recovery-v2/** -text -whitespace
+/stress/supplement_tasks_v1.py -text
+/stress/supplement_campaign_v1.py -text
+/stress/supplement_controller_v1.py -text
+/tests/test_supplement_tasks.py -text
+/evidence/supplement-v1-plan.json -text
+/evidence/supplement-v1-setup/** -text -whitespace
