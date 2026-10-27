@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-10-27T05:28:20.852476+00:00",
+  "captured_at": "2026-10-27T05:47:46.651886+00:00",
   "controller_state": "attention_required",
   "planned_attempts": 22,
   "terminal_attempts": 22,
@@ -1193,7 +1193,12 @@
       "in_controller_outcomes": false
     }
   ],
-  "independent_final_acceptance": "pending",
+  "independent_final_acceptance": "NOT_READY",
+  "independent_review_scopes": {
+    "report_and_publication": "READY",
+    "full_goal": "NOT_READY",
+    "unattended_production": "NOT_READY"
+  },
   "full_goal_complete": false,
   "limits": [
     "Three synthetic task families use real native CLIs, persisted sessions, local Qwen and filesystem edits; this is not a production repository trial.",

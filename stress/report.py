@@ -116,6 +116,7 @@ def main():
             and row['accepted'] and row['turns']>=9 and row['active_seconds']>180
             and row['upstream']=='http://127.0.0.1:8090/v1' and row['published_raw_evidence_verified']],
         'independent_final_acceptance':review.get('verdict','UNVERIFIED') if review else 'pending',
+        'independent_review_scopes':review.get('scopes',{}) if review else {},
         'full_goal_complete':False,
         'limits':[
             'Three synthetic task families use real native CLIs, persisted sessions, local Qwen and filesystem edits; this is not a production repository trial.',
@@ -143,6 +144,8 @@ def main():
         f"Memory: {memory['samples']} available host-GPU samples, {memory['host_used_mib']['minimum']} to {memory['host_used_mib']['maximum']} MiB used and {memory['host_free_mib']['minimum']} to {memory['host_free_mib']['maximum']} MiB free. Largest observed sampling gap: {memory['sampling_gap_seconds']['maximum']:.3f} seconds. This is whole-host occupancy with gaps and desktop drift; isolated model+MTP under 14 GB is unproven. [Hashed raw samples](../evidence/stress-gpu-samples-manifest.json).",'',
         'Separate evidence: [256k/1M synthetic context checks](../evidence/context-acceptance.json), [short decode/MTP benchmarks](../evidence/benchmark-summary.json), and [rejected attempt archive](../evidence/stress-rejected.json). These do not establish arbitrary semantic retention, task-level decode speed, or simultaneous 64k input under 14 GB.','']
     lines.extend('- '+limit for limit in report['limits'])
+    if review:
+        lines+=['',f"Independent review scopes: {json.dumps(review.get('scopes',{}),sort_keys=True)}. [Preserved verdict](../evidence/stress-independent-review.json), [review provenance and limits](../evidence/stress-independent-review-provenance.json), and [parent factual clarifications](../evidence/stress-independent-review-parent-response.json). The review execution phase reached its tool limit; a text-only nonauthor handoff assessed its captured observations and actual raw excerpts. No full-goal completion or unattended-production acceptance follows."]
     (ROOT/'docs/STRESS_RESULTS.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     print(json.dumps({key:report[key] for key in ('controller_state','terminal_attempts','harness_accepted','nine_turn_long_sessions','failed_attempts','native_budget_checks')}))
 

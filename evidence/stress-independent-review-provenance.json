@@ -1,0 +1,63 @@
+{
+  "captured_at": "2026-10-27T05:46:50.067384+00:00",
+  "reviewed_revision": "8989c9b",
+  "route": "http://127.0.0.1:4000",
+  "model_alias": "default",
+  "nonauthor": true,
+  "execution_phase": {
+    "complete": false,
+    "reason": "error_max_turns",
+    "actual_turns": 13,
+    "permission_denials": [
+      {
+        "tool_name": "Bash",
+        "tool_use_id": "call_e54b110aa7884ea794c619bf",
+        "tool_input": {
+          "command": "cd C:/Users/stanc/github/local-inference && python -B -c \"\nimport json,hashlib,pathlib\n# raw native sample per client from published traces\nm=json.load(open('evidence/stress-published.json'))\nseen={}\nfor e in m['sessions']:\n  rec=json.loads(gzip.decompress(open(e['receipt'],'rb').read()))\n  c=rec['client']\n  if c in seen: continue\n  seen[c]=1\n  t=e['traces'][0]['file']\n  raw=gzip.decompress(open(t,'rb').read()).decode('utf-8')\n  lines=raw.strip().split('\\n')\n  types={}\n  for l in lines:\n    try: o=json.loads(l)\n    except: types['UNPARSED']=types.get('UNPARSED',0)+1; continue\n    types[o.get('type')]=types.get(o.get('type'),0)+1\n  print(c, t, 'lines',len(lines), types)\n\""
+        }
+      }
+    ],
+    "revocation": {
+      "alias": "local-inference-worker-a3cc293f7567",
+      "revoked": true
+    }
+  },
+  "handoff_phase": {
+    "complete": true,
+    "tools": [],
+    "exit": {
+      "exit_code": 0,
+      "route": "http://127.0.0.1:4000",
+      "model": "default",
+      "tools": [],
+      "alias": "local-inference-qa-handoff-52d01fff976c"
+    },
+    "revocation": {
+      "alias": "local-inference-qa-handoff-52d01fff976c",
+      "revoked": true
+    }
+  },
+  "limits": "Execution phase ran checks but hit its turn limit before a verdict. A separate text-only nonauthor pass assessed the captured actual observations and supplied raw event excerpts; it did not personally execute the earlier commands. No continuous manual audit of every native turn or per-session GPU coverage is claimed.",
+  "files": [
+    {
+      "file": "evidence/stress-independent-review-execution.jsonl.gz",
+      "raw_sha256": "1ceedec3404ed8c74c348496d559d8a305bb7effd6dbef7820a73eb6f4fa103c"
+    },
+    {
+      "file": "evidence/stress-independent-review-execution.stderr.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "file": "evidence/stress-independent-review-handoff.json.gz",
+      "raw_sha256": "c020b47c73d52795e5b92b244d9dd9b809fd53595bd2d4e7e4f285d38066b67d"
+    },
+    {
+      "file": "evidence/stress-independent-review-handoff.stderr.gz",
+      "raw_sha256": "d64e14cb1a4017d3516c10ad761576438f88289241c14699943b081ed37a7e44"
+    },
+    {
+      "file": "evidence/stress-independent-review-packet.txt.gz",
+      "raw_sha256": "9289ee2246b003a4c70c1f73076da061a46869b50c8224896e52d2d1021cfd22"
+    }
+  ]
+}

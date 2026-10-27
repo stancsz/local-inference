@@ -1,6 +1,6 @@
 # Local CLI stress results
 
-Checkpoint: 2026-10-27T05:28:20.852476+00:00. Controller: **attention_required**. Final independent acceptance: **pending**.
+Checkpoint: 2026-10-27T05:47:46.651886+00:00. Controller: **attention_required**. Final independent acceptance: **NOT_READY**.
 
 19 harness passes and 3 failed attempts among 22 terminal matrix attempts; 19 reached nine turns and over 180 active seconds. The required 21-session target remains unmet: shortfall **2**. The fixed plan has 22 attempts; failed one-turn attempts and older epochs are not promoted into current passes.
 
@@ -33,3 +33,5 @@ Separate evidence: [256k/1M synthetic context checks](../evidence/context-accept
 - Historical and setup receipts remain listed separately and are excluded from the current matrix denominator.
 - Active seconds measure client execution without idle padding. They are not decode tokens/second.
 - No paired no-Sift ablation establishes whether compaction caused any task defect.
+
+Independent review scopes: {"full_goal": "NOT_READY", "report_and_publication": "READY", "unattended_production": "NOT_READY"}. [Preserved verdict](../evidence/stress-independent-review.json), [review provenance and limits](../evidence/stress-independent-review-provenance.json), and [parent factual clarifications](../evidence/stress-independent-review-parent-response.json). The review execution phase reached its tool limit; a text-only nonauthor handoff assessed its captured observations and actual raw excerpts. No full-goal completion or unattended-production acceptance follows.
