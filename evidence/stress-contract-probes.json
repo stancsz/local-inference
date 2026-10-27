@@ -101,6 +101,52 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/claude-engineering-r1/result.json",
+      "client": "claude",
+      "task": "engineering",
+      "original_workflow_accepted": true,
+      "task_sha256": "5474859d53da548d6bddf55e398b44b77a311dbcf09bb637cc448619bffa01b6",
+      "all_additional_checks_passed": true,
+      "checks": [
+        {
+          "name": "clamp_all empty invalid lower",
+          "passed": true
+        },
+        {
+          "name": "clamp_all empty reversed bounds",
+          "passed": true
+        },
+        {
+          "name": "clamp_all empty bool bound",
+          "passed": true
+        },
+        {
+          "name": "clamp_report empty invalid lower",
+          "passed": true
+        },
+        {
+          "name": "clamp_report empty reversed bounds",
+          "passed": true
+        },
+        {
+          "name": "clamp_report empty bool bound",
+          "passed": true
+        },
+        {
+          "name": "single-use generator",
+          "passed": true
+        },
+        {
+          "name": "generator report",
+          "passed": true
+        },
+        {
+          "name": "finite value validation",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/claude-expenses-r0/result.json",
       "client": "claude",
       "task": "expenses",
