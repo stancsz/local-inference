@@ -1,0 +1,148 @@
+Repair expense_totals(csv_text) and expense_report(csv_text). CSV requires unique category,amount headers; optional currency; reject missing/extra cells, malformed/nonfinite amounts, mixed nonblank currencies with ValueError. Skip genuinely blank lines only; delimited empty records are invalid. Decimal arithmetic: aggregate before quantizing to0.01 HALF_EVEN. Strip category whitespace, group case-insensitively preserving first spelling/order. Refunds negative allowed. Quoted comma categories supported. Report totals, grand_total as Decimal to two decimals, count of nonblank records. Preserve inputs.
+
+CLARIFICATIONS (must hold exactly): the CSV header has TWO required columns, category and amount, plus an OPTIONAL third currency column; expense_report(csv_text) must return a dict with exactly the keys 'totals' (a dict mapping category to Decimal), 'grand_total' (a Decimal quantized to two decimals) and 'count' (an int of nonblank records) - not a flattened report and not a tuple; aggregate before quantizing to 0.01 with ROUND_HALF_EVEN.
+
+WORKSPACE RULES: use only the native Read and Edit tools and only on task.py in this workspace; use pure stdlib; do not read any other file and do not run commands; edit the existing file in place with Edit (Read task.py first); never write a brand new file.
+
+PRIOR ACTUAL TEST FEEDBACK (real runs of this workspace, not examples):
+- baseline: FAILED; behavior stages failed 9/9, probes failed 6/12; regression tests failed 4, passed 9
+  total failures 19
+===== baseline =====
+--- behavior stdout ---
+{"task": "expenses", "candidate": "C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py", "candidate_sha256": "290c71f5f571edd0f560ed2b0659c297613f6d33aa2d10f9f6605837a49fff5d", "behavior_stages": [{"stage": 1, "seed": 97131, "behavior_only": true, "passed": false, "exit": 1, "output": "E\n======================================================================\nERROR: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 14, in test_behavior\n    self.assertEqual(task.expense_totals(data), {'Food': Decimal('3.00'), 'Transit': Decimal('3.00')})\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 62, in expense_totals\n    groups, order, _ = _collect(csv_text)\n                       ~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 29, in _collect\n    raise ValueError('CSV must have category,amount[,currency] headers')\nValueError: CSV must have category,amount[,currency] headers\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"}, {"stage": 2, "seed": 97132, "behavior_only": true, "passed": false, "exit": 1, "output": "E\n======================================================================\nERROR: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 14, in test_behavior\n    self.assertEqual(task.expense_totals(data), {'Food': Decimal('3.00'), 'Transit': Decimal('3.00')})\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 62, in expense_totals\n    groups, order, _ = _collect(csv_text)\n                       ~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 29, in _collect\n    raise ValueError('CSV must have category,amount[,currency] headers')\nValueError: CSV must have category,amount[,currency] headers\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"}, {"stage": 3, "seed": 97133, "behavior_only": true, "passed": false, "exit": 1, "output": "E\n======================================================================\nERROR: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 14, in test_behavior\n    self.assertEqual(task.expense_totals(data), {'Food': Decimal('3.00'), 'Transit': Decimal('3.00')})\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 62, in expense_totals\n    groups, order, _ = _collect(csv_text)\n                       ~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 29, in _collect\n    raise ValueError('CSV must have category,amount[,currency] headers')\nValueError: CSV must have category,amount[,currency] headers\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"}, {"stage": 4, "seed": 97134, "behavior_only": true, "passed": false, "exit": 1, "output": "E\n======================================================================\nERROR: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 14, in test_behavior\n    self.assertEqual(task.expense_totals(data), {'Food': Decimal('3.00'), 'Transit': Decimal('3.00')})\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 62, in expense_totals\n    groups, order, _ = _collect(csv_text)\n                       ~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 29, in _collect\n    raise ValueError('CSV must have category,amount[,currency] headers')\nValueError: CSV must have category,amount[,currency] headers\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"}, {"stage": 5, "seed": 97135, "behavior_only": true, "passed": false, "exit": 1, "output": "E\n======================================================================\nERROR: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 14, in test_behavior\n    self.assertEqual(task.expense_totals(data), {'Food': Decimal('3.00'), 'Transit': Decimal('3.00')})\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 62, in expense_totals\n    groups, order, _ = _collect(csv_text)\n                       ~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 29, in _collect\n    raise ValueError('CSV must have category,amount[,currency] headers')\nValueError: CSV must have category,amount[,currency] headers\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"}, {"stage": 6, "seed": 97136, "behavior_only": true, "passed": false, "exit": 1, "output": "E\n======================================================================\nERROR: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 14, in test_behavior\n    self.assertEqual(task.expense_totals(data), {'Food': Decimal('3.00'), 'Transit': Decimal('3.00')})\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 62, in expense_totals\n    groups, order, _ = _collect(csv_text)\n                       ~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 29, in _collect\n    raise ValueError('CSV must have category,amount[,currency] headers')\nValueError: CSV must have category,amount[,currency] headers\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"}, {"stage": 7, "seed": 97137, "behavior_only": true, "passed": false, "exit": 1, "output": "E\n======================================================================\nERROR: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 14, in test_behavior\n    self.assertEqual(task.expense_totals(data), {'Food': Decimal('3.00'), 'Transit': Decimal('3.00')})\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 62, in expense_totals\n    groups, order, _ = _collect(csv_text)\n                       ~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 29, in _collect\n    raise ValueError('CSV must have category,amount[,currency] headers')\nValueError: CSV must have category,amount[,currency] headers\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"}, {"stage": 8, "seed": 97138, "behavior_only": true, "passed": false, "exit": 1, "output": "E\n======================================================================\nERROR: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 14, in test_behavior\n    self.assertEqual(task.expense_totals(data), {'Food': Decimal('3.00'), 'Transit': Decimal('3.00')})\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 62, in expense_totals\n    groups, order, _ = _collect(csv_text)\n                       ~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 29, in _collect\n    raise ValueError('CSV must have category,amount[,currency] headers')\nValueError: CSV must have category,amount[,currency] headers\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"}, {"stage": 9, "seed": 97139, "behavior_only": true, "passed": false, "exit": 1, "output": "E\n======================================================================\nERROR: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 14, in test_behavior\n    self.assertEqual(task.expense_totals(data), {'Food': Decimal('3.00'), 'Transit': Decimal('3.00')})\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 62, in expense_totals\n    groups, order, _ = _collect(csv_text)\n                       ~~~~~~~~^^^^^^^^^^\n  File \"C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py\", line 29, in _collect\n    raise ValueError('CSV must have category,amount[,currency] headers')\nValueError: CSV must have category,amount[,currency] headers\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"}], "additional_probes": [{"name": "aggregate before HALF_EVEN rounding", "passed": false, "error": "ValueError: CSV must have category,amount[,currency] headers"}, {"name": "strip group preserve first spelling", "passed": false, "error": "ValueError: CSV must have category,amount[,currency] headers"}, {"name": "invalid amount NaN", "passed": true}, {"name": "invalid amount Infinity", "passed": true}, {"name": "invalid amount garbage", "passed": true}, {"name": "mixed currency", "passed": false, "error": "AssertionError: expected ValueError"}, {"name": "missing header", "passed": true}, {"name": "duplicate header", "passed": false, "error": "AssertionError: expected ValueError"}, {"name": "missing amount cell", "passed": true}, {"name": "unlabelled extra cell", "passed": true}, {"name": "quoted category with comma", "passed": false, "error": "ValueError: CSV must have category,amount[,currency] headers"}, {"name": "report blank rows order and exact total", "passed": false, "error": "ValueError: CSV must have category,amount[,currency] headers"}], "source_unchanged": true, "passed": false, "scope": "Offline code behavior only. Historical-evidence tests are excluded; no synthetic evidence file, model inference, task session or campaign-count change.", "checker_sha256": "1661ed823bbabb25ba902b9af26f5f74ea8a91c5a784bdd626faf7ed9a62d27d"}
+
+--- regression stdout ---
+......FF...FF                                                            [100%]
+================================== FAILURES ===================================
+____________________ test_truly_empty_lines_remain_ignored ____________________
+
+    def test_truly_empty_lines_remain_ignored():
+>       result=_candidate().expense_report('category,amount\n\nFood,1.00\n\n')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+..\..\..\..\tests\test_expense_recovery.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\task.py:68: in expense_report
+    groups, order, nonblank = _collect(csv_text)
+                              ^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+csv_text = 'category,amount\n\nFood,1.00\n\n'
+
+    def _collect(csv_text):
+        """Parse the CSV text into (groups, nonblank_count).
+    
+        ``groups`` maps a case-insensitive category key to a dict holding the
+        first-seen spelling, first-seen order index and the aggregated Decimal
+        total (unquantized).
+        """
+        reader = csv.reader(io.StringIO(csv_text))
+        header = next(reader)
+        if len(header) != 3 or header[0].strip().lower() != 'category' \
+                or header[1].strip().lower() != 'amount':
+>           raise ValueError('CSV must have category,amount[,currency] headers')
+E           ValueError: CSV must have category,amount[,currency] headers
+
+..\task.py:29: ValueError
+_______________ test_candidate_passes_all_three_contract_checks _______________
+
+    def test_candidate_passes_all_three_contract_checks():
+>       results = _evaluate(_candidate())
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+
+..\..\..\..\tests\test_expense_recovery.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\..\tests\test_expense_recovery.py:100: in _evaluate
+    check(module)
+..\..\..\..\tests\test_expense_recovery.py:53: in _check_case_insensitive_grouping
+    actual = module.expense_totals(CSV_GROUPING)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\task.py:62: in expense_totals
+    groups, order, _ = _collect(csv_text)
+                       ^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+csv_text = 'category,amount\nFood,1.00\nfood,2.00\n'
+
+    def _collect(csv_text):
+        """Parse the CSV text into (groups, nonblank_count).
+    
+        ``groups`` maps a case-insensitive category key to a dict holding the
+        first-seen spelling, first-seen order index and the aggregated Decimal
+        total (unquantized).
+        """
+        reader = csv.reader(io.StringIO(csv_text))
+        header = next(reader)
+        if len(header) != 3 or header[0].strip().lower() != 'category' \
+                or header[1].strip().lower() != 'amount':
+>           raise ValueError('CSV must have category,amount[,currency] headers')
+E           ValueError: CSV must have category,amount[,currency] headers
+
+..\task.py:29: ValueError
+_____________________ test_candidate_valid_control_cases ______________________
+
+    def test_candidate_valid_control_cases():
+        module = _candidate()
+        data = "category,amount\nFood,1.005\nfood,2.00\nTransit,3.00\n"
+>       assert module.expense_totals(data) == dict(Food=Decimal("3.00"), Transit=Decimal("3.00"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+..\..\..\..\tests\test_expense_recovery.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\task.py:62: in expense_totals
+    groups, order, _ = _collect(csv_text)
+                       ^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+csv_text = 'category,amount\nFood,1.005\nfood,2.00\nTransit,3.00\n'
+
+    def _collect(csv_text):
+        """Parse the CSV text into (groups, nonblank_count).
+    
+        ``groups`` maps a case-insensitive category key to a dict holding the
+        first-seen spelling, first-seen order index and the aggregated Decimal
+        total (unquantized).
+        """
+        reader = csv.reader(io.StringIO(csv_text))
+        header = next(reader)
+        if len(header) != 3 or header[0].strip().lower() != 'category' \
+                or header[1].strip().lower() != 'amount':
+>           raise ValueError('CSV must have category,amount[,currency] headers')
+E           ValueError: CSV must have category,amount[,currency] headers
+
+..\task.py:29: ValueError
+______________________ test_candidate_extended_contract _______________________
+
+    def test_candidate_extended_contract():
+        module = _candidate()
+>       assert module.expense_totals("category,amount\nx,1.005\nx,0.005\n") == dict(x=Decimal("1.01"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+..\..\..\..\tests\test_expense_recovery.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\task.py:62: in expense_totals
+    groups, order, _ = _collect(csv_text)
+                       ^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+csv_text = 'category,amount\nx,1.005\nx,0.005\n'
+
+    def _collect(csv_text):
+        """Parse the CSV text into (groups, nonblank_count).
+    
+        ``groups`` maps a case-insensitive category key to a dict holding the
+        first-seen spelling, first-seen order index and the aggregated Decimal
+        total (unquantized).
+        """
+        reader = csv.reader(io.StringIO(csv_text))
+        header = next(reader)
+        if len(header) != 3 or header[0].strip().lower() != 'category' \
+                or header[1].strip().lower() != 'amount':
+>           raise ValueError('CSV must have category,amount[,currency] headers')
+E           ValueError: CSV must have category,amount[,currency] headers
+
+..\task.py:29: ValueError
+=========================== short test summary info ===========================
+FAILED ..\..\..\..\tests\test
+
+This is repair turn 1. Make the edits that fix the failures above, then end your reply with the exact marker RECOVERY_EXPENSES_DONE.

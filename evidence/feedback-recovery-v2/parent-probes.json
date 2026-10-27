@@ -1,0 +1,61 @@
+{
+  "scope": "Post-run probes of pre-existing nonblank-currency and missing-header rules, not changed frozen acceptance",
+  "generated": [
+    {
+      "name": "expense_totals_blank_first",
+      "passed": false,
+      "error": "ValueError: mixed currencies: '' and 'usd'"
+    },
+    {
+      "name": "expense_totals_blank_last",
+      "passed": false,
+      "error": "ValueError: mixed currencies: 'usd' and ''"
+    },
+    {
+      "name": "expense_totals_empty_csv",
+      "passed": false,
+      "error": "StopIteration: "
+    },
+    {
+      "name": "expense_report_blank_first",
+      "passed": false,
+      "error": "ValueError: mixed currencies: '' and 'usd'"
+    },
+    {
+      "name": "expense_report_blank_last",
+      "passed": false,
+      "error": "ValueError: mixed currencies: 'usd' and ''"
+    },
+    {
+      "name": "expense_report_empty_csv",
+      "passed": false,
+      "error": "StopIteration: "
+    }
+  ],
+  "reference_control": [
+    {
+      "name": "expense_totals_blank_first",
+      "passed": true
+    },
+    {
+      "name": "expense_totals_blank_last",
+      "passed": true
+    },
+    {
+      "name": "expense_totals_empty_csv",
+      "passed": true
+    },
+    {
+      "name": "expense_report_blank_first",
+      "passed": true
+    },
+    {
+      "name": "expense_report_blank_last",
+      "passed": true
+    },
+    {
+      "name": "expense_report_empty_csv",
+      "passed": true
+    }
+  ]
+}

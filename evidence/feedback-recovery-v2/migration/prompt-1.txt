@@ -1,0 +1,204 @@
+Repair normalize_settings(mapping) and migrate_many(iterable). Only keys name,timeout_ms,timeout_seconds,retries. Missing defaults name='default',timeout_seconds=30,retries=0; explicit None is invalid. Strip string names; empty uses default. Milliseconds nonnegative int excluding bool divided by1000. Seconds nonnegative finite int/float excluding bool. Integers of arbitrary size are finite. Reject conflicting unit keys even if equal or None, unknown keys, invalid values. Retries nonnegative int excluding bool. Invalid types TypeError; negative/nonfinite/conflicting/unknown ValueError. Preserve inputs, idempotency, generator order and independent dictionaries.
+
+CLARIFICATIONS (must hold exactly): migrate_many(iterable) must return a concrete LIST of dictionaries, never a generator or iterator; explicit None values are INVALID, not absent; reject conflicting unit keys even when both are equal or None; keep input dictionaries unmutated and return independent dictionaries.
+
+WORKSPACE RULES: use only the native Read and Edit tools and only on task.py in this workspace; use pure stdlib; do not read any other file and do not run commands; edit the existing file in place with Edit (Read task.py first); never write a brand new file.
+
+PRIOR ACTUAL TEST FEEDBACK (real runs of this workspace, not examples):
+- baseline: FAILED; behavior stages failed 2/9, probes failed 2/13; regression tests failed 11, passed 52
+  total failures 15
+===== baseline =====
+--- behavior stdout ---
+{"task": "migration", "candidate": "C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\migration\\task.py", "candidate_sha256": "b350a50fdda0ce9dfdab0daed6c4760ba39be38ee649bc4d1ede1a7977468783", "behavior_stages": [{"stage": 1, "seed": 97131, "behavior_only": true, "passed": true, "exit": 0}, {"stage": 2, "seed": 97132, "behavior_only": true, "passed": true, "exit": 0}, {"stage": 3, "seed": 97133, "behavior_only": true, "passed": true, "exit": 0}, {"stage": 4, "seed": 97134, "behavior_only": true, "passed": true, "exit": 0}, {"stage": 5, "seed": 97135, "behavior_only": true, "passed": true, "exit": 0}, {"stage": 6, "seed": 97136, "behavior_only": true, "passed": true, "exit": 0}, {"stage": 7, "seed": 97137, "behavior_only": true, "passed": true, "exit": 0}, {"stage": 8, "seed": 97138, "behavior_only": true, "passed": false, "exit": 1, "output": "F\n======================================================================\nFAIL: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 20, in test_behavior\n    self.assertEqual(task.migrate_many([{}, {'name':' B '}]), [{'name':'default','timeout_seconds':30,'retries':0},{'name':'B','timeout_seconds':30,'retries':0}])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: <generator object migrate_many.<locals>.<[26 chars]AB20> != [{'name': 'default', 'timeout_seconds': 3[64 chars]: 0}]\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"}, {"stage": 9, "seed": 97139, "behavior_only": true, "passed": false, "exit": 1, "output": "F\n======================================================================\nFAIL: test_behavior (__main__.Acceptance.test_behavior)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<string>\", line 20, in test_behavior\n    self.assertEqual(task.migrate_many([{}, {'name':' B '}]), [{'name':'default','timeout_seconds':30,'retries':0},{'name':'B','timeout_seconds':30,'retries':0}])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: <generator object migrate_many.<locals>.<[26 chars]EB20> != [{'name': 'default', 'timeout_seconds': 3[64 chars]: 0}]\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n"}], "additional_probes": [{"name": "invalid milliseconds None", "passed": true}, {"name": "invalid milliseconds True", "passed": true}, {"name": "invalid milliseconds 1.5", "passed": true}, {"name": "invalid milliseconds '1000'", "passed": true}, {"name": "negative milliseconds", "passed": true}, {"name": "negative seconds", "passed": true}, {"name": "non-string name None", "passed": false, "error": "AssertionError: expected TypeError/ValueError"}, {"name": "non-string name 17", "passed": true}, {"name": "non-string name True", "passed": true}, {"name": "conflicting time units", "passed": true}, {"name": "unknown key", "passed": true}, {"name": "boolean retries", "passed": true}, {"name": "nonmutation idempotency generator and independent copies", "passed": false, "error": "AssertionError: <generator object migrate_many.<locals>.<genexpr> at 0x000001F9A676E0A0> != [{'name': 'X', 'timeout_seconds': 3.721, 'retries': 2}, {'name': 'X', 'timeout_seconds': 3.721, 'retries': 2}]"}], "source_unchanged": true, "passed": false, "scope": "Offline code behavior only. Historical-evidence tests are excluded; no synthetic evidence file, model inference, task session or campaign-count change.", "checker_sha256": "1661ed823bbabb25ba902b9af26f5f74ea8a91c5a784bdd626faf7ed9a62d27d"}
+
+--- regression stdout ---
+......F.................F......F.....................FF.FFFFF.F          [100%]
+================================== FAILURES ===================================
+______________________ test_candidate_rejects_none_name _______________________
+
+    def test_candidate_rejects_none_name():
+>       _raises(_candidate(), dict(name=None))
+
+..\..\..\..\tests\test_migration_recovery.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>, mapping = {'name': None}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+..\..\..\..\tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping17] ______________
+
+mapping = {'name': None}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+..\..\..\..\tests\test_migration_recovery.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>, mapping = {'name': None}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+..\..\..\..\tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping24] ______________
+
+mapping = {'retries': None}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+..\..\..\..\tests\test_migration_recovery.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>, mapping = {'retries': None}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+..\..\..\..\tests\test_migration_recovery.py:49: Failed
+_____ test_candidate_migrate_many_preserves_order_and_supports_generators _____
+
+    def test_candidate_migrate_many_preserves_order_and_supports_generators():
+        module = _candidate()
+        expected = [
+            dict(name="default", timeout_seconds=30, retries=0),
+            dict(name="B", timeout_seconds=30, retries=0),
+            dict(name="default", timeout_seconds=2.5, retries=1),
+        ]
+        inputs = [dict(), dict(name=" B "), dict(timeout_ms=2500, retries=1)]
+>       assert module.migrate_many(inputs) == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError
+
+..\..\..\..\tests\test_migration_recovery.py:201: AssertionError
+________ test_candidate_migrate_many_returns_independent_dictionaries _________
+
+    def test_candidate_migrate_many_returns_independent_dictionaries():
+        module = _candidate()
+        original = dict(name=" X ", timeout_ms=3721, retries=2)
+        batch = module.migrate_many(item for item in [original, original])
+>       assert len(batch) == 2
+               ^^^^^^^^^^
+E       TypeError: object of type 'generator' has no len()
+
+..\..\..\..\tests\test_migration_recovery.py:209: TypeError
+_______________ test_candidate_large_integer_seconds_are_finite _______________
+
+    def test_candidate_large_integer_seconds_are_finite():
+        module = _candidate()
+>       result = module.normalize_settings(dict(timeout_seconds=10**400))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+..\..\..\..\tests\test_migration_recovery.py:229: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+mapping = {'timeout_seconds': 100000000000000000...0000000000000000000}
+
+>   ???
+E   OverflowError: int too large to convert to float
+
+recovery_migration_v1_candidate:36: OverflowError
+_________ test_candidate_large_negative_integer_seconds_are_rejected __________
+
+    def test_candidate_large_negative_integer_seconds_are_rejected():
+>       _raises(_candidate(), dict(timeout_seconds=-(10**400)), (ValueError,))
+
+..\..\..\..\tests\test_migration_recovery.py:235: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\..\tests\test_migration_recovery.py:50: in _raises
+    module.normalize_settings(mapping)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+mapping = {'timeout_seconds': -10000000000000000...0000000000000000000}
+
+>   ???
+E   OverflowError: int too large to convert to float
+
+recovery_migration_v1_candidate:36: OverflowError
+_ test_candidate_batch_validates_recorded_defects_without_mutation[invalid0] __
+
+invalid = {'timeout_ms': None}
+
+    @pytest.mark.parametrize("invalid", [dict(timeout_ms=None), dict(timeout_seconds=-1), dict(name=None)])
+    def test_candidate_batch_validates_recorded_defects_without_mutation(invalid):
+        original = dict(invalid)
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+..\..\..\..\tests\test_migration_recovery.py:241: Failed
+_ test_candidate_batch_validates_recorded_defects_without_mutation[invalid1] __
+
+invalid = {'timeout_seconds': -1}
+
+    @pytest.mark.parametrize("invalid", [dict(timeout_ms=None), dict(timeout_seconds=-1), dict(name=None)])
+    def test_candidate_batch_validates_recorded_defects_without_mutation(invalid):
+        original = dict(invalid)
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+..\..\..\..\tests\test_migration_recovery.py:241: Failed
+_ test_candidate_batch_validates_recorded_defects_without_mutation[invalid2] __
+
+invalid = {'name': None}
+
+    @pytest.mark.parametrize("invalid", [dict(timeout_ms=None), dict(timeout_seconds=-1), dict(name=None)])
+    def test_candidate_batch_validates_recorded_defects_without_mutation(invalid):
+        original = dict(invalid)
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+..\..\..\..\tests\test_migration_recovery.py:241: Failed
+____________ test_candidate_batch_consumes_one_shot_iterable_once _____________
+
+    def test_candidate_batch_consumes_one_shot_iterable_once():
+        class Once:
+            used = False
+    
+            def __iter__(self):
+                assert not self.used
+                self.used = True
+                yield dict(name=" A ")
+                yield dict(timeout_ms=2500)
+    
+>       assert _candidate().migrate_many(Once()) == [
+            dict(name="A", timeout_seconds=30, retries=0),
+            dict(name="default", timeout_seconds=2.5, retries=0),
+        ]
+E       AssertionError
+
+..\..\..\..\tests\test_migration_recovery.py:261: AssertionError
+=========================== short test summary info ===========================
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_rejects_none_name
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping17]
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping24]
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_migrate_many_preserves_order_and_supports_generators
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_migrate_many_returns_independent_dictionaries
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_large_integer_seconds_are_finite
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_large_negative_integer_seconds_are_rejected
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_batch_validates_recorded_defects_without_mutation[invalid0]
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_batch_validates_recorded_defects_without_mutation[invalid1]
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_batch_validates_recorded_defects_without_mutation[invalid2]
+FAILED ..\..\..\..\tests\test_migration_recovery.py::test_candidate_batch_consumes_one_shot_iterable_once
+11 failed, 52 passed in 0.41s
+
+
+
+This is repair turn 1. Make the edits that fix the failures above, then end your reply with the exact marker RECOVERY_MIGRATION_DONE.

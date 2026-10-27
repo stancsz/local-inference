@@ -1,0 +1,230 @@
+{
+  "task": "expenses",
+  "endpoint": "http://127.0.0.1:8090",
+  "endpoint_exact": "8090/qwen3.8-27b",
+  "model": "qwen3.8-27b",
+  "baseline_sha256": "290c71f5f571edd0f560ed2b0659c297613f6d33aa2d10f9f6605837a49fff5d",
+  "baseline_source": "evidence/generation-recovery-v1/expenses/task.py",
+  "qualifying_session_increment": 0,
+  "max_repair_turns": 3,
+  "turns": [
+    {
+      "turn": 1,
+      "session_id_requested": null,
+      "process": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 28.861555100011174,
+        "command": [
+          "claude.cmd",
+          "--bare",
+          "-p",
+          "--model",
+          "qwen3.8-27b",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--max-turns",
+          "12",
+          "--permission-mode",
+          "acceptEdits",
+          "--tools",
+          "Read,Edit",
+          "--allowedTools",
+          "Read,Edit"
+        ]
+      },
+      "prompt_sha256": "8aef64b64fae360e2deb7d4c2497fbdf1676181c9dab81a94102649a9936828b",
+      "before_sha256": "290c71f5f571edd0f560ed2b0659c297613f6d33aa2d10f9f6605837a49fff5d",
+      "after_sha256": "116eb7846ad1a5419e000f917df1c4be89f17ebff0db2b3e3bb7dbd814756fb6",
+      "session_id_observed": "a65d792a-b021-454d-a020-2c7ca8e69802",
+      "session": {
+        "ok": true,
+        "reason": "initial_session",
+        "session_id": "a65d792a-b021-454d-a020-2c7ca8e69802"
+      },
+      "native": {
+        "passed": true,
+        "failures": [],
+        "completed_tools": [
+          "Edit",
+          "Read"
+        ],
+        "terminal": true,
+        "native_edit_reconstruction_matches": true
+      },
+      "protected_unchanged": true,
+      "validation": {
+        "behavior": {
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 1.4843262999784201,
+          "passed": false,
+          "command": [
+            "C:\\Program Files\\Python314\\python.exe",
+            "-I",
+            "-B",
+            "-c",
+            "import sys;sys.path.insert(0,sys.argv[1]);from recovery.check_fixture import check_fixture;import json;r=check_fixture(sys.argv[2],sys.argv[3]);print(json.dumps(r));raise SystemExit(0 if r['passed'] else 1)",
+            "C:\\Users\\stanc\\github\\local-inference",
+            "expenses",
+            "C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py"
+          ]
+        },
+        "regressions": {
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 2.498992700013332,
+          "passed": false,
+          "command": [
+            "C:\\Program Files\\Python314\\python.exe",
+            "-I",
+            "-B",
+            "-c",
+            "import sys,importlib.util\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport pytest\np=Path(sys.argv[2]);name=p.stem\nspec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec)\nsys.modules[name]=m;spec.loader.exec_module(m);m.CANDIDATE_PATH=Path(sys.argv[3])\nraise SystemExit(pytest.main(['-q','-p','no:cacheprovider',str(p),'--import-mode=prepend']))\n",
+            "C:\\Users\\stanc\\AppData\\Roaming\\Python\\Python314\\site-packages",
+            "C:\\Users\\stanc\\github\\local-inference\\tests\\test_expense_recovery.py",
+            "C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py"
+          ]
+        }
+      },
+      "generated_unchanged_during_validation": true,
+      "verdict": {
+        "passed": false,
+        "continue_allowed": true,
+        "terminal_reason": null,
+        "failures": [],
+        "native_passed": true,
+        "validation_passed": false
+      }
+    },
+    {
+      "turn": 2,
+      "session_id_requested": "a65d792a-b021-454d-a020-2c7ca8e69802",
+      "process": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 23.647640399984084,
+        "command": [
+          "claude.cmd",
+          "--bare",
+          "-p",
+          "--resume",
+          "a65d792a-b021-454d-a020-2c7ca8e69802",
+          "--model",
+          "qwen3.8-27b",
+          "--output-format",
+          "stream-json",
+          "--verbose",
+          "--max-turns",
+          "12",
+          "--permission-mode",
+          "acceptEdits",
+          "--tools",
+          "Read,Edit",
+          "--allowedTools",
+          "Read,Edit"
+        ]
+      },
+      "prompt_sha256": "58aa9e41ed8081033e4b904583aa00b9298d62b6d22814ef8a8c2fb5646d3c1c",
+      "before_sha256": "116eb7846ad1a5419e000f917df1c4be89f17ebff0db2b3e3bb7dbd814756fb6",
+      "after_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "session_id_observed": "a65d792a-b021-454d-a020-2c7ca8e69802",
+      "session": {
+        "ok": true,
+        "reason": "resumed_session",
+        "session_id": "a65d792a-b021-454d-a020-2c7ca8e69802"
+      },
+      "native": {
+        "passed": true,
+        "failures": [],
+        "completed_tools": [
+          "Edit",
+          "Read"
+        ],
+        "terminal": true,
+        "native_edit_reconstruction_matches": true
+      },
+      "protected_unchanged": true,
+      "validation": {
+        "behavior": {
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 1.3581697999616154,
+          "passed": true,
+          "command": [
+            "C:\\Program Files\\Python314\\python.exe",
+            "-I",
+            "-B",
+            "-c",
+            "import sys;sys.path.insert(0,sys.argv[1]);from recovery.check_fixture import check_fixture;import json;r=check_fixture(sys.argv[2],sys.argv[3]);print(json.dumps(r));raise SystemExit(0 if r['passed'] else 1)",
+            "C:\\Users\\stanc\\github\\local-inference",
+            "expenses",
+            "C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py"
+          ]
+        },
+        "regressions": {
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 2.3423735999967903,
+          "passed": true,
+          "command": [
+            "C:\\Program Files\\Python314\\python.exe",
+            "-I",
+            "-B",
+            "-c",
+            "import sys,importlib.util\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport pytest\np=Path(sys.argv[2]);name=p.stem\nspec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec)\nsys.modules[name]=m;spec.loader.exec_module(m);m.CANDIDATE_PATH=Path(sys.argv[3])\nraise SystemExit(pytest.main(['-q','-p','no:cacheprovider',str(p),'--import-mode=prepend']))\n",
+            "C:\\Users\\stanc\\AppData\\Roaming\\Python\\Python314\\site-packages",
+            "C:\\Users\\stanc\\github\\local-inference\\tests\\test_expense_recovery.py",
+            "C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py"
+          ]
+        }
+      },
+      "generated_unchanged_during_validation": true,
+      "verdict": {
+        "passed": true,
+        "continue_allowed": true,
+        "terminal_reason": null,
+        "failures": [],
+        "native_passed": true,
+        "validation_passed": true
+      }
+    }
+  ],
+  "passed": true,
+  "terminal_reason": null,
+  "baseline_validation": {
+    "behavior": {
+      "exit_code": 1,
+      "timed_out": false,
+      "elapsed_seconds": 1.4064100999967195,
+      "passed": false,
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import sys;sys.path.insert(0,sys.argv[1]);from recovery.check_fixture import check_fixture;import json;r=check_fixture(sys.argv[2],sys.argv[3]);print(json.dumps(r));raise SystemExit(0 if r['passed'] else 1)",
+        "C:\\Users\\stanc\\github\\local-inference",
+        "expenses",
+        "C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py"
+      ]
+    },
+    "regressions": {
+      "exit_code": 1,
+      "timed_out": false,
+      "elapsed_seconds": 2.558189900009893,
+      "passed": false,
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import sys,importlib.util\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport pytest\np=Path(sys.argv[2]);name=p.stem\nspec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec)\nsys.modules[name]=m;spec.loader.exec_module(m);m.CANDIDATE_PATH=Path(sys.argv[3])\nraise SystemExit(pytest.main(['-q','-p','no:cacheprovider',str(p),'--import-mode=prepend']))\n",
+        "C:\\Users\\stanc\\AppData\\Roaming\\Python\\Python314\\site-packages",
+        "C:\\Users\\stanc\\github\\local-inference\\tests\\test_expense_recovery.py",
+        "C:\\Users\\stanc\\github\\local-inference\\tmp\\feedback-recovery-v2\\expenses\\task.py"
+      ]
+    }
+  }
+}

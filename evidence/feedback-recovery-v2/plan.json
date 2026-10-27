@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "harness": "recovery/generation_feedback_v2.py",
+  "endpoint": "http://127.0.0.1:8090",
+  "endpoint_exact": "8090/qwen3.8-27b",
+  "model": "qwen3.8-27b",
+  "case_order": [
+    "engineering",
+    "migration",
+    "expenses"
+  ],
+  "baselines": {
+    "engineering": "evidence/generation-recovery-v1/engineering/task.py",
+    "migration": "evidence/generation-recovery-v1/migration/task.py",
+    "expenses": "evidence/generation-recovery-v1/expenses/task.py"
+  },
+  "max_repair_turns_per_case": 3,
+  "max_turns_per_invocation": 12,
+  "invocation_timeout_seconds": 240,
+  "retries": 0,
+  "feedback_char_limit": 18000,
+  "session_policy": "one persistent session per case; --resume <exact session id> on later turns",
+  "terminal_failure_reasons": [
+    "cli_failure",
+    "parse_failure",
+    "session_failure",
+    "protected_source_failure",
+    "native_failure",
+    "artifact_integrity_failure"
+  ],
+  "qualifying_session_increment": 0,
+  "qualifying_sessions": 19,
+  "required_sessions": 21,
+  "shortfall": 2,
+  "full_goal_complete": false,
+  "limits": "Bounded local diagnostic recovery; does not replace campaign 19/21 and makes no general quality, security or final independent acceptance claim."
+}

@@ -1,0 +1,701 @@
+{
+  "artifact": "feedback-recovery-v2",
+  "recorded_at": "2026-10-27T06:58:08.780895+00:00",
+  "kind": "Separate bounded native Claude repair workflow with actual local Qwen8090 and real test feedback",
+  "supporting_worker": {
+    "count": 1,
+    "route": "http://127.0.0.1:4000",
+    "model": "default",
+    "complete": false,
+    "reason": "error_max_turns",
+    "requested_turn_cap": 16,
+    "reported_turns": 17,
+    "host_checkpoint_seconds": 300,
+    "host_deadline_seconds": 600,
+    "artifacts": "Harness and 12 passing policy tests produced; turn cap reached before final handoff. Initial source/test snapshots preserved.",
+    "exit": {
+      "exit_code": 1,
+      "alias": "local-inference-worker-3cf6dd1d4465",
+      "route": "http://127.0.0.1:4000",
+      "model": "default"
+    },
+    "revocation": {
+      "alias": "local-inference-worker-3cf6dd1d4465",
+      "revoked": true
+    }
+  },
+  "source_sha256": {
+    "recovery/generation_feedback_v2.py": "3034297477ece1692b46febf7da16a2aa1201ebbf5d2a4914b76869972728aff",
+    "tests/test_generation_feedback.py": "43deffe17bdfcae3267d0ce252ec528c7386393357170da9ce466f13f47cf364",
+    "recovery/generation_v1.py": "28e4b3f48eb0ba5a262a261f0df00ebac6ff8d7b99ca0ce1896c383a8b10f7a5",
+    "evidence/stress-campaign.json": "9729861da13a42437ee8fae41a2b9283f58f720a69cf7dff3b29e67c63329778"
+  },
+  "predeclared_plan_sha256": "2d62d2d4aebb718abf3ba298434c2384bf7662efdc1af0b9a80cadfd547e9a96",
+  "parent_harness_review": {
+    "before_correction": "5 failed, 12 passed",
+    "after_correction": "17 passed in 8.24s",
+    "corrections": [
+      "Reject missing resume IDs, conflicting init/terminal IDs and native scope/binding failures.",
+      "Check both protected and generated source integrity after validation.",
+      "Preserve process exceptions as terminal case failures; continue independent cases.",
+      "Write exact prompt bytes and redact any accidentally exposed inference key before storing native logs."
+    ],
+    "full_project_suite": "210 passed in 20.07s",
+    "command": "python -B -m pytest -q tests with frozen Sift snapshot on PYTHONPATH"
+  },
+  "parent_artifact_review": [
+    {
+      "task": "engineering",
+      "turns": [
+        {
+          "turn": 1,
+          "session_id": "934e588c-caf1-4fe9-ada0-af316761aba9",
+          "native": {
+            "passed": true,
+            "failures": [],
+            "completed_tools": [
+              "Edit",
+              "Read"
+            ],
+            "terminal": true,
+            "native_edit_reconstruction_matches": true
+          },
+          "generated_sha256": "55fb9d00a1ed855a9780eb05f5041c77a787345c26bb310ac02fa176605dc8c7",
+          "regression_summary": "44 passed in 0.04s",
+          "behavior_passes": 9,
+          "behavior_total": 9,
+          "probe_passes": 9,
+          "probe_total": 9,
+          "active_cli_seconds": 20.90746959997341,
+          "listed_checks_passed": true
+        }
+      ],
+      "listed_checks_passed": true
+    },
+    {
+      "task": "migration",
+      "turns": [
+        {
+          "turn": 1,
+          "session_id": "306f5408-65a4-453e-acf4-709a39ab8f33",
+          "native": {
+            "passed": true,
+            "failures": [],
+            "completed_tools": [
+              "Edit",
+              "Read"
+            ],
+            "terminal": true,
+            "native_edit_reconstruction_matches": true
+          },
+          "generated_sha256": "138d81cba8681b372b3ef28ce302754d99a66bf90cdf6e700a057c0956f7f09c",
+          "regression_summary": "63 passed in 0.09s",
+          "behavior_passes": 9,
+          "behavior_total": 9,
+          "probe_passes": 13,
+          "probe_total": 13,
+          "active_cli_seconds": 30.75416520005092,
+          "listed_checks_passed": true
+        }
+      ],
+      "listed_checks_passed": true
+    },
+    {
+      "task": "expenses",
+      "turns": [
+        {
+          "turn": 1,
+          "session_id": "a65d792a-b021-454d-a020-2c7ca8e69802",
+          "native": {
+            "passed": true,
+            "failures": [],
+            "completed_tools": [
+              "Edit",
+              "Read"
+            ],
+            "terminal": true,
+            "native_edit_reconstruction_matches": true
+          },
+          "generated_sha256": "116eb7846ad1a5419e000f917df1c4be89f17ebff0db2b3e3bb7dbd814756fb6",
+          "regression_summary": "1 failed, 12 passed in 0.26s",
+          "behavior_passes": 4,
+          "behavior_total": 9,
+          "probe_passes": 11,
+          "probe_total": 12,
+          "active_cli_seconds": 28.861555100011174,
+          "listed_checks_passed": false
+        },
+        {
+          "turn": 2,
+          "session_id": "a65d792a-b021-454d-a020-2c7ca8e69802",
+          "native": {
+            "passed": true,
+            "failures": [],
+            "completed_tools": [
+              "Edit",
+              "Read"
+            ],
+            "terminal": true,
+            "native_edit_reconstruction_matches": true
+          },
+          "generated_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+          "regression_summary": "13 passed in 0.03s",
+          "behavior_passes": 9,
+          "behavior_total": 9,
+          "probe_passes": 12,
+          "probe_total": 12,
+          "active_cli_seconds": 23.647640399984084,
+          "listed_checks_passed": true
+        }
+      ],
+      "listed_checks_passed": true
+    }
+  ],
+  "listed_validation": {
+    "passed_cases": 3,
+    "total_cases": 3,
+    "regressions": 120,
+    "original_behavior_stages": 27,
+    "existing_probes": 34,
+    "native_invocations": 4,
+    "turns_by_case": {
+      "engineering": 1,
+      "migration": 1,
+      "expenses": 2
+    },
+    "preserved_intermediate_failure": "Expense turn1: mixed-currency failure,1 regression failed/12 passed; fixed on turn2 with same session ID and genuine failure feedback."
+  },
+  "additional_parent_probes": {
+    "file": "evidence/feedback-recovery-v2/parent-probes.json",
+    "generated_passes": 0,
+    "total": 6,
+    "reference_control_passes": 6,
+    "findings": [
+      "Blank currency cells must be ignored when checking nonblank currencies; generated totals/report reject valid blank+USD combinations.",
+      "Empty headerless CSV raises StopIteration rather than the required ValueError."
+    ],
+    "effect": "Final generated expense artifact still has existing-contract defects. Do not equate the frozen listed checks with complete task correctness. No manual patch, new model invocation or outcome promotion."
+  },
+  "verdict": {
+    "listed_checks": "PASS3/3 with clarified prompts and actual test feedback",
+    "full_generated_contract": "NOT_READY: additional expense defects",
+    "full_goal": "NOT_READY"
+  },
+  "qualifying_session_increment": 0,
+  "qualifying_sessions": 19,
+  "required_sessions": 21,
+  "shortfall": 2,
+  "full_goal_complete": false,
+  "limits": [
+    "V1 and original campaign sources, seeds, timeouts, failures, counts and epochs unchanged.",
+    "All model-generated revisions and the intermediate expense failure are preserved. Selected final checks passed after1/1/2 turns; each turn is under240s, max3 predeclared.",
+    "This combines clearer contracts and real test feedback, so it does not isolate feedback as the sole cause of improvement.",
+    "No long-history injection, nine-user-turn qualification, three-minute threshold or general productivity/reliability certification. Zero qualifying-session increment.",
+    "Parent authored corrections and reviewed model-authored artifacts; this is accountable commander acceptance of listed checks, not final nonauthor full-goal QA.",
+    "Preflight host-GPU snapshot is not isolated model residency or continuous coverage; no new under14GB claim.",
+    "No runtime/profile change; prior live OpenAI/budget/context proof remains separate from this diagnostic workflow."
+  ],
+  "manifest": [
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/baseline-validation/behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/baseline-validation/behavior.stdout.gz",
+      "raw_sha256": "1413ccb1a79286fa606ac495f87cba26f3e7cd4b9bd5ee9a971fdd758372285f",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/baseline-validation/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/baseline-validation/regressions.stdout.gz",
+      "raw_sha256": "8ade2e767bb2f5967830ff9d2c3e70e93305f69a91b7b10d71376f2fdd31039d",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/baseline-validation.json",
+      "raw_sha256": "30a50ddadd064dc88be84bfca25ffb4f62c343644561ce0ddb2b70ce02909135",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/baseline.py",
+      "raw_sha256": "20b7a06f33534439d0cdc82feff5cba8b266b4ba5552a88f0442a64cabfeac80",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/prompt-1.txt",
+      "raw_sha256": "2a514b240596ec7ad64b21e63d77d6ac7acf61394e4fd9311c66e53b681abd4a",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/receipt-1.json",
+      "raw_sha256": "5097dfa920cc813db7db87d2b88d63fc57cab24306e213075d61729ac9080809",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/result.json",
+      "raw_sha256": "338bfa7b64b47eb57222a754d383ae041e087f380fc2b5125b20b1caf7dfb1fb",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/revision-1-after.py",
+      "raw_sha256": "55fb9d00a1ed855a9780eb05f5041c77a787345c26bb310ac02fa176605dc8c7",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/revision-1-before.py",
+      "raw_sha256": "20b7a06f33534439d0cdc82feff5cba8b266b4ba5552a88f0442a64cabfeac80",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/stderr-1.txt.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/stdout-1.txt.gz",
+      "raw_sha256": "06adbec28a9c287d71281ba032b01f78ee9927fe20b244dd9f6dda352c128dc4",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/task.py",
+      "raw_sha256": "55fb9d00a1ed855a9780eb05f5041c77a787345c26bb310ac02fa176605dc8c7",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/turn-1/behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/turn-1/behavior.stdout.gz",
+      "raw_sha256": "a6adae4eb16532e328049e8eb6cd66c2838c690936a237491f6dc7f46448b40e",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/turn-1/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/turn-1/regressions.stdout.gz",
+      "raw_sha256": "6b90a4ca55569b776f953cc5b6b36cbad256e1f5279b3d0b32b28524e009619a",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/turn-1-validation.json",
+      "raw_sha256": "1003a7b10e3e8042bbd12ad3e7f69f2f5e3e2ef00770879a32de770bf68a991c",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/baseline-validation/behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/baseline-validation/behavior.stdout.gz",
+      "raw_sha256": "9367eda58dd9c6ed2fbd9050fecb1780046d48cb06e03a86dd2b1c1e32c1fbca",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/baseline-validation/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/baseline-validation/regressions.stdout.gz",
+      "raw_sha256": "3f90227f94d1c64023ae4903d1ad200abc29d21fb3b8b48ccfb6a9b4a7ba6b03",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/baseline-validation.json",
+      "raw_sha256": "3e42786c7e2432dc7c7c4864c54f048b01995b35b087fdbeab17afcd48915f16",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/baseline.py",
+      "raw_sha256": "290c71f5f571edd0f560ed2b0659c297613f6d33aa2d10f9f6605837a49fff5d",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/prompt-1.txt",
+      "raw_sha256": "8aef64b64fae360e2deb7d4c2497fbdf1676181c9dab81a94102649a9936828b",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/prompt-2.txt",
+      "raw_sha256": "58aa9e41ed8081033e4b904583aa00b9298d62b6d22814ef8a8c2fb5646d3c1c",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/receipt-1.json",
+      "raw_sha256": "1f17a8942a9514e1bb1736203eda426050de8a1e2fd45ffa6016cb15a6983264",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/receipt-2.json",
+      "raw_sha256": "f66c089bbc24f6a034e40e1a4b9d521a8d3ad887840d35acae01faf026eb4e5e",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/result.json",
+      "raw_sha256": "9779e2956fa0adc23a34cf7ecdfc2b2472d6c066ec2e030ab87f5221d598f644",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/revision-1-after.py",
+      "raw_sha256": "116eb7846ad1a5419e000f917df1c4be89f17ebff0db2b3e3bb7dbd814756fb6",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/revision-1-before.py",
+      "raw_sha256": "290c71f5f571edd0f560ed2b0659c297613f6d33aa2d10f9f6605837a49fff5d",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/revision-2-after.py",
+      "raw_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/revision-2-before.py",
+      "raw_sha256": "116eb7846ad1a5419e000f917df1c4be89f17ebff0db2b3e3bb7dbd814756fb6",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/stderr-1.txt.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/stderr-2.txt.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/stdout-1.txt.gz",
+      "raw_sha256": "46649147b8626a6d7e939386ee2f9e3200f0d81d5be44c6ef51969325b26c1dd",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/stdout-2.txt.gz",
+      "raw_sha256": "c7323e59ffc9f5f01352744fecd66e56ca48d489ba72f921047eb230a6d0bfaa",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/task.py",
+      "raw_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-1/behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-1/behavior.stdout.gz",
+      "raw_sha256": "6ddcd080eb9792003c22660d91bce576f23ba8028662b640d8691112b8300181",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-1/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-1/regressions.stdout.gz",
+      "raw_sha256": "03884b4d918e0573d113095c2a01b055798f9987a9655da82a8092cf59701f70",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-1-validation.json",
+      "raw_sha256": "d1000ee982a4257434e140ce0e80ccf9a1083e7e883f212534fa771ffe4a5d40",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-2/behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-2/behavior.stdout.gz",
+      "raw_sha256": "f81c9fce7d754a32fac50ba8a313880a438cbc121082b63a4358dc9a0a3bb6e0",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-2/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-2/regressions.stdout.gz",
+      "raw_sha256": "fa40736e13f01272f4b58e8edffac2dcb81cc0a1f8a52c50bc92e215f1bbc0f0",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/turn-2-validation.json",
+      "raw_sha256": "8b4563d34566535800cc5b29080916b1f3e15db79b574e48d840cdd88922466a",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/baseline-validation/behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/baseline-validation/behavior.stdout.gz",
+      "raw_sha256": "df3ebf816ed8885d7c87e10d551788431d67457e54b85edecf3d45f5e4dcb9fa",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/baseline-validation/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/baseline-validation/regressions.stdout.gz",
+      "raw_sha256": "8cd62456781065027252c838e9d8f2548b3ced740c87af2e0edfd5b013657727",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/baseline-validation.json",
+      "raw_sha256": "05f4d22c3d096f7cb367a341138d17e4554669deb23c4faa0fe36530c36a2e75",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/baseline.py",
+      "raw_sha256": "b350a50fdda0ce9dfdab0daed6c4760ba39be38ee649bc4d1ede1a7977468783",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/prompt-1.txt",
+      "raw_sha256": "47f1702574fe4c29d1769da9c9affeaef7ea554ad9b1424a7909029181ea2608",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/receipt-1.json",
+      "raw_sha256": "bfafe3573f0ff78a2ef168cfd2705fdd028a2d75798c14bc405596dbe3a8478d",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/result.json",
+      "raw_sha256": "ac95a12a007d95eb084eb79b53d3fa3ae43f7e3dcadf3b5a7b2a4c991dae3e18",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/revision-1-after.py",
+      "raw_sha256": "138d81cba8681b372b3ef28ce302754d99a66bf90cdf6e700a057c0956f7f09c",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/revision-1-before.py",
+      "raw_sha256": "b350a50fdda0ce9dfdab0daed6c4760ba39be38ee649bc4d1ede1a7977468783",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/stderr-1.txt.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/stdout-1.txt.gz",
+      "raw_sha256": "4e2a1f41780c569295d15ee6c9fe80cc96c52850625b09fa12f2b45797de6733",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/task.py",
+      "raw_sha256": "138d81cba8681b372b3ef28ce302754d99a66bf90cdf6e700a057c0956f7f09c",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/turn-1/behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/turn-1/behavior.stdout.gz",
+      "raw_sha256": "be0aa653cec329bdc6f68d39ac77b53f0f5b8cc66a4654f5ef909747a4103fda",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/turn-1/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/turn-1/regressions.stdout.gz",
+      "raw_sha256": "045a0db49eb7e56f45eff37bd6cf750babcc1f9f009088007662ac8583f2ee10",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/turn-1-validation.json",
+      "raw_sha256": "440c27e992b24064e8d437a04a9032ba55bf5b760e9d64e169f0015594007c0c",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/plan.json",
+      "raw_sha256": "2d62d2d4aebb718abf3ba298434c2384bf7662efdc1af0b9a80cadfd547e9a96",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/protected-after.json",
+      "raw_sha256": "168ac7b07fa6d45f2f7d747ada3105a80295c0fc2e2fd34d39a100aedc005f11",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/protected-before.json",
+      "raw_sha256": "168ac7b07fa6d45f2f7d747ada3105a80295c0fc2e2fd34d39a100aedc005f11",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/result.json",
+      "raw_sha256": "7abfa12cacc7858136647db782510de142d833e7777509d0f2aa98dc60dd0b57",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/parent-turn-1-behavior.stdout.gz",
+      "raw_sha256": "854c5e27270dbbd036b57c1732d33d4302d84218e7784d2370a391798b9c26eb",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/parent-turn-1-behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/parent-turn-1-regressions.stdout.gz",
+      "raw_sha256": "6b90a4ca55569b776f953cc5b6b36cbad256e1f5279b3d0b32b28524e009619a",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/engineering/parent-turn-1-regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/parent-turn-1-behavior.stdout.gz",
+      "raw_sha256": "def55361f9b7d3ea7540de24a2965da07e6abe408d557fb407365c46a9103d8e",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/parent-turn-1-behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/parent-turn-1-regressions.stdout.gz",
+      "raw_sha256": "0abe9509f950307b65d6c5950c34b54f16fd2bad667ee42906d797aecf40cbb1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/migration/parent-turn-1-regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/parent-turn-1-behavior.stdout.gz",
+      "raw_sha256": "7ba5eca2800071852f0c7b1c187b048e21c9b8b005c853e5483b0632c97717e0",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/parent-turn-1-behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/parent-turn-1-regressions.stdout.gz",
+      "raw_sha256": "015b7c4a5b9bc2354ecb2f8b73a2e9bd96cff555af7b30e2d234de815e3c7dc3",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/parent-turn-1-regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/parent-turn-2-behavior.stdout.gz",
+      "raw_sha256": "2a895652f64364143ca17184a848a24d47d8cf753f3ea41b982bed545dbe804e",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/parent-turn-2-behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/parent-turn-2-regressions.stdout.gz",
+      "raw_sha256": "fa40736e13f01272f4b58e8edffac2dcb81cc0a1f8a52c50bc92e215f1bbc0f0",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/expenses/parent-turn-2-regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/parent-probes.py",
+      "raw_sha256": "d69170ea76946e81bd2bc695d7476c6539439d27d2510e9ae07339cfb22fccd9",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/parent-probes.json",
+      "raw_sha256": "4c0948da6f6e4b1ca55d4ad5913984cb2b5a3d1de2ebfa4c8ea49ba751fd074e",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/support-worker.jsonl.gz",
+      "raw_sha256": "d66baa91ba6c5493ec9dd32fd7b958437ceaa20005ef1f37d59d4c4ce3c357db",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/support-worker.stderr.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/support-route-smoke.json.gz",
+      "raw_sha256": "f336171705647683326ec8706d93d5c8f2c3f7bb80684d1790cc73acb301554f",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/support-tool-smoke.json.gz",
+      "raw_sha256": "ceee4c2274f7c24761b5e935d2f7ca8a001243beda74900a30be32f0ba042461",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/support-worker-candidate.py.gz",
+      "raw_sha256": "c6e323bac28653a7c84b269cb27254d25d9f1f61f0b5233d37d1748b1055807d",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/support-worker-tests.py.gz",
+      "raw_sha256": "cc48446f6dc79ffc56e49a92ad5b98273483a500ff3f3b5170384d0d1a3338ea",
+      "gzip": false
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/parent-red.txt.gz",
+      "raw_sha256": "9a8c5be4b2bab605cb375ab3881e7471270bdd6632a20b95b352582f3df6b606",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/parent-green.txt.gz",
+      "raw_sha256": "8d4e33509db41c264180979e9979616f3234e76fa05fd35c55e80b8f763e7be1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/full-suite.txt.gz",
+      "raw_sha256": "24aeafe98408cf76891801722d0e3deed87a47d635881a971d0b6d5237436330",
+      "gzip": true
+    },
+    {
+      "file": "evidence/feedback-recovery-v2/preflight.json.gz",
+      "raw_sha256": "01514928d1585bcd324650485940607be3f32a3b9684e44a64ff6d97f2577f52",
+      "gzip": true
+    }
+  ],
+  "publication_check": "evidence/feedback-recovery-v2/publication-check.json"
+}

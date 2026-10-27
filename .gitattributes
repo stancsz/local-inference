@@ -17,3 +17,6 @@
 /recovery/generation_v1.py -text
 /tests/test_generation_recovery.py -text
 /evidence/generation-recovery-v1/** -text -whitespace
+/recovery/generation_feedback_v2.py -text
+/tests/test_generation_feedback.py -text
+/evidence/feedback-recovery-v2/** -text -whitespace
