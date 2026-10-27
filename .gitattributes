@@ -45,3 +45,5 @@
 /tests/test_expense_publication_v3.py -text
 
 /evidence/balanced-v2-setup/** -text -whitespace
+
+/evidence/balanced-v2-progress/** -text -whitespace

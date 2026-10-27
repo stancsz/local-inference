@@ -1,0 +1,18 @@
+[
+  {
+    "file": "evidence.json",
+    "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+  },
+  {
+    "file": "result.json.gz",
+    "sha256": "5f25e452e955cc15a6026c8dc60d72493d0e920b387793e329e1933592ba5d3e"
+  },
+  {
+    "file": "task.py",
+    "sha256": "3adc6deb13f00eda3b1f0acab00df7a30ce480ea2ab30b3bf69d5b7fffef633d"
+  },
+  {
+    "file": "test_task.py",
+    "sha256": "98fee02bebb28c751022f2d47f90d379e971860e68f22df18034bdadbd435597"
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "scope": "Parent acceptance of first terminal-case artifact and trace, not full batch/nonauthor acceptance",
+  "completed_turns": 9,
+  "session_id": "e273dac6-386d-4def-85a6-8d4885d37883",
+  "candidate_sha256": "3adc6deb13f00eda3b1f0acab00df7a30ce480ea2ab30b3bf69d5b7fffef633d",
+  "parent_seed_offset": 200003,
+  "stages": [
+    {
+      "turn": 1,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.023s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 2,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 3,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.012s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 4,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.015s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 5,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.018s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 6,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.012s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 7,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.018s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 8,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.027s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 9,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.024s\r\n\r\nOK\r\n"
+    }
+  ],
+  "qualifying_increment": 0,
+  "full_goal_complete": false,
+  "basic_failures": [],
+  "public_hashes_checked": 9,
+  "excerpt_files_verified": 42,
+  "native_budget_checks": 42,
+  "active_seconds": 993.867,
+  "parent_qualified": true
+}
