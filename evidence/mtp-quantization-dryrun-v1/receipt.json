@@ -1,0 +1,45 @@
+{
+  "source_repository": "unsloth/Qwen3.8-27B-GGUF",
+  "source_revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+  "source_artifact_filename_label": "MTP/mtp-Qwen3.8-27B-Q4_0.gguf",
+  "source_bytes": 1369590656,
+  "source_sha256_verified_unchanged": "50d9ce5a6da381bbcfb31061cf73df94a90e6faf8efeddee379a9cb8f1501c6e",
+  "embedded_general_file_type": 14,
+  "embedded_file_type_name": "Q4_K_S (enum shown by the same pinned quantizer help)",
+  "observed_source_tensor_types": [
+    "f32",
+    "q3_K",
+    "q4_K",
+    "q6_K"
+  ],
+  "note": "The Q4_0 filename is an artifact label, not a claim that every tensor uses Q4_0. Existing filename-based task receipts do not constitute a GGUF tensor audit.",
+  "reported_source_tensor_payload_mib": 1295.71,
+  "iq3_xxs_dry_run_tensor_payload_mib": 1083.48,
+  "iq3_xxs_requires_imatrix": true,
+  "q3_k_s_dry_run_tensor_payload_mib": 1216.13,
+  "measurement_scope": "Dry-run tensor-payload estimates, not final GGUF file sizes, VRAM savings or performance measurements",
+  "original_weights_modified": false,
+  "candidate_model_created": false,
+  "loaded_profile_changed": false,
+  "quality_scope": "Requantization can reduce draft quality; target/draft acceptance and task checks would be required before any deployment.",
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "artifacts": [
+    {
+      "path": "evidence/mtp-quantization-dryrun-v1/mtp-iq3-dry-run.log",
+      "sha256": "fe476cdac290f32692a5183b47a4ad7b69db44bd035a04e2b2c02d10721fe230"
+    },
+    {
+      "path": "evidence/mtp-quantization-dryrun-v1/mtp-q3k-dry-run.log",
+      "sha256": "3d9a8b0121779b686c542d6d7a735ecb15e7a24c40ecb5322b60b07283bee637"
+    },
+    {
+      "path": "evidence/mtp-quantization-dryrun-v1/quantize-help.txt",
+      "sha256": "8723b78b39cb878a7265b93188d0e8c0245f013abaa57823908d81c10cbb4338"
+    },
+    {
+      "path": "evidence/mtp-quantization-dryrun-v1/mtp-source-sha256.txt",
+      "sha256": "268d6f7473535032dc3f2c82b9f5e11047011ecc1462a9bcc50e9edb075ff31c"
+    }
+  ]
+}

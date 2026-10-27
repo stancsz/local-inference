@@ -11,7 +11,7 @@ import subprocess
 ROOT=Path(__file__).resolve().parents[2]
 REPORTS=['evidence/long-profile-'+epoch+'/parent-review.json'for epoch in ('v1','v2','v3','v4')]+[
     'evidence/daily-review-v5.json','evidence/gpu-verification-v1/receipt.json',
-    'evidence/test-discovery-v1/receipt.json']
+    'evidence/test-discovery-v1/receipt.json','evidence/mtp-quantization-dryrun-v1/receipt.json']
 
 
 def main():

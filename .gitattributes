@@ -73,3 +73,5 @@
 /evidence/profiles-final-*.json -text -whitespace
 /evidence/benchmark-long-*.json -text -whitespace
 /evidence/test-discovery-v1/** -text -whitespace
+/evidence/mtp-quantization-dryrun-v1/** -text -whitespace
+/evidence/profile-publication-check*.json -text -whitespace

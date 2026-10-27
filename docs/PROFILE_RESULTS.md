@@ -1,6 +1,6 @@
 # Context, VRAM and throughput experiments
 
-These are separate configuration experiments on this host, using the same Qwen IQ3_XXS target, Q4_0 MTP and q4_0 KV caches. They do not replace or increment the frozen long-session campaigns. The original 40,960-token daily profile is restored with its original images/settings; normal client approval settings are unchanged.
+These are separate configuration experiments on this host, using the same Qwen IQ3_XXS target, MTP artifact named `Q4_0` and q4_0 KV caches. The embedded MTP tensor types are distinguished below. These experiments do not replace or increment the frozen long-session campaigns. The original 40,960-token daily profile is restored with its original images/settings; normal client approval settings are unchanged.
 
 The memory limit used here is **14,000,000,000 bytes**, approximately **13,351.44 MiB**. This differs from 14 GiB. Each experiment samples whole-host GPU use about once per second and compares its largest sampled value against the **lower** stopped before/after baseline. Desktop drift and unsampled transients remain confounds; this is not isolated per-model residency.
 
@@ -29,6 +29,10 @@ This independently replays the conservative calculation, checks case-label bound
 The trace logs preserve individual CUDA model, KV, recurrent-state and compute-buffer sizes. Repeated reservation lines must not be summed as independent allocations or called a physical peak. Model weights, caches, driver/context overhead and unrelated desktop memory are different quantities.
 
 ## Evidence and remaining work
+
+A later read-only [MTP quantization audit](../evidence/mtp-quantization-dryrun-v1/receipt.json) verified that the original artifact SHA256 is unchanged. Its filename says `Q4_0`, while its GGUF metadata declares file type14 (`Q4_K_S`) and the actual tensors mix Q3_K, Q4_K, Q6_K and F32. Filename-based model-audit tasks identify artifact labels; they do not establish every embedded tensor's precision. Original names and download manifests are retained for reproducibility.
+
+The pinned image's quantizer estimates a 1,295.71-MiB source tensor payload, 1,216.13 MiB for pure Q3_K_S and 1,083.48 MiB for IQ3_XXS. These exclude GGUF metadata and are not VRAM savings: shared CPU-resident tensors also contribute to the file size. The IQ3_XXS dry run explicitly requires an importance matrix before actual quantization. No candidate was created or loaded; requantization quality and speculative acceptance remain untested.
 
 - [v1 cancelled trial and parent replay](../evidence/long-profile-v1/parent-review.json)
 - [v2 positive and negative artifacts, native reconstruction and memory replay](../evidence/long-profile-v2/parent-review.json)
