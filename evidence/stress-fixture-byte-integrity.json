@@ -3,7 +3,7 @@
   "before_checked": 39,
   "before_index_byte_mismatches": 34,
   "after": {
-    "checked": 45,
+    "checked": 48,
     "index_byte_mismatches": 0,
     "workspace_mismatches": 0,
     "files": [
@@ -366,6 +366,30 @@
         "index_sha256": "c5b1566165c84c05b369bc8f2e219e8ae6eb15c2226763fceeb23db4109f12f1",
         "published_sha256": "c5b1566165c84c05b369bc8f2e219e8ae6eb15c2226763fceeb23db4109f12f1",
         "original_workspace_sha256": "c5b1566165c84c05b369bc8f2e219e8ae6eb15c2226763fceeb23db4109f12f1"
+      },
+      {
+        "file": "evidence/stress-sessions/opencode-migration-r1/evidence.json",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "published_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "original_workspace_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+      },
+      {
+        "file": "evidence/stress-sessions/opencode-migration-r1/task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "ed297fed8cd8147556f7dfd36f9d2c283cc76ea3e88df83af13f77178131ae04",
+        "published_sha256": "ed297fed8cd8147556f7dfd36f9d2c283cc76ea3e88df83af13f77178131ae04",
+        "original_workspace_sha256": "ed297fed8cd8147556f7dfd36f9d2c283cc76ea3e88df83af13f77178131ae04"
+      },
+      {
+        "file": "evidence/stress-sessions/opencode-migration-r1/test_task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "b7804b2fefd61f1f903322b4ac9fded99b0b1d3ba388187678d041a38de5f701",
+        "published_sha256": "b7804b2fefd61f1f903322b4ac9fded99b0b1d3ba388187678d041a38de5f701",
+        "original_workspace_sha256": "b7804b2fefd61f1f903322b4ac9fded99b0b1d3ba388187678d041a38de5f701"
       }
     ]
   }

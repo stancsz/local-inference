@@ -1,5 +1,5 @@
 {
-  "published_verified_sessions": 15,
+  "published_verified_sessions": 16,
   "sessions": [
     {
       "client": "claude",
@@ -1002,6 +1002,73 @@
           "raw_sha256": "d26160b7ba23e2476831ee7afc147154ae113c44bf93eac70e756309497b7c0a",
           "compressed_sha256": "74b3724b4aa49f42304ddbf9e20f3d66752abeaf6cd30e24015565fa73aa868e",
           "native_calls": 3
+        }
+      ],
+      "verified": true
+    },
+    {
+      "client": "opencode",
+      "task": "migration",
+      "seed": 1941,
+      "session_id": "ses_e84a4091effePgQsWoinOxJOGz",
+      "active_seconds": 1060.022,
+      "turns": 9,
+      "receipt": "evidence/stress-sessions/opencode-migration-r1/result.json.gz",
+      "receipt_raw_sha256": "e1c7a7c77d716f7276990c9b44315e9857eb6283b9f01dd4fab7c8c16f53b789",
+      "traces": [
+        {
+          "file": "evidence/stress-sessions/opencode-migration-r1/turn-00.jsonl.gz",
+          "raw_sha256": "eeea93e19f1576b12a1294bc98ea5099cebab6066c3130da6a0b8418105ed4b4",
+          "compressed_sha256": "fbe40c3498d3bc698e573424d350d7a0f7cdcb7d69173c6978dfc19b4e953d6e",
+          "native_calls": 7
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-migration-r1/turn-01.jsonl.gz",
+          "raw_sha256": "a963361a7b39a070e5deead41a9f870521cd8dc4811f036d3fea22731fc5ff40",
+          "compressed_sha256": "fb34c7e7b04aad0e8fe57eb2c0e08969ff82dddec90d7c3b1b747400296f417d",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-migration-r1/turn-02.jsonl.gz",
+          "raw_sha256": "22312b8dd1240a53b9e6f481582a912a621cb44330e33a4a83efa08adb63dda3",
+          "compressed_sha256": "3d3cc4d14f57b2f300efeb3b26685ef141e6ae6c39d8ad1bfe3257efdc32883b",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-migration-r1/turn-03.jsonl.gz",
+          "raw_sha256": "64d7c5fd8a5fa0e75f20d03d02d8a75b33fd3208a3c8682a71db8b040f50f1d5",
+          "compressed_sha256": "1ec87b1b6a4efcd915c5280e5df24d0ce277dbb5c52ef3125491a8efe8e68090",
+          "native_calls": 5
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-migration-r1/turn-04.jsonl.gz",
+          "raw_sha256": "216808afb51ed0543c1c8a710b534ed03e20545bd8329e529355c56abf5727a4",
+          "compressed_sha256": "818a88b1748c5d5db0e663a2c9952d31eafa06be5ba44434ae0462ab8079f7d2",
+          "native_calls": 4
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-migration-r1/turn-05.jsonl.gz",
+          "raw_sha256": "6830ddc614dac2d69fb9f01b91e2fdefa360967fb384adc44ae3977cfc16df58",
+          "compressed_sha256": "38483ad41efd45f73feda850d7b32a2eefeaea1d41a78212a3d78dc14a9fe253",
+          "native_calls": 5
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-migration-r1/turn-06.jsonl.gz",
+          "raw_sha256": "6efdd82f151483e0bde320314f9124d1c5eb6badf0e409664fb1d1b80e545aa0",
+          "compressed_sha256": "9e4693ec148005323df21d1132820ed3072d88de142411338eb0a44a375d85cd",
+          "native_calls": 2
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-migration-r1/turn-07.jsonl.gz",
+          "raw_sha256": "0036142e18c88d3be804f62285e2ac5eefc6392f2cedc416d56a1d579bf4769b",
+          "compressed_sha256": "d9ba02233fd229d415eaee365af78eefaf987db0c5b9ebb7479d8e954fba4416",
+          "native_calls": 5
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-migration-r1/turn-08.jsonl.gz",
+          "raw_sha256": "3c99b89e1060871808de1ed5233b65cb7968f26fce20027399cdd8025c999378",
+          "compressed_sha256": "1990e9a20f3f1e8fde445b4876e7fd8177039f890fb54406cda215b1fa8930bf",
+          "native_calls": 2
         }
       ],
       "verified": true

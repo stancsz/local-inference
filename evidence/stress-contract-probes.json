@@ -830,6 +830,68 @@
           "passed": true
         }
       ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-migration-r1/result.json",
+      "client": "opencode",
+      "task": "migration",
+      "original_workflow_accepted": true,
+      "task_sha256": "ed297fed8cd8147556f7dfd36f9d2c283cc76ea3e88df83af13f77178131ae04",
+      "all_additional_checks_passed": true,
+      "checks": [
+        {
+          "name": "invalid milliseconds None",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds True",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds 1.5",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds '1000'",
+          "passed": true
+        },
+        {
+          "name": "negative milliseconds",
+          "passed": true
+        },
+        {
+          "name": "negative seconds",
+          "passed": true
+        },
+        {
+          "name": "non-string name None",
+          "passed": true
+        },
+        {
+          "name": "non-string name 17",
+          "passed": true
+        },
+        {
+          "name": "non-string name True",
+          "passed": true
+        },
+        {
+          "name": "conflicting time units",
+          "passed": true
+        },
+        {
+          "name": "unknown key",
+          "passed": true
+        },
+        {
+          "name": "boolean retries",
+          "passed": true
+        },
+        {
+          "name": "nonmutation idempotency generator and independent copies",
+          "passed": true
+        }
+      ]
     }
   ],
   "sessions_with_additional_failures": 10
