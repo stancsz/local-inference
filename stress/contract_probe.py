@@ -66,6 +66,9 @@ for invalid in ('NaN','Infinity','garbage'):
 check('mixed currency',lambda:raises(lambda:task.expense_totals('category,amount,currency\\nx,1,USD\\ny,2,CAD\\n'),ValueError))
 check('missing header',lambda:raises(lambda:task.expense_totals('amount\\n1\\n'),ValueError))
 check('duplicate header',lambda:raises(lambda:task.expense_totals('category,amount,amount\\nx,1,2\\n'),ValueError))
+check('missing amount cell',lambda:raises(lambda:task.expense_totals('category,amount\\nFood\\n'),ValueError))
+check('unlabelled extra cell',lambda:raises(lambda:task.expense_totals('category,amount\\nFood,1.00,extra\\n'),ValueError))
+check('quoted category with comma',lambda:equal(task.expense_totals('category,amount\\n"Food, home",1.00\\n'),{'Food, home':Decimal('1.00')}))
 def report():
     result=task.expense_report('category,amount\\nz,1.005\\n\\na,2.00\\nz,0.005\\n')
     equal(list(result['totals']),['z','a'])

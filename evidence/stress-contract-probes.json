@@ -1,5 +1,5 @@
 {
-  "probe_source_sha256": "08fc3cabfeb69f744dbb87ed7a0681aea45692c1d0a6cd8c8e2b5aa78e80fcd3",
+  "probe_source_sha256": "c6dab334a799f82fa0d8b440aea8b500e4979c27b7089e95b6fcd3733573186c",
   "scope": "Additional selected completed-artifact contract probes, independent of CLI-visible public fixtures and applied uniformly to all completed artifacts. These are posthoc coverage checks, not a general accuracy estimate. Original frozen workflow receipts are unchanged; a workflow PASS alone does not certify all task edge cases.",
   "sessions": [
     {
@@ -96,6 +96,66 @@
         },
         {
           "name": "finite value validation",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/claude-expenses-r0/result.json",
+      "client": "claude",
+      "task": "expenses",
+      "original_workflow_accepted": true,
+      "task_sha256": "5fc42a95c95816f7e1b83cceec6f31ae082e7f493bde7aabad3f4d89cea3cd03",
+      "all_additional_checks_passed": false,
+      "checks": [
+        {
+          "name": "aggregate before HALF_EVEN rounding",
+          "passed": true
+        },
+        {
+          "name": "strip group preserve first spelling",
+          "passed": true
+        },
+        {
+          "name": "invalid amount NaN",
+          "passed": true
+        },
+        {
+          "name": "invalid amount Infinity",
+          "passed": true
+        },
+        {
+          "name": "invalid amount garbage",
+          "passed": true
+        },
+        {
+          "name": "mixed currency",
+          "passed": true
+        },
+        {
+          "name": "missing header",
+          "passed": true
+        },
+        {
+          "name": "duplicate header",
+          "passed": true
+        },
+        {
+          "name": "missing amount cell",
+          "passed": false,
+          "error": "AttributeError: 'NoneType' object has no attribute 'strip'"
+        },
+        {
+          "name": "unlabelled extra cell",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "quoted category with comma",
+          "passed": true
+        },
+        {
+          "name": "report blank rows order and exact total",
           "passed": true
         }
       ]
@@ -440,5 +500,5 @@
       ]
     }
   ],
-  "sessions_with_additional_failures": 4
+  "sessions_with_additional_failures": 5
 }
