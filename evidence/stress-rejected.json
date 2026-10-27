@@ -1,0 +1,405 @@
+{
+  "retained_rejected_runner_attempts": 8,
+  "attempts": [
+    {
+      "receipt": "tmp/stress/sessions/claude-engineering-001/result.json",
+      "receipt_raw_sha256": "0552bcd8701904fd0aecdf8c8a41698ee11d249246a387ecd564d91b0ef97b18",
+      "client": "claude",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 1.811,
+      "in_current_controller_outcomes": false,
+      "source_matches_current": false,
+      "files": [
+        {
+          "file": "evidence/stress-failures/claude-engineering-001/result.json.gz",
+          "raw_sha256": "0552bcd8701904fd0aecdf8c8a41698ee11d249246a387ecd564d91b0ef97b18",
+          "compressed_sha256": "79a4209d44b0327718871b02623f82d6dfda5885db680dacc701d29aed5e9454"
+        },
+        {
+          "file": "evidence/stress-failures/claude-engineering-001/turn-00.jsonl.gz",
+          "raw_sha256": "5471a0ee845cd3f45c8a241c80e997b3542398ca8fa43657b028112ec1b6c567",
+          "compressed_sha256": "741ff376a3a012d999cd4a6c92ec6a3645ee85bade67e46f6b4f56281e4a3b10"
+        },
+        {
+          "file": "evidence/stress-failures/claude-engineering-001/turn-00.stderr.txt.gz",
+          "raw_sha256": "d64e14cb1a4017d3516c10ad761576438f88289241c14699943b081ed37a7e44",
+          "compressed_sha256": "6655e686683458fb9815185f4a106994486b196889cf12346cbf642ae7f6fce9"
+        },
+        {
+          "file": "evidence/stress-failures/claude-engineering-001/turn-00.hidden-tests.txt.gz",
+          "raw_sha256": "7f86896c8219bb8b4e302a0d1416423a5f37098d63588b4bd40a7f5f7fbdf714",
+          "compressed_sha256": "64a4e3745f67affbc1d21cd54f8c837347d4d7ae361287520a4c4a9a1319c937"
+        },
+        {
+          "file": "evidence/stress-failures/claude-engineering-001/workspace-task.py.gz",
+          "raw_sha256": "00a5ded469affc2bf5a19f9e6bf7167b2b85032e78f55a7b42245fd7887af76c",
+          "compressed_sha256": "e050bcd3811e0df0f3c44861d98cbdb6b16df4e26269e1c5210dbec4752c5b47"
+        },
+        {
+          "file": "evidence/stress-failures/claude-engineering-001/workspace-test_task.py.gz",
+          "raw_sha256": "3b8aafb21fae022b26b83bbd58751fb20bd4c7047993d9dbac3c230e6092672a",
+          "compressed_sha256": "0f467d3715376651759aaa8d42172e28081d5cd15fe3681f1be5791368cddfac"
+        },
+        {
+          "file": "evidence/stress-failures/claude-engineering-001/workspace-evidence.json.gz",
+          "raw_sha256": "93a9aeaca2f5018a950b7b27e7984ddea41fced154a41987a0d4cf86805d7e07",
+          "compressed_sha256": "f41f6ca638b49449e2885ed6aaa0de2372a1a7fc71df12c43af1879af1e7254c"
+        }
+      ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-native-fix/result.json",
+      "receipt_raw_sha256": "3cfb504072bcb1476d64bc5acf946cdde21807208566fdd5ccbd976e906f51ac",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 170.512,
+      "in_current_controller_outcomes": false,
+      "source_matches_current": false,
+      "files": [
+        {
+          "file": "evidence/stress-failures/codex-engineering-native-fix/result.json.gz",
+          "raw_sha256": "3cfb504072bcb1476d64bc5acf946cdde21807208566fdd5ccbd976e906f51ac",
+          "compressed_sha256": "eff35c46476888008e52434a64018844d53603cd8143109c94d07a6697397e5d"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-native-fix/turn-00.jsonl.gz",
+          "raw_sha256": "a42ddecc266b85beee1168d4f60917759ad4df7245de924d643dfee729a96d38",
+          "compressed_sha256": "51d036ab5322ad5f581502d63b7f6209971d3adc877c9de65b8cd84264fb43df"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-native-fix/turn-00.stderr.txt.gz",
+          "raw_sha256": "bdc982487cdd1d6613ed94009cea9966b0ab77754b09022dcf2945caae3e2115",
+          "compressed_sha256": "abf04da238361b5715919aa59f8b24e403eb41440444407601eda37bbe7c3c99"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-native-fix/turn-00.hidden-tests.txt.gz",
+          "raw_sha256": "0f2cf2833b3fcb19f1b1b39ce52fdc4b5c0cfa3b377bbc4e254ce6f2bd273ad0",
+          "compressed_sha256": "39424b0623e64fa5f1e646ff7a8127d267f5508655678dc9678775d35dd80cee"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-native-fix/workspace-task.py.gz",
+          "raw_sha256": "19bd0f42a8b52d61e5e0409a1c67b305ae1cdb9874ac362228a7630524451cfe",
+          "compressed_sha256": "503de6925b8b3637fdde34f4dfa2b6dd54cc88338ed21ddd85d7b34cdf4365e9"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-native-fix/workspace-test_task.py.gz",
+          "raw_sha256": "3b8aafb21fae022b26b83bbd58751fb20bd4c7047993d9dbac3c230e6092672a",
+          "compressed_sha256": "0f467d3715376651759aaa8d42172e28081d5cd15fe3681f1be5791368cddfac"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-native-fix/workspace-evidence.json.gz",
+          "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+          "compressed_sha256": "90cc9de249a379014f6f115e905babd3c899105008b28c6766ef7d652754e76b"
+        }
+      ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-r0/result.json",
+      "receipt_raw_sha256": "57f7be4e9d5158aa740c083d438a802e13a4ddb16d6cb84cd8d790c3cfa371ab",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 0,
+      "active_seconds": 0.0,
+      "in_current_controller_outcomes": false,
+      "source_matches_current": false,
+      "files": [
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0/result.json.gz",
+          "raw_sha256": "57f7be4e9d5158aa740c083d438a802e13a4ddb16d6cb84cd8d790c3cfa371ab",
+          "compressed_sha256": "da0e4edc07b2c7ae7f991b723cb8c0b0a9a2eac1f27be836ad56806d1e6e1fa4"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0/workspace-task.py.gz",
+          "raw_sha256": "00a5ded469affc2bf5a19f9e6bf7167b2b85032e78f55a7b42245fd7887af76c",
+          "compressed_sha256": "e050bcd3811e0df0f3c44861d98cbdb6b16df4e26269e1c5210dbec4752c5b47"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0/workspace-test_task.py.gz",
+          "raw_sha256": "3b8aafb21fae022b26b83bbd58751fb20bd4c7047993d9dbac3c230e6092672a",
+          "compressed_sha256": "0f467d3715376651759aaa8d42172e28081d5cd15fe3681f1be5791368cddfac"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0/workspace-evidence.json.gz",
+          "raw_sha256": "93a9aeaca2f5018a950b7b27e7984ddea41fced154a41987a0d4cf86805d7e07",
+          "compressed_sha256": "f41f6ca638b49449e2885ed6aaa0de2372a1a7fc71df12c43af1879af1e7254c"
+        }
+      ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-r0-attempt-1793056407/result.json",
+      "receipt_raw_sha256": "01c5687d22e39c4aa8dfaf435a4e6024e346d1fde02465cbe315548b9d3e8eac",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 148.0,
+      "in_current_controller_outcomes": false,
+      "source_matches_current": false,
+      "files": [
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0-attempt-1793056407/result.json.gz",
+          "raw_sha256": "01c5687d22e39c4aa8dfaf435a4e6024e346d1fde02465cbe315548b9d3e8eac",
+          "compressed_sha256": "8ab457b4a8e8791b1d3e671c2da69b3ba27059b1469699c60169afe2ae7dfb97"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0-attempt-1793056407/turn-00.jsonl.gz",
+          "raw_sha256": "ab8873d750c4c6b3158d7ef7b68ca0e74ee0f450bfae585bbef0664ae4aa3353",
+          "compressed_sha256": "0b186a96886c6e6781f00c7a29adbe416c6e02c73fab317cfbb2cb400d021953"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0-attempt-1793056407/turn-00.stderr.txt.gz",
+          "raw_sha256": "01dedd24ebdff3533775fe3dbef47b736680ee70e5789da6bf7b7e59b5cf2bfd",
+          "compressed_sha256": "9daec3946823bc8b53d21cfd3c4ab01f3d6c67a130e2b5643052aa2f184c41f3"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0-attempt-1793056407/turn-00.hidden-tests.txt.gz",
+          "raw_sha256": "e505e26f7d646f58d6088975a613752577b1b372613064ed1939235e8cbc998d",
+          "compressed_sha256": "21d5387b601d580db6212c9cd6ca5ef2698c25f8400a5dbe855fb3c98108a28b"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0-attempt-1793056407/workspace-task.py.gz",
+          "raw_sha256": "4935a36396901b8800651a1071feb86bab870e9697704d7fb3ea14e52a4031d6",
+          "compressed_sha256": "8b123a961b8c5a8c33176a7ff1eae3ffb9e28f84afdfd0abb6934e83efec8dd4"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0-attempt-1793056407/workspace-test_task.py.gz",
+          "raw_sha256": "3b8aafb21fae022b26b83bbd58751fb20bd4c7047993d9dbac3c230e6092672a",
+          "compressed_sha256": "0f467d3715376651759aaa8d42172e28081d5cd15fe3681f1be5791368cddfac"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-r0-attempt-1793056407/workspace-evidence.json.gz",
+          "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+          "compressed_sha256": "90cc9de249a379014f6f115e905babd3c899105008b28c6766ef7d652754e76b"
+        }
+      ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-resume-compatible/result.json",
+      "receipt_raw_sha256": "45efd01972bcf14d8e4a39f14e6b1e6d7d00eafc8aa13bb48d486616118ded37",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 2,
+      "active_seconds": 229.565,
+      "in_current_controller_outcomes": false,
+      "source_matches_current": false,
+      "files": [
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/result.json.gz",
+          "raw_sha256": "45efd01972bcf14d8e4a39f14e6b1e6d7d00eafc8aa13bb48d486616118ded37",
+          "compressed_sha256": "b2db2216d5aad2b3474fd9166302c8fe1f3953daaaa6a35433c0ef5f879cdf7c"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/turn-00.jsonl.gz",
+          "raw_sha256": "6bad43c83ffd9b34b6b4f9c4929ed7cb54a7051ab23a2a951bcb4ea79ac439cb",
+          "compressed_sha256": "4bdb4f06bf905b76059d5067927347d078aee52695dbdf365d693bad60eeae43"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/turn-01.jsonl.gz",
+          "raw_sha256": "1b771b2e4e86a6ebd06314da56a33a5e17c95bd5ad4b1d6a4004733cc774349e",
+          "compressed_sha256": "a2bd349137391d085f46eecdb84d970188cd85d29dbf2927c262b2d080509152"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/turn-00.stderr.txt.gz",
+          "raw_sha256": "8f02fe49ebbf9506b26ebc83f3f34bea388ca9125be7daa0a63d31c796add1c8",
+          "compressed_sha256": "b68489ff74b2c17769f7fe2df7583daadae27250b93adde8c1071fecd799957d"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/turn-01.stderr.txt.gz",
+          "raw_sha256": "801938cd989f3b0a53f99e98a7ebddb829234ee8ed06f863bdead5c0afd7a86c",
+          "compressed_sha256": "7307befb24c4c97bde19769c286692ed60ee4946d7502a7f7933d120ab54524f"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/turn-00.hidden-tests.txt.gz",
+          "raw_sha256": "4a0ae94eb83b9e7241e6988a3c1e89c8229064c6031100f84c0fbaa683416db1",
+          "compressed_sha256": "1e125780e2daca1edafffc503c16766b8559670e4b4a6d326e3f28a77348a788"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/turn-01.hidden-tests.txt.gz",
+          "raw_sha256": "2da6148cb85676269b3def3162202b6a3ca648630c859eec29ef059d73dcf2a0",
+          "compressed_sha256": "b6fff0796d09d9a9c626193acbe688e07921bc7e632162cd88b17518b461b54e"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/workspace-task.py.gz",
+          "raw_sha256": "22aa71b6e58547c786b613528a762df45c0ee09f90ae2c1eef824de87e9b629d",
+          "compressed_sha256": "acd0a52f3559f80eef636d2b110c365ddf1e5dd9e328fdcfbe8615e4fef6376f"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/workspace-test_task.py.gz",
+          "raw_sha256": "92b0e24cd9cb5abf0a472f73667f8cff9bb0c16b45f307bb69839f6736f795d6",
+          "compressed_sha256": "92c4d7671173b36a9bf60870c0fd944d21d82ab11f44f4ad9ee4db17864fd08b"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-resume-compatible/workspace-evidence.json.gz",
+          "raw_sha256": "acfcad2b6ca9de4a81a11515c36085b48a6009bddf82b43c9e08dcd4886f9d08",
+          "compressed_sha256": "bfb161dcb056a2836a86776e40d668d21789f4ae843bea3e4eb8870c73af2232"
+        }
+      ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-validated-parser/result.json",
+      "receipt_raw_sha256": "70ecfbd5be3ef3c7ba6d6984ba1744dba9a4d8c4868abe74900f977336652118",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 2,
+      "active_seconds": 130.015,
+      "in_current_controller_outcomes": false,
+      "source_matches_current": false,
+      "files": [
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/result.json.gz",
+          "raw_sha256": "70ecfbd5be3ef3c7ba6d6984ba1744dba9a4d8c4868abe74900f977336652118",
+          "compressed_sha256": "e084ef783d58edb95752d36f0f026f30653cce105f25e6f3713b6fbdf1c129bb"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/turn-00.jsonl.gz",
+          "raw_sha256": "806fc5de0c22629ab8171eb10a15e92e9fdd92ffd84fe93ac51b89fb00ec8466",
+          "compressed_sha256": "61fc23f1261077f978a5841e56a17e15ba86bfdbde1c987ff57c9c759b94ce8d"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/turn-01.jsonl.gz",
+          "raw_sha256": "1d0ea3ac22293b53af14360e5fe7e06d5ea7f39704212258f51f524d9c96b6b6",
+          "compressed_sha256": "f87a436ac3f556ac67d3847aac202dad45fd315140e6e88258fa4e8368c834bb"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/turn-00.stderr.txt.gz",
+          "raw_sha256": "c66daf68ad1de364aca9f4c3e2762589e53cb65caed77bae29aa8d3d9ca96240",
+          "compressed_sha256": "e89e5b7eb01734a42d1656b4a58d0e2913a87bf33ae9e3b34f811eebca5905f8"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/turn-01.stderr.txt.gz",
+          "raw_sha256": "06898b0ec4931ad69dad4e961731fd62892df30a049246c30e81d87ed5b2a0bd",
+          "compressed_sha256": "62d614729f9ae7f2a16cbccd9a0453fc29985fe686b52ec0d66e170946a03efb"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/turn-00.hidden-tests.txt.gz",
+          "raw_sha256": "4a0ae94eb83b9e7241e6988a3c1e89c8229064c6031100f84c0fbaa683416db1",
+          "compressed_sha256": "1e125780e2daca1edafffc503c16766b8559670e4b4a6d326e3f28a77348a788"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/turn-01.hidden-tests.txt.gz",
+          "raw_sha256": "5e285e777b780b651a2e2ded474e7ec76109b97e82f036626bfb13cf59c3a61f",
+          "compressed_sha256": "4ab8d384c1f48a0008165d4999312022435c235533f6531a1256bc6a2e9342c7"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/workspace-task.py.gz",
+          "raw_sha256": "19bd0f42a8b52d61e5e0409a1c67b305ae1cdb9874ac362228a7630524451cfe",
+          "compressed_sha256": "503de6925b8b3637fdde34f4dfa2b6dd54cc88338ed21ddd85d7b34cdf4365e9"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/workspace-test_task.py.gz",
+          "raw_sha256": "92b0e24cd9cb5abf0a472f73667f8cff9bb0c16b45f307bb69839f6736f795d6",
+          "compressed_sha256": "92c4d7671173b36a9bf60870c0fd944d21d82ab11f44f4ad9ee4db17864fd08b"
+        },
+        {
+          "file": "evidence/stress-failures/codex-engineering-validated-parser/workspace-evidence.json.gz",
+          "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+          "compressed_sha256": "90cc9de249a379014f6f115e905babd3c899105008b28c6766ef7d652754e76b"
+        }
+      ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-expenses-r1/result.json",
+      "receipt_raw_sha256": "78c57e757638e780e437be033b7d48bd14c68d4cb8a6d98c76d6242d6e0c5175",
+      "client": "codex",
+      "task": "expenses",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 240.326,
+      "in_current_controller_outcomes": true,
+      "source_matches_current": true,
+      "files": [
+        {
+          "file": "evidence/stress-failures/codex-expenses-r1/result.json.gz",
+          "raw_sha256": "78c57e757638e780e437be033b7d48bd14c68d4cb8a6d98c76d6242d6e0c5175",
+          "compressed_sha256": "ee9872c01d32b27f6161677ccd8bf723f968e6ca45281d091f55caf7ab847a26"
+        },
+        {
+          "file": "evidence/stress-failures/codex-expenses-r1/turn-00.jsonl.gz",
+          "raw_sha256": "6577395fb2fa2f8c30bc043357a0a79afed719c4de6c38f95aa14907d9f8adcc",
+          "compressed_sha256": "8cc085bdd555e72296afc3e4f85a0c84764576ace1c77bc4897b626667fe7ef3"
+        },
+        {
+          "file": "evidence/stress-failures/codex-expenses-r1/turn-00.stderr.txt.gz",
+          "raw_sha256": "38931f10b80fc39460b5f03e327eb385ba49e9fa8ad0dc5a27f5b222c7d3d3d0",
+          "compressed_sha256": "89337c741598707cc1c199e64837978db7917a9b7fce2a2bf4224636f3c95ade"
+        },
+        {
+          "file": "evidence/stress-failures/codex-expenses-r1/turn-00.hidden-tests.txt.gz",
+          "raw_sha256": "df7dee0799c176d74af973efcfded08518affce30a1a463545cacd9743706bf4",
+          "compressed_sha256": "c679eaad74d29cb389f01f6c09edd4ba36993569deda10945add480c9fc57747"
+        },
+        {
+          "file": "evidence/stress-failures/codex-expenses-r1/workspace-task.py.gz",
+          "raw_sha256": "8937f5f9e84ab9f1ad150e7edcdf244a851cec3a67fb43ed9b4284d22daeb228",
+          "compressed_sha256": "e34f31251b5a9c6a9921ff81e07d3da399da467dee905a87dd2a2ddf400082fe"
+        },
+        {
+          "file": "evidence/stress-failures/codex-expenses-r1/workspace-test_task.py.gz",
+          "raw_sha256": "627cf646744df0b4ddd6cf203c4bdfa93a5ef0987e46fba72198716615cc61ce",
+          "compressed_sha256": "671d2035b2d42a404d9c8f56150bad7b8e4286bae87db4836366e71c44e08380"
+        },
+        {
+          "file": "evidence/stress-failures/codex-expenses-r1/workspace-evidence.json.gz",
+          "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+          "compressed_sha256": "90cc9de249a379014f6f115e905babd3c899105008b28c6766ef7d652754e76b"
+        }
+      ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-expenses-r1/result.json",
+      "receipt_raw_sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
+      "client": "opencode",
+      "task": "expenses",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 240.348,
+      "in_current_controller_outcomes": true,
+      "source_matches_current": true,
+      "files": [
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r1/result.json.gz",
+          "raw_sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
+          "compressed_sha256": "34280bf6ed39b44581b7f93578d968b5292511885b46a22c7305adb132719226"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r1/turn-00.jsonl.gz",
+          "raw_sha256": "b57c5af57efcc18fa1b906cfa176aa89d5e09f94e56d20c1584ba7121c4c5b98",
+          "compressed_sha256": "ffcb692cb0e2c92f9821d5e7d137ba3d61491ac25c3028dc2b694ca330613ea6"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r1/turn-00.stderr.txt.gz",
+          "raw_sha256": "85337bfe1360657afa3f7b83614d9f35f844f734cbefc45decb5af40aac71644",
+          "compressed_sha256": "c05df89801fc338b090eab5921ebb2bacf5999504b504f509b08077e20dee87c"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r1/turn-00.hidden-tests.txt.gz",
+          "raw_sha256": "8012ca6ac6210adb6d693625e2c6bfcacb59a11437de638dc7bf63f7e908edb1",
+          "compressed_sha256": "2c776f643b3937273d0fd42fd7c7267b17458898a90da7fb59cd2003f9c928f1"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r1/workspace-task.py.gz",
+          "raw_sha256": "602f3f894e9bb72705b9f54cf4ed4136f60e6a88accd6fcb36171b25d8733cbd",
+          "compressed_sha256": "f363d1248ac9a39e5a826fbed72c70a1e3a8cf7d3aa0f80845235f2ed066acdd"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r1/workspace-test_task.py.gz",
+          "raw_sha256": "627cf646744df0b4ddd6cf203c4bdfa93a5ef0987e46fba72198716615cc61ce",
+          "compressed_sha256": "671d2035b2d42a404d9c8f56150bad7b8e4286bae87db4836366e71c44e08380"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r1/workspace-evidence.json.gz",
+          "raw_sha256": "93a9aeaca2f5018a950b7b27e7984ddea41fced154a41987a0d4cf86805d7e07",
+          "compressed_sha256": "f41f6ca638b49449e2885ed6aaa0de2372a1a7fc71df12c43af1879af1e7254c"
+        }
+      ]
+    }
+  ],
+  "scope": "Rejected terminal runner receipts only, including historical setup/compatibility failures and current model stalls. In-progress receipts are excluded. Different source epochs and setup conditions are not one steady-state failure-rate denominator. Original acceptance remains false."
+}
