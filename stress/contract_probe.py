@@ -36,10 +36,12 @@ check('generator report',lambda:equal(task.clamp_report((x for x in [-7,3,105]))
 check('finite value validation',lambda:raises(lambda:task.clamp(float('nan')),ValueError))
 ''',
     'migration': '''
-for invalid in (True, 1.5, '1000'):
+for invalid in (None, True, 1.5, '1000'):
     check('invalid milliseconds '+repr(invalid),lambda invalid=invalid:raises(lambda:task.normalize_settings({'timeout_ms':invalid}),TypeError,ValueError))
 check('negative milliseconds',lambda:raises(lambda:task.normalize_settings({'timeout_ms':-1}),ValueError))
 check('negative seconds',lambda:raises(lambda:task.normalize_settings({'timeout_seconds':-1}),ValueError))
+for invalid in (None, 17, True):
+    check('non-string name '+repr(invalid),lambda invalid=invalid:raises(lambda:task.normalize_settings({'name':invalid}),TypeError,ValueError))
 check('conflicting time units',lambda:raises(lambda:task.normalize_settings({'timeout_ms':1000,'timeout_seconds':1}),ValueError))
 check('unknown key',lambda:raises(lambda:task.normalize_settings({'surprise':1}),ValueError))
 check('boolean retries',lambda:raises(lambda:task.normalize_settings({'retries':False}),TypeError,ValueError))
@@ -88,7 +90,8 @@ def main():
         checks=json.loads(tested.stdout) if tested.returncode==0 else [{'name':'probe execution','passed':False,'error':tested.stderr}]
         rows.append({'receipt':path.relative_to(ROOT).as_posix(),'client':record['client'],'task':record['task'],
             'original_workflow_accepted':True,'task_sha256':before,'all_additional_checks_passed':all(c['passed'] for c in checks),'checks':checks})
-    output={'scope':'Additional completed-artifact contract probes, independent of CLI-visible public fixtures. Original frozen workflow receipts are unchanged; a workflow PASS alone does not certify all task edge cases.',
+    output={'probe_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'scope':'Additional selected completed-artifact contract probes, independent of CLI-visible public fixtures and applied uniformly to all completed artifacts. These are posthoc coverage checks, not a general accuracy estimate. Original frozen workflow receipts are unchanged; a workflow PASS alone does not certify all task edge cases.',
         'sessions':rows,'sessions_with_additional_failures':sum(not r['all_additional_checks_passed'] for r in rows)}
     (ROOT/'evidence/stress-contract-probes.json').write_text(json.dumps(output,indent=2))
     print(json.dumps({'probed_sessions':len(rows),'sessions_with_additional_failures':output['sessions_with_additional_failures']}))

@@ -1,5 +1,6 @@
 {
-  "scope": "Additional completed-artifact contract probes, independent of CLI-visible public fixtures. Original frozen workflow receipts are unchanged; a workflow PASS alone does not certify all task edge cases.",
+  "probe_source_sha256": "08fc3cabfeb69f744dbb87ed7a0681aea45692c1d0a6cd8c8e2b5aa78e80fcd3",
+  "scope": "Additional selected completed-artifact contract probes, independent of CLI-visible public fixtures and applied uniformly to all completed artifacts. These are posthoc coverage checks, not a general accuracy estimate. Original frozen workflow receipts are unchanged; a workflow PASS alone does not certify all task edge cases.",
   "sessions": [
     {
       "receipt": "tmp/stress/sessions/claude-engineering-002/result.json",
@@ -108,6 +109,10 @@
       "all_additional_checks_passed": true,
       "checks": [
         {
+          "name": "invalid milliseconds None",
+          "passed": true
+        },
+        {
           "name": "invalid milliseconds True",
           "passed": true
         },
@@ -125,6 +130,18 @@
         },
         {
           "name": "negative seconds",
+          "passed": true
+        },
+        {
+          "name": "non-string name None",
+          "passed": true
+        },
+        {
+          "name": "non-string name 17",
+          "passed": true
+        },
+        {
+          "name": "non-string name True",
           "passed": true
         },
         {
@@ -294,7 +311,72 @@
           "passed": true
         }
       ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-migration-r0/result.json",
+      "client": "opencode",
+      "task": "migration",
+      "original_workflow_accepted": true,
+      "task_sha256": "657bb2e1937c2936435f67649492eb396997335d1334e668852adfae64bf2adf",
+      "all_additional_checks_passed": false,
+      "checks": [
+        {
+          "name": "invalid milliseconds None",
+          "passed": false,
+          "error": "AssertionError: expected TypeError/ValueError"
+        },
+        {
+          "name": "invalid milliseconds True",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds 1.5",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds '1000'",
+          "passed": true
+        },
+        {
+          "name": "negative milliseconds",
+          "passed": true
+        },
+        {
+          "name": "negative seconds",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "non-string name None",
+          "passed": false,
+          "error": "AssertionError: expected TypeError/ValueError"
+        },
+        {
+          "name": "non-string name 17",
+          "passed": true
+        },
+        {
+          "name": "non-string name True",
+          "passed": true
+        },
+        {
+          "name": "conflicting time units",
+          "passed": true
+        },
+        {
+          "name": "unknown key",
+          "passed": true
+        },
+        {
+          "name": "boolean retries",
+          "passed": true
+        },
+        {
+          "name": "nonmutation idempotency generator and independent copies",
+          "passed": true
+        }
+      ]
     }
   ],
-  "sessions_with_additional_failures": 3
+  "sessions_with_additional_failures": 4
 }
