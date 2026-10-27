@@ -269,6 +269,65 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/codex-expenses-r0/result.json",
+      "client": "codex",
+      "task": "expenses",
+      "original_workflow_accepted": true,
+      "task_sha256": "bb5bbad14c9cb3cb97b2f17a116e2b1ad9d060920a7e8414639c15bc3769215e",
+      "all_additional_checks_passed": false,
+      "checks": [
+        {
+          "name": "aggregate before HALF_EVEN rounding",
+          "passed": true
+        },
+        {
+          "name": "strip group preserve first spelling",
+          "passed": true
+        },
+        {
+          "name": "invalid amount NaN",
+          "passed": true
+        },
+        {
+          "name": "invalid amount Infinity",
+          "passed": true
+        },
+        {
+          "name": "invalid amount garbage",
+          "passed": true
+        },
+        {
+          "name": "mixed currency",
+          "passed": true
+        },
+        {
+          "name": "missing header",
+          "passed": true
+        },
+        {
+          "name": "duplicate header",
+          "passed": true
+        },
+        {
+          "name": "missing amount cell",
+          "passed": true
+        },
+        {
+          "name": "unlabelled extra cell",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "quoted category with comma",
+          "passed": true
+        },
+        {
+          "name": "report blank rows order and exact total",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/codex-migration-r0/result.json",
       "client": "codex",
       "task": "migration",
@@ -559,5 +618,5 @@
       ]
     }
   ],
-  "sessions_with_additional_failures": 6
+  "sessions_with_additional_failures": 7
 }
