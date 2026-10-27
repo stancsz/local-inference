@@ -209,6 +209,68 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/codex-migration-r0/result.json",
+      "client": "codex",
+      "task": "migration",
+      "original_workflow_accepted": true,
+      "task_sha256": "5ed35f7741cb62f1e5dba09699d8c90259327b6316f81f6cf2a1e35523efe4b6",
+      "all_additional_checks_passed": true,
+      "checks": [
+        {
+          "name": "invalid milliseconds None",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds True",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds 1.5",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds '1000'",
+          "passed": true
+        },
+        {
+          "name": "negative milliseconds",
+          "passed": true
+        },
+        {
+          "name": "negative seconds",
+          "passed": true
+        },
+        {
+          "name": "non-string name None",
+          "passed": true
+        },
+        {
+          "name": "non-string name 17",
+          "passed": true
+        },
+        {
+          "name": "non-string name True",
+          "passed": true
+        },
+        {
+          "name": "conflicting time units",
+          "passed": true
+        },
+        {
+          "name": "unknown key",
+          "passed": true
+        },
+        {
+          "name": "boolean retries",
+          "passed": true
+        },
+        {
+          "name": "nonmutation idempotency generator and independent copies",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/opencode-engineering-r0/result.json",
       "client": "opencode",
       "task": "engineering",

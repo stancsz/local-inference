@@ -99,17 +99,33 @@
       "turns": 9,
       "failure": null,
       "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "migration",
+        "seed": 1041,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/codex-migration-r0/result.json",
+      "sha256": "f67a746d30661be52c1fc7c6f7d75d0100585fd5f46f46aca107988560f8c2d9",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 849.925,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
     }
   ],
   "scope": "Frozen uncommitted Sift candidate; real native CLIs in synthetic evolving workspaces. First-stage Sift hook uses LiteLLM counting; final gateway Sift uses the backend native full-request counter. No scripted idle padding or cloud inference.",
-  "updated_at": "2026-10-27T01:05:33.262329+00:00",
-  "accepted_sessions": 5,
-  "qualifying_long_sessions": 5,
+  "updated_at": "2026-10-27T01:20:00.894596+00:00",
+  "accepted_sessions": 6,
+  "qualifying_long_sessions": 6,
   "current_case": {
-    "index": 6,
-    "client": "codex",
-    "task": "migration",
-    "seed": 1041,
+    "index": 7,
+    "client": "claude",
+    "task": "expenses",
+    "seed": 851,
     "repeat": 0
   }
 }
