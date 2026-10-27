@@ -14,6 +14,8 @@ Failure history remains rejected: missing sandbox helper, native shell-write rec
 
 Remaining: finish the full 21-session matrix with three task types across all three CLIs, review every outcome including failures, publish timing/memory/context evidence, and obtain final independent acceptance. Do not mark this goal complete from the three published sessions alone. The historical completion sections below apply only to earlier setup/documentation milestones.
 
+Latest checkpoint: the corrected-epoch Claude engineering session completed nine workflow turns in 980.493 active seconds and its native streams/final tests were replayed; OpenCode engineering is running next. Additional final-artifact probes expose empty-batch bounds-validation gaps in this Claude artifact and the historical OpenCode artifact. Fresh Codex and historical Claude pass these added checks. Preserve the distinction between workflow acceptance and task contract quality in evidence/stress-contract-probes.json; no generated artifact was edited to hide a failure. The full matrix and independent final review remain pending.
+
 ## Ask
 Run Qwen3.8 27B, 3/4-bit quantization and MTP, in Docker on this Windows host. Sift is a mandatory CPU compaction prerequisite for 256k-1M working histories, forwarding a dynamic 24k-64k working set. Commit and push scoped milestones in both repositories.
 

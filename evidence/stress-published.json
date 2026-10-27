@@ -1,5 +1,5 @@
 {
-  "published_verified_sessions": 3,
+  "published_verified_sessions": 4,
   "sessions": [
     {
       "client": "claude",
@@ -63,6 +63,73 @@
           "file": "evidence/stress-sessions/claude-engineering-002/turn-08.jsonl.gz",
           "raw_sha256": "0caa2a8d43b4f89c70bc0a361dba9866db71e855fbab040b43dbc29c95349194",
           "compressed_sha256": "74df541431e8677e5402c852e351e970b96f36916923f009ac904ae3669ccddb",
+          "native_calls": 5
+        }
+      ],
+      "verified": true
+    },
+    {
+      "client": "claude",
+      "task": "engineering",
+      "seed": 831,
+      "session_id": "7472a04d-6f50-4243-b46a-8a6742d73ed4",
+      "active_seconds": 980.493,
+      "turns": 9,
+      "receipt": "evidence/stress-sessions/claude-engineering-r0/result.json.gz",
+      "receipt_raw_sha256": "652ae90ce5d8bdef0ab7c6758555f0c915ec542f7830fb8e886a096d341e5d0c",
+      "traces": [
+        {
+          "file": "evidence/stress-sessions/claude-engineering-r0/turn-00.jsonl.gz",
+          "raw_sha256": "f9ecbe8817ecc7911695fe3dacec75ecdf0cfe7ddd36f68060c19db5c8ac0a17",
+          "compressed_sha256": "b2a3dc48fe65b7e3d5f7995cbc1a1463bd45a53cb7e41531be3d710927473bc5",
+          "native_calls": 8
+        },
+        {
+          "file": "evidence/stress-sessions/claude-engineering-r0/turn-01.jsonl.gz",
+          "raw_sha256": "287383aeb60e6bb1b257e5e022c9c04a3c5f2222474d17c17759908c495510b1",
+          "compressed_sha256": "b04f9a99e7ced24144df316fa61be72b065478595cb859adfe8ef1604042a212",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-engineering-r0/turn-02.jsonl.gz",
+          "raw_sha256": "9c2975f2f1e5f340c97c1aa35b26a154a669d049b0d6b1d1219a75aad5c7d6d5",
+          "compressed_sha256": "426795100cbfa815e085ffc7eda9d6886da59edc89ade62d718d6df2828e2eef",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-engineering-r0/turn-03.jsonl.gz",
+          "raw_sha256": "a3ded1b972749ab6fdc5c96a7522831a3a177b4e56efc30a407ee3c940535f2e",
+          "compressed_sha256": "6a9c9cb7294d45c44b0d5fae6b4632ff9ad3a3d76dcd2f6cd5ffd3796c3691eb",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-engineering-r0/turn-04.jsonl.gz",
+          "raw_sha256": "d0c20d2451bee6bc24c6e509f28d260670d36a24aaca3b619a4af240a0db8547",
+          "compressed_sha256": "a5b88fa3e3f24ac46904ab57071aa846166c3f715b0e1d1e21451bf33ab1d1a6",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-engineering-r0/turn-05.jsonl.gz",
+          "raw_sha256": "aee5d738f7152cc41369ee04c3c9fb9afa2fbc96345ca061bf317d73df4607cb",
+          "compressed_sha256": "8319da54e520f52b60f162c0a267a09099d625e7fb3c63f42709de96cb1f4039",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-engineering-r0/turn-06.jsonl.gz",
+          "raw_sha256": "1319db1f03d1429107f470635d1a2e17ff21a3cfca94a0ba252b8db01b6ed06e",
+          "compressed_sha256": "e0b4573858c36c1afcb11f0cb1d90ed720a4e2cea05dbdee3b48ebf9b6ae4380",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-engineering-r0/turn-07.jsonl.gz",
+          "raw_sha256": "2e6bf9e84f0283b9c394cc30a718e740fd8deaf7ccc4f040804f5a4ee432a59e",
+          "compressed_sha256": "6fb30c10d2da927540e5b56645dd4fcdb328f461a817d653ae50447509ec6d7a",
+          "native_calls": 5
+        },
+        {
+          "file": "evidence/stress-sessions/claude-engineering-r0/turn-08.jsonl.gz",
+          "raw_sha256": "2edc7d65ec8c9dd17374995d7107bbf7bd8f8f66abb0d666059ce481e9639c16",
+          "compressed_sha256": "ab1a0989acafa7b5e61beed32a2c21e214f9be5d98f041096179c2ef8b93f16f",
           "native_calls": 5
         }
       ],
