@@ -1,0 +1,21 @@
+{
+  "samples": 597,
+  "controller_pid": 73836,
+  "maximum_host_used_mib": 15638,
+  "minimum_host_free_mib": 358,
+  "first": {
+    "at": "2026-10-27T04:26:09.807724+00:00",
+    "used_mib": 15231,
+    "total_mib": 16303,
+    "free_mib": 765,
+    "utilization_percent": 0
+  },
+  "last": {
+    "at": "2026-10-27T05:16:30.163218+00:00",
+    "used_mib": 15322,
+    "total_mib": 16303,
+    "free_mib": 674,
+    "utilization_percent": 88
+  },
+  "scope": "Total host GPU occupancy, including desktop drift; not per-model allocation or an isolated14GB measurement. Sampling sleep is outside every client active-duration measurement."
+}

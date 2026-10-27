@@ -1,0 +1,333 @@
+{
+  "captured_at": "2026-10-27T05:23:40.641066+00:00",
+  "owner": "commander offline reconciliation; not independent acceptance",
+  "verdict": "PASS for published byte/trace reconciliation only",
+  "published_sessions": 21,
+  "published_native_turns": 189,
+  "published_fixtures": 63,
+  "fixture_mismatches": 0,
+  "recorded_public_test_hashes_checked": 189,
+  "native_budget_checks": 935,
+  "rejected_attempts": 9,
+  "rejected_archived_files": 66,
+  "live_frozen_sources_match": true,
+  "gateway_image": "sha256:0441d3d28a6cb1411f4e390eb95cb2786e87fb9dab03b7f3cffba60d632e3189",
+  "fixtures": [
+    {
+      "file": "evidence/stress-sessions/claude-engineering-002/task.py",
+      "sha256": "f14b15110249cc62b79d3da83bdf4940fae14ce562fab17eca521b3ecc0499d5",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-002/test_task.py",
+      "sha256": "de21939b67c079f59352dee1d0511ad3e1a1d0b39d5adddb08f93d61d0e7cd4f",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-002/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-r0/task.py",
+      "sha256": "135accb329ae1dffab889814f455be7c1e026a685e2a32cb65dfbe8ab8f03633",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-r0/test_task.py",
+      "sha256": "de21939b67c079f59352dee1d0511ad3e1a1d0b39d5adddb08f93d61d0e7cd4f",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-r0/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-r1/task.py",
+      "sha256": "5474859d53da548d6bddf55e398b44b77a311dbcf09bb637cc448619bffa01b6",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-r1/test_task.py",
+      "sha256": "147cddcb77f8a8261ad0676fbb39b60b1ea7abb318a8fe4b0a1b57c7d53df370",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-r1/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-r2/task.py",
+      "sha256": "c68eb4790c7fcfb1d25c8afd19b6196e9c90580135a97186bc1fa9b8f80efbcb",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-r2/test_task.py",
+      "sha256": "001d04d4b81c57174d4aa1097bd994d115e2bad7a49d125ed6858d6a56936a35",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-engineering-r2/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-expenses-r0/task.py",
+      "sha256": "5fc42a95c95816f7e1b83cceec6f31ae082e7f493bde7aabad3f4d89cea3cd03",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-expenses-r0/test_task.py",
+      "sha256": "387a38ab2451e7810b89b5da27cf827d2d0b562ccbf1d00828cb8cf73acb9b1d",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-expenses-r0/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-expenses-r1/task.py",
+      "sha256": "45649d7fb2d8c243b0ff4173f48e012143f97421fb63077344f95754533ad42b",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-expenses-r1/test_task.py",
+      "sha256": "730f9fa6a3b7ce14119156ef0d90330e6a464cf9822042a6b223b4628f5aeeec",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-expenses-r1/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-migration-r0/task.py",
+      "sha256": "6594b8e65b6350e1901e808cdce6a35a19223c5da762f35e71c35c9b0361d127",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-migration-r0/test_task.py",
+      "sha256": "b89b3f0718bf7025bdfe2cb23b9bfaf7e8829100751ddb82c31bd3896b7445cd",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-migration-r0/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-migration-r1/task.py",
+      "sha256": "daf993e455746eb4224c44f5c51e8e8143b732f305119d6532d3feb1491c1879",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-migration-r1/test_task.py",
+      "sha256": "e69c73f3e6e3880e33a2fc4432646307d6e7fc568ff7c43c61d634e71ebe7962",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/claude-migration-r1/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-engineering-r1/task.py",
+      "sha256": "5ed6c4e68439cb089ae849811082bc5e7c1c787630ae12938e6ec45094bb5920",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-engineering-r1/test_task.py",
+      "sha256": "e18e8ef3495db977e600a0bb49c643335066fa19e93dadb3ac7a553f00eb1f31",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-engineering-r1/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-engineering-r2/task.py",
+      "sha256": "2bca4058bb6d973bf0020d8afa80a1b0e90791b7175452ecede674bcbdf513d2",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-engineering-r2/test_task.py",
+      "sha256": "326807ce9c855c867a165762b5bac04f884967a3354b326057ce40096cd9ee06",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-engineering-r2/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-engineering-resume-writable/task.py",
+      "sha256": "047a3361bca3330ada81a6ae5162aef114b8acdb10b200ea5b3c0e4ba9710303",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-engineering-resume-writable/test_task.py",
+      "sha256": "78eeb1e2cebfc810429f9fc4670b482c05164e7e122ca064de18fe2a16c4fee8",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-engineering-resume-writable/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-expenses-r0/task.py",
+      "sha256": "bb5bbad14c9cb3cb97b2f17a116e2b1ad9d060920a7e8414639c15bc3769215e",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-expenses-r0/test_task.py",
+      "sha256": "5742011f1a93394544a9543fa393a492e16bdc799d13e672275e0b5954bb3616",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-expenses-r0/evidence.json",
+      "sha256": "acfcad2b6ca9de4a81a11515c36085b48a6009bddf82b43c9e08dcd4886f9d08",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-migration-r0/task.py",
+      "sha256": "5ed35f7741cb62f1e5dba09699d8c90259327b6316f81f6cf2a1e35523efe4b6",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-migration-r0/test_task.py",
+      "sha256": "3fa140b300447225435b16fc7c508ab3c4e941aa7a722289b7f012549a46f9e2",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-migration-r0/evidence.json",
+      "sha256": "7ad69bf335074d722136b8ac593dca45b7be95d34ec497f1232685b55fd1181c",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-migration-r1/task.py",
+      "sha256": "2faa835764663536d79f8dc7f3bc6902c7cb93dd376a37d04e004f2ed5968899",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-migration-r1/test_task.py",
+      "sha256": "f7cd97cc35b738b3b187210fc9bca68ee2a38599062d900d32f6a0be20757293",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/codex-migration-r1/evidence.json",
+      "sha256": "acfcad2b6ca9de4a81a11515c36085b48a6009bddf82b43c9e08dcd4886f9d08",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r0/task.py",
+      "sha256": "e59beba4eebed3fc201e9e06990f174979e8de315b62099b27e9e3dcae825f79",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r0/test_task.py",
+      "sha256": "c48486ca132b88103f19517333c96593e0853b6ed3603b70c32d382ae5a13d28",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r0/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r0-attempt-1793060019/task.py",
+      "sha256": "b4f45fbb8a8e61972d30c5757161e23c6f6a24b3d9771cb49ead9171557ad246",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r0-attempt-1793060019/test_task.py",
+      "sha256": "c48486ca132b88103f19517333c96593e0853b6ed3603b70c32d382ae5a13d28",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r0-attempt-1793060019/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r1/task.py",
+      "sha256": "d05409ec5bd293bcc571c900fce95f101d634ca1869a18f44d0ac63ba6b8e7a9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r1/test_task.py",
+      "sha256": "bcb17f1a28c1f1dd58595ba63982f11376e1f73318a25762fa84f46456392eff",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r1/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r2/task.py",
+      "sha256": "5e21df06a3f66f8c27a2141e2af3e4f0d043804eec3259d9ee5dc18a71f5cbf0",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r2/test_task.py",
+      "sha256": "ceba582d48f67d531312d61f5724828f7e5c189e26f34eb3a943d12f0c176cba",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-engineering-r2/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-expenses-r0/task.py",
+      "sha256": "d4aba98a36673459ee352c8945cf809db88fa942747650e1cf8754f40b257872",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-expenses-r0/test_task.py",
+      "sha256": "fa7831083ae5ca38fa68521d7adf5bcb2f6020ff79063a24cb052a9b7fa23895",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-expenses-r0/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-migration-r0/task.py",
+      "sha256": "657bb2e1937c2936435f67649492eb396997335d1334e668852adfae64bf2adf",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-migration-r0/test_task.py",
+      "sha256": "c5b1566165c84c05b369bc8f2e219e8ae6eb15c2226763fceeb23db4109f12f1",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-migration-r0/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-migration-r1/task.py",
+      "sha256": "ed297fed8cd8147556f7dfd36f9d2c283cc76ea3e88df83af13f77178131ae04",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-migration-r1/test_task.py",
+      "sha256": "b7804b2fefd61f1f903322b4ac9fded99b0b1d3ba388187678d041a38de5f701",
+      "matches_record_original_index": true
+    },
+    {
+      "file": "evidence/stress-sessions/opencode-migration-r1/evidence.json",
+      "sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "matches_record_original_index": true
+    }
+  ],
+  "scope": "All published accepted epochs, including two historical gateway/harness epochs; not a homogeneous current-matrix count. Rejected bytes are checked without reclassifying outcomes. No inference or task-artifact edits."
+}

@@ -1,0 +1,14 @@
+{
+  "accepted": false,
+  "receipt_sha256": "d643c29687fb782626eae2d09334ad384a98866dc032da312ab53efa444cc2da",
+  "active_seconds": 240.445,
+  "turns": 1,
+  "timed_out": true,
+  "native_terminal_success": false,
+  "workflow_ordered": true,
+  "final_public_tests_passed": true,
+  "hidden_tests_exit": 0,
+  "historical_gold_passed": true,
+  "classification": "Deadline before successful CLI terminal event, despite passing tests and workflow evidence.",
+  "limits": "No claim that a longer timeout would have completed successfully. Original240s limit and rejected outcome retained. No reroll."
+}

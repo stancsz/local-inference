@@ -1,12 +1,86 @@
 {
-  "captured_at": "2026-10-27T05:13:39.607856+00:00",
-  "controller_state": "running",
+  "captured_at": "2026-10-27T05:28:20.852476+00:00",
+  "controller_state": "attention_required",
   "planned_attempts": 22,
-  "terminal_attempts": 21,
+  "terminal_attempts": 22,
   "harness_accepted": 19,
   "nine_turn_long_sessions": 19,
-  "failed_attempts": 2,
-  "native_budget_checks": 871,
+  "failed_attempts": 3,
+  "native_budget_checks": 880,
+  "required_qualifying_sessions": 21,
+  "qualifying_shortfall": 2,
+  "accepted_active_seconds": {
+    "samples": 19,
+    "minimum": 766.871,
+    "median": 967.795,
+    "maximum": 1086.017
+  },
+  "total_accepted_active_seconds": 18247.656,
+  "native_context": {
+    "input_tokens": {
+      "samples": 880,
+      "minimum": 24183,
+      "median": 24491.5,
+      "maximum": 32716
+    },
+    "target_tokens": {
+      "samples": 880,
+      "minimum": 24576,
+      "median": 24576.0,
+      "maximum": 32768
+    },
+    "output_reserve_tokens": {
+      "samples": 880,
+      "minimum": 4096,
+      "median": 4096.0,
+      "maximum": 4096
+    },
+    "window_tokens": [
+      40960
+    ],
+    "decoder_guard_tokens": 256,
+    "scope": "Final gateway native full-request counts, after the separate fixed32768 LiteLLM-counted first-stage compaction."
+  },
+  "memory": {
+    "source": "evidence/stress-gpu-samples.jsonl.gz",
+    "raw_sha256": "534c17490bd12cfd31e11e8985f8a5bc1c2d735d676045c65b5e67278b1d9f9f",
+    "raw_bytes": 525094,
+    "samples": 4139,
+    "first": {
+      "at": "2026-10-26T22:29:19.924016+00:00",
+      "used_mib": 15260,
+      "total_mib": 16303,
+      "free_mib": 736,
+      "utilization_percent": 89
+    },
+    "last": {
+      "at": "2026-10-27T05:16:30.163218+00:00",
+      "used_mib": 15322,
+      "total_mib": 16303,
+      "free_mib": 674,
+      "utilization_percent": 88
+    },
+    "host_used_mib": {
+      "samples": 4139,
+      "minimum": 15179,
+      "median": 15227,
+      "maximum": 15638
+    },
+    "host_free_mib": {
+      "samples": 4139,
+      "minimum": 358,
+      "median": 769,
+      "maximum": 817
+    },
+    "sampling_gap_seconds": {
+      "samples": 4138,
+      "minimum": 2.405572,
+      "median": 5.066997000000001,
+      "maximum": 918.58161
+    },
+    "units": "MiB =1048576 bytes",
+    "scope": "Available sampling intervals only, with gaps. Total host occupancy includes desktop drift and is not isolated model+MTP residency, uninterrupted per-session coverage or proof of under14GB."
+  },
   "groups": [
     {
       "client": "claude",
@@ -28,7 +102,7 @@
     },
     {
       "client": "opencode",
-      "terminal_attempts": 7,
+      "terminal_attempts": 8,
       "harness_accepted": 6,
       "nine_turn_long_sessions": 6,
       "accepted_tasks": {
@@ -61,6 +135,44 @@
         "maximum": 959.153
       },
       "additional_contract_failures": 3
+    }
+  ],
+  "task_groups": [
+    {
+      "task": "engineering",
+      "terminal_attempts": 9,
+      "harness_accepted": 9,
+      "accepted_active_seconds": {
+        "samples": 9,
+        "minimum": 779.767,
+        "median": 980.493,
+        "maximum": 1069.701
+      },
+      "additional_contract_failures": 5
+    },
+    {
+      "task": "migration",
+      "terminal_attempts": 6,
+      "harness_accepted": 6,
+      "accepted_active_seconds": {
+        "samples": 6,
+        "minimum": 766.871,
+        "median": 966.2795,
+        "maximum": 1067.898
+      },
+      "additional_contract_failures": 3
+    },
+    {
+      "task": "expenses",
+      "terminal_attempts": 7,
+      "harness_accepted": 4,
+      "accepted_active_seconds": {
+        "samples": 4,
+        "minimum": 946.823,
+        "median": 1019.29,
+        "maximum": 1086.017
+      },
+      "additional_contract_failures": 4
     }
   ],
   "sessions": [
@@ -419,7 +531,40 @@
       "nine_turn_long_session": false,
       "native_budget_checks": 10,
       "native_bounds_passed": true,
-      "additional_contract_passed": null
+      "additional_contract_passed": null,
+      "final_turn": {
+        "timed_out": true,
+        "hidden_tests_exit": 1,
+        "historical_gold_passed": false,
+        "native": {
+          "terminal_success": false,
+          "calls": 10,
+          "completed": 10,
+          "successful_tools": [
+            "read",
+            "read",
+            "read",
+            "write",
+            "write",
+            "write",
+            "write",
+            "write",
+            "write"
+          ],
+          "unmatched_results": 0,
+          "native_errors": 0,
+          "read_files": [
+            "task.py",
+            "test_task.py"
+          ],
+          "written_files": [
+            "task.py"
+          ],
+          "baseline_failed": true,
+          "final_passed": false,
+          "workflow_ordered": false
+        }
+      }
     },
     {
       "case": {
@@ -440,7 +585,43 @@
       "nine_turn_long_session": false,
       "native_budget_checks": 13,
       "native_bounds_passed": true,
-      "additional_contract_passed": null
+      "additional_contract_passed": null,
+      "final_turn": {
+        "timed_out": true,
+        "hidden_tests_exit": 1,
+        "historical_gold_passed": true,
+        "native": {
+          "terminal_success": false,
+          "calls": 15,
+          "completed": 15,
+          "successful_tools": [
+            "Bash",
+            "Bash",
+            "Bash",
+            "Bash",
+            "Bash",
+            "Bash",
+            "Bash",
+            "Bash",
+            "Bash",
+            "Bash",
+            "Bash"
+          ],
+          "unmatched_results": 0,
+          "native_errors": 0,
+          "read_files": [
+            "task.py",
+            "test_task.py"
+          ],
+          "written_files": [
+            "evidence.json",
+            "task.py"
+          ],
+          "baseline_failed": true,
+          "final_passed": false,
+          "workflow_ordered": false
+        }
+      }
     },
     {
       "case": {
@@ -504,6 +685,60 @@
       "native_budget_checks": 44,
       "native_bounds_passed": true,
       "additional_contract_passed": true
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "expenses",
+        "seed": 2951,
+        "repeat": 2
+      },
+      "receipt": "tmp/stress/sessions/opencode-expenses-r2/result.json",
+      "sha256": "d643c29687fb782626eae2d09334ad384a98866dc032da312ab53efa444cc2da",
+      "accepted": false,
+      "qualifying_long_session": false,
+      "active_client_seconds": 240.445,
+      "turns": 1,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "reused_existing_accepted_receipt": false,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": false,
+      "native_budget_checks": 9,
+      "native_bounds_passed": true,
+      "additional_contract_passed": null,
+      "final_turn": {
+        "timed_out": true,
+        "hidden_tests_exit": 0,
+        "historical_gold_passed": true,
+        "native": {
+          "terminal_success": false,
+          "calls": 10,
+          "completed": 10,
+          "successful_tools": [
+            "read",
+            "read",
+            "read",
+            "write",
+            "edit",
+            "edit",
+            "write",
+            "bash"
+          ],
+          "unmatched_results": 0,
+          "native_errors": 0,
+          "read_files": [
+            "task.py",
+            "test_task.py"
+          ],
+          "written_files": [
+            "evidence.json",
+            "task.py"
+          ],
+          "baseline_failed": true,
+          "final_passed": true,
+          "workflow_ordered": true
+        }
+      }
     }
   ],
   "all_retained_terminal_receipts": [
@@ -886,6 +1121,20 @@
       "in_controller_outcomes": true
     },
     {
+      "receipt": "tmp/stress/sessions/opencode-expenses-r2/result.json",
+      "sha256": "d643c29687fb782626eae2d09334ad384a98866dc032da312ab53efa444cc2da",
+      "client": "opencode",
+      "task": "expenses",
+      "accepted": false,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": false,
+      "turns": 1,
+      "active_seconds": 240.445,
+      "source_matches_current": true,
+      "sift_candidate_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
       "receipt": "tmp/stress/sessions/opencode-migration-r0/result.json",
       "sha256": "d037b752cd9be8d9a36903d91e7177bec3bd3329b43305d073cb16049c0c2a20",
       "client": "opencode",
@@ -945,6 +1194,7 @@
     }
   ],
   "independent_final_acceptance": "pending",
+  "full_goal_complete": false,
   "limits": [
     "Three synthetic task families use real native CLIs, persisted sessions, local Qwen and filesystem edits; this is not a production repository trial.",
     "Harness acceptance and selected posthoc contract probes are separate. Extra edge cases are not exhaustive or preregistered; no universal quality percentage follows.",

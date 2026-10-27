@@ -1,0 +1,40 @@
+{
+  "source": "evidence/stress-gpu-samples.jsonl.gz",
+  "raw_sha256": "534c17490bd12cfd31e11e8985f8a5bc1c2d735d676045c65b5e67278b1d9f9f",
+  "raw_bytes": 525094,
+  "samples": 4139,
+  "first": {
+    "at": "2026-10-26T22:29:19.924016+00:00",
+    "used_mib": 15260,
+    "total_mib": 16303,
+    "free_mib": 736,
+    "utilization_percent": 89
+  },
+  "last": {
+    "at": "2026-10-27T05:16:30.163218+00:00",
+    "used_mib": 15322,
+    "total_mib": 16303,
+    "free_mib": 674,
+    "utilization_percent": 88
+  },
+  "host_used_mib": {
+    "samples": 4139,
+    "minimum": 15179,
+    "median": 15227,
+    "maximum": 15638
+  },
+  "host_free_mib": {
+    "samples": 4139,
+    "minimum": 358,
+    "median": 769,
+    "maximum": 817
+  },
+  "sampling_gap_seconds": {
+    "samples": 4138,
+    "minimum": 2.405572,
+    "median": 5.066997000000001,
+    "maximum": 918.58161
+  },
+  "units": "MiB =1048576 bytes",
+  "scope": "Available sampling intervals only, with gaps. Total host occupancy includes desktop drift and is not isolated model+MTP residency, uninterrupted per-session coverage or proof of under14GB."
+}

@@ -1,0 +1,18 @@
+{
+  "owner": "commander record of incomplete reporting worker",
+  "complete": false,
+  "reason": "Owned CLI process tree stopped after missing the five-minute artifact checkpoint. No report/verifier/source edits or handoff artifact were produced.",
+  "exit": {
+    "exit_code": 1,
+    "alias": "local-inference-worker-322cd9b878a4",
+    "route": "http://127.0.0.1:4000",
+    "model": "default"
+  },
+  "revocation": {
+    "alias": "local-inference-worker-322cd9b878a4",
+    "revoked": true
+  },
+  "changed_paths": [],
+  "parent_action": "Direct offline report/fixture/native-trace reconciliation with five negative/positive byte-identity checks; full57-test suite passed.",
+  "acceptance": "Supporting worker output is incomplete, not an independent acceptance verdict. Required21 sessions remain unmet; final nonauthor review is pending."
+}

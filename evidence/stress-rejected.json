@@ -1,5 +1,5 @@
 {
-  "retained_rejected_runner_attempts": 8,
+  "retained_rejected_runner_attempts": 9,
   "attempts": [
     {
       "receipt": "tmp/stress/sessions/claude-engineering-001/result.json",
@@ -397,6 +397,54 @@
           "file": "evidence/stress-failures/opencode-expenses-r1/workspace-evidence.json.gz",
           "raw_sha256": "93a9aeaca2f5018a950b7b27e7984ddea41fced154a41987a0d4cf86805d7e07",
           "compressed_sha256": "f41f6ca638b49449e2885ed6aaa0de2372a1a7fc71df12c43af1879af1e7254c"
+        }
+      ]
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-expenses-r2/result.json",
+      "receipt_raw_sha256": "d643c29687fb782626eae2d09334ad384a98866dc032da312ab53efa444cc2da",
+      "client": "opencode",
+      "task": "expenses",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 240.445,
+      "in_current_controller_outcomes": true,
+      "source_matches_current": true,
+      "files": [
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r2/result.json.gz",
+          "raw_sha256": "d643c29687fb782626eae2d09334ad384a98866dc032da312ab53efa444cc2da",
+          "compressed_sha256": "2e9a1abf632f2a393d584f1e17469ec814631e7be7e2a6b7a9e872fdbcd13333"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r2/turn-00.jsonl.gz",
+          "raw_sha256": "6e6439043521548f00acdcf0a87e662e46fac9d5eea0ce6feadbdf8bbfb8a51f",
+          "compressed_sha256": "20bdff2b06605ceeb597ecb35871d074951ff24be3edd5b9b2d89d5201b8cf23"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r2/turn-00.stderr.txt.gz",
+          "raw_sha256": "85337bfe1360657afa3f7b83614d9f35f844f734cbefc45decb5af40aac71644",
+          "compressed_sha256": "c05df89801fc338b090eab5921ebb2bacf5999504b504f509b08077e20dee87c"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r2/turn-00.hidden-tests.txt.gz",
+          "raw_sha256": "1fa3cf840597564e70fdfdd555d673dc6e062af29a1b3d64d1ca159465154fdb",
+          "compressed_sha256": "9867b0f286d8780b42584eba96a90130740f0032fe3de703f4dee6b8d1ec7e40"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r2/workspace-task.py.gz",
+          "raw_sha256": "465d93ad9fbe467be0c2885d6b8aa2e88e07ecb363ae6bb58d53b4f200e0d4b4",
+          "compressed_sha256": "fc522a7111bbef37cc831569ead1b43cfebfd8480fb9a28fbf3146a98e3c112c"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r2/workspace-test_task.py.gz",
+          "raw_sha256": "627cf646744df0b4ddd6cf203c4bdfa93a5ef0987e46fba72198716615cc61ce",
+          "compressed_sha256": "671d2035b2d42a404d9c8f56150bad7b8e4286bae87db4836366e71c44e08380"
+        },
+        {
+          "file": "evidence/stress-failures/opencode-expenses-r2/workspace-evidence.json.gz",
+          "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+          "compressed_sha256": "90cc9de249a379014f6f115e905babd3c899105008b28c6766ef7d652754e76b"
         }
       ]
     }

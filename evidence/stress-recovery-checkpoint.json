@@ -1,10 +1,10 @@
 {
-  "state": "matrix_running",
+  "state": "matrix_attention_required",
   "pid": 110236,
-  "captured_at": "2026-10-27T04:26:09.555504+00:00",
+  "captured_at": "2026-10-27T05:16:32.533762+00:00",
   "driver_exec_session": 13591,
   "route": "http://127.0.0.1:8090/v1",
-  "matrix_state": "running",
+  "matrix_state": "attention_required",
   "historical_accepted_sessions": 2,
   "minimum_turns": 9,
   "minimum_active_seconds": 185,
@@ -98,5 +98,12 @@
   "reviewed_short_failure_receipts": [
     "tmp/stress/sessions/opencode-expenses-r1/result.json",
     "tmp/stress/sessions/codex-expenses-r1/result.json"
-  ]
+  ],
+  "matrix_exit": 1,
+  "processes_terminal": true,
+  "terminal_attempts": 22,
+  "accepted_sessions": 19,
+  "qualifying_shortfall": 2,
+  "verified_at": "2026-10-27T05:27:22.424325+00:00",
+  "scope": "Recorded controller/supervisor IDs are terminal historical process identities; no active wait is claimed."
 }

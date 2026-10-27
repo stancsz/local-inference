@@ -1,0 +1,23 @@
+{
+  "captured_at": "2026-10-27T05:21:05.393579+00:00",
+  "file": "evidence/stress-gpu-samples.jsonl.gz",
+  "raw_sha256": "534c17490bd12cfd31e11e8985f8a5bc1c2d735d676045c65b5e67278b1d9f9f",
+  "compressed_sha256": "122f07e47e770889159008a8ed67c055f711eeca2322a56456f092591fffff19",
+  "raw_bytes": 525094,
+  "samples": 4139,
+  "first": {
+    "at": "2026-10-26T22:29:19.924016+00:00",
+    "used_mib": 15260,
+    "total_mib": 16303,
+    "free_mib": 736,
+    "utilization_percent": 89
+  },
+  "last": {
+    "at": "2026-10-27T05:16:30.163218+00:00",
+    "used_mib": 15322,
+    "total_mib": 16303,
+    "free_mib": 674,
+    "utilization_percent": 88
+  },
+  "scope": "Available host GPU sampling intervals across controller lifetimes. Final controller and monitor are terminal; raw source verified unchanged after compression. Not per-model residency or proof of uninterrupted coverage of every session."
+}
