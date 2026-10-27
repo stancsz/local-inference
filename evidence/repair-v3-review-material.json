@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-27T18:11:28.638610+00:00",
+  "files": [
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-qa-brief.txt.gz",
+      "raw_sha256": "423239487e9dd2dc66c2578bab3ae80abeccf49669d82056e4a4f6bb257bb185"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-qa-dispatch.py.gz",
+      "raw_sha256": "115720583f53161a4d47b43a23bc86e8d155ab8220f8c3561f49d415354b4bd0"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-qa-worker-exit.json.gz",
+      "raw_sha256": "b8ca028b7b8c021b6206207a5040c1065944332cb07b3de616a59e9beb214c32"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-qa-worker-revocation.json.gz",
+      "raw_sha256": "3b3568473b889887db433604fc9a12e0cf3730e4789c1344057dbcb906d5910f"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-qa-worker-smoke.json.gz",
+      "raw_sha256": "a9834a7833ee1e1b6478baadfcd4a674be37d5ca70086cc059cdc93c4472e989"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-qa-worker-tool-first.json.gz",
+      "raw_sha256": "3361e9382b2b5a32316469bdce1e617a16cb55e4931e4281eecb928d89d0e1d2"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-qa-worker-tool-smoke.json.gz",
+      "raw_sha256": "10063f44f01f6acfc58121b29d1d34fd4893a2350104ba4e66f207188eb5cf6a"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-qa-worker.jsonl.gz",
+      "raw_sha256": "26cf288b9b076dd353af837777e313a3efbc955c8cfe338a27fc5be9e262cc42"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-qa-worker.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/probe-catalog-live.py.gz",
+      "raw_sha256": "655843057c0eff731231cb5b144f8a06b1085d9a8bc4d4537d84e2854a62eac3"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/focused-repair-checks.py.gz",
+      "raw_sha256": "2cf9ba3df106f8e057f250e97c172fbaaf0855d1ff254069d54728949dc6d217"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-approval-project-tests.txt.gz",
+      "raw_sha256": "1db58e47db8d13ed86cd364c71068fb420ea55ef56ed69bcbaa8b0036a8a3839"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-catalog-boundary-tests.txt.gz",
+      "raw_sha256": "a3f25711557d20b8f688f98c6ece25a4de72252c660f4a2d962b8f0e9f1b8db4"
+    },
+    {
+      "file": "evidence/repair-v3-review-material/repair-v3-approval-state-tests-final.txt.gz",
+      "raw_sha256": "f9468e3a8c18477bd8fb3329030d058d130366fea1fda61142ddd174a0433ea6"
+    }
+  ],
+  "verdict": "No verdict from incomplete review; materials only"
+}

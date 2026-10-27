@@ -76,7 +76,28 @@ def test_codex_bridge_does_not_mistake_tool_catalog_for_instruction_text():
           'approval_policy':'on-request','sandbox_mode':'workspace-write'}
     original=deepcopy(data)
     protect_codex_instructions(data)
-    assert data==original
+    assert data['input']==original['input']
+    assert data['approval_policy']==original['approval_policy']
+    assert data['sandbox_mode']==original['sandbox_mode']
+    assert data['instructions'].startswith(original['instructions'])
+    assert json.loads(data['instructions'].split('host permissions still apply):\n',1)[1])==catalog
+    once=deepcopy(data)
+    protect_codex_instructions(data)
+    assert data==once
+
+
+def test_full_responses_converter_retains_catalog_approval_metadata_in_protected_path():
+    from app.gateway import protect_codex_instructions
+    from litellm.responses.litellm_completion_transformation.transformation import LiteLLMCompletionResponsesConfig as Converter
+    catalog={'type':'additional_tools','role':'developer','tools':[{'type':'function','name':'Read','require_approval':'always','allowed_paths':['workspace']} ]}
+    data={'model':'qwen3.8-27b-codex','instructions':'Keep approval_policy=on-request; sandbox_mode=workspace-write.',
+          'input':[deepcopy(catalog),{'role':'user','content':'Read the approved file.'}]}
+    protect_codex_instructions(data)
+    converted=Converter.transform_responses_api_request_to_chat_completion_request(
+        model='qwen3.8-27b',input=data['input'],responses_api_request={'instructions':data['instructions']},custom_llm_provider='openai')
+    protected='\n'.join(m['content'] for m in converted['messages'] if m['role'] in ('system','developer'))
+    assert 'approval_policy=on-request; sandbox_mode=workspace-write.' in protected
+    assert json.loads(protected.split('host permissions still apply):\n',1)[1])==catalog
 
 
 def test_parallel_native_call_ids_and_approval_metadata_survive_compaction():
@@ -91,3 +112,20 @@ def test_parallel_native_call_ids_and_approval_metadata_survive_compaction():
     forwarded=compact_proxy_request(Counter(),payload,call_type='aresponses',target=1600)
     assert payload==original and forwarded['instructions']==original['instructions']
     assert forwarded['input'][-len(active):]==active
+
+
+@pytest.mark.parametrize('item',[
+    {'type':'mcp_approval_response','approval_request_id':'approval-1','approve':True},
+    {'type':'mcp_approval_request','id':'approval-1','name':'external-tool'},
+    {'type':'reasoning','summary':[],'encrypted_content':'opaque-provider-state'},
+    {'type':'unknown_future_approval','approve':True},
+])
+def test_local_bridge_fails_closed_instead_of_dropping_unsupported_approval_state(item):
+    import asyncio
+    from app.gateway import LocalSift
+    from fastapi import HTTPException
+    data={'model':'qwen3.8-27b-codex','input':[item,{'role':'user','content':'Continue.'}]}
+    with pytest.raises(HTTPException) as error:
+        asyncio.run(LocalSift().async_pre_call_hook(None,None,data,'aresponses'))
+    assert error.value.status_code==422
+    assert data['input'][0]==item

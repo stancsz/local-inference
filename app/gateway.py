@@ -7,6 +7,7 @@ import time
 from fastapi import HTTPException
 from litellm.integrations.custom_logger import CustomLogger
 from sift import CompactionError
+from sift.litellm_responses import response_selection_view
 from budget import compact
 
 PROTOCOLS={'completion':'openai','acompletion':'openai','anthropic_messages':'anthropic','aanthropic_messages':'anthropic'}
@@ -21,9 +22,23 @@ def protect_codex_instructions(data):
     """
     items=data.get('input')
     if not isinstance(items,list):return
+    initial=data.get('instructions')
+    if initial is not None and not isinstance(initial,str):
+        raise HTTPException(422,detail='Local Codex instructions require text content')
     updates=[]
     history=[]
     for item in items:
+        if isinstance(item,dict) and item.get('type')=='additional_tools':
+            if item.get('role')!='developer' or not isinstance(item.get('tools'),list):
+                raise HTTPException(422,detail='Local Codex tool catalogs require a developer tools list')
+            # LiteLLM's Chat bridge ignores this private Responses item type.
+            # Keep the original item and preserve its complete metadata in the
+            # protected instruction path that the converter actually forwards.
+            catalog='Caller tool catalog (including approval metadata; host permissions still apply):\n'+json.dumps(item,ensure_ascii=False,sort_keys=True)
+            if catalog not in (initial or ''):
+                updates.append(catalog)
+            history.append(item)
+            continue
         if (not isinstance(item,dict) or item.get('type','message') != 'message'
                 or item.get('role') not in {'developer','system'}):
             history.append(item)
@@ -34,9 +49,6 @@ def protect_codex_instructions(data):
             updates.extend(b['text'] for b in content)
         else:raise HTTPException(422,detail='Local Codex instruction updates require text content')
     if updates:
-        initial=data.get('instructions')
-        if initial is not None and not isinstance(initial,str):
-            raise HTTPException(422,detail='Local Codex instructions require text content')
         data['instructions']='\n\n'.join(([initial] if initial is not None else [])+updates)
         data['input']=history
 
@@ -57,6 +69,12 @@ class LocalSift(CustomLogger):
                 raise HTTPException(422,detail='Local Responses requires complete stateless input')
             if data.get('use_chat_completions_api',True) is not True:
                 raise HTTPException(422,detail='Local Responses must use the guarded Chat bridge')
+            # Validate typed state before LiteLLM's Chat converter can silently
+            # discard unsupported items (notably hosted approval/MCP state).
+            response_selection_view(data)
+            if any(item.get('type')=='reasoning' and item.get('encrypted_content')
+                   for item in data.get('input',[]) if isinstance(item,dict)):
+                raise HTTPException(422,detail='Local text bridge cannot preserve opaque provider reasoning state')
             output=data.get('max_output_tokens',4096)
             if type(output) is not int or not 0<output<=4096:
                 raise HTTPException(422,detail='max_output_tokens must be an integer in 1..4096')

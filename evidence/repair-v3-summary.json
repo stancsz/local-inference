@@ -1,14 +1,14 @@
 {
   "at": "2026-10-27T17:48:28.673380+00:00",
-  "runtime_image": "sha256:7f85caf04ab83a7cf1b62f188f844fdb2bae26063ccae5198c2f25b99ea2ddf1",
+  "runtime_image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
   "sift_version": "0.11.1",
   "runtime_app_source_matches": true,
   "runtime_app_sha256": {
     "budget": "c86ab1174bef327d567af8a4adf86f946f659740bcce66b1048b0acaef55701e",
-    "gateway": "3d9def33a609a15cce4eeaca376b638e4842f4b3f9cffd2ed4cdc0b04615417a"
+    "gateway": "0c71b4ab740fb1b8ea005d8e4daecb3f261fb959d428a45ebe0a62c768658f3f"
   },
   "sift_source_matches": true,
-  "local_tests": "371 passed",
+  "local_tests": "376 passed",
   "upstream_sift_harness_tests": "26 passed",
   "upstream_pr": "https://github.com/stancsz/sift/pull/62",
   "core_before_after": {
@@ -547,5 +547,9 @@
     "No full provider-wire capture or general semantic-retention equivalence.",
     "Native same-seed runs differ in output/tool choices;134.156s vs240.341s is diagnostic, not a causal speedup estimate.",
     "Sift PR62 is published but not merged/released; running source-retention repair is already released0.11.1."
-  ]
+  ],
+  "catalog_boundary_proof": "evidence/repair-v3-catalog-live-final.json",
+  "catalog_transport": "Complete catalog is retained and mirrored into protected instructions before the Chat converter; live nonce roundtrip passes.",
+  "unsupported_provider_approval_state": "Hosted MCP/unknown approval items and opaque encrypted reasoning fail closed422; not silently discarded.",
+  "prior_repair_review": "Incomplete at60turn cap with no final verdict; no independent PASS claimed. Focused follow-up pending."
 }
