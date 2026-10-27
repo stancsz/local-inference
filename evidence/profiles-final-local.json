@@ -1,0 +1,77 @@
+{
+  "text": {
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfamlXc0JRbGxibkM2SjVSOFR0UE1uWXFhV2tiSUIyU3M=",
+    "type": "message",
+    "role": "assistant",
+    "model": "qwen3.8-27b",
+    "stop_sequence": null,
+    "usage": {
+      "input_tokens": 4,
+      "output_tokens": 8,
+      "cache_read_input_tokens": 17
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "LOCAL_QWEN_SIFT_OK"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_details": null
+  },
+  "protected_overflow": {
+    "status": 422,
+    "detail": "{\"type\":\"error\",\"error\":{\"type\":\"api_error\",\"message\":\"Sift: active turn and instructions exceed target\"}}",
+    "fixture": "'locked ' repeated 81920 times",
+    "runtime_context": 40960,
+    "characters": 573440,
+    "sha256": "cf44073cf49119b67cfda3f9b6f86acafb5e79f1d871b59c4f222dde52d93a26"
+  },
+  "tool": {
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfVnJVeE9RN1RxTVlCMzNCZk1uZzc0Y3hod2FkRndNSkI=",
+    "type": "message",
+    "role": "assistant",
+    "model": "qwen3.8-27b",
+    "stop_sequence": null,
+    "usage": {
+      "input_tokens": 4,
+      "output_tokens": 32,
+      "cache_read_input_tokens": 285
+    },
+    "content": [
+      {
+        "type": "tool_use",
+        "id": "call_QD75VSTh57kszh0crADFeCwXtJpQGGKq",
+        "name": "route_marker",
+        "input": {
+          "marker": "LOCAL_QWEN_TOOL_OK"
+        }
+      }
+    ],
+    "stop_reason": "tool_use",
+    "stop_details": null
+  },
+  "continuation": {
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfaE02SkZBMEl0T0hVekxLaDY3Q1VuT3dRQ2x6bU9EQ0w=",
+    "type": "message",
+    "role": "assistant",
+    "model": "qwen3.8-27b",
+    "stop_sequence": null,
+    "usage": {
+      "input_tokens": 24,
+      "output_tokens": 7,
+      "cache_read_input_tokens": 320
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "LOCAL_QWEN_TOOL_OK"
+      }
+    ],
+    "stop_reason": "end_turn",
+    "stop_details": null
+  },
+  "seconds": 5.871,
+  "passed": true,
+  "endpoint": "http://127.0.0.1:8090/v1/messages"
+}

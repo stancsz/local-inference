@@ -1,0 +1,221 @@
+{
+  "epoch": "v4",
+  "cases": [
+    {
+      "case_id": "4",
+      "settings": {
+        "gpu_layers": 99,
+        "ubatch_size": 16,
+        "cpu_weight_blocks": 4,
+        "context": 69888,
+        "sift_target": 65536,
+        "draft_tokens": 1,
+        "status": "tested",
+        "startup_host_delta_mib": 12708,
+        "checks": {
+          "capacity": 1
+        },
+        "peak_host_delta_mib": 13094,
+        "host_delta_within_limit": true,
+        "conservative_host_delta_mib": 13094,
+        "conservative_host_delta_within_limit": true
+      },
+      "memory": {
+        "case_id": "4",
+        "baseline_range_mib": [
+          1669,
+          1737
+        ],
+        "sampled_peak_host_used_mib": 14763,
+        "conservative_host_delta_mib": 13094,
+        "delta_bytes_derived_from_mib": 13730054144,
+        "limit_bytes": 14000000000,
+        "within_sampled_delta_limit": true,
+        "valid_case_samples": 853,
+        "largest_valid_case_sample_gap_seconds": 1.301817,
+        "sampling_error_rows": 0,
+        "scope": "Sampled whole-host occupancy minus the lower stopped baseline; desktop drift and unsampled transients remain confounds. Not isolated per-allocation residency."
+      },
+      "capacity": null,
+      "benchmark_source": "evidence/benchmark-long-tensorcpu-v3-4.json",
+      "benchmark_is_prior_reference": true,
+      "tasks": [],
+      "passed_task_count": 0,
+      "all_native_tasks_passed": false,
+      "all_artifacts_pass_current_parent_checks": false,
+      "allocation_log_note": "Raw lines include repeated reservations. Do not sum all lines or interpret them as isolated peak residency."
+    }
+  ],
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "parent_validation_note": "Current parent checks include the later DedicatedMemory guard; original native acceptance outcomes remain unchanged.",
+  "restoration_reported": true,
+  "restoration_followup": null,
+  "source_limit": "Initial producer snapshots are authoritative. Supplemental legacy scripts for v2 are identified by its clean source commit; their physical pre-execution byte hashes were not separately saved.",
+  "artifacts": [
+    {
+      "path": "evidence/long-profile-v4/4-allocation-lines.json",
+      "sha256": "d4ffd74ea70af8b89cf7c1b1d1822ee30cc581d5f3b77f45064a9b624f5f107a"
+    },
+    {
+      "path": "evidence/long-profile-v4/4-benchmark.json",
+      "sha256": "8baa451ae45ffc2cea6ee39c7f0c95ee9a7020e7fa31731657aea384ada8a0fb"
+    },
+    {
+      "path": "evidence/long-profile-v4/4-capacity.stderr.log",
+      "sha256": "d9accc25ea6f0b3967200ebc795ff08527c71fd551a11fde9c79108473f1a683"
+    },
+    {
+      "path": "evidence/long-profile-v4/4-capacity.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v4/4-inference.stderr.log",
+      "sha256": "6e30858591d6f02d4f637c693484813ad9cfabd6f72faeb7d0eec5b948f68b25"
+    },
+    {
+      "path": "evidence/long-profile-v4/4-inference.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v4/4-stop.stderr.log",
+      "sha256": "ec72e052d364149de18d29b696e1bd41d13eb580fd29d8551c099fd8d10e77ba"
+    },
+    {
+      "path": "evidence/long-profile-v4/4-stop.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v4/4-up.stderr.log",
+      "sha256": "729ef4f1e370f29cee2cf25fed80d20c9829f928601d3eeb6714e012efafda51"
+    },
+    {
+      "path": "evidence/long-profile-v4/4-up.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v4/analysis-source/claude_acceptance.py",
+      "sha256": "34f29ce9c3466a4d628bfcea968473dc15177ca4ec46ba77a1fab437d9008c5e"
+    },
+    {
+      "path": "evidence/long-profile-v4/analysis-source/daily_acceptance.py",
+      "sha256": "6efe104b3871cf18ea4ce66ffa00360764f801b06f96aae7b50c9ea1b2918fce"
+    },
+    {
+      "path": "evidence/long-profile-v4/analysis-source/profile_memory.py",
+      "sha256": "bab226bab182b7a403bca9ce99def55c2785115402412e599e4ff5d102455d4f"
+    },
+    {
+      "path": "evidence/long-profile-v4/analysis-source/publish-long-profiles.py",
+      "sha256": "9e4d8aa83925070b5c5fe8b14953f277448801bab55f7f883eb4605dae0a19bd"
+    },
+    {
+      "path": "evidence/long-profile-v4/baseline-stop.stderr.log",
+      "sha256": "ec72e052d364149de18d29b696e1bd41d13eb580fd29d8551c099fd8d10e77ba"
+    },
+    {
+      "path": "evidence/long-profile-v4/baseline-stop.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v4/gpu-samples.jsonl",
+      "sha256": "d74eeccf59abe67ec2c80b6735caddc1a4ba75513f91c3ae44008e4b12eeee0b"
+    },
+    {
+      "path": "evidence/long-profile-v4/observations.jsonl",
+      "sha256": "b35d11ced1d6f20ec8cb6b0f63e5b19e99768c82e6cdff51231ec689988e034b"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/benchmark.py",
+      "sha256": "e96f0dc5c3fb5deda0ff52156364f19818a3a71c41f5dc31289c4be8bc6e97c8"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/capacity_acceptance.py",
+      "sha256": "0407ad1736bdd5b3b7af0cbad133eb502a7f654939e09c12f6f6f1fa9085e856"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/claude_acceptance.py",
+      "sha256": "1df0e3f055efe0923cac647b4f46ac74efa0d326fb0a7d6e183a4f98b06ecb51"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/compose.yaml",
+      "sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/context_acceptance.py",
+      "sha256": "9e6b74700eeba882613c5b563ccb589c9d1c75c7fee60dc4b3e3bd3a18390e9f"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/daily_acceptance.py",
+      "sha256": "f7431de57f8448c0a5d48cb5f4562042a8dc67730dfd46709feac018053ec4ba"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/daily_artifacts.py",
+      "sha256": "f84acb51eceea37774865f4f1485d9bfb6f88952c4cab5f4871e9c6fd8a60c7f"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/local_smoke.py",
+      "sha256": "ab434fe5bc1df09803293fbc13bb333751c5ca8786888f1b63be8cc18c2bc8cc"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/long-profile-v4.py",
+      "sha256": "7668ee346aa8dad1e872ab9d7a3995773e78837c00a4cd98aa2ea3704291af6f"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/observe-long-profile-v4.py",
+      "sha256": "41a2bccb7776152a2cb4ff974225849012ed66cde369ca3562cab953095e1dfe"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/openai_smoke.py",
+      "sha256": "55be99dd625363aab25dd0569a346d4b98a9579a9e6aebbd06a2fc0de5830dbd"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/profile_memory.py",
+      "sha256": "bab226bab182b7a403bca9ce99def55c2785115402412e599e4ff5d102455d4f"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/start-inference-trace-v4.sh",
+      "sha256": "516ab0cba7a7b2018e68e93294ceaa9c7de07da3441a378918e6e2a7f643ab25"
+    },
+    {
+      "path": "evidence/long-profile-v4/producer/watch-long-profile-v4.py",
+      "sha256": "fd6a3f37bf8fe2da8d53ee66b75520c11c93d288c43add058cbc53d54baf7b41"
+    },
+    {
+      "path": "evidence/long-profile-v4/restore-up.stderr.log",
+      "sha256": "729ef4f1e370f29cee2cf25fed80d20c9829f928601d3eeb6714e012efafda51"
+    },
+    {
+      "path": "evidence/long-profile-v4/restore-up.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v4/restored-local.json",
+      "sha256": "df5d10043fb7bb1c6fea7edcdc1df83568f9a1ca1f5e36dc0ff62b07a81d9800"
+    },
+    {
+      "path": "evidence/long-profile-v4/restored-local.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v4/restored-local.stdout.log",
+      "sha256": "1a47d2ee5514ef68f247cb080e797ca0747b9495c5bbfd3b480b82c863f0db5a"
+    },
+    {
+      "path": "evidence/long-profile-v4/restored-openai.json",
+      "sha256": "0f1e4fc09ebf9db21504d65a42495fbc62bdea69421042bb4bbf3bfe6fda41c4"
+    },
+    {
+      "path": "evidence/long-profile-v4/restored-openai.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v4/restored-openai.stdout.log",
+      "sha256": "d25b64095a890e494223e06f2004a3eae0a141b749f7c04086e68569bca5300c"
+    },
+    {
+      "path": "evidence/long-profile-v4/state.json",
+      "sha256": "32f6f658fe1165b6d86dc26205cabb5b1a94c2ab16137b1ac622bcdda11c722c"
+    }
+  ]
+}

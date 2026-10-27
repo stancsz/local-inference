@@ -1,0 +1,126 @@
+{
+  "boundary": {
+    "before": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "approval_policy=on-request; sandbox_mode=workspace-write."
+        },
+        {
+          "role": "user",
+          "content": "Read the declared approval reference."
+        }
+      ],
+      "original_catalog_preserved": true
+    },
+    "after": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "approval_policy=on-request; sandbox_mode=workspace-write.\n\nCaller tool catalog (including approval metadata; host permissions still apply):\n{\"role\": \"developer\", \"tools\": [{\"approval_reference\": \"boundary-ref-731\", \"name\": \"Read\", \"require_approval\": \"always\", \"type\": \"function\"}], \"type\": \"additional_tools\"}"
+        },
+        {
+          "role": "user",
+          "content": "Read the declared approval reference."
+        }
+      ],
+      "original_catalog_preserved": true
+    }
+  },
+  "live_request": {
+    "model": "qwen3.8-27b-codex",
+    "instructions": "Keep approval_policy=on-request and sandbox_mode=workspace-write. Host permissions always apply.",
+    "input": [
+      {
+        "type": "additional_tools",
+        "role": "developer",
+        "tools": [
+          {
+            "type": "function",
+            "name": "Read",
+            "require_approval": "always",
+            "approval_reference": "approval-ref-5daeb116094f4f"
+          }
+        ]
+      },
+      {
+        "role": "user",
+        "content": "Reply with only the exact approval_reference from the caller tool catalog. Do not call any tools."
+      }
+    ],
+    "max_output_tokens": 64
+  },
+  "live_result": {
+    "id": "resp_3YVKizTITMnHa3v--QARPeu6KH831XSYNdxMmt7uDTbifq6opPbx5NZIMprmsR290aWQwuRK9kpg-p6GkbBNRVNvb8Gu8FrRRW1bgmgT8zWFlAZF79xer9U1lYyEYxAJVM8kaosg8szaes7pHfwnJIWv-7rR4bGk6qWcn2FueCiU4Swot6JKSN56JF8A_qLKF5ckkTny4vPuSMbZgVTfk4eEk4ZbW3nRRiHsm26J7aAacyO2ryBtcVsvvYruKpYcMOscjkqJRqw66_QtSJszjNdcUyghQopXR8Z29KoG5-jGI_VfhI700RDwGMzn0p6gDVHZxE5THH6ziQQf6q9iCQfghBuuU2qRJfmLYsZNe75b_A0kSX2vI0smNX26pGuxFpE6bVCySh6DB4F0nGbee7F8Nc9yv54XGRjEJ4QUxb3878cb1tG1o1_kewe_mA==",
+    "created_at": 1793142283,
+    "error": null,
+    "incomplete_details": null,
+    "instructions": "Keep approval_policy=on-request and sandbox_mode=workspace-write. Host permissions always apply.\n\nCaller tool catalog (including approval metadata; host permissions still apply):\n{\"role\": \"developer\", \"tools\": [{\"approval_reference\": \"approval-ref-5daeb116094f4f\", \"name\": \"Read\", \"require_approval\": \"always\", \"type\": \"function\"}], \"type\": \"additional_tools\"}",
+    "metadata": {},
+    "model": "qwen3.8-27b-codex",
+    "object": "response",
+    "output": [
+      {
+        "type": "message",
+        "id": "msg_59705c8b-3354-4f11-9a99-d8cb1ed50b8b",
+        "status": "completed",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "approval-ref-5daeb116094f4f",
+            "annotations": []
+          }
+        ],
+        "phase": null
+      }
+    ],
+    "parallel_tool_calls": false,
+    "temperature": null,
+    "tool_choice": "auto",
+    "tools": [
+      {
+        "name": "Read",
+        "parameters": null,
+        "strict": null,
+        "type": "function",
+        "allowed_callers": null,
+        "defer_loading": null,
+        "description": null,
+        "output_schema": null,
+        "require_approval": "always",
+        "approval_reference": "approval-ref-5daeb116094f4f"
+      }
+    ],
+    "top_p": null,
+    "max_output_tokens": 64,
+    "previous_response_id": null,
+    "reasoning": null,
+    "status": "completed",
+    "text": {},
+    "truncation": null,
+    "usage": {
+      "input_tokens": 353,
+      "input_tokens_details": {
+        "audio_tokens": null,
+        "cached_tokens": 0,
+        "cached_tokens_details": null,
+        "image_tokens": null,
+        "text_tokens": null,
+        "video_tokens": null
+      },
+      "output_tokens": 16,
+      "output_tokens_details": null,
+      "total_tokens": 369,
+      "cost": null
+    },
+    "user": null,
+    "store": null
+  },
+  "assistant_nonce_matched": true,
+  "unsupported_approval_state": {
+    "status": 422,
+    "body": "{\"error\":{\"message\":\"Sift supports textual messages, function/custom tools and plain reasoning summaries only\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"422\"}}"
+  },
+  "scope": "Deployed LiteLLM converter and actual Responses metadata transport; no tool execution or host permission changes"
+}

@@ -12,6 +12,8 @@ An independent, minimal LiteLLM gateway serving Dockerized Qwen3.8-27B IQ3_XXS +
 
 The [native CLI stress campaigns](docs/STRESS_RESULTS.md) are terminal: 23 candidate qualifying sessions across separate workload epochs (Claude 8, OpenCode 9, Codex 6). Full-goal acceptance remains NOT_READY. The gateway now uses Sift 0.11.1's source-coverage repair; failed historical runs stay unchanged.
 
+The latest [context/VRAM experiments](docs/PROFILE_RESULTS.md) reached exact 64k input + 4k output with active MTP and measured **71.54 tok/s** on the separate short-prompt benchmark. That configuration still misses the conservative **14-decimal-GB** host-delta criterion. Lower-memory CPU offload incurred substantial latency. These results do not establish the simultaneous memory/context goal; the fast daily default is unchanged.
+
 ## Lower cloud usage, explicit tradeoffs
 
 - **Local execution:** OpenAI-compatible Chat Completions and Anthropic Messages for the local Qwen model; Claude Code launcher included.

@@ -1,0 +1,30 @@
+[
+  {
+    "source": "scripts/claude_acceptance.py",
+    "archived_path": "evidence/prompt-encoding-v1/producer/claude_acceptance.py",
+    "sha256": "1df0e3f055efe0923cac647b4f46ac74efa0d326fb0a7d6e183a4f98b06ecb51",
+    "copy_from": "evidence/long-profile-v4/producer/claude_acceptance.py",
+    "raw_pre_repair_bytes": true
+  },
+  {
+    "source": "scripts/daily_artifacts.py",
+    "archived_path": "evidence/prompt-encoding-v1/producer/daily_artifacts.py",
+    "sha256": "f84acb51eceea37774865f4f1485d9bfb6f88952c4cab5f4871e9c6fd8a60c7f",
+    "copy_from": "scripts/daily_artifacts.py",
+    "raw_pre_repair_bytes": true
+  },
+  {
+    "source": "tests/test_claude_prompt_encoding.py",
+    "archived_path": "evidence/prompt-encoding-v1/producer/test_claude_prompt_encoding.py",
+    "sha256": "a5a7d9bc5dfc2690817b634840e039cb4913633fff7e3957263c5c27d6fe2248",
+    "copy_from": "tests/test_claude_prompt_encoding.py",
+    "raw_pre_repair_bytes": true
+  },
+  {
+    "source": "tests/test_daily_artifacts.py",
+    "archived_path": "evidence/prompt-encoding-v1/producer/test_daily_artifacts.py",
+    "sha256": "2a794a99a1cc7b9933bc2916386d91d16fa3435abd723791a806669c9953272a",
+    "copy_from": "tests/test_daily_artifacts.py",
+    "raw_pre_repair_bytes": true
+  }
+]

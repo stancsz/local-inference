@@ -1,0 +1,154 @@
+{
+  "pid": 303964,
+  "started": "2026-10-27T22:08:24.288092+00:00",
+  "status": "terminal",
+  "limit_bytes": 14000000000,
+  "limit_mib": 13351.4404296875,
+  "cases": [
+    {
+      "gpu_layers": 99,
+      "ubatch_size": 32,
+      "context": 69888,
+      "sift_target": 65536,
+      "draft_tokens": 1,
+      "status": "tested",
+      "startup_host_delta_mib": 13115,
+      "checks": {
+        "capacity": 0,
+        "benchmark": 0,
+        "local": 0,
+        "openai": 0,
+        "context": 0,
+        "claude": 0
+      },
+      "peak_host_delta_mib": 13426,
+      "host_delta_within_limit": false,
+      "conservative_host_delta_mib": 13792,
+      "conservative_host_delta_within_limit": false
+    },
+    {
+      "gpu_layers": 99,
+      "ubatch_size": 16,
+      "context": 69888,
+      "sift_target": 65536,
+      "draft_tokens": 1,
+      "status": "tested",
+      "startup_host_delta_mib": 12901,
+      "checks": {
+        "capacity": 0,
+        "benchmark": 0,
+        "local": 0,
+        "openai": 0,
+        "context": 0,
+        "claude": 1
+      },
+      "peak_host_delta_mib": 13170,
+      "host_delta_within_limit": true,
+      "conservative_host_delta_mib": 13536,
+      "conservative_host_delta_within_limit": false
+    }
+  ],
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "original": {
+    "inference": {
+      "image": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+      "environment": {
+        "SPEC_TYPE": "draft-mtp",
+        "UBATCH_SIZE": "64",
+        "CONTEXT_SIZE": "40960",
+        "DRAFT_GPU_LAYERS": "99",
+        "DRAFT_TOKENS": "4",
+        "GPU_LAYERS": "99"
+      }
+    },
+    "gateway": {
+      "image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
+      "environment": {
+        "SIFT_COMPRESSION_RATIO": "8",
+        "SIFT_TARGET": "32768",
+        "CONTEXT_SIZE": "40960"
+      }
+    }
+  },
+  "original_mounts": {
+    "gateway": [
+      {
+        "Type": "bind",
+        "Source": "C:\\Users\\stanc\\github\\local-inference\\evidence",
+        "Destination": "/evidence",
+        "RW": true
+      }
+    ],
+    "inference": [
+      {
+        "Type": "volume",
+        "Source": "/var/lib/docker/volumes/local-inference-models/_data",
+        "Destination": "/models",
+        "RW": false
+      },
+      {
+        "Type": "bind",
+        "Source": "C:\\Users\\stanc\\github\\local-inference\\docker\\start-inference.sh",
+        "Destination": "/start-inference.sh",
+        "RW": false
+      }
+    ]
+  },
+  "original_context": 40960,
+  "plan": {
+    "ubatch_order": [
+      32,
+      16
+    ],
+    "second_case_condition": "First case misses host-delta memory bound or fails startup",
+    "context": 69888,
+    "sift_target": 65536,
+    "draft_tokens": 1,
+    "capacity_input": 65536,
+    "capacity_output": 4096,
+    "capacity_timeout_seconds": 960,
+    "no_replacements": true,
+    "restore_original": true
+  },
+  "source_commit": "65f12c6941e2ef52ecedf24155ea88f79b0a93eb",
+  "source_hashes": {
+    "long-profile-v2.py": "564cfe3419bf8e1a36dd073baa4aa1a1ca18118c86b4920594b10077aaba216a",
+    "capacity_acceptance.py": "0407ad1736bdd5b3b7af0cbad133eb502a7f654939e09c12f6f6f1fa9085e856",
+    "local_smoke.py": "ab434fe5bc1df09803293fbc13bb333751c5ca8786888f1b63be8cc18c2bc8cc",
+    "openai_smoke.py": "55be99dd625363aab25dd0569a346d4b98a9579a9e6aebbd06a2fc0de5830dbd",
+    "start-inference-trace-v2.sh": "516ab0cba7a7b2018e68e93294ceaa9c7de07da3441a378918e6e2a7f643ab25"
+  },
+  "stage": "restored-checks",
+  "baseline_min_mib": 2040,
+  "restored_local_smoke_exit": 0,
+  "restored_openai_smoke_exit": 0,
+  "restored_config": {
+    "inference": {
+      "image": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+      "environment": {
+        "DRAFT_TOKENS": "4",
+        "GPU_LAYERS": "99",
+        "SPEC_TYPE": "draft-mtp",
+        "UBATCH_SIZE": "64",
+        "CONTEXT_SIZE": "40960",
+        "DRAFT_GPU_LAYERS": "99"
+      }
+    },
+    "gateway": {
+      "image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
+      "environment": {
+        "SIFT_COMPRESSION_RATIO": "8",
+        "SIFT_TARGET": "32768",
+        "CONTEXT_SIZE": "40960"
+      }
+    }
+  },
+  "restored": true,
+  "baseline_range_mib": [
+    1674,
+    2044
+  ],
+  "sample_count": 1112,
+  "memory_scope": "Whole-host occupancy and conservative before/after delta, not isolated per-allocation residency. Desktop drift remains a confound."
+}

@@ -1,0 +1,13 @@
+{
+  "command": "python -m pytest -q",
+  "result": "418 passed in 22.26s",
+  "configuration": "pytest.ini: testpaths = tests",
+  "scope": "Project tests only; archived model/task failures remain separately preserved and are not requalified",
+  "historical_problem": "Unscoped discovery collected temporary checkouts and archived fixtures, as recorded by the prior balanced-v2 ledger",
+  "artifacts": [
+    {
+      "path": "evidence/test-discovery-v1/pytest-root-after.log",
+      "sha256": "bdf6233184bc5b31519003b20d99b41140cf4d8587833f2f868116eaf1d2f790"
+    }
+  ]
+}

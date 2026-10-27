@@ -1,0 +1,74 @@
+[
+  {
+    "iteration": 0,
+    "seconds": 5.057,
+    "usage": {
+      "completion_tokens": 256,
+      "prompt_tokens": 43,
+      "total_tokens": 299,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 43,
+      "prompt_ms": 365.673,
+      "prompt_per_token_ms": 8.504023255813953,
+      "prompt_per_second": 117.59139996663686,
+      "predicted_n": 256,
+      "predicted_ms": 3562.681,
+      "predicted_per_token_ms": 13.971298039215686,
+      "predicted_per_second": 71.57531084034748,
+      "draft_n": 131,
+      "draft_n_accepted": 123
+    },
+    "host_gpu_mib": "15122 MiB, 874 MiB",
+    "response": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport json\nimport sys\nfrom collections import defaultdict\n\n\ndef summarize_http_errors(jsonl_path: str) -> None:\n    \"\"\"\n    Read a JSONL log file, count HTTP errors (status >= 400) by service,\n    and print a sorted JSON summary.\n\n    Args:\n        jsonl_path: Path to the JSONL log file.\n\n    Raises:\n        FileNotFoundError: If the file does not exist.\n        json.JSONDecodeError: If a line is not valid JSON.\n        KeyError: If a required field is missing in a log entry.\n    \"\"\"\n    error_counts: dict[str, int] = defaultdict(int)\n\n    try:\n        with open(jsonl_path, \"r\", encoding=\"utf-8\") as f:\n            for line_num, line in enumerate(f, start=1):\n                line = line.strip()\n                if not line:\n                    continue\n                try:\n                    entry = json.loads(line)\n                except json.JSONDecodeError as e:\n                    print(\n                        f\"Warning: Skipping line {line_num} due to JSON decode error: {e}\",\n                        file=sys.stderr,\n                    )\n                    continue"
+        }
+      }
+    ]
+  },
+  {
+    "iteration": 1,
+    "seconds": 4.004,
+    "usage": {
+      "completion_tokens": 256,
+      "prompt_tokens": 43,
+      "total_tokens": 299,
+      "prompt_tokens_details": {
+        "cached_tokens": 39
+      }
+    },
+    "timings": {
+      "cache_n": 39,
+      "prompt_n": 4,
+      "prompt_ms": 152.088,
+      "prompt_per_token_ms": 38.022,
+      "prompt_per_second": 26.30056283204461,
+      "predicted_n": 256,
+      "predicted_ms": 3565.733,
+      "predicted_per_token_ms": 13.983266666666667,
+      "predicted_per_second": 71.51404774277826,
+      "draft_n": 131,
+      "draft_n_accepted": 123
+    },
+    "host_gpu_mib": "15126 MiB, 870 MiB",
+    "response": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport json\nimport sys\nfrom collections import defaultdict\n\n\ndef summarize_http_errors(jsonl_path: str) -> None:\n    \"\"\"\n    Read a JSONL log file, count HTTP errors (status >= 400) by service,\n    and print a sorted JSON summary.\n\n    Args:\n        jsonl_path: Path to the JSONL log file.\n\n    Raises:\n        FileNotFoundError: If the file does not exist.\n        json.JSONDecodeError: If a line is not valid JSON.\n        KeyError: If a required field is missing in a log entry.\n    \"\"\"\n    error_counts: dict[str, int] = defaultdict(int)\n\n    try:\n        with open(jsonl_path, \"r\", encoding=\"utf-8\") as f:\n            for line_num, line in enumerate(f, start=1):\n                line = line.strip()\n                if not line:\n                    continue\n                try:\n                    entry = json.loads(line)\n                except json.JSONDecodeError as e:\n                    print(\n                        f\"Warning: Skipping line {line_num} due to JSON decode error: {e}\",\n                        file=sys.stderr,\n                    )\n                    continue"
+        }
+      }
+    ]
+  }
+]

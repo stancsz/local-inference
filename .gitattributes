@@ -66,3 +66,10 @@
 /evidence/daily-review-v5/** -text -whitespace
 /evidence/long-profile-v1/** -text -whitespace
 /evidence/long-profile-v2/** -text -whitespace
+/evidence/long-profile-v3/** -text -whitespace
+/evidence/long-profile-v4/** -text -whitespace
+/evidence/gpu-verification-v1/** -text -whitespace
+/evidence/prompt-encoding-v1/** -text -whitespace
+/evidence/profiles-final-*.json -text -whitespace
+/evidence/benchmark-long-*.json -text -whitespace
+/evidence/test-discovery-v1/** -text -whitespace

@@ -1,0 +1,5 @@
+{
+  "processType": "System.Diagnostics.Process",
+  "hasDedicatedMemoryProperty": false,
+  "powershellVersion": "7.6.5"
+}

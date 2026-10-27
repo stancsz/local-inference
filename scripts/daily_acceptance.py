@@ -312,6 +312,8 @@ def validate_vram_plan_report(text: str, manifest: dict, host: dict, runtime: di
                 f"(CSV order is name,total,used,free){detail}{hint}"
             )
     errors.extend(validate_process_rows_report(text, host["processes"]))
+    if not claude_acceptance.validate_gpu_verification_commands(text):
+        errors.append('Get-Process.DedicatedMemory is not a GPU memory property on System.Diagnostics.Process. Use the requested nvidia-smi GPU query for verification.')
     return errors
 
 

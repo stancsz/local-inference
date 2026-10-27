@@ -1,0 +1,33 @@
+{
+  "index": 0,
+  "id_slot": 0,
+  "stop": true,
+  "model": "qwen3.8-27b",
+  "tokens_predicted": 4096,
+  "tokens_evaluated": 65536,
+  "has_new_line": true,
+  "truncated": false,
+  "stop_type": "limit",
+  "stopping_word": "",
+  "tokens_cached": 69631,
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 65536,
+    "prompt_ms": 119164.792,
+    "prompt_per_token_ms": 1.8183104248046875,
+    "prompt_per_second": 549.9610992481739,
+    "predicted_n": 4096,
+    "predicted_ms": 140351.385,
+    "predicted_per_token_ms": 34.27384249084249,
+    "predicted_per_second": 29.176769434801084,
+    "draft_n": 2047,
+    "draft_n_accepted": 2047
+  },
+  "input_token_ids": 65536,
+  "runtime_context_window": 69888,
+  "runtime_build": "b11610-091b6a7fc",
+  "seconds": 259.523,
+  "host_gpu_mib": "15327 MiB, 669 MiB",
+  "purpose": "Synthetic exact capacity; no claim of productivity or coherent long output",
+  "passed": true
+}

@@ -16,6 +16,13 @@ def input_budget_invariant(text):
     plain = text.replace('`', '')
     return bool(re.search(r'\b(?:sift[ _]+)?target is (?:part of|an adaptive policy anchor inside) the input budget(?:,|\s+and(?: is)?)\s+never added to it\b',plain,re.I))
 
+def validate_gpu_verification_commands(text):
+    for block in re.findall(r'```powershell\s*\n(.*?)```',text,re.S|re.I):
+        commands='\n'.join(line for line in block.splitlines() if not line.lstrip().startswith('#'))
+        if re.search(r'\bGet-Process\b',commands,re.I) and re.search(r'\.\s*DedicatedMemory\b|\bSelect-Object\b[^\n]*\bDedicatedMemory\b',commands,re.I):
+            return False
+    return True
+
 def validate_operator_guide(text):
     numeric_text=re.sub(r'(?<=\d),(?=\d)','',text)
     required={'docker compose up -d --build','curl.exe http://127.0.0.1:8090/health/readiness',
@@ -28,7 +35,7 @@ def validate_operator_guide(text):
         and all(term in numeric_text.lower() for term in ['adaptive','anchor','24576','36608'])
         and input_budget_invariant(text) and '256 tokens' in text and 'decoder headroom' in text)
 TASKS=[
- ('vram-plan', 'Read evidence/host-vram.json, evidence/runtime-vram.json and evidence/model-manifest.json. Then use the Write tool to create tmp/acceptance/vram-plan.md (at most 350 words). Include exact raw model, MTP, and combined disk byte counts from the manifest; distinguish disk size from measured runtime delta. Describe measured host process consumers and safe VRAM reclamation after saving work; never terminate DWM. Include a PowerShell verification command. Do not guess model sizes or contradict runtime evidence; mark unmeasured facts unknown. The output directory already exists. Do not explore other files. End with VRAM_PLAN_DONE.', 'vram-plan.md', 'VRAM_PLAN_DONE'),
+ ('vram-plan', 'Read evidence/host-vram.json, evidence/runtime-vram.json and evidence/model-manifest.json. Then use the Write tool to create tmp/acceptance/vram-plan.md (at most 350 words). Include exact raw model, MTP, and combined disk byte counts from the manifest; distinguish disk size from measured runtime delta. Describe measured host process consumers and safe VRAM reclamation after saving work; never terminate DWM. Include this read-only PowerShell verification command: nvidia-smi --query-gpu=memory.total,memory.used,memory.free --format=csv. Get-Process does not expose a DedicatedMemory GPU property. Do not guess model sizes or contradict runtime evidence; mark unmeasured facts unknown. The output directory already exists. Do not explore other files. End with VRAM_PLAN_DONE.', 'vram-plan.md', 'VRAM_PLAN_DONE'),
  ('model-audit', 'Read evidence/model-manifest.json and compose.yaml. Write tmp/acceptance/model-audit.json with repository, revision, total_weight_bytes (sum downloaded model and MTP byte counts), quantization, configured_context_size (resolve default), and limitations (array). Verify arithmetic using Bash with Python if needed. Do not infer measured GPU residency from file size. Use native Read and Write. End with MODEL_AUDIT_DONE.', 'model-audit.json', 'MODEL_AUDIT_DONE'),
  ('operator-guide', 'Read README.md, compose.yaml and gateway.yaml only. Use the Write tool to create tmp/acceptance/OPERATIONS.md (at most 350 words) with exact commands to start this standalone local LiteLLM Docker stack, check both ports, run scripts/claude_acceptance.py, inspect gateway Sift logs, and stop only this compose project. Explain the configured compaction limit and 4096-token output reserve, and why health is insufficient productivity evidence. The directory exists; do not explore unrelated files. End with OPERATIONS_DONE.', 'OPERATIONS.md', 'OPERATIONS_DONE'),
 ]
@@ -136,6 +143,7 @@ def main():
                     passed=passed and all(term in text.lower() for term in ['dwm','never terminate','saving','nvidia-smi','host-vram.json','runtime-vram.json'])
                     processes=json.loads((ROOT/'evidence/host-vram.json').read_text())['processes']
                     passed=passed and validate_process_rows(text,processes)
+                    passed=passed and validate_gpu_verification_commands(text)
                 if name=='operator-guide':
                     passed=passed and validate_operator_guide(text)
             if passed and name=='vram-plan':

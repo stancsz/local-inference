@@ -1,6 +1,16 @@
 # Productive local inference with Sift
 
-## Active stress campaign
+## Current checkpoint (2026-10-27)
+
+Status: active, full-goal NOT_READY. No profile controller or campaign is being treated as live; the original 40k/MTP4 runtime is restored. Caller approvals/configuration are retained.
+
+Accepted scope: 418 project tests; fresh local/OpenAI and Responses catalog/unsupported-state checks; explicit UTF-8 native stdin with accented/Chinese regressions; supported GPU-verification prompt/validator and a fresh 17.37-second native VRAM task. The original daily-harness increment has a bounded nonauthor READY verdict; subsequent small transport/validation/measurement changes are parent-verified separately. See docs/DAILY_FEEDBACK.md, evidence/daily-review-v5.json and evidence/gpu-verification-v1/receipt.json.
+
+Profile evidence: both fully GPU 69,888-window candidates complete exact64k+4k and256k/1M retention, but their conservative before/after host deltas exceed14 decimal GB. CPU-weight offload meets the sampled memory criterion but the fixed-config full capacity attempt times out at900 seconds during prefill. Failed gates, timeout, all artifacts and canonical-path restoration diagnostics are preserved. See docs/PROFILE_RESULTS.md. No claim of isolated under14GB residency or a simultaneous strict memory/context/latency pass follows.
+
+Remaining: the14GB residency bound, repaired-source nine-turn Codex coverage/seven-per-client gate, broad generated-contract quality and final full-goal nonauthor review. The optional64k memory/latency tradeoff remains unresolved; the user's productive smaller-profile alternative remains in scope. Candidate long-session totals stay23 (Claude8/OpenCode9/Codex6); every short/profile experiment adds0. Next required acceptance work is a separately predeclared Codex nine-turn run on the repaired source, preserving old failures and criteria. Further CPU tuning should first use a small prefill probe for the backend's concrete no-mmap recommendation, rather than repeat the slow900-second configuration unchanged.
+
+## Historical stress and repair ledger
 
 Active repair increment (2026-10-27): fix demonstrated Sift source retention and local gateway/harness defects in a new versioned epoch. Preserve all sealed campaigns and failed counts, caller approval/sandbox settings, immutable instructions/tool catalogs and call IDs. Acceptance: before/after regressions, source-pinned rebuilt runtime, budget/local/OpenAI/Claude/context checks, native per-turn snapshots and fresh independent review. Report model correctness and hardware/context limits separately; no historical failed-session promotion.
 

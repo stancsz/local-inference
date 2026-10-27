@@ -1,0 +1,117 @@
+{
+  "pid": 62612,
+  "started": "2026-10-27T22:32:47.398115+00:00",
+  "status": "terminal",
+  "limit_bytes": 14000000000,
+  "limit_mib": 13351.4404296875,
+  "cases": [
+    {
+      "gpu_layers": 99,
+      "ubatch_size": 16,
+      "cpu_weight_blocks": 4,
+      "context": 69888,
+      "sift_target": 65536,
+      "draft_tokens": 1,
+      "status": "tested",
+      "startup_host_delta_mib": 12717,
+      "checks": {
+        "benchmark": 0
+      },
+      "short_decode_tps": 17.446676546114503,
+      "benchmark_gate": false,
+      "peak_host_delta_mib": 12916,
+      "host_delta_within_limit": true,
+      "conservative_host_delta_mib": 13058,
+      "conservative_host_delta_within_limit": true
+    }
+  ],
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "advisor_council": "Unavailable: NORTHSTAR_COUNCIL_MODEL is unset; no substitute provider/model selected.",
+  "original": {
+    "inference": {
+      "image": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+      "environment": {
+        "DRAFT_TOKENS": "4",
+        "GPU_LAYERS": "99",
+        "SPEC_TYPE": "draft-mtp",
+        "UBATCH_SIZE": "64",
+        "CONTEXT_SIZE": "40960",
+        "DRAFT_GPU_LAYERS": "99"
+      }
+    },
+    "gateway": {
+      "image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
+      "environment": {
+        "SIFT_COMPRESSION_RATIO": "8",
+        "SIFT_TARGET": "32768",
+        "CONTEXT_SIZE": "40960"
+      }
+    }
+  },
+  "original_mounts": {
+    "gateway": [
+      {
+        "Type": "bind",
+        "Source": "C:\\Users\\stanc\\github\\local-inference\\evidence",
+        "Destination": "/evidence",
+        "RW": true
+      }
+    ],
+    "inference": [
+      {
+        "Type": "volume",
+        "Source": "/var/lib/docker/volumes/local-inference-models/_data",
+        "Destination": "/models",
+        "RW": false
+      },
+      {
+        "Type": "bind",
+        "Source": "C:\\Users\\stanc\\github\\local-inference\\docker\\start-inference.sh",
+        "Destination": "/start-inference.sh",
+        "RW": false
+      }
+    ]
+  },
+  "original_context": 40960,
+  "plan": {
+    "cpu_weight_block_order": [
+      4
+    ],
+    "second_case_condition": "No second case or replacement",
+    "minimum_short_decode_tps": 20,
+    "tensor_override": "blk\\.[0-3]\\..*=CPU",
+    "context": 69888,
+    "sift_target": 65536,
+    "draft_tokens": 1,
+    "capacity_input": 65536,
+    "capacity_output": 4096,
+    "capacity_timeout_seconds": 960,
+    "no_replacements": true,
+    "restore_original": true
+  },
+  "source_commit": "0bbe74bfd1113ae7f7e9a7775853fd63f567895c",
+  "source_hashes": {
+    "long-profile-v3.py": "0f10d014a88f25dcf392f8dc1ce990850933da30e04b0ace2d57eb0f4f402328",
+    "capacity_acceptance.py": "0407ad1736bdd5b3b7af0cbad133eb502a7f654939e09c12f6f6f1fa9085e856",
+    "local_smoke.py": "ab434fe5bc1df09803293fbc13bb333751c5ca8786888f1b63be8cc18c2bc8cc",
+    "openai_smoke.py": "55be99dd625363aab25dd0569a346d4b98a9579a9e6aebbd06a2fc0de5830dbd",
+    "benchmark.py": "e96f0dc5c3fb5deda0ff52156364f19818a3a71c41f5dc31289c4be8bc6e97c8",
+    "context_acceptance.py": "9e6b74700eeba882613c5b563ccb589c9d1c75c7fee60dc4b3e3bd3a18390e9f",
+    "claude_acceptance.py": "1df0e3f055efe0923cac647b4f46ac74efa0d326fb0a7d6e183a4f98b06ecb51",
+    "daily_artifacts.py": "f84acb51eceea37774865f4f1485d9bfb6f88952c4cab5f4871e9c6fd8a60c7f",
+    "daily_acceptance.py": "f7431de57f8448c0a5d48cb5f4562042a8dc67730dfd46709feac018053ec4ba",
+    "compose.yaml": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+    "start-inference-trace-v2.sh": "516ab0cba7a7b2018e68e93294ceaa9c7de07da3441a378918e6e2a7f643ab25"
+  },
+  "stage": "restoring-original",
+  "baseline_min_mib": 1863,
+  "restoration_error": "Restored mounts differ from original",
+  "restored": false,
+  "baseline_range_mib": [
+    1721,
+    1908
+  ],
+  "sample_count": 73,
+  "memory_scope": "Whole-host occupancy and conservative before/after delta, not isolated per-allocation residency. Desktop drift remains a confound."
+}

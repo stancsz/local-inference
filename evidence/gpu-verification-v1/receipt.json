@@ -1,0 +1,63 @@
+{
+  "route": "http://127.0.0.1:8090",
+  "task": "vram-plan",
+  "passed": true,
+  "native_seconds": 17.37,
+  "native_tools": [
+    "Read",
+    "Read",
+    "Read",
+    "Read",
+    "Edit"
+  ],
+  "native_edit_reconstruction": true,
+  "finding": "Prior generated GPU verification used nonexistent System.Diagnostics.Process.DedicatedMemory",
+  "repair": "Explicit supported nvidia-smi prompt and shared fenced-command validator; warnings outside commands remain allowed",
+  "regression_before": "1 failed, 2 passed; bogus property plus nvidia prose previously accepted",
+  "regression_after": "3 passed",
+  "full_project_tests": 418,
+  "qualification_increment": 0,
+  "raw_artifact_sha256": "c362de2c775b913b1b7c8c947b68278b8679f7934a652f6471d378c1121690d7",
+  "artifacts": [
+    {
+      "path": "evidence/gpu-verification-v1/native/claude-acceptance.json.gz",
+      "raw_sha256": "90c323c48b0c0f316966bd7a048dc6fe2d29e125a0b15631ee86b2c977d4ad38",
+      "compressed_sha256": "ddb73b3b4b8033dd07a4101171963984769d89b5810f012b55813b9d6d0bf032"
+    },
+    {
+      "path": "evidence/gpu-verification-v1/native/vram-plan.jsonl.gz",
+      "raw_sha256": "152538f2f11134fd9f95f8d7128c070c397de65808b66347ca706a4867a58920",
+      "compressed_sha256": "9a7b4f34c917549423be14285960e4249fd0226c4cf7ec64fbc1b790f39de725"
+    },
+    {
+      "path": "evidence/gpu-verification-v1/native/vram-plan.md.gz",
+      "raw_sha256": "c362de2c775b913b1b7c8c947b68278b8679f7934a652f6471d378c1121690d7",
+      "compressed_sha256": "6ef42bebc32c38fb970fcba739a0e9efcc8b39012bf4d9060372755cd60a6ac1"
+    },
+    {
+      "path": "evidence/gpu-verification-v1/native/vram-plan.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/gpu-verification-v1/native/published/VRAM_PLAN.md.gz",
+      "raw_sha256": "c362de2c775b913b1b7c8c947b68278b8679f7934a652f6471d378c1121690d7",
+      "compressed_sha256": "6ef42bebc32c38fb970fcba739a0e9efcc8b39012bf4d9060372755cd60a6ac1"
+    },
+    {
+      "path": "evidence/gpu-verification-v1/native/published/sources/vram-plan/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55",
+      "compressed_sha256": "81162a4e30df7242133ad21e492a9df33a50aa1be90e1d59c5deaecb87730bcf"
+    },
+    {
+      "path": "evidence/gpu-verification-v1/native/published/sources/vram-plan/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+      "compressed_sha256": "a112d6e8b4888c388786688a6b7c9b55cd4bb28439169fc16a75fae3c4ba2846"
+    },
+    {
+      "path": "evidence/gpu-verification-v1/native/published/sources/vram-plan/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731",
+      "compressed_sha256": "15c6192876b386c357adb8a2362cd6a5a720aacee101a9ad320af154d203d245"
+    }
+  ]
+}
