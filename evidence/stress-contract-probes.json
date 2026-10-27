@@ -435,6 +435,65 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/opencode-expenses-r0/result.json",
+      "client": "opencode",
+      "task": "expenses",
+      "original_workflow_accepted": true,
+      "task_sha256": "d4aba98a36673459ee352c8945cf809db88fa942747650e1cf8754f40b257872",
+      "all_additional_checks_passed": false,
+      "checks": [
+        {
+          "name": "aggregate before HALF_EVEN rounding",
+          "passed": true
+        },
+        {
+          "name": "strip group preserve first spelling",
+          "passed": true
+        },
+        {
+          "name": "invalid amount NaN",
+          "passed": true
+        },
+        {
+          "name": "invalid amount Infinity",
+          "passed": true
+        },
+        {
+          "name": "invalid amount garbage",
+          "passed": true
+        },
+        {
+          "name": "mixed currency",
+          "passed": true
+        },
+        {
+          "name": "missing header",
+          "passed": true
+        },
+        {
+          "name": "duplicate header",
+          "passed": true
+        },
+        {
+          "name": "missing amount cell",
+          "passed": true
+        },
+        {
+          "name": "unlabelled extra cell",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "quoted category with comma",
+          "passed": true
+        },
+        {
+          "name": "report blank rows order and exact total",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/opencode-migration-r0/result.json",
       "client": "opencode",
       "task": "migration",
@@ -500,5 +559,5 @@
       ]
     }
   ],
-  "sessions_with_additional_failures": 5
+  "sessions_with_additional_failures": 6
 }
