@@ -35,17 +35,49 @@
       "turns": 9,
       "failure": null,
       "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "engineering",
+        "seed": 931,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/opencode-engineering-r0-attempt-1793060019/result.json",
+      "sha256": "b1849a92384b56fefe2bc25943ecf4211901c7bf643f46ca26b2f5447b87e07b",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1069.701,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "engineering",
+        "seed": 1031,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/codex-engineering-resume-writable/result.json",
+      "sha256": "aa6219bfb709d71b53e3b61578240dd5ea691d0d5f773585137682b3ddf7fea3",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 863.291,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true
     }
   ],
   "scope": "Frozen uncommitted Sift candidate; real native CLIs in synthetic evolving workspaces. First-stage Sift hook uses LiteLLM counting; final gateway Sift uses the backend native full-request counter. No scripted idle padding or cloud inference.",
-  "updated_at": "2026-10-27T00:13:39.326504+00:00",
-  "accepted_sessions": 1,
-  "qualifying_long_sessions": 1,
+  "updated_at": "2026-10-27T00:31:32.080486+00:00",
+  "accepted_sessions": 3,
+  "qualifying_long_sessions": 3,
   "current_case": {
-    "index": 2,
-    "client": "opencode",
-    "task": "engineering",
-    "seed": 931,
+    "index": 4,
+    "client": "claude",
+    "task": "migration",
+    "seed": 841,
     "repeat": 0
   }
 }
