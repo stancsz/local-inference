@@ -343,6 +343,23 @@
       "failure": null,
       "reused_existing_accepted_receipt": false,
       "reviewed_short_failure": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "engineering",
+        "seed": 2931,
+        "repeat": 2
+      },
+      "receipt": "tmp/stress/sessions/opencode-engineering-r2/result.json",
+      "sha256": "b7719681a85d96f30fb60cf34ee6c155ae5ef37e92450e2af1ea27fb10537824",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1051.928,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false,
+      "reviewed_short_failure": false
     }
   ],
   "scope": "Frozen uncommitted Sift candidate; real native CLIs in synthetic evolving workspaces. First-stage Sift hook uses LiteLLM counting; final gateway Sift uses the backend native full-request counter. No scripted idle padding or cloud inference.",
@@ -492,14 +509,14 @@
       "repeat": 2
     }
   ],
-  "updated_at": "2026-10-27T04:41:20.237010+00:00",
-  "accepted_sessions": 17,
-  "qualifying_long_sessions": 17,
+  "updated_at": "2026-10-27T04:58:55.070902+00:00",
+  "accepted_sessions": 18,
+  "qualifying_long_sessions": 18,
   "current_case": {
-    "index": 20,
-    "client": "opencode",
+    "index": 21,
+    "client": "codex",
     "task": "engineering",
-    "seed": 2931,
+    "seed": 3031,
     "repeat": 2
   }
 }

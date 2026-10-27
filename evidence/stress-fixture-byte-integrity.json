@@ -3,7 +3,7 @@
   "before_checked": 39,
   "before_index_byte_mismatches": 34,
   "after": {
-    "checked": 57,
+    "checked": 60,
     "index_byte_mismatches": 0,
     "workspace_mismatches": 0,
     "files": [
@@ -390,6 +390,30 @@
         "index_sha256": "bcb17f1a28c1f1dd58595ba63982f11376e1f73318a25762fa84f46456392eff",
         "published_sha256": "bcb17f1a28c1f1dd58595ba63982f11376e1f73318a25762fa84f46456392eff",
         "original_workspace_sha256": "bcb17f1a28c1f1dd58595ba63982f11376e1f73318a25762fa84f46456392eff"
+      },
+      {
+        "file": "evidence/stress-sessions/opencode-engineering-r2/evidence.json",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "published_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "original_workspace_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+      },
+      {
+        "file": "evidence/stress-sessions/opencode-engineering-r2/task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "5e21df06a3f66f8c27a2141e2af3e4f0d043804eec3259d9ee5dc18a71f5cbf0",
+        "published_sha256": "5e21df06a3f66f8c27a2141e2af3e4f0d043804eec3259d9ee5dc18a71f5cbf0",
+        "original_workspace_sha256": "5e21df06a3f66f8c27a2141e2af3e4f0d043804eec3259d9ee5dc18a71f5cbf0"
+      },
+      {
+        "file": "evidence/stress-sessions/opencode-engineering-r2/test_task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "ceba582d48f67d531312d61f5724828f7e5c189e26f34eb3a943d12f0c176cba",
+        "published_sha256": "ceba582d48f67d531312d61f5724828f7e5c189e26f34eb3a943d12f0c176cba",
+        "original_workspace_sha256": "ceba582d48f67d531312d61f5724828f7e5c189e26f34eb3a943d12f0c176cba"
       },
       {
         "file": "evidence/stress-sessions/opencode-expenses-r0/evidence.json",

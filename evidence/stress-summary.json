@@ -1,12 +1,12 @@
 {
-  "captured_at": "2026-10-27T04:43:19.767579+00:00",
+  "captured_at": "2026-10-27T04:59:31.130028+00:00",
   "controller_state": "running",
   "planned_attempts": 22,
-  "terminal_attempts": 19,
-  "harness_accepted": 17,
-  "nine_turn_long_sessions": 17,
+  "terminal_attempts": 20,
+  "harness_accepted": 18,
+  "nine_turn_long_sessions": 18,
   "failed_attempts": 2,
-  "native_budget_checks": 783,
+  "native_budget_checks": 827,
   "groups": [
     {
       "client": "claude",
@@ -28,21 +28,21 @@
     },
     {
       "client": "opencode",
-      "terminal_attempts": 6,
-      "harness_accepted": 5,
-      "nine_turn_long_sessions": 5,
+      "terminal_attempts": 7,
+      "harness_accepted": 6,
+      "nine_turn_long_sessions": 6,
       "accepted_tasks": {
-        "engineering": 2,
+        "engineering": 3,
         "migration": 2,
         "expenses": 1
       },
       "accepted_active_seconds": {
-        "samples": 5,
+        "samples": 6,
         "minimum": 967.795,
-        "median": 1060.94,
+        "median": 1060.481,
         "maximum": 1086.017
       },
-      "additional_contract_failures": 4
+      "additional_contract_failures": 5
     },
     {
       "client": "codex",
@@ -462,6 +462,27 @@
       "native_budget_checks": 44,
       "native_bounds_passed": true,
       "additional_contract_passed": true
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "engineering",
+        "seed": 2931,
+        "repeat": 2
+      },
+      "receipt": "tmp/stress/sessions/opencode-engineering-r2/result.json",
+      "sha256": "b7719681a85d96f30fb60cf34ee6c155ae5ef37e92450e2af1ea27fb10537824",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1051.928,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 44,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
     }
   ],
   "all_retained_terminal_receipts": [
@@ -783,6 +804,20 @@
       "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1060.94,
+      "source_matches_current": true,
+      "sift_candidate_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-engineering-r2/result.json",
+      "sha256": "b7719681a85d96f30fb60cf34ee6c155ae5ef37e92450e2af1ea27fb10537824",
+      "client": "opencode",
+      "task": "engineering",
+      "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
+      "turns": 9,
+      "active_seconds": 1051.928,
       "source_matches_current": true,
       "sift_candidate_matches_current": true,
       "in_controller_outcomes": true

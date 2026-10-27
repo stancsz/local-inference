@@ -1,13 +1,13 @@
 # Local CLI stress results
 
-Checkpoint: 2026-10-27T04:43:19.767579+00:00. Controller: **running**. Final independent acceptance: **pending**.
+Checkpoint: 2026-10-27T04:59:31.130028+00:00. Controller: **running**. Final independent acceptance: **pending**.
 
-17 harness passes and 2 failed attempts among 19 terminal matrix attempts; 17 reached nine turns and over 180 active seconds. There are 22 planned attempts. Two short failures mean this plan can yield at most 20 corrected-epoch nine-turn sessions; the target of 21 remains unmet.
+18 harness passes and 2 failed attempts among 20 terminal matrix attempts; 18 reached nine turns and over 180 active seconds. There are 22 planned attempts. Two short failures mean this plan can yield at most 20 corrected-epoch nine-turn sessions; the target of 21 remains unmet.
 
 | Client | Terminal attempts | Harness passes | Nine-turn long sessions | Median accepted active seconds | Added contract failures |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | claude | 7 | 7 | 7 | 980.493 | 4 |
-| opencode | 6 | 5 | 5 | 1060.940 | 4 |
+| opencode | 7 | 6 | 6 | 1060.481 | 5 |
 | codex | 6 | 5 | 5 | 849.925 | 3 |
 
 The retained OpenCode expense timeout remains a failed one-turn attempt. The fixed extra sample uses repeat2/seed2951; no outcome-based re-roll or timeout extension is allowed.
