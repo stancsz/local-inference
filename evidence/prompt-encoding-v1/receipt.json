@@ -1,0 +1,17 @@
+{
+  "scope": "Local native CLI subprocess stdin transport, not model task acceptance",
+  "before": "Windows CP1252 corrupts accented bytes and raises UnicodeEncodeError on Chinese prompt input",
+  "after": "Explicit UTF-8; accented/Chinese native child-process byte regressions pass for both entry points",
+  "legacy_regressions": 2,
+  "daily_regressions": 1,
+  "full_project_tests": 407,
+  "provider_calls": 0,
+  "approval_flags_changed": false,
+  "qualification_increment": 0,
+  "sources": {
+    "scripts/claude_acceptance.py": "1df0e3f055efe0923cac647b4f46ac74efa0d326fb0a7d6e183a4f98b06ecb51",
+    "scripts/daily_artifacts.py": "f84acb51eceea37774865f4f1485d9bfb6f88952c4cab5f4871e9c6fd8a60c7f",
+    "tests/test_claude_prompt_encoding.py": "a5a7d9bc5dfc2690817b634840e039cb4913633fff7e3957263c5c27d6fe2248",
+    "tests/test_daily_artifacts.py": "2a794a99a1cc7b9933bc2916386d91d16fa3435abd723791a806669c9953272a"
+  }
+}

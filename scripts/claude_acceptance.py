@@ -113,7 +113,7 @@ def main():
             start=time.monotonic()
             try:
                 with (dest/(name+'.jsonl')).open('w',encoding='utf-8') as out, (dest/(name+'.stderr.log')).open('w',encoding='utf-8') as err:
-                    done=subprocess.run(args,input=prompt,text=True,cwd=ROOT,env=env,stdout=out,stderr=err,timeout=900)
+                    done=subprocess.run(args,input=prompt,text=True,encoding='utf-8',cwd=ROOT,env=env,stdout=out,stderr=err,timeout=900)
                 code=done.returncode
             except subprocess.TimeoutExpired:
                 code=-1
