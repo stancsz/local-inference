@@ -71,3 +71,5 @@ Environment: empty remote fetched on 2026-10-26. RTX 5070 Ti, 16,303 MiB; ~48 Gi
 
 ## Ownership and authority
 Codex parent is the accepting commander. CLI workers use the local LiteLLM :4000 default route; final acceptance uses the requested local model path. User authorizes experiments, changes in both projects, Docker setup, scoped commits and pushes. Preserve unrelated work and existing services.
+
+Live supplement checkpoint: 2026-10-27T07:50:30.319667+00:00. Controller PID190544 remains live; OpenCode incident_log terminated accepted after9 turns/1014.592 active seconds. Codex release_manifest runner PID196828 is live with5 accepted turns/492.857 active seconds at observation. Current state is evidence/supplement-v1-state.json; this is a verified wait on the same controller, never a restart. Candidate aggregate20, original matrix19/22 unchanged; parent and final nonauthor acceptance pending. New read-only review guards passed17 negative/positive checks; project suite passed251 tests, and replay of original19 qualification summaries found no mismatch. A Windows10054 stream-close warning is preserved separately from successful native terminal/test results.
