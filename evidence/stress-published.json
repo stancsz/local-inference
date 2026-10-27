@@ -1,5 +1,5 @@
 {
-  "published_verified_sessions": 14,
+  "published_verified_sessions": 15,
   "sessions": [
     {
       "client": "claude",
@@ -332,6 +332,73 @@
           "raw_sha256": "b65402970ea8b53f1280d9a0e569fb0d54159f717d3e92e049593cd1fdaf9f2a",
           "compressed_sha256": "c625c7f522c2220d165b426102119b9630f2c9f7401a04698c3ffbfe1e16a9f2",
           "native_calls": 5
+        }
+      ],
+      "verified": true
+    },
+    {
+      "client": "claude",
+      "task": "migration",
+      "seed": 1841,
+      "session_id": "8f9c8f00-6f40-4721-b1e5-154fc49022cb",
+      "active_seconds": 964.764,
+      "turns": 9,
+      "receipt": "evidence/stress-sessions/claude-migration-r1/result.json.gz",
+      "receipt_raw_sha256": "36925d2a2309d345aca4227a5d4458ee985ede2e241eca42682cacba8f46269d",
+      "traces": [
+        {
+          "file": "evidence/stress-sessions/claude-migration-r1/turn-00.jsonl.gz",
+          "raw_sha256": "5f32027d1cdf892965603284b924f45e8eeeebddb2104de214b6f49962825fc5",
+          "compressed_sha256": "b84b1d154b3e649cbaab3c78550d51d95230602be7e5eb713da8d540920dd721",
+          "native_calls": 10
+        },
+        {
+          "file": "evidence/stress-sessions/claude-migration-r1/turn-01.jsonl.gz",
+          "raw_sha256": "f38932f78290a4ba7594677fe9840b3542400df79d6b4bac1e4877e41eb9a4a4",
+          "compressed_sha256": "f52bb2549a13b4dee2bdd0523b4c5fa6ef3bce83c71e8a7a19c34aff80482a5f",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-migration-r1/turn-02.jsonl.gz",
+          "raw_sha256": "05255f9bb8da219d1d51bb17b12f7542d2a3129faf6ad7fed5c3278911692466",
+          "compressed_sha256": "b69cab7467c31c88276d2e123d2826add79d6e0510096c5c7cfb9641c3229339",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-migration-r1/turn-03.jsonl.gz",
+          "raw_sha256": "7bb9ad087cc080510885ba010d3271c5db587fb7b4849cb36817caa30f7d1e35",
+          "compressed_sha256": "bc4c0bce886688abdde4f6f689017c4d245b37532843a92b07bf09b3991d5cd0",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-migration-r1/turn-04.jsonl.gz",
+          "raw_sha256": "8352b44846fc8bb736d849bd0e70750686544b6569473a77778c7acc35d0cd12",
+          "compressed_sha256": "8804ae5309c1e0acb759276581b7da666cfd697f6752bfba98a15ee8e8715013",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-migration-r1/turn-05.jsonl.gz",
+          "raw_sha256": "7562f820f67050c109ce5c939dcea66d72ab83ef21238d1a6ecb8094123ffe72",
+          "compressed_sha256": "35f930dd78b2f32d1c7384145ea12f404fd6873fb7bf04a653b4932a5dbf8c30",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-migration-r1/turn-06.jsonl.gz",
+          "raw_sha256": "97fa5b7a3eb779050944114bb34bd9279722c2ff58e7bf1e8a2c759bc1a81198",
+          "compressed_sha256": "381012e2b05ff33ea900c77156bc6e937e82ecf55fef30b55cbd8551fcc836a9",
+          "native_calls": 4
+        },
+        {
+          "file": "evidence/stress-sessions/claude-migration-r1/turn-07.jsonl.gz",
+          "raw_sha256": "4f041d7e4139814c9db513ad13d87926f08e3f1a66e7de005fbc9186e560395a",
+          "compressed_sha256": "e384838ef969e5d84551b8c1054493c68662b4da20eaa5259d405d029e318f4d",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/claude-migration-r1/turn-08.jsonl.gz",
+          "raw_sha256": "2ad9ca8771fae884d74ad9683369e2be9cfd3fb55925eb87351f26c26d67a54f",
+          "compressed_sha256": "b05786f76451bd68b0505f0e46ae566317e9ef749140b17403edc48406b82aee",
+          "native_calls": 4
         }
       ],
       "verified": true

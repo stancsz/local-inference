@@ -269,6 +269,70 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/claude-migration-r1/result.json",
+      "client": "claude",
+      "task": "migration",
+      "original_workflow_accepted": true,
+      "task_sha256": "daf993e455746eb4224c44f5c51e8e8143b732f305119d6532d3feb1491c1879",
+      "all_additional_checks_passed": false,
+      "checks": [
+        {
+          "name": "invalid milliseconds None",
+          "passed": false,
+          "error": "AssertionError: expected TypeError/ValueError"
+        },
+        {
+          "name": "invalid milliseconds True",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds 1.5",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds '1000'",
+          "passed": true
+        },
+        {
+          "name": "negative milliseconds",
+          "passed": true
+        },
+        {
+          "name": "negative seconds",
+          "passed": true
+        },
+        {
+          "name": "non-string name None",
+          "passed": false,
+          "error": "AssertionError: expected TypeError/ValueError"
+        },
+        {
+          "name": "non-string name 17",
+          "passed": true
+        },
+        {
+          "name": "non-string name True",
+          "passed": true
+        },
+        {
+          "name": "conflicting time units",
+          "passed": true
+        },
+        {
+          "name": "unknown key",
+          "passed": true
+        },
+        {
+          "name": "boolean retries",
+          "passed": true
+        },
+        {
+          "name": "nonmutation idempotency generator and independent copies",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/codex-engineering-r1/result.json",
       "client": "codex",
       "task": "engineering",
@@ -768,5 +832,5 @@
       ]
     }
   ],
-  "sessions_with_additional_failures": 9
+  "sessions_with_additional_failures": 10
 }

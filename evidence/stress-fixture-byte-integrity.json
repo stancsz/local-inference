@@ -3,7 +3,7 @@
   "before_checked": 39,
   "before_index_byte_mismatches": 34,
   "after": {
-    "checked": 42,
+    "checked": 45,
     "index_byte_mismatches": 0,
     "workspace_mismatches": 0,
     "files": [
@@ -126,6 +126,30 @@
         "index_sha256": "b89b3f0718bf7025bdfe2cb23b9bfaf7e8829100751ddb82c31bd3896b7445cd",
         "published_sha256": "b89b3f0718bf7025bdfe2cb23b9bfaf7e8829100751ddb82c31bd3896b7445cd",
         "original_workspace_sha256": "b89b3f0718bf7025bdfe2cb23b9bfaf7e8829100751ddb82c31bd3896b7445cd"
+      },
+      {
+        "file": "evidence/stress-sessions/claude-migration-r1/evidence.json",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "published_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "original_workspace_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+      },
+      {
+        "file": "evidence/stress-sessions/claude-migration-r1/task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "daf993e455746eb4224c44f5c51e8e8143b732f305119d6532d3feb1491c1879",
+        "published_sha256": "daf993e455746eb4224c44f5c51e8e8143b732f305119d6532d3feb1491c1879",
+        "original_workspace_sha256": "daf993e455746eb4224c44f5c51e8e8143b732f305119d6532d3feb1491c1879"
+      },
+      {
+        "file": "evidence/stress-sessions/claude-migration-r1/test_task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "e69c73f3e6e3880e33a2fc4432646307d6e7fc568ff7c43c61d634e71ebe7962",
+        "published_sha256": "e69c73f3e6e3880e33a2fc4432646307d6e7fc568ff7c43c61d634e71ebe7962",
+        "original_workspace_sha256": "e69c73f3e6e3880e33a2fc4432646307d6e7fc568ff7c43c61d634e71ebe7962"
       },
       {
         "file": "evidence/stress-sessions/codex-engineering-r1/evidence.json",
