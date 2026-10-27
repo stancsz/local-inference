@@ -67,5 +67,14 @@
   "excerpt_files_verified": 42,
   "native_budget_checks": 42,
   "active_seconds": 993.867,
-  "parent_qualified": true
+  "parent_qualified": true,
+  "extended_oracle_scope_scan": {
+    "native_events_checked": 133,
+    "solution_reference_access": false
+  },
+  "independent_source_excerpt_observation": {
+    "requests": 42,
+    "source0_approved_fact_observed": 42,
+    "echo_cannot_satisfy_guard": true
+  }
 }

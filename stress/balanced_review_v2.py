@@ -5,6 +5,7 @@ import gzip
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -15,6 +16,15 @@ ROOT = Path(__file__).resolve().parents[1]
 from stress.supplement_review_v1 import basic_failures
 
 
+def solution_reference_access(event):
+    text = re.sub(r'[\\/]+', '/', json.dumps(event).lower())
+    return any(token in text for token in (
+        'test_supplement_tasks.py', 'incident_reference', 'manifest_reference',
+        'test_portable_tasks.py', 'recovery/expenses_v1.py',
+        'recovery/generation_feedback_v2.py', 'recovery/expense_feedback_v3.py',
+    ))
+
+
 def inspect_capture(raw, index, audit):
     failures = []
     if hashlib.sha256(raw).hexdigest() != audit.get('excerpt_capture_raw_sha256'):
@@ -22,9 +32,19 @@ def inspect_capture(raw, index, audit):
     captured = json.loads(raw)
     if captured['request_index'] != index or captured['gold_retained'] != audit.get('gold_retained'):
         failures.append(f'request{index} capture/audit mismatch')
+    excerpt_lines = [line for message in captured['historical_excerpt_messages']
+                     if message.get('role') == 'user'
+                     for line in message.get('content', '').splitlines()]
+    original_fact = any(line.startswith('[message 0 user] ') and
+                        'APPROVED deployment setting: acceptance_delay_seconds=37' in line
+                        for line in excerpt_lines)
+    if bool(audit.get('gold_retained')) != original_fact:
+        failures.append(f'request{index} independently observed original-source fact disagrees')
     return failures, {'request': index, 'gold_retained': captured['gold_retained'],
+                      'original_fact_observed_in_source0': original_fact,
                       'excerpt_count': len(captured['historical_excerpt_messages']),
                       'needle_matches': len(captured['needle_matches'])}
+
 
 
 def review(publish=False):
@@ -89,7 +109,7 @@ def review(publish=False):
             if hashlib.sha256(generated).hexdigest() != turn['public_tests_sha256']: failures.append(f'turn{index+1} public fixture hash')
             for event in events:
                 # Review task-tool arguments for direct solution-reference access.
-                if any(token in json.dumps(event) for token in ('test_supplement_tasks.py', 'incident_reference', 'manifest_reference')):
+                if solution_reference_access(event):
                     failures.append(f'turn{index+1} solution-reference access')
             definition = stage(case['task'], index, case['seed'] + index + 200003)['tests']
             prefix = "import sys;sys.path.insert(0,sys.argv[1]);sys.argv=['parent-check'];"
