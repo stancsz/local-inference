@@ -1,0 +1,55 @@
+{
+  "model": "default",
+  "advice": "Own verdict: Defensible bounded recovery—the failure is in-spec (fixed 240s timeout, all ten API requests 200, no harness defect), and the predeclared replacement seed plus retained failure row prevents cherry picking; simpler recovery wouldn't reach 21 qualifying.\nIndependent review: I accept its key points—the failure is in-spec and the seed was fixed before outcomes—but tighten its risk framing: the binding check is that the same nine-turn/180s/evidence-write criterion and denominator are applied to case17 and the replacement alike, with no post-hoc redefinition of \"qualifying.\"\nNext: archive the failed receipt/trace/SHA; resume controller referencing only that hash; run the 4 remaining cases unchanged, then seed2951 if still short.\nRisk: If seed2951 also fails or falls short, report fewer than 21 qualifying—no re-roll, seed change, or extended cap.",
+  "advice_words": 124,
+  "usage": {
+    "completion_tokens": 365,
+    "prompt_tokens": 532,
+    "total_tokens": 897,
+    "completion_tokens_details": {
+      "reasoning_tokens": 166
+    },
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "request_id": "6eaf97cc-341f-4511-84d5-317251307047_92efa1a8d65846958c624d593e5672ef",
+  "elapsed_seconds": 11.288,
+  "council": [
+    {
+      "model": "codex-sol-advisor",
+      "advice": "Verdict: Defensible bounded recovery — retain the failed row in the denominator, use one predeclared seed, cap at 22 attempts; stop at 21 qualifying or attempt 22, whichever comes first, with no further substitutions.\n\nEvidence: The failure is in-spec, not a defect (fixed 240s timeout, all ten API requests 200, repeated identical writes, no evidence/harness gap), and the replacement seed was fixed before outcomes — no cherry picking.\n\nRisk: If seed2951 also fails or falls short of \"qualifying,\" attrition could be retroactively redefined; report fewer than 21 rather than extend or re-roll the campaign.",
+      "usage": {
+        "completion_tokens": 827,
+        "prompt_tokens": 296,
+        "total_tokens": 1123,
+        "completion_tokens_details": {
+          "reasoning_tokens": 680
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "request_id": "5d54c188-a346-4cbc-be28-ffbe5d611b64_d8420ee6731149bf9a7df3786cc7b00b",
+      "elapsed_seconds": 23.447
+    },
+    {
+      "model": "default",
+      "advice": "Own verdict: Defensible bounded recovery—the failure is in-spec (fixed 240s timeout, all ten API requests 200, no harness defect), and the predeclared replacement seed plus retained failure row prevents cherry picking; simpler recovery wouldn't reach 21 qualifying.\nIndependent review: I accept its key points—the failure is in-spec and the seed was fixed before outcomes—but tighten its risk framing: the binding check is that the same nine-turn/180s/evidence-write criterion and denominator are applied to case17 and the replacement alike, with no post-hoc redefinition of \"qualifying.\"\nNext: archive the failed receipt/trace/SHA; resume controller referencing only that hash; run the 4 remaining cases unchanged, then seed2951 if still short.\nRisk: If seed2951 also fails or falls short, report fewer than 21 qualifying—no re-roll, seed change, or extended cap.",
+      "usage": {
+        "completion_tokens": 365,
+        "prompt_tokens": 532,
+        "total_tokens": 897,
+        "completion_tokens_details": {
+          "reasoning_tokens": 166
+        },
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "request_id": "6eaf97cc-341f-4511-84d5-317251307047_92efa1a8d65846958c624d593e5672ef",
+      "elapsed_seconds": 11.288
+    }
+  ],
+  "packet_chars": 1049
+}

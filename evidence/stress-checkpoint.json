@@ -1,9 +1,10 @@
 {
   "state": "running",
-  "controller_pid": 260152,
+  "controller_pid": 69208,
   "upstream": "http://127.0.0.1:8090/v1",
-  "controller_sha256": "0fe9636f78a30629ee41f6130a4046b31cbcbe7954a2adaad2dd99844ece0713",
-  "planned_sessions": 21,
+  "controller_sha256": "ae9f55119bc02db3fc7973052d4799a2eea29422ff4d4e90099e3a87d5cac185",
+  "planned_sessions": 22,
+  "required_qualifying_sessions": 21,
   "minimum_active_seconds": 185,
   "minimum_user_turns": 9,
   "gateway_image": "sha256:0441d3d28a6cb1411f4e390eb95cb2786e87fb9dab03b7f3cffba60d632e3189",
@@ -34,7 +35,8 @@
       "active_client_seconds": 980.493,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -50,7 +52,8 @@
       "active_client_seconds": 1069.701,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -66,7 +69,8 @@
       "active_client_seconds": 863.291,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": true
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -82,7 +86,8 @@
       "active_client_seconds": 1067.898,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -98,7 +103,8 @@
       "active_client_seconds": 967.795,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -114,7 +120,8 @@
       "active_client_seconds": 849.925,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -130,7 +137,8 @@
       "active_client_seconds": 1079.427,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -146,7 +154,8 @@
       "active_client_seconds": 1086.017,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -162,7 +171,8 @@
       "active_client_seconds": 959.153,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -178,7 +188,8 @@
       "active_client_seconds": 1005.25,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -194,7 +205,8 @@
       "active_client_seconds": 1060.94,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -210,7 +222,8 @@
       "active_client_seconds": 779.767,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -226,7 +239,8 @@
       "active_client_seconds": 964.764,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -242,7 +256,8 @@
       "active_client_seconds": 1060.022,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -258,7 +273,8 @@
       "active_client_seconds": 766.871,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
     },
     {
       "case": {
@@ -274,18 +290,175 @@
       "active_client_seconds": 946.823,
       "turns": 9,
       "failure": null,
-      "reused_existing_accepted_receipt": false
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "expenses",
+        "seed": 1951,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/opencode-expenses-r1/result.json",
+      "sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
+      "accepted": false,
+      "qualifying_long_session": false,
+      "active_client_seconds": 240.348,
+      "turns": 1,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "reused_existing_accepted_receipt": false,
+      "reviewed_short_failure": true
     }
   ],
   "scope": "Frozen uncommitted Sift candidate; real native CLIs in synthetic evolving workspaces. First-stage Sift hook uses LiteLLM counting; final gateway Sift uses the backend native full-request counter. No scripted idle padding or cloud inference.",
-  "updated_at": "2026-10-27T04:03:00.976557+00:00",
+  "acknowledged_short_failure": {
+    "receipt": "tmp/stress/sessions/opencode-expenses-r1/result.json",
+    "sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
+    "accepted": false
+  },
+  "plan": [
+    {
+      "client": "claude",
+      "task": "engineering",
+      "seed": 831,
+      "repeat": 0
+    },
+    {
+      "client": "opencode",
+      "task": "engineering",
+      "seed": 931,
+      "repeat": 0
+    },
+    {
+      "client": "codex",
+      "task": "engineering",
+      "seed": 1031,
+      "repeat": 0
+    },
+    {
+      "client": "claude",
+      "task": "migration",
+      "seed": 841,
+      "repeat": 0
+    },
+    {
+      "client": "opencode",
+      "task": "migration",
+      "seed": 941,
+      "repeat": 0
+    },
+    {
+      "client": "codex",
+      "task": "migration",
+      "seed": 1041,
+      "repeat": 0
+    },
+    {
+      "client": "claude",
+      "task": "expenses",
+      "seed": 851,
+      "repeat": 0
+    },
+    {
+      "client": "opencode",
+      "task": "expenses",
+      "seed": 951,
+      "repeat": 0
+    },
+    {
+      "client": "codex",
+      "task": "expenses",
+      "seed": 1051,
+      "repeat": 0
+    },
+    {
+      "client": "claude",
+      "task": "engineering",
+      "seed": 1831,
+      "repeat": 1
+    },
+    {
+      "client": "opencode",
+      "task": "engineering",
+      "seed": 1931,
+      "repeat": 1
+    },
+    {
+      "client": "codex",
+      "task": "engineering",
+      "seed": 2031,
+      "repeat": 1
+    },
+    {
+      "client": "claude",
+      "task": "migration",
+      "seed": 1841,
+      "repeat": 1
+    },
+    {
+      "client": "opencode",
+      "task": "migration",
+      "seed": 1941,
+      "repeat": 1
+    },
+    {
+      "client": "codex",
+      "task": "migration",
+      "seed": 2041,
+      "repeat": 1
+    },
+    {
+      "client": "claude",
+      "task": "expenses",
+      "seed": 1851,
+      "repeat": 1
+    },
+    {
+      "client": "opencode",
+      "task": "expenses",
+      "seed": 1951,
+      "repeat": 1
+    },
+    {
+      "client": "codex",
+      "task": "expenses",
+      "seed": 2051,
+      "repeat": 1
+    },
+    {
+      "client": "claude",
+      "task": "engineering",
+      "seed": 2831,
+      "repeat": 2
+    },
+    {
+      "client": "opencode",
+      "task": "engineering",
+      "seed": 2931,
+      "repeat": 2
+    },
+    {
+      "client": "codex",
+      "task": "engineering",
+      "seed": 3031,
+      "repeat": 2
+    },
+    {
+      "client": "opencode",
+      "task": "expenses",
+      "seed": 2951,
+      "repeat": 2
+    }
+  ],
+  "updated_at": "2026-10-27T04:16:30.442586+00:00",
   "accepted_sessions": 16,
   "qualifying_long_sessions": 16,
   "current_case": {
-    "index": 17,
-    "client": "opencode",
+    "index": 18,
+    "client": "codex",
     "task": "expenses",
-    "seed": 1951,
+    "seed": 2051,
     "repeat": 1
   }
 }

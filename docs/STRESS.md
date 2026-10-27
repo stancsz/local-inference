@@ -73,3 +73,11 @@ The monitor verifies a live process handle and samples total host occupancy. The
 - Refreshed text/tool, OpenAI, Responses and 256k/1M retention checks passed. The legacy productivity validator initially rejected a correct explicit artifact mapping; acceptance now permits that optional field only with exact manifest filenames. Wrong arithmetic and swapped mappings remain rejected.
 
 Final acceptance rates, latency distributions, memory observations and independent trace review remain pending. Short preflight/setup failures do not count as completed long sessions. No universal model-quality, retention-equivalence, cloud-savings or simultaneous 64k-under-14-GB claim follows from this campaign.
+
+## Reviewed interruption and fixed continuation
+
+The second OpenCode expense sample (seed 1951) stopped after one 240-second turn with repeated identical writes, incomplete workflow evidence and failed hidden tests. It remains rejected and cannot count toward long-session coverage. Its exact receipt and native trace are preserved in `evidence/stress-failures/opencode-expenses-r1`; `stress-failure-recovery.json` records their hashes and the continuation plan.
+
+The controller accepts an explicit receipt path and SHA256 acknowledgment for this reviewed short failure. This only permits continuing past it; acceptance, frozen source checks, local routing, nine-turn requirements and timeouts are unchanged. The original remaining four cases run unchanged, followed by one predeclared OpenCode expense sample (repeat 2, seed 2951). Thus there are 22 planned attempts targeting 21 qualifying long sessions, seven per client. The extra sample has no further retry or timeout extension if it fails. All outcomes remain in the report denominator; final independent review is still required.
+
+Recovery verification: eight acknowledgment/provenance regression checks and the full 52-test project suite passed with the frozen candidate on `PYTHONPATH`. An unscoped pytest invocation collected archived/snapshot fixtures and failed collection; a subsequent invocation without the candidate path could not import `sift.dynamic`. Neither was a product test result. The documented candidate environment plus `pytest tests` is the applicable suite.

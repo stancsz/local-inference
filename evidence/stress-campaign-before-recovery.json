@@ -1,0 +1,307 @@
+{
+  "state": "attention_required",
+  "controller_pid": 260152,
+  "upstream": "http://127.0.0.1:8090/v1",
+  "controller_sha256": "0fe9636f78a30629ee41f6130a4046b31cbcbe7954a2adaad2dd99844ece0713",
+  "planned_sessions": 21,
+  "minimum_active_seconds": 185,
+  "minimum_user_turns": 9,
+  "gateway_image": "sha256:0441d3d28a6cb1411f4e390eb95cb2786e87fb9dab03b7f3cffba60d632e3189",
+  "source_sha256": {
+    "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "stress.cli_acceptance": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  },
+  "sessions": [
+    {
+      "case": {
+        "client": "claude",
+        "task": "engineering",
+        "seed": 831,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/claude-engineering-r0/result.json",
+      "sha256": "652ae90ce5d8bdef0ab7c6758555f0c915ec542f7830fb8e886a096d341e5d0c",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 980.493,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "engineering",
+        "seed": 931,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/opencode-engineering-r0-attempt-1793060019/result.json",
+      "sha256": "b1849a92384b56fefe2bc25943ecf4211901c7bf643f46ca26b2f5447b87e07b",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1069.701,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "engineering",
+        "seed": 1031,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/codex-engineering-resume-writable/result.json",
+      "sha256": "aa6219bfb709d71b53e3b61578240dd5ea691d0d5f773585137682b3ddf7fea3",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 863.291,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "migration",
+        "seed": 841,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/claude-migration-r0/result.json",
+      "sha256": "94a985d73dec9516bcbe48df0407b5d5f1b9e6b64e40310e589e2585aa10493b",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1067.898,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "migration",
+        "seed": 941,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/opencode-migration-r0/result.json",
+      "sha256": "d037b752cd9be8d9a36903d91e7177bec3bd3329b43305d073cb16049c0c2a20",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 967.795,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "migration",
+        "seed": 1041,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/codex-migration-r0/result.json",
+      "sha256": "f67a746d30661be52c1fc7c6f7d75d0100585fd5f46f46aca107988560f8c2d9",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 849.925,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "expenses",
+        "seed": 851,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/claude-expenses-r0/result.json",
+      "sha256": "e737cdada3b7f3039e3bfd3d571676670b065e82f6554b94d6451ef9d427e4c0",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1079.427,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "expenses",
+        "seed": 951,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/opencode-expenses-r0/result.json",
+      "sha256": "7b472fc15289ab883aaf67dcfbd3c35a806004d28c2cf6aabe7dd388cff3d292",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1086.017,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "expenses",
+        "seed": 1051,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/codex-expenses-r0/result.json",
+      "sha256": "1c2f32c80a1efb21588124725fc8d21451f34dad40e965dbb5d8ae51b49f3def",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 959.153,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "engineering",
+        "seed": 1831,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/claude-engineering-r1/result.json",
+      "sha256": "97a1d0b598d22ab1988d5c1f0b410853c63abb78bed317261988aba88c919fcc",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1005.25,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "engineering",
+        "seed": 1931,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/opencode-engineering-r1/result.json",
+      "sha256": "7717b86e2217228874497e1fff3b3169a2fb6ba692ee6b3fd67fd36797d42290",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1060.94,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "engineering",
+        "seed": 2031,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/codex-engineering-r1/result.json",
+      "sha256": "905b6d8fdea7d01ec4b3b3de1bbc23b9526c67b9b734f36995741edaf7ed185f",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 779.767,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "migration",
+        "seed": 1841,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/claude-migration-r1/result.json",
+      "sha256": "36925d2a2309d345aca4227a5d4458ee985ede2e241eca42682cacba8f46269d",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 964.764,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "migration",
+        "seed": 1941,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/opencode-migration-r1/result.json",
+      "sha256": "e1c7a7c77d716f7276990c9b44315e9857eb6283b9f01dd4fab7c8c16f53b789",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1060.022,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "migration",
+        "seed": 2041,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/codex-migration-r1/result.json",
+      "sha256": "261e326261b7dd282488a017606360b5391410843662bcfc39fb4432d63b337d",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 766.871,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "expenses",
+        "seed": 1851,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/claude-expenses-r1/result.json",
+      "sha256": "a151187102a8ccce8103d42515d0f6628ed86a1bad37f94f1d02ad0e3ec85758",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 946.823,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "expenses",
+        "seed": 1951,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/opencode-expenses-r1/result.json",
+      "sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
+      "accepted": false,
+      "qualifying_long_session": false,
+      "active_client_seconds": 240.348,
+      "turns": 1,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "reused_existing_accepted_receipt": false
+    }
+  ],
+  "scope": "Frozen uncommitted Sift candidate; real native CLIs in synthetic evolving workspaces. First-stage Sift hook uses LiteLLM counting; final gateway Sift uses the backend native full-request counter. No scripted idle padding or cloud inference.",
+  "updated_at": "2026-10-27T04:07:13.942420+00:00",
+  "accepted_sessions": 16,
+  "qualifying_long_sessions": 16,
+  "current_case": {
+    "index": 17,
+    "client": "opencode",
+    "task": "expenses",
+    "seed": 1951,
+    "repeat": 1
+  }
+}
