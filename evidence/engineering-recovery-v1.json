@@ -1,0 +1,103 @@
+{
+  "artifact": "engineering-recovery-v1",
+  "reviewed_at": "2026-10-27T06:16:17.132905+00:00",
+  "kind": "separate deterministic code fixture; not a local-Qwen generation result",
+  "worker_handoff": {
+    "complete": false,
+    "reason": "error_max_turns",
+    "requested_cli_max_turns": 24,
+    "reported_num_turns": 25,
+    "host_timeout_seconds": 600,
+    "exit": {
+      "exit_code": 1,
+      "alias": "local-inference-worker-1adb6a33d1d1",
+      "route": "http://127.0.0.1:4000",
+      "model": "default"
+    },
+    "revocation": {
+      "alias": "local-inference-worker-1adb6a33d1d1",
+      "revoked": true
+    },
+    "artifacts": "Candidate, tests and genuine before-fix output produced; no final worker JSON/verdict. Initial candidate and unfinished test bytes preserved separately."
+  },
+  "source_sha256": {
+    "baseline": "5e21df06a3f66f8c27a2141e2af3e4f0d043804eec3259d9ee5dc18a71f5cbf0",
+    "candidate": "b26073a89434f7552e8f66dcfaad886a76b46add97d7a0b88c9961f705714b56",
+    "regression_tests": "c3c9ec7d4a2eb451c61ba4ff475591deeb2c5cd682288d00a540b175631189d3",
+    "campaign": "9729861da13a42437ee8fae41a2b9283f58f720a69cf7dff3b29e67c63329778",
+    "worker_before_fix_output": "f41099c4a0c7d8dcab515196f5a277df9516827f6c93788e529f0fae4723e37f"
+  },
+  "parent_review": {
+    "owner": "commander inspection and verification of partial handoff",
+    "corrections": [
+      "Removed duplicated misindented test code left by the interrupted worker and removed a valid bound from its malformed-bound loop.",
+      "Added three failing large-finite-integer tests; finite checks now apply only to floats, preventing integer-to-float overflow."
+    ],
+    "worker_before_repair": "26 failed, 18 passed; earlier worker test revision, captured before candidate repair",
+    "initial_collection_issue": "Unfinished worker test file had IndentationError; fixed before accepting test results.",
+    "repaired_test_suite_against_frozen_bad_baseline": "23 failed, 18 passed",
+    "initial_candidate_after_test_repair": "41 passed",
+    "large_integer_checks_before_parent_fix": "3 failed, 41 passed",
+    "final_same_test_suite_against_frozen_bad_baseline": "26 failed, 18 passed",
+    "final_recovery_regressions": "44 passed",
+    "full_project_suite": {
+      "passed": 114,
+      "seconds": 6.15
+    }
+  },
+  "behavior_checks": {
+    "original_stage_behavior": 9,
+    "existing_additional_probes": 9,
+    "all_passed": true,
+    "limits": "Offline code behavior only. Historical-evidence tests are excluded; no synthetic evidence file, model inference, task session or campaign-count change."
+  },
+  "reproduce": "python -B -m recovery.check_fixture --task engineering --candidate recovery/clamp_v1.py",
+  "regression_command": "python -B -m pytest -q tests/test_engineering_recovery.py",
+  "captured_files": [
+    {
+      "file": "evidence/engineering-recovery-v1-worker.jsonl.gz",
+      "raw_sha256": "3d60bcf50d4d8fc8adf023295a61b54436fd80f1b47f40423020e05eec19bb4c"
+    },
+    {
+      "file": "evidence/engineering-recovery-v1-worker.stderr.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "file": "evidence/engineering-recovery-v1-parent-red.txt.gz",
+      "raw_sha256": "c884cdfb66e9d6d5b8b165acd3fe81f4e9b9ed4d7afc15380afbd6f415343c5c"
+    },
+    {
+      "file": "evidence/engineering-recovery-v1-parent-first-green.txt.gz",
+      "raw_sha256": "a07f6db074ebaa9858bb3adc82be612bccc78a61b4695dc8a800c4f9dfdb4fb4"
+    },
+    {
+      "file": "evidence/engineering-recovery-v1-large-int-red.txt.gz",
+      "raw_sha256": "dc702a4fed914982b25b3ae91a44af281bdb378e85d51287fc017d775d5f0d29"
+    },
+    {
+      "file": "evidence/engineering-recovery-v1-parent-green.txt.gz",
+      "raw_sha256": "32c9a06409b9f0c8bff002559b2663354e68fb03237894c671a1116b402af72d"
+    },
+    {
+      "file": "evidence/engineering-recovery-v1-final-baseline-red.txt.gz",
+      "raw_sha256": "c60f15d422490ea44b26e8098045aa382c1449efb9a1d7def32b35f859f5d15a"
+    },
+    {
+      "file": "evidence/engineering-recovery-v1-full-suite.txt.gz",
+      "raw_sha256": "cf017b903c4c1460e5aa3fa7fd10e20be8392acca27d83e5a4e170d3a88564ad"
+    }
+  ],
+  "campaign_unchanged": true,
+  "qualifying_sessions": 19,
+  "required_sessions": 21,
+  "shortfall": 2,
+  "limits": [
+    "No frozen artifact, seed, timeout, rejected outcome or source epoch was changed.",
+    "No task inference or new qualifying session occurred. Task inference remains :8090; supporting worker used :4000/default.",
+    "This repair does not prove that local Qwen generates corrected code or resolve migration defects/full-goal/unattended-production acceptance."
+  ],
+  "worker_snapshots_sha256": {
+    "candidate": "fdb9209360437873d856c2dd59b62190f438bf645ccc35d61a3ba701497ac169",
+    "tests": "e06276a1959844c13ccb629b64ef189ee002608d8ddaf16c080192af5d367dac"
+  }
+}

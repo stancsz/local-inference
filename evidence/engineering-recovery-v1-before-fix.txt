@@ -1,0 +1,338 @@
+..FFFFFFFFFFFFFFFFFFFFFFFFFF................                             [100%]
+================================== FAILURES ===================================
+__________________ test_clamp_all_empty_validates_lower[nan] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = nan
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_all_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:71: Failed
+__________________ test_clamp_all_empty_validates_lower[inf] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = inf
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_all_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:71: Failed
+___________________ test_clamp_all_empty_validates_lower[5] ___________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = 5
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_all_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:71: Failed
+_________________ test_clamp_all_empty_validates_lower[False] _________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = False
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_all_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:71: Failed
+___________________ test_clamp_all_empty_validates_lower[0] ___________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = '0'
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_all_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:71: Failed
+_________________ test_clamp_all_empty_validates_lower[None] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = None
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_all_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:71: Failed
+__________________ test_clamp_all_empty_validates_upper[nan] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = nan
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_all_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:77: Failed
+_________________ test_clamp_all_empty_validates_upper[-inf] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = -inf
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_all_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:77: Failed
+___________________ test_clamp_all_empty_validates_upper[2] ___________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = 2
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_all_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:77: Failed
+_________________ test_clamp_all_empty_validates_upper[True] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = True
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_all_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:77: Failed
+__________________ test_clamp_all_empty_validates_upper[100] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = '100'
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_all_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:77: Failed
+_________________ test_clamp_all_empty_validates_upper[None] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = None
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_all_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:77: Failed
+________________ test_clamp_report_empty_validates_lower[nan] _________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = nan
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_report_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:83: Failed
+________________ test_clamp_report_empty_validates_lower[inf] _________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = inf
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_report_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:83: Failed
+_________________ test_clamp_report_empty_validates_lower[5] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = 5
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_report_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:83: Failed
+_______________ test_clamp_report_empty_validates_lower[False] ________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = False
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_report_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:83: Failed
+_________________ test_clamp_report_empty_validates_lower[0] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = '0'
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_report_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:83: Failed
+________________ test_clamp_report_empty_validates_lower[None] ________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_lower = None
+
+    @pytest.mark.parametrize("bad_lower", [float("nan"), float("inf"), 5, False, "0", None])
+    def test_clamp_report_empty_validates_lower(candidate, bad_lower):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:83: Failed
+________________ test_clamp_report_empty_validates_upper[nan] _________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = nan
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_report_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:89: Failed
+________________ test_clamp_report_empty_validates_upper[-inf] ________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = -inf
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_report_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:89: Failed
+_________________ test_clamp_report_empty_validates_upper[2] __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = 2
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_report_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:89: Failed
+________________ test_clamp_report_empty_validates_upper[True] ________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = True
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_report_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:89: Failed
+________________ test_clamp_report_empty_validates_upper[100] _________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = '100'
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_report_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:89: Failed
+________________ test_clamp_report_empty_validates_upper[None] ________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+bad_upper = None
+
+    @pytest.mark.parametrize("bad_upper", [float("nan"), float("-inf"), 2, True, "100", None])
+    def test_clamp_report_empty_validates_upper(candidate, bad_upper):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:89: Failed
+_______________ test_clamp_all_empty_generator_validates_bounds _______________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+
+    def test_clamp_all_empty_generator_validates_bounds(candidate):
+>       with pytest.raises((TypeError, ValueError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_engineering_recovery.py:94: Failed
+__________________ test_clamp_all_empty_specific_error_types __________________
+
+candidate = <module 'clamp_candidate_v1' from 'C:\\Users\\stanc\\github\\local-inference\\recovery\\clamp_v1.py'>
+
+    def test_clamp_all_empty_specific_error_types(candidate):
+>       with pytest.raises(TypeError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'TypeError'>
+
+tests\test_engineering_recovery.py:101: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_lower[nan]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_lower[inf]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_lower[5]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_lower[False]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_lower[0]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_lower[None]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_upper[nan]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_upper[-inf]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_upper[2]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_upper[True]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_upper[100]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_validates_upper[None]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_lower[nan]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_lower[inf]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_lower[5]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_lower[False]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_lower[0]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_lower[None]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_upper[nan]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_upper[-inf]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_upper[2]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_upper[True]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_upper[100]
+FAILED tests/test_engineering_recovery.py::test_clamp_report_empty_validates_upper[None]
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_generator_validates_bounds
+FAILED tests/test_engineering_recovery.py::test_clamp_all_empty_specific_error_types
+26 failed, 18 passed in 0.57s

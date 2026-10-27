@@ -7,3 +7,7 @@
 # Versioned recovery fixtures retain their recorded release byte hashes.
 /recovery/expenses_v1.py -text
 /tests/test_expense_recovery.py -text
+/recovery/clamp_v1.py -text
+/tests/test_engineering_recovery.py -text
+/recovery/check_fixture.py -text
+/evidence/engineering-recovery-v1-before-fix.txt -text -whitespace
