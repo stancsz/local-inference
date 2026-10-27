@@ -1,0 +1,59 @@
+{
+  "verdict": "NOT_READY",
+  "scopes": {
+    "publication": "READY",
+    "full_goal": "NOT_READY"
+  },
+  "reviewed_revision": "c5415ad",
+  "actual_evidence_reviewed": [
+    "evidence/balanced-v2-plan.json",
+    "evidence/balanced-v2-state.json",
+    "evidence/balanced-v2-parent-review.json",
+    "evidence/stress-campaign.json",
+    "evidence/supplement-v1-parent-review.json",
+    "evidence/stress-memory-aggregate.json",
+    "docs/STRESS_RESULTS.md",
+    "TECH_DEBT.md",
+    "GOAL.md",
+    "AGENTS.md",
+    "stress/balanced_review_v2.py",
+    "evidence/balanced-v2-sessions/ (all 9 case dirs: result.json, workspace/task.py, workspace/test_task.py, turn-*.jsonl.gz, turn-*.hidden-tests.txt.gz, turn-*.stderr.txt.gz, requests/*.json.gz.gz)"
+  ],
+  "checks_executed": [
+    "python tmp/stress/check-balanced-publication.py -> 518 files, 0 mismatches, 0 credential hits, candidate_total 23, clients claude8/opencode9/codex6, full_goal_complete false",
+    "python -m stress.verify_publication --check-only -> published_sessions 21, native_turns 189, fixtures 63, fixture_mismatches 0, native_budget_checks 935, rejected_attempts 9, live_frozen_sources_match true",
+    "python -m pytest tests/test_balanced_review.py tests/test_supplement_review.py -q -> 29 passed",
+    "python -m pytest tests -q -> 301 passed in 22.29s",
+    "Independent gzip.decompress capture scan of all 310 archived request captures for 'APPROVED deployment setting': present in claude-incident(42/42), opencode-incident(42/42), opencode-release-manifest(43/43); ABSENT in claude-release-manifest requests 42-46 (of 47), codex-incident-log requests 41-42 (of 43), codex-release-manifest requests 32-59 (of 60) - independently reproducing the documented source-omission rejections, not relying on the audit boolean",
+    "Independent per-turn public-fixture regeneration via stress.portable_tasks_v2.stage(seed+index) and SHA256 comparison against result.json turns[*].public_tests_sha256 for 5 cases: all match",
+    "Independent per-client receipt counting: original matrix qualifying claude7/opencode6/codex6=19 of 22 attempts; prior supplement +1 opencode; balanced-v2 qualified claude1/opencode2/codex0 -> aggregate 23 (claude8/opencode9/codex6)",
+    "Cross-check of runner audits vs capture files gold_retained flags for all 9 cases: identical index sets (0,0,5,0,0,2,28,0,0) - no flag disagreement",
+    "Native context bound check from audits: context_window 40960, output_reserve 4096, fixed 256; max forwarded tokens per case 32206-32768 (all <= 32768 target), max raw input 118600-154743",
+    "Read final task.py for accepted cases (opencode release-manifest, opencode/claude incident-log) and rejected cases (opencode/codex expense, codex/claude release-manifest)",
+    "Read archived hidden-test outputs: opencode/codex expense FAIL with real Food vs food case-sensitive grouping split; claude expense turn-00 shows 'Ran 3 tests ... OK'; codex-release-manifest turn-08 hidden 'Ran 2 tests OK' but native jsonl has no turn/terminal completion event (16 command_execution items, last turn timed out)",
+    "Reference-access scan of all archived session bytes for test_portable_tasks/incident_reference/manifest_reference/recovery fixtures: no hits (only the literal word 'solution' inside task prompt text)",
+    "Read stress/balanced_review_v2.py to characterize what the parent replay actually verifies"
+  ],
+  "findings": [
+    "Publication scope is sound: byte identity over 518 manifest files, 0 mismatches, 0 credential hits, 29 review guards and 301 project tests pass; my independently regenerated public fixture hashes match the archived per-turn receipts exactly. Publication READY.",
+    "Aggregate session count 23 >= 21 is met and is arithmetically correct (original 19 + prior supplement 1 + balanced-v2 3). I independently confirmed all three components from the raw receipts.",
+    "Seven-per-client gate is UNMET: Codex has 6 qualifying sessions (needs 7). Claude 8 and OpenCode 9 exceed it. This alone blocks full-goal acceptance.",
+    "Three rejections are genuine first-stage historical-source omissions and I confirmed them from the captures themselves, not from flags: claude-release-manifest requests 42-46, codex-incident-log requests 41-42, codex-release-manifest requests 32-59 lose the '[message 0 user] APPROVED deployment setting: acceptance_delay_seconds=37' excerpt while HTTP status stays 200 and stored evidence.json keeps the correct value 37. No downstream artifact damage is claimed and none is observed.",
+    "The final Codex manifest case rejection is independently confirmed on two independent grounds: turn-08 native jsonl ends after 16 completed command_execution items with no turn.completed/terminal event (240s deadline), and the same request range 32-59 omits the original source fact. Its final implementation does pass public/hidden/parent-seed behavior replay, so this is a schedule+retention failure, not a code failure. Correctly not promoted.",
+    "Rejected expense cases are genuinely defective, not merely misgraded: opencode-expense and codex-expense both produce 'Ran 3 tests ... FAILED' with an actual case-sensitive category split {'Food':1.00,'food':2.00} vs expected {'Food':3.00}. The frozen two-test recognizer confound does not explain these away.",
+    "The frozen two-test recognizer is a real grading defect observed directly: claude-expense-audit-v2 turn-00 hidden output is 'Ran 3 tests in 0.009s OK' yet the archived native record reports final_passed=false. That case was also independently rejected on one-turn/240.257s and no terminal event, so it is not promotable, but its full expense-contract correctness was never graded and remains unverified rather than proven bad.",
+    "Parent replay is final-code replay only, not per-turn file reconstruction. stress/balanced_review_v2.py regenerates each stage's public/hidden/parent-seed test definitions and runs them against the single final workspace/task.py; it never reconstructs the file state at each turn. A session that wrote a broken intermediate implementation and later corrected it would still be recorded as passing every stage. Per-turn artifact reconstruction is therefore an unverified property of all nine cases, including the three qualified ones.",
+    "Archive captures are first-stage excerpts only, not full provider-wire payloads (stated in the plan and TECH_DEBT); omission is proven for the captured excerpt stage, not for the entire wire. The hidden and parent seeds are regenerated by the same workload generator code the reviewer can read, so 'hidden' here means unseen by the model, not independent of the workload author.",
+    "Memory claim for this epoch is whole-host occupancy only (1342 samples, 15136-15171 MiB used, max gap 5.118s); it is not isolated model+MTP residency and proves nothing about the <14 decimal GB acceptance bullet. The prior 13.62-13.83 GB delta belongs to the earlier 40k profile evidence (evidence/stress-memory-aggregate.json explicitly disclaims it). No simultaneous 64k-input and <14GB claim is established, and none is made.",
+    "Documentation is consistent with my independent observations: STRESS_RESULTS.md and TECH_DEBT.md state the same omissions, the same recognizer defect, the same Codex 6 count, the same whole-host memory caveat, and keep full-goal acceptance NOT_READY. The ledger preserves every failed outcome; no rejected receipt was promoted and no source, seed or deadline was altered (state.json seeds 2026102711..2026102719 match plan.json)."
+  ],
+  "limits": [
+    "No inference, container, restart or source modification was performed; I did not re-execute the frozen Sift/gateway runtime or regenerate any live result.",
+    "Per-turn task.py reconstruction is not possible from the archived artifacts as published (only the final workspace bytes plus native event streams and the two-test/three-test hidden receipts are archived), so per-turn code quality for the 3 qualified cases is UNVERIFIED rather than confirmed good.",
+    "Provider-wire payloads were not captured by the harness; absence of the historical fact is proven only at the captured first-stage excerpt level.",
+    "The 12/19 frozen original-matrix additional-contract probe failures were accepted as reported from the existing evidence files; I did not re-derive each of the 12 artifacts' probe results from scratch.",
+    "Host memory was reviewed as archived samples only; no live GPU residency measurement was taken, so the model+MTP <14 GB acceptance item remains carried from earlier evidence, not re-established here.",
+    "Balance of my inspection is confined to the committed revision c5415ad working tree; the untracked evidence/*.json and scripts/measure-vram.ps1 items present at session start were not treated as reviewed artifacts."
+  ],
+  "smallest_next_action": "In a separately versioned Sift source epoch (leaving the frozen balanced-v2 campaign and all six rejected outcomes untouched), reproduce the case4/case6 source-omission offline against the archived request indices 42-46 / 41-42 and confirm a fix (including the _stable_anchor-prioritizes-diagnostics hypothesis), and generalize stress/cli_acceptance.py native unittest success recognition to arbitrary test counts; then run exactly one new Codex session on a new seed so Codex reaches 7 and the seven-per-client gate is met, with per-turn task.py snapshots archived so final-code replay is no longer the only verification."
+}

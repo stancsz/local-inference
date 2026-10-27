@@ -1,0 +1,152 @@
+{
+  "at": "2026-10-27T16:03:22.297012+00:00",
+  "reviewed_revision": "c5415ad9ed26b283482d1cff77822bacfab38a71",
+  "route": "http://127.0.0.1:4000",
+  "model_alias": "default",
+  "nonauthor": true,
+  "read_only": true,
+  "attempts": [
+    {
+      "prefix": "balanced-v2-nonauthor",
+      "subtype": "error_max_turns",
+      "is_error": true,
+      "actual_cli_reported_turns": 25,
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "call_01a17e1496da72a98127eb1f",
+          "tool_input": {
+            "command": "python tmp/stress/check-balanced-publication.py 2>&1 | tail -30; echo \"EXIT=$?\"",
+            "description": "Run balanced publication check"
+          }
+        },
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "call_01a17e1496da72a98127eb20",
+          "tool_input": {
+            "command": "python -m stress.verify_publication --check-only 2>&1 | tail -30; echo \"EXIT=$?\"",
+            "description": "Run verify_publication check-only"
+          }
+        },
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "call_01a17e15a31f72428d6389bd",
+          "tool_input": {
+            "command": "python - <<'EOF'\nimport json,glob,os,gzip\nplan=json.load(open('evidence/balanced-v2-plan.json'))\npc={c['id']:c for c in plan['cases']}\nprint('plan cases',len(pc), list(pc))\nfor p in sorted(glob.glob('evidence/balanced-v2-sessions/*/result.json')):\n    d=json.load(open(p)); cid=os.path.basename(os.path.dirname(p))\n    pl=pc.get(cid)\n    print(cid,'seed',d.get('seed'),'plan_seed',pl and pl.get('seed'),'client',d.get('client'),pl and pl.get('client'),'target',d.get('target'))\nEOF"
+          }
+        }
+      ],
+      "exit": {
+        "exit_code": 1,
+        "alias": "local-inference-worker-951d886f0ac2",
+        "route": "http://127.0.0.1:4000",
+        "model": "default"
+      },
+      "revocation": {
+        "alias": "local-inference-worker-951d886f0ac2",
+        "revoked": true
+      }
+    },
+    {
+      "prefix": "balanced-v2-review-final",
+      "subtype": "success",
+      "is_error": false,
+      "actual_cli_reported_turns": 45,
+      "permission_denials": [
+        {
+          "tool_name": "Bash",
+          "tool_use_id": "call_01a17e17ead573c69c4c75e6",
+          "tool_input": {
+            "command": "python -c \"\nimport json,hashlib,os,sys\nsys.path.insert(0,'.')\nfrom stress.portable_tasks_v2 import stage\ncases={'claude-incident-log-v2':(2026102711,'incident_log'),'opencode-release-manifest-v2':(2026102712,'release_manifest'),'opencode-incident-log-v2':(2026102718,'incident_log'),'codex-release-manifest-v2':(2026102719,'release_manifest'),'claude-release-manifest-v2':(2026102714,'release_manifest')}\nfor cid,(seed,task) in cases.items():\n    r=json.load(open('evidence/balanced-v2-sessions/%s/result.json'%cid))\n    ok=True\n    for i,t in enumerate(r['turns']):\n        gen=stage(task,i,seed+i)['tests'].encode('utf-8').replace(b'\\n',os.linesep.encode())\n        h=hashlib.sha256(gen).hexdigest()\n        if h!=t['public_tests_sha256']: ok=False; print(cid,i,'MISMATCH')\n    # final workspace test file vs generated last stage\n    print(cid,'turns',len(r['turns']),'public fixture hashes ok:',ok,'final_tests_sha256',hashlib.sha256(open('evidence/balanced-v2-sessions/%s/workspace/test_task.py'%cid,'rb').read()).hexdigest()[:16])\n\"",
+            "description": "Regenerate public fixtures and compare hashes"
+          }
+        }
+      ],
+      "exit": {
+        "exit_code": 0,
+        "alias": "local-inference-worker-e35c93f475f1",
+        "route": "http://127.0.0.1:4000",
+        "model": "default"
+      },
+      "revocation": {
+        "alias": "local-inference-worker-e35c93f475f1",
+        "revoked": true
+      }
+    }
+  ],
+  "files": [
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-nonauthor-brief.txt.gz",
+      "raw_sha256": "3590171ae07d78367cc088172a765055f4e190fb501b1dd325138c38378941de"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-nonauthor-dispatch.py.gz",
+      "raw_sha256": "c69d24acfb4d6e733cf669d0ab6c5e8fe61efe57245e3f6de9865396492f3f23"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-nonauthor-worker-exit.json.gz",
+      "raw_sha256": "8bfad9c85f2346b326f46785f9cef16ea5ac7423481cc5a76da154e66b2c286a"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-nonauthor-worker-revocation.json.gz",
+      "raw_sha256": "8ec127a6fc39b1658514797b394c249cc6634cdea8ef21e3442a9ecd1dcf91f4"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-nonauthor-worker-smoke.json.gz",
+      "raw_sha256": "e1fcb9332519a16edc74972c4b7d86746e983fc7aac07d2fe25d6336789109d4"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-nonauthor-worker-tool-first.json.gz",
+      "raw_sha256": "3b6b5d77c25cae4da7c2e7c423098179377d4b95fe5e60354323adbf0574dc46"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-nonauthor-worker-tool-smoke.json.gz",
+      "raw_sha256": "8d116b015a134aeb17fef5d26f53c9084e53354a166a0a3c29adbc9cf2b96dd3"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-nonauthor-worker.jsonl.gz",
+      "raw_sha256": "d7da1c8ad5a541e3c4fdfa59eee2e7eee48b9c811d2ce380e0d1b9118d53043e"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-nonauthor-worker.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-review-final-brief.txt.gz",
+      "raw_sha256": "7e641370d11c8aa8f89144e5d144d547ceac79ed358c36fce5fa3921871d5ade"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-review-final-dispatch.py.gz",
+      "raw_sha256": "8a3dac29066b77c842308bf06b502652c2c2d6a91a281954e37a6bda7e169cc5"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-review-final-worker-exit.json.gz",
+      "raw_sha256": "d92771ded9a59aed577c91ae3b15804f479df2719f796ded008ea40a19d7128c"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-review-final-worker-revocation.json.gz",
+      "raw_sha256": "e927e83ac78071a1da08baf85e25b3f95ae062ae025f6f31edd74cabb28c01af"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-review-final-worker-smoke.json.gz",
+      "raw_sha256": "5f95a199c5579bec7da5489b31211731962d6a76a84bfbbaded9a5ca5a668eba"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-review-final-worker-tool-first.json.gz",
+      "raw_sha256": "4ea5dab9a38fb419fc95f088f43a034f30bfe37a902e88f9170b23ce5f97570c"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-review-final-worker-tool-smoke.json.gz",
+      "raw_sha256": "550b2495638d3e99bb8d9c1f58a5592d5f6b54a24730196a1fcad0cd9010e708"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-review-final-worker.jsonl.gz",
+      "raw_sha256": "954e7379c4ba60dda10fe32c5fb9c0e421bd6ebcacc499d7e364269868b9c254"
+    },
+    {
+      "file": "evidence/balanced-v2-nonauthor/balanced-v2-review-final-worker.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    }
+  ],
+  "limits": "First attempt incomplete at configured24 turns; fresh focused artifact review completed. Final run configured40 turns but CLI reports45; both original terminal events are preserved. No sealed task deadline or outcome changed. Native tool permission denials are preserved; denied commands are not checks."
+}
