@@ -3,7 +3,7 @@
   "before_checked": 39,
   "before_index_byte_mismatches": 34,
   "after": {
-    "checked": 60,
+    "checked": 63,
     "index_byte_mismatches": 0,
     "workspace_mismatches": 0,
     "files": [
@@ -222,6 +222,30 @@
         "index_sha256": "e18e8ef3495db977e600a0bb49c643335066fa19e93dadb3ac7a553f00eb1f31",
         "published_sha256": "e18e8ef3495db977e600a0bb49c643335066fa19e93dadb3ac7a553f00eb1f31",
         "original_workspace_sha256": "e18e8ef3495db977e600a0bb49c643335066fa19e93dadb3ac7a553f00eb1f31"
+      },
+      {
+        "file": "evidence/stress-sessions/codex-engineering-r2/evidence.json",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "published_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "original_workspace_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+      },
+      {
+        "file": "evidence/stress-sessions/codex-engineering-r2/task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "2bca4058bb6d973bf0020d8afa80a1b0e90791b7175452ecede674bcbdf513d2",
+        "published_sha256": "2bca4058bb6d973bf0020d8afa80a1b0e90791b7175452ecede674bcbdf513d2",
+        "original_workspace_sha256": "2bca4058bb6d973bf0020d8afa80a1b0e90791b7175452ecede674bcbdf513d2"
+      },
+      {
+        "file": "evidence/stress-sessions/codex-engineering-r2/test_task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "326807ce9c855c867a165762b5bac04f884967a3354b326057ce40096cd9ee06",
+        "published_sha256": "326807ce9c855c867a165762b5bac04f884967a3354b326057ce40096cd9ee06",
+        "original_workspace_sha256": "326807ce9c855c867a165762b5bac04f884967a3354b326057ce40096cd9ee06"
       },
       {
         "file": "evidence/stress-sessions/codex-engineering-resume-writable/evidence.json",

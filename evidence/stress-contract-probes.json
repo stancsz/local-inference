@@ -491,6 +491,52 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/codex-engineering-r2/result.json",
+      "client": "codex",
+      "task": "engineering",
+      "original_workflow_accepted": true,
+      "task_sha256": "2bca4058bb6d973bf0020d8afa80a1b0e90791b7175452ecede674bcbdf513d2",
+      "all_additional_checks_passed": true,
+      "checks": [
+        {
+          "name": "clamp_all empty invalid lower",
+          "passed": true
+        },
+        {
+          "name": "clamp_all empty reversed bounds",
+          "passed": true
+        },
+        {
+          "name": "clamp_all empty bool bound",
+          "passed": true
+        },
+        {
+          "name": "clamp_report empty invalid lower",
+          "passed": true
+        },
+        {
+          "name": "clamp_report empty reversed bounds",
+          "passed": true
+        },
+        {
+          "name": "clamp_report empty bool bound",
+          "passed": true
+        },
+        {
+          "name": "single-use generator",
+          "passed": true
+        },
+        {
+          "name": "generator report",
+          "passed": true
+        },
+        {
+          "name": "finite value validation",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/codex-engineering-resume-writable/result.json",
       "client": "codex",
       "task": "engineering",
