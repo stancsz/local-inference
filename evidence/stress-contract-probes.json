@@ -207,6 +207,66 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/claude-expenses-r1/result.json",
+      "client": "claude",
+      "task": "expenses",
+      "original_workflow_accepted": true,
+      "task_sha256": "45649d7fb2d8c243b0ff4173f48e012143f97421fb63077344f95754533ad42b",
+      "all_additional_checks_passed": false,
+      "checks": [
+        {
+          "name": "aggregate before HALF_EVEN rounding",
+          "passed": true
+        },
+        {
+          "name": "strip group preserve first spelling",
+          "passed": true
+        },
+        {
+          "name": "invalid amount NaN",
+          "passed": true
+        },
+        {
+          "name": "invalid amount Infinity",
+          "passed": true
+        },
+        {
+          "name": "invalid amount garbage",
+          "passed": true
+        },
+        {
+          "name": "mixed currency",
+          "passed": true
+        },
+        {
+          "name": "missing header",
+          "passed": true
+        },
+        {
+          "name": "duplicate header",
+          "passed": true
+        },
+        {
+          "name": "missing amount cell",
+          "passed": false,
+          "error": "IndexError: list index out of range"
+        },
+        {
+          "name": "unlabelled extra cell",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "quoted category with comma",
+          "passed": true
+        },
+        {
+          "name": "report blank rows order and exact total",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/claude-migration-r0/result.json",
       "client": "claude",
       "task": "migration",
@@ -957,5 +1017,5 @@
       ]
     }
   ],
-  "sessions_with_additional_failures": 11
+  "sessions_with_additional_failures": 12
 }

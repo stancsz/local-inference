@@ -3,7 +3,7 @@
   "before_checked": 39,
   "before_index_byte_mismatches": 34,
   "after": {
-    "checked": 51,
+    "checked": 54,
     "index_byte_mismatches": 0,
     "workspace_mismatches": 0,
     "files": [
@@ -102,6 +102,30 @@
         "index_sha256": "387a38ab2451e7810b89b5da27cf827d2d0b562ccbf1d00828cb8cf73acb9b1d",
         "published_sha256": "387a38ab2451e7810b89b5da27cf827d2d0b562ccbf1d00828cb8cf73acb9b1d",
         "original_workspace_sha256": "387a38ab2451e7810b89b5da27cf827d2d0b562ccbf1d00828cb8cf73acb9b1d"
+      },
+      {
+        "file": "evidence/stress-sessions/claude-expenses-r1/evidence.json",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "published_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "original_workspace_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+      },
+      {
+        "file": "evidence/stress-sessions/claude-expenses-r1/task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "45649d7fb2d8c243b0ff4173f48e012143f97421fb63077344f95754533ad42b",
+        "published_sha256": "45649d7fb2d8c243b0ff4173f48e012143f97421fb63077344f95754533ad42b",
+        "original_workspace_sha256": "45649d7fb2d8c243b0ff4173f48e012143f97421fb63077344f95754533ad42b"
+      },
+      {
+        "file": "evidence/stress-sessions/claude-expenses-r1/test_task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "730f9fa6a3b7ce14119156ef0d90330e6a464cf9822042a6b223b4628f5aeeec",
+        "published_sha256": "730f9fa6a3b7ce14119156ef0d90330e6a464cf9822042a6b223b4628f5aeeec",
+        "original_workspace_sha256": "730f9fa6a3b7ce14119156ef0d90330e6a464cf9822042a6b223b4628f5aeeec"
       },
       {
         "file": "evidence/stress-sessions/claude-migration-r0/evidence.json",
