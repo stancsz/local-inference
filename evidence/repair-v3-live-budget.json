@@ -1,0 +1,85 @@
+{
+  "requests": [
+    {
+      "scenario": "compressible_history",
+      "raw_native_tokens": 35000,
+      "audit": {
+        "compacted": true,
+        "input_tokens": 35000,
+        "forwarded_tokens": 322,
+        "omitted_estimated_tokens": 34678,
+        "preserved_recent_turns": 0,
+        "preserved_recent_tool_cycles": 0,
+        "stable_prefix_excerpts": 1,
+        "selected_excerpts": 3,
+        "method": "query_aware_extract",
+        "target_tokens": 24576,
+        "context_window": 40960,
+        "output_reserve": 32,
+        "fixed_tokens": 256,
+        "raw_native_tokens": 35000,
+        "available_tokens": 40672,
+        "ceiling_tokens": 40672,
+        "anchor_tokens": 32768,
+        "compression_ratio": 8.0,
+        "budget_policy": "request_adaptive_ratio",
+        "native_input_tokens": 322,
+        "compaction_input_sha256": "0591817c706b08e283da5eb44ce786f4faf83b7b8fa7cf8f0d92f7d05eb427a0",
+        "compaction_seconds": 0.103,
+        "selection_counting": "native full-request tokenizer",
+        "tokenizer_calls": 6,
+        "raw_native_token_limit": 1050000,
+        "decoder_headroom": 256,
+        "fitting_request_preserved": false,
+        "protected_fit_fallback": false
+      },
+      "answer": [
+        {
+          "type": "text",
+          "text": "BUDGET_REPAIR_OK"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "scenario": "protected_current_task",
+      "raw_native_tokens": 34997,
+      "audit": {
+        "compacted": false,
+        "input_tokens": 34997,
+        "forwarded_tokens": 34997,
+        "omitted_estimated_tokens": 0,
+        "preserved_recent_turns": 0,
+        "preserved_recent_tool_cycles": 0,
+        "selected_excerpts": 0,
+        "target_tokens": 34997,
+        "context_window": 40960,
+        "output_reserve": 32,
+        "fixed_tokens": 256,
+        "raw_native_tokens": 34997,
+        "available_tokens": 40672,
+        "ceiling_tokens": 40672,
+        "anchor_tokens": 32768,
+        "compression_ratio": 8.0,
+        "budget_policy": "request_adaptive_ratio",
+        "native_input_tokens": 34997,
+        "compaction_input_sha256": "36dd0f64ffedbc77b3fb078fa3cbb6530805516c61d9449a6406a8a62f9ca53b",
+        "compaction_seconds": 0.131,
+        "selection_counting": "native full-request tokenizer",
+        "tokenizer_calls": 2,
+        "raw_native_token_limit": 1050000,
+        "decoder_headroom": 256,
+        "fitting_request_preserved": true,
+        "protected_fit_fallback": true
+      },
+      "answer": [
+        {
+          "type": "text",
+          "text": "BUDGET_REPAIR_OK"
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "scope": "Actual native-window policy regression, not long-session qualification"
+}

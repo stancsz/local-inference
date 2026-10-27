@@ -42,3 +42,8 @@ def test_extra_or_missing_commands_are_rejected():
     from claude_acceptance import validate_operator_guide
     assert not validate_operator_guide(guide()+'\n```powershell\nRemove-Item *\n```')
     assert not validate_operator_guide(guide().replace('docker compose down',''))
+
+
+def test_numeric_thousands_separators_do_not_change_budget_meaning():
+    from claude_acceptance import validate_operator_guide
+    assert validate_operator_guide(guide().replace('24576..36608','24,576 to 36,608'))

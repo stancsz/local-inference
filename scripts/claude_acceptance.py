@@ -16,6 +16,7 @@ def input_budget_invariant(text):
     return bool(re.search(r'\btarget is part of the input budget(?:,|\s+and(?: is)?)\s+never added to it\b',text,re.I))
 
 def validate_operator_guide(text):
+    numeric_text=re.sub(r'(?<=\d),(?=\d)','',text)
     required={'docker compose up -d --build','curl.exe http://127.0.0.1:8090/health/readiness',
         'curl.exe http://127.0.0.1:8091/health','python scripts/claude_acceptance.py',
         'docker compose logs --no-color gateway > tmp/sift-runtime.log','docker compose down'}
@@ -23,7 +24,7 @@ def validate_operator_guide(text):
     commands={line.strip() for block in re.findall(r'```powershell\s*\n(.*?)```',text,re.S) for line in block.splitlines()}
     return (len(text.split())<=350 and required<=commands and commands<=required|configuration
         and all(term in text for term in configuration)
-        and all(term in text.lower() for term in ['adaptive','anchor','24576','36608'])
+        and all(term in numeric_text.lower() for term in ['adaptive','anchor','24576','36608'])
         and input_budget_invariant(text) and '256 tokens' in text and 'decoder headroom' in text)
 TASKS=[
  ('vram-plan', 'Read evidence/host-vram.json, evidence/runtime-vram.json and evidence/model-manifest.json. Then use the Write tool to create tmp/acceptance/vram-plan.md (at most 350 words). Include exact raw model, MTP, and combined disk byte counts from the manifest; distinguish disk size from measured runtime delta. Describe measured host process consumers and safe VRAM reclamation after saving work; never terminate DWM. Include a PowerShell verification command. Do not guess model sizes or contradict runtime evidence; mark unmeasured facts unknown. The output directory already exists. Do not explore other files. End with VRAM_PLAN_DONE.', 'vram-plan.md', 'VRAM_PLAN_DONE'),

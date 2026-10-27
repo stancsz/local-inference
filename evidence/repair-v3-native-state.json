@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-27T17:19:03.746515+00:00",
+  "controller_pid": 255412,
+  "runner_pid": 41620,
+  "state": "terminal_review_required",
+  "exit_code": 1,
+  "receipt": "C:\\Users\\stanc\\github\\local-inference\\tmp\\repair-v3-codex-manifest\\result.json",
+  "full_goal_complete": false,
+  "sealed_plan_sha256": "9813e8c044df3237daa932dff12a12a43b9d922b7b7f689c608744995bb83b8f"
+}

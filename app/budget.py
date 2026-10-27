@@ -83,12 +83,21 @@ def compact(payload, protocol='anthropic'):
     # their own native size, bounded by the window's available tokens.
     raw = native(messages)
     ceiling = min(65536, WINDOW-output-DECODER_HEADROOM)
-    # Avoid compressing (or rejecting) protected work that already fits the
-    # loaded native window. Larger requests retain the adaptive ratio policy.
-    anchor = max(TARGET, raw) if raw <= ceiling else TARGET
-    result = compact_dynamic(messages, native, context_window=WINDOW,
-        output_reserve=output, preferred_target=anchor, fixed_tokens=DECODER_HEADROOM,
-        raw_limit=1_050_000, compression_ratio=RATIO, protocol=protocol)
+    def select(anchor):
+        return compact_dynamic(messages, native, context_window=WINDOW,
+            output_reserve=output, preferred_target=anchor, fixed_tokens=DECODER_HEADROOM,
+            raw_limit=1_050_000, compression_ratio=RATIO, protocol=protocol)
+    protected_fit_fallback = False
+    try:
+        result = select(TARGET)
+    except CompactionError as error:
+        # Preserve fitting protected work only when the normal ratio policy
+        # cannot represent it. Ordinary history still gets compacted, keeping
+        # prefill cost bounded. All other guards/errors remain fail-closed.
+        if error.code != 'active_too_large' or raw > ceiling:
+            raise
+        result = select(max(TARGET, raw))
+        protected_fit_fallback = True
     p=restore(result.messages)
     actual = count(p,protocol)
     if actual + output + DECODER_HEADROOM > WINDOW:
@@ -100,7 +109,8 @@ def compact(payload, protocol='anthropic'):
         raw_native_token_limit=1_050_000, decoder_headroom=DECODER_HEADROOM,
         context_window=WINDOW, budget_policy='request_adaptive_ratio',
         compression_ratio=RATIO, anchor_tokens=TARGET)
-    audit['fitting_request_preserved'] = raw <= ceiling
+    audit['fitting_request_preserved'] = not audit['compacted'] and raw <= ceiling
+    audit['protected_fit_fallback'] = protected_fit_fallback
     return p, audit
 
 def compaction_digest(payload):
