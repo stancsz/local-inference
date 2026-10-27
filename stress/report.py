@@ -36,6 +36,9 @@ def main():
             'native_bounds_passed':bounds,'additional_contract_passed':probe['all_additional_checks_passed'] if probe else None})
     all_receipts=[]
     paths={r['receipt'] for r in rows}
+    sift_modules=('sift.core','sift.dynamic','sift.litellm_proxy','sift.litellm_responses')
+    published=json.loads((ROOT/'evidence/stress-published.json').read_text())
+    published_hashes={row['receipt_raw_sha256'] for row in published['sessions'] if row.get('verified')}
     for path in sorted((ROOT/'tmp/stress/sessions').glob('*/result.json')):
         record=json.loads(path.read_text())
         if not record.get('accepted') and not record.get('failure'):
@@ -43,8 +46,10 @@ def main():
         relative=path.relative_to(ROOT).as_posix()
         all_receipts.append({'receipt':relative,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
             'client':record['client'],'task':record['task'],'accepted':bool(record.get('accepted')),
+            'upstream':record.get('upstream'),'published_raw_evidence_verified':hashlib.sha256(path.read_bytes()).hexdigest() in published_hashes,
             'turns':len(record.get('turns',[])),'active_seconds':record.get('active_client_seconds',0),
             'source_matches_current':record.get('source_sha256')==campaign['source_sha256'],
+            'sift_candidate_matches_current':all(record.get('source_sha256',{}).get(k)==campaign['source_sha256'][k] for k in sift_modules),
             'in_controller_outcomes':relative in paths})
     groups=[]
     for client in ('claude','opencode','codex'):
@@ -62,6 +67,10 @@ def main():
         'failed_attempts':sum(not r['accepted'] for r in rows),
         'native_budget_checks':sum(r['native_budget_checks'] for r in rows),
         'groups':groups,'sessions':rows,'all_retained_terminal_receipts':all_receipts,
+        'historical_accepted_nine_turn_samples_with_same_sift':[
+            row for row in all_receipts if not row['source_matches_current'] and row['sift_candidate_matches_current']
+            and row['accepted'] and row['turns']>=9 and row['active_seconds']>180
+            and row['upstream']=='http://127.0.0.1:8090/v1' and row['published_raw_evidence_verified']],
         'independent_final_acceptance':'pending',
         'limits':[
             'Three synthetic task families use real native CLIs, persisted sessions, local Qwen and filesystem edits; this is not a production repository trial.',

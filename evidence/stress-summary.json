@@ -1,27 +1,27 @@
 {
-  "captured_at": "2026-10-27T04:28:37.539331+00:00",
+  "captured_at": "2026-10-27T04:43:19.767579+00:00",
   "controller_state": "running",
   "planned_attempts": 22,
-  "terminal_attempts": 18,
-  "harness_accepted": 16,
-  "nine_turn_long_sessions": 16,
+  "terminal_attempts": 19,
+  "harness_accepted": 17,
+  "nine_turn_long_sessions": 17,
   "failed_attempts": 2,
-  "native_budget_checks": 739,
+  "native_budget_checks": 783,
   "groups": [
     {
       "client": "claude",
-      "terminal_attempts": 6,
-      "harness_accepted": 6,
-      "nine_turn_long_sessions": 6,
+      "terminal_attempts": 7,
+      "harness_accepted": 7,
+      "nine_turn_long_sessions": 7,
       "accepted_tasks": {
-        "engineering": 2,
+        "engineering": 3,
         "migration": 2,
         "expenses": 2
       },
       "accepted_active_seconds": {
-        "samples": 6,
-        "minimum": 946.823,
-        "median": 992.8715,
+        "samples": 7,
+        "minimum": 898.15,
+        "median": 980.493,
         "maximum": 1079.427
       },
       "additional_contract_failures": 4
@@ -441,6 +441,27 @@
       "native_budget_checks": 13,
       "native_bounds_passed": true,
       "additional_contract_passed": null
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "engineering",
+        "seed": 2831,
+        "repeat": 2
+      },
+      "receipt": "tmp/stress/sessions/claude-engineering-r2/result.json",
+      "sha256": "9dd082676c274b1cf36d84352606aff9479daae0bbba0b6cf1afd3ba4d1f8734",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 898.15,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": false,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 44,
+      "native_bounds_passed": true,
+      "additional_contract_passed": true
     }
   ],
   "all_retained_terminal_receipts": [
@@ -450,9 +471,12 @@
       "client": "claude",
       "task": "engineering",
       "accepted": false,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": false,
       "turns": 1,
       "active_seconds": 1.811,
       "source_matches_current": false,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": false
     },
     {
@@ -461,9 +485,12 @@
       "client": "claude",
       "task": "engineering",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1040.878,
       "source_matches_current": false,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": false
     },
     {
@@ -472,9 +499,12 @@
       "client": "claude",
       "task": "engineering",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 980.493,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -483,9 +513,26 @@
       "client": "claude",
       "task": "engineering",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1005.25,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/claude-engineering-r2/result.json",
+      "sha256": "9dd082676c274b1cf36d84352606aff9479daae0bbba0b6cf1afd3ba4d1f8734",
+      "client": "claude",
+      "task": "engineering",
+      "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
+      "turns": 9,
+      "active_seconds": 898.15,
+      "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -494,9 +541,12 @@
       "client": "claude",
       "task": "expenses",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1079.427,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -505,9 +555,12 @@
       "client": "claude",
       "task": "expenses",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 946.823,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -516,9 +569,12 @@
       "client": "claude",
       "task": "migration",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1067.898,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -527,9 +583,12 @@
       "client": "claude",
       "task": "migration",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 964.764,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -538,9 +597,12 @@
       "client": "codex",
       "task": "engineering",
       "accepted": false,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": false,
       "turns": 1,
       "active_seconds": 170.512,
       "source_matches_current": false,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": false
     },
     {
@@ -549,9 +611,12 @@
       "client": "codex",
       "task": "engineering",
       "accepted": false,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": false,
       "turns": 0,
       "active_seconds": 0.0,
       "source_matches_current": false,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": false
     },
     {
@@ -560,9 +625,12 @@
       "client": "codex",
       "task": "engineering",
       "accepted": false,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": false,
       "turns": 1,
       "active_seconds": 148.0,
       "source_matches_current": false,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": false
     },
     {
@@ -571,9 +639,12 @@
       "client": "codex",
       "task": "engineering",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 779.767,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -582,9 +653,12 @@
       "client": "codex",
       "task": "engineering",
       "accepted": false,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": false,
       "turns": 2,
       "active_seconds": 229.565,
       "source_matches_current": false,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": false
     },
     {
@@ -593,9 +667,12 @@
       "client": "codex",
       "task": "engineering",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 863.291,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -604,9 +681,12 @@
       "client": "codex",
       "task": "engineering",
       "accepted": false,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": false,
       "turns": 2,
       "active_seconds": 130.015,
       "source_matches_current": false,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": false
     },
     {
@@ -615,9 +695,12 @@
       "client": "codex",
       "task": "expenses",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 959.153,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -626,9 +709,12 @@
       "client": "codex",
       "task": "expenses",
       "accepted": false,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": false,
       "turns": 1,
       "active_seconds": 240.326,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -637,9 +723,12 @@
       "client": "codex",
       "task": "migration",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 849.925,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -648,9 +737,12 @@
       "client": "codex",
       "task": "migration",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 766.871,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -659,9 +751,12 @@
       "client": "opencode",
       "task": "engineering",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1067.216,
       "source_matches_current": false,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": false
     },
     {
@@ -670,9 +765,12 @@
       "client": "opencode",
       "task": "engineering",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1069.701,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -681,9 +779,12 @@
       "client": "opencode",
       "task": "engineering",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1060.94,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -692,9 +793,12 @@
       "client": "opencode",
       "task": "expenses",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1086.017,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -703,9 +807,12 @@
       "client": "opencode",
       "task": "expenses",
       "accepted": false,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": false,
       "turns": 1,
       "active_seconds": 240.348,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -714,9 +821,12 @@
       "client": "opencode",
       "task": "migration",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 967.795,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
     },
     {
@@ -725,10 +835,43 @@
       "client": "opencode",
       "task": "migration",
       "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
       "turns": 9,
       "active_seconds": 1060.022,
       "source_matches_current": true,
+      "sift_candidate_matches_current": true,
       "in_controller_outcomes": true
+    }
+  ],
+  "historical_accepted_nine_turn_samples_with_same_sift": [
+    {
+      "receipt": "tmp/stress/sessions/claude-engineering-002/result.json",
+      "sha256": "76b810542cda6d935f08c8c4dd3364e501c215080b51195dac8c332992fdef93",
+      "client": "claude",
+      "task": "engineering",
+      "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
+      "turns": 9,
+      "active_seconds": 1040.878,
+      "source_matches_current": false,
+      "sift_candidate_matches_current": true,
+      "in_controller_outcomes": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-engineering-r0/result.json",
+      "sha256": "dfb3c8535cbfabb2c45871e67afbda0dd437d55761cb62f1c32c9b5a5708859f",
+      "client": "opencode",
+      "task": "engineering",
+      "accepted": true,
+      "upstream": "http://127.0.0.1:8090/v1",
+      "published_raw_evidence_verified": true,
+      "turns": 9,
+      "active_seconds": 1067.216,
+      "source_matches_current": false,
+      "sift_candidate_matches_current": true,
+      "in_controller_outcomes": false
     }
   ],
   "independent_final_acceptance": "pending",

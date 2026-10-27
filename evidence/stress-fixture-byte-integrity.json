@@ -3,7 +3,7 @@
   "before_checked": 39,
   "before_index_byte_mismatches": 34,
   "after": {
-    "checked": 54,
+    "checked": 57,
     "index_byte_mismatches": 0,
     "workspace_mismatches": 0,
     "files": [
@@ -78,6 +78,30 @@
         "index_sha256": "147cddcb77f8a8261ad0676fbb39b60b1ea7abb318a8fe4b0a1b57c7d53df370",
         "published_sha256": "147cddcb77f8a8261ad0676fbb39b60b1ea7abb318a8fe4b0a1b57c7d53df370",
         "original_workspace_sha256": "147cddcb77f8a8261ad0676fbb39b60b1ea7abb318a8fe4b0a1b57c7d53df370"
+      },
+      {
+        "file": "evidence/stress-sessions/claude-engineering-r2/evidence.json",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "published_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+        "original_workspace_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+      },
+      {
+        "file": "evidence/stress-sessions/claude-engineering-r2/task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "c68eb4790c7fcfb1d25c8afd19b6196e9c90580135a97186bc1fa9b8f80efbcb",
+        "published_sha256": "c68eb4790c7fcfb1d25c8afd19b6196e9c90580135a97186bc1fa9b8f80efbcb",
+        "original_workspace_sha256": "c68eb4790c7fcfb1d25c8afd19b6196e9c90580135a97186bc1fa9b8f80efbcb"
+      },
+      {
+        "file": "evidence/stress-sessions/claude-engineering-r2/test_task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "001d04d4b81c57174d4aa1097bd994d115e2bad7a49d125ed6858d6a56936a35",
+        "published_sha256": "001d04d4b81c57174d4aa1097bd994d115e2bad7a49d125ed6858d6a56936a35",
+        "original_workspace_sha256": "001d04d4b81c57174d4aa1097bd994d115e2bad7a49d125ed6858d6a56936a35"
       },
       {
         "file": "evidence/stress-sessions/claude-expenses-r0/evidence.json",

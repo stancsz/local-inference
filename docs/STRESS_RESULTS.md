@@ -1,12 +1,12 @@
 # Local CLI stress results
 
-Checkpoint: 2026-10-27T04:28:37.539331+00:00. Controller: **running**. Final independent acceptance: **pending**.
+Checkpoint: 2026-10-27T04:43:19.767579+00:00. Controller: **running**. Final independent acceptance: **pending**.
 
-16 harness passes and 2 failed attempts among 18 terminal matrix attempts; 16 reached nine turns and over 180 active seconds. There are 22 planned attempts. Two short failures mean this plan can yield at most 20 corrected-epoch nine-turn sessions; the target of 21 remains unmet.
+17 harness passes and 2 failed attempts among 19 terminal matrix attempts; 17 reached nine turns and over 180 active seconds. There are 22 planned attempts. Two short failures mean this plan can yield at most 20 corrected-epoch nine-turn sessions; the target of 21 remains unmet.
 
 | Client | Terminal attempts | Harness passes | Nine-turn long sessions | Median accepted active seconds | Added contract failures |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| claude | 6 | 6 | 6 | 992.871 | 4 |
+| claude | 7 | 7 | 7 | 980.493 | 4 |
 | opencode | 6 | 5 | 5 | 1060.940 | 4 |
 | codex | 6 | 5 | 5 | 849.925 | 3 |
 
