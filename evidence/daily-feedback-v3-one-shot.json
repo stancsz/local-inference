@@ -1,0 +1,32 @@
+{
+  "route": "http://127.0.0.1:8090",
+  "model": "qwen3.8-27b",
+  "qualification_increment": 0,
+  "results": [
+    {
+      "task": "vram-plan",
+      "recorded_passed": true,
+      "sha256": "b82856af6e18e3617f86b0b9fd0aac91100d710f579051d5c00cf9af7a9d4d7b",
+      "native_reconstruction": true,
+      "current_errors": []
+    },
+    {
+      "task": "model-audit",
+      "recorded_passed": true,
+      "sha256": "5ab36c0b47401c573de14a1b3636f3a5fa9d09c29279dea6f72fa75910490319",
+      "native_reconstruction": true,
+      "current_errors": []
+    },
+    {
+      "task": "operator-guide",
+      "recorded_passed": false,
+      "sha256": "4efad94a9c70815ba6d898722a2345352dd838598bf80a8ed0ee81915d692ed4",
+      "native_reconstruction": true,
+      "current_errors": [
+        "the runbook is missing the required command: docker compose up -d --build",
+        "the runbook contains an unexpected command line: docker compose up -d"
+      ]
+    }
+  ],
+  "provenance_limit": "The fresh one-shot entry point does not save its own producer hashes. Native streams and source-read metadata are archived; this is not a sealed long-session epoch."
+}

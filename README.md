@@ -68,6 +68,8 @@ Tune `GPU_LAYERS`, `DRAFT_GPU_LAYERS`, `DRAFT_TOKENS`, `UBATCH_SIZE`, and `SPEC_
 
 ## Reproducible acceptance
 
+For bounded feedback repairs on the three daily tasks, run `python scripts/daily_artifacts.py --output-dir tmp/my-daily-check` with a fresh directory. The [daily feedback report](docs/DAILY_FEEDBACK.md) preserves failed revisions, native session continuity and the limits of the latest three-task pass. Its isolated test permissions do not replace normal interactive approval settings.
+
 ```powershell
 pwsh -NoProfile -File scripts/host_vram.ps1
 python scripts/claude_local.py

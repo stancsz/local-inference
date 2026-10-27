@@ -61,3 +61,5 @@
 /evidence/repair-v3-artifacts-v2/** -text -whitespace
 /evidence/repair-v3-review-material/** -text -whitespace
 /evidence/repair-v3-independent/** -text -whitespace
+/evidence/daily-feedback-v2-artifacts/** -text -whitespace
+/evidence/daily-feedback-v2-material/** -text -whitespace

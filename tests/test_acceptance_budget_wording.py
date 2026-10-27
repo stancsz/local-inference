@@ -13,6 +13,19 @@ def test_wrong_budget_relationship_is_rejected(suffix):
     from claude_acceptance import input_budget_invariant
     assert not input_budget_invariant('The Sift target is '+suffix)
 
+@pytest.mark.parametrize('target', ['`sift_target`', '`SIFT_TARGET`', '`Sift target`'])
+def test_markdown_configuration_name_keeps_the_same_budget_meaning(target):
+    from claude_acceptance import input_budget_invariant
+    assert input_budget_invariant('The '+target+' is part of the input budget, never added to it')
+    assert not input_budget_invariant('The '+target+' is part of the input budget and is added to it')
+
+def test_anchor_inside_input_budget_has_the_same_non_additive_meaning():
+    from claude_acceptance import input_budget_invariant
+    phrase='The Sift target is an adaptive policy anchor inside the input budget, never added to it'
+    assert input_budget_invariant(phrase)
+    assert not input_budget_invariant(phrase.replace('inside', 'outside'))
+    assert not input_budget_invariant(phrase.replace('never added', 'added'))
+
 
 def guide():
     return '''The adaptive anchor range is 24576..36608. The Sift target is part of the input budget and is never added to it. Reserve 256 tokens of decoder headroom.

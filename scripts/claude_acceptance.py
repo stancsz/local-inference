@@ -13,7 +13,8 @@ from verify_artifacts import publish
 ROOT=Path(__file__).resolve().parents[1]
 
 def input_budget_invariant(text):
-    return bool(re.search(r'\btarget is part of the input budget(?:,|\s+and(?: is)?)\s+never added to it\b',text,re.I))
+    plain = text.replace('`', '')
+    return bool(re.search(r'\b(?:sift[ _]+)?target is (?:part of|an adaptive policy anchor inside) the input budget(?:,|\s+and(?: is)?)\s+never added to it\b',plain,re.I))
 
 def validate_operator_guide(text):
     numeric_text=re.sub(r'(?<=\d),(?=\d)','',text)

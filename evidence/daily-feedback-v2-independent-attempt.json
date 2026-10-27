@@ -1,0 +1,334 @@
+{
+  "route": "http://127.0.0.1:4000",
+  "model": "default",
+  "task_inference_route": "http://127.0.0.1:8090",
+  "qualification_increment": 0,
+  "independent_acceptance": "UNVERIFIED",
+  "reason": "Attempt1 hit its artificial max_parallel_requests=2 key cap. Attempt2 removed that cap but exhausted its turn bound after tool/schema and command-scope errors; partial source inspection is not acceptance. Attempt3 returned UNVERIFIED after the brief incorrectly included an extra dot argument outside the exact helper allowlist. The policy correctly denied it; no approval settings were broadened.",
+  "review_terminal_result": {
+    "is_error": true,
+    "duration_api_ms": 4180,
+    "num_turns": 7,
+    "stop_reason": "stop_sequence",
+    "session_id": "60af67b2-94ff-40f1-a073-e4f42f7a9ab4",
+    "total_cost_usd": 0.012335,
+    "usage": {
+      "input_tokens": 1322,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 229,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "",
+      "iterations": [],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "default": {
+        "inputTokens": 1322,
+        "outputTokens": 229,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.012335,
+        "contextWindow": 256000,
+        "maxOutputTokens": 32000,
+        "canonicalModel": "default",
+        "provider": "firstParty",
+        "costBasis": "unknown"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "api_error",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "subtype": "success",
+    "api_error_status": 429,
+    "result": "API Error: Request rejected (429) \u00b7 Rate limit exceeded for api_key: 72f88b26108de76899151f5f08bec2ae1e3777b0981d52abd014a5f3efb66ce2. Limit type: max_parallel_requests. Current limit: 2, Remaining: 0. Limit resets at: 2026-10-27 21:48:34 UTC",
+    "type": "result",
+    "duration_ms": 183130,
+    "uuid": "e205709a-856d-4198-b135-3a3ad1d83846",
+    "queued_turn_count": 0
+  },
+  "artifacts": [
+    {
+      "path": "evidence/daily-feedback-v2-material/publish-daily-feedback.py.gz",
+      "raw_sha256": "cdd0720ee89b86c31fc28495d5e7b70f45e0d13af5d3f5cdd969a261e4d83bf5",
+      "compressed_sha256": "904f07f3198de993729d9f400767d753cdf43abd60fc8d9c0ea7a87099c38fa9"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/check-daily-review.py.gz",
+      "raw_sha256": "8fc8ed432ad237265f31d4a815cc4c160b22ee36cf157cd13a05b25be674b730",
+      "compressed_sha256": "160b68768d92441b43dd245d2aba272bb610890001345ba313b79fe4b102a455"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v1-brief.txt.gz",
+      "raw_sha256": "cfba63b774557174acc5fe55548a3a100aee4ddfa7329fe6023f50b7f02cdaf3",
+      "compressed_sha256": "40b823d73d7270fcc3065661bdd4bcf1b0aa9de4b692af97d9a6b77e8a2c64e7"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review-brief.txt.gz",
+      "raw_sha256": "f5536a3c1fdc9198cd63ae9ea56857437ce0e14b5482a321f45975ea58f40777",
+      "compressed_sha256": "54f22a4c6661af1030b2f34331999ad9d7945d1ed1f2ab783a56fe3333e6bdd9"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v1-worker.jsonl.gz",
+      "raw_sha256": "b22fe295194ea69156901d7ff3b43a2088a3329bbbe6fb577c7a2776268cd68d",
+      "compressed_sha256": "5625332c28f36f432a39f1929ce724e69c66c689e9617b7eb47d6cd4fb018988"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v1-worker.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8",
+      "compressed_sha256": "62787d2a2f1adab0f7e92087b5814eb25cf7718d73f255ddcb0c1b6b72e9980c"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v1-worker-exit.json.gz",
+      "raw_sha256": "080362b3dab358fd11d9b0201b176a57e865e2eea6b6337b9e7be883b7a71abd",
+      "compressed_sha256": "1690c739d0a3229245339315e87c877eea317b4ed002527e01fffad22468c527"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v1-worker-revocation.json.gz",
+      "raw_sha256": "5497b14007afb58b8eb2780aaf87eae01886d9005925abc59d949b2c2964c758",
+      "compressed_sha256": "eb8295c7ca9b3f8166a86623474fa243d85dbb278f4a6e639d1b7a19fac94545"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v1-worker-smoke.json.gz",
+      "raw_sha256": "90ab8feb6ea24fe87bafcbf65eecacdefa0e550022ec632c7a9476925c0e188c",
+      "compressed_sha256": "20cdacf2e69cbef9839b03521a92319cf9f8ca406e8866325e5e1e1b0e421e2b"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v1-worker-tool-first.json.gz",
+      "raw_sha256": "24c6f5ed2bed6ea62d995c28d6a8ffdcd895e8219c8b71c323e26dbb002eb3f8",
+      "compressed_sha256": "e55086ecf81ba4450e19ba08aa5ae735f4ab9a6ad1939bdd69a48f29045e5069"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v1-worker-tool-smoke.json.gz",
+      "raw_sha256": "9615c68605b11f07fc47d6d365f51c11d49c720e9ba0fd2f85cdb452bf66b90f",
+      "compressed_sha256": "ab28c8b7fa9207926801a869abe26d2288514a8d9c8c4771cac7975143ad894f"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review.jsonl.gz",
+      "raw_sha256": "b2343538b59de4005bb2654ae0ef77f7318552e4958afa33a767805aa309731c",
+      "compressed_sha256": "4b82481514c57847891763623f26db8eb0450bf1db7c0d6f5de824fdbdf3186e"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8",
+      "compressed_sha256": "62787d2a2f1adab0f7e92087b5814eb25cf7718d73f255ddcb0c1b6b72e9980c"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review-exit.json.gz",
+      "raw_sha256": "80764f7518883b863f6d433c8c89d972bb2eddf0b181e746edc1c64d4f605929",
+      "compressed_sha256": "b10511e71c7e093ca855e706705a509be21f909778744ee466bf793a126d8598"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review-revocation.json.gz",
+      "raw_sha256": "6bdc97ec05f2d6cb3bdb81785b5e9ee33b91e96f81d2946692eab7cc7531b16f",
+      "compressed_sha256": "4ee06f02aa5ad49e074867ac1515dea68cf02a574fcf62449e2082e2bd271430"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review-smoke.json.gz",
+      "raw_sha256": "8eff826795c0ea69386ae1ea9d2f024e5c2097f50339f23959782665d5d15195",
+      "compressed_sha256": "ca15976ac2acfab233ae878a0fd45e38f7cde371f62b81853b99376184ea6e38"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review-tool-first.json.gz",
+      "raw_sha256": "0ff976ef6f09662cb1b46b190a90fd20de7b728651c0d617fb4782ae13f44ecd",
+      "compressed_sha256": "2e7c7ae9ce1b172182c541108bd2683b551a4738b554bda4863410a8a9e0ee67"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review-tool-smoke.json.gz",
+      "raw_sha256": "bcabbb3c26d4fb56b62e1442b1424126308d857be27f88227720c42b765306d7",
+      "compressed_sha256": "e7c05f230ec6fe9ee24b3bd17896ea95e669f86612cdf249e5a59fedd28d875b"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review2.jsonl.gz",
+      "raw_sha256": "2f9f5c82e38ad21be3351a3db8c1645520d03e22708de52d1634d324bf927a35",
+      "compressed_sha256": "c91d46c2870371b182fec87a435ac519c0c42d4f219c595c05a54a18d0d5f92b"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review2.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8",
+      "compressed_sha256": "62787d2a2f1adab0f7e92087b5814eb25cf7718d73f255ddcb0c1b6b72e9980c"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review2-exit.json.gz",
+      "raw_sha256": "b01d658b4b9a3af489f60c6cddecee7c88c675d384cfe5a82fd1aa9e4660d3e3",
+      "compressed_sha256": "d20c522b33a7c44846fb233bdf724c96cfc0d02f62e0cf6682a39c21854acc00"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review2-revocation.json.gz",
+      "raw_sha256": "fb56b3f2def175249b08fe33a633ea23941dee9892f042864fa3eb057ad92bfb",
+      "compressed_sha256": "ff884d365dc8f7c54279c0141586eae34358f61362cfbd1ee08f405d750aeb16"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review2-smoke.json.gz",
+      "raw_sha256": "201fd57fe1b303c407d64f2a50fbdff42c12ba1c217a92dd21597c9f732db571",
+      "compressed_sha256": "13e49f53272b9ae04c93b3e782de2761cb3ec76a318c0cb07efec39ae4fc6b46"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review2-tool-first.json.gz",
+      "raw_sha256": "19c3e49223b6d92c5fa94cbb6b455b944524064e298df98d4862bac61057a387",
+      "compressed_sha256": "702d995ce128049fe2db83907e226f969609aaf3b8e49eec415df3b0c3328820"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review2-tool-smoke.json.gz",
+      "raw_sha256": "4e2b8ff1223753e94b5526acd1c8f2e03e477c1b25646f988cb9869a7c330085",
+      "compressed_sha256": "99e9b59a466bd1b87a938bd3a22c3486e6008e50c34c2c45ad94ee04f2c19cd4"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review3.jsonl.gz",
+      "raw_sha256": "cca082c894ed3abf324771652b441895903aaffc670b5392cac21374bd0dc211",
+      "compressed_sha256": "b4258fdf4bacf7419b9bb0bf36bb70232cca54218b8efb52edb7c59866bc895e"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review3.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8",
+      "compressed_sha256": "62787d2a2f1adab0f7e92087b5814eb25cf7718d73f255ddcb0c1b6b72e9980c"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review3-exit.json.gz",
+      "raw_sha256": "e73120037a268e3ec078a15f33ac9ecc15e0f42f4d7b718fe6fddac6f5802d66",
+      "compressed_sha256": "ae2cf5a3c4ee7bd4aeb3909f76a24fc40182580df3489b7fb48dd1a1adcf2817"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review3-revocation.json.gz",
+      "raw_sha256": "8c47f12c3aad4ea6668433cc484383d0975530fd8583ffa96676e42464bb1217",
+      "compressed_sha256": "f4abc366606ce046ccf8106c16bca46519f1885b18294eb2b229f6de56e73ed7"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review3-smoke.json.gz",
+      "raw_sha256": "fc6680d8ea9700c91639f28b631b5027d1a24905907558b2c835ca8acac4ba1a",
+      "compressed_sha256": "f61523f2bad795376a64d6401167aa48ff6c4a0b939455d756c3b4993bbd529a"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review3-tool-first.json.gz",
+      "raw_sha256": "e265b095c2deb7aa946e9bdd95ea3bb57b37b4f6b262a5a7b6823b525e1c2bd2",
+      "compressed_sha256": "5d566cdab31cdbdbe89365c8dfea04e91e8b64be6cbf1a4ce6acecc9fd38961a"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/daily-v2-review3-tool-smoke.json.gz",
+      "raw_sha256": "68244196bd16e70d377c15b5723e0a606f17879e9ffa33bc6f41ef3c195ae03e",
+      "compressed_sha256": "6eb01206a5ebf4b221f080bc3a59896ab4991dc5483978cbf9c4b9e0847dad91"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/claude-acceptance.json.gz",
+      "raw_sha256": "b1d947b9e1a2d030d4fdb32ee49dbde24a12cb206bb8b7889076da08be2d2af5",
+      "compressed_sha256": "b0befebd6af53ca91afc5b02c3506409a1df5c99228e033af3aa11fce3c2ac63"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/model-audit.json.gz",
+      "raw_sha256": "b092bb175e2e241d103eb122a8daebebde0f5bd2b70db0985159f168b214f9cc",
+      "compressed_sha256": "940f41dd50e880358c70a77217637a94f13b38382c489cbaccfae397910d54ec"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/model-audit.jsonl.gz",
+      "raw_sha256": "7131fe621e265d519cc698970a4dc4adb382375959e4a9a9f028a2a18c9f0e15",
+      "compressed_sha256": "dedc9ad3e35a1df8aa8c24d456c47aba64942dc7c27f20bf06fe21a1c77801fa"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/model-audit.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/OPERATIONS.md.gz",
+      "raw_sha256": "80f5d7017affe3eef33a5735992b5d821af0f7bb6bdc98113dd7959efc65ca49",
+      "compressed_sha256": "a64e63ab6ba0077297b83f2563ec9d26543ae7a10dd67c07a15721332e7acab1"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/operator-guide.jsonl.gz",
+      "raw_sha256": "9d33158245850fed8af8cc595de901371c6944357c522862482982cb5a0992f0",
+      "compressed_sha256": "62205edd0ba21321e5a83c43b557f8b790a812aecd0ce208753473ecdf4de7ed"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/operator-guide.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/published/MODEL_AUDIT.json.gz",
+      "raw_sha256": "b092bb175e2e241d103eb122a8daebebde0f5bd2b70db0985159f168b214f9cc",
+      "compressed_sha256": "940f41dd50e880358c70a77217637a94f13b38382c489cbaccfae397910d54ec"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/published/sources/model-audit/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+      "compressed_sha256": "6a04a33a30d808f0df96a0a5531a405f7d69cd79d2c22ff1629613eb7e06cb63"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/published/sources/model-audit/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+      "compressed_sha256": "a112d6e8b4888c388786688a6b7c9b55cd4bb28439169fc16a75fae3c4ba2846"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/published/sources/vram-plan/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55",
+      "compressed_sha256": "81162a4e30df7242133ad21e492a9df33a50aa1be90e1d59c5deaecb87730bcf"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/published/sources/vram-plan/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+      "compressed_sha256": "a112d6e8b4888c388786688a6b7c9b55cd4bb28439169fc16a75fae3c4ba2846"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/published/sources/vram-plan/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731",
+      "compressed_sha256": "15c6192876b386c357adb8a2362cd6a5a720aacee101a9ad320af154d203d245"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/published/VRAM_PLAN.md.gz",
+      "raw_sha256": "c25ac759aa9285e85d134e974d8cc2f221207cdc1f3800232be1b8aa65960185",
+      "compressed_sha256": "1c69be977e2bbc02e148b4248f9afe1b14ea614eaafdc8f77b30fa3ef5ed374b"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/vram-plan.jsonl.gz",
+      "raw_sha256": "6f80ad7c6f80ec1e6b1bf1a3c74c2c1b6341ac2324481cb7ccd603af86b19e8c",
+      "compressed_sha256": "6635a15dfc0d0fac70378aac1deba4bac9eac0e436df63dfa848d863d35b781c"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/vram-plan.md.gz",
+      "raw_sha256": "c25ac759aa9285e85d134e974d8cc2f221207cdc1f3800232be1b8aa65960185",
+      "compressed_sha256": "1c69be977e2bbc02e148b4248f9afe1b14ea614eaafdc8f77b30fa3ef5ed374b"
+    },
+    {
+      "path": "evidence/daily-feedback-v2-material/one-shot/vram-plan.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    }
+  ]
+}

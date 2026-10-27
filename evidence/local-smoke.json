@@ -1,6 +1,6 @@
 {
   "text": {
-    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfOWE0eUpWRkVvM3hVSVo4QnBIT2VKZnN3bjZGbFZwRm0=",
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfNlEwMzdncjVpNEo0WnJvQXNLYTB5SEQyc1JTdFZlM2c=",
     "type": "message",
     "role": "assistant",
     "model": "qwen3.8-27b",
@@ -26,7 +26,7 @@
     "sha256": "f47148e332e3b0499be7e7994b458c869755f4bbf0f87d7756d60ac2716ecb59"
   },
   "tool": {
-    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfT3A3amxyanJDUHFwVnlYSlRkRUR3Y0xwelROMmNMaFk=",
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfNDZEWTgzZ1l5SUV0N3JLNEVrRnNaYUNWbHdQQnZGZWg=",
     "type": "message",
     "role": "assistant",
     "model": "qwen3.8-27b",
@@ -38,7 +38,7 @@
     "content": [
       {
         "type": "tool_use",
-        "id": "call_TEEcGTB2nJlUBawJBF9Ae0K5fQXR362b",
+        "id": "call_1lpmmiYlyvkXJclW8n2FPSTBVJEKIiw2",
         "name": "route_marker",
         "input": {
           "marker": "LOCAL_QWEN_TOOL_OK"
@@ -49,7 +49,7 @@
     "stop_details": null
   },
   "continuation": {
-    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3Bfd05WZGhHZHFlWG9uOVJsNEJwRXdYWmFiRmhCYTlCQ1Q=",
+    "id": "resp_bGl0ZWxsbTpjdXN0b21fbGxtX3Byb3ZpZGVyOm9wZW5haTttb2RlbF9pZDozMWZmNjgxM2JmZTg5YzYxZjZhNmUzZjAyYmJmMDYwMzJiMDM2NDZkNjBmMmQ1ODljOTdjYzg0ODNiYWRiMzk3O3Jlc3BvbnNlX2lkOnJlc3BfMVdEdDZYUUVDOWVxaUwyajhYOU5OS3EyUTNJWDhBRmU=",
     "type": "message",
     "role": "assistant",
     "model": "qwen3.8-27b",
@@ -68,7 +68,7 @@
     "stop_reason": "end_turn",
     "stop_details": null
   },
-  "seconds": 3.189,
+  "seconds": 3.885,
   "passed": true,
   "endpoint": "http://127.0.0.1:8090/v1/messages"
 }
