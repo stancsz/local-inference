@@ -1,0 +1,63 @@
+{
+  "case": "claude-expense-audit-v2",
+  "accepted": false,
+  "active_seconds": 240.257,
+  "turns": 1,
+  "fixture_readiness": null,
+  "native": {
+    "terminal_success": false,
+    "calls": 13,
+    "completed": 13,
+    "successful_tools": [
+      "Read",
+      "Read",
+      "Read",
+      "Edit",
+      "Edit",
+      "Edit",
+      "Edit",
+      "Edit",
+      "Bash"
+    ],
+    "unmatched_results": 0,
+    "native_errors": 0,
+    "read_files": [
+      "task.py",
+      "test_task.py"
+    ],
+    "written_files": [
+      "evidence.json",
+      "task.py"
+    ],
+    "baseline_failed": true,
+    "final_passed": false,
+    "workflow_ordered": false
+  },
+  "hidden_tests_exit": 0,
+  "parent_grouping_reproduction": {
+    "actual": {
+      "Food": "3.00",
+      "Transit": "3.00"
+    },
+    "case_insensitive_grouping_passed": true
+  },
+  "captured_original_source_verified": 12,
+  "all_upstream_http200": true,
+  "diagnostic": "First-stage public/hidden/grouping checks pass, but the native CLI lacks a successful terminal event by240seconds and only one turn ran. Actual native three-test success is not recognized by the frozen Ran2tests matcher; this is an additional grading defect, not grounds to waive the independent deadline/multi-turn failures. Full expense contracts were not exercised.",
+  "qualifying_increment": 0,
+  "no_reroll_or_promotion": true,
+  "full_goal_complete": false,
+  "actual_native_three_test_success_not_recognized": [
+    {
+      "tool_use_id": "call_HzY3K5k8Tu8Ap467ABxoFeKurh0bJfb9",
+      "command": "\"C:/Program Files/Python314/python.exe\" -m unittest -q",
+      "successful_three_test_output": "----------------------------------------------------------------------\r\nRan 3 tests in 0.012s\r\n\r\nOK"
+    }
+  ],
+  "independent_first_stage_seed_replay": {
+    "exit": 0,
+    "output": "...\r\n----------------------------------------------------------------------\r\nRan 3 tests in 0.022s\r\n\r\nOK\r\n",
+    "seed_offset": 200003,
+    "scope": "First stage only; no new session or full-contract claim"
+  }
+}
