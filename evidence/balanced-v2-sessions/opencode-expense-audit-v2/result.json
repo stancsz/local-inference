@@ -1,0 +1,1491 @@
+{
+  "accepted": false,
+  "client": "opencode",
+  "client_version": "1.15.10",
+  "task": "expense_audit",
+  "seed": 2026102715,
+  "minimum_seconds": 185.0,
+  "model": "qwen3.8-27b",
+  "upstream": "http://127.0.0.1:8090/v1",
+  "target": 32768,
+  "source_sha256": {
+    "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
+    "stress.portable_tasks_v2": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848",
+    "stress.cli_acceptance": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress.supplement_tasks_v1": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb",
+    "stress.fixture_probe_v2": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16",
+    "stress.proxy_capture_v2": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0",
+    "stress.portable_campaign_v2": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  },
+  "turns": [
+    {
+      "number": 1,
+      "accepted": false,
+      "duration_seconds": 240.362,
+      "client_exit": 1,
+      "timed_out": true,
+      "native": {
+        "terminal_success": false,
+        "calls": 11,
+        "completed": 11,
+        "successful_tools": [
+          "read",
+          "read",
+          "read",
+          "edit",
+          "edit",
+          "edit",
+          "edit"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "evidence.json",
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": false,
+        "workflow_ordered": false
+      },
+      "hidden_tests_exit": 1,
+      "historical_gold_passed": true,
+      "public_tests_sha256": "8ea47195985d68773c1b85e75d932187ef5adf7e1fd1ab586dae4794eed9bc30"
+    }
+  ],
+  "audits": [
+    {
+      "compacted": true,
+      "input_tokens": 112470,
+      "forwarded_tokens": 26076,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 0,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 0,
+      "excerpt_capture": "00000.json.gz",
+      "excerpt_capture_raw_sha256": "dec217febe32dabeb1b031532d94b19bb3608dac0a8acc946ad706780140edc9",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 117362,
+      "forwarded_tokens": 30968,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 642,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 0,
+      "excerpt_capture": "00001.json.gz",
+      "excerpt_capture_raw_sha256": "bd9f77f4f3b30808d5121d44c6fd3415339067deda90109d968dbea9316a5e8c",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 118136,
+      "forwarded_tokens": 31742,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 642,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 3,
+      "excerpt_capture": "00002.json.gz",
+      "excerpt_capture_raw_sha256": "957b91124550e0735b722af31f00204334240072eec0dafa57cb0f86558ed22b",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 118706,
+      "forwarded_tokens": 32312,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 642,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 4,
+      "excerpt_capture": "00003.json.gz",
+      "excerpt_capture_raw_sha256": "f1e9720d63e05c66d66a4b836a4d3437caa9ff08a71101d60d67d4400b189ca7",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 119322,
+      "forwarded_tokens": 32743,
+      "omitted_estimated_tokens": 86579,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 508,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 642,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 6,
+      "excerpt_capture": "00004.json.gz",
+      "excerpt_capture_raw_sha256": "e28f5fcd694da385ce29b831474c066200e24bc43ee964b9cc9f6ff2c404136e",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 119924,
+      "forwarded_tokens": 32751,
+      "omitted_estimated_tokens": 87173,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 496,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 642,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 7,
+      "excerpt_capture": "00005.json.gz",
+      "excerpt_capture_raw_sha256": "c2979a334f524dae6a49533781919a6cedaf445964f4e571b8d6be0e07c44c02",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 120039,
+      "forwarded_tokens": 32768,
+      "omitted_estimated_tokens": 87271,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 494,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 642,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 8,
+      "excerpt_capture": "00006.json.gz",
+      "excerpt_capture_raw_sha256": "5a10169fb56e48b12c9434ceddca06fba234515d6ae686c8eaf5eaa2159ebed5",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 120382,
+      "forwarded_tokens": 32764,
+      "omitted_estimated_tokens": 87618,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 487,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 642,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 9,
+      "excerpt_capture": "00007.json.gz",
+      "excerpt_capture_raw_sha256": "fd3f75f7e660da127b7496e92af1bca45e760e20d17761e81522ae61f02aa45b",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 120612,
+      "forwarded_tokens": 32749,
+      "omitted_estimated_tokens": 87863,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 482,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 642,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 10,
+      "excerpt_capture": "00008.json.gz",
+      "excerpt_capture_raw_sha256": "beb7cfb9a7cdab6f67d995ed4f78a103a58d4e97ede102e50729ef1f6d8fa31b",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 120954,
+      "forwarded_tokens": 32747,
+      "omitted_estimated_tokens": 88207,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 475,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 642,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "acompletion",
+      "input_shapes": [
+        {
+          "role": "system",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role",
+            "tool_calls"
+          ]
+        },
+        {
+          "role": "tool",
+          "keys": [
+            "content",
+            "role",
+            "tool_call_id"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 11,
+      "excerpt_capture": "00009.json.gz",
+      "excerpt_capture_raw_sha256": "3296afe9b4b5202c8e948bfa41f75861661b717cf358427aca28511227b43ef9"
+    }
+  ],
+  "native_gateway_audits": [
+    {
+      "compacted": false,
+      "input_tokens": 29551,
+      "forwarded_tokens": 29551,
+      "omitted_estimated_tokens": 0,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "selected_excerpts": 0,
+      "target_tokens": 32768,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 29551,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 29551,
+      "compaction_input_sha256": "4928a9995f1300631a17dd5d365edca04bf966b7a288da912799d39a20ba2b80",
+      "compaction_seconds": 0.092,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 2,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 34744,
+      "forwarded_tokens": 24523,
+      "omitted_estimated_tokens": 10221,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 104,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 34744,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24523,
+      "compaction_input_sha256": "7e207801b3853be1e4cc1238e8dcb470d30932ef7f10b998f92d276bc4206c70",
+      "compaction_seconds": 0.7794,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35596,
+      "forwarded_tokens": 24475,
+      "omitted_estimated_tokens": 11121,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 99,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35596,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24475,
+      "compaction_input_sha256": "baffd9a3326a303ae2194cda6176f7fa6573e634bcf887f96b95bdb3aba9ecac",
+      "compaction_seconds": 0.6259,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 36230,
+      "forwarded_tokens": 24569,
+      "omitted_estimated_tokens": 11661,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 96,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 36230,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24569,
+      "compaction_input_sha256": "856d6219e4a953b3d8a19435382a99a856eb4cb897aa32a90ee7237006de32a8",
+      "compaction_seconds": 0.6398,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 36658,
+      "forwarded_tokens": 24506,
+      "omitted_estimated_tokens": 12152,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 92,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 36658,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24506,
+      "compaction_input_sha256": "bf52e22a41e9c681113fad9ca6d9ffe9c5e5b713ca462f149997dcb7de0cae50",
+      "compaction_seconds": 0.6647,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 36668,
+      "forwarded_tokens": 24468,
+      "omitted_estimated_tokens": 12200,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 88,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 36668,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24468,
+      "compaction_input_sha256": "b744dbc966298351d5054a7008cec9a7de90d6086d7d45309a488bf6717b5571",
+      "compaction_seconds": 0.7535,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 36692,
+      "forwarded_tokens": 24424,
+      "omitted_estimated_tokens": 12268,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 87,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 36692,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24424,
+      "compaction_input_sha256": "8e791d9ee201570d568abb83032cdac2a863aab14e7b37336a9ac0f71bdd83a5",
+      "compaction_seconds": 0.697,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 36686,
+      "forwarded_tokens": 24450,
+      "omitted_estimated_tokens": 12236,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 85,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 36686,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24450,
+      "compaction_input_sha256": "024c13b84234c0d4e47d7999d7399ec57d1d1ba38604477365845271b7dcd371",
+      "compaction_seconds": 0.7816,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 36658,
+      "forwarded_tokens": 24522,
+      "omitted_estimated_tokens": 12136,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 84,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 36658,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24522,
+      "compaction_input_sha256": "4adc3b8e7acd48c6cb88a99a1632337ddfb7336919055cfc38a039e297e6b225",
+      "compaction_seconds": 0.7488,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 36652,
+      "forwarded_tokens": 24548,
+      "omitted_estimated_tokens": 12104,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 82,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 36652,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24548,
+      "compaction_input_sha256": "2c8d50551177127d0e41afbe1706b128b6db9c4d7377458cb818f3bc52497bff",
+      "compaction_seconds": 0.7697,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    }
+  ],
+  "active_client_seconds": 240.362,
+  "elapsed_seconds": 256.187,
+  "session_id": "ses_e8224eaedffeSUsoHoI58Aj4i6",
+  "failure": "native turn, hidden tests, history fact, or session continuity failed"
+}

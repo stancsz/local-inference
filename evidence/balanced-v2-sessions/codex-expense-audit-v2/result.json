@@ -1,0 +1,2541 @@
+{
+  "accepted": false,
+  "client": "codex",
+  "client_version": "codex-cli 0.154.0",
+  "task": "expense_audit",
+  "seed": 2026102713,
+  "minimum_seconds": 185.0,
+  "model": "qwen3.8-27b-codex",
+  "upstream": "http://127.0.0.1:8090/v1",
+  "target": 32768,
+  "source_sha256": {
+    "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
+    "stress.portable_tasks_v2": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848",
+    "stress.cli_acceptance": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress.supplement_tasks_v1": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb",
+    "stress.fixture_probe_v2": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16",
+    "stress.proxy_capture_v2": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0",
+    "stress.portable_campaign_v2": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  },
+  "turns": [
+    {
+      "number": 1,
+      "accepted": false,
+      "duration_seconds": 240.312,
+      "client_exit": 1,
+      "timed_out": true,
+      "native": {
+        "terminal_success": false,
+        "calls": 11,
+        "completed": 11,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash",
+          "Bash",
+          "Bash",
+          "Edit",
+          "Bash",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "evidence.json",
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": false,
+        "workflow_ordered": false
+      },
+      "hidden_tests_exit": 1,
+      "historical_gold_passed": true,
+      "public_tests_sha256": "cd85fa54f423d4efd084a2fcc5ba82672320d16c81fcc7cfb2ad1261a83f0bf6"
+    }
+  ],
+  "audits": [
+    {
+      "compacted": true,
+      "input_tokens": 123923,
+      "forwarded_tokens": 32764,
+      "omitted_estimated_tokens": 91159,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 415,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 0,
+      "excerpt_capture": "00000.json.gz",
+      "excerpt_capture_raw_sha256": "195595a1fe9751b6edf88d44e1efe426f797c5abcb0dbe762e36c12f936438e3",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 124067,
+      "forwarded_tokens": 32760,
+      "omitted_estimated_tokens": 91307,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 412,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 1,
+      "excerpt_capture": "00001.json.gz",
+      "excerpt_capture_raw_sha256": "8b36e57a2fca87f1433fddbaacee26a773846fe6fa9ba94722ed25e3f4782c3f",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 124801,
+      "forwarded_tokens": 32758,
+      "omitted_estimated_tokens": 92043,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 397,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 4,
+      "excerpt_capture": "00002.json.gz",
+      "excerpt_capture_raw_sha256": "aa7cae2fb1df6b26b6107cc4332267f2aa818954c380b45171eaa8c5d9b33cff",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 125404,
+      "forwarded_tokens": 32723,
+      "omitted_estimated_tokens": 92681,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 384,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 5,
+      "excerpt_capture": "00003.json.gz",
+      "excerpt_capture_raw_sha256": "941a397f597238e689a217eb7d3136c258bba1b68fe767d0739838a0b79cb3d1",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 125569,
+      "forwarded_tokens": 32740,
+      "omitted_estimated_tokens": 92829,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 381,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 6,
+      "excerpt_capture": "00004.json.gz",
+      "excerpt_capture_raw_sha256": "8967cca3ee1898907d590e2b3b25896fe109f795bcbd0f8f7951f7e7c4d6a217",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 126631,
+      "forwarded_tokens": 32768,
+      "omitted_estimated_tokens": 93863,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 360,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 7,
+      "excerpt_capture": "00005.json.gz",
+      "excerpt_capture_raw_sha256": "631e7d4a1d8217379656a88f71e7143acb5812b303aaf49650c867d873b6a6a2",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 127680,
+      "forwarded_tokens": 32732,
+      "omitted_estimated_tokens": 94948,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 338,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 8,
+      "excerpt_capture": "00006.json.gz",
+      "excerpt_capture_raw_sha256": "c774d15058db0df87cb3f81d28ff96b2d650821e2b7cc58918004b9ec758d40b",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 128208,
+      "forwarded_tokens": 32766,
+      "omitted_estimated_tokens": 95442,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 328,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 9,
+      "excerpt_capture": "00007.json.gz",
+      "excerpt_capture_raw_sha256": "fc8803adae892811f537a7e53ead05dada9f84b40c1177397a137e6bb83adc86",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 129144,
+      "forwarded_tokens": 32764,
+      "omitted_estimated_tokens": 96380,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 309,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 10,
+      "excerpt_capture": "00008.json.gz",
+      "excerpt_capture_raw_sha256": "31b02ab480441f1d1eaffaba4b27b3fbcf5ffac80812a254615074d43e20850b",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 129773,
+      "forwarded_tokens": 32750,
+      "omitted_estimated_tokens": 97023,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 296,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 11,
+      "excerpt_capture": "00009.json.gz",
+      "excerpt_capture_raw_sha256": "2d0daff318234d058272c49db72e5bbae40ddb3b8085be011752cffa995ef94b",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 130682,
+      "forwarded_tokens": 32724,
+      "omitted_estimated_tokens": 97958,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 277,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": true,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 656,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "aresponses",
+      "input_shapes": [
+        {
+          "role": "developer",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "id",
+            "role",
+            "type"
+          ],
+          "type": "message"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        },
+        {
+          "role": "custom_tool_call",
+          "keys": [
+            "call_id",
+            "id",
+            "input",
+            "name",
+            "status",
+            "type"
+          ],
+          "type": "custom_tool_call"
+        },
+        {
+          "role": "custom_tool_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "custom_tool_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        },
+        {
+          "role": "function_call",
+          "keys": [
+            "arguments",
+            "call_id",
+            "id",
+            "name",
+            "type"
+          ],
+          "type": "function_call"
+        },
+        {
+          "role": "function_call_output",
+          "keys": [
+            "call_id",
+            "id",
+            "output",
+            "type"
+          ],
+          "type": "function_call_output"
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 12,
+      "excerpt_capture": "00010.json.gz",
+      "excerpt_capture_raw_sha256": "33086d88d0f3d609f4e0f9951fb609e243efc9d4bba63692a76823d3ff446b56",
+      "upstream_status": 200
+    }
+  ],
+  "sandbox_readiness": {
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout": "SIFT_SANDBOX_READY\n",
+    "stderr": "",
+    "duration_seconds": 0.182608499948401,
+    "passed": true
+  },
+  "fixture_readiness": {
+    "passed": true,
+    "exit_code": 0,
+    "stdout": "{\"fixture_cleanup_passed\": true, \"outside_denied\": true}\n",
+    "stderr": "",
+    "details": {
+      "fixture_cleanup_passed": true,
+      "outside_denied": true
+    },
+    "scope": "Native sandbox, no inference or global permission/configuration changes."
+  },
+  "native_gateway_audits": [
+    {
+      "compacted": true,
+      "input_tokens": 35711,
+      "forwarded_tokens": 24447,
+      "omitted_estimated_tokens": 11264,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 68,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35711,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24447,
+      "compaction_input_sha256": "d9b2997461f4ef0d5c4de4ed5bb817c03e208347d5d1db30dc23cb223a58fdcc",
+      "compaction_seconds": 0.6976,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35714,
+      "forwarded_tokens": 24438,
+      "omitted_estimated_tokens": 11276,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 67,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35714,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24438,
+      "compaction_input_sha256": "36a37a328cdaf9b535c1dcd3a2af2fa509816ced2c0a16cdc9f74f1a7829df95",
+      "compaction_seconds": 0.6955,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35694,
+      "forwarded_tokens": 24538,
+      "omitted_estimated_tokens": 11156,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 63,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35694,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24538,
+      "compaction_input_sha256": "c19c19e42dce333aba748fbb744d6f822d8a1bcd998231f1220fee4cf82af0c8",
+      "compaction_seconds": 0.8846,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 15,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35628,
+      "forwarded_tokens": 24480,
+      "omitted_estimated_tokens": 11148,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 59,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35628,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24480,
+      "compaction_input_sha256": "0b5d89e181f6a6e61701fa693d4349eefa76d28dc5eca87cc649094c063a579a",
+      "compaction_seconds": 0.909,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 15,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35641,
+      "forwarded_tokens": 24481,
+      "omitted_estimated_tokens": 11160,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 58,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35641,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24481,
+      "compaction_input_sha256": "20bfa37d8b965f6f5c6e62ebc7031fe3a7c8d3f6bd814daa0c3639f23a4ae085",
+      "compaction_seconds": 0.8257,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 15,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35505,
+      "forwarded_tokens": 24441,
+      "omitted_estimated_tokens": 11064,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 52,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35505,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24441,
+      "compaction_input_sha256": "043b8c60391582192de9263e200c232d5bcd13e6a5ae58cb0c8c7ff76bfd2692",
+      "compaction_seconds": 0.8772,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 15,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35306,
+      "forwarded_tokens": 24574,
+      "omitted_estimated_tokens": 10732,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 47,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35306,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24574,
+      "compaction_input_sha256": "1d4fb770670bc5e19278c4aea91cf2386a6310b1223f05b6af8764b855ffe262",
+      "compaction_seconds": 0.7917,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35320,
+      "forwarded_tokens": 24428,
+      "omitted_estimated_tokens": 10892,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 43,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35320,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24428,
+      "compaction_input_sha256": "dfeba4d9bd8422767f4ab296c4da6c55a5fed545d500ef65e84c12d15c16d3e9",
+      "compaction_seconds": 0.8599,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35170,
+      "forwarded_tokens": 24442,
+      "omitted_estimated_tokens": 10728,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 38,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35170,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24442,
+      "compaction_input_sha256": "27f940573aeb743c892592274afa88ac90ffcae9b7a7092b750bcf9d938655ff",
+      "compaction_seconds": 0.8943,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35150,
+      "forwarded_tokens": 24430,
+      "omitted_estimated_tokens": 10720,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 34,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35150,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24430,
+      "compaction_input_sha256": "794f8f085f05a960213ffd2c4e4e0e9ad211daeb9c752bd3476e81ac0fa08a62",
+      "compaction_seconds": 0.8296,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 34971,
+      "forwarded_tokens": 24415,
+      "omitted_estimated_tokens": 10556,
+      "preserved_recent_turns": 1,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 29,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 34971,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24415,
+      "compaction_input_sha256": "06a50f97750c254cf7088fbd12fb1ae552653d525f6cd9063f6c37fe9bfbb244",
+      "compaction_seconds": 0.8945,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    }
+  ],
+  "active_client_seconds": 240.312,
+  "elapsed_seconds": 256.102,
+  "session_id": "01a17dc6-0827-7441-96d7-acb303ffe884",
+  "failure": "native turn, hidden tests, history fact, or session continuity failed"
+}

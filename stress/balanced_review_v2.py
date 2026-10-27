@@ -72,17 +72,23 @@ def review(publish=False):
     manifest, rows = [], []
     sys.path.insert(0, str(ROOT / 'scripts'))
     from setup_env import gateway_key
-    secrets = [gateway_key(), *[os.environ.get(n, '') for n in ('GATEWAY_MASTER_KEY', 'EXPERTS_API_KEY', 'ADVISOR_API_KEY')]] if publish else []
+    secrets = [gateway_key(), *[value for name, value in os.environ.items()
+                              if any(token in name.upper() for token in ('KEY', 'TOKEN', 'SECRET', 'PASSWORD'))]] if publish else []
     def archive(source, target, zipped=False):
         if not publish: return
         raw = source.read_bytes()
-        assert not any(s and len(s) > 12 and s.encode() in raw for s in secrets), str(source)
+        inspected = raw
+        while inspected.startswith(b'\x1f\x8b'):
+            inspected = gzip.decompress(inspected)
+        assert not any(s and len(s) > 12 and s.encode() in inspected for s in secrets), str(source)
         target = destination / target
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(gzip.compress(raw, mtime=0) if zipped else raw)
         manifest.append({'file': target.relative_to(ROOT).as_posix(), 'raw_sha256': hashlib.sha256(raw).hexdigest(), 'gzip': zipped})
     for case in plan['cases']:
         folder = root / case['id']
+        candidate_before = {name: hashlib.sha256((folder / 'workspace' / name).read_bytes()).hexdigest()
+                            for name in ('task.py', 'test_task.py', 'evidence.json')}
         path = folder / 'result.json'
         record = json.loads(path.read_text(encoding='utf-8'))
         failures = basic_failures(record, expected)
@@ -111,14 +117,23 @@ def review(publish=False):
                 # Review task-tool arguments for direct solution-reference access.
                 if solution_reference_access(event):
                     failures.append(f'turn{index+1} solution-reference access')
-            definition = stage(case['task'], index, case['seed'] + index + 200003)['tests']
             prefix = "import sys;sys.path.insert(0,sys.argv[1]);sys.argv=['parent-check'];"
-            tested = subprocess.run([sys.executable, '-I', '-B', '-c', prefix + definition, str(folder / 'workspace')],
-                                    cwd=folder / 'workspace', capture_output=True, timeout=20)
-            if tested.returncode: failures.append(f'turn{index+1} final implementation parent-seed failure')
+            behavior = {}
+            for label, offset in (('public', 0), ('hidden', 100003), ('parent', 200003)):
+                definition = stage(case['task'], index, case['seed'] + index + offset)['tests']
+                try:
+                    tested = subprocess.run([sys.executable, '-I', '-B', '-c', prefix + definition, str(folder / 'workspace')],
+                                            cwd=folder / 'workspace', capture_output=True, timeout=20)
+                    exit_code, output = tested.returncode, tested.stdout + tested.stderr
+                except subprocess.TimeoutExpired as error:
+                    exit_code, output = 124, (error.stdout or b'') + (error.stderr or b'') + b'\nParent replay deadline exceeded'
+                if exit_code: failures.append(f'turn{index+1} final implementation {label}-seed failure')
+                behavior[label] = {'exit_code': exit_code, 'output': output.decode('utf-8', errors='replace')}
             per_turn.append({'turn': index + 1, 'session_id': sid, 'native_verified': native == turn['native'],
-                             'parent_seed_exit': tested.returncode, 'parent_seed_output': (tested.stdout + tested.stderr).decode('utf-8', errors='replace')})
+                             'parent_seed_exit': behavior['parent']['exit_code'], 'behavior_replay': behavior})
         evidence = json.loads((folder / 'workspace/evidence.json').read_text())
+        assert candidate_before == {name: hashlib.sha256((folder / 'workspace' / name).read_bytes()).hexdigest()
+                                    for name in candidate_before}, 'Parent replay changed candidate bytes'
         if type(evidence.get('acceptance_delay_seconds')) is not int or evidence['acceptance_delay_seconds'] != 37:
             failures.append('final history value')
         for source in folder.rglob('*'):
@@ -153,12 +168,19 @@ def review(publish=False):
     for row in rows:
         if row['qualified_by_parent_checks']: clients[row['client']] += 1
     samples = [json.loads(line) for line in (root / 'gpu-samples.jsonl').read_text().splitlines() if line.strip()]
+    from datetime import datetime
+    memory = [list(map(int, sample['csv_total_used_free_mib'].split(','))) for sample in samples if sample.get('csv_total_used_free_mib')]
+    sample_times = [datetime.fromisoformat(sample['at']) for sample in samples]
+    memory_summary = {'units': 'MiB', 'whole_host_used_min': min(row[1] for row in memory),
+                      'whole_host_used_max': max(row[1] for row in memory),
+                      'largest_sample_gap_seconds': max((b-a).total_seconds() for a,b in zip(sample_times,sample_times[1:]))}
     archive(root / 'gpu-samples.jsonl', 'gpu-samples.jsonl.gz', True)
     supplement_count = sum(r['qualified_by_parent_checks'] for r in rows)
     return {'original_matrix_qualifying': 19, 'original_matrix_attempts': 22,
         'supplement_qualifying': supplement_count, 'candidate_aggregate_qualifying': 20 + supplement_count, 'prior_supplement_qualifying': 1,
         'aggregate_clients': dict(clients), 'cases': rows, 'manifest': manifest,
-        'host_gpu_samples': len(samples), 'memory_limit': 'Whole-host samples, not isolated residency or an under14GB proof.',
+        'host_gpu_samples': len(samples), 'host_memory_summary': memory_summary,
+        'memory_limit': 'Whole-host samples, not isolated residency or an under14GB proof.',
         'epochs': 'Original matrix and prospective new workload epoch remain separate; identical implementation hash/image identity is required.',
         'full_goal_complete': False, 'final_independent_acceptance': 'pending',
         'known_quality_limits': 'Original12/19 additional-contract artifact failures stay frozen; separate generated expense recovery v3 passes selected checks but does not rewrite them. No reliability or unattended-production approval.'}

@@ -47,3 +47,4 @@
 /evidence/balanced-v2-setup/** -text -whitespace
 
 /evidence/balanced-v2-progress/** -text -whitespace
+/evidence/balanced-v2-sessions/** -text -whitespace

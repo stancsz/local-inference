@@ -1,0 +1,1699 @@
+{
+  "accepted": false,
+  "client": "claude",
+  "client_version": "2.1.251 (Claude Code)",
+  "task": "expense_audit",
+  "seed": 2026102717,
+  "minimum_seconds": 185.0,
+  "model": "qwen3.8-27b",
+  "upstream": "http://127.0.0.1:8090/v1",
+  "target": 32768,
+  "source_sha256": {
+    "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
+    "stress.portable_tasks_v2": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848",
+    "stress.cli_acceptance": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress.supplement_tasks_v1": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb",
+    "stress.fixture_probe_v2": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16",
+    "stress.proxy_capture_v2": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0",
+    "stress.portable_campaign_v2": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  },
+  "turns": [
+    {
+      "number": 1,
+      "accepted": false,
+      "duration_seconds": 240.257,
+      "client_exit": 1,
+      "timed_out": true,
+      "native": {
+        "terminal_success": false,
+        "calls": 13,
+        "completed": 13,
+        "successful_tools": [
+          "Read",
+          "Read",
+          "Read",
+          "Edit",
+          "Edit",
+          "Edit",
+          "Edit",
+          "Edit",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "evidence.json",
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": false,
+        "workflow_ordered": false
+      },
+      "hidden_tests_exit": 0,
+      "historical_gold_passed": true,
+      "public_tests_sha256": "4ee392232180668f143b4be4f395245a559297e32d4cc1662e28059aba43d556"
+    }
+  ],
+  "audits": [
+    {
+      "compacted": true,
+      "input_tokens": 113173,
+      "forwarded_tokens": 26779,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 0,
+      "excerpt_capture": "00000.json.gz",
+      "excerpt_capture_raw_sha256": "25556eba0664be883b9df9ba2a4590f3d3fd505e76f77bb0e3b094d6374ee90e",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 113662,
+      "forwarded_tokens": 27268,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 1,
+      "excerpt_capture": "00001.json.gz",
+      "excerpt_capture_raw_sha256": "59a8ae1560288bbdeae5e64590b1ec3f83f4beef822f14a1c82e9c4423f96d9f",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 114187,
+      "forwarded_tokens": 27793,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 2,
+      "excerpt_capture": "00002.json.gz",
+      "excerpt_capture_raw_sha256": "4254eba964d8429f777533710be5ed2920eb4a6ed53e17174ece044257244af3",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 114949,
+      "forwarded_tokens": 28555,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 3,
+      "excerpt_capture": "00003.json.gz",
+      "excerpt_capture_raw_sha256": "9a38d726c3171b4f7ff834e16584aa8946c8aa83c3f2fff09c06e933c9c4b679",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 115083,
+      "forwarded_tokens": 28689,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 4,
+      "excerpt_capture": "00004.json.gz",
+      "excerpt_capture_raw_sha256": "2776cc765eec0b38797fff5f755a57cc403e41212d57b9e7b05d50a6abaf2276",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 115638,
+      "forwarded_tokens": 29244,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 5,
+      "excerpt_capture": "00005.json.gz",
+      "excerpt_capture_raw_sha256": "181566fdbd493d614b073fa7112235ff6ff9bc7c5b89506d16f9f220f1789a04",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 116932,
+      "forwarded_tokens": 30538,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 6,
+      "excerpt_capture": "00006.json.gz",
+      "excerpt_capture_raw_sha256": "44da43f2e48c451281847d4a8dd200690e00ebc2702405c719b1aec50bee4baa",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 117221,
+      "forwarded_tokens": 30827,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 7,
+      "excerpt_capture": "00007.json.gz",
+      "excerpt_capture_raw_sha256": "bd8797426c6196bd996df1da45bf7ce4e14ad5ca224bf219afcbc731ac049541",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 117511,
+      "forwarded_tokens": 31117,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 8,
+      "excerpt_capture": "00008.json.gz",
+      "excerpt_capture_raw_sha256": "de8c54953012b6d38f399361143a0017c4f7c0d11c0bcc459d01ed8fa576de62",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 117806,
+      "forwarded_tokens": 31412,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 9,
+      "excerpt_capture": "00009.json.gz",
+      "excerpt_capture_raw_sha256": "8bbbfbf459ed2006337bd0552d30a034dffc6061a7bf3bf90bb2e9cbb3c94aec",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 118546,
+      "forwarded_tokens": 32152,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 10,
+      "excerpt_capture": "00010.json.gz",
+      "excerpt_capture_raw_sha256": "8fdc83ca06f86c9ca84e3691c64175903832e65ca797e3981221cf168b678c66",
+      "upstream_status": 200
+    },
+    {
+      "compacted": true,
+      "input_tokens": 118600,
+      "forwarded_tokens": 32206,
+      "omitted_estimated_tokens": 86394,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 512,
+      "method": "query_aware_extract",
+      "counting_tool_schema_items_filled": false,
+      "counting_responses_tools_translated": false,
+      "counting_responses_catalog_serialized": false,
+      "counting_tool_floor_adjustment": 288,
+      "counting_reasoning_content_floor_applied": false,
+      "protocol": "anthropic_messages",
+      "input_shapes": [
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "assistant",
+          "keys": [
+            "content",
+            "role"
+          ]
+        },
+        {
+          "role": "user",
+          "keys": [
+            "content",
+            "role"
+          ]
+        }
+      ],
+      "gold_retained": true,
+      "tool_results": 11,
+      "excerpt_capture": "00011.json.gz",
+      "excerpt_capture_raw_sha256": "a1c98cf481ce9ef240dc443a34dd9d3abedc992850b39ba495ceffdfa2d48e92",
+      "upstream_status": 200
+    }
+  ],
+  "native_gateway_audits": [
+    {
+      "compacted": false,
+      "input_tokens": 30513,
+      "forwarded_tokens": 30513,
+      "omitted_estimated_tokens": 0,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "selected_excerpts": 0,
+      "target_tokens": 32768,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 30513,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 30513,
+      "compaction_input_sha256": "948139db98c22bfd9220d8f778b48de1ed96cb9787a9d1a6176015ee98983fda",
+      "compaction_seconds": 0.0982,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 2,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": false,
+      "input_tokens": 31142,
+      "forwarded_tokens": 31142,
+      "omitted_estimated_tokens": 0,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "selected_excerpts": 0,
+      "target_tokens": 32768,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 31142,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 31142,
+      "compaction_input_sha256": "a73cd300f6b1cf61dfae15f565b8974ad1e2c4275f57fd37528d50a8b075f8d2",
+      "compaction_seconds": 0.0805,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 2,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": false,
+      "input_tokens": 31738,
+      "forwarded_tokens": 31738,
+      "omitted_estimated_tokens": 0,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "selected_excerpts": 0,
+      "target_tokens": 32768,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 31738,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 31738,
+      "compaction_input_sha256": "ced44250a59c889518e2a69d455c403a8a8e167f6bd959e3056ce86cb0831e3e",
+      "compaction_seconds": 0.0793,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 2,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": false,
+      "input_tokens": 32516,
+      "forwarded_tokens": 32516,
+      "omitted_estimated_tokens": 0,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "selected_excerpts": 0,
+      "target_tokens": 32768,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 32516,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 32516,
+      "compaction_input_sha256": "863e37955408b9b80918b89cfba44b4a2eac9566a453103608773f68b1a24cff",
+      "compaction_seconds": 0.0842,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 2,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": false,
+      "input_tokens": 32698,
+      "forwarded_tokens": 32698,
+      "omitted_estimated_tokens": 0,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "selected_excerpts": 0,
+      "target_tokens": 32768,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 32698,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 32698,
+      "compaction_input_sha256": "f4b4abb47a3329a14cd5bad9f61cc4494432344b50e12926ef39e490b27cd2a7",
+      "compaction_seconds": 0.0885,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 2,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 33342,
+      "forwarded_tokens": 24565,
+      "omitted_estimated_tokens": 8777,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 112,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 33342,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24565,
+      "compaction_input_sha256": "6000137263152382adb06a8fdcbad3b45809c1e5406c101fe691b44fbf5bfde9",
+      "compaction_seconds": 0.561,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 34625,
+      "forwarded_tokens": 24408,
+      "omitted_estimated_tokens": 10217,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 104,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 34625,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24408,
+      "compaction_input_sha256": "0448b63366b37ce8be4b2f429b5d7ae259c17cf83c209d21e3d8081ec5860d5d",
+      "compaction_seconds": 0.5944,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 34965,
+      "forwarded_tokens": 24568,
+      "omitted_estimated_tokens": 10397,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 103,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 34965,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24568,
+      "compaction_input_sha256": "a3b8755e2ba7a03a48f305f048423a5423eeaa3960e5557edbeb2c26975feee1",
+      "compaction_seconds": 0.6487,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35300,
+      "forwarded_tokens": 24543,
+      "omitted_estimated_tokens": 10757,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 101,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35300,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24543,
+      "compaction_input_sha256": "a8c82ab3acc2fcfa7b27ef80f3e4f9f6caa4ebca68ba4014747c162d415c4b7f",
+      "compaction_seconds": 0.6575,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 35648,
+      "forwarded_tokens": 24531,
+      "omitted_estimated_tokens": 11117,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 99,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 35648,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24531,
+      "compaction_input_sha256": "1cedd2524da8d83140964069f78de6aae5763aebf7d811bfcea2d65867c1e329",
+      "compaction_seconds": 0.6263,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 36408,
+      "forwarded_tokens": 24571,
+      "omitted_estimated_tokens": 11837,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 95,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 36408,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24571,
+      "compaction_input_sha256": "5e4e96c12ced8881759e11bab47731a0fd2ada9358dd629b4a88a796376da511",
+      "compaction_seconds": 0.6585,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    },
+    {
+      "compacted": true,
+      "input_tokens": 36499,
+      "forwarded_tokens": 24482,
+      "omitted_estimated_tokens": 12017,
+      "preserved_recent_turns": 0,
+      "preserved_recent_tool_cycles": 0,
+      "stable_prefix_excerpts": 1,
+      "selected_excerpts": 94,
+      "method": "query_aware_extract",
+      "target_tokens": 24576,
+      "context_window": 40960,
+      "output_reserve": 4096,
+      "fixed_tokens": 256,
+      "raw_native_tokens": 36499,
+      "available_tokens": 36608,
+      "ceiling_tokens": 36608,
+      "anchor_tokens": 32768,
+      "compression_ratio": 8.0,
+      "budget_policy": "request_adaptive_ratio",
+      "native_input_tokens": 24482,
+      "compaction_input_sha256": "5a88499ee572854029743ce9eb1d7ade609e6dacf0c2b6e267270a72cf9289ae",
+      "compaction_seconds": 0.6666,
+      "selection_counting": "native full-request tokenizer",
+      "tokenizer_calls": 14,
+      "raw_native_token_limit": 1050000,
+      "decoder_headroom": 256
+    }
+  ],
+  "active_client_seconds": 240.257,
+  "elapsed_seconds": 240.773,
+  "session_id": "e0dee14c-51ad-4287-9f16-45accfc1c0dd",
+  "failure": "native turn, hidden tests, history fact, or session continuity failed"
+}

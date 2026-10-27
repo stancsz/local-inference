@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-10-27T15:55:07.592669+00:00",
+  "verdict": "PASS for byte identity and configured-secret scan only",
+  "files": 518,
+  "mismatches": 0,
+  "credential_hits": 0,
+  "candidate_total": 23,
+  "clients": {
+    "claude": 8,
+    "opencode": 9,
+    "codex": 6
+  },
+  "parent_review_sha256": "870dc93e38c9f895ea31a4a8381115686b0918b6bbb60a90e4cb48e378443b55",
+  "full_goal_complete": false
+}
