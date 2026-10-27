@@ -539,7 +539,10 @@
     "codex": 6
   },
   "full_goal_complete": false,
-  "nonauthor_acceptance": "pending",
+  "nonauthor_acceptance": {
+    "software_repair": "READY",
+    "full_goal": "NOT_READY"
+  },
   "council": "Unavailable: NORTHSTAR_COUNCIL_MODEL not configured; no fallback/provider substitution.",
   "limits": [
     "No new nine-turn repaired-source qualifying session.",
@@ -551,5 +554,9 @@
   "catalog_boundary_proof": "evidence/repair-v3-catalog-live-final.json",
   "catalog_transport": "Complete catalog is retained and mirrored into protected instructions before the Chat converter; live nonce roundtrip passes.",
   "unsupported_provider_approval_state": "Hosted MCP/unknown approval items and opaque encrypted reasoning fail closed422; not silently discarded.",
-  "prior_repair_review": "Incomplete at60turn cap with no final verdict; no independent PASS claimed. Focused follow-up pending."
+  "prior_repair_review": "Incomplete at60turn cap with no final verdict; no independent PASS claimed. Focused follow-up pending.",
+  "nonauthor_receipt": "evidence/repair-v3-independent-review.json",
+  "upstream_pr_merged": true,
+  "upstream_merge_sha": "3fe2b8f560fff6a51621ec82d8f2d717a27e5c06",
+  "upstream_ci": "Core smoke Python3.12 SUCCESS at expected head2ca64b1; scheduled full matrix skipped by workflow policy;26 focused local checks pass"
 }

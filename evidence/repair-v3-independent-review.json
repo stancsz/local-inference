@@ -1,0 +1,35 @@
+{
+  "verdict": {
+    "software_repair": "READY",
+    "full_goal": "NOT_READY"
+  },
+  "actual_files_inspected": [
+    "tmp/stress/focused-repair-checks.py (full read)",
+    "app/gateway.py (full read, 125 lines)",
+    "scripts/claude_local.py (full read, 14 lines)",
+    "docs/REPAIR_V3.md (full read, 27 lines)"
+  ],
+  "actual_checks_executed": [
+    "python tmp/stress/focused-repair-checks.py -> exit 0, JSON output",
+    "nested: tmp/stress/check-repair-publication.py -> files=185, hash_mismatches=0, git_byte_mismatches=0, qualification_increment=0, candidate_total=23",
+    "nested: pytest tests -q -> 376 passed in 21.26s (returncode 0)",
+    "nested: tmp/stress/probe-catalog-live.py -> assistant_nonce_matched=true, unsupported_approval_state.status=422",
+    "nested: docker exec hash comparison of /app/budget.py and /app/gateway.py vs repo app/*.py -> identical (deployed_app_source_matches=true)"
+  ],
+  "findings": {
+    "explicit_rejection_of_unsupported_state": "VERIFIED in source and live. app/gateway.py calls response_selection_view(data) on Responses traffic and raises HTTPException(422) for unsupported hosted MCP/approval items, plus a separate 422 for reasoning items carrying encrypted_content ('Local text bridge cannot preserve opaque provider reasoning state'). Live probe independently returned unsupported_approval_state.status=422. Not silent-discard behavior.",
+    "metadata_and_catalog_preservation": "VERIFIED in source and live. protect_codex_instructions() keeps each original additional_tools item in history and mirrors its full JSON metadata (sort_keys, approval metadata included) into the protected instructions block, with 422 guards for malformed developer/tools content. The live probe's assistant_nonce_matched=true shows metadata surviving the deployed Responses->Chat conversion, and the check script asserts catalog_nonce_roundtrip=true.",
+    "normal_caller_config_retention": "VERIFIED by inspection only. scripts/claude_local.py removes only auth-token/bare-mode env keys (GATEWAY_MASTER_KEY, EXPERTS_API_KEY, ANTHROPIC_AUTH_TOKEN, CLAUDECODE) and sets model/base-url/timeouts; it does not force approval mode, sandbox settings, or a config directory. No independent runtime assertion of caller permission/approval/settings values was executed within my call budget.",
+    "immutable_provenance_and_unchanged_failed_outcomes": "VERIFIED via published-artifact reconciliation: 185 files, 0 hash mismatches, 0 git byte mismatches, qualification_increment=0, candidate_total=23 (claude 8 / opencode 9 / codex 6) identical to the parent-reported figures. Failed/nonqualifying Codex receipts therefore did not gain qualification, and no reroll was hidden. Deployed container source hashes match current repo app/budget.py and app/gateway.py.",
+    "strict_protected_content_fit_fallback": "PARTIALLY VERIFIED. The fallback lives in app/budget.py ('retry only active_too_large ... other errors remain fail-closed'), which I did NOT read; my inspection covered gateway.py, claude_local.py and REPAIR_V3.md only. The narrow-fallback claim is backed by the passing project test suite (376 passed) and by the check script's own assertions, but I did not read the fallback code path directly.",
+    "full_goal_gaps": "NOT READY and explicitly not silently converted to passes. The check output itself reports full_goal_complete=false; final_short_artifacts shows vram-plan=false and model-audit=false (only operator-guide=true), contradicting the original goal's 'good generated artifacts'. Remaining blockers recorded in docs/REPAIR_V3.md: seven-per-client/nine-turn repaired-source acceptance, general semantic retention under lossy compaction, isolated/simultaneous 64k+4k under 14GB memory proof, and arbitrary model factual accuracy/instruction compliance. These are model/capacity limits outside the scoped software repair.",
+    "claim_scoping": "REPAIR_V3.md itself scopes the work as confirmed-bug repair, not universal model certification, and states the full goal stays NOT_READY. My verdict is consistent with that bounded framing."
+  },
+  "limits": [
+    "Four tool calls consumed as instructed; app/budget.py (source of the protected-content fit fallback), app/sift integration internals, tmp/stress/check-repair-publication.py, tmp/stress/probe-catalog-live.py and evidence/repair-v3-summary.json were NOT read directly, only executed as nested subprocesses.",
+    "The 'normal caller config retention' scope rests on static reading of scripts/claude_local.py plus the test suite; I did not independently observe live Claude/OpenCode/Codex clients with their approval/sandbox settings.",
+    "The 376-test suite and live :8090 probe were run by the authorized script; I did not author or inspect individual test bodies, so per-test coverage of the fit fallback is inferred from pass/fail status only.",
+    "No conclusion is offered on the 64k/1M context, VRAM/MTP arithmetic, or model instruction-compliance claims; the published VRAM report's source/value confusion and the MTP basename violation are reported by the parent and are outside what I inspected.",
+    "software_repair READY is bounded strictly to the checks I actually executed and read:422 fail-closed behavior, catalog/metadata preservation roundtrip, deployed-source hash identity, published-artifact immutability, and unchanged qualification counts. It is not a universal model or memory certification."
+  ]
+}

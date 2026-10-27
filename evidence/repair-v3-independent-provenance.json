@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-27T18:18:00.503805+00:00",
+  "reviewed_revision": "3d176b0",
+  "route": "http://127.0.0.1:4000",
+  "model_alias": "default",
+  "nonauthor": true,
+  "read_only": true,
+  "terminal_subtype": "success",
+  "actual_cli_turns": 5,
+  "actual_tool_calls": 4,
+  "permission_denials": [],
+  "exit": {
+    "exit_code": 0,
+    "alias": "local-inference-worker-8f00e742bb3c",
+    "route": "http://127.0.0.1:4000",
+    "model": "default"
+  },
+  "revocation": {
+    "alias": "local-inference-worker-8f00e742bb3c",
+    "revoked": true
+  },
+  "files": [
+    {
+      "file": "evidence/repair-v3-independent/repair-v3-focused-brief.txt.gz",
+      "raw_sha256": "b2ad8384682293c3294e93701e3578ad88900ef40e3470ce801a2754ccf05a50"
+    },
+    {
+      "file": "evidence/repair-v3-independent/repair-v3-focused-dispatch.py.gz",
+      "raw_sha256": "2979dd45f3ffa55ba65105d6eb0ad7200a550bb23d20adbe259d07059535b621"
+    },
+    {
+      "file": "evidence/repair-v3-independent/repair-v3-focused-worker-exit.json.gz",
+      "raw_sha256": "54f1d1a958d0dc3d76af39629582d948af366ce8bc009e5fc360f7f0a95619f4"
+    },
+    {
+      "file": "evidence/repair-v3-independent/repair-v3-focused-worker-revocation.json.gz",
+      "raw_sha256": "c836e7955746bc9e1e73e9e5a39e75ebe39980b4694008a1f9eda7fae6fca8cb"
+    },
+    {
+      "file": "evidence/repair-v3-independent/repair-v3-focused-worker-smoke.json.gz",
+      "raw_sha256": "c90f4b78197ec4eaf29eacf67ec86e2062c02dd1a5907508fa62e7c140b30145"
+    },
+    {
+      "file": "evidence/repair-v3-independent/repair-v3-focused-worker-tool-first.json.gz",
+      "raw_sha256": "9e340c7e6ef175a2de79cb81365137d3685a5f6b5cc3dd2e6a2103be1cbcf45e"
+    },
+    {
+      "file": "evidence/repair-v3-independent/repair-v3-focused-worker-tool-smoke.json.gz",
+      "raw_sha256": "b98869182d9f6e9a3217c877a4864916750a62b2807d927f452bb6b6de0af41b"
+    },
+    {
+      "file": "evidence/repair-v3-independent/repair-v3-focused-worker.jsonl.gz",
+      "raw_sha256": "ebdb67d051669a77fe258c990bc10f4a4df9363b7a2c9bea994069fd4f00850c"
+    },
+    {
+      "file": "evidence/repair-v3-independent/repair-v3-focused-worker.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    }
+  ],
+  "limits": [
+    "Four tool calls consumed as instructed; app/budget.py (source of the protected-content fit fallback), app/sift integration internals, tmp/stress/check-repair-publication.py, tmp/stress/probe-catalog-live.py and evidence/repair-v3-summary.json were NOT read directly, only executed as nested subprocesses.",
+    "The 'normal caller config retention' scope rests on static reading of scripts/claude_local.py plus the test suite; I did not independently observe live Claude/OpenCode/Codex clients with their approval/sandbox settings.",
+    "The 376-test suite and live :8090 probe were run by the authorized script; I did not author or inspect individual test bodies, so per-test coverage of the fit fallback is inferred from pass/fail status only.",
+    "No conclusion is offered on the 64k/1M context, VRAM/MTP arithmetic, or model instruction-compliance claims; the published VRAM report's source/value confusion and the MTP basename violation are reported by the parent and are outside what I inspected.",
+    "software_repair READY is bounded strictly to the checks I actually executed and read:422 fail-closed behavior, catalog/metadata preservation roundtrip, deployed-source hash identity, published-artifact immutability, and unchanged qualification counts. It is not a universal model or memory certification."
+  ]
+}
