@@ -268,5 +268,21 @@ class RunnerTests(unittest.TestCase):
         )
 
 
+class NativePromptEncodingTests(unittest.TestCase):
+    def test_native_prompt_bytes_are_utf8_even_with_a_windows_legacy_locale(self):
+        with tempfile.TemporaryDirectory() as folder:
+            directory = Path(folder)
+            for prompt in ('caf\u00e9 \u2014', '\u4e2d\u6587\u4efb\u52a1'):
+                stdout = directory / 'stdout.log'
+                stderr = directory / 'stderr.log'
+                code, timed_out = runner.invoke_cli(
+                    [sys.executable, '-c', 'import sys; print(sys.stdin.buffer.read().hex())'],
+                    dict(os.environ), prompt, ROOT, stdout, stderr, 5,
+                )
+                self.assertEqual(code, 0, stderr.read_text(encoding='utf-8'))
+                self.assertFalse(timed_out)
+                self.assertEqual(stdout.read_text(encoding='utf-8').strip(), prompt.encode('utf-8').hex())
+
+
 if __name__ == "__main__":
     unittest.main()

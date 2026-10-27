@@ -191,6 +191,7 @@ def invoke_cli(args, env, prompt, cwd, stdout_path: Path, stderr_path: Path, tim
             stdout=out,
             stderr=err,
             text=True,
+            encoding="utf-8",
             cwd=str(cwd),
             env=env,
             **popen_kwargs,

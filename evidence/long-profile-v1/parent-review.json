@@ -1,0 +1,134 @@
+{
+  "verdict": "UNSUCCESSFUL_CANCELLED",
+  "reason": "Owned capacity client intentionally ended for sustained unproductive decode; no full-output capacity pass.",
+  "requested_input_tokens": 65536,
+  "requested_output_tokens": 4096,
+  "maximum_observed_decoded_tokens": 1300,
+  "sampled_decode_progress_tps": 4.694990251241901,
+  "tps_scope": "Difference between first and last positive observed decode counts, not a backend timing benchmark",
+  "peak_host_delta_mib": 12908,
+  "memory_scope": "Whole-host occupancy and conservative before/after delta, not isolated per-allocation residency. Desktop drift remains a confound.",
+  "capacity_passed": false,
+  "further_case_checks": "NOT_RUN",
+  "second_candidate_54_layers": "NOT_RUN: first candidate passed its memory condition; no replacement",
+  "restored_image_environment": true,
+  "restored_local_openai_smokes": true,
+  "sample_count": 619,
+  "largest_sample_gap_seconds": 1.264333,
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "artifacts": [
+    {
+      "path": "evidence/long-profile-v1/58-capacity.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v1/58-capacity.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v1/58-inference.stderr.log",
+      "sha256": "8003d8fd65c1bae5eb0f82025f36e3f0f5fbc01b1b714e074c6f4ad029093b64"
+    },
+    {
+      "path": "evidence/long-profile-v1/58-inference.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v1/58-stop.stderr.log",
+      "sha256": "ec72e052d364149de18d29b696e1bd41d13eb580fd29d8551c099fd8d10e77ba"
+    },
+    {
+      "path": "evidence/long-profile-v1/58-stop.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v1/58-up.stderr.log",
+      "sha256": "729ef4f1e370f29cee2cf25fed80d20c9829f928601d3eeb6714e012efafda51"
+    },
+    {
+      "path": "evidence/long-profile-v1/58-up.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v1/baseline-stop.stderr.log",
+      "sha256": "ec72e052d364149de18d29b696e1bd41d13eb580fd29d8551c099fd8d10e77ba"
+    },
+    {
+      "path": "evidence/long-profile-v1/baseline-stop.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v1/gpu-samples.jsonl",
+      "sha256": "1e9e10c8483c52be3535eacdf64440a3b486e32c8d14f8207d593ae6cb5760e3"
+    },
+    {
+      "path": "evidence/long-profile-v1/observations.jsonl",
+      "sha256": "5492ad3fd03f0f40b4ba6d829cc0d8633018ad0cd55e03f358cd4d553153a82d"
+    },
+    {
+      "path": "evidence/long-profile-v1/parent-abort.json",
+      "sha256": "9b530b6d6c780649fdabfd1b195c7eb3bb08f41d356a275c43173eec4721bc8b"
+    },
+    {
+      "path": "evidence/long-profile-v1/producer/capacity_acceptance.py",
+      "sha256": "0407ad1736bdd5b3b7af0cbad133eb502a7f654939e09c12f6f6f1fa9085e856"
+    },
+    {
+      "path": "evidence/long-profile-v1/producer/local_smoke.py",
+      "sha256": "ab434fe5bc1df09803293fbc13bb333751c5ca8786888f1b63be8cc18c2bc8cc"
+    },
+    {
+      "path": "evidence/long-profile-v1/producer/long-profile-v1.py",
+      "sha256": "1891988b67840aceb8a7a895133ffb1386c59f4064327e948f7c4fa03afa3f4f"
+    },
+    {
+      "path": "evidence/long-profile-v1/producer/observe-long-profile-v1.py",
+      "sha256": "ba8c8472c91897cfeeb0aa3fde1c29de6dabce7381b64fb859e65a3fc67852c0"
+    },
+    {
+      "path": "evidence/long-profile-v1/producer/openai_smoke.py",
+      "sha256": "55be99dd625363aab25dd0569a346d4b98a9579a9e6aebbd06a2fc0de5830dbd"
+    },
+    {
+      "path": "evidence/long-profile-v1/producer/watch-long-profile-v1.py",
+      "sha256": "0cad875ca233c65eff35bba8ee5c8d224a9c9b171dc897212cdfb9771066a8c1"
+    },
+    {
+      "path": "evidence/long-profile-v1/restore-up.stderr.log",
+      "sha256": "729ef4f1e370f29cee2cf25fed80d20c9829f928601d3eeb6714e012efafda51"
+    },
+    {
+      "path": "evidence/long-profile-v1/restore-up.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v1/restored-local.json",
+      "sha256": "e7d4531de2b01dde4a41537c979a1b57c67985aad14d963aefd00e40ef0f270d"
+    },
+    {
+      "path": "evidence/long-profile-v1/restored-local.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v1/restored-local.stdout.log",
+      "sha256": "1a47d2ee5514ef68f247cb080e797ca0747b9495c5bbfd3b480b82c863f0db5a"
+    },
+    {
+      "path": "evidence/long-profile-v1/restored-openai.json",
+      "sha256": "5d5649ae876f54723d2cd357d9b15cd6165ce2ea8df5b8c2e7f386e8cdc61922"
+    },
+    {
+      "path": "evidence/long-profile-v1/restored-openai.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/long-profile-v1/restored-openai.stdout.log",
+      "sha256": "d25b64095a890e494223e06f2004a3eae0a141b749f7c04086e68569bca5300c"
+    },
+    {
+      "path": "evidence/long-profile-v1/state.json",
+      "sha256": "6a74bc151b17e720a2dc7084e04572095600f047354fe55bacbd0c150b8a0955"
+    }
+  ]
+}

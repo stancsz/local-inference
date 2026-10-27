@@ -1,0 +1,150 @@
+{
+  "route": "http://127.0.0.1:4000",
+  "model": "default",
+  "session_id": "d996bf09-d953-4558-8f37-738d2f7b553b",
+  "scope": "Original daily feedback harness increment before the later explicit UTF-8 subprocess transport fix",
+  "verdict": {
+    "verdict": "READY",
+    "increment": "Daily harness review only; qualification_increment=0",
+    "full_goal": "NOT_READY",
+    "inspected_scope": {
+      "pages": [
+        "checks",
+        "runner",
+        "validators"
+      ],
+      "generated_artifacts": [
+        "vram-plan.md",
+        "model-audit.json",
+        "OPERATIONS.md"
+      ],
+      "harness_scope": [
+        "task outcomes and reported errors",
+        "native CLI phase handling and edit reconstruction",
+        "source-read checks",
+        "artifact validators"
+      ],
+      "commands": [
+        "python tmp/stress/daily-review-pages-v5.py --section checks",
+        "python tmp/stress/daily-review-pages-v5.py --section runner",
+        "python tmp/stress/daily-review-pages-v5.py --section validators"
+      ]
+    },
+    "checks": {
+      "v1": "vram-plan and operator-guide were rejected for missing complete native source reads before the first artifact edit; model-audit passed.",
+      "v2": "All three tasks were accepted with no reported errors.",
+      "reported_tests": "37 passed in 0.51s.",
+      "reported_replay": "127 files verified; 9 native phases replayed."
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "detail": "The displayed vram-plan.md contains replacement characters in two headings where punctuation appears intended. The reported validator does not flag this presentation defect."
+      }
+    ],
+    "limits": [
+      "This verdict covers the bounded daily harness increment only; it does not qualify the full goal.",
+      "The file-verification and native-phase replay totals are reported by the checks page; I did not independently rerun them.",
+      "No product, evidence, or artifact edits were made."
+    ]
+  },
+  "qualification_increment": 0,
+  "revocation_checks": [
+    {
+      "alias": "local-daily-review-a98327ff09b6",
+      "absent_from_key_list": true
+    },
+    {
+      "alias": "local-daily-review-9df1738fe649",
+      "absent_from_key_list": true
+    }
+  ],
+  "parent_presentation_check": {
+    "valid_utf8": true,
+    "replacement_characters_in_original_artifact": 0,
+    "em_dashes_in_original_artifact": 2,
+    "finding_scope": "The reviewer saw replacement characters from CP1252-to-UTF8 tool display; the preserved generated UTF-8 artifact contains none."
+  },
+  "later_transport_regression": {
+    "before": "failed: CP1252 stdin bytes 636166e92097 instead of UTF8 636166c3a920e28094",
+    "after": "passed with explicit Popen encoding=utf-8 for accented and Chinese input",
+    "review_coverage": "The later one-line transport fix is parent-verified separately, outside this prior nonauthor verdict."
+  },
+  "artifacts": [
+    {
+      "path": "evidence/daily-review-v5/daily-review-exact-v4.py.gz",
+      "raw_sha256": "ed0cc5aecb3c4e374f471a3d00260c29251bffbe1fde38517b56e4763f043875",
+      "compressed_sha256": "347f9bcca7b0ecae75f1a751acb863fc85e3aa9a5b827c9c1b4a62adcf6646ec"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-exact-v4.jsonl.gz",
+      "raw_sha256": "b871482e6d4a03d2dea0fb67b63944deb2e12f8c5bea9ca9209a8a23465f06cb",
+      "compressed_sha256": "db9d2916c854ad514918278d9a16206522689b8e39042e64c8a657616170e866"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-exact-v4.stderr.log.gz",
+      "raw_sha256": "2986bc48ab629c6560e1a03228500a82da1fc827638baefbde27723aa67cd875",
+      "compressed_sha256": "878fc0102c0ba8611616bae624f041e4920ab31d09ae968f0286a4e9cf0edc0e"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-exact-v4.plan.json.gz",
+      "raw_sha256": "93daa8c5ba9336bfb2094ee3c882ebb73eb00986cc1e316532615952d0661693",
+      "compressed_sha256": "0d5729ca9b9f196a2537ee694db3c32953645551ad4cb64b979846b155a3f27f"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-exact-v4.exit.json.gz",
+      "raw_sha256": "2e293494c608b61caa983d1cfb9b365d47c907942d8a89748ca611ee418e58cb",
+      "compressed_sha256": "07e4720dd72c7b59317de139633af766b862426e141c582d0cda126cd1eb05d7"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-exact-v4.revocation.json.gz",
+      "raw_sha256": "4fbdfd530166d33c2748e29ffab25c98548e16230834bdc044b37951d40fac68",
+      "compressed_sha256": "16ded992d8f9d4e9f0a497587b1422d0aeb8583bfe25008820c0592504339132"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-paged-v5.py.gz",
+      "raw_sha256": "b89ab0607869f72a4ed5f72b09452a832bab7ce8f406a765c07b6166bb3c8a3a",
+      "compressed_sha256": "087481e01629f2edc35fd48e8bb45f23a26f814dd68cef17250c7dab322c002e"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-paged-v5.jsonl.gz",
+      "raw_sha256": "8249a015f614406f71c3638de442d3427bfc0a8f128eef4123349c31e8d5b6c9",
+      "compressed_sha256": "a243e71d3b4ee7809d05da4435e920b1a7fd85b9e1e16d6e28bdf2d569bd137e"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-paged-v5.stderr.log.gz",
+      "raw_sha256": "2986bc48ab629c6560e1a03228500a82da1fc827638baefbde27723aa67cd875",
+      "compressed_sha256": "878fc0102c0ba8611616bae624f041e4920ab31d09ae968f0286a4e9cf0edc0e"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-paged-v5.plan.json.gz",
+      "raw_sha256": "fc8a161caafbf6e40e20f312bdb53f4c930c1af44134ea3942d2d395b908aff6",
+      "compressed_sha256": "22eaa5d0eeffc31d16208b96b412f6968a112ad732be568e69ee3d2a711a227f"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-paged-v5.exit.json.gz",
+      "raw_sha256": "8d2317968685e0f6b846ed792b66e8260e2e4067550c3f080ae7aaa25f07cb6e",
+      "compressed_sha256": "46f50258f9bdd09094fb32064248ca7aa6f7a18bf79eb1d4c612b255f0e6d716"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-paged-v5.revocation.json.gz",
+      "raw_sha256": "86cc309373c789c8b37a0c2e40d601e4254ba15776c2cfb5cb27fae1193cc886",
+      "compressed_sha256": "52a87372985a9511d3cc23690dc6bd306bea183ce625071abb3358433cbe9b67"
+    },
+    {
+      "path": "evidence/daily-review-v5/daily-review-pages-v5.py.gz",
+      "raw_sha256": "1c8b4a3f12f5c9b5024fc056a7c1133b8ef1b541a422a41c6ec3cc9f5dc72b38",
+      "compressed_sha256": "c557eff4d607fe9fdc3f68fff7bd0ef4e040fb27af73d6c613903f33b649615c"
+    },
+    {
+      "path": "evidence/daily-review-v5/prompt-encoding-before.log.gz",
+      "raw_sha256": "33f8d0df91a3b488491b06fd4e2a5739ccefb0dfdb8508d21ee9f385be38e8ac",
+      "compressed_sha256": "97e1bc11c523bb12a1a29d3758db0b3fc62276c4af4e23fbbec05f4c0d661f3d"
+    },
+    {
+      "path": "evidence/daily-review-v5/prompt-encoding-after.log.gz",
+      "raw_sha256": "4b901e9fb121489422c56c94f4112a34c14f497e2e01c9caa23941fe690489cf",
+      "compressed_sha256": "c21c1abbe83dc23e92b62dbf53309b78c15c68f7ee0dab2cf172def35553db21"
+    }
+  ]
+}

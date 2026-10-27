@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-27T22:06:29.351713+00:00",
+  "reason": "Parent terminated the owned capacity client after sustained approximately 5 tok/s decode; unproductive CPU offload trial. This is a preserved unsuccessful/cancelled capacity experiment, not a timeout or full 4096-output pass.",
+  "owned_client_pid": 32872,
+  "controller_pid": 246796,
+  "last_observation": {
+    "at": "2026-10-27T22:06:29.002765+00:00",
+    "controller_pid": 246796,
+    "controller_live": true,
+    "stage": "tests-58-capacity",
+    "status": "preparing",
+    "slots": [
+      {
+        "id": 0,
+        "is_processing": true,
+        "n_prompt_tokens": 66838,
+        "next_token": [
+          {
+            "has_next_token": true,
+            "has_new_line": true,
+            "n_remain": 2796,
+            "n_decoded": 1300
+          }
+        ]
+      }
+    ],
+    "last_gpu_sample": {
+      "at": "2026-10-27T22:06:28.315436+00:00",
+      "stage": "tests-58-capacity",
+      "total_mib": 16303,
+      "used_mib": 14604,
+      "free_mib": 1392
+    }
+  },
+  "qualification_increment": 0
+}

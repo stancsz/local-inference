@@ -1,4 +1,5 @@
 """Prove text and native tool continuation through this gateway only."""
+import argparse
 import json
 import hashlib
 from pathlib import Path
@@ -13,6 +14,9 @@ def request(body):
     with urllib.request.urlopen(req,timeout=180) as response: return json.load(response)
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',type=Path,default=ROOT/'evidence/local-smoke.json')
+    options=parser.parse_args()
     receipts={}
     for url in ['http://127.0.0.1:8091/health','http://127.0.0.1:8090/health/readiness']:
         deadline=time.monotonic()+90
@@ -37,7 +41,10 @@ def main():
     body.pop('tool_choice')
     final=request(body)
     assert 'LOCAL_QWEN_TOOL_OK' in json.dumps(final['content'])
-    protected='locked '*45000
+    with urllib.request.urlopen('http://127.0.0.1:8091/props',timeout=10) as response:
+        context=json.load(response)['default_generation_settings']['n_ctx']
+    repetitions=max(45000,context*2)
+    protected='locked '*repetitions
     oversized={'model':'qwen3.8-27b','max_tokens':4096,
         'system':'Preserve all of the current task.', 'messages':[{'role':'user','content':protected}]}
     try:
@@ -46,12 +53,12 @@ def main():
         detail=error.read().decode()
         assert error.code==422 and 'Sift' in detail,detail
         receipts['protected_overflow']={'status':error.code,'detail':detail,
-            'fixture':"'locked ' repeated 45000 times", 'characters':len(protected),
+            'fixture':f"'locked ' repeated {repetitions} times", 'runtime_context':context, 'characters':len(protected),
             'sha256':hashlib.sha256(protected.encode()).hexdigest()}
     else:
         raise AssertionError('Oversized protected current task was forwarded')
     receipts.update(tool=tool,continuation=final,seconds=round(time.monotonic()-start,3),passed=True,endpoint='http://127.0.0.1:8090/v1/messages')
-    (ROOT/'evidence/local-smoke.json').write_text(json.dumps(receipts,indent=2))
+    options.output.write_text(json.dumps(receipts,indent=2),encoding='utf-8')
     print('Local gateway text and tool continuation passed',flush=True)
 
 if __name__=='__main__': main()

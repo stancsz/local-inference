@@ -1,4 +1,5 @@
 """Verify native JSON-schema constraints and OpenAI output-budget normalization."""
+import argparse
 import json
 from pathlib import Path
 import urllib.request
@@ -6,6 +7,9 @@ import urllib.error
 from setup_env import gateway_key, ROOT
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',type=Path,default=ROOT/'evidence/openai-smoke.json')
+    options=parser.parse_args()
     schema={'type':'object','properties':{'marker':{'type':'string','const':'LOCAL_OPENAI_OK'}},'required':['marker'],'additionalProperties':False}
     body={'model':'qwen3.8-27b','messages':[{'role':'user','content':'Return the JSON object required by the response schema.'}],'max_completion_tokens':128,'seed':42,'response_format':{'type':'json_schema','json_schema':{'name':'marker','strict':True,'schema':schema}}}
     req=urllib.request.Request('http://127.0.0.1:8090/v1/chat/completions',data=json.dumps(body).encode(),headers={'Authorization':'Bearer '+gateway_key(),'Content-Type':'application/json'})
@@ -22,7 +26,7 @@ def main():
     except urllib.error.HTTPError as error:
         rejected=error.code
     passed=passed and rejected==422 and cap_passed
-    (ROOT/'evidence/openai-smoke.json').write_text(json.dumps({'passed':passed,'request':body,'response':result,'schema_assertion':parsed=={'marker':'LOCAL_OPENAI_OK'},'cap_request':cap_body,'cap_response':capped,'output_limit_assertion':cap_passed,'invalid_top_level_system_status':rejected,'purpose':'Submitted schema yields the exact const absent from user text; a long-generation request stops at the exact requested 16-token limit; malformed OpenAI system is rejected'},indent=2))
+    options.output.write_text(json.dumps({'passed':passed,'request':body,'response':result,'schema_assertion':parsed=={'marker':'LOCAL_OPENAI_OK'},'cap_request':cap_body,'cap_response':capped,'output_limit_assertion':cap_passed,'invalid_top_level_system_status':rejected,'purpose':'Submitted schema yields the exact const absent from user text; a long-generation request stops at the exact requested 16-token limit; malformed OpenAI system is rejected'},indent=2),encoding='utf-8')
     print('OpenAI JSON schema and token limit passed' if passed else 'FAILED',flush=True)
     raise SystemExit(0 if passed else 1)
 

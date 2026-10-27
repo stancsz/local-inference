@@ -63,3 +63,6 @@
 /evidence/repair-v3-independent/** -text -whitespace
 /evidence/daily-feedback-v2-artifacts/** -text -whitespace
 /evidence/daily-feedback-v2-material/** -text -whitespace
+/evidence/daily-review-v5/** -text -whitespace
+/evidence/long-profile-v1/** -text -whitespace
+/evidence/long-profile-v2/** -text -whitespace
