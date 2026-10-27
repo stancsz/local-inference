@@ -1,0 +1,35 @@
+{
+  "scope": "Partial live native trace/excerpt verification, no terminal qualification verdict",
+  "session_id": "e273dac6-386d-4def-85a6-8d4885d37883",
+  "turns": [
+    {
+      "turn": 1,
+      "duration_seconds": 53.073,
+      "native_verified": true,
+      "public_hash": "ec5c0ab52201f72a5f6d236c87fda863ac7ce59f1bf6ac638aa73a8e702f6524"
+    },
+    {
+      "turn": 2,
+      "duration_seconds": 146.305,
+      "native_verified": true,
+      "public_hash": "fd6db129c8202bc1d1e32784cad1b9ac8844cb738ed6d403060e1ab85193ae9c"
+    },
+    {
+      "turn": 3,
+      "duration_seconds": 117.139,
+      "native_verified": true,
+      "public_hash": "9ddef2268e4eb3dd92b3f8af74a766a7e0f27dd0b1f75a0436baf1c62f368e5f"
+    },
+    {
+      "turn": 4,
+      "duration_seconds": 140.484,
+      "native_verified": true,
+      "public_hash": "a6954b4a85e21a2ce79fea31d4ed34b59192d49bfc41d4b4fcbc53aaf5c70c3a"
+    }
+  ],
+  "excerpt_files_hash_verified": 21,
+  "missing_captures": [],
+  "retention_audit_failures": 0,
+  "http_errors": 0,
+  "full_goal_complete": false
+}

@@ -1,13 +1,19 @@
 {
-  "observed_at": "2026-10-27T14:04:45.916930+00:00",
+  "observed_at": "2026-10-27T14:09:24.600591+00:00",
   "automation_id": "monitor-sealed-local-qwen-stress-batch",
   "status": "ACTIVE",
   "interval_seconds": 60,
   "target_thread_id": "01a1798e-84ae-7310-af93-825553f59c15",
   "controller_pid": 232444,
   "first_runner_pid": 192184,
-  "last_verified_turns": 3,
-  "last_verified_active_seconds": 316.517,
+  "last_verified_turns": 5,
+  "last_verified_active_seconds": 598.123,
   "full_goal_complete": false,
-  "final_independent_acceptance": "pending"
+  "final_independent_acceptance": "pending",
+  "active_case": "claude-incident-log-v2",
+  "controller_live": true,
+  "runner_live": true,
+  "retention_audit_failures": 0,
+  "http_errors": 0,
+  "partial_native_parent_replay": "tmp/stress/balanced-live-parent-check.json"
 }
