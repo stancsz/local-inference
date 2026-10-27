@@ -1,0 +1,100 @@
+{
+  "verdict": "PASS for the fresh nine-turn opencode engineering session only",
+  "reviewed_at": "2026-10-26T20:50:21.025337-06:00",
+  "route": "http://127.0.0.1:8090/v1",
+  "session_id": "ses_e84cf31d5ffe4pYKIhtbJ1Gyu0",
+  "active_seconds": 1060.94,
+  "turns": [
+    {
+      "turn": 1,
+      "native_calls": 7,
+      "new_seed_hidden_tests_exit": 0
+    },
+    {
+      "turn": 2,
+      "native_calls": 6,
+      "new_seed_hidden_tests_exit": 0
+    },
+    {
+      "turn": 3,
+      "native_calls": 5,
+      "new_seed_hidden_tests_exit": 0
+    },
+    {
+      "turn": 4,
+      "native_calls": 4,
+      "new_seed_hidden_tests_exit": 0
+    },
+    {
+      "turn": 5,
+      "native_calls": 4,
+      "new_seed_hidden_tests_exit": 0
+    },
+    {
+      "turn": 6,
+      "native_calls": 4,
+      "new_seed_hidden_tests_exit": 0
+    },
+    {
+      "turn": 7,
+      "native_calls": 5,
+      "new_seed_hidden_tests_exit": 0
+    },
+    {
+      "turn": 8,
+      "native_calls": 4,
+      "new_seed_hidden_tests_exit": 0
+    },
+    {
+      "turn": 9,
+      "native_calls": 3,
+      "new_seed_hidden_tests_exit": 0
+    }
+  ],
+  "source_sha256": {
+    "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "stress.cli_acceptance": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  },
+  "scope": "Parent inspected final implementation and replayed all nine native streams, then reran each stage hidden tests against the final artifact using a third seed. This is commander acceptance of this local CLI session, not independent nonauthor QA or a final 21-session verdict.",
+  "additional_contract_checks_passed": false,
+  "failed_additional_contract_checks": [
+    {
+      "name": "clamp_all empty invalid lower",
+      "passed": false,
+      "error": "AssertionError: expected ValueError"
+    },
+    {
+      "name": "clamp_all empty reversed bounds",
+      "passed": false,
+      "error": "AssertionError: expected ValueError"
+    },
+    {
+      "name": "clamp_all empty bool bound",
+      "passed": false,
+      "error": "AssertionError: expected TypeError"
+    },
+    {
+      "name": "clamp_report empty invalid lower",
+      "passed": false,
+      "error": "AssertionError: expected ValueError"
+    },
+    {
+      "name": "clamp_report empty reversed bounds",
+      "passed": false,
+      "error": "AssertionError: expected ValueError"
+    },
+    {
+      "name": "clamp_report empty bool bound",
+      "passed": false,
+      "error": "AssertionError: expected TypeError"
+    }
+  ]
+}

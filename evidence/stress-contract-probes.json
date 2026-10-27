@@ -540,6 +540,58 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/opencode-engineering-r1/result.json",
+      "client": "opencode",
+      "task": "engineering",
+      "original_workflow_accepted": true,
+      "task_sha256": "d05409ec5bd293bcc571c900fce95f101d634ca1869a18f44d0ac63ba6b8e7a9",
+      "all_additional_checks_passed": false,
+      "checks": [
+        {
+          "name": "clamp_all empty invalid lower",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "clamp_all empty reversed bounds",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "clamp_all empty bool bound",
+          "passed": false,
+          "error": "AssertionError: expected TypeError"
+        },
+        {
+          "name": "clamp_report empty invalid lower",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "clamp_report empty reversed bounds",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "clamp_report empty bool bound",
+          "passed": false,
+          "error": "AssertionError: expected TypeError"
+        },
+        {
+          "name": "single-use generator",
+          "passed": true
+        },
+        {
+          "name": "generator report",
+          "passed": true
+        },
+        {
+          "name": "finite value validation",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/opencode-expenses-r0/result.json",
       "client": "opencode",
       "task": "expenses",
@@ -664,5 +716,5 @@
       ]
     }
   ],
-  "sessions_with_additional_failures": 7
+  "sessions_with_additional_failures": 8
 }

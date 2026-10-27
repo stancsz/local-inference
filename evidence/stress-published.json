@@ -1,5 +1,5 @@
 {
-  "published_verified_sessions": 12,
+  "published_verified_sessions": 13,
   "sessions": [
     {
       "client": "claude",
@@ -667,6 +667,73 @@
           "raw_sha256": "9429488ce974c0a0121c1dda4ded59d39237105f24c52c87e652ced2287eaa05",
           "compressed_sha256": "0a3cf34d9c6cbea691aa9fb1e80d27a1378601aa906547f88af260ba277012db",
           "native_calls": 5
+        }
+      ],
+      "verified": true
+    },
+    {
+      "client": "opencode",
+      "task": "engineering",
+      "seed": 1931,
+      "session_id": "ses_e84cf31d5ffe4pYKIhtbJ1Gyu0",
+      "active_seconds": 1060.94,
+      "turns": 9,
+      "receipt": "evidence/stress-sessions/opencode-engineering-r1/result.json.gz",
+      "receipt_raw_sha256": "7717b86e2217228874497e1fff3b3169a2fb6ba692ee6b3fd67fd36797d42290",
+      "traces": [
+        {
+          "file": "evidence/stress-sessions/opencode-engineering-r1/turn-00.jsonl.gz",
+          "raw_sha256": "b6e87b1f31b219e98106fa1054c570703bec1f86613f68ff6cafff692e3c1e39",
+          "compressed_sha256": "4fbed1b4f73f68711c2d449177227a0d7f384fd1553a850c6ec1601d33b3d55f",
+          "native_calls": 7
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-engineering-r1/turn-01.jsonl.gz",
+          "raw_sha256": "d491be1c738e151ce1786034b00f181bd2300ea4750429d6a290503343622e87",
+          "compressed_sha256": "e5e98abc0ba9451ca20d6d090809bea489a8e4bb6f72048119cf4635f6467155",
+          "native_calls": 6
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-engineering-r1/turn-02.jsonl.gz",
+          "raw_sha256": "bd306ac91f1b3344e0dd0cffe79282cd242f3eeba28d240c7098028b648c1883",
+          "compressed_sha256": "89afd55228b23e2dc1d517e470c647d76f12ced77ee9aca72b04f423aad1a52f",
+          "native_calls": 5
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-engineering-r1/turn-03.jsonl.gz",
+          "raw_sha256": "c79c3500841615e6d265afde84e26e693a0423d79c097b84d447c898b14cf720",
+          "compressed_sha256": "4f653c6dd8e0c58bbe51751a12317751b2754be53f9e7be6432510e4883398fa",
+          "native_calls": 4
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-engineering-r1/turn-04.jsonl.gz",
+          "raw_sha256": "63a0fdbbb3826a60c93445bbebffa589cd311e3a5e0bf223e8024fe343137bbb",
+          "compressed_sha256": "1283f8b244d36d711c31976147064579bd9b3f7dcfa8fff73e90b77b588a4a4f",
+          "native_calls": 4
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-engineering-r1/turn-05.jsonl.gz",
+          "raw_sha256": "3d86ccce11de94540cbed7f5a24461c5c49bd7b2b18ae70e26b02d4f12d69774",
+          "compressed_sha256": "422504057a472ead77a7d0ecc48f78202f5ce134fab241da3478d3402f39c870",
+          "native_calls": 4
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-engineering-r1/turn-06.jsonl.gz",
+          "raw_sha256": "dd8c9548696af2446e44f86e8f9b28fb550ec024636373f1039baa28f919b9ff",
+          "compressed_sha256": "72b5609b21d97fe8ba2f88a5180bf20141f957cfd934cac28dfa4deaaf988054",
+          "native_calls": 5
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-engineering-r1/turn-07.jsonl.gz",
+          "raw_sha256": "d1c29c1bfaea11122f0bee924e0a0a90a871451a859b88395362f51c678a082d",
+          "compressed_sha256": "fc62afdea5489a5f9eb19a42208a065ffc0187fd62bcacd16baee97f5f0bf9aa",
+          "native_calls": 4
+        },
+        {
+          "file": "evidence/stress-sessions/opencode-engineering-r1/turn-08.jsonl.gz",
+          "raw_sha256": "12dc1d4a4ed896550e1c979077481a665bba95965eab31ad02625b3d6f46bdea",
+          "compressed_sha256": "564e3199f3cf1e94746e17e8e8057daa2472f458cc793d95d2d13ce14b700a81",
+          "native_calls": 3
         }
       ],
       "verified": true
