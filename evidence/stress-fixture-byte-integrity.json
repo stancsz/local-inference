@@ -3,7 +3,7 @@
   "before_checked": 39,
   "before_index_byte_mismatches": 34,
   "after": {
-    "checked": 48,
+    "checked": 51,
     "index_byte_mismatches": 0,
     "workspace_mismatches": 0,
     "files": [
@@ -246,6 +246,30 @@
         "index_sha256": "3fa140b300447225435b16fc7c508ab3c4e941aa7a722289b7f012549a46f9e2",
         "published_sha256": "3fa140b300447225435b16fc7c508ab3c4e941aa7a722289b7f012549a46f9e2",
         "original_workspace_sha256": "3fa140b300447225435b16fc7c508ab3c4e941aa7a722289b7f012549a46f9e2"
+      },
+      {
+        "file": "evidence/stress-sessions/codex-migration-r1/evidence.json",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "acfcad2b6ca9de4a81a11515c36085b48a6009bddf82b43c9e08dcd4886f9d08",
+        "published_sha256": "acfcad2b6ca9de4a81a11515c36085b48a6009bddf82b43c9e08dcd4886f9d08",
+        "original_workspace_sha256": "acfcad2b6ca9de4a81a11515c36085b48a6009bddf82b43c9e08dcd4886f9d08"
+      },
+      {
+        "file": "evidence/stress-sessions/codex-migration-r1/task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "2faa835764663536d79f8dc7f3bc6902c7cb93dd376a37d04e004f2ed5968899",
+        "published_sha256": "2faa835764663536d79f8dc7f3bc6902c7cb93dd376a37d04e004f2ed5968899",
+        "original_workspace_sha256": "2faa835764663536d79f8dc7f3bc6902c7cb93dd376a37d04e004f2ed5968899"
+      },
+      {
+        "file": "evidence/stress-sessions/codex-migration-r1/test_task.py",
+        "index_matches_published_bytes": true,
+        "published_matches_original_workspace": true,
+        "index_sha256": "f7cd97cc35b738b3b187210fc9bca68ee2a38599062d900d32f6a0be20757293",
+        "published_sha256": "f7cd97cc35b738b3b187210fc9bca68ee2a38599062d900d32f6a0be20757293",
+        "original_workspace_sha256": "f7cd97cc35b738b3b187210fc9bca68ee2a38599062d900d32f6a0be20757293"
       },
       {
         "file": "evidence/stress-sessions/opencode-engineering-r0-attempt-1793060019/evidence.json",

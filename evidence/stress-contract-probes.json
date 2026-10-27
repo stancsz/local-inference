@@ -552,6 +552,69 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/codex-migration-r1/result.json",
+      "client": "codex",
+      "task": "migration",
+      "original_workflow_accepted": true,
+      "task_sha256": "2faa835764663536d79f8dc7f3bc6902c7cb93dd376a37d04e004f2ed5968899",
+      "all_additional_checks_passed": false,
+      "checks": [
+        {
+          "name": "invalid milliseconds None",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds True",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds 1.5",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds '1000'",
+          "passed": true
+        },
+        {
+          "name": "negative milliseconds",
+          "passed": true
+        },
+        {
+          "name": "negative seconds",
+          "passed": true
+        },
+        {
+          "name": "non-string name None",
+          "passed": false,
+          "error": "AssertionError: expected TypeError/ValueError"
+        },
+        {
+          "name": "non-string name 17",
+          "passed": true
+        },
+        {
+          "name": "non-string name True",
+          "passed": true
+        },
+        {
+          "name": "conflicting time units",
+          "passed": true
+        },
+        {
+          "name": "unknown key",
+          "passed": true
+        },
+        {
+          "name": "boolean retries",
+          "passed": true
+        },
+        {
+          "name": "nonmutation idempotency generator and independent copies",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/opencode-engineering-r0/result.json",
       "client": "opencode",
       "task": "engineering",
@@ -894,5 +957,5 @@
       ]
     }
   ],
-  "sessions_with_additional_failures": 10
+  "sessions_with_additional_failures": 11
 }
