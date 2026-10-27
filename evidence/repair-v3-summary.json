@@ -1,0 +1,551 @@
+{
+  "at": "2026-10-27T17:48:28.673380+00:00",
+  "runtime_image": "sha256:7f85caf04ab83a7cf1b62f188f844fdb2bae26063ccae5198c2f25b99ea2ddf1",
+  "sift_version": "0.11.1",
+  "runtime_app_source_matches": true,
+  "runtime_app_sha256": {
+    "budget": "c86ab1174bef327d567af8a4adf86f946f659740bcce66b1048b0acaef55701e",
+    "gateway": "3d9def33a609a15cce4eeaca376b638e4842f4b3f9cffd2ed4cdc0b04615417a"
+  },
+  "sift_source_matches": true,
+  "local_tests": "371 passed",
+  "upstream_sift_harness_tests": "26 passed",
+  "upstream_pr": "https://github.com/stancsz/sift/pull/62",
+  "core_before_after": {
+    "frozen_failing_subcases": 8,
+    "new_failing_subcases": 0,
+    "test_methods": 5,
+    "scope": "Generic source/diagnostic competition regressions"
+  },
+  "live_budget": {
+    "requests": [
+      {
+        "scenario": "compressible_history",
+        "raw_native_tokens": 35000,
+        "audit": {
+          "compacted": true,
+          "input_tokens": 35000,
+          "forwarded_tokens": 322,
+          "omitted_estimated_tokens": 34678,
+          "preserved_recent_turns": 0,
+          "preserved_recent_tool_cycles": 0,
+          "stable_prefix_excerpts": 1,
+          "selected_excerpts": 3,
+          "method": "query_aware_extract",
+          "target_tokens": 24576,
+          "context_window": 40960,
+          "output_reserve": 32,
+          "fixed_tokens": 256,
+          "raw_native_tokens": 35000,
+          "available_tokens": 40672,
+          "ceiling_tokens": 40672,
+          "anchor_tokens": 32768,
+          "compression_ratio": 8.0,
+          "budget_policy": "request_adaptive_ratio",
+          "native_input_tokens": 322,
+          "compaction_input_sha256": "0591817c706b08e283da5eb44ce786f4faf83b7b8fa7cf8f0d92f7d05eb427a0",
+          "compaction_seconds": 0.103,
+          "selection_counting": "native full-request tokenizer",
+          "tokenizer_calls": 6,
+          "raw_native_token_limit": 1050000,
+          "decoder_headroom": 256,
+          "fitting_request_preserved": false,
+          "protected_fit_fallback": false
+        },
+        "answer": [
+          {
+            "type": "text",
+            "text": "BUDGET_REPAIR_OK"
+          }
+        ],
+        "passed": true
+      },
+      {
+        "scenario": "protected_current_task",
+        "raw_native_tokens": 34997,
+        "audit": {
+          "compacted": false,
+          "input_tokens": 34997,
+          "forwarded_tokens": 34997,
+          "omitted_estimated_tokens": 0,
+          "preserved_recent_turns": 0,
+          "preserved_recent_tool_cycles": 0,
+          "selected_excerpts": 0,
+          "target_tokens": 34997,
+          "context_window": 40960,
+          "output_reserve": 32,
+          "fixed_tokens": 256,
+          "raw_native_tokens": 34997,
+          "available_tokens": 40672,
+          "ceiling_tokens": 40672,
+          "anchor_tokens": 32768,
+          "compression_ratio": 8.0,
+          "budget_policy": "request_adaptive_ratio",
+          "native_input_tokens": 34997,
+          "compaction_input_sha256": "36dd0f64ffedbc77b3fb078fa3cbb6530805516c61d9449a6406a8a62f9ca53b",
+          "compaction_seconds": 0.131,
+          "selection_counting": "native full-request tokenizer",
+          "tokenizer_calls": 2,
+          "raw_native_token_limit": 1050000,
+          "decoder_headroom": 256,
+          "fitting_request_preserved": true,
+          "protected_fit_fallback": true
+        },
+        "answer": [
+          {
+            "type": "text",
+            "text": "BUDGET_REPAIR_OK"
+          }
+        ],
+        "passed": true
+      }
+    ],
+    "scope": "Actual native-window policy regression, not long-session qualification"
+  },
+  "earlier_short_artifacts": {
+    "vram-plan": true,
+    "model-audit": true,
+    "operator-guide": true
+  },
+  "final_short_artifacts": {
+    "vram-plan": false,
+    "model-audit": false,
+    "operator-guide": true
+  },
+  "model_failure_source_checks": [
+    {
+      "source": "C:\\Users\\stanc\\github\\local-inference\\evidence\\runtime-vram.json",
+      "native_read_matches": true
+    },
+    {
+      "source": "C:\\Users\\stanc\\github\\local-inference\\evidence\\host-vram.json",
+      "native_read_matches": true
+    },
+    {
+      "source": "C:\\Users\\stanc\\github\\local-inference\\evidence\\model-manifest.json",
+      "native_read_matches": true
+    }
+  ],
+  "remaining_model_errors": [
+    "Final VRAM report swaps host/runtime provenance and copies15252 as host_used_mib instead of source2005.",
+    "Final model audit uses MTP/mtp-Qwen3.8-27B-Q4_0.gguf where this task explicitly requires the exact basename. Numeric arithmetic is correct."
+  ],
+  "parent_review": "evidence/repair-v3-parent-review.json",
+  "native_diagnostics": [
+    {
+      "case": "native-initial",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 240.341,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "source_retained": 7,
+      "captures": 7,
+      "native_inputs": [
+        35677,
+        35654,
+        35657,
+        35646,
+        35603,
+        35588,
+        35596
+      ],
+      "replay": [
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "public",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "hidden",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "parent",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "public",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "hidden",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "parent",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "producer_native": {
+            "terminal_success": false,
+            "calls": 7,
+            "completed": 7,
+            "successful_tools": [
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash"
+            ],
+            "unmatched_results": 0,
+            "native_errors": 0,
+            "read_files": [
+              "task.py",
+              "test_task.py"
+            ],
+            "written_files": [
+              "evidence.json",
+              "task.py"
+            ],
+            "baseline_failed": true,
+            "final_passed": true,
+            "workflow_ordered": true
+          },
+          "current_parser_native": {
+            "terminal_success": false,
+            "calls": 7,
+            "completed": 7,
+            "successful_tools": [
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash"
+            ],
+            "unmatched_results": 0,
+            "native_errors": 0,
+            "read_files": [
+              "task.py",
+              "test_task.py"
+            ],
+            "written_files": [
+              "evidence.json",
+              "task.py"
+            ],
+            "baseline_failed": true,
+            "final_passed": true,
+            "workflow_ordered": true
+          },
+          "terminal_event": false,
+          "workflow_ordered": true
+        }
+      ],
+      "producer_sources": [
+        {
+          "source": "sift.core",
+          "raw_sha256": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "sift.dynamic",
+          "raw_sha256": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "sift.litellm_proxy",
+          "raw_sha256": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "sift.litellm_responses",
+          "raw_sha256": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.portable_tasks_v2",
+          "raw_sha256": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.cli_acceptance",
+          "raw_sha256": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.supplement_tasks_v1",
+          "raw_sha256": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.fixture_probe_v2",
+          "raw_sha256": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.proxy_capture_v2",
+          "raw_sha256": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.native_v3",
+          "raw_sha256": "ab38a1be63a1b2c6a4527cdf8dd27685e5162e4b596ca22a4d58102177735069",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.portable_campaign_v2",
+          "raw_sha256": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.campaign_v3",
+          "raw_sha256": "5557cb91e4ef5a8901c5bbb2fb1e3a7cf1a5b39ef6040b2214b606dd400085c8",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.cli_campaign",
+          "raw_sha256": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.acceptance_tasks",
+          "raw_sha256": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "app/budget.py",
+          "raw_sha256": "25243ef709e6a9005ea5e53243e952a09f49311b09e12ac2647d52fa4dcf9303",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "app/gateway.py",
+          "raw_sha256": "3d9def33a609a15cce4eeaca376b638e4842f4b3f9cffd2ed4cdc0b04615417a",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "gateway.yaml",
+          "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255",
+          "sealed_commit": "dbcf769"
+        }
+      ],
+      "qualification_increment": 0
+    },
+    {
+      "case": "latency-diagnostic",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 134.156,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "source_retained": 6,
+      "captures": 6,
+      "native_inputs": [
+        24529,
+        24543,
+        24515,
+        24485,
+        24458,
+        24432
+      ],
+      "replay": [
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "public",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "hidden",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "parent",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "public",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "hidden",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "parent",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "producer_native": {
+            "terminal_success": true,
+            "calls": 5,
+            "completed": 5,
+            "successful_tools": [
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash"
+            ],
+            "unmatched_results": 0,
+            "native_errors": 0,
+            "read_files": [
+              "task.py",
+              "test_task.py"
+            ],
+            "written_files": [
+              "evidence.json",
+              "task.py"
+            ],
+            "baseline_failed": false,
+            "final_passed": true,
+            "workflow_ordered": false
+          },
+          "current_parser_native": {
+            "terminal_success": true,
+            "calls": 5,
+            "completed": 5,
+            "successful_tools": [
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash"
+            ],
+            "unmatched_results": 0,
+            "native_errors": 0,
+            "read_files": [
+              "task.py",
+              "test_task.py"
+            ],
+            "written_files": [
+              "evidence.json",
+              "task.py"
+            ],
+            "baseline_failed": true,
+            "final_passed": true,
+            "workflow_ordered": false
+          },
+          "terminal_event": true,
+          "workflow_ordered": false
+        }
+      ],
+      "producer_sources": [
+        {
+          "source": "sift.core",
+          "raw_sha256": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "sift.dynamic",
+          "raw_sha256": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "sift.litellm_proxy",
+          "raw_sha256": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "sift.litellm_responses",
+          "raw_sha256": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.portable_tasks_v2",
+          "raw_sha256": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.cli_acceptance",
+          "raw_sha256": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.supplement_tasks_v1",
+          "raw_sha256": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.fixture_probe_v2",
+          "raw_sha256": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.proxy_capture_v2",
+          "raw_sha256": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.native_v3",
+          "raw_sha256": "ab38a1be63a1b2c6a4527cdf8dd27685e5162e4b596ca22a4d58102177735069",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.portable_campaign_v2",
+          "raw_sha256": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.campaign_v3",
+          "raw_sha256": "5557cb91e4ef5a8901c5bbb2fb1e3a7cf1a5b39ef6040b2214b606dd400085c8",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.cli_campaign",
+          "raw_sha256": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.acceptance_tasks",
+          "raw_sha256": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "app/budget.py",
+          "raw_sha256": "c86ab1174bef327d567af8a4adf86f946f659740bcce66b1048b0acaef55701e",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "app/gateway.py",
+          "raw_sha256": "3d9def33a609a15cce4eeaca376b638e4842f4b3f9cffd2ed4cdc0b04615417a",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "gateway.yaml",
+          "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255",
+          "sealed_commit": "af7c688"
+        }
+      ],
+      "qualification_increment": 0
+    }
+  ],
+  "published_files": 185,
+  "qualification_increment": 0,
+  "aggregate_unchanged": 23,
+  "clients_unchanged": {
+    "claude": 8,
+    "opencode": 9,
+    "codex": 6
+  },
+  "full_goal_complete": false,
+  "nonauthor_acceptance": "pending",
+  "council": "Unavailable: NORTHSTAR_COUNCIL_MODEL not configured; no fallback/provider substitution.",
+  "limits": [
+    "No new nine-turn repaired-source qualifying session.",
+    "No isolated model+MTP under14decimalGB or simultaneous64k+4k under14GB proof.",
+    "No full provider-wire capture or general semantic-retention equivalence.",
+    "Native same-seed runs differ in output/tool choices;134.156s vs240.341s is diagnostic, not a causal speedup estimate.",
+    "Sift PR62 is published but not merged/released; running source-retention repair is already released0.11.1."
+  ]
+}

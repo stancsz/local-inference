@@ -1,0 +1,1156 @@
+{
+  "at": "2026-10-27T17:44:10.234594+00:00",
+  "cases": [
+    {
+      "case": "native-initial",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 240.341,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "source_retained": 7,
+      "captures": 7,
+      "native_inputs": [
+        35677,
+        35654,
+        35657,
+        35646,
+        35603,
+        35588,
+        35596
+      ],
+      "replay": [
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "public",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "hidden",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "parent",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "public",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "hidden",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "parent",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "producer_native": {
+            "terminal_success": false,
+            "calls": 7,
+            "completed": 7,
+            "successful_tools": [
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash"
+            ],
+            "unmatched_results": 0,
+            "native_errors": 0,
+            "read_files": [
+              "task.py",
+              "test_task.py"
+            ],
+            "written_files": [
+              "evidence.json",
+              "task.py"
+            ],
+            "baseline_failed": true,
+            "final_passed": true,
+            "workflow_ordered": true
+          },
+          "current_parser_native": {
+            "terminal_success": false,
+            "calls": 7,
+            "completed": 7,
+            "successful_tools": [
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash"
+            ],
+            "unmatched_results": 0,
+            "native_errors": 0,
+            "read_files": [
+              "task.py",
+              "test_task.py"
+            ],
+            "written_files": [
+              "evidence.json",
+              "task.py"
+            ],
+            "baseline_failed": true,
+            "final_passed": true,
+            "workflow_ordered": true
+          },
+          "terminal_event": false,
+          "workflow_ordered": true
+        }
+      ],
+      "producer_sources": [
+        {
+          "source": "sift.core",
+          "raw_sha256": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "sift.dynamic",
+          "raw_sha256": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "sift.litellm_proxy",
+          "raw_sha256": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "sift.litellm_responses",
+          "raw_sha256": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.portable_tasks_v2",
+          "raw_sha256": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.cli_acceptance",
+          "raw_sha256": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.supplement_tasks_v1",
+          "raw_sha256": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.fixture_probe_v2",
+          "raw_sha256": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.proxy_capture_v2",
+          "raw_sha256": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.native_v3",
+          "raw_sha256": "ab38a1be63a1b2c6a4527cdf8dd27685e5162e4b596ca22a4d58102177735069",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.portable_campaign_v2",
+          "raw_sha256": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.campaign_v3",
+          "raw_sha256": "5557cb91e4ef5a8901c5bbb2fb1e3a7cf1a5b39ef6040b2214b606dd400085c8",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.cli_campaign",
+          "raw_sha256": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "stress.acceptance_tasks",
+          "raw_sha256": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "app/budget.py",
+          "raw_sha256": "25243ef709e6a9005ea5e53243e952a09f49311b09e12ac2647d52fa4dcf9303",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "app/gateway.py",
+          "raw_sha256": "3d9def33a609a15cce4eeaca376b638e4842f4b3f9cffd2ed4cdc0b04615417a",
+          "sealed_commit": "dbcf769"
+        },
+        {
+          "source": "gateway.yaml",
+          "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255",
+          "sealed_commit": "dbcf769"
+        }
+      ],
+      "qualification_increment": 0
+    },
+    {
+      "case": "latency-diagnostic",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 134.156,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "source_retained": 6,
+      "captures": 6,
+      "native_inputs": [
+        24529,
+        24543,
+        24515,
+        24485,
+        24458,
+        24432
+      ],
+      "replay": [
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "public",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "hidden",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "native",
+          "seed": "parent",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "public",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "hidden",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "snapshot": "hidden",
+          "seed": "parent",
+          "exit": 0
+        },
+        {
+          "turn": 1,
+          "producer_native": {
+            "terminal_success": true,
+            "calls": 5,
+            "completed": 5,
+            "successful_tools": [
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash"
+            ],
+            "unmatched_results": 0,
+            "native_errors": 0,
+            "read_files": [
+              "task.py",
+              "test_task.py"
+            ],
+            "written_files": [
+              "evidence.json",
+              "task.py"
+            ],
+            "baseline_failed": false,
+            "final_passed": true,
+            "workflow_ordered": false
+          },
+          "current_parser_native": {
+            "terminal_success": true,
+            "calls": 5,
+            "completed": 5,
+            "successful_tools": [
+              "Bash",
+              "Bash",
+              "Bash",
+              "Bash"
+            ],
+            "unmatched_results": 0,
+            "native_errors": 0,
+            "read_files": [
+              "task.py",
+              "test_task.py"
+            ],
+            "written_files": [
+              "evidence.json",
+              "task.py"
+            ],
+            "baseline_failed": true,
+            "final_passed": true,
+            "workflow_ordered": false
+          },
+          "terminal_event": true,
+          "workflow_ordered": false
+        }
+      ],
+      "producer_sources": [
+        {
+          "source": "sift.core",
+          "raw_sha256": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "sift.dynamic",
+          "raw_sha256": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "sift.litellm_proxy",
+          "raw_sha256": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "sift.litellm_responses",
+          "raw_sha256": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.portable_tasks_v2",
+          "raw_sha256": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.cli_acceptance",
+          "raw_sha256": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.supplement_tasks_v1",
+          "raw_sha256": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.fixture_probe_v2",
+          "raw_sha256": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.proxy_capture_v2",
+          "raw_sha256": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.native_v3",
+          "raw_sha256": "ab38a1be63a1b2c6a4527cdf8dd27685e5162e4b596ca22a4d58102177735069",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.portable_campaign_v2",
+          "raw_sha256": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.campaign_v3",
+          "raw_sha256": "5557cb91e4ef5a8901c5bbb2fb1e3a7cf1a5b39ef6040b2214b606dd400085c8",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.cli_campaign",
+          "raw_sha256": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "stress.acceptance_tasks",
+          "raw_sha256": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "app/budget.py",
+          "raw_sha256": "c86ab1174bef327d567af8a4adf86f946f659740bcce66b1048b0acaef55701e",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "app/gateway.py",
+          "raw_sha256": "3d9def33a609a15cce4eeaca376b638e4842f4b3f9cffd2ed4cdc0b04615417a",
+          "sealed_commit": "af7c688"
+        },
+        {
+          "source": "gateway.yaml",
+          "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255",
+          "sealed_commit": "af7c688"
+        }
+      ],
+      "qualification_increment": 0
+    }
+  ],
+  "manifest": [
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/gateway.yaml.gz",
+      "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/README.md.gz",
+      "raw_sha256": "ae1cf69e645ff3939d05b0659fba574392635cdf81c34b08592b7475875a6910"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/context_acceptance/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/context_acceptance/gateway.yaml.gz",
+      "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/context_acceptance/README.md.gz",
+      "raw_sha256": "ae1cf69e645ff3939d05b0659fba574392635cdf81c34b08592b7475875a6910"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-local/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-local/gateway.yaml.gz",
+      "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-local/README.md.gz",
+      "raw_sha256": "ba36e863381691ebe7838966bec1fe542a6d6f975b0359570b1d6be913813fdc"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-openai/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-openai/gateway.yaml.gz",
+      "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-openai/README.md.gz",
+      "raw_sha256": "ba36e863381691ebe7838966bec1fe542a6d6f975b0359570b1d6be913813fdc"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/local_smoke/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/local_smoke/gateway.yaml.gz",
+      "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/local_smoke/README.md.gz",
+      "raw_sha256": "ae1cf69e645ff3939d05b0659fba574392635cdf81c34b08592b7475875a6910"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/openai_smoke/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/openai_smoke/gateway.yaml.gz",
+      "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/openai_smoke/README.md.gz",
+      "raw_sha256": "ae1cf69e645ff3939d05b0659fba574392635cdf81c34b08592b7475875a6910"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/openai_smoke/evidence/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/openai_smoke/evidence/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/openai_smoke/evidence/openai-smoke.json.gz",
+      "raw_sha256": "9c8763fd4e493984a02f135312d889728934dbe8fd48cabb375fdaf7d7df47c4"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/openai_smoke/evidence/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/local_smoke/evidence/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/local_smoke/evidence/local-smoke.json.gz",
+      "raw_sha256": "feffe286fdb1e1f088a82899b4b6a908da1659c2712058cba6d27fdddfc79f8a"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/local_smoke/evidence/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/local_smoke/evidence/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-openai/evidence/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-openai/evidence/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-openai/evidence/openai-smoke.json.gz",
+      "raw_sha256": "81ec8622e420b209eed3e35499b030f0d5cca8dd75f4df186db06d67b4887a43"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-openai/evidence/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-local/evidence/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-local/evidence/local-smoke.json.gz",
+      "raw_sha256": "6831521b8b8df61a93e539aa986977b32ec571fc3f7c518570d10fea830c0395"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-local/evidence/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/final-local/evidence/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/context_acceptance/evidence/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/context_acceptance/evidence/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/context_acceptance/evidence/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/evidence/claude-acceptance.json.gz",
+      "raw_sha256": "1378aa33cddb884251a634a32da88ee818196ec70f3a31d87219f0c23295f7d6"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/evidence/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/evidence/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/evidence/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/tmp/acceptance/model-audit.json.gz",
+      "raw_sha256": "8d2f0f49170c1c85170097f94b3e8021fa16acf44f33acd24da78df92311c1ab"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/tmp/acceptance/model-audit.jsonl.gz",
+      "raw_sha256": "f033d2a5d794e5415c198a3faea4a1c7a0ecc10ccfa56d76c9c85708634cfef6"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/tmp/acceptance/model-audit.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/tmp/acceptance/OPERATIONS.md.gz",
+      "raw_sha256": "8d2f0f49170c1c85170097f94b3e8021fa16acf44f33acd24da78df92311c1ab"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/tmp/acceptance/operator-guide.jsonl.gz",
+      "raw_sha256": "fd2e2b99b4b44f7bdb46111eb8d23db266765fba9c193a64ebff3d5d0a0c9f93"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/tmp/acceptance/operator-guide.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/tmp/acceptance/vram-plan.jsonl.gz",
+      "raw_sha256": "18bb8dfa2f356652760e37f5a429791a355122aec7b76bfc491d70ac6e011978"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/tmp/acceptance/vram-plan.md.gz",
+      "raw_sha256": "96b8848cbfce6fe34c060adf435126a0551a9e86d92ef7cc1eb29ceadd1a556f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-attempts/claude_acceptance/tmp/acceptance/vram-plan.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/claude-acceptance.json.gz",
+      "raw_sha256": "6adb57d042d11210ef6da57b8a17d3b7765ba04f6d2a37248ac37559e187465c"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/model-audit.json.gz",
+      "raw_sha256": "67d4fbf99135972341b9671a007627b75933762fe32fcd9cb5ae78898587aa71"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/model-audit.jsonl.gz",
+      "raw_sha256": "74f927a2b870b85d95bd188883ae9e2f4ff88da9848e0b951265a2fbcd5556f6"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/model-audit.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/OPERATIONS.md.gz",
+      "raw_sha256": "e6b6ac9dcd913b99474aa5fdafb2712cffc19266aba50e23ff1a39bafebaaa7a"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/operator-guide.jsonl.gz",
+      "raw_sha256": "53269930f3101ef623e3a130b52f49c5b777c4a9c348af3cebb5919191a6828b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/operator-guide.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/vram-plan.jsonl.gz",
+      "raw_sha256": "cf70c0638848e6ba3f4135b3e0ac72e1c35e4cc3bc6b4dc454df5c88e39286ae"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/vram-plan.md.gz",
+      "raw_sha256": "6bacd47d0e0caf949fd0b3486985b4017ff6db82032d60a5449105fc080f8f4c"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/vram-plan.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published/MODEL_AUDIT.json.gz",
+      "raw_sha256": "67d4fbf99135972341b9671a007627b75933762fe32fcd9cb5ae78898587aa71"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published/VRAM_PLAN.md.gz",
+      "raw_sha256": "6bacd47d0e0caf949fd0b3486985b4017ff6db82032d60a5449105fc080f8f4c"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published-corrected/OPERATIONS.md.gz",
+      "raw_sha256": "e6b6ac9dcd913b99474aa5fdafb2712cffc19266aba50e23ff1a39bafebaaa7a"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published-corrected/sources/operator-guide/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published-corrected/sources/operator-guide/gateway.yaml.gz",
+      "raw_sha256": "c73b6ef22545aa12f27362b7b2b7b60028c5f7fa024a721e58e07cacef70b9d4"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published-corrected/sources/operator-guide/README.md.gz",
+      "raw_sha256": "1fcf6dde57e42c90ecbfcd27879907f39de4b5809acf972e49fb0fd01a43a611"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published/sources/model-audit/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published/sources/model-audit/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published/sources/vram-plan/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published/sources/vram-plan/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-corrected/published/sources/vram-plan/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/claude-acceptance.json.gz",
+      "raw_sha256": "9cac522e5fe519e02226389102fb8ff198d65fc95f2204660298737463b66af2"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/model-audit.json.gz",
+      "raw_sha256": "66bb68f2b747e291d9699181a14a9c675dc375f24efa38b6e73b0f5f91dea0dd"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/model-audit.jsonl.gz",
+      "raw_sha256": "e7f0c11348dd2e8f34b21b33067023a954bb72f4b10ce1935c15c7047e477f2e"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/model-audit.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/OPERATIONS.md.gz",
+      "raw_sha256": "1a2c7b9e4721696974a94dbdf89aaa3f61d156ea40c380e5c845e8066a2443d0"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/operator-guide.jsonl.gz",
+      "raw_sha256": "1b6d3880663ff47aeb5806b9d5ac5390db2fc7ace3af0b40c518130120b6669d"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/operator-guide.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/vram-plan.jsonl.gz",
+      "raw_sha256": "f378352fe45269a5f5d681b3b8f4c42da05bdc81adef1649b8a4f5df8eb1ea2f"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/vram-plan.md.gz",
+      "raw_sha256": "d29774c0d3c643515d6cc7a39d130343f5c542f54312f4b972fc4771b16aedc2"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/vram-plan.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/published-corrected/OPERATIONS.md.gz",
+      "raw_sha256": "1a2c7b9e4721696974a94dbdf89aaa3f61d156ea40c380e5c845e8066a2443d0"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/published-corrected/sources/operator-guide/compose.yaml.gz",
+      "raw_sha256": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/published-corrected/sources/operator-guide/gateway.yaml.gz",
+      "raw_sha256": "c73b6ef22545aa12f27362b7b2b7b60028c5f7fa024a721e58e07cacef70b9d4"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/short-final/published-corrected/sources/operator-guide/README.md.gz",
+      "raw_sha256": "29324a262c1094af7f845cc804522c038f166751c67b1a113be2108327de6fe5"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/path-preimages/model-audit.json.after.gz",
+      "raw_sha256": "5a9bbdbe1eb4380d725c66895d06f4c48ed08784e6e4ee5692fb0f898cf42daf"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/path-preimages/model-audit.json.before.gz",
+      "raw_sha256": "f81a42b822724d8e31def30cd0a65ffe09dc31ae537571a5a896b80f86dc9284"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-worker.jsonl.gz",
+      "raw_sha256": "d53572c01e62763b505231f4bbed428e4424756ac2ae8ff564775b22f9f8c03a"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-worker.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-worker-exit.json.gz",
+      "raw_sha256": "0786eed513ed39dae0c00d25187ebb83a9c4c7d56d269f300cd36ed700e7b4b7"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-worker-revocation.json.gz",
+      "raw_sha256": "575a8105e46a086a4d35a983b508f8067dc7d7e47fccb7020b9be8e422f45b91"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-worker-smoke.json.gz",
+      "raw_sha256": "18beff2d07272b3c26bb0ceeee2000721a4c70ecf22da4d9707c7ed4f9bd9b41"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-worker-tool-smoke.json.gz",
+      "raw_sha256": "41e3670995f2a18d3745fb92aff717819d76f43f25dfdfd87a9f5971897f7637"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-dispatch.py.gz",
+      "raw_sha256": "9a3cb4e5049ff7d6a39bbbeccbab2c64ef8cbdfa3044496e511656652660475d"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-brief.txt.gz",
+      "raw_sha256": "f21a3938622e59814dd9ba01706a6dd49ead8168b4a40f8f534afedd636b9d0c"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-verified-project-tests.txt.gz",
+      "raw_sha256": "3d84f0e47a8537f5aa628d8deaff4f78681200a5ef5c689b3524166d0bc58046"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-sift-harness-tests-final.txt.gz",
+      "raw_sha256": "5cb8eff101141bbea9862c42c13d4dff3a44719f3ced4864477729b9b2e712fb"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-budget-red.txt.gz",
+      "raw_sha256": "97c1d42ebe2f64cd564bf082dd447d8bb5678c16fa6edbe2544ba1737eafbc32"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-budget-green.txt.gz",
+      "raw_sha256": "29e0b9a38258e3d29b7b9e92dca3b216ed1492522addcc4446f46fa4878b3f42"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-final-build.log.gz",
+      "raw_sha256": "08e1e9ad600a69302b5a0b45529d3ad3e136da154915bfa7be94fe1ef3307838"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-budget-advice.txt.gz",
+      "raw_sha256": "23991db6404f62d8bee0069095990915e0e29f01ed8bd7ad0bdf3ff58adbfbd9"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-budget-advice.json.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-recall-proof.py.gz",
+      "raw_sha256": "4c062ba5fc195c9df75fce3e04c931dea1185e61d49cc6dc399c0a6ee5960f4d"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-native-budget-proof.py.gz",
+      "raw_sha256": "b8ea9b38ac2cfab887984b5f33734e9aa5e34b7b431909e49ef54087e3c71d76"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-native-controller.log.gz",
+      "raw_sha256": "d05ed3ddc3398bafb6634078ceab423bfcde171c4daebbad5ebdc93bac468896"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-latency-controller.log.gz",
+      "raw_sha256": "b426f3b45b60095a8c22467c4ad90f540df1eee979e5195fd3f35ca0b1ee9e92"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-final-local.log.gz",
+      "raw_sha256": "05b301edbc0f36e113374310e04f03c0e9841bd5227cdc7679b3c6189af083a5"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/support/repair-v3-final-openai.log.gz",
+      "raw_sha256": "286f10e89a943679714c01773f078482047a88a8edf48e345ba46c268db9ad23"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/sift/core.py.gz",
+      "raw_sha256": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/sift/dynamic.py.gz",
+      "raw_sha256": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/sift/litellm_proxy.py.gz",
+      "raw_sha256": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/sift/litellm_responses.py.gz",
+      "raw_sha256": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/portable_tasks_v2.py.gz",
+      "raw_sha256": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/cli_acceptance.py.gz",
+      "raw_sha256": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/supplement_tasks_v1.py.gz",
+      "raw_sha256": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/fixture_probe_v2.py.gz",
+      "raw_sha256": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/proxy_capture_v2.py.gz",
+      "raw_sha256": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/native_v3.py.gz",
+      "raw_sha256": "ab38a1be63a1b2c6a4527cdf8dd27685e5162e4b596ca22a4d58102177735069"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/portable_campaign_v2.py.gz",
+      "raw_sha256": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/campaign_v3.py.gz",
+      "raw_sha256": "5557cb91e4ef5a8901c5bbb2fb1e3a7cf1a5b39ef6040b2214b606dd400085c8"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/cli_campaign.py.gz",
+      "raw_sha256": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/stress/acceptance_tasks.py.gz",
+      "raw_sha256": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/app/budget.py.gz",
+      "raw_sha256": "25243ef709e6a9005ea5e53243e952a09f49311b09e12ac2647d52fa4dcf9303"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/app/gateway.py.gz",
+      "raw_sha256": "3d9def33a609a15cce4eeaca376b638e4842f4b3f9cffd2ed4cdc0b04615417a"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/native-initial/gateway.yaml.gz",
+      "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/result.json.gz",
+      "raw_sha256": "25da645d95e055b75a73743e8a29d0960e5cb93c65efa8914fe1d7d9f06688f0"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/turn-00.hidden-tests.txt.gz",
+      "raw_sha256": "db147cb6a9d4a07fa6279f3e36eb2717b1561eeda9c69dcbfc3fcb81e767bdd4"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/turn-00.jsonl.gz",
+      "raw_sha256": "b7dd180867e2af49d47a09bf11469c4e4dd6b8a97122694c0dd27d845e2e6d98"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/turn-00.stderr.txt.gz",
+      "raw_sha256": "f90704fd25c00ba1e1752d6cde2bfd56f24f24fb6bbba1768567a6e99c4c42fa"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/requests/00000.json.gz.gz",
+      "raw_sha256": "f22928dc8af39f00882781f6edc13b59e5f837ea5206589d008ffdf78f705330"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/requests/00001.json.gz.gz",
+      "raw_sha256": "f8789f7afb921ac53b18f92287fab401cd071c685b3869dc3964422e8efdd8a6"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/requests/00002.json.gz.gz",
+      "raw_sha256": "0f52abff1a028782ce2c56f951a67b177e64564060a57d591951fe94756b9d17"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/requests/00003.json.gz.gz",
+      "raw_sha256": "773650401707581e56a697dd413b8e5f24f6be47a032da1fa5c4a9f1eb622f33"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/requests/00004.json.gz.gz",
+      "raw_sha256": "bbaca1cff88f9317952aab2f1e7b3a8e0fe674ae7d90c078de8f7e8bf0b9d399"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/requests/00005.json.gz.gz",
+      "raw_sha256": "d8868a846fff0693cc2b24ee2562a5af55f0297585be4d25229f022ffaab4f07"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/requests/00006.json.gz.gz",
+      "raw_sha256": "ad25f50850823525dc5c32c7a4d9b3ebebb40e5b7c43b4f375f44ec183230478"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/workspace/evidence.json.gz",
+      "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/workspace/task.py.gz",
+      "raw_sha256": "689f4ba77783800bf2aa8a9c1f1977e0cd5ac3ee10bcde0bfd172db134a6c727"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/workspace/test_task.py.gz",
+      "raw_sha256": "113de65e470d7bd43204809cfcfce5a95caf5bed4ba18da93cfa20fc71c7d372"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/snapshots/turn-00-hidden/evidence.json.gz",
+      "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/snapshots/turn-00-hidden/hashes.json.gz",
+      "raw_sha256": "bc68c19361e2ab7635398b9950e797b5d7a3aac5f6c1e9816d380d58efe210f1"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/snapshots/turn-00-hidden/task.py.gz",
+      "raw_sha256": "689f4ba77783800bf2aa8a9c1f1977e0cd5ac3ee10bcde0bfd172db134a6c727"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/snapshots/turn-00-hidden/test_task.py.gz",
+      "raw_sha256": "113de65e470d7bd43204809cfcfce5a95caf5bed4ba18da93cfa20fc71c7d372"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/snapshots/turn-00-native/evidence.json.gz",
+      "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/snapshots/turn-00-native/hashes.json.gz",
+      "raw_sha256": "586e8a6ef0fa3030e842504164f34e976d0d77343d1c1176c372ce59c6d9f574"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/snapshots/turn-00-native/task.py.gz",
+      "raw_sha256": "689f4ba77783800bf2aa8a9c1f1977e0cd5ac3ee10bcde0bfd172db134a6c727"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/native-initial/snapshots/turn-00-native/test_task.py.gz",
+      "raw_sha256": "113de65e470d7bd43204809cfcfce5a95caf5bed4ba18da93cfa20fc71c7d372"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/sift/core.py.gz",
+      "raw_sha256": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/sift/dynamic.py.gz",
+      "raw_sha256": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/sift/litellm_proxy.py.gz",
+      "raw_sha256": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/sift/litellm_responses.py.gz",
+      "raw_sha256": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/portable_tasks_v2.py.gz",
+      "raw_sha256": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/cli_acceptance.py.gz",
+      "raw_sha256": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/supplement_tasks_v1.py.gz",
+      "raw_sha256": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/fixture_probe_v2.py.gz",
+      "raw_sha256": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/proxy_capture_v2.py.gz",
+      "raw_sha256": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/native_v3.py.gz",
+      "raw_sha256": "ab38a1be63a1b2c6a4527cdf8dd27685e5162e4b596ca22a4d58102177735069"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/portable_campaign_v2.py.gz",
+      "raw_sha256": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/campaign_v3.py.gz",
+      "raw_sha256": "5557cb91e4ef5a8901c5bbb2fb1e3a7cf1a5b39ef6040b2214b606dd400085c8"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/cli_campaign.py.gz",
+      "raw_sha256": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/stress/acceptance_tasks.py.gz",
+      "raw_sha256": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/app/budget.py.gz",
+      "raw_sha256": "c86ab1174bef327d567af8a4adf86f946f659740bcce66b1048b0acaef55701e"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/app/gateway.py.gz",
+      "raw_sha256": "3d9def33a609a15cce4eeaca376b638e4842f4b3f9cffd2ed4cdc0b04615417a"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/producer/latency-diagnostic/gateway.yaml.gz",
+      "raw_sha256": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/result.json.gz",
+      "raw_sha256": "515ffd955773bb27f3b914a7578103a1ea2942ce19e5728b13ce39ff688fe7d6"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/turn-00.hidden-tests.txt.gz",
+      "raw_sha256": "60ce10399dac04e70cc4897f5ee1b41eb950c5a2b6d2b6e99df5dc50047f0ef8"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/turn-00.jsonl.gz",
+      "raw_sha256": "25f8b3cef30176f3748cc7b5af82b8bfdd6e4a9eeddd0872e6da9ec40fa477c2"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/turn-00.stderr.txt.gz",
+      "raw_sha256": "7ca96d474a150504f683947074dbe85a467cbaa6ae37420ff8d516d651fdb82c"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/requests/00000.json.gz.gz",
+      "raw_sha256": "f22928dc8af39f00882781f6edc13b59e5f837ea5206589d008ffdf78f705330"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/requests/00001.json.gz.gz",
+      "raw_sha256": "bce09cc1908d78b1e55d390b4a5a375c5bd49d1a051903c759f13d525b41f33c"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/requests/00002.json.gz.gz",
+      "raw_sha256": "0f52abff1a028782ce2c56f951a67b177e64564060a57d591951fe94756b9d17"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/requests/00003.json.gz.gz",
+      "raw_sha256": "8b6c18b2791bc8434eb6ffdcc02bd01e4074073317cce763f38bbae2dad44a39"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/requests/00004.json.gz.gz",
+      "raw_sha256": "732300a36b28b2de39c6f478ea6e0a9ac5e839c25d8f79fe357b959ece04ac31"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/requests/00005.json.gz.gz",
+      "raw_sha256": "d8868a846fff0693cc2b24ee2562a5af55f0297585be4d25229f022ffaab4f07"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/workspace/evidence.json.gz",
+      "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/workspace/task.py.gz",
+      "raw_sha256": "5522d724ab74713458f9eaf9b44894b1c981ba2a9c8df79544d70522f5bf46fd"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/workspace/test_task.py.gz",
+      "raw_sha256": "113de65e470d7bd43204809cfcfce5a95caf5bed4ba18da93cfa20fc71c7d372"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/snapshots/turn-00-hidden/evidence.json.gz",
+      "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/snapshots/turn-00-hidden/hashes.json.gz",
+      "raw_sha256": "152b5ff221dc8db3d61d4b6d80b7aa37dc78cb4c00d9db0881c0f308af8b4080"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/snapshots/turn-00-hidden/task.py.gz",
+      "raw_sha256": "5522d724ab74713458f9eaf9b44894b1c981ba2a9c8df79544d70522f5bf46fd"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/snapshots/turn-00-hidden/test_task.py.gz",
+      "raw_sha256": "113de65e470d7bd43204809cfcfce5a95caf5bed4ba18da93cfa20fc71c7d372"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/snapshots/turn-00-native/evidence.json.gz",
+      "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/snapshots/turn-00-native/hashes.json.gz",
+      "raw_sha256": "19bf6e8b22aa74ccf9cefe254ecd71e7b09d375dcf83bac141f3b1d804200474"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/snapshots/turn-00-native/task.py.gz",
+      "raw_sha256": "5522d724ab74713458f9eaf9b44894b1c981ba2a9c8df79544d70522f5bf46fd"
+    },
+    {
+      "file": "evidence/repair-v3-artifacts-v2/latency-diagnostic/snapshots/turn-00-native/test_task.py.gz",
+      "raw_sha256": "113de65e470d7bd43204809cfcfce5a95caf5bed4ba18da93cfa20fc71c7d372"
+    }
+  ],
+  "published_files": 185,
+  "hash_mismatches": 0,
+  "credential_hits": 0,
+  "qualification_increment": 0,
+  "candidate_aggregate_unchanged": 23,
+  "clients_unchanged": {
+    "claude": 8,
+    "opencode": 9,
+    "codex": 6
+  },
+  "full_goal_complete": false,
+  "scope": "Parent source/hash, native-event and actual per-turn snapshot replay; not nonauthor acceptance"
+}

@@ -58,3 +58,4 @@
 /app/gateway.py -text -whitespace
 /evidence/repair-v3-native-plan.json -text -whitespace
 /evidence/repair-v3-latency-plan.json -text -whitespace
+/evidence/repair-v3-artifacts-v2/** -text -whitespace

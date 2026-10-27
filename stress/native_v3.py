@@ -3,8 +3,8 @@
 Provenance
 ----------
 `native_evidence` below is copied from the frozen v2 harness
-(`stress/cli_acceptance.py`) and is attributed here with the single intended
-behavioural change:
+(`stress/cli_acceptance.py`) and is attributed here with bounded recognition
+changes:
 
 * v2 recognized a successful native unittest run only when the tool output
   literally contained ``Ran 2 tests`` plus ``OK``. The portable v2/v3 fixtures
@@ -12,6 +12,8 @@ behavioural change:
   turn could be misrecognized as a failure. v3 recognizes any *positive*
   test count and still rejects failures, errors, skipped-only runs, zero-test
   runs, quoted prose and failed tool executions.
+* Escaped executable quotes in native Windows logs are accepted only in the
+  same anchored standalone unittest command form; workflow ordering stays exact.
 
 The v2 module is deliberately left untouched: sealed campaign receipts keep
 their original meaning and are never reinterpreted. Every other native check
@@ -156,7 +158,7 @@ def native_evidence(client: str, events: list[dict], workspace: Path | None = No
             if wrapper:
                 command = wrapper.group(2).strip()
         if name in {"bash", "powershell"} and isinstance(command, str) and re.fullmatch(
-            r'\s*(?:&\s*)?(?:"[^"\r\n]+"|[^\s;&|]+)\s+-m\s+unittest\s+-q\s*', command,
+            r'\s*(?:&\s*)?(?:"[^"\r\n]+"|\\+"[^"\r\n]+\\+"|[^\s;&|]+)\s+-m\s+unittest\s+-q\s*', command,
         ):
             output = outputs.get(key, "")
             if key in completed and not completed[key] and "FAILED" in output:

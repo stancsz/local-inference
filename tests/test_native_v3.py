@@ -140,7 +140,20 @@ def test_v3_copy_differs_from_v2_only_in_the_recognition_line():
     v3_source = inspect.getsource(native_v3.native_evidence)
     assert V2_RECOGNITION in v2_source
     assert V3_RECOGNITION in v3_source
-    assert v2_source.replace(V2_RECOGNITION, "RECOGNITION") == v3_source.replace(V3_RECOGNITION, "RECOGNITION")
+    old_pattern=r'''r'\s*(?:&\s*)?(?:"[^"\r\n]+"|[^\s;&|]+)\s+-m\s+unittest\s+-q\s*' '''.strip()
+    new_pattern=r'''r'\s*(?:&\s*)?(?:"[^"\r\n]+"|\\+"[^"\r\n]+\\+"|[^\s;&|]+)\s+-m\s+unittest\s+-q\s*' '''.strip()
+    assert old_pattern in v2_source and new_pattern in v3_source
+    assert v2_source.replace(V2_RECOGNITION, "RECOGNITION").replace(old_pattern,'COMMAND') == v3_source.replace(V3_RECOGNITION, "RECOGNITION").replace(new_pattern,'COMMAND')
+
+
+def test_escaped_native_executable_quotes_preserve_strict_workflow_order():
+    events=workflow(3)
+    events[1]['item']['command']=r'"C:\PowerShell\pwsh.exe" -Command "& \\"C:\\Program Files\\Python\\python.exe\\" -m unittest -q"'
+    assert native_evidence('codex',events)['baseline_failed']
+    assert native_evidence('codex',events)['workflow_ordered']
+    events[0],events[1]=events[1],events[0]
+    assert native_evidence('codex',events)['baseline_failed']
+    assert not native_evidence('codex',events)['workflow_ordered']
 
 
 def test_v3_module_records_its_provenance():
