@@ -1,8 +1,8 @@
 # Local CLI stress results
 
-Checkpoint: 2026-10-27T05:47:46.651886+00:00. Controller: **attention_required**. Final independent acceptance: **NOT_READY**.
+Frozen original matrix checkpoint: 2026-10-27T05:47:46.651886+00:00. Its controller is terminal. Current prospective-batch state is in [balanced-v2-state](../evidence/balanced-v2-state.json); final independent acceptance remains **NOT_READY**.
 
-19 harness passes and 3 failed attempts among 22 terminal matrix attempts; 19 reached nine turns and over 180 active seconds. The required 21-session target remains unmet: shortfall **2**. The fixed plan has 22 attempts; failed one-turn attempts and older epochs are not promoted into current passes.
+19 harness passes and 3 failed attempts among 22 terminal matrix attempts; 19 reached nine turns and over 180 active seconds. At this original-matrix checkpoint, the21-session shortfall was **2**; see the separate later epochs below for current candidate totals. The fixed plan has 22 attempts; failed one-turn attempts and older epochs are not promoted into current passes.
 
 | Client | Terminal attempts | Harness passes | Nine-turn long sessions | Median accepted active seconds | Added contract failures |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -42,3 +42,8 @@ Prospective supplement v1 (separate workload epoch): OpenCode incident-log analy
 The rejected Codex case also produced12 archived-source retention audit failures. Its stored historical value was correct; forwarded excerpts were not captured, so actual compaction loss versus checker mismatch is unresolved. Separate Windows fixture diagnostics passed the unchanged tests with workspace-inherited temporary directories while outside-workspace writes stayed denied. Neither diagnostic promotes the failed attempt.
 
 Expense feedback v3 is a separate short generated repair, not a qualifying session: one native Claude turn against local Qwen :8090 repaired blank-currency handling and empty-CSV ValueError behavior. Parent replay reproduced0/6 baseline probe passes and6/6 final passes, alongside13 regressions,9 original behavior stages and12 existing probes. Raw revisions/native events and byte hashes are [published](../evidence/expense-feedback-v3.json); [parent acceptance](../evidence/expense-feedback-v3-parent-review.json) is separate from final full-goal acceptance. The supporting4000/default writer reached its18-turn cap; parent completed acceptance and publication guards. Original failures were not rewritten.
+
+
+Balanced v2 remains in progress: Claude incident-log and OpenCode manifest cases each passed9 turns with parent replay (993.867s/988.9s). Codex expense auditing was rejected after240.312s: real grouping failure and a native patch-path error, with the fixture preflight passing and all11 original-source captures retained. Candidate aggregate22 = original19 + prior supplement1 + balanced2; clientsClaude8/OpenCode8/Codex6. All9 declared cases must finish and full-goal nonauthor acceptance is pending.
+
+A parent diagnostic also found that frozen native success recognition hardcodes `Ran 2 tests`, whereas the new portable expense fixtures run3/4 tests. Successful three/four-test output can be falsely rejected. This does not affect the original two-test matrix comparison, and the failed Codex expense output independently fails semantic tests. Preserve all outcomes, qualify this confound in future expense results and use a separately versioned harness for any correction; do not retrofit passing counts. See [offline controls](../evidence/balanced-v2-native-test-count-diagnostic.json) and [failed-case review](../evidence/balanced-v2-case3-failure-review.json).

@@ -1,0 +1,60 @@
+{
+  "case": "codex-expense-audit-v2",
+  "accepted": false,
+  "active_seconds": 240.312,
+  "turns": 1,
+  "fixture_readiness": {
+    "passed": true,
+    "exit_code": 0,
+    "stdout": "{\"fixture_cleanup_passed\": true, \"outside_denied\": true}\n",
+    "stderr": "",
+    "details": {
+      "fixture_cleanup_passed": true,
+      "outside_denied": true
+    },
+    "scope": "Native sandbox, no inference or global permission/configuration changes."
+  },
+  "native": {
+    "terminal_success": false,
+    "calls": 11,
+    "completed": 11,
+    "successful_tools": [
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Edit",
+      "Bash",
+      "Bash"
+    ],
+    "unmatched_results": 0,
+    "native_errors": 0,
+    "read_files": [
+      "task.py",
+      "test_task.py"
+    ],
+    "written_files": [
+      "evidence.json",
+      "task.py"
+    ],
+    "baseline_failed": true,
+    "final_passed": false,
+    "workflow_ordered": false
+  },
+  "hidden_tests_exit": 1,
+  "parent_grouping_reproduction": {
+    "actual": {
+      "Food": "1.00",
+      "food": "2.00",
+      "Transit": "3.00"
+    },
+    "case_insensitive_grouping_passed": false
+  },
+  "captured_original_source_verified": 11,
+  "all_upstream_http200": true,
+  "diagnostic": "Generated grouping failure, native patch-path error and240-second deadline. Frozen recognizer also hardcodes Ran2tests while portable expense fixtures use3/4; separate offline controls demonstrate potential false negatives. This case remains failed even apart from that recognizer because hidden tests and parent grouping reproduction fail.",
+  "qualifying_increment": 0,
+  "no_reroll_or_promotion": true,
+  "full_goal_complete": false
+}

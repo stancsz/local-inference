@@ -1,0 +1,20 @@
+{
+  "scope": "Offline parser control; not a native session or qualification",
+  "results": [
+    {
+      "unit_control_test_count": 2,
+      "actual_tool_success": true,
+      "recognized_final_pass": true
+    },
+    {
+      "unit_control_test_count": 3,
+      "actual_tool_success": true,
+      "recognized_final_pass": false
+    },
+    {
+      "unit_control_test_count": 4,
+      "actual_tool_success": true,
+      "recognized_final_pass": false
+    }
+  ]
+}
