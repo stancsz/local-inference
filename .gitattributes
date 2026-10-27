@@ -1,3 +1,6 @@
 # Preserve the reconstructable evidence patch byte-for-byte. Its context
 # markers include a space on blank lines; those are required patch syntax.
 /evidence/stress-candidate.patch -text -whitespace
+# Captured CLI fixtures are evidence: retain their original line endings so
+# byte hashes remain verifiable on every checkout platform.
+/evidence/stress-sessions/** -text -whitespace

@@ -269,6 +269,58 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/codex-engineering-r1/result.json",
+      "client": "codex",
+      "task": "engineering",
+      "original_workflow_accepted": true,
+      "task_sha256": "5ed6c4e68439cb089ae849811082bc5e7c1c787630ae12938e6ec45094bb5920",
+      "all_additional_checks_passed": false,
+      "checks": [
+        {
+          "name": "clamp_all empty invalid lower",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "clamp_all empty reversed bounds",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "clamp_all empty bool bound",
+          "passed": false,
+          "error": "AssertionError: expected TypeError"
+        },
+        {
+          "name": "clamp_report empty invalid lower",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "clamp_report empty reversed bounds",
+          "passed": false,
+          "error": "AssertionError: expected ValueError"
+        },
+        {
+          "name": "clamp_report empty bool bound",
+          "passed": false,
+          "error": "AssertionError: expected TypeError"
+        },
+        {
+          "name": "single-use generator",
+          "passed": true
+        },
+        {
+          "name": "generator report",
+          "passed": true
+        },
+        {
+          "name": "finite value validation",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/codex-engineering-resume-writable/result.json",
       "client": "codex",
       "task": "engineering",
@@ -716,5 +768,5 @@
       ]
     }
   ],
-  "sessions_with_additional_failures": 8
+  "sessions_with_additional_failures": 9
 }
