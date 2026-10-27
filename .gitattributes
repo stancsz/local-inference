@@ -43,3 +43,5 @@
 /evidence/expense-feedback-v3-support/** -text -whitespace
 /recovery/publish_expense_v3.py -text
 /tests/test_expense_publication_v3.py -text
+
+/evidence/balanced-v2-setup/** -text -whitespace

@@ -1,0 +1,68 @@
+{
+  "plan_commit": "e87d1a0",
+  "controller_pid": 232444,
+  "runner_pid": 192184,
+  "controller_state": {
+    "state": "running",
+    "controller_pid": 232444,
+    "started_at": "2026-10-27T13:58:04.201752+00:00",
+    "plan_sha256": "4cf402aac32e713ca8dc7e904f07e6bbbd7c3f787dcc24dd7d80c7bb5a330286",
+    "plan_commit": "e87d1a0f9bccead7392e2b7250fa6939336967aa",
+    "original_qualifying_sessions": 19,
+    "prior_supplement_qualifying_sessions": 1,
+    "supplement_qualifying_sessions": 0,
+    "candidate_aggregate_sessions": 20,
+    "final_independent_acceptance": "pending",
+    "full_goal_complete": false,
+    "cases": [
+      {
+        "id": "claude-incident-log-v2",
+        "client": "claude",
+        "task": "incident_log",
+        "seed": 2026102711,
+        "started_at": "2026-10-27T13:58:04.415619+00:00",
+        "receipt": "C:\\Users\\stanc\\github\\local-inference\\tmp\\balanced-v2\\claude-incident-log-v2\\result.json",
+        "status": "running",
+        "runner_pid": 192184
+      }
+    ]
+  },
+  "observed_user_turns": 1,
+  "first_turn": {
+    "number": 1,
+    "accepted": true,
+    "duration_seconds": 53.073,
+    "client_exit": 0,
+    "timed_out": false,
+    "native": {
+      "terminal_success": true,
+      "calls": 8,
+      "completed": 8,
+      "successful_tools": [
+        "Read",
+        "Read",
+        "Read",
+        "Edit",
+        "Edit",
+        "Bash"
+      ],
+      "unmatched_results": 0,
+      "native_errors": 0,
+      "read_files": [
+        "task.py",
+        "test_task.py"
+      ],
+      "written_files": [
+        "evidence.json",
+        "task.py"
+      ],
+      "baseline_failed": true,
+      "final_passed": true,
+      "workflow_ordered": true
+    },
+    "hidden_tests_exit": 0,
+    "historical_gold_passed": true,
+    "public_tests_sha256": "ec5c0ab52201f72a5f6d236c87fda863ac7ce59f1bf6ac638aa73a8e702f6524"
+  },
+  "claim": "Initial native progress only, no new terminal qualifying session or full goal acceptance"
+}
