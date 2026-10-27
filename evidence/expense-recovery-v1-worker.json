@@ -1,0 +1,114 @@
+{
+  "artifact": "expense-recovery-v1",
+  "version": 1,
+  "date": "2026-10-26",
+  "kind": "deterministic expense-validation recovery fixture (separate code repair)",
+  "not_claimed": [
+    "Not a retroactive pass of any recorded model attempt.",
+    "Not evidence that Qwen or any other model learned these fixes.",
+    "Does not change the 22 attempts, the 19 qualifying / 3 rejected split, or the required 21 (still short by 2).",
+    "Does not certify the overall goal or unattended production readiness."
+  ],
+  "files_written": [
+    "recovery/expenses_v1.py",
+    "tests/test_expense_recovery.py",
+    "evidence/expense-recovery-v1.json"
+  ],
+  "files_untouched": [
+    "evidence/stress-failures/opencode-expenses-r1/workspace-task.py.gz (read-only, gzip bytes decompressed in memory)",
+    "evidence/stress-sessions/claude-expenses-r0/task.py (read-only, compiled in memory)",
+    "stress/acceptance_tasks.py",
+    "stress/contract_probe.py",
+    "all frozen campaign sources, seeds, timeouts, outcomes, reports and GOAL.md"
+  ],
+  "source_hashes_sha256": {
+    "baseline_opencode_gz": "f363d1248ac9a39e5a826fbed72c70a1e3a8cf7d3aa0f80845235f2ed066acdd",
+    "baseline_claude_py": "5fc42a95c95816f7e1b83cceec6f31ae082e7f493bde7aabad3f4d89cea3cd03",
+    "candidate_recovery_expenses_v1": "1f5b0a75f3d687b7d407ec44eeb1e1ba2dc54e3ffbe830459fd60b5ccb27b4a3",
+    "regression_test_expense_recovery": "37f4dfeef5d66019d09cc3cafa6319ed9879d0e417511897e06aceee85fa4374"
+  },
+  "candidate_api": {
+    "expense_totals": "csv_text -> dict[str, Decimal]",
+    "expense_report": "csv_text -> dict with keys totals, grand_total, count",
+    "dependencies": "stdlib only (csv, io, decimal)",
+    "io": "none (pure functions, no file or network access)",
+    "determinism": "no randomness, no clock, no globals mutated"
+  },
+  "contract_checks": [
+    {
+      "name": "case_insensitive_grouping",
+      "input": "category,amount / Food,1.00 / food,2.00",
+      "expectation": "dict with key Food and value Decimal 3.00"
+    },
+    {
+      "name": "missing_amount_cell_raises_value_error",
+      "input": "category,amount / Food",
+      "expectation": "ValueError raised (any other exception type is a failure)"
+    },
+    {
+      "name": "extra_cell_raises_value_error",
+      "input": "category,amount / Food,1.00,extra",
+      "expectation": "ValueError raised (any other exception type is a failure)"
+    }
+  ],
+  "baseline_observed_behaviour": {
+    "opencode_expenses_r1": {
+      "source": "evidence/stress-failures/opencode-expenses-r1/workspace-task.py.gz",
+      "case_insensitive_grouping": "FAIL: two separate groups, result Food=Decimal 1.00 and food=Decimal 2.00",
+      "missing_amount_cell_raises_value_error": "FAIL: IndexError raised, not ValueError",
+      "extra_cell_raises_value_error": "FAIL: silently accepted, result Food=Decimal 1.00"
+    },
+    "claude_expenses_r0": {
+      "source": "evidence/stress-sessions/claude-expenses-r0/task.py",
+      "case_insensitive_grouping": "PASS: result Food=Decimal 3.00",
+      "missing_amount_cell_raises_value_error": "FAIL: AttributeError raised, not ValueError",
+      "extra_cell_raises_value_error": "FAIL: silently accepted, result Food=Decimal 1.00"
+    }
+  },
+  "commands": [
+    {
+      "command": "python -B -m pytest tests/test_expense_recovery.py -v",
+      "result": "6 passed in 0.15s",
+      "exit_code": 0
+    },
+    {
+      "command": "python -B -m pytest tests/test_expense_recovery.py -q",
+      "result": "6 passed in 0.03s",
+      "exit_code": 0
+    },
+    {
+      "command": "git status --porcelain",
+      "result": "no tracked file modified; only new untracked recovery/, tests/test_expense_recovery.py and this evidence file",
+      "exit_code": 0
+    }
+  ],
+  "tests": [
+    "test_candidate_passes_all_three_contract_checks",
+    "test_opencode_baseline_still_fails_contract_checks",
+    "test_claude_baseline_still_fails_contract_checks",
+    "test_baseline_artifacts_are_unchanged",
+    "test_candidate_valid_control_cases",
+    "test_candidate_extended_contract"
+  ],
+  "regression_design": {
+    "baseline_loading": "bytes read read-only; gzip decompressed in memory; compile() in memory; no artifact written",
+    "control_cases": "valid round-trip inputs assert real totals, order, refunds, quoted CSV and report values, so a reject-everything implementation cannot pass",
+    "exception_contract": "a different exception type counts as a failure of the ValueError contract, not a pass"
+  },
+  "preserved_semantics": [
+    "quoted CSV fields including commas inside category",
+    "negative (refund) amounts accepted",
+    "non-finite and malformed amounts rejected with ValueError",
+    "missing and duplicate headers rejected with ValueError",
+    "optional currency column; mixed currencies rejected with ValueError",
+    "aggregation before HALF_EVEN rounding to 0.01",
+    "first spelling and first-appearance order preserved across case-insensitive grouping",
+    "report returns totals, grand_total and count of non-blank parsed rows"
+  ],
+  "remaining_limits": [
+    "This fixture is not wired into the frozen stress campaign and does not alter campaign scores or attempt counts.",
+    "Baseline failures are recorded historical facts, not live model behaviour.",
+    "Only the three named contract checks plus the extended frozen contract list are covered; unlisted edge cases are out of scope.",
+    "The 21-attempt requirement remains short by 2; acceptance remains the commander decision."
+  ]
+}

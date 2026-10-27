@@ -1,0 +1,19 @@
+{
+  "candidate_sha256": "1f5b0a75f3d687b7d407ec44eeb1e1ba2dc54e3ffbe830459fd60b5ccb27b4a3",
+  "checks": [
+    {
+      "csv": "category,amount\n,,\n",
+      "result": "{}",
+      "value_error": false
+    },
+    {
+      "csv": "category,amount\n,\n",
+      "result": "{}",
+      "value_error": false
+    },
+    {
+      "csv": "category,amount\nFood,\n",
+      "value_error": true
+    }
+  ]
+}

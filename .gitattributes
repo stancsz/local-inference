@@ -4,3 +4,6 @@
 # Captured CLI fixtures are evidence: retain their original line endings so
 # byte hashes remain verifiable on every checkout platform.
 /evidence/stress-sessions/** -text -whitespace
+# Versioned recovery fixtures retain their recorded release byte hashes.
+/recovery/expenses_v1.py -text
+/tests/test_expense_recovery.py -text

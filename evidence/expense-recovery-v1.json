@@ -1,0 +1,218 @@
+{
+  "artifact": "expense-recovery-v1",
+  "kind": "separately versioned deterministic code fixture; not a local-Qwen inference result",
+  "reviewed_at": "2026-10-27T05:57:48.241253+00:00",
+  "owner": "commander independent inspection/replay of worker handoff",
+  "worker_complete": true,
+  "worker_initial_evidence": "evidence/expense-recovery-v1-worker.json",
+  "worker_initial_candidate_sha256": "1f5b0a75f3d687b7d407ec44eeb1e1ba2dc54e3ffbe830459fd60b5ccb27b4a3",
+  "candidate_sha256": "3d3c5c3e892918d0b4a51c860f864c13e5abccfb062ed415009fcd73e2e2a002",
+  "regression_test_sha256": "99584a74d6ccc607012e3d6608b27840d5c308514dbec33ff2d52c9e8608dd62",
+  "baseline_reproductions": {
+    "opencode_expenses_r1": {
+      "source": "evidence/stress-failures/opencode-expenses-r1/workspace-task.py.gz",
+      "case_insensitive_grouping": "FAIL: two separate groups, result Food=Decimal 1.00 and food=Decimal 2.00",
+      "missing_amount_cell_raises_value_error": "FAIL: IndexError raised, not ValueError",
+      "extra_cell_raises_value_error": "FAIL: silently accepted, result Food=Decimal 1.00"
+    },
+    "claude_expenses_r0": {
+      "source": "evidence/stress-sessions/claude-expenses-r0/task.py",
+      "case_insensitive_grouping": "PASS: result Food=Decimal 3.00",
+      "missing_amount_cell_raises_value_error": "FAIL: AttributeError raised, not ValueError",
+      "extra_cell_raises_value_error": "FAIL: silently accepted, result Food=Decimal 1.00"
+    }
+  },
+  "parent_initial_findings": [
+    {
+      "csv": "category,amount\n,,\n",
+      "result": "{}",
+      "value_error": false
+    },
+    {
+      "csv": "category,amount\n,\n",
+      "result": "{}",
+      "value_error": false
+    },
+    {
+      "csv": "category,amount\nFood,\n",
+      "value_error": true
+    }
+  ],
+  "parent_correction": "Only truly empty parsed rows are skipped. Delimited empty cells must satisfy width/amount validation.",
+  "test_ratcheting": {
+    "worker_baseline": "6 passed",
+    "added_regressions_before_fix": "6 failed, 7 passed",
+    "after_fix": "13 passed"
+  },
+  "frozen_expense_stage_behavior_checks": [
+    {
+      "stage": 1,
+      "seed": 97131,
+      "exit": 0,
+      "behavior_only": true
+    },
+    {
+      "stage": 2,
+      "seed": 97132,
+      "exit": 0,
+      "behavior_only": true
+    },
+    {
+      "stage": 3,
+      "seed": 97133,
+      "exit": 0,
+      "behavior_only": true
+    },
+    {
+      "stage": 4,
+      "seed": 97134,
+      "exit": 0,
+      "behavior_only": true
+    },
+    {
+      "stage": 5,
+      "seed": 97135,
+      "exit": 0,
+      "behavior_only": true
+    },
+    {
+      "stage": 6,
+      "seed": 97136,
+      "exit": 0,
+      "behavior_only": true
+    },
+    {
+      "stage": 7,
+      "seed": 97137,
+      "exit": 0,
+      "behavior_only": true
+    },
+    {
+      "stage": 8,
+      "seed": 97138,
+      "exit": 0,
+      "behavior_only": true
+    },
+    {
+      "stage": 9,
+      "seed": 97139,
+      "exit": 0,
+      "behavior_only": true
+    }
+  ],
+  "existing_additional_expense_probes": [
+    {
+      "name": "aggregate before HALF_EVEN rounding",
+      "passed": true
+    },
+    {
+      "name": "strip group preserve first spelling",
+      "passed": true
+    },
+    {
+      "name": "invalid amount NaN",
+      "passed": true
+    },
+    {
+      "name": "invalid amount Infinity",
+      "passed": true
+    },
+    {
+      "name": "invalid amount garbage",
+      "passed": true
+    },
+    {
+      "name": "mixed currency",
+      "passed": true
+    },
+    {
+      "name": "missing header",
+      "passed": true
+    },
+    {
+      "name": "duplicate header",
+      "passed": true
+    },
+    {
+      "name": "missing amount cell",
+      "passed": true
+    },
+    {
+      "name": "unlabelled extra cell",
+      "passed": true
+    },
+    {
+      "name": "quoted category with comma",
+      "passed": true
+    },
+    {
+      "name": "report blank rows order and exact total",
+      "passed": true
+    }
+  ],
+  "original_artifact_hashes_before": {
+    "evidence\\stress-failures\\opencode-expenses-r1\\workspace-task.py.gz": "f363d1248ac9a39e5a826fbed72c70a1e3a8cf7d3aa0f80845235f2ed066acdd",
+    "evidence\\stress-sessions\\claude-expenses-r0\\task.py": "5fc42a95c95816f7e1b83cceec6f31ae082e7f493bde7aabad3f4d89cea3cd03",
+    "evidence\\stress-campaign.json": "9729861da13a42437ee8fae41a2b9283f58f720a69cf7dff3b29e67c63329778"
+  },
+  "original_artifact_hashes_after": {
+    "evidence\\stress-failures\\opencode-expenses-r1\\workspace-task.py.gz": "f363d1248ac9a39e5a826fbed72c70a1e3a8cf7d3aa0f80845235f2ed066acdd",
+    "evidence\\stress-sessions\\claude-expenses-r0\\task.py": "5fc42a95c95816f7e1b83cceec6f31ae082e7f493bde7aabad3f4d89cea3cd03",
+    "evidence\\stress-campaign.json": "9729861da13a42437ee8fae41a2b9283f58f720a69cf7dff3b29e67c63329778"
+  },
+  "campaign_unchanged": true,
+  "qualifying_current_sessions": 19,
+  "required_sessions": 21,
+  "shortfall": 2,
+  "validation_setup_limit": "Initial attempt to run whole stage tests failed because no model-history evidence.json exists for this pure fixture. Final replay selects only original Acceptance.test_behavior; it does not seed or fake historical evidence.",
+  "scope": "Validates this deterministic repair and regression oracles only. No original task artifact, seed, timeout, source epoch or rejected outcome is changed; no model learned-fix, new qualifying session or unattended-production claim.",
+  "worker_exit": {
+    "exit_code": 0,
+    "alias": "local-inference-worker-8eb18304208f",
+    "route": "http://127.0.0.1:4000",
+    "model": "default"
+  },
+  "worker_revocation": {
+    "alias": "local-inference-worker-8eb18304208f",
+    "revoked": true
+  },
+  "full_project_tests": {
+    "passed": 70,
+    "seconds": 6.28,
+    "command": "python -B -m pytest -q tests with frozen Sift candidate PYTHONPATH"
+  },
+  "captured_validation_files": [
+    {
+      "file": "evidence/expense-recovery-v1-worker.jsonl.gz",
+      "raw_sha256": "2dc917f03b790ec040a40c60656dd7477d00a43b77503bf41f4ec05c214ab85e"
+    },
+    {
+      "file": "evidence/expense-recovery-v1-worker.stderr.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "file": "evidence/expense-recovery-v1-before-fix.txt.gz",
+      "raw_sha256": "716efb271dd75ebc6b1f0776918c054a172150cbab0a73c49713e1773df66c80"
+    },
+    {
+      "file": "evidence/expense-recovery-v1-after-fix.txt.gz",
+      "raw_sha256": "f40fde58b8932e7584a1877faaa259b15c867a17091a480ddef53ffa794b22f2"
+    },
+    {
+      "file": "evidence/expense-recovery-v1-full-suite.txt.gz",
+      "raw_sha256": "5f41d4c33b9f8024004846cd2148ca5ab39f90c60e35c993d2d8fd2e26f13e0b"
+    }
+  ],
+  "public_regression_command": "python -B -m pytest -q tests/test_expense_recovery.py",
+  "worker_api_base": "http://127.0.0.1:4000/v1",
+  "worker_model_alias": "default",
+  "worker_handoff": {
+    "subtype": "success",
+    "is_error": false,
+    "requested_cli_max_turns": 24,
+    "reported_num_turns": 26,
+    "reported_duration_ms": 207090,
+    "host_timeout_seconds": 600,
+    "limit_note": "The SDK reported26 turns despite a requested24 CLI cap; no equivalence of these counters is assumed. The worker finished successfully within its independent600s host deadline."
+  }
+}
