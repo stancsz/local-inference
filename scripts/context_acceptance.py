@@ -1,5 +1,6 @@
 """Exercise 256k/1M histories and native downstream compaction counts."""
 import json
+import argparse
 import math
 from pathlib import Path
 import sys
@@ -12,6 +13,9 @@ sys.path.insert(0,str(ROOT/'app'))
 import budget as proxy
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--output',type=Path,default=ROOT/'evidence/context-acceptance.json')
+    options=parser.parse_args()
     records=[]
     for size in (256_000,1_000_000):
         # Approximately size tokens using a deliberately labelled 4-char estimate.
@@ -52,7 +56,7 @@ def main():
         assert usage.get('input_tokens',0)+usage.get('cache_read_input_tokens',0)==live['native_input_tokens'],'Provider usage differs from native count'
         answer=''.join(b.get('text','') for b in output.get('content',[]))
         records.append({'minimum_raw_native_tokens':size,'raw_native_tokens':raw_native,'serialized_bytes':len(json.dumps(payload).encode()),'audit':audit,'live_audit':live,'answer':answer,'passed':'PORT=8090' in answer,'seconds':round(time.monotonic()-started,2),'usage':output.get('usage')})
-        (ROOT/'evidence/context-acceptance.json').write_text(json.dumps(records,indent=2))
+        options.output.write_text(json.dumps(records,indent=2))
         print(json.dumps(records[-1]),flush=True)
     assert records[0]['audit']['target_tokens'] < records[1]['audit']['target_tokens'], 'Different raw requests must select different budgets under one configuration'
     raise SystemExit(0 if all(r['passed'] for r in records) else 1)

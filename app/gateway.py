@@ -24,7 +24,8 @@ def protect_codex_instructions(data):
     updates=[]
     history=[]
     for item in items:
-        if not isinstance(item,dict) or item.get('role') not in {'developer','system'}:
+        if (not isinstance(item,dict) or item.get('type','message') != 'message'
+                or item.get('role') not in {'developer','system'}):
             history.append(item)
             continue
         content=item.get('content')

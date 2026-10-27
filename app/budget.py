@@ -10,6 +10,7 @@ import urllib.request
 
 from sift import CompactionError
 from sift.dynamic import compact_dynamic
+from sift.core import _check_precount_size, DEFAULT_MAX_INPUT_CHARACTERS, DEFAULT_MAX_INPUT_NODES
 
 BASE = os.environ.get('INFERENCE_URL', 'http://127.0.0.1:8091')
 WINDOW = int(os.environ.get('CONTEXT_SIZE', '40960'))
@@ -41,6 +42,10 @@ def count(payload, protocol='anthropic'):
 
 def compact(payload, protocol='anthropic'):
     """Budget and select using the backend's native full-request tokenizer."""
+    # Bound the complete request, including tool schemas, before copying it or
+    # invoking the native tokenizer. Sift also bounds its selection view.
+    _check_precount_size(payload, max_characters=DEFAULT_MAX_INPUT_CHARACTERS,
+                         max_nodes=DEFAULT_MAX_INPUT_NODES)
     p = deepcopy(payload)
     if protocol=='openai' and p.get('system'):
         raise ValueError('OpenAI system instructions belong in messages, not a top-level system field')
@@ -76,8 +81,13 @@ def compact(payload, protocol='anthropic'):
     # The budget is request-adaptive: the anchor TARGET is used for requests
     # that already fit it, and larger requests get a working set derived from
     # their own native size, bounded by the window's available tokens.
+    raw = native(messages)
+    ceiling = min(65536, WINDOW-output-DECODER_HEADROOM)
+    # Avoid compressing (or rejecting) protected work that already fits the
+    # loaded native window. Larger requests retain the adaptive ratio policy.
+    anchor = max(TARGET, raw) if raw <= ceiling else TARGET
     result = compact_dynamic(messages, native, context_window=WINDOW,
-        output_reserve=output, preferred_target=TARGET, fixed_tokens=DECODER_HEADROOM,
+        output_reserve=output, preferred_target=anchor, fixed_tokens=DECODER_HEADROOM,
         raw_limit=1_050_000, compression_ratio=RATIO, protocol=protocol)
     p=restore(result.messages)
     actual = count(p,protocol)
@@ -90,6 +100,7 @@ def compact(payload, protocol='anthropic'):
         raw_native_token_limit=1_050_000, decoder_headroom=DECODER_HEADROOM,
         context_window=WINDOW, budget_policy='request_adaptive_ratio',
         compression_ratio=RATIO, anchor_tokens=TARGET)
+    audit['fitting_request_preserved'] = raw <= ceiling
     return p, audit
 
 def compaction_digest(payload):

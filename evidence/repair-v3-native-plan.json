@@ -1,0 +1,39 @@
+{
+  "sealed_at": "2026-10-27T17:14:35.284375+00:00",
+  "case": {
+    "client": "codex",
+    "task": "release_manifest",
+    "seed": 2026102741
+  },
+  "source_sha256": {
+    "sift.core": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246",
+    "sift.litellm_responses": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464",
+    "stress.portable_tasks_v2": "ce2d0f8da8a3cabd4e62cc2323e594f7f757b5a893dfd93fa6a5a7f160df3848",
+    "stress.cli_acceptance": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress.supplement_tasks_v1": "1a98e4f1fba6b4be97d6112814bf0c6621350b5d95a26bf2f188de8c9dd0d9bb",
+    "stress.fixture_probe_v2": "3aab23e2b489ea53cdb0356a56b0d571df73ce919088c039fab594642dcfac16",
+    "stress.proxy_capture_v2": "c3cbccd49678308652d86ae9d51f671624f8b1092d16789f7e00a335b18b07d0",
+    "stress.native_v3": "ab38a1be63a1b2c6a4527cdf8dd27685e5162e4b596ca22a4d58102177735069",
+    "stress.portable_campaign_v2": "df060b165ef07b6008a5d00f05f5c33418c372bce0f9028e5a48a94f712a5ff5",
+    "stress.campaign_v3": "5557cb91e4ef5a8901c5bbb2fb1e3a7cf1a5b39ef6040b2214b606dd400085c8",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "app/budget.py": "25243ef709e6a9005ea5e53243e952a09f49311b09e12ac2647d52fa4dcf9303",
+    "app/gateway.py": "3d9def33a609a15cce4eeaca376b638e4842f4b3f9cffd2ed4cdc0b04615417a",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  },
+  "gateway_image": "sha256:a44c6ec1d442fb0a0301f4218634d568908d1cd24625486f16aa9ffcef22d882",
+  "sift_revision": "2f0ef2786345fe0868b282903712fd1ac92d43fe",
+  "upstream": "http://127.0.0.1:8090/v1",
+  "model": "qwen3.8-27b-codex",
+  "minimum_turns": 9,
+  "minimum_seconds": 185,
+  "turn_timeout": 240,
+  "maximum_turns": 9,
+  "retries": 0,
+  "counts": "Separate repaired implementation epoch; original and supplemental rejected outcomes unchanged",
+  "approval_contract": "Frozen child_command and sandbox/approval settings reused exactly; caller product config retention separately tested",
+  "remaining": "Model correctness, timeout behavior, general semantic retention and isolated/simultaneous memory limits cannot be declared repaired by offline tests"
+}

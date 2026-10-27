@@ -1,0 +1,11 @@
+{
+  "scope": "Only observed successful misdirected native edits reversed; raw attempts and pre/post bytes retained",
+  "files": [
+    {
+      "path": "tmp/acceptance/model-audit.json",
+      "native_call": "call_PMdEalrBLwV9XUGTlNxvSIn5dIRbO5Om",
+      "post_sha256": "5a9bbdbe1eb4380d725c66895d06f4c48ed08784e6e4ee5692fb0f898cf42daf",
+      "restored_preimage_sha256": "f81a42b822724d8e31def30cd0a65ffe09dc31ae537571a5a896b80f86dc9284"
+    }
+  ]
+}

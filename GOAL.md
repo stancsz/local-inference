@@ -2,6 +2,8 @@
 
 ## Active stress campaign
 
+Active repair increment (2026-10-27): fix demonstrated Sift source retention and local gateway/harness defects in a new versioned epoch. Preserve all sealed campaigns and failed counts, caller approval/sandbox settings, immutable instructions/tool catalogs and call IDs. Acceptance: before/after regressions, source-pinned rebuilt runtime, budget/local/OpenAI/Claude/context checks, native per-turn snapshots and fresh independent review. Report model correctness and hardware/context limits separately; no historical failed-session promotion.
+
 Current terminal checkpoint:23 candidate sessions (Claude8/OpenCode9/Codex6); all nine balanced cases are terminal. Seven-per-client, source-retention correctness and full-goal acceptance remain unmet. See the terminal parent review at the end of this ledger.
 
 Ask: stress the recent Sift candidate through local Qwen :8090 using Claude Code, OpenCode and Codex. Complete 21 persisted sessions, seven per client, spanning evolving engineering utilities, configuration migration and daily CSV processing. Every accepted session requires nine substantive user turns, over 180 active client seconds, native tool continuation, hidden tests, historical-fact retention, immutable public tests and source hashes. No idle padding or cloud task inference.

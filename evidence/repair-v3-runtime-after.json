@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-27T17:02:54.120489+00:00",
+  "gateway_image": "sha256:a44c6ec1d442fb0a0301f4218634d568908d1cd24625486f16aa9ffcef22d882",
+  "sift": {
+    "version": "0.11.1",
+    "modules": {
+      "sift.core": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5",
+      "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+      "sift.litellm_proxy": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246",
+      "sift.litellm_responses": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464"
+    }
+  },
+  "checkout_modules": {
+    "sift.core": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246",
+    "sift.litellm_responses": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464"
+  },
+  "runtime_source_matches": true,
+  "sift_revision": "2f0ef2786345fe0868b282903712fd1ac92d43fe",
+  "gpu": "16303, 14872, 1124",
+  "gpu_units": "MiB, whole-host occupancy"
+}

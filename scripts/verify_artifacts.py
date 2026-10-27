@@ -6,9 +6,11 @@ from setup_env import ROOT
 
 NAMES={'vram-plan':'VRAM_PLAN.md','model-audit':'MODEL_AUDIT.json','operator-guide':'OPERATIONS.md'}
 
-def publish(row):
+def publish(row, *, trace_directory=None, destination=None):
     path=ROOT/row['artifact']
-    events=[json.loads(s) for s in (ROOT/'tmp/acceptance'/f"{row['task']}.jsonl").read_text(encoding='utf-8').splitlines() if s.startswith('{')]
+    trace_directory=trace_directory or ROOT/'tmp/acceptance'
+    destination=destination or ROOT/'evidence/tasks'
+    events=[json.loads(s) for s in (trace_directory/f"{row['task']}.jsonl").read_text(encoding='utf-8').splitlines() if s.startswith('{')]
     successful=set()
     for event in events:
         if event.get('type')=='user':
@@ -23,14 +25,14 @@ def publish(row):
         for block in event.get('message',{}).get('content',[]):
             if block.get('type')!='tool_use' or block.get('name')!='Edit' or block['id'] not in successful: continue
             args=block['input']
-            if Path(args['file_path']).name.lower()!=path.name.lower(): continue
+            assert Path(args['file_path']).resolve()==path.resolve(),'Native edit targeted a different file'
             old=args['old_string']
             assert old and old in reconstructed,'Native edit does not match prior artifact state'
             reconstructed=reconstructed.replace(old,args['new_string'],-1 if args.get('replace_all') else 1)
             if first_edit_index is None: first_edit_index=event_index
             edits+=1
     assert edits and reconstructed.rstrip('\r\n')==path.read_text(encoding='utf-8').rstrip('\r\n'),'Artifact differs from successful native edits'
-    published=ROOT/'evidence/tasks'/NAMES[row['task']]
+    published=destination/NAMES[row['task']]
     published.parent.mkdir(parents=True,exist_ok=True)
     published.write_bytes(path.read_bytes())
     allowed={ROOT/p for p in ['README.md','compose.yaml','gateway.yaml','evidence/host-vram.json','evidence/runtime-vram.json','evidence/model-manifest.json']}
@@ -42,7 +44,7 @@ def publish(row):
         file=result.get('file',{})
         original=Path(file.get('filePath',''))
         if original not in allowed or file.get('startLine')!=1 or file.get('numLines')!=file.get('totalLines'): continue
-        snapshot=ROOT/'evidence/tasks/sources'/row['task']/original.name
+        snapshot=destination/'sources'/row['task']/original.name
         snapshot.parent.mkdir(parents=True,exist_ok=True)
         snapshot.write_text(file['content'],encoding='utf-8')
         sources.append({'original':original.relative_to(ROOT).as_posix(),'snapshot':snapshot.relative_to(ROOT).as_posix(),'sha256':hashlib.sha256(snapshot.read_bytes()).hexdigest(),'complete_native_read':True,'before_first_artifact_edit':True})
