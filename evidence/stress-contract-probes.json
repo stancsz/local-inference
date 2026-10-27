@@ -100,6 +100,52 @@
       ]
     },
     {
+      "receipt": "tmp/stress/sessions/claude-migration-r0/result.json",
+      "client": "claude",
+      "task": "migration",
+      "original_workflow_accepted": true,
+      "task_sha256": "6594b8e65b6350e1901e808cdce6a35a19223c5da762f35e71c35c9b0361d127",
+      "all_additional_checks_passed": true,
+      "checks": [
+        {
+          "name": "invalid milliseconds True",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds 1.5",
+          "passed": true
+        },
+        {
+          "name": "invalid milliseconds '1000'",
+          "passed": true
+        },
+        {
+          "name": "negative milliseconds",
+          "passed": true
+        },
+        {
+          "name": "negative seconds",
+          "passed": true
+        },
+        {
+          "name": "conflicting time units",
+          "passed": true
+        },
+        {
+          "name": "unknown key",
+          "passed": true
+        },
+        {
+          "name": "boolean retries",
+          "passed": true
+        },
+        {
+          "name": "nonmutation idempotency generator and independent copies",
+          "passed": true
+        }
+      ]
+    },
+    {
       "receipt": "tmp/stress/sessions/codex-engineering-resume-writable/result.json",
       "client": "codex",
       "task": "engineering",
