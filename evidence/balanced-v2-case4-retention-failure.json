@@ -1,0 +1,412 @@
+{
+  "scope": "Rejected terminal case4; task artifact/native replay passes but historical-source retention fails",
+  "completed_turns": 9,
+  "session_id": "ae1792e6-3c7e-452e-af80-148eeabffe30",
+  "candidate_sha256": "904c7e111f27966275bab633774b754e90aef0a66555e58e4d88f5536e5769cb",
+  "parent_seed_offset": 200003,
+  "stages": [
+    {
+      "turn": 1,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.017s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 2,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 3,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.012s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 4,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 5,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.010s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 6,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 7,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.027s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 8,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.020s\r\n\r\nOK\r\n"
+    },
+    {
+      "turn": 9,
+      "native_verified": true,
+      "parent_seed_exit": 0,
+      "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.026s\r\n\r\nOK\r\n"
+    }
+  ],
+  "qualifying_increment": 0,
+  "full_goal_complete": false,
+  "runner_accepted": false,
+  "parent_qualified": false,
+  "active_seconds": 1106.22,
+  "public_fixture_hashes_verified": 9,
+  "source_identity_verified": true,
+  "native_context_bounds_passed": true,
+  "upstream_http200": 47,
+  "capture_observations": [
+    {
+      "request": 0,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 1,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 2,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 3,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 4,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 5,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 6,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 7,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 8,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 9,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 10,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 11,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 12,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 13,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 14,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 15,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 16,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 17,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 18,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 19,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 20,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 21,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 22,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 23,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 24,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 25,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 26,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 27,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 28,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 29,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 30,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 31,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 32,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 33,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 34,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 35,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 36,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 37,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 38,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 39,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 40,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 41,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 42,
+      "gold_retained": false,
+      "original_fact_observed_in_source0": false,
+      "excerpt_count": 2,
+      "needle_matches": 0
+    },
+    {
+      "request": 43,
+      "gold_retained": false,
+      "original_fact_observed_in_source0": false,
+      "excerpt_count": 2,
+      "needle_matches": 0
+    },
+    {
+      "request": 44,
+      "gold_retained": false,
+      "original_fact_observed_in_source0": false,
+      "excerpt_count": 2,
+      "needle_matches": 0
+    },
+    {
+      "request": 45,
+      "gold_retained": false,
+      "original_fact_observed_in_source0": false,
+      "excerpt_count": 2,
+      "needle_matches": 0
+    },
+    {
+      "request": 46,
+      "gold_retained": false,
+      "original_fact_observed_in_source0": false,
+      "excerpt_count": 2,
+      "needle_matches": 0
+    }
+  ],
+  "missing_original_source_requests": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "limits": "Exact first-stage compacted historical excerpts, not full provider wire. Historical setting remains correct in evidence.json; no demonstrated downstream artifact damage. Do not attribute this source-loss failure to Claude CLI.",
+  "no_reroll_or_promotion": true
+}
