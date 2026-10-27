@@ -1,0 +1,300 @@
+....FFFF.......FFFFFFFFFF...............................                 [100%]
+================================== FAILURES ===================================
+___________________ test_candidate_rejects_none_timeout_ms ____________________
+
+    def test_candidate_rejects_none_timeout_ms():
+>       _raises(_candidate(), dict(timeout_ms=None))
+
+tests\test_migration_recovery.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_ms': None}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+_______________ test_candidate_rejects_negative_timeout_seconds _______________
+
+    def test_candidate_rejects_negative_timeout_seconds():
+>       _raises(_candidate(), dict(timeout_seconds=-1), (ValueError,))
+
+tests\test_migration_recovery.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': -1}, types_expected = (<class 'ValueError'>,)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests\test_migration_recovery.py:49: Failed
+______________________ test_candidate_rejects_none_name _______________________
+
+    def test_candidate_rejects_none_name():
+>       _raises(_candidate(), dict(name=None))
+
+tests\test_migration_recovery.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>, mapping = {'name': None}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+______________ test_candidate_rejects_invalid_settings[mapping0] ______________
+
+mapping = {'timeout_ms': None}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_ms': None}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+______________ test_candidate_rejects_invalid_settings[mapping8] ______________
+
+mapping = {'timeout_seconds': -1}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': -1}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+______________ test_candidate_rejects_invalid_settings[mapping9] ______________
+
+mapping = {'timeout_seconds': -0.5}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': -0.5}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping10] ______________
+
+mapping = {'timeout_seconds': nan}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': nan}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping11] ______________
+
+mapping = {'timeout_seconds': inf}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': inf}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping12] ______________
+
+mapping = {'timeout_seconds': -inf}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': -inf}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping13] ______________
+
+mapping = {'timeout_seconds': True}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': True}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping14] ______________
+
+mapping = {'timeout_seconds': False}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': False}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping15] ______________
+
+mapping = {'timeout_seconds': None}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': None}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping16] ______________
+
+mapping = {'timeout_seconds': '30'}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>
+mapping = {'timeout_seconds': '30'}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+_____________ test_candidate_rejects_invalid_settings[mapping17] ______________
+
+mapping = {'name': None}
+
+    @pytest.mark.parametrize("mapping", INVALID_SETTINGS)
+    def test_candidate_rejects_invalid_settings(mapping):
+>       _raises(_candidate(), mapping)
+
+tests\test_migration_recovery.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+module = <module 'recovery_migration_v1_candidate'>, mapping = {'name': None}
+types_expected = (<class 'TypeError'>, <class 'ValueError'>)
+
+    def _raises(module, mapping, types_expected=(TypeError, ValueError)):
+>       with pytest.raises(types_expected):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (<class 'TypeError'>, <class 'ValueError'>)
+
+tests\test_migration_recovery.py:49: Failed
+=========================== short test summary info ===========================
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_none_timeout_ms
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_negative_timeout_seconds
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_none_name - F...
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping0]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping8]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping9]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping10]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping11]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping12]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping13]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping14]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping15]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping16]
+FAILED tests/test_migration_recovery.py::test_candidate_rejects_invalid_settings[mapping17]
+14 failed, 42 passed in 0.49s

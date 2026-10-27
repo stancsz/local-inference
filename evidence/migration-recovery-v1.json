@@ -1,0 +1,113 @@
+{
+  "artifact": "migration-recovery-v1",
+  "reviewed_at": "2026-10-27T06:28:41.821653+00:00",
+  "kind": "separate deterministic code fixture; not a local-Qwen generation result",
+  "worker_handoff": {
+    "complete": false,
+    "reason": "error_max_turns",
+    "requested_cli_max_turns": 24,
+    "reported_num_turns": 25,
+    "host_timeout_seconds": 600,
+    "artifact_checkpoint_seconds": 300,
+    "exit": {
+      "exit_code": 1,
+      "alias": "local-inference-worker-469c1e3c5897",
+      "route": "http://127.0.0.1:4000",
+      "model": "default"
+    },
+    "revocation": {
+      "alias": "local-inference-worker-469c1e3c5897",
+      "revoked": true
+    },
+    "artifacts": "Candidate, tests and genuine red output produced; final worker JSON/verdict absent. Initial candidate/tests preserved as gzip snapshots.",
+    "permission_failures": [
+      "Brace/quote shell expansion check rejected attempted writes of tests and handoff JSON; simpler test write succeeded.",
+      "Compound shell commands required approval; /tmp/cf.json redirection was outside the worker workspace and was blocked."
+    ],
+    "scope_deviation": "Worker tried scratch JSON probes in tmp/ despite four-file write scope; tmp/probe1.json was created. No tracked frozen source changed; scratch is excluded from publication.",
+    "cost_limits": {
+      "configured_key_max_budget": 0.5,
+      "sdk_estimated_cost_usd": 0.8946055,
+      "note": "SDK estimate is not a billed/control-API charge receipt and exceeded configured key budget; do not claim a measured cost cap."
+    }
+  },
+  "source_sha256": {
+    "baseline": "657bb2e1937c2936435f67649492eb396997335d1334e668852adfae64bf2adf",
+    "candidate": "6594bbe06e367008067503402201d22ac08e2561171f7d9bb8445336a13a8ac0",
+    "regression_tests": "8df91d476210add8e7a4dd3ba5fd3498e665655cf34b79f12f89de41049be8d8",
+    "worker_before_fix_output": "f1ecf921d1567f0fd6ac3dba4d4e7933aeb2d8891213ef841d09e831a53e247f",
+    "campaign": "9729861da13a42437ee8fae41a2b9283f58f720a69cf7dff3b29e67c63329778",
+    "checker": "1661ed823bbabb25ba902b9af26f5f74ea8a91c5a784bdd626faf7ed9a62d27d"
+  },
+  "worker_snapshots_sha256": {
+    "candidate": "6d608715ac88f42ba53b1e4aa44185bd0fbcdb3f3d22b7a2c9bdbe01d02c4de6",
+    "tests": "6c1e3595913b7b053c9f2b0c4e0ff5d0e612e40841223c9e58abea3b627b849d"
+  },
+  "parent_review": {
+    "owner": "commander independent inspection and replay of partial handoff; not final nonauthor full-goal acceptance",
+    "worker_before_repair": "14 failed, 42 passed",
+    "parent_before_correction": "2 failed, 61 passed",
+    "correction": "Added seven checks for large integer seconds, invalid batch entries, conflicting None unit keys and one-shot iteration; pinned baseline SHA. Corrected seconds finiteness validation to avoid integer-to-float overflow.",
+    "final_recovery_regressions": "63 passed in 0.13s",
+    "final_same_test_suite_against_frozen_bad_baseline": "19 failed, 44 passed",
+    "full_project_suite": {
+      "passed": 177,
+      "seconds": 6.26,
+      "command": "python -B -m pytest -q tests"
+    },
+    "test_collection_limit": "Worker also tried root-level pytest, which collected archived tmp fixtures and failed collection. That is not the project-suite result; tests/ is the applicable suite.",
+    "runtime_scope": "No runtime/profile/source change; no new live model acceptance or service restart. Fixture-only verification leaves prior runtime evidence unchanged."
+  },
+  "behavior_checks": {
+    "original_stage_behavior": 9,
+    "existing_additional_probes": 13,
+    "all_passed": true,
+    "limits": "Offline code behavior only. Historical-evidence tests are excluded; no synthetic evidence file, model inference, task session or campaign-count change."
+  },
+  "reproduce": "python -B -m recovery.check_fixture --task migration --candidate recovery/migration_v1.py",
+  "regression_command": "python -B -m pytest -q tests/test_migration_recovery.py",
+  "captured_files": [
+    {
+      "file": "evidence/migration-recovery-v1-worker.jsonl.gz",
+      "raw_sha256": "be3c22b2240ca12e3ad7ed19edfd2a0cfef76702faf3c50d59081dc750dc0d9c"
+    },
+    {
+      "file": "evidence/migration-recovery-v1-worker.stderr.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "file": "evidence/migration-recovery-v1-route-smoke.json.gz",
+      "raw_sha256": "390df047e3e5ec56d3cccaeee8e84a6fda48c27eff8503bff82ed416b9c0f0a4"
+    },
+    {
+      "file": "evidence/migration-recovery-v1-tool-smoke.json.gz",
+      "raw_sha256": "10e389b404886e012bf81e4b7bcfe9e35e00c87551bd0f24c45dfe349e4dbbbc"
+    },
+    {
+      "file": "evidence/migration-recovery-v1-parent-red.txt.gz",
+      "raw_sha256": "927ad0fe305e0a8746a8e044401b8bd014ce5d7136bc8613959c63030b8fe70c"
+    },
+    {
+      "file": "evidence/migration-recovery-v1-parent-green.txt.gz",
+      "raw_sha256": "f8e45cac452b3fd3fd55484f5fe208471f7d8316483788d9d69798db1e257a5b"
+    },
+    {
+      "file": "evidence/migration-recovery-v1-final-baseline-red.txt.gz",
+      "raw_sha256": "4a8b11278bb30eaaeb6ef9403738c366a04f86ec7e48fa84ba06b337fd1253dc"
+    },
+    {
+      "file": "evidence/migration-recovery-v1-full-suite.txt.gz",
+      "raw_sha256": "a9f97c74c3316ce6d220aef51db8192e932c055a723e2066fdb0c3f28d21e883"
+    }
+  ],
+  "campaign_unchanged": true,
+  "qualifying_sessions": 19,
+  "required_sessions": 21,
+  "shortfall": 2,
+  "limits": [
+    "Frozen campaign sources/artifacts, seeds, timeouts, rejected outcomes and epochs remain unchanged.",
+    "No task inference or new qualifying session occurred. Task inference remains :8090; exactly one supporting worker used :4000/default.",
+    "This deterministic repair is not proof that Qwen generates corrected code. Two qualifying sessions and final full-goal independent acceptance remain unmet."
+  ],
+  "publication_check": "evidence/migration-recovery-v1-publication-check.json"
+}

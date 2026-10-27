@@ -11,3 +11,6 @@
 /tests/test_engineering_recovery.py -text
 /recovery/check_fixture.py -text
 /evidence/engineering-recovery-v1-before-fix.txt -text -whitespace
+/recovery/migration_v1.py -text
+/tests/test_migration_recovery.py -text
+/evidence/migration-recovery-v1-before-fix.txt -text -whitespace
