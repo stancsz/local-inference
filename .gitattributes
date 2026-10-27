@@ -26,3 +26,20 @@
 /tests/test_supplement_tasks.py -text
 /evidence/supplement-v1-plan.json -text
 /evidence/supplement-v1-setup/** -text -whitespace
+
+/stress/balanced_controller_v2.py -text
+/stress/fixture_probe_v2.py -text
+/stress/portable_campaign_v2.py -text
+/stress/portable_tasks_v2.py -text
+/stress/proxy_capture_v2.py -text
+/tests/test_portable_tasks.py -text
+/tests/test_proxy_capture.py -text
+/evidence/balanced-v2-plan.json -text
+/evidence/supplement-v1-sessions/** -text -whitespace
+/evidence/expense-feedback-v3/** -text -whitespace
+/recovery/expense_feedback_v3.py -text
+/tests/test_expense_feedback_v3.py -text
+
+/evidence/expense-feedback-v3-support/** -text -whitespace
+/recovery/publish_expense_v3.py -text
+/tests/test_expense_publication_v3.py -text

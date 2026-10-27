@@ -1,0 +1,466 @@
+{
+  "artifact": "expense-feedback-v3",
+  "kind": "Separate versioned publication of a completed bounded local-Qwen expense repair increment with independent replay",
+  "published_from": "tmp/expense-feedback-v3",
+  "publisher": "recovery/publish_expense_v3.py",
+  "inference_performed_by_publisher": false,
+  "task_inference_endpoint": "http://127.0.0.1:8090",
+  "plan": {
+    "version": 3,
+    "task_endpoint": "http://127.0.0.1:8090",
+    "model": "qwen3.8-27b",
+    "baseline": "evidence\\feedback-recovery-v2\\expenses\\task.py",
+    "baseline_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+    "probes_sha256": "d69170ea76946e81bd2bc695d7476c6539439d27d2510e9ae07339cfb22fccd9",
+    "harness_sha256": "a99e1f37b174c8b32f9460a22fa5df0a304187e3e1571fe754ecae2f05bca702",
+    "helper_sha256": {
+      "recovery/generation_v1.py": "28e4b3f48eb0ba5a262a261f0df00ebac6ff8d7b99ca0ce1896c383a8b10f7a5",
+      "recovery/generation_feedback_v2.py": "3034297477ece1692b46febf7da16a2aa1201ebbf5d2a4914b76869972728aff"
+    },
+    "maximum_repair_turns": 2,
+    "per_invocation_timeout_seconds": 240,
+    "per_invocation_model_turns": 12,
+    "same_session_required": true,
+    "retries": 0,
+    "qualifying_session_increment": 0,
+    "limits": "Diagnostic experiment; neither a v2 outcome rewrite nor a replacement qualifying session."
+  },
+  "experiment_result": {
+    "version": 3,
+    "passed": true,
+    "turns": [
+      {
+        "turn": 1,
+        "session_requested": null,
+        "passed": true,
+        "before_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+        "process": {
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 16.48427780001657
+        },
+        "session_observed": "bfada9c5-7897-4474-9060-0cf393c1a39a",
+        "session": {
+          "ok": true,
+          "reason": "initial_session",
+          "session_id": "bfada9c5-7897-4474-9060-0cf393c1a39a"
+        },
+        "native": {
+          "passed": true,
+          "failures": [],
+          "completed_tools": [
+            "Edit",
+            "Read"
+          ],
+          "terminal": true,
+          "native_edit_reconstruction_matches": true
+        },
+        "after_sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+        "validation": {
+          "listed": {
+            "behavior": {
+              "exit_code": 0,
+              "timed_out": false,
+              "elapsed_seconds": 1.397622600023169,
+              "passed": true,
+              "command": [
+                "C:\\Program Files\\Python314\\python.exe",
+                "-I",
+                "-B",
+                "-c",
+                "import sys;sys.path.insert(0,sys.argv[1]);from recovery.check_fixture import check_fixture;import json;r=check_fixture(sys.argv[2],sys.argv[3]);print(json.dumps(r));raise SystemExit(0 if r['passed'] else 1)",
+                "C:\\Users\\stanc\\github\\local-inference",
+                "expenses",
+                "C:\\Users\\stanc\\github\\local-inference\\tmp\\expense-feedback-v3\\task.py"
+              ]
+            },
+            "regressions": {
+              "exit_code": 0,
+              "timed_out": false,
+              "elapsed_seconds": 2.220720599987544,
+              "passed": true,
+              "command": [
+                "C:\\Program Files\\Python314\\python.exe",
+                "-I",
+                "-B",
+                "-c",
+                "import sys,importlib.util\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport pytest\np=Path(sys.argv[2]);name=p.stem\nspec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec)\nsys.modules[name]=m;spec.loader.exec_module(m);m.CANDIDATE_PATH=Path(sys.argv[3])\nraise SystemExit(pytest.main(['-q','-p','no:cacheprovider',str(p),'--import-mode=prepend']))\n",
+                "C:\\Users\\stanc\\AppData\\Roaming\\Python\\Python314\\site-packages",
+                "C:\\Users\\stanc\\github\\local-inference\\tests\\test_expense_recovery.py",
+                "C:\\Users\\stanc\\github\\local-inference\\tmp\\expense-feedback-v3\\task.py"
+              ]
+            }
+          },
+          "additional": [
+            {
+              "name": "expense_totals_blank_first",
+              "passed": true
+            },
+            {
+              "name": "expense_totals_blank_last",
+              "passed": true
+            },
+            {
+              "name": "expense_totals_empty_csv",
+              "passed": true
+            },
+            {
+              "name": "expense_report_blank_first",
+              "passed": true
+            },
+            {
+              "name": "expense_report_blank_last",
+              "passed": true
+            },
+            {
+              "name": "expense_report_empty_csv",
+              "passed": true
+            }
+          ],
+          "passed": true
+        },
+        "protected_and_generated_unchanged": true
+      }
+    ],
+    "plan": {
+      "version": 3,
+      "task_endpoint": "http://127.0.0.1:8090",
+      "model": "qwen3.8-27b",
+      "baseline": "evidence\\feedback-recovery-v2\\expenses\\task.py",
+      "baseline_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "probes_sha256": "d69170ea76946e81bd2bc695d7476c6539439d27d2510e9ae07339cfb22fccd9",
+      "harness_sha256": "a99e1f37b174c8b32f9460a22fa5df0a304187e3e1571fe754ecae2f05bca702",
+      "helper_sha256": {
+        "recovery/generation_v1.py": "28e4b3f48eb0ba5a262a261f0df00ebac6ff8d7b99ca0ce1896c383a8b10f7a5",
+        "recovery/generation_feedback_v2.py": "3034297477ece1692b46febf7da16a2aa1201ebbf5d2a4914b76869972728aff"
+      },
+      "maximum_repair_turns": 2,
+      "per_invocation_timeout_seconds": 240,
+      "per_invocation_model_turns": 12,
+      "same_session_required": true,
+      "retries": 0,
+      "qualifying_session_increment": 0,
+      "limits": "Diagnostic experiment; neither a v2 outcome rewrite nor a replacement qualifying session."
+    },
+    "final_source_sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+    "qualifying_session_increment": 0,
+    "full_goal_complete": false,
+    "limits": "Selected unchanged regressions/behavior/probes plus the6 pre-existing parent checks, not universal model correctness or goal acceptance."
+  },
+  "hash_verification": {
+    "recovery/expense_feedback_v3.py": {
+      "expected": "a99e1f37b174c8b32f9460a22fa5df0a304187e3e1571fe754ecae2f05bca702",
+      "actual": "a99e1f37b174c8b32f9460a22fa5df0a304187e3e1571fe754ecae2f05bca702",
+      "matches": true
+    },
+    "recovery/generation_v1.py": {
+      "expected": "28e4b3f48eb0ba5a262a261f0df00ebac6ff8d7b99ca0ce1896c383a8b10f7a5",
+      "actual": "28e4b3f48eb0ba5a262a261f0df00ebac6ff8d7b99ca0ce1896c383a8b10f7a5",
+      "matches": true
+    },
+    "recovery/generation_feedback_v2.py": {
+      "expected": "3034297477ece1692b46febf7da16a2aa1201ebbf5d2a4914b76869972728aff",
+      "actual": "3034297477ece1692b46febf7da16a2aa1201ebbf5d2a4914b76869972728aff",
+      "matches": true
+    },
+    "baseline (v2 generated source)": {
+      "expected": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "actual": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "matches": true
+    },
+    "parent probes": {
+      "expected": "d69170ea76946e81bd2bc695d7476c6539439d27d2510e9ae07339cfb22fccd9",
+      "actual": "d69170ea76946e81bd2bc695d7476c6539439d27d2510e9ae07339cfb22fccd9",
+      "matches": true
+    },
+    "final generated source": {
+      "expected": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "actual": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "matches": true
+    },
+    "turn-1 after bytes == final source": {
+      "expected": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "actual": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "matches": true
+    }
+  },
+  "hash_verification_all_match": true,
+  "replay": {
+    "baseline_v2_generated_source": {
+      "name": "baseline_v2_generated",
+      "source_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "listed_behavior_passed": true,
+      "listed_regressions_passed": true,
+      "regressions_exit_code": 0,
+      "regressions_timed_out": false,
+      "regressions_summary": ".............                                                            [100%]\n13 passed in 0.03s",
+      "behavior": {
+        "available": true,
+        "behavior_stages_total": 9,
+        "behavior_stages_passed": 9,
+        "existing_probes_total": 12,
+        "existing_probes_passed": 12,
+        "source_unchanged": true,
+        "checker_sha256": "1661ed823bbabb25ba902b9af26f5f74ea8a91c5a784bdd626faf7ed9a62d27d",
+        "candidate_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4"
+      },
+      "parent_probes_total": 6,
+      "parent_probes_passed": 0,
+      "parent_probes": [
+        {
+          "name": "expense_totals_blank_first",
+          "passed": false,
+          "error": "ValueError: mixed currencies: '' and 'usd'"
+        },
+        {
+          "name": "expense_totals_blank_last",
+          "passed": false,
+          "error": "ValueError: mixed currencies: 'usd' and ''"
+        },
+        {
+          "name": "expense_totals_empty_csv",
+          "passed": false,
+          "error": "StopIteration: "
+        },
+        {
+          "name": "expense_report_blank_first",
+          "passed": false,
+          "error": "ValueError: mixed currencies: '' and 'usd'"
+        },
+        {
+          "name": "expense_report_blank_last",
+          "passed": false,
+          "error": "ValueError: mixed currencies: 'usd' and ''"
+        },
+        {
+          "name": "expense_report_empty_csv",
+          "passed": false,
+          "error": "StopIteration: "
+        }
+      ],
+      "overall_passed": false,
+      "source_unchanged_after_replay": true
+    },
+    "final_generated_source": {
+      "name": "final_generated",
+      "source_sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "listed_behavior_passed": true,
+      "listed_regressions_passed": true,
+      "regressions_exit_code": 0,
+      "regressions_timed_out": false,
+      "regressions_summary": ".............                                                            [100%]\n13 passed in 0.03s",
+      "behavior": {
+        "available": true,
+        "behavior_stages_total": 9,
+        "behavior_stages_passed": 9,
+        "existing_probes_total": 12,
+        "existing_probes_passed": 12,
+        "source_unchanged": true,
+        "checker_sha256": "1661ed823bbabb25ba902b9af26f5f74ea8a91c5a784bdd626faf7ed9a62d27d",
+        "candidate_sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4"
+      },
+      "parent_probes_total": 6,
+      "parent_probes_passed": 6,
+      "parent_probes": [
+        {
+          "name": "expense_totals_blank_first",
+          "passed": true
+        },
+        {
+          "name": "expense_totals_blank_last",
+          "passed": true
+        },
+        {
+          "name": "expense_totals_empty_csv",
+          "passed": true
+        },
+        {
+          "name": "expense_report_blank_first",
+          "passed": true
+        },
+        {
+          "name": "expense_report_blank_last",
+          "passed": true
+        },
+        {
+          "name": "expense_report_empty_csv",
+          "passed": true
+        }
+      ],
+      "overall_passed": true,
+      "source_unchanged_after_replay": true
+    },
+    "parent_probes_baseline_expected": "0/6",
+    "parent_probes_final_expected": "6/6",
+    "parent_probes_baseline_actual": "0/6",
+    "parent_probes_final_actual": "6/6"
+  },
+  "native_acceptance_recheck": {
+    "passed": true,
+    "failures": [],
+    "completed_tools": [
+      "Edit",
+      "Read"
+    ],
+    "terminal": true,
+    "native_edit_reconstruction_matches": true,
+    "matches_recorded": true,
+    "before_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+    "after_sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+    "after_equals_final_source": true
+  },
+  "credential_scan": {
+    "scanned_files": 21,
+    "environment_variables_scanned": 3,
+    "values_displayed": false,
+    "leaks": 0
+  },
+  "protected_hashes_after_publication": {
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255",
+    "stress/cli_acceptance.py": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress/cli_campaign.py": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "stress/acceptance_tasks.py": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "stress/contract_probe.py": "c6dab334a799f82fa0d8b440aea8b500e4979c27b7089e95b6fcd3733573186c",
+    "recovery/check_fixture.py": "1661ed823bbabb25ba902b9af26f5f74ea8a91c5a784bdd626faf7ed9a62d27d",
+    "evidence/stress-campaign.json": "9729861da13a42437ee8fae41a2b9283f58f720a69cf7dff3b29e67c63329778",
+    "evidence/stress-sessions/opencode-engineering-r2/task.py": "5e21df06a3f66f8c27a2141e2af3e4f0d043804eec3259d9ee5dc18a71f5cbf0",
+    "tests/test_engineering_recovery.py": "c3c9ec7d4a2eb451c61ba4ff475591deeb2c5cd682288d00a540b175631189d3",
+    "evidence/stress-sessions/opencode-migration-r0/task.py": "657bb2e1937c2936435f67649492eb396997335d1334e668852adfae64bf2adf",
+    "tests/test_migration_recovery.py": "8df91d476210add8e7a4dd3ba5fd3498e665655cf34b79f12f89de41049be8d8",
+    "evidence/stress-failures/opencode-expenses-r1/workspace-task.py.gz": "f363d1248ac9a39e5a826fbed72c70a1e3a8cf7d3aa0f80845235f2ed066acdd",
+    "tests/test_expense_recovery.py": "99584a74d6ccc607012e3d6608b27840d5c308514dbec33ff2d52c9e8608dd62"
+  },
+  "manifest": [
+    {
+      "file": "experiment/baseline-checks.json",
+      "sha256": "a65dca99ff08712cb431ec3b1d2faf3813299618156c68812272bc15e0a509ab",
+      "bytes": 2482
+    },
+    {
+      "file": "experiment/baseline-checks/additional.json",
+      "sha256": "9547ab8308f7e9876a73cc329dda701e3391ac544a70b13985a339bce53c4cf0",
+      "bytes": 755
+    },
+    {
+      "file": "experiment/baseline-checks/behavior.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "experiment/baseline-checks/behavior.stdout",
+      "sha256": "3ed4f26d6062f20d01cc965a01db2b65ac6fd5588a7ba574ca1d32da3233f750",
+      "bytes": 1892
+    },
+    {
+      "file": "experiment/baseline-checks/regressions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "experiment/baseline-checks/regressions.stdout",
+      "sha256": "fa40736e13f01272f4b58e8edffac2dcb81cc0a1f8a52c50bc92e215f1bbc0f0",
+      "bytes": 101
+    },
+    {
+      "file": "experiment/baseline.py",
+      "sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "bytes": 2911
+    },
+    {
+      "file": "experiment/plan.json",
+      "sha256": "df92734841407216133ae5e9fc01eec4a385c0f928c71f1de6fd0285008520e5",
+      "bytes": 973
+    },
+    {
+      "file": "experiment/result.json",
+      "sha256": "f9de7ff4e86f487b1a9c934f4b7fcd48982156b448b477251624c0d5abfeabbb",
+      "bytes": 4854
+    },
+    {
+      "file": "experiment/task.py",
+      "sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "bytes": 3132
+    },
+    {
+      "file": "experiment/turn-1/additional.json",
+      "sha256": "0f9af78eab93ce383d62c5d2eba7c2c5f3b0d9b46f631210119bccd636e965a3",
+      "bytes": 443
+    },
+    {
+      "file": "experiment/turn-1/after.py",
+      "sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "bytes": 3132
+    },
+    {
+      "file": "experiment/turn-1/before.py",
+      "sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "bytes": 2911
+    },
+    {
+      "file": "experiment/turn-1/behavior.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "experiment/turn-1/behavior.stdout",
+      "sha256": "789576dfb04e923de73f3695d0da11a922b5a227c1723dee65067fd9f39038b8",
+      "bytes": 1892
+    },
+    {
+      "file": "experiment/turn-1/native.jsonl",
+      "sha256": "eae3e91a72761e200504011a262ea2c8de0c9305dc6b077c800a2c71436becc0",
+      "bytes": 35262
+    },
+    {
+      "file": "experiment/turn-1/native.stderr",
+      "sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "bytes": 78
+    },
+    {
+      "file": "experiment/turn-1/prompt.txt",
+      "sha256": "089bd911d7fab6e3ca979b5319a57d4598606d6da79791cc2fb53c41de0b79da",
+      "bytes": 5997
+    },
+    {
+      "file": "experiment/turn-1/regressions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "experiment/turn-1/regressions.stdout",
+      "sha256": "fa40736e13f01272f4b58e8edffac2dcb81cc0a1f8a52c50bc92e215f1bbc0f0",
+      "bytes": 101
+    },
+    {
+      "file": "experiment/turn-1/result.json",
+      "sha256": "0f9a4b812a0b5ea15ad94ac742f4e5bf52015d11860e49f3a9d2660bd0265a7b",
+      "bytes": 3086
+    }
+  ],
+  "manifest_path": "evidence/expense-feedback-v3/manifest.json",
+  "counts": {
+    "original_qualifying_sessions": 19,
+    "accepted_supplement_qualifying_sessions": 1,
+    "candidate_aggregate_sessions": 20,
+    "required_sessions": 21,
+    "shortfall": 1,
+    "final_independent_acceptance": "pending",
+    "qualifying_session_increment_from_this_increment": 0,
+    "note": "Counts are carried forward unchanged from the parent ledger; this publisher independently accepted nothing."
+  },
+  "verdict": {
+    "generated_repair": "PASS: model-generated final source passes the unchanged expense regressions, all 9 original behavior stages, the 12 existing probes and the 6 pre-existing parent probes in replay.",
+    "final_independent_acceptance": "PENDING: parent-owned final acceptance and full-goal review are not performed here.",
+    "full_goal": "NOT_READY"
+  },
+  "limits": [
+    "No model inference was executed by this publisher; the single 16.48s turn was already run by the committed b2e8a8f harness.",
+    "Only the frozen expense regressions, the 9 original behavior stages, the 12 existing probes and the 6 pre-existing parent probes were replayed; this is not universal correctness.",
+    "Generated repair by the local model is not the same as final independent acceptance; no session count was incremented.",
+    "Experiment files are published byte-exact; the manifest carries SHA256 for each published file.",
+    "Credential values were scanned from the environment without being displayed; no key material is published.",
+    "Source correspondence with the committed harness must be verified by the parent (git unavailable to this worker)."
+  ]
+}

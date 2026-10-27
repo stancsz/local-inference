@@ -1,0 +1,32 @@
+{
+  "kind": "Native sandbox probe, no model/API call and no global setting changes",
+  "results": [
+    {
+      "mode": "host_default",
+      "exit_code": 0,
+      "stdout": "{\"temp_root\": \"C:\\\\Users\\\\stanc\\\\AppData\\\\Local\\\\Temp\", \"directory\": \"C:\\\\Users\\\\stanc\\\\AppData\\\\Local\\\\Temp\\\\local-inference-temp-probe-rpdvru4u\", \"temp_cleanup_passed\": false, \"outside_denied\": true, \"error\": \"PermissionError: [WinError 5] Access is denied: 'C:\\\\\\\\Users\\\\\\\\stanc\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\local-inference-temp-probe-rpdvru4u'\"}\n",
+      "stderr": "",
+      "probe": {
+        "temp_root": "C:\\Users\\stanc\\AppData\\Local\\Temp",
+        "directory": "C:\\Users\\stanc\\AppData\\Local\\Temp\\local-inference-temp-probe-rpdvru4u",
+        "temp_cleanup_passed": false,
+        "outside_denied": true,
+        "error": "PermissionError: [WinError 5] Access is denied: 'C:\\\\Users\\\\stanc\\\\AppData\\\\Local\\\\Temp\\\\local-inference-temp-probe-rpdvru4u'"
+      }
+    },
+    {
+      "mode": "workspace_local",
+      "exit_code": 0,
+      "stdout": "{\"temp_root\": \"C:\\\\Users\\\\stanc\\\\github\\\\local-inference\\\\tmp\\\\codex-temp-compat-b97111dc3b\\\\workspace\\\\.tmp\", \"directory\": \"C:\\\\Users\\\\stanc\\\\github\\\\local-inference\\\\tmp\\\\codex-temp-compat-b97111dc3b\\\\workspace\\\\.tmp\\\\local-inference-temp-probe-gapfwdby\", \"temp_cleanup_passed\": false, \"outside_denied\": true, \"error\": \"PermissionError: [WinError 5] Access is denied: 'C:\\\\\\\\Users\\\\\\\\stanc\\\\\\\\github\\\\\\\\local-inference\\\\\\\\tmp\\\\\\\\codex-temp-compat-b97111dc3b\\\\\\\\workspace\\\\\\\\.tmp\\\\\\\\local-inference-temp-probe-gapfwdby'\"}\n",
+      "stderr": "",
+      "probe": {
+        "temp_root": "C:\\Users\\stanc\\github\\local-inference\\tmp\\codex-temp-compat-b97111dc3b\\workspace\\.tmp",
+        "directory": "C:\\Users\\stanc\\github\\local-inference\\tmp\\codex-temp-compat-b97111dc3b\\workspace\\.tmp\\local-inference-temp-probe-gapfwdby",
+        "temp_cleanup_passed": false,
+        "outside_denied": true,
+        "error": "PermissionError: [WinError 5] Access is denied: 'C:\\\\Users\\\\stanc\\\\github\\\\local-inference\\\\tmp\\\\codex-temp-compat-b97111dc3b\\\\workspace\\\\.tmp\\\\local-inference-temp-probe-gapfwdby'"
+      }
+    }
+  ],
+  "required": "Workspace-local temp creation/read/cleanup succeeds while outside write remains denied."
+}

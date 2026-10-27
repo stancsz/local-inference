@@ -1,0 +1,14 @@
+{
+  "kind": "No-inference native sandbox fixture diagnostic; original failure stays rejected",
+  "source_sha256": {
+    "task.py": "b2ef461e8f41224b9b6a26c4b7c7fbf7227dac2a02fbaf6a3bf8dfa191cfa01d",
+    "test_task.py": "1b7258dad18b705a09225ae5d4921fc8f5e6488ae151d3ba1c390b6f57b1a788",
+    "evidence.json": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+  },
+  "fixture_change": "Diagnostic-only inherited-ACL directory factory; all frozen test assertions and candidate bytes unchanged.",
+  "exit_code": 0,
+  "stdout": "{\"tests_passed\": true, \"tests_run\": 2, \"output\": \"..\\n----------------------------------------------------------------------\\nRan 2 tests in 0.026s\\n\\nOK\\n\", \"outside_denied\": true}\n",
+  "stderr": "",
+  "original_workspace_unchanged": true,
+  "qualification_increment": 0
+}

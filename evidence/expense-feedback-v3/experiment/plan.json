@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "task_endpoint": "http://127.0.0.1:8090",
+  "model": "qwen3.8-27b",
+  "baseline": "evidence\\feedback-recovery-v2\\expenses\\task.py",
+  "baseline_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+  "probes_sha256": "d69170ea76946e81bd2bc695d7476c6539439d27d2510e9ae07339cfb22fccd9",
+  "harness_sha256": "a99e1f37b174c8b32f9460a22fa5df0a304187e3e1571fe754ecae2f05bca702",
+  "helper_sha256": {
+    "recovery/generation_v1.py": "28e4b3f48eb0ba5a262a261f0df00ebac6ff8d7b99ca0ce1896c383a8b10f7a5",
+    "recovery/generation_feedback_v2.py": "3034297477ece1692b46febf7da16a2aa1201ebbf5d2a4914b76869972728aff"
+  },
+  "maximum_repair_turns": 2,
+  "per_invocation_timeout_seconds": 240,
+  "per_invocation_model_turns": 12,
+  "same_session_required": true,
+  "retries": 0,
+  "qualifying_session_increment": 0,
+  "limits": "Diagnostic experiment; neither a v2 outcome rewrite nor a replacement qualifying session."
+}

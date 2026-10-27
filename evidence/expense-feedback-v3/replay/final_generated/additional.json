@@ -1,0 +1,26 @@
+[
+  {
+    "name": "expense_totals_blank_first",
+    "passed": true
+  },
+  {
+    "name": "expense_totals_blank_last",
+    "passed": true
+  },
+  {
+    "name": "expense_totals_empty_csv",
+    "passed": true
+  },
+  {
+    "name": "expense_report_blank_first",
+    "passed": true
+  },
+  {
+    "name": "expense_report_blank_last",
+    "passed": true
+  },
+  {
+    "name": "expense_report_empty_csv",
+    "passed": true
+  }
+]

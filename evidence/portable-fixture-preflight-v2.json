@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "exit_code": 0,
+  "stdout": "{\"fixture_cleanup_passed\": true, \"outside_denied\": true}\n",
+  "stderr": "",
+  "details": {
+    "fixture_cleanup_passed": true,
+    "outside_denied": true
+  },
+  "scope": "Native sandbox, no inference or global permission/configuration changes."
+}

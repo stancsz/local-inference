@@ -1,0 +1,112 @@
+{
+  "artifact": "expense-feedback-v3",
+  "root": "evidence/expense-feedback-v3",
+  "hash_algorithm": "sha256",
+  "files": [
+    {
+      "file": "experiment/baseline-checks.json",
+      "sha256": "a65dca99ff08712cb431ec3b1d2faf3813299618156c68812272bc15e0a509ab",
+      "bytes": 2482
+    },
+    {
+      "file": "experiment/baseline-checks/additional.json",
+      "sha256": "9547ab8308f7e9876a73cc329dda701e3391ac544a70b13985a339bce53c4cf0",
+      "bytes": 755
+    },
+    {
+      "file": "experiment/baseline-checks/behavior.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "experiment/baseline-checks/behavior.stdout",
+      "sha256": "3ed4f26d6062f20d01cc965a01db2b65ac6fd5588a7ba574ca1d32da3233f750",
+      "bytes": 1892
+    },
+    {
+      "file": "experiment/baseline-checks/regressions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "experiment/baseline-checks/regressions.stdout",
+      "sha256": "fa40736e13f01272f4b58e8edffac2dcb81cc0a1f8a52c50bc92e215f1bbc0f0",
+      "bytes": 101
+    },
+    {
+      "file": "experiment/baseline.py",
+      "sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "bytes": 2911
+    },
+    {
+      "file": "experiment/plan.json",
+      "sha256": "df92734841407216133ae5e9fc01eec4a385c0f928c71f1de6fd0285008520e5",
+      "bytes": 973
+    },
+    {
+      "file": "experiment/result.json",
+      "sha256": "f9de7ff4e86f487b1a9c934f4b7fcd48982156b448b477251624c0d5abfeabbb",
+      "bytes": 4854
+    },
+    {
+      "file": "experiment/task.py",
+      "sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "bytes": 3132
+    },
+    {
+      "file": "experiment/turn-1/additional.json",
+      "sha256": "0f9af78eab93ce383d62c5d2eba7c2c5f3b0d9b46f631210119bccd636e965a3",
+      "bytes": 443
+    },
+    {
+      "file": "experiment/turn-1/after.py",
+      "sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "bytes": 3132
+    },
+    {
+      "file": "experiment/turn-1/before.py",
+      "sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "bytes": 2911
+    },
+    {
+      "file": "experiment/turn-1/behavior.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "experiment/turn-1/behavior.stdout",
+      "sha256": "789576dfb04e923de73f3695d0da11a922b5a227c1723dee65067fd9f39038b8",
+      "bytes": 1892
+    },
+    {
+      "file": "experiment/turn-1/native.jsonl",
+      "sha256": "eae3e91a72761e200504011a262ea2c8de0c9305dc6b077c800a2c71436becc0",
+      "bytes": 35262
+    },
+    {
+      "file": "experiment/turn-1/native.stderr",
+      "sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "bytes": 78
+    },
+    {
+      "file": "experiment/turn-1/prompt.txt",
+      "sha256": "089bd911d7fab6e3ca979b5319a57d4598606d6da79791cc2fb53c41de0b79da",
+      "bytes": 5997
+    },
+    {
+      "file": "experiment/turn-1/regressions.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "file": "experiment/turn-1/regressions.stdout",
+      "sha256": "fa40736e13f01272f4b58e8edffac2dcb81cc0a1f8a52c50bc92e215f1bbc0f0",
+      "bytes": 101
+    },
+    {
+      "file": "experiment/turn-1/result.json",
+      "sha256": "0f9a4b812a0b5ea15ad94ac742f4e5bf52015d11860e49f3a9d2660bd0265a7b",
+      "bytes": 3086
+    }
+  ]
+}

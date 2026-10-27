@@ -1,0 +1,122 @@
+{
+  "version": 3,
+  "passed": true,
+  "turns": [
+    {
+      "turn": 1,
+      "session_requested": null,
+      "passed": true,
+      "before_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+      "process": {
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 16.48427780001657
+      },
+      "session_observed": "bfada9c5-7897-4474-9060-0cf393c1a39a",
+      "session": {
+        "ok": true,
+        "reason": "initial_session",
+        "session_id": "bfada9c5-7897-4474-9060-0cf393c1a39a"
+      },
+      "native": {
+        "passed": true,
+        "failures": [],
+        "completed_tools": [
+          "Edit",
+          "Read"
+        ],
+        "terminal": true,
+        "native_edit_reconstruction_matches": true
+      },
+      "after_sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+      "validation": {
+        "listed": {
+          "behavior": {
+            "exit_code": 0,
+            "timed_out": false,
+            "elapsed_seconds": 1.397622600023169,
+            "passed": true,
+            "command": [
+              "C:\\Program Files\\Python314\\python.exe",
+              "-I",
+              "-B",
+              "-c",
+              "import sys;sys.path.insert(0,sys.argv[1]);from recovery.check_fixture import check_fixture;import json;r=check_fixture(sys.argv[2],sys.argv[3]);print(json.dumps(r));raise SystemExit(0 if r['passed'] else 1)",
+              "C:\\Users\\stanc\\github\\local-inference",
+              "expenses",
+              "C:\\Users\\stanc\\github\\local-inference\\tmp\\expense-feedback-v3\\task.py"
+            ]
+          },
+          "regressions": {
+            "exit_code": 0,
+            "timed_out": false,
+            "elapsed_seconds": 2.220720599987544,
+            "passed": true,
+            "command": [
+              "C:\\Program Files\\Python314\\python.exe",
+              "-I",
+              "-B",
+              "-c",
+              "import sys,importlib.util\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport pytest\np=Path(sys.argv[2]);name=p.stem\nspec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec)\nsys.modules[name]=m;spec.loader.exec_module(m);m.CANDIDATE_PATH=Path(sys.argv[3])\nraise SystemExit(pytest.main(['-q','-p','no:cacheprovider',str(p),'--import-mode=prepend']))\n",
+              "C:\\Users\\stanc\\AppData\\Roaming\\Python\\Python314\\site-packages",
+              "C:\\Users\\stanc\\github\\local-inference\\tests\\test_expense_recovery.py",
+              "C:\\Users\\stanc\\github\\local-inference\\tmp\\expense-feedback-v3\\task.py"
+            ]
+          }
+        },
+        "additional": [
+          {
+            "name": "expense_totals_blank_first",
+            "passed": true
+          },
+          {
+            "name": "expense_totals_blank_last",
+            "passed": true
+          },
+          {
+            "name": "expense_totals_empty_csv",
+            "passed": true
+          },
+          {
+            "name": "expense_report_blank_first",
+            "passed": true
+          },
+          {
+            "name": "expense_report_blank_last",
+            "passed": true
+          },
+          {
+            "name": "expense_report_empty_csv",
+            "passed": true
+          }
+        ],
+        "passed": true
+      },
+      "protected_and_generated_unchanged": true
+    }
+  ],
+  "plan": {
+    "version": 3,
+    "task_endpoint": "http://127.0.0.1:8090",
+    "model": "qwen3.8-27b",
+    "baseline": "evidence\\feedback-recovery-v2\\expenses\\task.py",
+    "baseline_sha256": "752e89bb4aaa8eee844da15b38cbefb4e5c310caece84734abfdef96105138c4",
+    "probes_sha256": "d69170ea76946e81bd2bc695d7476c6539439d27d2510e9ae07339cfb22fccd9",
+    "harness_sha256": "a99e1f37b174c8b32f9460a22fa5df0a304187e3e1571fe754ecae2f05bca702",
+    "helper_sha256": {
+      "recovery/generation_v1.py": "28e4b3f48eb0ba5a262a261f0df00ebac6ff8d7b99ca0ce1896c383a8b10f7a5",
+      "recovery/generation_feedback_v2.py": "3034297477ece1692b46febf7da16a2aa1201ebbf5d2a4914b76869972728aff"
+    },
+    "maximum_repair_turns": 2,
+    "per_invocation_timeout_seconds": 240,
+    "per_invocation_model_turns": 12,
+    "same_session_required": true,
+    "retries": 0,
+    "qualifying_session_increment": 0,
+    "limits": "Diagnostic experiment; neither a v2 outcome rewrite nor a replacement qualifying session."
+  },
+  "final_source_sha256": "73fb7953fd5c292a270b6930f7b481d6b3051227f3820e6b6d5c144dd151bba4",
+  "qualifying_session_increment": 0,
+  "full_goal_complete": false,
+  "limits": "Selected unchanged regressions/behavior/probes plus the6 pre-existing parent checks, not universal model correctness or goal acceptance."
+}

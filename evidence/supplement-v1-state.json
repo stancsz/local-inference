@@ -1,0 +1,47 @@
+{
+  "state": "terminal_review_required",
+  "controller_pid": 190544,
+  "started_at": "2026-10-27T07:24:48.103906+00:00",
+  "plan_sha256": "9d61a3275f1bbc9aaedc2e678d22589a174c3b6f64dabe2a65c1c76bab169f0c",
+  "plan_commit": "9394e8ec50cb9f6b6126ca10a1d2e892ccf0f3bc",
+  "original_qualifying_sessions": 19,
+  "supplement_qualifying_sessions": 1,
+  "candidate_aggregate_sessions": 20,
+  "final_independent_acceptance": "pending",
+  "full_goal_complete": false,
+  "cases": [
+    {
+      "id": "opencode-incident-log-v1",
+      "client": "opencode",
+      "task": "incident_log",
+      "seed": 2026102701,
+      "started_at": "2026-10-27T07:24:48.332842+00:00",
+      "receipt": "C:\\Users\\stanc\\github\\local-inference\\tmp\\supplement-v1\\opencode-incident-log-v1\\result.json",
+      "status": "terminal",
+      "runner_pid": 188580,
+      "finished_at": "2026-10-27T07:41:52.202051+00:00",
+      "exit_code": 0,
+      "accepted": true,
+      "user_turns": 9,
+      "active_seconds": 1014.592,
+      "failure": null
+    },
+    {
+      "id": "codex-release-manifest-v1",
+      "client": "codex",
+      "task": "release_manifest",
+      "seed": 2026102702,
+      "started_at": "2026-10-27T07:41:52.372175+00:00",
+      "receipt": "C:\\Users\\stanc\\github\\local-inference\\tmp\\supplement-v1\\codex-release-manifest-v1\\result.json",
+      "status": "terminal",
+      "runner_pid": 196828,
+      "finished_at": "2026-10-27T07:56:26.786935+00:00",
+      "exit_code": 1,
+      "accepted": false,
+      "user_turns": 7,
+      "active_seconds": 850.846,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed"
+    }
+  ],
+  "finished_at": "2026-10-27T07:56:26.788783+00:00"
+}

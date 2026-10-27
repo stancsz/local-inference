@@ -1,0 +1,456 @@
+{
+  "original_matrix_qualifying": 19,
+  "original_matrix_attempts": 22,
+  "supplement_qualifying": 1,
+  "candidate_aggregate_qualifying": 20,
+  "aggregate_clients": {
+    "claude": 7,
+    "opencode": 7,
+    "codex": 6
+  },
+  "cases": [
+    {
+      "id": "opencode-incident-log-v1",
+      "client": "opencode",
+      "task": "incident_log",
+      "seed": 2026102701,
+      "qualified_by_parent_checks": true,
+      "runner_accepted": true,
+      "active_seconds": 1014.592,
+      "user_turns": 9,
+      "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+      "failures": [],
+      "turn_review": [
+        {
+          "turn": 1,
+          "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 2,
+          "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.010s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 3,
+          "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.012s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 4,
+          "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 5,
+          "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.013s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 6,
+          "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 7,
+          "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.026s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 8,
+          "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.022s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 9,
+          "session_id": "ses_e83c08a1bffedNLJAWX3bhMXrp",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.023s\r\n\r\nOK\r\n"
+        }
+      ],
+      "native_budget_checks": 47,
+      "final_source_sha256": "81aa97031689ffd4ac846f46ef049b82f75304a700b26249e3e7d00168f69425"
+    },
+    {
+      "id": "codex-release-manifest-v1",
+      "client": "codex",
+      "task": "release_manifest",
+      "seed": 2026102702,
+      "qualified_by_parent_checks": false,
+      "runner_accepted": false,
+      "active_seconds": 850.846,
+      "user_turns": 7,
+      "session_id": "01a17c4f-0ff3-7f83-8518-8cb597618408",
+      "failures": [
+        "runner rejected",
+        "long-session threshold",
+        "failed native/hidden/history turn",
+        "Sift compaction/history/upstream",
+        "turn7 native acceptance failure"
+      ],
+      "turn_review": [
+        {
+          "turn": 1,
+          "session_id": "01a17c4f-0ff3-7f83-8518-8cb597618408",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 2,
+          "session_id": "01a17c4f-0ff3-7f83-8518-8cb597618408",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.014s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 3,
+          "session_id": "01a17c4f-0ff3-7f83-8518-8cb597618408",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.013s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 4,
+          "session_id": "01a17c4f-0ff3-7f83-8518-8cb597618408",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 5,
+          "session_id": "01a17c4f-0ff3-7f83-8518-8cb597618408",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.010s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 6,
+          "session_id": "01a17c4f-0ff3-7f83-8518-8cb597618408",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.010s\r\n\r\nOK\r\n"
+        },
+        {
+          "turn": 7,
+          "session_id": "01a17c4f-0ff3-7f83-8518-8cb597618408",
+          "native_verified": true,
+          "parent_seed_exit": 0,
+          "parent_seed_output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.023s\r\n\r\nOK\r\n"
+        }
+      ],
+      "native_budget_checks": 45,
+      "final_source_sha256": "b2ef461e8f41224b9b6a26c4b7c7fbf7227dac2a02fbaf6a3bf8dfa191cfa01d"
+    }
+  ],
+  "manifest": [
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/result.json",
+      "raw_sha256": "a3b42e508c5022ddf88817e3bd00a9657eaf84ad38a3826466b221e15bb68e7d",
+      "gzip": false
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-00.hidden-tests.txt.gz",
+      "raw_sha256": "60ce10399dac04e70cc4897f5ee1b41eb950c5a2b6d2b6e99df5dc50047f0ef8",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-00.jsonl.gz",
+      "raw_sha256": "7c5f1def99bd7d854839d4ff4d30379de58b5ee30967ea990faab98927edadeb",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-00.stderr.txt.gz",
+      "raw_sha256": "85337bfe1360657afa3f7b83614d9f35f844f734cbefc45decb5af40aac71644",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-01.hidden-tests.txt.gz",
+      "raw_sha256": "4a0ae94eb83b9e7241e6988a3c1e89c8229064c6031100f84c0fbaa683416db1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-01.jsonl.gz",
+      "raw_sha256": "cc501d51968676e07b7a905a80fc873eb78da057476d226b9f83c43dff0003d6",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-01.stderr.txt.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-02.hidden-tests.txt.gz",
+      "raw_sha256": "a83ffcef3c387b94d03a039de793ead719250e49d31be9ca97859adb896d4a8b",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-02.jsonl.gz",
+      "raw_sha256": "ecdc4244fa293f144c7c44f4a95cee93625fc37d2f8878c6852371730f21d7b2",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-02.stderr.txt.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-03.hidden-tests.txt.gz",
+      "raw_sha256": "4a0ae94eb83b9e7241e6988a3c1e89c8229064c6031100f84c0fbaa683416db1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-03.jsonl.gz",
+      "raw_sha256": "fb9576f87cff7aa4c0aeface503fee23b56b8fa33cb760700d036b516f296de4",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-03.stderr.txt.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-04.hidden-tests.txt.gz",
+      "raw_sha256": "4a0ae94eb83b9e7241e6988a3c1e89c8229064c6031100f84c0fbaa683416db1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-04.jsonl.gz",
+      "raw_sha256": "fe238ab32f5839b97775e41843d0a45b81a813378ecb3d2a8b674c0b8620f3b8",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-04.stderr.txt.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-05.hidden-tests.txt.gz",
+      "raw_sha256": "4a0ae94eb83b9e7241e6988a3c1e89c8229064c6031100f84c0fbaa683416db1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-05.jsonl.gz",
+      "raw_sha256": "fa16ca253afef88024867e3ca0277747b1315f30f30de38f632bbf9032e31da2",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-05.stderr.txt.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-06.hidden-tests.txt.gz",
+      "raw_sha256": "390de4340115a2e6b0bff546fedeab321d289085049da0835ff51d87eeb2476e",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-06.jsonl.gz",
+      "raw_sha256": "aa2d5b8b4d848d99336575b852e80868f7897b26461d36605743cf66025f3400",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-06.stderr.txt.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-07.hidden-tests.txt.gz",
+      "raw_sha256": "390de4340115a2e6b0bff546fedeab321d289085049da0835ff51d87eeb2476e",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-07.jsonl.gz",
+      "raw_sha256": "df5de90189c1dcd8def2cb9a00af5f0a0114cdc8381a5bf649cfe98ecb0e8f5d",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-07.stderr.txt.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-08.hidden-tests.txt.gz",
+      "raw_sha256": "86cb1b1e38f695e5b5da7ecef809633932661e9824222fc1a6cc48b751306c64",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-08.jsonl.gz",
+      "raw_sha256": "5a071fb673a1705c1ae20591e14bdc27a9409c100955f1dd739c052a600c987b",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/turn-08.stderr.txt.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/workspace/evidence.json",
+      "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "gzip": false
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/workspace/task.py",
+      "raw_sha256": "81aa97031689ffd4ac846f46ef049b82f75304a700b26249e3e7d00168f69425",
+      "gzip": false
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/opencode-incident-log-v1/workspace/test_task.py",
+      "raw_sha256": "25a1b16bd73e8f9255f0750afb275d613139feec68a831af32959336308d094e",
+      "gzip": false
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/result.json",
+      "raw_sha256": "0575bbcd326f3f06c1cf79d8e55ebe72b548e078d27cd2bb75b47d0305e0d2c9",
+      "gzip": false
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-00.hidden-tests.txt.gz",
+      "raw_sha256": "a83ffcef3c387b94d03a039de793ead719250e49d31be9ca97859adb896d4a8b",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-00.jsonl.gz",
+      "raw_sha256": "0cce24368ab729e2cd5f76779df15c6d465170bdf03bcccf84a391e6f09e3590",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-00.stderr.txt.gz",
+      "raw_sha256": "d33d645f6fa8f07227c5b0db141fea1e9d2e39b7a9474354cf1b5cbe28ea4373",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-01.hidden-tests.txt.gz",
+      "raw_sha256": "4a0ae94eb83b9e7241e6988a3c1e89c8229064c6031100f84c0fbaa683416db1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-01.jsonl.gz",
+      "raw_sha256": "0495338e2eff3bca9dc5597647453167b6502ee65fb06039ebec07a4474aab7b",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-01.stderr.txt.gz",
+      "raw_sha256": "e34b16c8d67b4586aebf817dc711df3df18c391f5e51d5d5167f933329b66a94",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-02.hidden-tests.txt.gz",
+      "raw_sha256": "4a0ae94eb83b9e7241e6988a3c1e89c8229064c6031100f84c0fbaa683416db1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-02.jsonl.gz",
+      "raw_sha256": "fcbce045085b2603083da0268177b012407b350687d0234200e43c1b9089d459",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-02.stderr.txt.gz",
+      "raw_sha256": "c6bb030eeb5d26a9c338b3bb8c5f2cf659650589df45bcfbb646394c04a2bcb7",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-03.hidden-tests.txt.gz",
+      "raw_sha256": "4a0ae94eb83b9e7241e6988a3c1e89c8229064c6031100f84c0fbaa683416db1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-03.jsonl.gz",
+      "raw_sha256": "17035b9ade2c436f7a8cf7de5f6edc4fdb4458eb7c7df824324e7054a9b6fbd7",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-03.stderr.txt.gz",
+      "raw_sha256": "b057b7ecfaeef21d2a65c929a28d005944fdeb3785520ee9fd883aa867f10311",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-04.hidden-tests.txt.gz",
+      "raw_sha256": "a83ffcef3c387b94d03a039de793ead719250e49d31be9ca97859adb896d4a8b",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-04.jsonl.gz",
+      "raw_sha256": "c808ad38de7451fc4126fec032356f15cbda7ab3b75eedbe98299760516d13ba",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-04.stderr.txt.gz",
+      "raw_sha256": "237c7694345cdd23d9e1af28652c33765f14ec685db27564a0695b52b2f6c93d",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-05.hidden-tests.txt.gz",
+      "raw_sha256": "db147cb6a9d4a07fa6279f3e36eb2717b1561eeda9c69dcbfc3fcb81e767bdd4",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-05.jsonl.gz",
+      "raw_sha256": "37083910aa88e4d737e47f019762c0b74a2d9bcbca938bc703e0bf8b39c352ea",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-05.stderr.txt.gz",
+      "raw_sha256": "6d31c300007cb1578c467d007d00f6d500678bdd720e1a29134c9cbb5b7c4b77",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-06.hidden-tests.txt.gz",
+      "raw_sha256": "c6dcad1ff6ef9b6461ec0a6e883649a7de1056ff177477c66eace1dc91052d99",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-06.jsonl.gz",
+      "raw_sha256": "f159c3a8f3164aae7782a0da55ba86d7555f7352b2c18ae6f0ab4418cdca86e9",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/turn-06.stderr.txt.gz",
+      "raw_sha256": "ad98a8abed271e3ae991956c702ab95ae894525dee30113a0bf84621d7767223",
+      "gzip": true
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/workspace/evidence.json",
+      "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9",
+      "gzip": false
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/workspace/task.py",
+      "raw_sha256": "b2ef461e8f41224b9b6a26c4b7c7fbf7227dac2a02fbaf6a3bf8dfa191cfa01d",
+      "gzip": false
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/codex-release-manifest-v1/workspace/test_task.py",
+      "raw_sha256": "1b7258dad18b705a09225ae5d4921fc8f5e6488ae151d3ba1c390b6f57b1a788",
+      "gzip": false
+    },
+    {
+      "file": "evidence/supplement-v1-sessions/gpu-samples.jsonl.gz",
+      "raw_sha256": "1fb6907f1b2230b00b9ff6f1b370aad31c80e4e84c12f06b5204384ec5db61ed",
+      "gzip": true
+    }
+  ],
+  "host_gpu_samples": 375,
+  "memory_limit": "Whole-host samples, not isolated residency or an under14GB proof.",
+  "epochs": "Original matrix and prospective new workload epoch remain separate; identical implementation hash/image identity is required.",
+  "full_goal_complete": false,
+  "final_independent_acceptance": "pending",
+  "known_quality_limits": "Original12/19 additional-contract failures and residual generated-expense defects remain unrepaired; no reliability or unattended-production approval."
+}
