@@ -1,0 +1,60 @@
+{
+  "task": "expenses",
+  "endpoint": "http://127.0.0.1:8090",
+  "model": "qwen3.8-27b",
+  "baseline_sha256": "602f3f894e9bb72705b9f54cf4ed4136f60e6a88accd6fcb36171b25d8733cbd",
+  "qualifying_session_increment": 0,
+  "passed": false,
+  "process": {
+    "exit_code": 0,
+    "timed_out": false,
+    "elapsed_seconds": 27.151813799981028
+  },
+  "generated_sha256": "290c71f5f571edd0f560ed2b0659c297613f6d33aa2d10f9f6605837a49fff5d",
+  "native": {
+    "passed": true,
+    "failures": [],
+    "completed_tools": [
+      "Edit",
+      "Read"
+    ],
+    "terminal": true,
+    "native_edit_reconstruction_matches": true
+  },
+  "validation": {
+    "behavior": {
+      "exit_code": 1,
+      "timed_out": false,
+      "elapsed_seconds": 1.368602100003045,
+      "passed": false,
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import sys;sys.path.insert(0,sys.argv[1]);from recovery.check_fixture import check_fixture;import json;r=check_fixture(sys.argv[2],sys.argv[3]);print(json.dumps(r));raise SystemExit(0 if r['passed'] else 1)",
+        "C:\\Users\\stanc\\github\\local-inference",
+        "expenses",
+        "C:\\Users\\stanc\\github\\local-inference\\tmp\\generation-recovery-v1\\expenses\\task.py"
+      ]
+    },
+    "regressions": {
+      "exit_code": 1,
+      "timed_out": false,
+      "elapsed_seconds": 2.624351200007368,
+      "passed": false,
+      "command": [
+        "C:\\Program Files\\Python314\\python.exe",
+        "-I",
+        "-B",
+        "-c",
+        "import sys,importlib.util\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport pytest\np=Path(sys.argv[2]);name=p.stem\nspec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec)\nsys.modules[name]=m;spec.loader.exec_module(m);m.CANDIDATE_PATH=Path(sys.argv[3])\nraise SystemExit(pytest.main(['-q','-p','no:cacheprovider',str(p),'--import-mode=prepend']))\n",
+        "C:\\Users\\stanc\\AppData\\Roaming\\Python\\Python314\\site-packages",
+        "C:\\Users\\stanc\\github\\local-inference\\tests\\test_expense_recovery.py",
+        "C:\\Users\\stanc\\github\\local-inference\\tmp\\generation-recovery-v1\\expenses\\task.py"
+      ]
+    }
+  },
+  "generated_unchanged_during_validation": true,
+  "protected_unchanged": true
+}

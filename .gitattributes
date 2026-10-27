@@ -14,3 +14,6 @@
 /recovery/migration_v1.py -text
 /tests/test_migration_recovery.py -text
 /evidence/migration-recovery-v1-before-fix.txt -text -whitespace
+/recovery/generation_v1.py -text
+/tests/test_generation_recovery.py -text
+/evidence/generation-recovery-v1/** -text -whitespace

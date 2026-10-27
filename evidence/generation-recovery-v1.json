@@ -1,0 +1,495 @@
+{
+  "artifact": "generation-recovery-v1",
+  "recorded_at": "2026-10-27T06:41:09.896087+00:00",
+  "kind": "Three predeclared single-attempt native Claude CLI repairs using actual local Qwen8090",
+  "supporting_worker": {
+    "route": "http://127.0.0.1:4000",
+    "model": "default",
+    "count": 1,
+    "complete": false,
+    "reason": "error_max_turns",
+    "requested_cli_turn_cap": 24,
+    "reported_turns": 25,
+    "host_checkpoint_seconds": 300,
+    "host_deadline_seconds": 600,
+    "artifact": "No harness or tests produced. Scratch regression override prototype and partial trace preserved; parent authored the harness and tests.",
+    "scope_deviation": "Scratch prototype files under tmp/proto outside assigned two-file write scope; none published as production code.",
+    "permission_failures": "Several compound/heredoc Bash commands rejected by CLI permission checker; accepted alternatives ran. No host-permission bypass.",
+    "exit": {
+      "exit_code": 1,
+      "alias": "local-inference-worker-aba136cafba8",
+      "route": "http://127.0.0.1:4000",
+      "model": "default"
+    },
+    "revocation": {
+      "alias": "local-inference-worker-aba136cafba8",
+      "revoked": true
+    }
+  },
+  "source_sha256": {
+    "recovery/generation_v1.py": "28e4b3f48eb0ba5a262a261f0df00ebac6ff8d7b99ca0ce1896c383a8b10f7a5",
+    "tests/test_generation_recovery.py": "c7b754aef871513622736c2cbc004fb266ed57b7516bffe741af863a05291fa7",
+    "evidence/stress-campaign.json": "9729861da13a42437ee8fae41a2b9283f58f720a69cf7dff3b29e67c63329778"
+  },
+  "parent_review": {
+    "kind": "commander review of model-authored bytes and fresh checks of published artifacts; not final nonauthor full-goal review",
+    "cases": [
+      {
+        "task": "engineering",
+        "generated_sha256": "20b7a06f33534439d0cdc82feff5cba8b266b4ba5552a88f0442a64cabfeac80",
+        "native": {
+          "passed": true,
+          "failures": [],
+          "completed_tools": [
+            "Edit",
+            "Read"
+          ],
+          "terminal": true,
+          "native_edit_reconstruction_matches": true
+        },
+        "active_cli_seconds": 15.335596800025087,
+        "regression_summary": "26 failed, 18 passed in 0.45s",
+        "original_behavior_passes": 9,
+        "original_behavior_total": 9,
+        "additional_probe_failures": [
+          "clamp_all empty invalid lower",
+          "clamp_all empty reversed bounds",
+          "clamp_all empty bool bound",
+          "clamp_report empty invalid lower",
+          "clamp_report empty reversed bounds",
+          "clamp_report empty bool bound"
+        ],
+        "validation": {
+          "behavior": {
+            "exit_code": 1,
+            "timed_out": false,
+            "elapsed_seconds": 1.4149807000067085,
+            "passed": false,
+            "command": [
+              "C:\\Program Files\\Python314\\python.exe",
+              "-I",
+              "-B",
+              "-c",
+              "import sys;sys.path.insert(0,sys.argv[1]);from recovery.check_fixture import check_fixture;import json;r=check_fixture(sys.argv[2],sys.argv[3]);print(json.dumps(r));raise SystemExit(0 if r['passed'] else 1)",
+              "C:\\Users\\stanc\\github\\local-inference",
+              "engineering",
+              "C:\\Users\\stanc\\github\\local-inference\\evidence\\generation-recovery-v1\\engineering\\task.py"
+            ]
+          },
+          "regressions": {
+            "exit_code": 1,
+            "timed_out": false,
+            "elapsed_seconds": 2.786855200014543,
+            "passed": false,
+            "command": [
+              "C:\\Program Files\\Python314\\python.exe",
+              "-I",
+              "-B",
+              "-c",
+              "import sys,importlib.util\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport pytest\np=Path(sys.argv[2]);name=p.stem\nspec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec)\nsys.modules[name]=m;spec.loader.exec_module(m);m.CANDIDATE_PATH=Path(sys.argv[3])\nraise SystemExit(pytest.main(['-q','-p','no:cacheprovider',str(p),'--import-mode=prepend']))\n",
+              "C:\\Users\\stanc\\AppData\\Roaming\\Python\\Python314\\site-packages",
+              "C:\\Users\\stanc\\github\\local-inference\\tests\\test_engineering_recovery.py",
+              "C:\\Users\\stanc\\github\\local-inference\\evidence\\generation-recovery-v1\\engineering\\task.py"
+            ]
+          }
+        },
+        "verdict": "FAIL preserved; no reroll or manual correction"
+      },
+      {
+        "task": "migration",
+        "generated_sha256": "b350a50fdda0ce9dfdab0daed6c4760ba39be38ee649bc4d1ede1a7977468783",
+        "native": {
+          "passed": true,
+          "failures": [],
+          "completed_tools": [
+            "Edit",
+            "Read"
+          ],
+          "terminal": true,
+          "native_edit_reconstruction_matches": true
+        },
+        "active_cli_seconds": 33.54883310000878,
+        "regression_summary": "11 failed, 52 passed in 0.37s",
+        "original_behavior_passes": 7,
+        "original_behavior_total": 9,
+        "additional_probe_failures": [
+          "non-string name None",
+          "nonmutation idempotency generator and independent copies"
+        ],
+        "validation": {
+          "behavior": {
+            "exit_code": 1,
+            "timed_out": false,
+            "elapsed_seconds": 1.5709187000175007,
+            "passed": false,
+            "command": [
+              "C:\\Program Files\\Python314\\python.exe",
+              "-I",
+              "-B",
+              "-c",
+              "import sys;sys.path.insert(0,sys.argv[1]);from recovery.check_fixture import check_fixture;import json;r=check_fixture(sys.argv[2],sys.argv[3]);print(json.dumps(r));raise SystemExit(0 if r['passed'] else 1)",
+              "C:\\Users\\stanc\\github\\local-inference",
+              "migration",
+              "C:\\Users\\stanc\\github\\local-inference\\evidence\\generation-recovery-v1\\migration\\task.py"
+            ]
+          },
+          "regressions": {
+            "exit_code": 1,
+            "timed_out": false,
+            "elapsed_seconds": 2.5353899999754503,
+            "passed": false,
+            "command": [
+              "C:\\Program Files\\Python314\\python.exe",
+              "-I",
+              "-B",
+              "-c",
+              "import sys,importlib.util\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport pytest\np=Path(sys.argv[2]);name=p.stem\nspec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec)\nsys.modules[name]=m;spec.loader.exec_module(m);m.CANDIDATE_PATH=Path(sys.argv[3])\nraise SystemExit(pytest.main(['-q','-p','no:cacheprovider',str(p),'--import-mode=prepend']))\n",
+              "C:\\Users\\stanc\\AppData\\Roaming\\Python\\Python314\\site-packages",
+              "C:\\Users\\stanc\\github\\local-inference\\tests\\test_migration_recovery.py",
+              "C:\\Users\\stanc\\github\\local-inference\\evidence\\generation-recovery-v1\\migration\\task.py"
+            ]
+          }
+        },
+        "verdict": "FAIL preserved; no reroll or manual correction"
+      },
+      {
+        "task": "expenses",
+        "generated_sha256": "290c71f5f571edd0f560ed2b0659c297613f6d33aa2d10f9f6605837a49fff5d",
+        "native": {
+          "passed": true,
+          "failures": [],
+          "completed_tools": [
+            "Edit",
+            "Read"
+          ],
+          "terminal": true,
+          "native_edit_reconstruction_matches": true
+        },
+        "active_cli_seconds": 27.151813799981028,
+        "regression_summary": "4 failed, 9 passed in 0.30s",
+        "original_behavior_passes": 0,
+        "original_behavior_total": 9,
+        "additional_probe_failures": [
+          "aggregate before HALF_EVEN rounding",
+          "strip group preserve first spelling",
+          "mixed currency",
+          "duplicate header",
+          "quoted category with comma",
+          "report blank rows order and exact total"
+        ],
+        "validation": {
+          "behavior": {
+            "exit_code": 1,
+            "timed_out": false,
+            "elapsed_seconds": 1.4061149999615736,
+            "passed": false,
+            "command": [
+              "C:\\Program Files\\Python314\\python.exe",
+              "-I",
+              "-B",
+              "-c",
+              "import sys;sys.path.insert(0,sys.argv[1]);from recovery.check_fixture import check_fixture;import json;r=check_fixture(sys.argv[2],sys.argv[3]);print(json.dumps(r));raise SystemExit(0 if r['passed'] else 1)",
+              "C:\\Users\\stanc\\github\\local-inference",
+              "expenses",
+              "C:\\Users\\stanc\\github\\local-inference\\evidence\\generation-recovery-v1\\expenses\\task.py"
+            ]
+          },
+          "regressions": {
+            "exit_code": 1,
+            "timed_out": false,
+            "elapsed_seconds": 2.57842229999369,
+            "passed": false,
+            "command": [
+              "C:\\Program Files\\Python314\\python.exe",
+              "-I",
+              "-B",
+              "-c",
+              "import sys,importlib.util\nfrom pathlib import Path\nsys.path.insert(0,sys.argv[1])\nimport pytest\np=Path(sys.argv[2]);name=p.stem\nspec=importlib.util.spec_from_file_location(name,p);m=importlib.util.module_from_spec(spec)\nsys.modules[name]=m;spec.loader.exec_module(m);m.CANDIDATE_PATH=Path(sys.argv[3])\nraise SystemExit(pytest.main(['-q','-p','no:cacheprovider',str(p),'--import-mode=prepend']))\n",
+              "C:\\Users\\stanc\\AppData\\Roaming\\Python\\Python314\\site-packages",
+              "C:\\Users\\stanc\\github\\local-inference\\tests\\test_expense_recovery.py",
+              "C:\\Users\\stanc\\github\\local-inference\\evidence\\generation-recovery-v1\\expenses\\task.py"
+            ]
+          }
+        },
+        "verdict": "FAIL preserved; no reroll or manual correction"
+      }
+    ],
+    "policy_tests": 16,
+    "full_project_suite": "193 passed in 11.72s",
+    "full_project_command": "python -B -m pytest -q tests with frozen Sift snapshot on PYTHONPATH"
+  },
+  "verdict": "NOT_READY: native generation succeeded mechanically; 0/3 artifacts passed complete contract validation",
+  "frozen_sources_unchanged": true,
+  "qualifying_session_increment": 0,
+  "qualifying_sessions": 19,
+  "required_sessions": 21,
+  "shortfall": 2,
+  "full_goal_complete": false,
+  "limits": [
+    "No corrected fixture implementation was supplied to the model and generated code was not manually patched.",
+    "Short contract prompts and bad baseline code only; no tests or test execution exposed to the model, no long-history injection or multi-turn feedback loop. Results are scoped to this one-shot repair regimen.",
+    "Migration prompt did not explicitly spell out list return type for migrate_many; original list-return behavior remained enforced unchanged. Do not attribute all failures solely to model capability.",
+    "All original campaign outcomes, seeds, timeouts and epochs are preserved. Recovery cases are not replacement qualifying sessions.",
+    "Source review and -I subprocess execution are not an OS security sandbox certification. Protected source hashes remained unchanged.",
+    "Preflight host-GPU reading is a snapshot, not isolated residency or continuous memory coverage; no under14GB claim from this run.",
+    "Supporting worker failed to hand off; parent implementation/testing is accountable acceptance, not independent harness QA. Final full-goal nonauthor acceptance remains unmet."
+  ],
+  "manifest": [
+    {
+      "file": "evidence/generation-recovery-v1/engineering/task.py",
+      "raw_sha256": "20b7a06f33534439d0cdc82feff5cba8b266b4ba5552a88f0442a64cabfeac80",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/baseline.py",
+      "raw_sha256": "5e21df06a3f66f8c27a2141e2af3e4f0d043804eec3259d9ee5dc18a71f5cbf0",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/prompt.txt",
+      "raw_sha256": "72a8069cf3d6373a5b806cc476b172f8dae00bda41e029feaa2b623c547b4f0a",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/result.json",
+      "raw_sha256": "ba4591c63d77a090a78a208494fc453895e27c3452b78323c7aa971410cb6e27",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/behavior.stdout",
+      "raw_sha256": "6640eff8d462c6d50f6be8dbeeb144ee5728687cf5de9e040fab2ce0e8da2fd5",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/behavior.stderr",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/regressions.stdout.gz",
+      "raw_sha256": "a4a138e408169a3fb1d0d6acabad45369c4741ae1cfd9e4cd765ba616f2574c2",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/native.jsonl.gz",
+      "raw_sha256": "3f1e200971db438ca099630812b20800407af36c4b644071b894b03983f54ed9",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/native.stderr.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/parent-behavior.stdout.gz",
+      "raw_sha256": "9ed2ec5ae0a13b9568a44dc2c80fe17ae45cf62cc72e02bcae39c0c0aa6f06e2",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/parent-behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/parent-regressions.stdout.gz",
+      "raw_sha256": "7a52fca6bc10ab7a7fc44a18bf361be371b6df0c09999f0e2155a3662b34cb00",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/engineering/parent-regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/task.py",
+      "raw_sha256": "b350a50fdda0ce9dfdab0daed6c4760ba39be38ee649bc4d1ede1a7977468783",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/baseline.py",
+      "raw_sha256": "657bb2e1937c2936435f67649492eb396997335d1334e668852adfae64bf2adf",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/prompt.txt",
+      "raw_sha256": "dbe27e0b7d5507472eb9f979b6435311eafe5dcdb64dc22df6a4eae102cb860c",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/result.json",
+      "raw_sha256": "2fb18c1bde1856072b32ce34e991030884db0da831410aa114a46668450a8a0d",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/behavior.stdout",
+      "raw_sha256": "627f6945895620757860b6d3c7f81e3a5afcc94c43f516da9dd06a2390ccdf16",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/behavior.stderr",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/regressions.stdout.gz",
+      "raw_sha256": "5927069aaac8721a45ef841e901a60571690561fb023d460e8ecf0325d7f9ecb",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/native.jsonl.gz",
+      "raw_sha256": "b0ba2b479622e63ec2c72b791751a73084fcb6d2defe90587f1f6e9a90eb1605",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/native.stderr.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/parent-behavior.stdout.gz",
+      "raw_sha256": "2feeffbb5cd7b124907b0bddb6f7b34848222cb9896cbeba0436e877c84a07a3",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/parent-behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/parent-regressions.stdout.gz",
+      "raw_sha256": "07387cdfd99ebeb9ebc12492718fb4b49075b951eb944088ca62233ac410cf8c",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/migration/parent-regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/task.py",
+      "raw_sha256": "290c71f5f571edd0f560ed2b0659c297613f6d33aa2d10f9f6605837a49fff5d",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/baseline.py",
+      "raw_sha256": "602f3f894e9bb72705b9f54cf4ed4136f60e6a88accd6fcb36171b25d8733cbd",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/prompt.txt",
+      "raw_sha256": "3bf5bdd6aa6ad101dfe4771997e7bd3509e073f3618891437fa679f4778e90cb",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/result.json",
+      "raw_sha256": "8f20d4025a49f7f974e1363c7391e2eda553c5307c94e6f7d430031ffd005e33",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/behavior.stdout",
+      "raw_sha256": "0f11e6edfbc99a13bf064a5b4b500830e76b64159c61d801c789020db55d8e99",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/behavior.stderr",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/regressions.stdout.gz",
+      "raw_sha256": "57317341ccabf8360c5e89d916e6e2c68f3a3d6f5122a61802f8e1e02d7798b5",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/native.jsonl.gz",
+      "raw_sha256": "e48f16882a14325c4bda760b20f3fe0e0ab410f626ca95af09c28d937b20535d",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/native.stderr.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/parent-behavior.stdout.gz",
+      "raw_sha256": "f869ac6435152af0da53094bbf4d5f4de31bd67715e5707ff1d1486ed74c99cb",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/parent-behavior.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/parent-regressions.stdout.gz",
+      "raw_sha256": "da1fa920d1c8a45d9be30fdf3536a0ea3eaee7289d5aefaf036923557f76d4c1",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/expenses/parent-regressions.stderr.gz",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/result.json",
+      "raw_sha256": "38f1ba069aad74591faeeb21546c8796b4d7c7ed2b6d6e5efef7586863fad9c6",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/protected-before.json",
+      "raw_sha256": "168ac7b07fa6d45f2f7d747ada3105a80295c0fc2e2fd34d39a100aedc005f11",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/protected-after.json",
+      "raw_sha256": "168ac7b07fa6d45f2f7d747ada3105a80295c0fc2e2fd34d39a100aedc005f11",
+      "gzip": false
+    },
+    {
+      "file": "evidence/generation-recovery-v1/support-worker.jsonl.gz",
+      "raw_sha256": "22244026466b6d54a485d19327bfd325c26a769ed46cedecdf962bc514c30410",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/support-worker.stderr.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/support-route-smoke.json.gz",
+      "raw_sha256": "964d2e0e2d13e879824a4a7bf4073ce8362330525d1ac8156a84990b2abfc764",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/support-tool-smoke.json.gz",
+      "raw_sha256": "d9e815d785159894c14afb5314990bfc6ebaee11ac46eb5692055df9ef0991e0",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/preflight.json.gz",
+      "raw_sha256": "2c568756ff06561274ecd44c766a431603a4a4b6fdcf914a33191192e5f4cbf9",
+      "gzip": true
+    },
+    {
+      "file": "evidence/generation-recovery-v1/full-suite.txt.gz",
+      "raw_sha256": "dd86ac9bbb6e3508c4ef613cf0ea40ce0f4d2aad39d20e04899471ee830e3f6a",
+      "gzip": true
+    }
+  ],
+  "publication_check": "evidence/generation-recovery-v1/publication-check.json"
+}
