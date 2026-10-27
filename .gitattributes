@@ -75,3 +75,9 @@
 /evidence/test-discovery-v1/** -text -whitespace
 /evidence/mtp-quantization-dryrun-v1/** -text -whitespace
 /evidence/profile-publication-check*.json -text -whitespace
+/docker/start-inference.sh text eol=lf
+/evidence/long-profile-v5/** -text -whitespace
+/evidence/shared-mtp-launcher-v1/** -text -whitespace
+/evidence/benchmark-shared-mtp-*.json -text -whitespace
+/evidence/shared-mtp-review-v2/** -text -whitespace
+/evidence/shared-mtp-review-v2.json -text -whitespace

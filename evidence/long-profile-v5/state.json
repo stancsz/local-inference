@@ -1,0 +1,151 @@
+{
+  "pid": 74900,
+  "started": "2026-10-27T23:37:16.520344+00:00",
+  "status": "terminal",
+  "limit_bytes": 14000000000,
+  "limit_mib": 13351.4404296875,
+  "cases": [
+    {
+      "case_id": 32,
+      "gpu_layers": 99,
+      "ubatch_size": 32,
+      "cpu_weight_blocks": 0,
+      "context": 69888,
+      "sift_target": 65536,
+      "draft_tokens": 2,
+      "mtp_weight_mode": "shared-target",
+      "status": "tested",
+      "startup_host_delta_mib": 12620,
+      "shared_context_log_confirmed": true,
+      "checks": {
+        "benchmark": 0,
+        "capacity": 0,
+        "local": 0,
+        "openai": 0,
+        "context": 0,
+        "claude-feedback": 0
+      },
+      "peak_host_delta_mib": 13111,
+      "host_delta_within_limit": true,
+      "conservative_host_delta_mib": 13111,
+      "conservative_host_delta_within_limit": true
+    }
+  ],
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "advisor_council": "Unavailable: NORTHSTAR_COUNCIL_MODEL is unset; no substitute provider/model selected.",
+  "original": {
+    "inference": {
+      "image": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+      "environment": {
+        "CONTEXT_SIZE": "40960",
+        "DRAFT_GPU_LAYERS": "99",
+        "DRAFT_TOKENS": "4",
+        "GPU_LAYERS": "99",
+        "SPEC_TYPE": "draft-mtp",
+        "UBATCH_SIZE": "64"
+      }
+    },
+    "gateway": {
+      "image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
+      "environment": {
+        "SIFT_COMPRESSION_RATIO": "8",
+        "SIFT_TARGET": "32768",
+        "CONTEXT_SIZE": "40960"
+      }
+    }
+  },
+  "original_mounts": {
+    "gateway": [
+      {
+        "Type": "bind",
+        "Source": "c:/users/stanc/github/local-inference/evidence",
+        "Destination": "/evidence",
+        "RW": true
+      }
+    ],
+    "inference": [
+      {
+        "Type": "volume",
+        "Source": "/var/lib/docker/volumes/local-inference-models/_data",
+        "Destination": "/models",
+        "RW": false
+      },
+      {
+        "Type": "bind",
+        "Source": "c:/users/stanc/github/local-inference/docker/start-inference.sh",
+        "Destination": "/start-inference.sh",
+        "RW": false
+      }
+    ]
+  },
+  "mount_comparison": "Canonical Windows/WSL bind aliases; RW/target/type preserved; startup bytes checked",
+  "startup_script_sha256": "90995121fd6c556c7fbbd9639d2aaa02b502efcff183ab6a1f04654605d36c78",
+  "original_context": 40960,
+  "plan": {
+    "case_order": [
+      32
+    ],
+    "mtp_weight_mode": "shared-target",
+    "separate_draft_model": false,
+    "cpu_weight_blocks": 0,
+    "context": 69888,
+    "sift_target": 65536,
+    "draft_tokens": 2,
+    "ubatch": 32,
+    "capacity_input": 65536,
+    "capacity_output": 4096,
+    "capacity_timeout_seconds": 960,
+    "baseline_seconds": 30,
+    "restore_original": true,
+    "qualification_increment": 0
+  },
+  "source_commit": "b493c216ba9d6b9b831ca79e82bf4e6ed22b2421",
+  "source_hashes": {
+    "long-profile-v5.py": "a32942fe8761e30218bf33e958e62bc78023eb512583c7a89ee7614511e2ed1d",
+    "capacity_acceptance.py": "0407ad1736bdd5b3b7af0cbad133eb502a7f654939e09c12f6f6f1fa9085e856",
+    "local_smoke.py": "ab434fe5bc1df09803293fbc13bb333751c5ca8786888f1b63be8cc18c2bc8cc",
+    "openai_smoke.py": "55be99dd625363aab25dd0569a346d4b98a9579a9e6aebbd06a2fc0de5830dbd",
+    "benchmark.py": "e96f0dc5c3fb5deda0ff52156364f19818a3a71c41f5dc31289c4be8bc6e97c8",
+    "context_acceptance.py": "9e6b74700eeba882613c5b563ccb589c9d1c75c7fee60dc4b3e3bd3a18390e9f",
+    "claude_acceptance.py": "34f29ce9c3466a4d628bfcea968473dc15177ca4ec46ba77a1fab437d9008c5e",
+    "daily_artifacts.py": "f84acb51eceea37774865f4f1485d9bfb6f88952c4cab5f4871e9c6fd8a60c7f",
+    "daily_acceptance.py": "6efe104b3871cf18ea4ce66ffa00360764f801b06f96aae7b50c9ea1b2918fce",
+    "compose.yaml": "4165e005f9e4ad9dd2b6909b2a1d8dfd5f8ad76ccd36be8f34042dfb3458c19b",
+    "shared-mtp-source.json": "1d37230528dac98a120a2711bb0987968bc3562276628eb4ab68de2fd5feeb5d",
+    "main-copy-dry-run.log": "4a8fec8f40c3b16638a95e53ec192663ac00f5b6739163f9dbeaa31750b1a4fa",
+    "start-inference-shared-v5.sh": "ee55c11bbca07a5f6abfc42030f8a4dc85ec6ad7f6e3b59ef78c01bc360443d4"
+  },
+  "stage": "restored-checks",
+  "baseline_min_mib": 1669,
+  "restored_local_smoke_exit": 0,
+  "restored_openai_smoke_exit": 0,
+  "restored_config": {
+    "inference": {
+      "image": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+      "environment": {
+        "UBATCH_SIZE": "64",
+        "CONTEXT_SIZE": "40960",
+        "DRAFT_GPU_LAYERS": "99",
+        "DRAFT_TOKENS": "4",
+        "GPU_LAYERS": "99",
+        "SPEC_TYPE": "draft-mtp"
+      }
+    },
+    "gateway": {
+      "image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
+      "environment": {
+        "SIFT_COMPRESSION_RATIO": "8",
+        "SIFT_TARGET": "32768",
+        "CONTEXT_SIZE": "40960"
+      }
+    }
+  },
+  "restored": true,
+  "baseline_range_mib": [
+    1669,
+    1910
+  ],
+  "sample_count": 465,
+  "memory_scope": "Whole-host occupancy and conservative before/after delta, not isolated per-allocation residency. Desktop drift remains a confound."
+}

@@ -1,0 +1,11 @@
+{
+  "before": {
+    "crlf": 26,
+    "lf": 26
+  },
+  "after": {
+    "crlf": 0,
+    "lf": 26
+  },
+  "scope": "Git checkout filtering of committed startup script with core.autocrlf=true; working launcher bytes unchanged."
+}

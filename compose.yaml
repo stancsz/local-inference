@@ -12,6 +12,7 @@ services:
     environment:
       CONTEXT_SIZE: '${CONTEXT_SIZE:-40960}'
       GPU_LAYERS: '${GPU_LAYERS:-99}'
+      MTP_MODEL_PATH: '${MTP_MODEL_PATH:-}'
       DRAFT_GPU_LAYERS: '${DRAFT_GPU_LAYERS:-99}'
       DRAFT_TOKENS: '${DRAFT_TOKENS:-4}'
       UBATCH_SIZE: '${UBATCH_SIZE:-64}'

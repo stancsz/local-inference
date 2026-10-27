@@ -1,0 +1,7 @@
+{
+  "source_url": "https://github.com/ggml-org/llama.cpp/blob/091b6a7fc/common/speculative.cpp",
+  "ref": "091b6a7fc",
+  "blob_sha": "c5043a4a83e30398a07291401dc68bbcc52d5c91",
+  "start_line": 2645,
+  "excerpt": "    } else if (spec_mtp) {\n        model_path = params.model.path;\n\n        LOG_INF(\"%s: creating MTP draft context against the target model '%s'\\n\", __func__, model_path.c_str());\n\n        llama_context * ctx_dft = llama_init_from_model(model_tgt, cparams);\n        if (ctx_dft == nullptr) {\n            LOG_ERR(\"%s: failed to create MTP context\\n\", __func__);\n            return;\n        }\n\n        pimpl->context.reset(ctx_dft);\n    }\n}\n\ncommon_speculative_init_result::~common_speculative_init_result() = default;"
+}

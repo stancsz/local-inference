@@ -1,0 +1,30 @@
+FF..                                                                     [100%]
+================================== FAILURES ===================================
+___________________ test_default_mtp_shares_target_weights ____________________
+
+    def test_default_mtp_shares_target_weights():
+        result = launch()
+        assert result.returncode == 0, result.stderr
+        args = result.stdout.splitlines()
+        assert args[args.index('--spec-type') + 1] == 'draft-mtp'
+>       assert '--model-draft' not in args
+E       AssertionError: assert '--model-draft' not in ['--model', '/models/Qwen3.8-27B-UD-IQ3_XXS.gguf', '--alias', 'qwen3.8-27b', '--host', '0.0.0.0', ...]
+
+tests\test_inference_launcher.py:37: AssertionError
+___________ test_explicit_separate_draft_path_is_a_single_argument ____________
+
+    def test_explicit_separate_draft_path_is_a_single_argument():
+        result = launch(MTP_MODEL_PATH='/models/custom draft.gguf', DRAFT_GPU_LAYERS='7', DRAFT_TOKENS='2')
+        assert result.returncode == 0, result.stderr
+        args = result.stdout.splitlines()
+>       assert args[args.index('--model-draft') + 1] == '/models/custom draft.gguf'
+E       AssertionError: assert '/models/mtp-...27B-Q4_0.gguf' == '/models/custom draft.gguf'
+E         
+E         - /models/custom draft.gguf
+E         + /models/mtp-Qwen3.8-27B-Q4_0.gguf
+
+tests\test_inference_launcher.py:46: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_inference_launcher.py::test_default_mtp_shares_target_weights
+FAILED tests/test_inference_launcher.py::test_explicit_separate_draft_path_is_a_single_argument
+2 failed, 2 passed in 0.60s

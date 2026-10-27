@@ -1,0 +1,17 @@
+{
+  "artifact_commit": "aea21eecfb78e51bd88b0795d65616619f45f8cf",
+  "manifest_reports": [
+    "evidence/long-profile-v1/parent-review.json",
+    "evidence/long-profile-v2/parent-review.json",
+    "evidence/long-profile-v3/parent-review.json",
+    "evidence/long-profile-v4/parent-review.json",
+    "evidence/daily-review-v5.json",
+    "evidence/gpu-verification-v1/receipt.json",
+    "evidence/test-discovery-v1/receipt.json",
+    "evidence/mtp-quantization-dryrun-v1/receipt.json"
+  ],
+  "files_verified": 249,
+  "mismatches": 0,
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY"
+}

@@ -1,0 +1,30 @@
+{
+  "context_window": 40960,
+  "runtime_build": "b11610-091b6a7fc",
+  "startup_sha256": "b2b132b622f5177970f7f71f8f7264506c8d6cfdad112079732def32467ce588",
+  "mounted_startup_matches": true,
+  "shared_context_log_confirmed": true,
+  "separate_draft_load_observed": false,
+  "images": {
+    "inference": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+    "gateway": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e"
+  },
+  "inference_environment": {
+    "UBATCH_SIZE": "64",
+    "SPEC_TYPE": "draft-mtp",
+    "CONTEXT_SIZE": "40960",
+    "MTP_MODEL_PATH": "",
+    "DRAFT_TOKENS": "4"
+  },
+  "gateway_environment": {
+    "CONTEXT_SIZE": "40960",
+    "SIFT_TARGET": "32768"
+  },
+  "optional_long_compose_verified": {
+    "CONTEXT_SIZE": "69888",
+    "MTP_MODEL_PATH": "",
+    "DRAFT_TOKENS": "2",
+    "UBATCH_SIZE": "32",
+    "SPEC_TYPE": "draft-mtp"
+  }
+}

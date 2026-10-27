@@ -1,0 +1,133 @@
+{
+  "route": "http://127.0.0.1:4000",
+  "model": "default",
+  "session_id": "3911d029-6d52-4a13-8d8e-9dca7e38f0e1",
+  "scope": "Shared-weight MTP startup/profile increment only",
+  "verdict": {
+    "verdict": "READY",
+    "increment": "Bounded review of the shared-weight MTP startup/profile increment only; qualification_increment remains 0.",
+    "actual_inspected_scope": [
+      "The startup script, base and long Compose configuration, and launcher tests.",
+      "The pinned llama.cpp source excerpt at ref 091b6a7fc, blob c5043a4a83e30398a07291401dc68bbcc52d5c91.",
+      "Returned archived positive and negative artifacts for long-profile-v5 and shared-mtp-launcher-v1, including runtime identity, capacity, memory, local/API checks, task records, and generated documents.",
+      "The returned current documentation excerpt."
+    ],
+    "checks": [
+      "Startup defaults to draft-mtp without passing a separate draft model or draft GPU-layer setting; an explicit MTP_MODEL_PATH adds both settings. The POSIX launcher tests also cover a path containing spaces, SPEC_TYPE=none, and rejection of an unknown type.",
+      "The pinned source excerpt initializes the MTP draft context from model_tgt using params.model.path. Its ref matches the runtime build suffix 091b6a7fc in the returned runtime records.",
+      "The archived default runtime record reports the expected pinned inference image, build b11610-091b6a7fc, mounted-startup hash match, shared-context log confirmation, and no separate draft load observed.",
+      "The bounded long-profile case records shared-target MTP, context 69888, draft tokens 2, and ubatch 32. Its synthetic 65536-token input plus 4096-token generation reached the recorded limit without truncation. Three archived native Claude tasks passed their recorded parent checks.",
+      "The long-profile memory record reports a 13111 MiB conservative sampled whole-host delta, within its stated 14,000,000,000-byte limit. It explicitly identifies desktop drift and unsampled transients as confounds and does not claim isolated allocation residency.",
+      "The preserved shared-mtp-launcher-v1 one-shot has a negative operator-guide result: it lacks the required up -d --build command, includes an unexpected up -d command, and omits the request-anchor policy. The separate bounded-feedback operator-guide result passes after one repair; this does not repair or replace the archived one-shot failure.",
+      "The returned launcher/check output reports 31 passing tests. The positive API artifacts include local text/tool continuation and OpenAI schema/output-limit checks; these are bounded checks, not general model-quality evidence."
+    ],
+    "findings": [
+      "The startup change and explicit separate-draft argument construction are supported by source inspection and launcher tests. Separate-draft compatibility is not established as a live runtime case by the returned evidence.",
+      "The newer bounded operator result and the older failed one-shot are distinct records and should remain represented as such.",
+      "Some archived generated documents describe the default 40960 context or older VRAM snapshots. They are not proof of the long profile's effective context or its measured memory; the specific runtime and capacity records support those bounded claims instead."
+    ],
+    "limits": [
+      "No inference of universal model correctness, general task quality, or information-retention parity from task passes.",
+      "Sampled whole-host occupancy is not isolated per-allocation GPU residency.",
+      "This review does not close remaining Codex or full-goal gates. Full goal remains NOT_READY."
+    ]
+  },
+  "model_usage": {
+    "default": {
+      "inputTokens": 25794,
+      "outputTokens": 1364,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.16307,
+      "contextWindow": 256000,
+      "maxOutputTokens": 32000,
+      "canonicalModel": "default",
+      "provider": "firstParty",
+      "costBasis": "unknown"
+    }
+  },
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "revocation_checks": [
+    {
+      "version": "v1",
+      "alias": "local-shared-mtp-review-d2fa4811c196",
+      "absent_from_key_list": true
+    },
+    {
+      "version": "v2",
+      "alias": "local-shared-mtp-review-9fa5f40416e4",
+      "absent_from_key_list": true
+    }
+  ],
+  "prior_review_limit": "v1 returned READY but client labeled default[1m]; retained, not used as the exact default-route proof. v2 explicitly disables the suffix.",
+  "parent_followup": "Post-review additions only: LF checkout filter guard and doc spacing. Startup bytes and reviewed generated artifacts unchanged. Reviewer used provided bounded read-only inspection/check pages; did not implement a separate verifier. Explicit separate-model mode has argv tests and historical separate-draft runtime coverage, not a new live optional-path run.",
+  "artifacts": [
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-pages-v1.py.gz",
+      "compressed_sha256": "ac7a237652f7603db8d951b48361d830595434dd4f205f944fce2ce28fb8c592",
+      "raw_sha256": "ac1ed434e8774db1c6fc99a77e1310059709073e2cb3dce9f61ed47854a1f41f"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v1.py.gz",
+      "compressed_sha256": "ed7fcc4ae028d579e91b9690f164349728b9d6071c9d05c31a5efc9fa3631475",
+      "raw_sha256": "29b79726d00b29f39dcad493fc4593a112c2914ab98d09670839aa980e5d041c"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v1.plan.json.gz",
+      "compressed_sha256": "406582dd9998923a5740d95880a7b5e976ebd75aa9839bcf86e431612037074d",
+      "raw_sha256": "fbbf72a382aae4279d9f154c7415da51a50d8325fd5cdd321174f3b822db497d"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v1.jsonl.gz",
+      "compressed_sha256": "09c66b78fc806812d24ba0d8935c300536c73506d6b7f6df3d2962ba0dd02c2d",
+      "raw_sha256": "29a33657c682a8c3d3a062276fdd065a717133710f424cd5f3d6ac38a1b60a92"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v1.stderr.log.gz",
+      "compressed_sha256": "878fc0102c0ba8611616bae624f041e4920ab31d09ae968f0286a4e9cf0edc0e",
+      "raw_sha256": "2986bc48ab629c6560e1a03228500a82da1fc827638baefbde27723aa67cd875"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v1.exit.json.gz",
+      "compressed_sha256": "a9e6f1ca2055f80af1309fcf6fd11b7839747f999f1eba79e3a0e9a45d350e59",
+      "raw_sha256": "329ff356ebbd0bfe9617b1b8f1e91e1290acaf866c0d7b2bdcb07cd2c1ff1930"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v1.revocation.json.gz",
+      "compressed_sha256": "4098e6ff13f27d525e84aa6c9c7b80bc6d6e3dd1235e743dc667c069e78c25e3",
+      "raw_sha256": "f1202fe3f0d30c50a53cb815294b39574bd3e1e0b65ab2bc5802056f76fe9a79"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v2.py.gz",
+      "compressed_sha256": "5af96ef0ccf2065671969d3873c8334b42ad9001f3053ae30e16136d69f24025",
+      "raw_sha256": "1ea3fc166ebc39062c84204caaa5664127c5e56ad5522c506dc19fb0ab1689ed"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v2.plan.json.gz",
+      "compressed_sha256": "406582dd9998923a5740d95880a7b5e976ebd75aa9839bcf86e431612037074d",
+      "raw_sha256": "fbbf72a382aae4279d9f154c7415da51a50d8325fd5cdd321174f3b822db497d"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v2.jsonl.gz",
+      "compressed_sha256": "c16b8e4ba47702b50d83ac99f5908588539449d1ae3d0b6db6b0f6b59b0f1c99",
+      "raw_sha256": "fca356965bd3834fa36c1c1f5341c522c3d1a88df63235db637fe858a71fb976"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v2.stderr.log.gz",
+      "compressed_sha256": "62787d2a2f1adab0f7e92087b5814eb25cf7718d73f255ddcb0c1b6b72e9980c",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v2.exit.json.gz",
+      "compressed_sha256": "43938d7e128cdb4b56c5f95a392fae64934471302e2447fc1ea12c2e8e2bc940",
+      "raw_sha256": "71986a71fae116e01f57e9edc5e92efd40da0f4b6dc8a174e031c7c52fb27c0b"
+    },
+    {
+      "path": "evidence/shared-mtp-review-v2/shared-mtp-review-v2.revocation.json.gz",
+      "compressed_sha256": "4137f9252e90092f1a3926230832b3da8923e42fcc8e59d6cd7b61fb7f2513b5",
+      "raw_sha256": "79a5f9324380e3deb8b45e910e3cd5c6d4f9c84ab7114842fc4ce20fd3bd961a"
+    }
+  ]
+}

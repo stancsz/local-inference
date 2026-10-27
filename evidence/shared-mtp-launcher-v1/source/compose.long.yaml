@@ -1,0 +1,15 @@
+# Tested shared-weight MTP capacity profile. Start with both Compose files.
+services:
+  inference:
+    environment:
+      CONTEXT_SIZE: '69888'
+      GPU_LAYERS: '99'
+      MTP_MODEL_PATH: ''
+      DRAFT_TOKENS: '2'
+      UBATCH_SIZE: '32'
+      SPEC_TYPE: draft-mtp
+  gateway:
+    environment:
+      CONTEXT_SIZE: '69888'
+      SIFT_TARGET: '65536'
+      SIFT_COMPRESSION_RATIO: '8'

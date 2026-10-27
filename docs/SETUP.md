@@ -25,7 +25,7 @@ Run these commands in PowerShell from a directory where both repositories can li
 git clone https://github.com/stancsz/local-inference.git
 git clone https://github.com/stancsz/sift.git
 cd local-inference
-git -C ../sift checkout e62ed81d8fbf07b076a2cf5c8a9f94f61f509105
+git -C ../sift checkout 2f0ef2786345fe0868b282903712fd1ac92d43fe
 python scripts/setup_env.py
 python scripts/download_ranges.py
 pwsh -NoProfile -File scripts/stage_models.ps1

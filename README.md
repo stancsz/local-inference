@@ -2,17 +2,17 @@
 
 **Do the token-heavy work locally. Bring in a strong cloud advisor for the decisions that need it.**
 
-Run a quantized 27B model with MTP at **103.45 tok/s average decode** on a 16 GB RTX 5070 Ti. Keep file reads, drafts and tool loops on your GPU; send a small evidence packet to an optional cloud advisor. Two containers, explicit limits, reproducible receipts.
+Run a quantized 27B model with MTP at **98.08 tok/s average decode** on a 16 GB RTX 5070 Ti. Keep file reads, drafts and tool loops on your GPU; send a small evidence packet to an optional cloud advisor. Two containers, explicit limits, reproducible receipts.
 
 [Get started](#setup) · [Practical setup and advisor workflow](docs/SETUP.md) · [Measured speed](#measured-speed-on-rtx-5070-ti) · [Evidence and limits](VERIFICATION.md)
 
-An independent, minimal LiteLLM gateway serving Dockerized Qwen3.8-27B IQ3_XXS + Q4 MTP on a Windows RTX 5070 Ti (16 GB). Claude Code uses LiteLLM at `http://127.0.0.1:8090`; mandatory Sift runs in its pre-call callback. llama.cpp runs on `8091` for diagnostics. Neither endpoint is exposed beyond loopback. There is no Subroute runtime dependency, cloud fallback, database, Redis, or separate compaction service.
+An independent, minimal LiteLLM gateway serving Dockerized Qwen3.8-27B IQ3_XXS with shared-weight MTP on a Windows RTX 5070 Ti (16 GB). Claude Code uses LiteLLM at `http://127.0.0.1:8090`; mandatory Sift runs in its pre-call callback. llama.cpp runs on `8091` for diagnostics. Neither endpoint is exposed beyond loopback. There is no Subroute runtime dependency, cloud fallback, database, Redis, or separate compaction service.
 
 **Status: the recommended local workflow is running and verified on this host.** Live text/tool continuation, three Claude productivity tasks, 256k/1M compaction and exact 64k+4k capacity have receipts. See [verification and limits](VERIFICATION.md), [GOAL.md](GOAL.md), and [evidence](evidence). These bounded tests do not establish general task quality or information-retention parity.
 
 The [native CLI stress campaigns](docs/STRESS_RESULTS.md) are terminal: 23 candidate qualifying sessions across separate workload epochs (Claude 8, OpenCode 9, Codex 6). Full-goal acceptance remains NOT_READY. The gateway now uses Sift 0.11.1's source-coverage repair; failed historical runs stay unchanged.
 
-The latest [context/VRAM experiments](docs/PROFILE_RESULTS.md) reached exact 64k input + 4k output with active MTP and measured **71.54 tok/s** on the separate short-prompt benchmark. That configuration still misses the conservative **14-decimal-GB** host-delta criterion. Lower-memory CPU offload incurred substantial latency. These results do not establish the simultaneous memory/context goal; the fast daily default is unchanged.
+The latest [shared-weight MTP experiment](docs/PROFILE_RESULTS.md) passed exact **64k input + 4k output**, both 256k/1M retention checks and **3/3 native Claude tasks**. Its conservative sampled host delta was **13.748 decimal GB**; isolated GPU residency remains unmeasured. The optional profile reached 90.51 tok/s on the short decode benchmark and 60.36 tok/s at full synthetic context. All historical failures remain published; full-goal acceptance is still pending.
 
 ## Lower cloud usage, explicit tradeoffs
 
@@ -25,16 +25,18 @@ The latest [context/VRAM experiments](docs/PROFILE_RESULTS.md) reached exact 64k
 
 ## Measured speed on RTX 5070 Ti
 
-**103.45 tok/s average decode, peaking at 104.09 tok/s**, with Qwen3.8-27B IQ3_XXS + Q4 MTP, four draft tokens and the recommended 40,960-token context window.
+**98.08 tok/s average decode** on the current shared-weight MTP daily profile (99.37 and 96.79 tok/s samples), with four draft tokens and a 40,960-token context window. The earlier separate-draft configuration reached 103.45 tok/s; these are separately recorded runs, not a controlled speed-regression comparison.
 
 | Context profile | MTP draft tokens | Average decode | Raw receipts |
 | --- | --- | --- | --- |
-| 40k daily | 4 (recommended) | **103.45 tok/s** | [Two samples](evidence/benchmark-mtp4-40k.json) |
+| Current 40k shared weights | 4 | **98.08 tok/s** | [Two samples](evidence/benchmark-shared-mtp-default-v1.json) |
+| Optional 64k shared weights | 2 | **90.51 tok/s** | [Two samples](evidence/benchmark-shared-mtp-v5-32.json) |
+| Historical 40k separate draft | 4 | 103.45 tok/s | [Two samples](evidence/benchmark-mtp4-40k.json) |
 | 40k daily | 2 | 91.60 tok/s | [Two samples](evidence/benchmark-mtp2-40k.json) |
 | 64k-input | 2 | 91.18 tok/s | [Two samples](evidence/benchmark-mtp-64k-ubatch64.json) |
 | 64k-input | Disabled | 49.92 tok/s | [Two samples](evidence/benchmark-no-mtp-64k-ubatch64.json) |
 
-The matched larger-window comparison measured **1.83× faster decode with MTP** ([summary](evidence/benchmark-summary.json)). Each row contains two sequential short-prompt runs generating 256 tokens each, one cold and one cached. The context profiles describe capacity; these runs did not fill that window. Rates measure backend token generation, excluding Sift compaction and prompt processing; they do not measure end-to-end Claude task throughput or establish equal output quality. See [verification](VERIFICATION.md) for the separate long-context and real-task results.
+The historical separate-draft larger-window comparison measured **1.83× faster decode with MTP** ([summary](evidence/benchmark-summary.json)). Each row contains two sequential short-prompt runs generating 256 tokens each, one cold and one cached. The context profiles describe capacity; these runs did not fill that window. Rates measure backend token generation, excluding Sift compaction and prompt processing; they do not measure end-to-end Claude task throughput or establish equal output quality. See [verification](VERIFICATION.md) for the separate long-context and real-task results.
 
 ## Setup
 
@@ -43,9 +45,8 @@ Requirements: Docker Desktop with Linux GPU support, NVIDIA driver, Python 3.11+
 ```powershell
 git clone https://github.com/stancsz/local-inference.git
 git clone https://github.com/stancsz/sift.git
-git -C sift checkout v0.11.1
 cd sift
-git checkout e62ed81d8fbf07b076a2cf5c8a9f94f61f509105
+git checkout 2f0ef2786345fe0868b282903712fd1ac92d43fe
 cd ../local-inference
 python scripts/setup_env.py
 python scripts/download_ranges.py
@@ -60,13 +61,19 @@ The model downloader pins the Hugging Face revision in its receipt, verifies eac
 
 The recommended default is one slot, 40,960 total context tokens, a 32,768-token Sift anchor, up to 4,096 output tokens, four draft tokens, q4 target/draft KV, and full GPU target/MTP layers. Sift uses the backend's native full-request tokenizer, including tool/system/template overhead, for selection and final validation. The host was reduced from roughly 4 GB to roughly 1.5 GB desktop occupancy before this experiment. This profile leaves more desktop VRAM headroom than the optional 64k-input profile.
 
-For the tested 64k-input capacity profile, set `CONTEXT_SIZE=69888`, `SIFT_TARGET=65536`, and `DRAFT_TOKENS=2` in `.env`, then recreate both services. The extra 256 context tokens accommodate speculative decoder headroom: 69,632 total tokens stopped two generated tokens short in the initial test. The corrected profile processed exactly 65,536 input tokens and generated all 4,096 tokens without truncation. This synthetic backend capacity test is separate from real task quality. Its observed runtime delta including caches/buffers was slightly above 14 decimal GB, although it fits this freed 16 GB host. Prefer the default for a stricter memory budget.
+For the tested 64k-input shared-weight profile, run:
+
+```powershell
+docker compose -f compose.yaml -f compose.long.yaml up -d --force-recreate
+```
+
+This selects 69,888 total tokens, a 65,536-token Sift anchor, two draft tokens and microbatch 32. It passed exact 65,536-input + 4,096-output capacity, 256k/1M compaction retention and all three bounded-feedback native tasks. The sampled conservative host delta was 13,111 MiB (13.748 decimal GB), including caches/buffers and possible desktop drift. It is not isolated residency or a guarantee for another desktop workload. Return to your `.env`/daily configuration with `docker compose up -d --force-recreate`.
 
 After enabling that optional profile, reproduce capacity with `python scripts/capacity_acceptance.py`; it refuses to run the 64k test against the smaller daily profile. Stop inference before restaging weights into the Docker volume.
 
 Sift chooses its budget per request. Requests within the configured `SIFT_TARGET` anchor pass unchanged when they also fit the native window. Larger histories use `ceil(native_raw_tokens / 8)`, bounded to 24,576 to 65,536 and `CONTEXT_SIZE - requested_output - 256`. If that policy rejects protected content with the specific `active_too_large` code, the gateway preserves the original content only when its independently counted full request already fits the available window. Ordinary compressible history still gets the smaller adaptive budget, reducing prefill work. This fallback never bypasses raw or structural size guards. At the daily defaults with all 4,096 output tokens reserved, the adaptive range is **24,576 to 36,608**. The larger profile can reach **65,536**. The ratio is a deterministic size-based policy, not an estimate of task difficulty or a guarantee of retention. System, tools and template overhead count toward the native input budget. Full-request character/node guards include tool schemas before tokenization. Mandatory content that cannot fit fails closed. Total context must be at least 28,928; context shifting is disabled so overflow cannot silently discard source history.
 
-Tune `GPU_LAYERS`, `DRAFT_GPU_LAYERS`, `DRAFT_TOKENS`, `UBATCH_SIZE`, and `SPEC_TYPE` via `.env`. Use `SPEC_TYPE=none` for the no-MTP baseline; the launcher omits the MTP model entirely in that mode. Recreate the inference container between comparisons. Four draft tokens measured about 103 tokens/s versus 92 for two on the short 40k-profile microbenchmark. The paired 64k-window benchmark measured 91 with MTP versus 50 without it (two samples per arm). These are decode rates, not end-to-end task throughput or exhaustive hardware optimization.
+The main GGUF includes its MTP head, so startup shares its loaded weights and avoids a separate draft-weight allocation. To explicitly use a separate compatible local draft, set `MTP_MODEL_PATH=/models/mtp-Qwen3.8-27B-Q4_0.gguf` in `.env`; only that mode uses `DRAFT_GPU_LAYERS`. Existing cached draft files are retained. Tune `GPU_LAYERS`, `DRAFT_TOKENS`, `UBATCH_SIZE`, and `SPEC_TYPE` via `.env`. Use `SPEC_TYPE=none` for the no-MTP baseline; the launcher omits the MTP model entirely in that mode. Recreate the inference container between comparisons. Four draft tokens measured about 103 tokens/s versus 92 for two on the short 40k-profile microbenchmark. The paired 64k-window benchmark measured 91 with MTP versus 50 without it (two samples per arm). These are decode rates, not end-to-end task throughput or exhaustive hardware optimization.
 
 ## Reproducible acceptance
 

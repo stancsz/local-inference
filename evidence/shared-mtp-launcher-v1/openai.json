@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "request": {
+    "model": "qwen3.8-27b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Return the JSON object required by the response schema."
+      }
+    ],
+    "max_completion_tokens": 128,
+    "seed": 42,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "marker",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "marker": {
+              "type": "string",
+              "const": "LOCAL_OPENAI_OK"
+            }
+          },
+          "required": [
+            "marker"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  "response": {
+    "id": "chatcmpl-tuQ8abXzEEVfUmyjYL2AYizGJ7QCq22m",
+    "created": 1793144790,
+    "model": "qwen3.8-27b",
+    "object": "chat.completion",
+    "system_fingerprint": "b11610-091b6a7fc",
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "content": "{\"marker\": \"LOCAL_OPENAI_OK\"}",
+          "role": "assistant",
+          "provider_specific_fields": {
+            "refusal": null
+          }
+        },
+        "provider_specific_fields": {}
+      }
+    ],
+    "usage": {
+      "completion_tokens": 15,
+      "prompt_tokens": 22,
+      "total_tokens": 37,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 22,
+      "prompt_ms": 229.973,
+      "prompt_per_token_ms": 10.453318181818183,
+      "prompt_per_second": 95.66340396481326,
+      "predicted_n": 15,
+      "predicted_ms": 680.06,
+      "predicted_per_token_ms": 48.575714285714284,
+      "predicted_per_second": 20.586418845395997,
+      "draft_n": 44,
+      "draft_n_accepted": 3
+    }
+  },
+  "schema_assertion": true,
+  "cap_request": {
+    "model": "qwen3.8-27b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Count from 1 to 1000, one number per line. Keep going until the limit."
+      }
+    ],
+    "max_completion_tokens": 16,
+    "temperature": 0
+  },
+  "cap_response": {
+    "id": "chatcmpl-MH0p64JHF7QWFc1IugNZc4OVbWMjGD6d",
+    "created": 1793144790,
+    "model": "qwen3.8-27b",
+    "object": "chat.completion",
+    "system_fingerprint": "b11610-091b6a7fc",
+    "choices": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "content": "1\n2\n3\n4\n5\n6\n7\n8\n",
+          "role": "assistant",
+          "provider_specific_fields": {
+            "refusal": null
+          }
+        },
+        "provider_specific_fields": {}
+      }
+    ],
+    "usage": {
+      "completion_tokens": 16,
+      "prompt_tokens": 34,
+      "total_tokens": 50,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 34,
+      "prompt_ms": 170.791,
+      "prompt_per_token_ms": 5.023264705882353,
+      "prompt_per_second": 199.0737216832269,
+      "predicted_n": 16,
+      "predicted_ms": 135.932,
+      "predicted_per_token_ms": 9.062133333333332,
+      "predicted_per_second": 110.34929229320542,
+      "draft_n": 12,
+      "draft_n_accepted": 12
+    }
+  },
+  "output_limit_assertion": true,
+  "invalid_top_level_system_status": 422,
+  "purpose": "Submitted schema yields the exact const absent from user text; a long-generation request stops at the exact requested 16-token limit; malformed OpenAI system is rejected"
+}

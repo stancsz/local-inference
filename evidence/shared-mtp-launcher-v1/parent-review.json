@@ -1,0 +1,394 @@
+{
+  "scope": "Shared-weight MTP startup and explicit separate-model compatibility, actual default runtime and optional long config",
+  "project_tests": 422,
+  "launcher_tests_before": {
+    "failed": 2,
+    "passed": 2
+  },
+  "launcher_tests_after": {
+    "passed": 4
+  },
+  "one_shot_native": [
+    {
+      "task": "vram-plan",
+      "recorded_passed": true,
+      "session_id": "1a32feb3-98d7-4f49-8ea0-87000309b8e1",
+      "native_edit_reconstruction": true,
+      "parent_validation_errors": []
+    },
+    {
+      "task": "model-audit",
+      "recorded_passed": true,
+      "session_id": "1b0a797e-c1e5-4130-8428-74cb49c26da2",
+      "native_edit_reconstruction": true,
+      "parent_validation_errors": []
+    },
+    {
+      "task": "operator-guide",
+      "recorded_passed": false,
+      "session_id": "87f70162-6f57-4445-b0ad-3ded4345bbb8",
+      "native_edit_reconstruction": true,
+      "parent_validation_errors": [
+        "the runbook is missing the required command: docker compose up -d --build",
+        "the runbook contains an unexpected command line: docker compose up -d",
+        "the runbook must describe the request-anchor policy"
+      ]
+    }
+  ],
+  "bounded_feedback": {
+    "route": "http://127.0.0.1:8090",
+    "model": "qwen3.8-27b",
+    "base_url": "http://127.0.0.1:8090",
+    "cloud_fallback": false,
+    "phase_timeout_seconds": 240,
+    "max_turns": 10,
+    "max_repairs_allowed": 2,
+    "nine_turn_qualification_increment": 0,
+    "source_hashes": {
+      "README.md": "b961531b8c18d8defbfdad006179a729587730f2afbadfa2b11c17cd4e8625a1",
+      "compose.yaml": "010b96eeeec70e9f4b251aedc9b5cd703be5c23fb49102bc1bc5759a290e824e",
+      "evidence/host-vram.json": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55",
+      "evidence/model-manifest.json": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+      "evidence/runtime-vram.json": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731",
+      "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+    },
+    "harness_hashes": {
+      "scripts/daily_artifacts.py": "f84acb51eceea37774865f4f1485d9bfb6f88952c4cab5f4871e9c6fd8a60c7f",
+      "scripts/daily_acceptance.py": "6efe104b3871cf18ea4ce66ffa00360764f801b06f96aae7b50c9ea1b2918fce",
+      "scripts/claude_acceptance.py": "34f29ce9c3466a4d628bfcea968473dc15177ca4ec46ba77a1fab437d9008c5e"
+    },
+    "sources_changed_during_run": [],
+    "seconds": 34.68,
+    "tasks": [
+      {
+        "task": "operator-guide",
+        "artifact": "operator-guide/OPERATIONS.md",
+        "passed": true,
+        "baseline_errors": [
+          "the runbook must state that the Sift target is part of the input budget, never added to it"
+        ],
+        "final_errors": [],
+        "repairs_used": 1,
+        "phases": [
+          {
+            "phase": 0,
+            "kind": "generate",
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 17.18,
+            "session_id": "0910077a-dbbd-4f01-937f-4b402d3191e5",
+            "native_tools": [
+              "Read",
+              "Read",
+              "Read",
+              "Read",
+              "Edit"
+            ],
+            "resumed": false,
+            "revision_file": "operator-guide/revisions/rev-0.txt",
+            "artifact_sha256": "1e56ff7e67aad825aeba7ae89142d61d77b4422f17a415604b4a4f3a3d1a9a4a",
+            "source_reads": [
+              "README.md",
+              "compose.yaml",
+              "gateway.yaml"
+            ],
+            "errors": [
+              "the runbook must state that the Sift target is part of the input budget, never added to it"
+            ],
+            "fatal": null,
+            "result_text": "OPERATIONS_DONE",
+            "usage": {
+              "input_tokens": 6799,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 20651,
+              "output_tokens": 589,
+              "output_tokens_details": {
+                "thinking_tokens": 0
+              },
+              "server_tool_use": {
+                "web_search_requests": 0,
+                "web_fetch_requests": 0
+              },
+              "service_tier": "standard",
+              "cache_creation": {
+                "ephemeral_1h_input_tokens": 0,
+                "ephemeral_5m_input_tokens": 0
+              },
+              "inference_geo": "",
+              "iterations": [],
+              "speed": "standard"
+            }
+          },
+          {
+            "phase": 1,
+            "kind": "repair",
+            "exit_code": 0,
+            "timed_out": false,
+            "seconds": 17.47,
+            "session_id": "0910077a-dbbd-4f01-937f-4b402d3191e5",
+            "native_tools": [
+              "Read",
+              "Read",
+              "Read",
+              "Read",
+              "Edit"
+            ],
+            "resumed": true,
+            "revision_file": "operator-guide/revisions/rev-1.txt",
+            "artifact_sha256": "dfec374063def6425963a24a5ffaa6f7d6a89f30bbf42888b81540bd07cbb9e8",
+            "source_reads": [
+              "README.md",
+              "compose.yaml",
+              "gateway.yaml"
+            ],
+            "errors": [],
+            "fatal": null,
+            "result_text": "The runbook now states verbatim that \"The Sift target is part of the input budget, never added to it,\" matching the required wording. All other previously correct requirements (commands, config lines, adaptive policy explanation, 24576..36608 range, readiness-is-insufficient note) remain intact.\n\nOPERATIONS_DONE",
+            "usage": {
+              "input_tokens": 10752,
+              "cache_creation_input_tokens": 0,
+              "cache_read_input_tokens": 21280,
+              "output_tokens": 415,
+              "output_tokens_details": {
+                "thinking_tokens": 0
+              },
+              "server_tool_use": {
+                "web_search_requests": 0,
+                "web_fetch_requests": 0
+              },
+              "service_tier": "standard",
+              "cache_creation": {
+                "ephemeral_1h_input_tokens": 0,
+                "ephemeral_5m_input_tokens": 0
+              },
+              "inference_geo": "",
+              "iterations": [],
+              "speed": "standard"
+            }
+          }
+        ]
+      }
+    ],
+    "remaining_failures": []
+  },
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "artifacts": [
+    {
+      "path": "evidence/shared-mtp-launcher-v1/after-tests.log",
+      "sha256": "48934358413ab0a21084d717c316faae0936e8f2b8ec6d4004c59f634561b425"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/before-tests.log",
+      "sha256": "5239d0cc03a2fd4b2b2845c9fc54f6e1f9c1f0c517d1fd6ffc79392e94190e7b"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/local.json",
+      "sha256": "d8490f5f4d71d3466cefc5cd5f480b4a16abff52cc15b98f6c5d9b6b5e97d2db"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/OPERATIONS.md.gz",
+      "compressed_sha256": "11087eed28893ee23ad4ac1bfcc36640ac5542ec7d47adad5e7ae33c730e4e87",
+      "raw_sha256": "835e6805946a4ecc81407c8fb278f25dd1cfe31c8aa566626d33dc7917c02dcb"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/phase-0/phase.json.gz",
+      "compressed_sha256": "8b9fd7ebb2608ac914f829f90806d4ecab2c5108eddcdca00a1ca40a5c4981fa",
+      "raw_sha256": "f77432bd56b82c579ffc88d2b26b62469ff515a1f75d54aa363002540b8e20b4"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/phase-0/prompt.txt.gz",
+      "compressed_sha256": "102ad4aaf23fd629d9ca51acd03245a8ca12b3df4c09c767d448645eefe4910d",
+      "raw_sha256": "f27f40b2b488b897f7b2beb45a4f594c19067bb9c49be21f36ce22f166a7589a"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/phase-0/stderr.log.gz",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/phase-0/stdout.jsonl.gz",
+      "compressed_sha256": "e0f9364207f865cc6085d9c5799bd0387a91e76e4219bfa83d04572980ae65a8",
+      "raw_sha256": "504e1a3bacd1a9704b5a9adead5233bb14c488165de90656c70fb436a437322b"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/phase-1/phase.json.gz",
+      "compressed_sha256": "4f63d6864b0dbeb00abe845bdaf7a9e7defe15cf5c571a59a4308fdb0226a6d5",
+      "raw_sha256": "4c4de63ba2e54ecc3583a60b35b39775ac30d169dac4ec93d9047c83d571987d"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/phase-1/prompt.txt.gz",
+      "compressed_sha256": "9b86c69c27b9d9633a26d1a4e47b949531bf813a568175c4c64ee70b9b0273f8",
+      "raw_sha256": "d27bab5acab3201dcfb8656e867cecb09c8a1b73ed11415bf3a263b7fb830a96"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/phase-1/stderr.log.gz",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/phase-1/stdout.jsonl.gz",
+      "compressed_sha256": "530aa3ed170ce715f43bfe67d6c1c6829ad92d7759af3f78dea3f5698d61ed46",
+      "raw_sha256": "b4fb530f10ac937df53ac9488c48e5717102707219b22d9994f5d5bb6477b37e"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/revisions/rev-0.sha256.gz",
+      "compressed_sha256": "544bbc34633d6093093d8d6404ac902981548bf9b0caa17b0febdeb59484061d",
+      "raw_sha256": "0fa16baf9e9f0b66e186cb911507527208422787ec8162e25389624e2d1233e6"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/revisions/rev-0.txt.gz",
+      "compressed_sha256": "8ebb6e30e7af3741f23cccb696a26360832e1f8d75904006310543770a3477b0",
+      "raw_sha256": "597ff631489b1fafd84e806a9fdc2b118d72185508e58fb43713a93e30530b59"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/revisions/rev-1.sha256.gz",
+      "compressed_sha256": "980501a5eb2099f37f5673bfb3ddfa75f4c218f34bb4cc2138af878b3c847c62",
+      "raw_sha256": "3efaa6275eee5f4f8ee5aeae1365c85787c067874d896187722a8e01bd002077"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/operator-guide/revisions/rev-1.txt.gz",
+      "compressed_sha256": "11087eed28893ee23ad4ac1bfcc36640ac5542ec7d47adad5e7ae33c730e4e87",
+      "raw_sha256": "835e6805946a4ecc81407c8fb278f25dd1cfe31c8aa566626d33dc7917c02dcb"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/plan.json.gz",
+      "compressed_sha256": "875e7854d958e8779303d48b62ef717d38108e853e2ce9d2a9ab57e0b6c29b09",
+      "raw_sha256": "a71c00016621fbcc0de04070707855cfea0363ac598fe38fb9bbabb45ad4bd8f"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-bounded-feedback/run-summary.json.gz",
+      "compressed_sha256": "d76e6c942665346cdd7e269d4240b92dc15edf06ceab037193762ee9ae43af9e",
+      "raw_sha256": "345a0ac9ec34bb559eebcb6acfdb94371f2ba7353a0afef39989f6156143ae3e"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/claude-acceptance.json.gz",
+      "compressed_sha256": "e725420d32096ecb688376936c79dd650326fb7063bf4059fbffed38a8db6eb4",
+      "raw_sha256": "b059be23fb23479596c9a6a7b0c538f777b5ea63c51f778159a1aed1532b137c"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/model-audit.json.gz",
+      "compressed_sha256": "ede3b60c631bc8ef15ac096af09ea0e87f52118f6d38a8e08bc152c9d5fe178b",
+      "raw_sha256": "a612c223c7ccfae84cbc0aed63600bd354da97ab00e77ea4a7a6879cf7ec972d"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/model-audit.jsonl.gz",
+      "compressed_sha256": "53ad02340cb53e4a1b05fac7c513eb9add337a2bd6739be1d4cde0e4adc5a8bf",
+      "raw_sha256": "1a9a3bb4910799b823d253ee2d9b9f6e7bdd827bd5c5b3e4fc6faac96f7e9329"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/model-audit.stderr.log.gz",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/OPERATIONS.md.gz",
+      "compressed_sha256": "27ba35fcfc4701bf8bccf68cb38a5d6fc1e61a407e8c66e52ad2a76be448f55e",
+      "raw_sha256": "a9d509cf3cbeb08c31e9e4b8568e8f82b679fbc334e9dc98d6c19a573ea83f01"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/operator-guide.jsonl.gz",
+      "compressed_sha256": "a6aefa2ea493dd431e8a5edf1a6009a210a10130685bd2abeed230591343c05b",
+      "raw_sha256": "8619f237c8291210571157ecc749d9ffb7216b87800bfb76e14b6e8e1f57e2a0"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/operator-guide.stderr.log.gz",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/published/MODEL_AUDIT.json.gz",
+      "compressed_sha256": "ede3b60c631bc8ef15ac096af09ea0e87f52118f6d38a8e08bc152c9d5fe178b",
+      "raw_sha256": "a612c223c7ccfae84cbc0aed63600bd354da97ab00e77ea4a7a6879cf7ec972d"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/published/sources/model-audit/compose.yaml.gz",
+      "compressed_sha256": "c1e30e317d923467b7aecd1fda1784a87ce5652343d80b2d8cab1351698262ec",
+      "raw_sha256": "010b96eeeec70e9f4b251aedc9b5cd703be5c23fb49102bc1bc5759a290e824e"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/published/sources/model-audit/model-manifest.json.gz",
+      "compressed_sha256": "a112d6e8b4888c388786688a6b7c9b55cd4bb28439169fc16a75fae3c4ba2846",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/published/sources/vram-plan/host-vram.json.gz",
+      "compressed_sha256": "81162a4e30df7242133ad21e492a9df33a50aa1be90e1d59c5deaecb87730bcf",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/published/sources/vram-plan/model-manifest.json.gz",
+      "compressed_sha256": "a112d6e8b4888c388786688a6b7c9b55cd4bb28439169fc16a75fae3c4ba2846",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/published/sources/vram-plan/runtime-vram.json.gz",
+      "compressed_sha256": "15c6192876b386c357adb8a2362cd6a5a720aacee101a9ad320af154d203d245",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/published/VRAM_PLAN.md.gz",
+      "compressed_sha256": "bfd54ec995f29128255cbcfc3915468f9271886ac37bff8595d14e6b58d6911a",
+      "raw_sha256": "6ba619f13b5b0972e1691216784bd1ff4de7ea2084333c395a5e5025d0bd205a"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/vram-plan.jsonl.gz",
+      "compressed_sha256": "8e23195ee3007790ffb73c73beba6ab31a0f075ff3e66ce96a068d4fafd2f57c",
+      "raw_sha256": "2c45acac37921fb583dad3287a4929583351239d823743c12a06e8c963448513"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/vram-plan.md.gz",
+      "compressed_sha256": "bfd54ec995f29128255cbcfc3915468f9271886ac37bff8595d14e6b58d6911a",
+      "raw_sha256": "6ba619f13b5b0972e1691216784bd1ff4de7ea2084333c395a5e5025d0bd205a"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/native-one-shot/vram-plan.stderr.log.gz",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/openai.json",
+      "sha256": "a9c21f2f7881fe0d13f300f353f5a670761823650225d977c74c2111bb946c94"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/project-tests.log",
+      "sha256": "6699fde07aa34f95d87de1568d9bfb344da88438f93a00f77e943174f9ee740d"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/runtime.json",
+      "sha256": "cb995e298ab77385f823fac203086f955f2c1e16d74f4d73123821509989507b"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/source/compose.long.yaml",
+      "sha256": "10a44dad8546c0f0c48450f717303fd89ea5ea3131d7ac0e9ee1578ad6a87c44"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/source/compose.yaml",
+      "sha256": "010b96eeeec70e9f4b251aedc9b5cd703be5c23fb49102bc1bc5759a290e824e"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/source/docker/start-inference.sh",
+      "sha256": "b2b132b622f5177970f7f71f8f7264506c8d6cfdad112079732def32467ce588"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/source/publish-shared-mtp.py",
+      "sha256": "633022aecc1a28a18462f6f8cfe8e63a175784b7d155861bca44eea1d1647803"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/source/scripts/claude_local.py",
+      "sha256": "142cb5c7858597297705a407f4f7dfd42f709d1da3b989eedf69c8684cd919a2"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/source/tests/test_inference_launcher.py",
+      "sha256": "a390b0acb9211f264d8cf6a8e563bcf99157324a7af38c78ffbcda8baf078500"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/start-inference-before.sh",
+      "sha256": "90995121fd6c556c7fbbd9639d2aaa02b502efcff183ab6a1f04654605d36c78"
+    },
+    {
+      "path": "evidence/shared-mtp-launcher-v1/windows-checkout.json",
+      "sha256": "f83c31b5539179a076ea11f65c17491e196e76b1059ec28ef3f2e91bcff6fe8f"
+    }
+  ]
+}

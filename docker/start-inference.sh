@@ -15,10 +15,13 @@ set -- /app/llama-server \
 case "${SPEC_TYPE:-draft-mtp}" in
   draft-mtp)
     set -- "$@" --spec-type draft-mtp \
-      --model-draft /models/mtp-Qwen3.8-27B-Q4_0.gguf \
-      --gpu-layers-draft "${DRAFT_GPU_LAYERS:-99}" \
       --spec-draft-n-max "${DRAFT_TOKENS:-4}" \
       --cache-type-k-draft q4_0 --cache-type-v-draft q4_0
+    # The target GGUF includes its MTP head; share loaded weights by default.
+    if [ -n "${MTP_MODEL_PATH:-}" ]; then
+      set -- "$@" --model-draft "$MTP_MODEL_PATH" \
+        --gpu-layers-draft "${DRAFT_GPU_LAYERS:-99}"
+    fi
     ;;
   none) set -- "$@" --spec-type none ;;
   *) echo 'SPEC_TYPE must be draft-mtp or none' >&2; exit 2 ;;
