@@ -1,7 +1,7 @@
 {
   "state": "matrix_running",
   "pid": 110236,
-  "captured_at": "2026-10-27T04:17:00.207441+00:00",
+  "captured_at": "2026-10-27T04:26:09.555504+00:00",
   "driver_exec_session": 13591,
   "route": "http://127.0.0.1:8090/v1",
   "matrix_state": "running",
@@ -91,9 +91,12 @@
     "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
     "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
   },
-  "controller_pid": 69208,
-  "supervisor_pid": 247748,
+  "controller_pid": 73836,
+  "supervisor_pid": 81624,
   "acknowledged_failure_sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
   "planned_attempts": 22,
-  "scope": "Current controller and supervisor IDs describe reviewed-failure continuation. Earlier pilot PID/watcher fields are historical and terminal."
+  "reviewed_short_failure_receipts": [
+    "tmp/stress/sessions/opencode-expenses-r1/result.json",
+    "tmp/stress/sessions/codex-expenses-r1/result.json"
+  ]
 }

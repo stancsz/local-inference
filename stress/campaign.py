@@ -46,19 +46,21 @@ def main():
     parser.add_argument('--max-turns',type=int,default=32)
     parser.add_argument('--wait-pid',type=int)
     parser.add_argument('--prechecks',action='store_true')
-    parser.add_argument('--acknowledge-short-failure',nargs=2,metavar=('RECEIPT','SHA256'))
+    parser.add_argument('--acknowledge-short-failure',nargs=2,action='append',default=[],metavar=('RECEIPT','SHA256'))
     parser.add_argument('--extra-opencode-expenses',action='store_true')
     args=parser.parse_args()
     root=ROOT/'tmp/stress/sessions';root.mkdir(parents=True,exist_ok=True)
     status_path=ROOT/'evidence/stress-campaign.json'
     frozen=source_hashes()
-    acknowledged=None
-    if args.acknowledge_short_failure:
-        receipt,sha=args.acknowledge_short_failure
+    acknowledgments=[]
+    for receipt,sha in args.acknowledge_short_failure:
         path=(ROOT/receipt).resolve()
         if not path.is_relative_to(root.resolve()):
             raise ValueError('Acknowledged receipt must belong to campaign workspaces')
-        acknowledged=(path,reviewed_short_failure(path,sha,frozen))
+        value=reviewed_short_failure(path,sha,frozen)
+        if any(all(existing[1].get(k)==value.get(k) for k in ('client','task','seed')) for existing in acknowledgments):
+            raise ValueError('Only one reviewed receipt per case is allowed')
+        acknowledgments.append((path,value,sha))
     plan=list(cases())
     if args.extra_opencode_expenses:
         plan.append({'client':'opencode','task':'expenses','seed':2951,'repeat':2})
@@ -70,9 +72,8 @@ def main():
         'planned_sessions':len(plan),'required_qualifying_sessions':21,'minimum_active_seconds':185,'minimum_user_turns':args.minimum_turns,
         'gateway_image':image,'source_sha256':frozen,'sessions':rows,
         'scope':'Frozen uncommitted Sift candidate; real native CLIs in synthetic evolving workspaces. First-stage Sift hook uses LiteLLM counting; final gateway Sift uses the backend native full-request counter. No scripted idle padding or cloud inference.'}
-    if acknowledged:
-        status['acknowledged_short_failure']={'receipt':acknowledged[0].relative_to(ROOT).as_posix(),
-            'sha256':args.acknowledge_short_failure[1],'accepted':False}
+    status['acknowledged_short_failures']=[{'receipt':path.relative_to(ROOT).as_posix(),
+        'sha256':sha,'accepted':False} for path,_,sha in acknowledgments]
     status['plan']=plan
     def save():
         status['updated_at']=datetime.now(timezone.utc).isoformat()
@@ -112,8 +113,10 @@ def main():
         label=f"{case['client']}-{case['task']}-r{case['repeat']}"
         status['current_case']={'index':number,**case};save()
         reused=None
-        if acknowledged and all(acknowledged[1].get(k)==case[k] for k in ('client','task','seed')):
-            reused=acknowledged
+        for path,value,_ in acknowledgments:
+            if all(value.get(k)==case[k] for k in ('client','task','seed')):
+                reused=(path,value)
+                break
         for path in root.glob('*/result.json'):
             if reused:break
             value=json.loads(path.read_text())
@@ -135,7 +138,7 @@ def main():
             'accepted':bool(result['accepted']),'qualifying_long_session':qualifies(result),
             'active_client_seconds':result['active_client_seconds'],'turns':len(result['turns']),
             'failure':result.get('failure'),'reused_existing_accepted_receipt':bool(reused and result['accepted']),
-            'reviewed_short_failure':bool(acknowledged and path.resolve()==acknowledged[0])})
+            'reviewed_short_failure':any(path.resolve()==item[0] for item in acknowledgments)})
         save()
         print(json.dumps({'completed':number,'accepted':status['accepted_sessions'],'qualifying_long_sessions':status['qualifying_long_sessions'],'case':case}),flush=True)
         # Do not repeat a wire/source failure for many cases without inspection.

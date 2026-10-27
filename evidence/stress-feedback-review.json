@@ -1,0 +1,72 @@
+{
+  "owner": "commander diagnostic; not independent QA",
+  "verdict": "No demonstrated feedback-retention defect in representative envelopes.",
+  "source": "tmp/stress/sessions/codex-expenses-r1/turn-00.jsonl",
+  "source_sha256": "6577395fb2fa2f8c30bc043357a0a79afed719c4de6c38f95aa14907d9f8adcc",
+  "actual_completed_commands": 15,
+  "actual_failed_test_outputs": 4,
+  "checks": [
+    {
+      "stage": "first-stage-hook",
+      "protocol": "acompletion",
+      "checks": {
+        "all_actual_failed_test_outputs_retained": true,
+        "current_requirement_retained": true,
+        "all_native_command_outputs_retained": true,
+        "complete_current_tool_suffix_unchanged": true
+      }
+    },
+    {
+      "stage": "first-stage-hook",
+      "protocol": "aresponses",
+      "checks": {
+        "all_actual_failed_test_outputs_retained": true,
+        "current_requirement_retained": true,
+        "all_native_command_outputs_retained": true,
+        "complete_current_tool_suffix_unchanged": true
+      }
+    },
+    {
+      "stage": "native-final-stage",
+      "protocol": "openai",
+      "checks": {
+        "all_actual_failed_test_outputs_retained": true,
+        "current_requirement_retained": true,
+        "complete_current_tool_suffix_unchanged": true,
+        "native_bound": true
+      },
+      "native_audit": {
+        "compacted": false,
+        "input_tokens": 32298,
+        "forwarded_tokens": 32298,
+        "omitted_estimated_tokens": 0,
+        "preserved_recent_turns": 0,
+        "preserved_recent_tool_cycles": 0,
+        "selected_excerpts": 0,
+        "target_tokens": 32768,
+        "context_window": 40960,
+        "output_reserve": 4096,
+        "fixed_tokens": 256,
+        "raw_native_tokens": 32298,
+        "available_tokens": 36608,
+        "ceiling_tokens": 36608,
+        "anchor_tokens": 32768,
+        "compression_ratio": 8.0,
+        "budget_policy": "request_adaptive_ratio",
+        "native_input_tokens": 32298,
+        "compaction_input_sha256": "aeabcf8ca92890ea3eaaaee91a4b44b7d897e5fbfb921f0ac298faba889c902d",
+        "compaction_seconds": 0.1447,
+        "selection_counting": "native full-request tokenizer",
+        "tokenizer_calls": 2,
+        "raw_native_token_limit": 1050000,
+        "decoder_headroom": 256
+      }
+    }
+  ],
+  "limits": [
+    "Campaign HTTP request/response bodies were not captured. Native event text is real, but envelopes and tools are reconstructed representative fixtures.",
+    "This checks the hook and an OpenAI final-stage path. It does not replay the actual Codex Responses-to-Chat wire conversion or prove what the model attended to.",
+    "No inference calls, task-artifact edits, acceptance changes or timeout changes were made."
+  ],
+  "next_action": "Retain both failures and continue remaining independent fixed cases; no evidenced repair to frozen compaction code."
+}

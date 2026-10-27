@@ -1,0 +1,742 @@
+{
+  "captured_at": "2026-10-27T04:28:37.539331+00:00",
+  "controller_state": "running",
+  "planned_attempts": 22,
+  "terminal_attempts": 18,
+  "harness_accepted": 16,
+  "nine_turn_long_sessions": 16,
+  "failed_attempts": 2,
+  "native_budget_checks": 739,
+  "groups": [
+    {
+      "client": "claude",
+      "terminal_attempts": 6,
+      "harness_accepted": 6,
+      "nine_turn_long_sessions": 6,
+      "accepted_tasks": {
+        "engineering": 2,
+        "migration": 2,
+        "expenses": 2
+      },
+      "accepted_active_seconds": {
+        "samples": 6,
+        "minimum": 946.823,
+        "median": 992.8715,
+        "maximum": 1079.427
+      },
+      "additional_contract_failures": 4
+    },
+    {
+      "client": "opencode",
+      "terminal_attempts": 6,
+      "harness_accepted": 5,
+      "nine_turn_long_sessions": 5,
+      "accepted_tasks": {
+        "engineering": 2,
+        "migration": 2,
+        "expenses": 1
+      },
+      "accepted_active_seconds": {
+        "samples": 5,
+        "minimum": 967.795,
+        "median": 1060.94,
+        "maximum": 1086.017
+      },
+      "additional_contract_failures": 4
+    },
+    {
+      "client": "codex",
+      "terminal_attempts": 6,
+      "harness_accepted": 5,
+      "nine_turn_long_sessions": 5,
+      "accepted_tasks": {
+        "engineering": 2,
+        "migration": 2,
+        "expenses": 1
+      },
+      "accepted_active_seconds": {
+        "samples": 5,
+        "minimum": 766.871,
+        "median": 849.925,
+        "maximum": 959.153
+      },
+      "additional_contract_failures": 3
+    }
+  ],
+  "sessions": [
+    {
+      "case": {
+        "client": "claude",
+        "task": "engineering",
+        "seed": 831,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/claude-engineering-r0/result.json",
+      "sha256": "652ae90ce5d8bdef0ab7c6758555f0c915ec542f7830fb8e886a096d341e5d0c",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 980.493,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 44,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "engineering",
+        "seed": 931,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/opencode-engineering-r0-attempt-1793060019/result.json",
+      "sha256": "b1849a92384b56fefe2bc25943ecf4211901c7bf643f46ca26b2f5447b87e07b",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1069.701,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 44,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "engineering",
+        "seed": 1031,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/codex-engineering-resume-writable/result.json",
+      "sha256": "aa6219bfb709d71b53e3b61578240dd5ea691d0d5f773585137682b3ddf7fea3",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 863.291,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 46,
+      "native_bounds_passed": true,
+      "additional_contract_passed": true
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "migration",
+        "seed": 841,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/claude-migration-r0/result.json",
+      "sha256": "94a985d73dec9516bcbe48df0407b5d5f1b9e6b64e40310e589e2585aa10493b",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1067.898,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 49,
+      "native_bounds_passed": true,
+      "additional_contract_passed": true
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "migration",
+        "seed": 941,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/opencode-migration-r0/result.json",
+      "sha256": "d037b752cd9be8d9a36903d91e7177bec3bd3329b43305d073cb16049c0c2a20",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 967.795,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 42,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "migration",
+        "seed": 1041,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/codex-migration-r0/result.json",
+      "sha256": "f67a746d30661be52c1fc7c6f7d75d0100585fd5f46f46aca107988560f8c2d9",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 849.925,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 43,
+      "native_bounds_passed": true,
+      "additional_contract_passed": true
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "expenses",
+        "seed": 851,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/claude-expenses-r0/result.json",
+      "sha256": "e737cdada3b7f3039e3bfd3d571676670b065e82f6554b94d6451ef9d427e4c0",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1079.427,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 46,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "expenses",
+        "seed": 951,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/opencode-expenses-r0/result.json",
+      "sha256": "7b472fc15289ab883aaf67dcfbd3c35a806004d28c2cf6aabe7dd388cff3d292",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1086.017,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 45,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "expenses",
+        "seed": 1051,
+        "repeat": 0
+      },
+      "receipt": "tmp/stress/sessions/codex-expenses-r0/result.json",
+      "sha256": "1c2f32c80a1efb21588124725fc8d21451f34dad40e965dbb5d8ae51b49f3def",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 959.153,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 49,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "engineering",
+        "seed": 1831,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/claude-engineering-r1/result.json",
+      "sha256": "97a1d0b598d22ab1988d5c1f0b410853c63abb78bed317261988aba88c919fcc",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1005.25,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 46,
+      "native_bounds_passed": true,
+      "additional_contract_passed": true
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "engineering",
+        "seed": 1931,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/opencode-engineering-r1/result.json",
+      "sha256": "7717b86e2217228874497e1fff3b3169a2fb6ba692ee6b3fd67fd36797d42290",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1060.94,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 46,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "engineering",
+        "seed": 2031,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/codex-engineering-r1/result.json",
+      "sha256": "905b6d8fdea7d01ec4b3b3de1bbc23b9526c67b9b734f36995741edaf7ed185f",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 779.767,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 43,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "migration",
+        "seed": 1841,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/claude-migration-r1/result.json",
+      "sha256": "36925d2a2309d345aca4227a5d4458ee985ede2e241eca42682cacba8f46269d",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 964.764,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 44,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "migration",
+        "seed": 1941,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/opencode-migration-r1/result.json",
+      "sha256": "e1c7a7c77d716f7276990c9b44315e9857eb6283b9f01dd4fab7c8c16f53b789",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 1060.022,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 45,
+      "native_bounds_passed": true,
+      "additional_contract_passed": true
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "migration",
+        "seed": 2041,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/codex-migration-r1/result.json",
+      "sha256": "261e326261b7dd282488a017606360b5391410843662bcfc39fb4432d63b337d",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 766.871,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 43,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "claude",
+        "task": "expenses",
+        "seed": 1851,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/claude-expenses-r1/result.json",
+      "sha256": "a151187102a8ccce8103d42515d0f6628ed86a1bad37f94f1d02ad0e3ec85758",
+      "accepted": true,
+      "qualifying_long_session": true,
+      "active_client_seconds": 946.823,
+      "turns": 9,
+      "failure": null,
+      "reused_existing_accepted_receipt": true,
+      "reviewed_short_failure": false,
+      "nine_turn_long_session": true,
+      "native_budget_checks": 41,
+      "native_bounds_passed": true,
+      "additional_contract_passed": false
+    },
+    {
+      "case": {
+        "client": "opencode",
+        "task": "expenses",
+        "seed": 1951,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/opencode-expenses-r1/result.json",
+      "sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
+      "accepted": false,
+      "qualifying_long_session": false,
+      "active_client_seconds": 240.348,
+      "turns": 1,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "reused_existing_accepted_receipt": false,
+      "reviewed_short_failure": true,
+      "nine_turn_long_session": false,
+      "native_budget_checks": 10,
+      "native_bounds_passed": true,
+      "additional_contract_passed": null
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "expenses",
+        "seed": 2051,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/codex-expenses-r1/result.json",
+      "sha256": "78c57e757638e780e437be033b7d48bd14c68d4cb8a6d98c76d6242d6e0c5175",
+      "accepted": false,
+      "qualifying_long_session": false,
+      "active_client_seconds": 240.326,
+      "turns": 1,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "reused_existing_accepted_receipt": false,
+      "reviewed_short_failure": true,
+      "nine_turn_long_session": false,
+      "native_budget_checks": 13,
+      "native_bounds_passed": true,
+      "additional_contract_passed": null
+    }
+  ],
+  "all_retained_terminal_receipts": [
+    {
+      "receipt": "tmp/stress/sessions/claude-engineering-001/result.json",
+      "sha256": "0552bcd8701904fd0aecdf8c8a41698ee11d249246a387ecd564d91b0ef97b18",
+      "client": "claude",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 1.811,
+      "source_matches_current": false,
+      "in_controller_outcomes": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/claude-engineering-002/result.json",
+      "sha256": "76b810542cda6d935f08c8c4dd3364e501c215080b51195dac8c332992fdef93",
+      "client": "claude",
+      "task": "engineering",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 1040.878,
+      "source_matches_current": false,
+      "in_controller_outcomes": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/claude-engineering-r0/result.json",
+      "sha256": "652ae90ce5d8bdef0ab7c6758555f0c915ec542f7830fb8e886a096d341e5d0c",
+      "client": "claude",
+      "task": "engineering",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 980.493,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/claude-engineering-r1/result.json",
+      "sha256": "97a1d0b598d22ab1988d5c1f0b410853c63abb78bed317261988aba88c919fcc",
+      "client": "claude",
+      "task": "engineering",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 1005.25,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/claude-expenses-r0/result.json",
+      "sha256": "e737cdada3b7f3039e3bfd3d571676670b065e82f6554b94d6451ef9d427e4c0",
+      "client": "claude",
+      "task": "expenses",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 1079.427,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/claude-expenses-r1/result.json",
+      "sha256": "a151187102a8ccce8103d42515d0f6628ed86a1bad37f94f1d02ad0e3ec85758",
+      "client": "claude",
+      "task": "expenses",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 946.823,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/claude-migration-r0/result.json",
+      "sha256": "94a985d73dec9516bcbe48df0407b5d5f1b9e6b64e40310e589e2585aa10493b",
+      "client": "claude",
+      "task": "migration",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 1067.898,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/claude-migration-r1/result.json",
+      "sha256": "36925d2a2309d345aca4227a5d4458ee985ede2e241eca42682cacba8f46269d",
+      "client": "claude",
+      "task": "migration",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 964.764,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-native-fix/result.json",
+      "sha256": "3cfb504072bcb1476d64bc5acf946cdde21807208566fdd5ccbd976e906f51ac",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 170.512,
+      "source_matches_current": false,
+      "in_controller_outcomes": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-r0/result.json",
+      "sha256": "57f7be4e9d5158aa740c083d438a802e13a4ddb16d6cb84cd8d790c3cfa371ab",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 0,
+      "active_seconds": 0.0,
+      "source_matches_current": false,
+      "in_controller_outcomes": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-r0-attempt-1793056407/result.json",
+      "sha256": "01c5687d22e39c4aa8dfaf435a4e6024e346d1fde02465cbe315548b9d3e8eac",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 148.0,
+      "source_matches_current": false,
+      "in_controller_outcomes": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-r1/result.json",
+      "sha256": "905b6d8fdea7d01ec4b3b3de1bbc23b9526c67b9b734f36995741edaf7ed185f",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 779.767,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-resume-compatible/result.json",
+      "sha256": "45efd01972bcf14d8e4a39f14e6b1e6d7d00eafc8aa13bb48d486616118ded37",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 2,
+      "active_seconds": 229.565,
+      "source_matches_current": false,
+      "in_controller_outcomes": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-resume-writable/result.json",
+      "sha256": "aa6219bfb709d71b53e3b61578240dd5ea691d0d5f773585137682b3ddf7fea3",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 863.291,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-engineering-validated-parser/result.json",
+      "sha256": "70ecfbd5be3ef3c7ba6d6984ba1744dba9a4d8c4868abe74900f977336652118",
+      "client": "codex",
+      "task": "engineering",
+      "accepted": false,
+      "turns": 2,
+      "active_seconds": 130.015,
+      "source_matches_current": false,
+      "in_controller_outcomes": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-expenses-r0/result.json",
+      "sha256": "1c2f32c80a1efb21588124725fc8d21451f34dad40e965dbb5d8ae51b49f3def",
+      "client": "codex",
+      "task": "expenses",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 959.153,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-expenses-r1/result.json",
+      "sha256": "78c57e757638e780e437be033b7d48bd14c68d4cb8a6d98c76d6242d6e0c5175",
+      "client": "codex",
+      "task": "expenses",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 240.326,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-migration-r0/result.json",
+      "sha256": "f67a746d30661be52c1fc7c6f7d75d0100585fd5f46f46aca107988560f8c2d9",
+      "client": "codex",
+      "task": "migration",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 849.925,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-migration-r1/result.json",
+      "sha256": "261e326261b7dd282488a017606360b5391410843662bcfc39fb4432d63b337d",
+      "client": "codex",
+      "task": "migration",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 766.871,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-engineering-r0/result.json",
+      "sha256": "dfb3c8535cbfabb2c45871e67afbda0dd437d55761cb62f1c32c9b5a5708859f",
+      "client": "opencode",
+      "task": "engineering",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 1067.216,
+      "source_matches_current": false,
+      "in_controller_outcomes": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-engineering-r0-attempt-1793060019/result.json",
+      "sha256": "b1849a92384b56fefe2bc25943ecf4211901c7bf643f46ca26b2f5447b87e07b",
+      "client": "opencode",
+      "task": "engineering",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 1069.701,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-engineering-r1/result.json",
+      "sha256": "7717b86e2217228874497e1fff3b3169a2fb6ba692ee6b3fd67fd36797d42290",
+      "client": "opencode",
+      "task": "engineering",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 1060.94,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-expenses-r0/result.json",
+      "sha256": "7b472fc15289ab883aaf67dcfbd3c35a806004d28c2cf6aabe7dd388cff3d292",
+      "client": "opencode",
+      "task": "expenses",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 1086.017,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-expenses-r1/result.json",
+      "sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
+      "client": "opencode",
+      "task": "expenses",
+      "accepted": false,
+      "turns": 1,
+      "active_seconds": 240.348,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-migration-r0/result.json",
+      "sha256": "d037b752cd9be8d9a36903d91e7177bec3bd3329b43305d073cb16049c0c2a20",
+      "client": "opencode",
+      "task": "migration",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 967.795,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    },
+    {
+      "receipt": "tmp/stress/sessions/opencode-migration-r1/result.json",
+      "sha256": "e1c7a7c77d716f7276990c9b44315e9857eb6283b9f01dd4fab7c8c16f53b789",
+      "client": "opencode",
+      "task": "migration",
+      "accepted": true,
+      "turns": 9,
+      "active_seconds": 1060.022,
+      "source_matches_current": true,
+      "in_controller_outcomes": true
+    }
+  ],
+  "independent_final_acceptance": "pending",
+  "limits": [
+    "Three synthetic task families use real native CLIs, persisted sessions, local Qwen and filesystem edits; this is not a production repository trial.",
+    "Harness acceptance and selected posthoc contract probes are separate. Extra edge cases are not exhaustive or preregistered; no universal quality percentage follows.",
+    "Historical and setup receipts remain listed separately and are excluded from the current matrix denominator.",
+    "Active seconds measure client execution without idle padding. They are not decode tokens/second.",
+    "No paired no-Sift ablation establishes whether compaction caused any task defect."
+  ]
+}

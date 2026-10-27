@@ -1,0 +1,17 @@
+{
+  "complete": false,
+  "reason": "Commander stopped the owned CLI process tree after the three-minute artifact checkpoint was missed; no artifact/verdict/repair was produced.",
+  "exit": {
+    "exit_code": 1,
+    "alias": "local-inference-worker-bd7f26c7397b",
+    "route": "http://127.0.0.1:4000",
+    "model": "default"
+  },
+  "revocation": {
+    "alias": "local-inference-worker-bd7f26c7397b",
+    "revoked": true
+  },
+  "parent_action": "Representative offline hook/native-budget probe, not a captured-wire replay. See stress-feedback-review.json.",
+  "supporting_inference_only": true,
+  "excluded_from_local_test_session_counts": true
+}

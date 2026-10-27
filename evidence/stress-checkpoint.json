@@ -1,8 +1,8 @@
 {
   "state": "running",
-  "controller_pid": 69208,
+  "controller_pid": 73836,
   "upstream": "http://127.0.0.1:8090/v1",
-  "controller_sha256": "ae9f55119bc02db3fc7973052d4799a2eea29422ff4d4e90099e3a87d5cac185",
+  "controller_sha256": "02222d0cec9b35c8c2c1fa2f52c540b1be0cf94fafc4ed6fc79c52b41f367058",
   "planned_sessions": 22,
   "required_qualifying_sessions": 21,
   "minimum_active_seconds": 185,
@@ -309,14 +309,38 @@
       "failure": "native turn, hidden tests, history fact, or session continuity failed",
       "reused_existing_accepted_receipt": false,
       "reviewed_short_failure": true
+    },
+    {
+      "case": {
+        "client": "codex",
+        "task": "expenses",
+        "seed": 2051,
+        "repeat": 1
+      },
+      "receipt": "tmp/stress/sessions/codex-expenses-r1/result.json",
+      "sha256": "78c57e757638e780e437be033b7d48bd14c68d4cb8a6d98c76d6242d6e0c5175",
+      "accepted": false,
+      "qualifying_long_session": false,
+      "active_client_seconds": 240.326,
+      "turns": 1,
+      "failure": "native turn, hidden tests, history fact, or session continuity failed",
+      "reused_existing_accepted_receipt": false,
+      "reviewed_short_failure": true
     }
   ],
   "scope": "Frozen uncommitted Sift candidate; real native CLIs in synthetic evolving workspaces. First-stage Sift hook uses LiteLLM counting; final gateway Sift uses the backend native full-request counter. No scripted idle padding or cloud inference.",
-  "acknowledged_short_failure": {
-    "receipt": "tmp/stress/sessions/opencode-expenses-r1/result.json",
-    "sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
-    "accepted": false
-  },
+  "acknowledged_short_failures": [
+    {
+      "receipt": "tmp/stress/sessions/opencode-expenses-r1/result.json",
+      "sha256": "ce3194600f47f6668bfad759e562d61da60fbcc8dc168da38d9fb1ed1286398f",
+      "accepted": false
+    },
+    {
+      "receipt": "tmp/stress/sessions/codex-expenses-r1/result.json",
+      "sha256": "78c57e757638e780e437be033b7d48bd14c68d4cb8a6d98c76d6242d6e0c5175",
+      "accepted": false
+    }
+  ],
   "plan": [
     {
       "client": "claude",
@@ -451,14 +475,14 @@
       "repeat": 2
     }
   ],
-  "updated_at": "2026-10-27T04:16:30.442586+00:00",
+  "updated_at": "2026-10-27T04:26:19.693373+00:00",
   "accepted_sessions": 16,
   "qualifying_long_sessions": 16,
   "current_case": {
-    "index": 18,
-    "client": "codex",
-    "task": "expenses",
-    "seed": 2051,
-    "repeat": 1
+    "index": 19,
+    "client": "claude",
+    "task": "engineering",
+    "seed": 2831,
+    "repeat": 2
   }
 }

@@ -1,0 +1,49 @@
+{
+  "accepted": false,
+  "receipt_sha256": "78c57e757638e780e437be033b7d48bd14c68d4cb8a6d98c76d6242d6e0c5175",
+  "files": [
+    {
+      "file": "evidence/stress-failures/codex-expenses-r1/result.json.gz",
+      "raw_sha256": "78c57e757638e780e437be033b7d48bd14c68d4cb8a6d98c76d6242d6e0c5175"
+    },
+    {
+      "file": "evidence/stress-failures/codex-expenses-r1/turn-00.jsonl.gz",
+      "raw_sha256": "6577395fb2fa2f8c30bc043357a0a79afed719c4de6c38f95aa14907d9f8adcc"
+    },
+    {
+      "file": "evidence/stress-failures/codex-expenses-r1/turn-00.stderr.txt.gz",
+      "raw_sha256": "38931f10b80fc39460b5f03e327eb385ba49e9fa8ad0dc5a27f5b222c7d3d3d0"
+    },
+    {
+      "file": "evidence/stress-failures/codex-expenses-r1/turn-00.hidden-tests.txt.gz",
+      "raw_sha256": "df7dee0799c176d74af973efcfded08518affce30a1a463545cacd9743706bf4"
+    },
+    {
+      "file": "evidence/stress-failures/codex-expenses-r1/workspace-task.py.gz",
+      "raw_sha256": "8937f5f9e84ab9f1ad150e7edcdf244a851cec3a67fb43ed9b4284d22daeb228"
+    },
+    {
+      "file": "evidence/stress-failures/codex-expenses-r1/workspace-test_task.py.gz",
+      "raw_sha256": "627cf646744df0b4ddd6cf203c4bdfa93a5ef0987e46fba72198716615cc61ce"
+    },
+    {
+      "file": "evidence/stress-failures/codex-expenses-r1/workspace-evidence.json.gz",
+      "raw_sha256": "024f55c5f358c5a573ffad53a3110ad5a85602448bc7d522d99f8bd6b7c68ba9"
+    }
+  ],
+  "active_seconds": 240.326,
+  "finding": "First-turn240s timeout. Historical fact retained; model repeatedly rewrote code still failing case-insensitive expense grouping. Compaction feedback retention is under bounded offline investigation.",
+  "effect": "A second short failure means the existing22-attempt plan can yield at most20 corrected-epoch nine-turn long sessions. Target21 remains unmet; do not substitute a passing percentage or silently add retries.",
+  "source_sha256": {
+    "sift.core": "7ccfa75028e32fcc2ac748c2b073422850db0fc7b8f9fb88dc690cc62d9ad748",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "dc18159c3d300a2ae7b35416b2cf1345087405a9994a3ab1029027ad04b3c22d",
+    "sift.litellm_responses": "d0ab3526f854c85f9756027f365f57d6cd1c3fa3a1ea11eba130ae6f357aff03",
+    "stress.acceptance_tasks": "79ff061c83e265f3b9bdf54a81217313533a886167854fb44ee7ba3af9ffd015",
+    "stress.cli_acceptance": "7634e6cafbcbc9566c950c4646e8a670d979f2ee31dd40b9f9f70833cd1fef45",
+    "stress.cli_campaign": "8f2308154dc7ae6b8e8782b179a983a5ded95adde5a682257a839ea16d0253d7",
+    "app/budget.py": "db41769b65c15e1e8748484d83069ccce8a22338ad47fb6df504dff77912b242",
+    "app/gateway.py": "128718d51c3c7f0ee840f4ed8b8f3799b4e2718b335762cb42c183b49085d6fc",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  }
+}
