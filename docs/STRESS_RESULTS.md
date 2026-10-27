@@ -53,3 +53,6 @@ Case4 of balanced v2 exposes a confirmed first-stage historical-source omission:
 
 
 Balanced case5 OpenCode expenses is also genuinely rejected: one240.362s turn, failing category grouping, and no successful terminal CLI completion. Parent reproduces the defect on the saved output; all10 historical-source captures retain the approved setting. This remains separate from the recognizer's potential false-negative issue. See [failed-case review](../evidence/balanced-v2-case5-failure-review.json). Candidate aggregate22 remains provisional; cases6..9 and full independent acceptance are still pending.
+
+
+Balanced case6 confirms the same first-stage source omission through Codex Responses:9 accepted task turns/805.99s, all9 parent-seed/native/public checks passing,43 HTTP200 requests and valid native bounds, but requests41..42 omit the required historical fact from their captured excerpts. Live file-stage tests and the portable fixture preflight pass. The case remains rejected and no setting/output damage is inferred. See [case6 evidence](../evidence/balanced-v2-case6-retention-failure.json). Candidate aggregate remains22, with Codex6; the per-client gate and final independent full-goal verdict remain unmet. Cases7..9 are still pending.

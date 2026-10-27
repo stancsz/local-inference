@@ -408,5 +408,11 @@
     46
   ],
   "limits": "Exact first-stage compacted historical excerpts, not full provider wire. Historical setting remains correct in evidence.json; no demonstrated downstream artifact damage. Do not attribute this source-loss failure to Claude CLI.",
-  "no_reroll_or_promotion": true
+  "no_reroll_or_promotion": true,
+  "read_only_diagnostic": {
+    "captured_reserved_anchor": "[message 8 user] ERROR: test_behavior / FAIL: test_evidence",
+    "source_function": "sift.core._stable_anchor",
+    "source_observation": "The function returns the first diagnostic candidate before considering query-independent candidates from the first historical message.",
+    "causal_status": "Inspection hypothesis only; no counterfactual reproduction or fix claimed. Full frozen source and all captures remain preserved."
+  }
 }
