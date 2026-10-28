@@ -14,7 +14,8 @@ ROOT=Path(__file__).resolve().parents[1]
 
 def input_budget_invariant(text):
     plain = text.replace('`', '')
-    return bool(re.search(r'\b(?:sift[ _]+)?target is (?:part of|an adaptive policy anchor inside) the input budget(?:,|\s+and(?: is)?)\s+never added to it\b',plain,re.I))
+    return bool(re.search(r'\b(?:sift[ _]+)?target is (?:part of|an adaptive policy anchor inside) the input budget(?:,|\s+and(?: is)?)\s+never added to it\b',plain,re.I)
+        or re.search(r'\bsift[ _]+target(?:\s*=\s*[0-9]+)? is the adaptive policy anchor, not a fixed forwarded budget;\s+it is part of the input budget and never added to it\b',plain,re.I))
 
 def validate_gpu_verification_commands(text):
     for block in re.findall(r'```powershell\s*\n(.*?)```',text,re.S|re.I):
