@@ -1,0 +1,25 @@
+{
+  "sealed_at": "2026-10-28T00:00:50.089268+00:00",
+  "source_commit": "7f05e923ef686079d8b2017fcf2426f94c50a5e5",
+  "purpose": "Matched current shared-weight MTP on/off decode comparison; only after the sealed Codex case is terminal.",
+  "case_order": [
+    "shared-on",
+    "off"
+  ],
+  "context_window": 40960,
+  "draft_tokens_on": 4,
+  "ubatch": 64,
+  "gpu_layers": 99,
+  "samples_per_arm": 2,
+  "max_tokens": 256,
+  "temperature": 0,
+  "seed": 42,
+  "script_sha256": "e96f0dc5c3fb5deda0ff52156364f19818a3a71c41f5dc31289c4be8bc6e97c8",
+  "startup_sha256": "b2b132b622f5177970f7f71f8f7264506c8d6cfdad112079732def32467ce588",
+  "prompt_source": "scripts/benchmark.py fixed JSONL-parser prompt",
+  "limits": "Backend decode timings only; do not infer end-to-end task quality, compaction latency or isolated GPU residency. No qualification increment.",
+  "restore": "Original images, captured environment and mounted startup bytes; fresh local/OpenAI smokes after restoration.",
+  "attempts_per_arm": 1,
+  "timeout_seconds_per_command": 660,
+  "no_case_mutations": "Do not change sealed sources, seeds, deadlines or client settings."
+}
