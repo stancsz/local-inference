@@ -1,3 +1,15 @@
+# Workhorse usefulness evaluation
+
+## Current goal
+
+Ask: perform more actual acceptance tests to evaluate useful local development and general workhorse tasks, and establish when to use a cloud model instead.
+
+Acceptance: a preregistered fresh varied task pack with explicit contracts and hidden checks; actual native Claude tasks through local Qwen8090; fixed first-attempt and feedback limits with every revision/failure preserved; native tool/artifact provenance, source identity and measured latency/token usage where available; separate first-pass/feedback outcomes and uncertainty from small samples; practical local-versus-cloud decision guide, with cloud superiority unclaimed absent matched evidence. Independently inspect task/check coverage and actual outputs. Preserve caller permissions, runtime and all prior frozen outcomes.
+
+Remaining: task pack is being implemented by exactly one scoped4000/default CLI worker. Parent owns runner, review, sealed plan and subsequent execution. No new task inference has run. Supporting route observations are separate from product inference; old acceptance remains closed and unchanged.
+
+## Previous completed integration goal
+
 # Productive local inference with Sift
 
 ## Current checkpoint (2026-10-27)

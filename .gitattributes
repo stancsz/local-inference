@@ -98,3 +98,8 @@
 /evidence/vm-publication-check-v1.json -text -whitespace
 /evidence/final-daily-driver-acceptance-v1/** -text -whitespace
 /evidence/final-daily-driver-acceptance-v1.json -text -whitespace
+/workhorse/** -text -whitespace
+/tests/test_workhorse_cases_v1.py -text -whitespace
+/tests/test_workhorse_runner_v1.py -text -whitespace
+/evidence/workhorse-v1/** -text -whitespace
+/evidence/workhorse-v1-plan.json -text -whitespace
