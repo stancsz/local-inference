@@ -1,0 +1,154 @@
+{
+  "route": "http://127.0.0.1:4000",
+  "model": "default",
+  "artifact_commit": "8681a198f65a3188be50f9e576a9d7be521b0936",
+  "session_id": "4d24c2d4-2fc5-4422-8c25-1e8584d3572f",
+  "verdict": {
+    "verdict": "NOT_READY",
+    "scope": "Fresh read-only review of the FULL GOAL. This is not an increment-only verdict. No product, evidence, acceptance, or artifact edits were made.",
+    "criteria": [
+      {
+        "criterion": "Standalone minimal Docker Qwen gateway; no Subroute runtime dependency, cloud fallback, or :4000 product route",
+        "status": "MET",
+        "evidence": "Inspected compose.yaml, gateway.yaml, app/gateway.py, and app/budget.py. The product stack has gateway and inference containers; the product aliases route to local inference, and mandatory Sift runs in the gateway path. README describes loopback endpoints and no Subroute, database, Redis, or cloud fallback. The :4000 route is described as a supporting worker route, not product inference."
+      },
+      {
+        "criterion": "Qwen3.8 27B, 3/4-bit quantization with MTP",
+        "status": "MET",
+        "evidence": "The inspected launcher uses the IQ3_XXS target GGUF and shared embedded MTP head by default, with Q4_0 draft KV settings. The published model audit identifies main IQ3_XXS and MTP Q4_0. These disk sizes are not runtime-residency measurements."
+      },
+      {
+        "criterion": "Mandatory adaptive Sift budgeting for 256k\u20131M histories, forwarding a dynamic 24k\u201364k working set",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "Inspected Sift dynamic policy and the gateway\u2019s native-tokenizer selection and final window check. The policy derives a budget from raw native size and a configured ratio, bounded by minimum, maximum, and available context; protected content fails closed except for the explicitly guarded already-fitting fallback. Replayed 256k and 1M context evidence reports raw counts 257,539 and 1,001,638, targets 32,193 and 65,536, and forwarded counts 32,053 and 33,300. This establishes those bounded examples, not universal semantic retention."
+      },
+      {
+        "criterion": "Model+MTP GPU residency below 14 GB",
+        "status": "UNVERIFIED",
+        "evidence": "Long-profile v5 reports a conservative sampled whole-host delta of 13,747,879,936 bytes, below the stated 14,000,000,000-byte threshold, across 382 samples with a maximum gap of about 1.357 seconds. The receipt explicitly says this is whole-host occupancy, not isolated per-allocation residency, and identifies desktop drift and unsampled transients as limitations. Therefore it does not establish the requested model+MTP GPU residency measurement."
+      },
+      {
+        "criterion": "Prefer 65,536 input + 4,096 output, or demonstrate a productive smaller profile",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "The optional long profile passed exact 65,536-input plus 4,096-output synthetic capacity without truncation in 188.39 seconds. Its receipt explicitly does not establish productivity from that synthetic test alone. The 40,960-context daily profile is the selected smaller profile; published evidence reports live workflow use and bounded native tasks. The user\u2019s productive-smaller-profile alternative is therefore supported, while simultaneous 64k input and under-14-GB isolated residency is not established."
+      },
+      {
+        "criterion": "Measured prefill/decode speed and MTP-on/off behavior",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "The matched 40k shared-MTP comparison reports 102.75 tok/s on versus 49.65 tok/s off (2.0695x), using fresh server instances and two short 256-token samples per arm. The long-profile capacity receipt reports 543.75 prompt tok/s and 60.36 full-context decode tok/s. These are bounded backend samples, not statistical guarantees, end-to-end task throughput, or output-quality equivalence."
+      },
+      {
+        "criterion": "Protect caller approvals/settings and mandatory content; fail closed when it cannot fit",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "Inspected gateway and budget code. The published live Responses catalog challenge returned a nonce present only in caller tool metadata, and an unsupported approval-state challenge returned 422. The gateway preserves catalog metadata in protected instructions while leaving host permission enforcement in place. Sift\u2019s protected-content rules and native final-context validation are present. These checks do not prove every possible caller protocol state is preserved; unsupported hosted/opaque provider state is explicitly rejected."
+      },
+      {
+        "criterion": "Three real native Claude productivity/engineering tasks through local inference + Sift",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "Long-profile v5 parent evidence reports all 3 native Claude tasks passed and all artifacts passed current parent checks. The evidence is bounded to the recorded tasks and artifacts; it does not certify general model correctness."
+      },
+      {
+        "criterion": "Adopted campaign: 21 qualifying sessions, seven per CLI, with final independent review",
+        "status": "PARTIALLY_MET",
+        "evidence": "The repaired-source Codex replay verified nine turns, 843.730 active seconds, one session ID, 18 snapshots, 54 behavior checks, 42 source captures and 42 native context checks. The reconciled candidate count is 24 across separate epochs: Claude 8, OpenCode 9, Codex 7. Thus the numeric aggregate and per-client counts are met without promoting historical failures. The prior balanced-v2 independent review was NOT_READY; this review does not erase its recorded campaign failures or establish that all earlier retention/generated-contract defects are resolved."
+      },
+      {
+        "criterion": "Improve both repositories, commit/push scoped milestones, and provide reproducible setup/evidence",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "The inspected ledger and README document merged Sift changes, including PR #62, pinned source/runtime identity, setup instructions, profiles, limitations, and linked evidence. This review did not independently inspect remote repository state or verify every publication beyond the supplied publication check."
+      },
+      {
+        "criterion": "Optional cloud-use reduction or equivalent-task savings claim",
+        "status": "NOT_A_REQUIRED_ACHIEVEMENT",
+        "evidence": "The original goal records 99%+ reduction as an optional marketing target, not an achieved acceptance criterion. README correctly labels it a target without an equivalent-task benchmark."
+      }
+    ],
+    "disproof_first_findings": [
+      "The strongest blocker is the memory claim: the passing v5 measurement is a sampled whole-host delta, not isolated model+MTP residency.",
+      "The preserved campaign ledger contains real source-retention omissions and generated-contract failures in rejected sessions. The newer repaired-source Codex case passes its bounded replay, but does not retroactively repair or promote those failures.",
+      "The campaign evidence is explicitly split across epochs. The total and per-client counts meet the adopted numeric threshold, but those counts do not prove universal model correctness, semantic retention, or repaired-source nine-turn coverage for every earlier task."
+    ],
+    "remaining_work": [
+      "Obtain a measurement that directly establishes the requested model+MTP GPU-residency scope under 14 GB, or revise the acceptance claim to the explicitly evidenced sampled whole-host-delta scope.",
+      "Keep original rejected outcomes intact; if broader repaired-source coverage is required, predeclare a separate source/workload epoch and review it without replacing failed historical outcomes.",
+      "Treat semantic retention and generated-code correctness as bounded and unresolved beyond the specific passing checks and tasks."
+    ],
+    "attribution": {
+      "software_and_policy": "The inspected runtime and Sift policy implement native-token counting, adaptive bounded selection, protected work handling, and fail-closed checks. Separate archived cases document software/model interaction failures, including observed first-stage source omissions and actual generated-code errors; passing targeted repairs do not establish universal correctness.",
+      "model_and_hardware": "Generated mistakes are not evidence that Sift is faulty by themselves. The 64k profile\u2019s memory result is constrained by available hardware and confounded by whole-host occupancy; no isolated residency conclusion is supported.",
+      "marketing_targets": "99%+ cloud-token reduction is optional and unmeasured against an equivalent cloud-only workload; it is not treated as a required achieved criterion."
+    },
+    "review_limits": [
+      "Executed all 13 requested read-only page commands and personally inspected all four complete GOAL slices, including the original Ask/Acceptance, plus verifier, boundary, policy, checks, Codex, daily, and all three recovery pages.",
+      "The supplied page helper is not an independent verifier implementation. I inspected its source: it imports project parsing, native-evidence, stage-generation, and capture-inspection routines; its Codex checks reuse those project functions. Its outputs are useful replay evidence, but not an independent reimplementation of those checks.",
+      "The supplied publication check reported 588 files verified with zero mismatches; the project test run reported 422 passed. These support source/publication consistency and regressions, not full-goal acceptance.",
+      "The review did not make provider/network calls or alter runtime settings. Bounded artifacts cannot establish universal output quality, semantic-retention guarantees, continuous VRAM coverage, isolated residency, or equivalent-task cloud savings."
+    ]
+  },
+  "full_goal": "NOT_READY",
+  "qualification_increment": 0,
+  "revoked_key_alias": "local-shared-mtp-review-da992403a402",
+  "key_absent_from_list": true,
+  "successful_exact_page_commands": [
+    "python tmp/stress/final-goal-review-pages-v1.py --section goal1",
+    "python tmp/stress/final-goal-review-pages-v1.py --section goal2",
+    "python tmp/stress/final-goal-review-pages-v1.py --section goal3",
+    "python tmp/stress/final-goal-review-pages-v1.py --section goal4",
+    "python tmp/stress/final-goal-review-pages-v1.py --section verifier",
+    "python tmp/stress/final-goal-review-pages-v1.py --section boundary",
+    "python tmp/stress/final-goal-review-pages-v1.py --section policy",
+    "python tmp/stress/final-goal-review-pages-v1.py --section checks",
+    "python tmp/stress/final-goal-review-pages-v1.py --section codex",
+    "python tmp/stress/final-goal-review-pages-v1.py --section daily",
+    "python tmp/stress/final-goal-review-pages-v1.py --section engineering",
+    "python tmp/stress/final-goal-review-pages-v1.py --section migration",
+    "python tmp/stress/final-goal-review-pages-v1.py --section expenses"
+  ],
+  "review_cli_limits": {
+    "configured_max_turns": 18,
+    "reported_turns": 66,
+    "tool_calls": 65,
+    "empty_input_calls": 52,
+    "tool_result_errors": 52,
+    "host_timeout_seconds": 480,
+    "host_deadline_exceeded": false,
+    "note": "52 empty-argument Bash calls failed validation before the13 exact successful page commands. The CLI reports66 turns despite configured18; host deadline and scoped $5 key remained the hard bounds. This supporting-review fragility is not a sealed task or local Qwen/Sift failure."
+  },
+  "artifacts": [
+    {
+      "path": "evidence/final-goal-review-v1/final-goal-review-v1.py.gz",
+      "compressed_sha256": "17612f27da1e55f36573b1b4262c62ed69e988a039e9f4e90b871945c428fd00",
+      "raw_sha256": "b59f5563ddd13aea317c944f51ad08343b7d1be21edabfd9c92b8e51f7e39aeb"
+    },
+    {
+      "path": "evidence/final-goal-review-v1/final-goal-review-v1.plan.json.gz",
+      "compressed_sha256": "5a17ef74db149c5f278e98300109ec530ff7a9504f639a62cff0b301dc949b29",
+      "raw_sha256": "3a14af5249f05385dbd6f39ed63615acf0792202a389cf928fbb88532a7c20c3"
+    },
+    {
+      "path": "evidence/final-goal-review-v1/final-goal-review-v1.jsonl.gz",
+      "compressed_sha256": "b302df6d1ca4596d81d681e6cdbebbf35d1d242404cdd0b1ec9319d5397e24e7",
+      "raw_sha256": "0544b236d26f75f5aedb125c75250296ae8bc1ca62ad575910542a8c1fe9a311"
+    },
+    {
+      "path": "evidence/final-goal-review-v1/final-goal-review-v1.stderr.log.gz",
+      "compressed_sha256": "62787d2a2f1adab0f7e92087b5814eb25cf7718d73f255ddcb0c1b6b72e9980c",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8"
+    },
+    {
+      "path": "evidence/final-goal-review-v1/final-goal-review-v1.exit.json.gz",
+      "compressed_sha256": "0fba01b6a44f5dbd9599ce821314da0fd2f695dd2e599b25cb7df57e721142e8",
+      "raw_sha256": "f72ddc689ed6ec7a2afcd560238bee3754be23258b81b26ef00310fc21cebaba"
+    },
+    {
+      "path": "evidence/final-goal-review-v1/final-goal-review-v1.revocation.json.gz",
+      "compressed_sha256": "a1781e311d4a6f4ba01cd0bca5c85ad3c037d392051ed91dd6d5029519216af1",
+      "raw_sha256": "4c52442add7921f758bf6d5d3b166838b71f44283dd9f519dc77030acef85034"
+    },
+    {
+      "path": "evidence/final-goal-review-v1/final-goal-review-pages-v1.py.gz",
+      "compressed_sha256": "575250b75a0e928c92e1f57b7c89fcbfa8b307269297d26b4b8e380b3afb115c",
+      "raw_sha256": "fb829425aa4590bfd001a5562bae1766205608062bfb771810d31d26643eea46"
+    }
+  ]
+}
