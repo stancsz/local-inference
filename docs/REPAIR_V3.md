@@ -1,5 +1,7 @@
 # Sift and local inference repair
 
+Later verification: the separately sealed shared-MTP Codex session passes nine turns and 42 original-source captures, reaching seven parent-qualified sessions per client. The shared-weight long profile passes exact64k+4k, all three native tasks and the sampled host-delta memory criterion. These new receipts supplement the historical diagnostics below; they do not promote any rejected run. See [current stress results](STRESS_RESULTS.md) and [profile results](PROFILE_RESULTS.md). Final full-goal nonauthor acceptance is pending.
+
 The standalone gateway now runs Sift0.11.1, with source-coverage anchors and verified container/source identity. Normal Claude launches retain caller configuration, approval mode and tools. The isolated acceptance clients retain their existing approval/sandbox settings; no global configuration changed.
 
 | Confirmed software issue | Repair and evidence |

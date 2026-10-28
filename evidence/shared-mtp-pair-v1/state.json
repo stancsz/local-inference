@@ -1,0 +1,49 @@
+{
+  "plan": "evidence/shared-mtp-pair-v1-plan.json",
+  "pid": 15068,
+  "original": {
+    "inference": {
+      "image": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+      "environment": {
+        "UBATCH_SIZE": "64",
+        "SPEC_TYPE": "draft-mtp",
+        "CONTEXT_SIZE": "40960",
+        "GPU_LAYERS": "99",
+        "MTP_MODEL_PATH": "",
+        "DRAFT_GPU_LAYERS": "99",
+        "DRAFT_TOKENS": "4"
+      }
+    },
+    "gateway": {
+      "image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
+      "environment": {
+        "CONTEXT_SIZE": "40960",
+        "SIFT_TARGET": "32768",
+        "SIFT_COMPRESSION_RATIO": "8"
+      }
+    }
+  },
+  "arms": [
+    {
+      "name": "shared-on",
+      "average_decode_tok_s": 102.75066559945758,
+      "draft_accepted": [
+        194,
+        194
+      ]
+    },
+    {
+      "name": "off",
+      "average_decode_tok_s": 49.64918505245667,
+      "draft_accepted": [
+        0,
+        0
+      ]
+    }
+  ],
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "restored": true,
+  "status": "terminal",
+  "decode_ratio_on_over_off": 2.069533779676277
+}

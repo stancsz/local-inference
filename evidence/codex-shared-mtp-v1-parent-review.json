@@ -1,0 +1,940 @@
+{
+  "plan": "evidence/codex-shared-mtp-v1-plan.json",
+  "raw_accepted": true,
+  "parent_qualified": true,
+  "turns": [
+    {
+      "turn": 1,
+      "native_exact_replay": true,
+      "native": {
+        "terminal_success": true,
+        "calls": 8,
+        "completed": 8,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash",
+          "Bash",
+          "Bash",
+          "Bash",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "evidence.json",
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": true,
+        "workflow_ordered": true
+      },
+      "snapshots": [
+        {
+          "snapshot": "native",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.008s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            }
+          ]
+        },
+        {
+          "snapshot": "hidden",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.010s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.008s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "native_exact_replay": true,
+      "native": {
+        "terminal_success": true,
+        "calls": 6,
+        "completed": 6,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash",
+          "Edit",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": true,
+        "workflow_ordered": false
+      },
+      "snapshots": [
+        {
+          "snapshot": "native",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.010s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.008s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            }
+          ]
+        },
+        {
+          "snapshot": "hidden",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.008s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.006s\r\n\r\nOK\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "turn": 3,
+      "native_exact_replay": true,
+      "native": {
+        "terminal_success": true,
+        "calls": 6,
+        "completed": 6,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash",
+          "Edit",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": true,
+        "workflow_ordered": false
+      },
+      "snapshots": [
+        {
+          "snapshot": "native",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.008s\r\n\r\nOK\r\n"
+            }
+          ]
+        },
+        {
+          "snapshot": "hidden",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "turn": 4,
+      "native_exact_replay": true,
+      "native": {
+        "terminal_success": true,
+        "calls": 6,
+        "completed": 6,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash",
+          "Edit",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": true,
+        "workflow_ordered": false
+      },
+      "snapshots": [
+        {
+          "snapshot": "native",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            }
+          ]
+        },
+        {
+          "snapshot": "hidden",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.014s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.008s\r\n\r\nOK\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "turn": 5,
+      "native_exact_replay": true,
+      "native": {
+        "terminal_success": true,
+        "calls": 6,
+        "completed": 6,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash",
+          "Edit",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": true,
+        "workflow_ordered": false
+      },
+      "snapshots": [
+        {
+          "snapshot": "native",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.008s\r\n\r\nOK\r\n"
+            }
+          ]
+        },
+        {
+          "snapshot": "hidden",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.010s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "turn": 6,
+      "native_exact_replay": true,
+      "native": {
+        "terminal_success": true,
+        "calls": 4,
+        "completed": 4,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [],
+        "baseline_failed": false,
+        "final_passed": true,
+        "workflow_ordered": false
+      },
+      "snapshots": [
+        {
+          "snapshot": "native",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.008s\r\n\r\nOK\r\n"
+            }
+          ]
+        },
+        {
+          "snapshot": "hidden",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.009s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.007s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.008s\r\n\r\nOK\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "turn": 7,
+      "native_exact_replay": true,
+      "native": {
+        "terminal_success": true,
+        "calls": 6,
+        "completed": 6,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash",
+          "Edit",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": true,
+        "workflow_ordered": false
+      },
+      "snapshots": [
+        {
+          "snapshot": "native",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.017s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.012s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.016s\r\n\r\nOK\r\n"
+            }
+          ]
+        },
+        {
+          "snapshot": "hidden",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.015s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.010s\r\n\r\nOK\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "turn": 8,
+      "native_exact_replay": true,
+      "native": {
+        "terminal_success": true,
+        "calls": 6,
+        "completed": 6,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash",
+          "Edit",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [
+          "task.py"
+        ],
+        "baseline_failed": true,
+        "final_passed": true,
+        "workflow_ordered": false
+      },
+      "snapshots": [
+        {
+          "snapshot": "native",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.012s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.017s\r\n\r\nOK\r\n"
+            }
+          ]
+        },
+        {
+          "snapshot": "hidden",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.013s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "turn": 9,
+      "native_exact_replay": true,
+      "native": {
+        "terminal_success": true,
+        "calls": 3,
+        "completed": 3,
+        "successful_tools": [
+          "Bash",
+          "Bash",
+          "Bash"
+        ],
+        "unmatched_results": 0,
+        "native_errors": 0,
+        "read_files": [
+          "task.py",
+          "test_task.py"
+        ],
+        "written_files": [],
+        "baseline_failed": false,
+        "final_passed": true,
+        "workflow_ordered": false
+      },
+      "snapshots": [
+        {
+          "snapshot": "native",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.017s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.012s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.014s\r\n\r\nOK\r\n"
+            }
+          ]
+        },
+        {
+          "snapshot": "hidden",
+          "behavior": [
+            {
+              "seed_class": "public",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.013s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "hidden",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.013s\r\n\r\nOK\r\n"
+            },
+            {
+              "seed_class": "parent",
+              "exit": 0,
+              "output": "..\r\n----------------------------------------------------------------------\r\nRan 2 tests in 0.011s\r\n\r\nOK\r\n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "request": 0,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 1,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 2,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 3,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 4,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 5,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 6,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 7,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 8,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 9,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 10,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 11,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 12,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 13,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 14,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 15,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 16,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 17,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 18,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 19,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 20,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 21,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 22,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 23,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 24,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 25,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 26,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 27,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 28,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 29,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 30,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 31,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 32,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 33,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 34,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 35,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 36,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 37,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 38,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 39,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 40,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    },
+    {
+      "request": 41,
+      "gold_retained": true,
+      "original_fact_observed_in_source0": true,
+      "excerpt_count": 2,
+      "needle_matches": 1
+    }
+  ],
+  "active_seconds": 843.73,
+  "failures": [],
+  "prior_candidate_total": 23,
+  "candidate_total_after_parent": 24,
+  "per_client_after_parent": {
+    "claude": 8,
+    "opencode": 9,
+    "codex": 7
+  },
+  "full_goal": "NOT_READY",
+  "scope": "Per-turn immutable snapshots, native continuity, archived source facts, additional parent seeds and downstream context; final nonauthor verdict remains required."
+}

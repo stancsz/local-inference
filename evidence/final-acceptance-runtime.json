@@ -1,0 +1,26 @@
+{
+  "version": "0.11.1",
+  "modules": {
+    "sift.core": "8bbbc18dbcf00c5c524a959736fe69fe7fc35bd5ee43688ce80c79efa68ce3a5",
+    "sift.dynamic": "f544cd630937be9734f7fed446c18ca5b5d2bf14b92e4d615108b2e507f62428",
+    "sift.litellm_proxy": "12950d22a2494efbdddc602e9437720cb94f73e931446630c522cb320d0eb246",
+    "sift.litellm_responses": "97a3915cd1af55313f6b760ae793bf8b0eda586b0229aa90f0fc8911fd0a2464"
+  },
+  "app": {
+    "budget.py": "c86ab1174bef327d567af8a4adf86f946f659740bcce66b1048b0acaef55701e",
+    "gateway.py": "0c71b4ab740fb1b8ea005d8e4daecb3f261fb959d428a45ebe0a62c768658f3f",
+    "gateway.yaml": "ff488c1253cd593f02506b81529f65c9655ec4cc7031fa140eb7ce4eba991255"
+  },
+  "startup_sha256": "b2b132b622f5177970f7f71f8f7264506c8d6cfdad112079732def32467ce588",
+  "all_source_bytes_match": true,
+  "sift_revision": "2f0ef2786345fe0868b282903712fd1ac92d43fe",
+  "sift_pr62": {
+    "mergeCommit": {
+      "oid": "3fe2b8f560fff6a51621ec82d8f2d717a27e5c06"
+    },
+    "mergedAt": "2026-10-27T18:14:47Z",
+    "state": "MERGED",
+    "title": "Recognize native unittest counts and Windows executable quoting",
+    "url": "https://github.com/stancsz/sift/pull/62"
+  }
+}

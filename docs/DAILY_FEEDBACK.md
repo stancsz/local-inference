@@ -1,5 +1,7 @@
 # Daily task feedback acceptance
 
+Current follow-up: the shared-weight startup has422 passing project tests and a scoped nonauthor READY review. Its fresh default one-shot remains2/3, while the separate bounded operator workflow passes after one repair. The long shared-weight profile passes3/3 with no repairs. See [profile results](PROFILE_RESULTS.md) and [parent artifacts](../evidence/shared-mtp-launcher-v1/parent-review.json). The historical feedback experiments below retain their original outcomes and limits.
+
 Run the three existing local productivity tasks with bounded native feedback:
 
 ```powershell

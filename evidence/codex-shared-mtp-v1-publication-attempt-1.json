@@ -1,0 +1,6 @@
+{
+  "status": "failed_before_manifest",
+  "error": "ModuleNotFoundError: gateway.yaml was treated as an import name instead of an existing repository file",
+  "effect": "Partial task-owned archives remain; retry must verify identical existing bytes, never delete or overwrite original campaign artifacts.",
+  "qualification_increment": 0
+}

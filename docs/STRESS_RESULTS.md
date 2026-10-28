@@ -1,5 +1,16 @@
 # Local CLI stress results
 
+## Current repaired-source checkpoint
+
+The separately sealed shared-MTP Codex incident-log session passed all nine native turns in 843.730 active seconds. Parent replay verified 18 immutable snapshots, 54 public/hidden/additional-parent behavior checks, the same native session, zero native errors and 42 exact original-source excerpt captures. All 42 recorded gateway requests returned 200 and their 24,339–24,576 native input tokens plus output reserve/headroom fit the 40,960-token window. Native sandbox and portable-fixture preflights verified outside-workspace write denial. The original inputs, seeds, 240-second turn deadlines and all historical failures remain unchanged.
+
+Parent-qualified candidate totals are now **24: Claude 8 / OpenCode 9 / Codex 7**, across separately identified source/workload epochs: original 19 + prior supplement 1 + balanced 3 + repaired-source Codex 1. The seven-per-client gate is reached. The original 12/19 added contract failures remain historical failures; no old artifact or rejected session is promoted. These counts are bounded workflow/retention qualifications, not a claim of universal generated-code correctness.
+
+See the [sealed plan](../evidence/codex-shared-mtp-v1-plan.json), [parent replay](../evidence/codex-shared-mtp-v1-parent-review.json) and [complete publication](../evidence/codex-shared-mtp-v1-publication.json). Exact captures concern first-stage historical excerpts, not the full downstream wire payload. Separate 256k/1M native-count/provider-answer tests establish their own bounded retention results. The Windows capture proxy emitted a connection-close callback traceback; it is preserved, with no corresponding recorded failed HTTP response or native error. Final full-goal nonauthor acceptance remains **pending**.
+
+## Historical matrices and reviews
+
+
 Frozen original matrix checkpoint: 2026-10-27T05:47:46.651886+00:00. Its controller is terminal. Current prospective-batch state is in [balanced-v2-state](../evidence/balanced-v2-state.json); final independent acceptance remains **NOT_READY**.
 
 19 harness passes and 3 failed attempts among 22 terminal matrix attempts; 19 reached nine turns and over 180 active seconds. At this original-matrix checkpoint, the21-session shortfall was **2**; see the separate later epochs below for current candidate totals. The fixed plan has 22 attempts; failed one-turn attempts and older epochs are not promoted into current passes.

@@ -2,7 +2,7 @@
 
 **Do the token-heavy work locally. Bring in a strong cloud advisor for the decisions that need it.**
 
-Run a quantized 27B model with MTP at **98.08 tok/s average decode** on a 16 GB RTX 5070 Ti. Keep file reads, drafts and tool loops on your GPU; send a small evidence packet to an optional cloud advisor. Two containers, explicit limits, reproducible receipts.
+Run a quantized 27B model with MTP at **102.75 tok/s average decode** on a 16 GB RTX 5070 Ti. Keep file reads, drafts and tool loops on your GPU; send a small evidence packet to an optional cloud advisor. Two containers, explicit limits, reproducible receipts.
 
 [Get started](#setup) · [Practical setup and advisor workflow](docs/SETUP.md) · [Measured speed](#measured-speed-on-rtx-5070-ti) · [Evidence and limits](VERIFICATION.md)
 
@@ -10,7 +10,7 @@ An independent, minimal LiteLLM gateway serving Dockerized Qwen3.8-27B IQ3_XXS w
 
 **Status: the recommended local workflow is running and verified on this host.** Live text/tool continuation, three Claude productivity tasks, 256k/1M compaction and exact 64k+4k capacity have receipts. See [verification and limits](VERIFICATION.md), [GOAL.md](GOAL.md), and [evidence](evidence). These bounded tests do not establish general task quality or information-retention parity.
 
-The [native CLI stress campaigns](docs/STRESS_RESULTS.md) are terminal: 23 candidate qualifying sessions across separate workload epochs (Claude 8, OpenCode 9, Codex 6). Full-goal acceptance remains NOT_READY. The gateway now uses Sift 0.11.1's source-coverage repair; failed historical runs stay unchanged.
+The [native CLI stress campaigns](docs/STRESS_RESULTS.md) are terminal: 24 parent-qualified candidate sessions across separate workload/source epochs (Claude 8, OpenCode 9, Codex 7). Full-goal acceptance remains NOT_READY. The gateway now uses Sift 0.11.1's source-coverage repair; failed historical runs stay unchanged.
 
 The latest [shared-weight MTP experiment](docs/PROFILE_RESULTS.md) passed exact **64k input + 4k output**, both 256k/1M retention checks and **3/3 native Claude tasks**. Its conservative sampled host delta was **13.748 decimal GB**; isolated GPU residency remains unmeasured. The optional profile reached 90.51 tok/s on the short decode benchmark and 60.36 tok/s at full synthetic context. All historical failures remain published; full-goal acceptance is still pending.
 
@@ -25,18 +25,20 @@ The latest [shared-weight MTP experiment](docs/PROFILE_RESULTS.md) passed exact 
 
 ## Measured speed on RTX 5070 Ti
 
-**98.08 tok/s average decode** on the current shared-weight MTP daily profile (99.37 and 96.79 tok/s samples), with four draft tokens and a 40,960-token context window. The earlier separate-draft configuration reached 103.45 tok/s; these are separately recorded runs, not a controlled speed-regression comparison.
+**102.75 tok/s average decode** in the matched shared-weight MTP daily comparison (101.58 and 103.92 tok/s samples), with four draft tokens and a 40,960-token context window. The earlier separate-draft configuration reached 103.45 tok/s; these are separately recorded runs, not a controlled speed-regression comparison.
 
 | Context profile | MTP draft tokens | Average decode | Raw receipts |
 | --- | --- | --- | --- |
-| Current 40k shared weights | 4 | **98.08 tok/s** | [Two samples](evidence/benchmark-shared-mtp-default-v1.json) |
+| Current 40k shared weights, matched | 4 | **102.75 tok/s** | [Two samples](evidence/benchmark-shared-pair-v1-shared-on.json) |
+| Current 40k matched baseline | Disabled | 49.65 tok/s | [Two samples](evidence/benchmark-shared-pair-v1-off.json) |
+| Initial 40k shared weights | 4 | 98.08 tok/s | [Two samples](evidence/benchmark-shared-mtp-default-v1.json) |
 | Optional 64k shared weights | 2 | **90.51 tok/s** | [Two samples](evidence/benchmark-shared-mtp-v5-32.json) |
 | Historical 40k separate draft | 4 | 103.45 tok/s | [Two samples](evidence/benchmark-mtp4-40k.json) |
 | 40k daily | 2 | 91.60 tok/s | [Two samples](evidence/benchmark-mtp2-40k.json) |
 | 64k-input | 2 | 91.18 tok/s | [Two samples](evidence/benchmark-mtp-64k-ubatch64.json) |
 | 64k-input | Disabled | 49.92 tok/s | [Two samples](evidence/benchmark-no-mtp-64k-ubatch64.json) |
 
-The historical separate-draft larger-window comparison measured **1.83× faster decode with MTP** ([summary](evidence/benchmark-summary.json)). Each row contains two sequential short-prompt runs generating 256 tokens each, one cold and one cached. The context profiles describe capacity; these runs did not fill that window. Rates measure backend token generation, excluding Sift compaction and prompt processing; they do not measure end-to-end Claude task throughput or establish equal output quality. See [verification](VERIFICATION.md) for the separate long-context and real-task results.
+The current matched 40k comparison measured **2.07×** decode speed with shared MTP ([receipt](evidence/shared-mtp-pair-v1-parent-review.json)); it used a fresh server for each arm and restored the original runtime afterward. The historical separate-draft larger-window comparison measured **1.83× faster decode with MTP** ([summary](evidence/benchmark-summary.json)). Each row contains two sequential short-prompt runs generating 256 tokens each, one cold and one cached. The context profiles describe capacity; these runs did not fill that window. Rates measure backend token generation, excluding Sift compaction and prompt processing; they do not measure end-to-end Claude task throughput or establish equal output quality. See [verification](VERIFICATION.md) for the separate long-context and real-task results.
 
 ## Setup
 

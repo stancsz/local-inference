@@ -1,0 +1,131 @@
+{
+  "scope": "Two samples per arm, same fixed short prompt, fresh server per arm, shared MTP4 vs none, default40960 context",
+  "arms": [
+    {
+      "name": "shared-on",
+      "average_decode_tok_s": 102.75066559945758,
+      "draft_accepted": [
+        194,
+        194
+      ]
+    },
+    {
+      "name": "off",
+      "average_decode_tok_s": 49.64918505245667,
+      "draft_accepted": [
+        0,
+        0
+      ]
+    }
+  ],
+  "ratio": 2.069533779676277,
+  "restored": true,
+  "qualification_increment": 0,
+  "limitations": "Backend decode timings only. Two samples do not establish a statistical confidence interval, equivalent output quality, end-to-end throughput or isolated memory residency.",
+  "artifacts": [
+    {
+      "path": "evidence/shared-mtp-pair-v1/off-benchmark.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/off-benchmark.stdout.log",
+      "sha256": "01c91cffaa8203738f3c10f8172088232b3d34ca5ce8e0b1f2b8a33d299dadcc"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/off-up.stderr.log",
+      "sha256": "729ef4f1e370f29cee2cf25fed80d20c9829f928601d3eeb6714e012efafda51"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/off-up.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/off.json",
+      "sha256": "e202a147500f7f9336ccc00e5f28eca0b1e0096ac610ab7dc7f1209a05056ee3"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/producer/benchmark.py",
+      "sha256": "e96f0dc5c3fb5deda0ff52156364f19818a3a71c41f5dc31289c4be8bc6e97c8"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/producer/shared-mtp-pair-v1.py",
+      "sha256": "3b5f3b0ce4bdfa0dbb6dd46d5d6b69475bce3287a55ddeeb501e54fb17668637"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/producer/start-inference.sh",
+      "sha256": "b2b132b622f5177970f7f71f8f7264506c8d6cfdad112079732def32467ce588"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/restore-up.stderr.log",
+      "sha256": "729ef4f1e370f29cee2cf25fed80d20c9829f928601d3eeb6714e012efafda51"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/restore-up.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/restored-local.json",
+      "sha256": "a0a817179557d2f90e5586cbe96ebc47a11d7a4a34d40bfe44f43d09a343f534"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/restored-local.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/restored-local.stdout.log",
+      "sha256": "1a47d2ee5514ef68f247cb080e797ca0747b9495c5bbfd3b480b82c863f0db5a"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/restored-openai.json",
+      "sha256": "759a1cad4d954ad82bbcb6a6d0f6bb8943f90229907984b677529a335cc478b3"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/restored-openai.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/restored-openai.stdout.log",
+      "sha256": "d25b64095a890e494223e06f2004a3eae0a141b749f7c04086e68569bca5300c"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/shared-on-benchmark.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/shared-on-benchmark.stdout.log",
+      "sha256": "a7a85e1971def2250d7651984199cc9bbe2df1b19018d17344f5608fd5ff4540"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/shared-on-up.stderr.log",
+      "sha256": "729ef4f1e370f29cee2cf25fed80d20c9829f928601d3eeb6714e012efafda51"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/shared-on-up.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/shared-on.json",
+      "sha256": "de7e66ea89c86a2acca6eab6ee331f824444455a27e97fdcce3634d983cf2265"
+    },
+    {
+      "path": "evidence/shared-mtp-pair-v1/state.json",
+      "sha256": "c79621d1b7bc4ad7406ddd6018f38efba926bad781541e33907a03ec364018f0"
+    },
+    {
+      "path": "evidence/final-acceptance-runtime.json",
+      "sha256": "10e749cfda82b30a6e9cf8edbd291211c7afdf3179756d5d71f9af9660169a13"
+    },
+    {
+      "path": "evidence/final-acceptance-catalog.json",
+      "sha256": "2ca645b1a2b2aa91f1cc69dd283099b341cdf7e7c6d89cfe14df2b4cb89bf75f"
+    },
+    {
+      "path": "evidence/benchmark-shared-pair-v1-shared-on.json",
+      "sha256": "de7e66ea89c86a2acca6eab6ee331f824444455a27e97fdcce3634d983cf2265"
+    },
+    {
+      "path": "evidence/benchmark-shared-pair-v1-off.json",
+      "sha256": "e202a147500f7f9336ccc00e5f28eca0b1e0096ac610ab7dc7f1209a05056ee3"
+    }
+  ]
+}

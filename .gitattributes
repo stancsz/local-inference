@@ -81,3 +81,10 @@
 /evidence/benchmark-shared-mtp-*.json -text -whitespace
 /evidence/shared-mtp-review-v2/** -text -whitespace
 /evidence/shared-mtp-review-v2.json -text -whitespace
+/evidence/codex-shared-mtp-v1/** -text -whitespace
+/evidence/codex-shared-mtp-v1-*.json -text -whitespace
+/evidence/codex-shared-mtp-v1-observations.jsonl -text -whitespace
+/evidence/shared-mtp-pair-v1/** -text -whitespace
+/evidence/shared-mtp-pair-v1-parent-review.json -text -whitespace
+/evidence/benchmark-shared-pair-v1-*.json -text -whitespace
+/evidence/final-acceptance-*.json -text -whitespace
