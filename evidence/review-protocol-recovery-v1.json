@@ -1,0 +1,174 @@
+{
+  "recorded_at": "2026-10-28T01:26:35.327711+00:00",
+  "route": "http://127.0.0.1:4000/v1",
+  "model": "default",
+  "product_task_route": "http://127.0.0.1:8090",
+  "qualification_increment": 0,
+  "claude_followup": {
+    "status": "UNVERIFIED",
+    "reason": "30 native Bash calls had empty arguments; no requested inspection page executed. No verdict inferred."
+  },
+  "responses_protocol_probe": "passed",
+  "codex_native_smoke": "passed",
+  "codex_first_setup": "existing client directory refused before worker dispatch; key revoked",
+  "codex_full_goal_followup": {
+    "verdict": "NOT_READY",
+    "scope": "Full-goal verdict. The new VM-counter evidence closes the previously identified memory-measurement blocker for the observed long-profile workloads, but other full-goal acceptance remains unresolved. This read-only follow-up does not promote historical failures or freshly query live Docker/network state.",
+    "criteria": [
+      {
+        "criterion": "Model+MTP GPU use below 14,000,000,000 bytes",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "Direct Windows GPU-process counters summed across all VM processes and instances show a peak of 13,485,330,432 dedicated bytes during the case. The broader all-stage summed GPU-related committed peak, including shared system memory, is 13,616,123,904 bytes. Both are below the decimal-byte limit. There were 435 valid case samples, no recorded sampling errors, and a maximum gap of about 2.599 seconds. The stopped VM dedicated counter was 24,059,904 bytes both before and after; the measured model-load increase was 13,461,270,528 bytes. The model and MTP allocations are contained in the measured VM, so this conservative containing-VM total is a defensible upper bound for those allocations under the observed workload. It is not an exact isolated-model value or a continuous-time peak."
+      },
+      {
+        "criterion": "Counter membership and aggregation",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "The inspected analyzer requires vmwp identities, counters whose PIDs match those identities, unique instance names, valid nonnegative byte fields, stopped baselines, a minimum load increase, and a maximum sampling gap. It sums all instances without alias deduplication or desktop-baseline subtraction. The raw replay checked all 520 rows and matched the persisted analysis. Summing aliases/shared resources can overcount, which is conservative for the stated upper-bound inference. Windows counter overreporting remains a documented caveat."
+      },
+      {
+        "criterion": "Observed long-profile workload",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "The captured profile uses Qwen3.8-27B IQ3_XXS with embedded shared MTP, GPU layers 99, no CPU offload, context 69,888, a 65,536 Sift target, and 2 draft tokens. Exact 65,536 input plus 4,096 output passed without truncation. The 256k and 1M context examples passed with different adaptive targets (32,193 and 65,536) and forwarded counts (32,053 and 33,300). Three native Claude tasks reconstructed to the archived artifacts and passed their validators; one used a bounded feedback repair, with the failed revision preserved. These results support the measured workload, not arbitrary future workloads or universal semantic retention."
+      },
+      {
+        "criterion": "Original full-goal criteria outside the former memory blocker",
+        "status": "MET_WITH_BOUNDS / PARTIALLY_MET / NOT_READY",
+        "evidence": "Reuse unchanged: the prior review accepted the standalone local Docker/LiteLLM architecture, quantized Qwen plus MTP configuration, adaptive Sift behavior within bounds, settings/approval protections within bounds, productive smaller-profile alternative, speed samples within bounds, native tasks within bounds, and repository/evidence work within bounds. The adopted 21-session campaign remains only partially met: candidate counts are Claude 8, OpenCode 9, Codex 7 across separate epochs, while the prior independent campaign review was NOT_READY and historical retention/generated-contract failures remain preserved. The new VM run adds no session qualification. The original full-goal review is not rewritten."
+      },
+      {
+        "criterion": "Restoration and checks",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "The evidence reports original runtime configuration restored, product source hashes unchanged, and archived local/OpenAI smokes passing. Publication reconciliation verified 689 files with zero mismatches; the targeted read-only test run passed 37 tests and the archived project suite reports 432 passed. This invocation did not freshly query Docker/network. The targeted pytest emitted a cache-write permission warning, consistent with the read-only sandbox."
+      }
+    ],
+    "remaining_work": [
+      "Resolve the adopted campaign's prior NOT_READY independent-review findings without erasing rejected outcomes; establish the required final independent acceptance and any required repaired-source coverage.",
+      "Complete any outstanding original-goal publication/commit/push requirements in both repositories if not already independently verified. This follow-up did not query remotes or verify current push state.",
+      "Keep claims bounded to sampled containing-VM counters and the recorded workload. Do not describe the result as exact isolated-model residency, a continuous-time peak, universal workload assurance, or exact physical usage."
+    ],
+    "measurement_and_review_limits": [
+      "The VM upper bound closes the prior memory blocker for the observed profile: if all model/MTP allocations reside in the measured VM, they cannot exceed its summed dedicated usage. The committed metric is a broader corroborating bound, not a substitute for dedicated usage.",
+      "Windows GPU process counters may overreport; aliases and shared allocations may be counted more than once. This increases the measured containing total but does not establish exact physical residency.",
+      "Sampling is discrete (maximum observed gap about 2.599 seconds), so unsampled transients and continuous-time peak behavior are not established.",
+      "No direct isolated per-model/MTP counter is available in this evidence; exact isolated residency remains unverified.",
+      "Only the five requested pages were run. No source/evidence was edited, no delegation or network call was made, and live Docker state was not freshly queried. The prior accepted scope is reused as instructed."
+    ]
+  },
+  "credential_status": "all dispatched scoped keys recorded revoked; no credential values published",
+  "artifacts": [
+    {
+      "path": "evidence/review-protocol-recovery-v1/vm-full-goal-review-v1.exit.json.gz",
+      "raw_sha256": "cef2b91b275f5b277f2b38cc2a60cf40bcdccb84010c28207a5606af4459ede6",
+      "compressed_sha256": "283138e78061c60ea231c9f66fd75a68b10e89551349f0dcd6cef747c62a7da5"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/vm-full-goal-review-v1.jsonl.gz",
+      "raw_sha256": "b1409e319c6dd6d906f49e377288965baeeec2e67e7701980fb414115251fde0",
+      "compressed_sha256": "fb14fa523269f1d8d8b0734c4196d7c13b52f5aea4842d757e29a6ac1e3a4977"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/vm-full-goal-review-v1.plan.json.gz",
+      "raw_sha256": "05555c953b16f88e4e28d02519edf88e4e474cf25bb3199edbdc779561702572",
+      "compressed_sha256": "4ae0e977fabab88556e53ef84ecb4693b800d8938f0903e073994d11560060ab"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/vm-full-goal-review-v1.py.gz",
+      "raw_sha256": "89b0eb53744ff3624a048527eeb78c712eb2e4cd4bebea754b6f09ce8efb235c",
+      "compressed_sha256": "a8d94ca1bd77c928b84928faa8fe6282792db46e086f99746d503b73f32287fd"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/vm-full-goal-review-v1.revocation.json.gz",
+      "raw_sha256": "4c992bfc4156f3e4da75e16fd0317b1346de2ef1e6b8ade084cde18517f5e88e",
+      "compressed_sha256": "fd6bbe1158dec7e216933c8fb76ed6033ca35e580b59d7875ec6c274cb5b63b5"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/vm-full-goal-review-v1.stderr.log.gz",
+      "raw_sha256": "12c0cdc3bd3d0b9a4e4cf3883168f7f872fe93584764a5571a3ee375f6a15cf8",
+      "compressed_sha256": "62787d2a2f1adab0f7e92087b5814eb25cf7718d73f255ddcb0c1b6b72e9980c"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v1.py.gz",
+      "raw_sha256": "d9920c7b614c340c225c4385f04a9e817826cbe4431a2218edbf322a60a948d0",
+      "compressed_sha256": "4617bb4670fa04d964a5a770bb95727a4ff1e285f5ba4a84f70f11714754c51f"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v1.revocation.json.gz",
+      "raw_sha256": "7a285462da576b1a068daa0647f5d5ec9cb8330580c6812a422b7ef7e3c30733",
+      "compressed_sha256": "643a915fc61de46e88a3041635cdc03e540ed389c3284819b2391ece7a6a3d24"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v1.setup-error.json.gz",
+      "raw_sha256": "595247577b042bcc51eae2324040d74c304a59b10c92e407658857f35da291be",
+      "compressed_sha256": "e8f4fac9f3880d8202765bc47867d02cfc0bf9d52b38df5eacda2dc1ca29bf95"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v2.exit.json.gz",
+      "raw_sha256": "fe461ef6e5ee0354a0c3ec2813710a1e9d80043cd746503e4908d94ae78e1eca",
+      "compressed_sha256": "f16ab0a782fcfae148b9b5521da8eedf636c61a300b4f0fa5d8de6fa91130a80"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v2.jsonl.gz",
+      "raw_sha256": "0e973cae271c77e8079f77ebf71760ad195570805b575881ad46ffaf89fe5fec",
+      "compressed_sha256": "559e0a7fcfa80444c39170244e003a8d8cb350f182e9b9c7fe2a6a80ea4fcdea"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v2.plan.json.gz",
+      "raw_sha256": "b0c774fed644415e5c77a89c57f3a852f1b4d82eb3ad099b18b5f53c7d7872e2",
+      "compressed_sha256": "8898a9395d6b49d29531aaef44d80dc9498a23d8fff9ccad0ecd57430ba6614b"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v2.prompt.txt.gz",
+      "raw_sha256": "eaedeb10fc7dce37796730a96b8933247e35cbe72613ffa4218740bb19f01e30",
+      "compressed_sha256": "a5af43a59c79ed228c2a3416e89e776bfac2e61c5b2aaf18f12b0d289fdd3977"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v2.py.gz",
+      "raw_sha256": "8ea0239a1649bc08b84355ca3eb92c226461c5f98d92b8a71c99e12a0a9705f3",
+      "compressed_sha256": "ec4c499c07bca03e243a8ea7a1bec9eafab731b3b1e03183fd0238f64730d9e2"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v2.revocation.json.gz",
+      "raw_sha256": "7bdee7c3a8d4fd2697e14e5ce43a90a174594b4230d2038b56d421b7c0695ad3",
+      "compressed_sha256": "5a34708a3f1a64f97bca77795df892c9ab333cc2bf5bb1f5b7c72c1721cdb6bc"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-final-review-v2.stderr.log.gz",
+      "raw_sha256": "cdde1f8304a444032573c83eb2bd596c979cb0659f1885a4699cbc1d7a96b910",
+      "compressed_sha256": "a41eeebdd68bf23b72c915c4f6a0a83bd2d2a0a42c507111b71213f1defbbc38"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/vm-full-goal-review-pages-v1.py.gz",
+      "raw_sha256": "32268a1cd67615e47606539cd2016da66fbe0f9fc78dacb594bb0d9f18f3a8af",
+      "compressed_sha256": "02d2b47322d9d7e8d69c52fc058df92a0c5966c3ec405a0c26e1f0db9a1d82cf"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-vm-review-pages-v1.py.gz",
+      "raw_sha256": "e61daad4eb32b56d9b129478765ca37f3d3aa2882e636c0b72cc49781c00d99f",
+      "compressed_sha256": "13c3cf371082e34a2ab0239162f296e47d8bf86e6be9b786215fc6f564882d99"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-review-smoke-v1.json.gz",
+      "raw_sha256": "66e788fba08a4c338b6fbc527d72f4b39117e1875a4893f44f23a16fc7c7022e",
+      "compressed_sha256": "c506b85e6b4f89baf37db1e80e2aa72d4913d34f5291db72b89a0381e5b227b3"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-review-smoke-v1/stdout.jsonl.gz",
+      "raw_sha256": "3d20e0b14fea4d36f4422e2f769bf930b8f3d422415aa3ecee4a389e87cca5af",
+      "compressed_sha256": "89947edced6ccbe042d2444f506f94a4e076049560b39a627ab2069d8a9df81c"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-review-smoke-v1/stderr.log.gz",
+      "raw_sha256": "6f91ad1884f4435540b6708dbec61fd143b6de13b838dc260e5ff37822ff7933",
+      "compressed_sha256": "69b745745022f6ec73a850233ab8508fe736edee66850ce4de67deaac5e965de"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/codex-review-smoke-v1/marker.txt.gz",
+      "raw_sha256": "5ba0b59726f1da9fb0841688c05b482365741b39dd1cbdd5db872b7ede44b631",
+      "compressed_sha256": "6a4fffd373bd2090be690e7debab52d26befd17ec245cd996cf0dfe5d78f2d3a"
+    },
+    {
+      "path": "evidence/review-protocol-recovery-v1/responses-default-probe-v1.sanitized.json",
+      "sha256": "fe0fdb36efc00e78acbce90ad566322f3459688f407912f29c2d5d3eb6faff20"
+    }
+  ]
+}

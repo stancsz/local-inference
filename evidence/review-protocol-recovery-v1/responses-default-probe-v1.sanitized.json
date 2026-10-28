@@ -1,0 +1,15 @@
+{
+  "route": "http://127.0.0.1:4000/v1/responses",
+  "model": "default",
+  "alias": "responses-review-probe-30c28ecae7",
+  "status": "passed",
+  "function_name": "read_marker",
+  "arguments": {
+    "marker": "argument-cc38757849c245"
+  },
+  "reply": "tool-result-d86ba5b5a18e41",
+  "expected_reply": "tool-result-d86ba5b5a18e41",
+  "key_revoked": true,
+  "first_response_id_sha256": "b5c8fe7cf9d1f506022721266fc158fe4dae080432d0bc3fc6d5024ef225c617",
+  "second_response_id_sha256": "7515ecdc587393f0baec6e9c22116c4de7992779f4ca23e9fd3ba9cfba1a8055"
+}

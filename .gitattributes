@@ -92,3 +92,7 @@
 /evidence/final-goal-review-v1.json -text -whitespace
 /evidence/vm-residency-v1/** -text -whitespace
 /evidence/benchmark-vm-bound-v1-32.json -text -whitespace
+/evidence/review-protocol-recovery-v1/** -text -whitespace
+/evidence/review-protocol-recovery-v1.json -text -whitespace
+/evidence/repair-disposition-publication-v1.json -text -whitespace
+/evidence/vm-publication-check-v1.json -text -whitespace
