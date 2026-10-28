@@ -1,0 +1,476 @@
+{
+  "recorded_at": "2026-10-28T01:33:11.563132+00:00",
+  "artifact_commit": "2e4a380c8f92657098996b67dc3a123106fe667c",
+  "full_goal": "READY",
+  "commander_acceptance": "READY for documented local daily-driver goal; no universal model correctness/retention/hardware claim",
+  "nonauthor_verdict": {
+    "verdict": "READY",
+    "scope": "Full goal accepted for the stated bounded daily-driver scope. This relies on inspectable parent-observed remote evidence; I did not make or retry a network request. Historical rejections remain rejected, and the known source-replay, memory, and generalization limits remain explicit.",
+    "actual_checks": {
+      "parent_observed_publication": {
+        "status": "PASS",
+        "evidence": "The captured command record shows local HEAD and origin/main both at `2e4a380c8f92657098996b67dc3a123106fe667c`; `git ls-remote` exited 0. Read-only `gh pr view` reports Sift PR61 and PR62 MERGED with merge commits. The frozen campaign-path diff is empty. Publication reconciliation at that commit verified 712 immutable files with zero mismatches. I treat these as parent-observed evidence, not my own fresh remote query."
+      },
+      "local_replay": {
+        "status": "PASS",
+        "evidence": "The handoff command reran publication reconciliation locally and reported 712 verified files, zero mismatches. The included docs-only diff records the bounded VM-memory result and preserves historical distinctions; its displayed product-source status is unchanged."
+      },
+      "product_smokes": {
+        "status": "PASS",
+        "evidence": "The handoff output reports fresh parent local and OpenAI smoke results passed. No product source or settings were changed in this review."
+      }
+    },
+    "criteria": [
+      {
+        "criterion": "21 qualifying persisted sessions; at least seven per CLI; qualifying turn, duration, native tool, test, history/source identity, and snapshot evidence",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "The recorded campaign totals are 24 across explicit epochs: Claude 8, OpenCode 9, Codex 7. The new Codex case has nine substantive turns, 843.730 active seconds, native continuity, 18 hashed per-turn snapshots, 54 behavior checks, and 42 original-source captures. Frozen rejections were not modified or promoted."
+      },
+      {
+        "criterion": "Historical source retention and native CLI acceptance repairs",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "The generic source/diagnostic competition regression moved from eight failing subcases to zero; positive unittest counts and Windows executable quoting are addressed in versioned native acceptance logic. PR61/62 merged state is parent-observed. The exact historical full-payload replay remains unavailable; regression plus new first-stage source captures are the bounded replacement evidence."
+      },
+      {
+        "criterion": "Actual generated engineering, migration, and expense recovery artifacts",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "The actual hash-identified artifacts passed the unchanged checks: engineering 44 regressions, nine stages and nine probes; migration 63 regressions, nine stages and 13 probes; expenses 13 regressions, nine stages, 12 probes and six additional checks. Original failing outputs and failed revisions remain preserved. These checks do not imply reliable arbitrary future generation."
+      },
+      {
+        "criterion": "Qwen/MTP profile, adaptive Sift, approvals/settings, productive capacity/speed, and native tasks",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "Reuse the prior accepted review unchanged. Exact 65,536-input plus 4,096-output capacity, 256k/1M bounded retention examples, three native Claude tasks, protected settings behavior, and recorded speed evidence remain bounded to the documented workloads."
+      },
+      {
+        "criterion": "Model+MTP usage below 14,000,000,000 bytes",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "Reuse the prior accepted direct containing-VM upper bound: 13,485,330,432 dedicated bytes and 13,616,123,904 broader committed bytes during the sampled workload. This is neither exact isolated residency nor a continuous-time peak."
+      },
+      {
+        "criterion": "Repository publication, commits/pushes, merged Sift changes, and reproducible evidence",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "Parent-observed exact HEAD/origin equality, merged PR61/62, no changes to named frozen paths, and 712-file zero-mismatch publication reconciliation support the original publication requirement. Local immutable reconciliation was rerun by the specified command."
+      }
+    ],
+    "remaining_work": [],
+    "evidence_limitations": [
+      "The GitHub network denial in the reviewer sandbox remains preserved. Remote equality and PR status are accepted from the timestamped parent command observations and stdout, not represented as my own network inspection.",
+      "The original missing full request payloads prevent exact replay of the historical omitted-request indices. The generic causal regression and new first-stage captures do not prove full-wire capture or universal semantic retention.",
+      "Historical failed campaigns and artifacts remain facts; later repairs and the new session do not retroactively qualify them.",
+      "Generated-artifact tests prove the checked artifacts and cases, not general model correctness or future generation reliability.",
+      "The memory conclusion is a sampled containing-VM upper bound for observed workloads; WDDM overreporting, alias/shared-resource overcount, unsampled transients, and lack of exact isolated allocation measurement remain disclosed. No universal workload or continuous-peak claim is made."
+    ]
+  },
+  "previous_nonauthor_verdict": {
+    "verdict": "NOT_READY",
+    "scope": "Current bounded daily-driver full goal. The previous memory and product findings remain accepted unchanged. The campaign reconciliation and generated-artifact checks are materially stronger, but publication is explicitly part of the original goal and this review could not verify current remote equality or merged PR status because the authorized GitHub query failed to connect. This is an evidence gap, not a finding that publication is wrong.",
+    "findings": [
+      {
+        "finding": "The original independent review's campaign shortfall and per-turn snapshot concern",
+        "disposition": "RESOLVED_WITH_BOUNDS",
+        "evidence": "The new Codex case is separately sealed and parent-qualified: nine substantive turns, 843.730 active seconds, one continuous session, native tool continuity, 18 per-turn native/hidden snapshots with hashes rechecked, 54 behavior checks, 42 source captures, and native context checks. Candidate totals are 24: Claude 8, OpenCode 9, Codex 7. Frozen rejected outcomes remain unchanged."
+      },
+      {
+        "finding": "Historical source-retention omissions and generalized native test recognition",
+        "disposition": "REPAIRED_WITH_BOUNDED_REPLACEMENT_EVIDENCE",
+        "evidence": "The generic source/diagnostic competition regression changes from 8 failures to 0, upstream Sift PR61 is reported merged in the disposition record, native evidence now accepts arbitrary positive unittest counts, and PR62 is reported merged. The new Codex case contains 42 original-source captures. Exact replay of the original missing full payloads is unavailable, so the historical omitted-request indices are not exactly reproduced. The replacement is causal regression evidence plus new growing-history source captures, not proof of lossless semantic retention."
+      },
+      {
+        "finding": "Missing intermediate-code checks for qualifying new work",
+        "disposition": "RESOLVED_FOR_NEW_CODEX_CASE",
+        "evidence": "The new Codex receipt archives and rechecks native and hidden snapshots for every turn. The 54 behavior checks are independently recorded as executed in the previous full-goal review; this session verifies the unchanged snapshot hashes and results. It does not reconstruct missing intermediate snapshots from frozen older sessions."
+      },
+      {
+        "finding": "Generated engineering and migration artifacts had validation defects",
+        "disposition": "REPAIRED_FOR_RECORDED_ARTIFACTS",
+        "evidence": "The actual generated artifacts match their recorded hashes and pass unchanged regressions: engineering 44 checks, nine stages and nine additional probes; migration 63 checks, nine stages and 13 additional probes. These establish the behavior of these artifacts, not reliable future generation."
+      },
+      {
+        "finding": "Generated expense artifact had grouping, amount, cell, currency, and empty-input defects",
+        "disposition": "REPAIRED_FOR_RECORDED_ARTIFACT_WITH_FEEDBACK",
+        "evidence": "The actual artifact matches its recorded hash and passes 13 unchanged regressions, nine stages, 12 additional probes, and six further blank-currency/empty-input checks. The unchanged baseline fails all six latter checks. The successful workflow includes feedback; the original failures and failed revisions remain preserved."
+      },
+      {
+        "finding": "Model+MTP memory limit was previously unverified",
+        "disposition": "MET_WITH_BOUNDS",
+        "evidence": "Reuse prior accepted direct all-VM sampled upper bound: 13,485,330,432 dedicated bytes and 13,616,123,904 broader committed bytes, below 14,000,000,000 bytes for the observed profile. This is not exact isolated residency or a continuous-time peak."
+      },
+      {
+        "finding": "Remote equality and upstream merge state",
+        "disposition": "UNVERIFIED_IN_THIS_REVIEW",
+        "evidence": "The explicitly authorized `git ls-remote origin refs/heads/main` failed to connect to GitHub through the configured proxy. The publication page therefore stopped before checking local HEAD equality, PR61/62 merge state, publication manifest, and frozen-path comparison. The disposition page cites prior publication evidence, but that is not a fresh check of current remote state."
+      }
+    ],
+    "criteria": [
+      {
+        "criterion": "21 qualifying persisted sessions, seven per CLI",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "Recorded current candidate totals are Claude 8, OpenCode 9 and Codex 7, explicitly spanning source epochs. The new Codex session adds the missing current-source Codex count. No frozen rejected outcome is promoted."
+      },
+      {
+        "criterion": "Nine substantive turns, over 180 active seconds, native tools and continuity in the new Codex seed",
+        "status": "MET",
+        "evidence": "Nine turns, 843.730 active seconds, native continuity replayed, each turn accepted and not timed out, and all turns share the recorded session ID."
+      },
+      {
+        "criterion": "Hidden/public behavior tests, historical-fact/source identity and per-turn evidence",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "18 snapshot hashes rechecked, 54 behavior checks recorded, 42 source captures checked for original facts, and source hashes match the plan. Captures are first-stage excerpts, not full provider-wire payloads. Exact replay of the original omitted full payloads remains unavailable."
+      },
+      {
+        "criterion": "Generated engineering, migration and expense recovery artifacts",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "All three actual artifacts were hash-identified and passed the specified unchanged regression and original-behavior checks. Historical failures remain intact; successful feedback artifacts do not imply future model reliability."
+      },
+      {
+        "criterion": "Local architecture, adaptive Sift, approvals/settings, productive profile, speed, native tasks and bounded memory",
+        "status": "MET_WITH_BOUNDS",
+        "evidence": "Reuse the prior review's accepted findings unchanged; this follow-up did not freshly query live Docker/network or re-establish those checks."
+      },
+      {
+        "criterion": "Two-repository improvements, merged upstream Sift changes, commits/pushes and reproducible publication",
+        "status": "UNVERIFIED",
+        "evidence": "Current remote equality, merged PR state, and the authorized publication reconciliation could not be freshly established after the network query failed. Prior recorded publication evidence exists but is not a fresh remote-state check."
+      },
+      {
+        "criterion": "Historical rejected campaigns and failures",
+        "status": "PRESERVED",
+        "evidence": "The inspected dispositions explicitly state that frozen campaigns and rejected outcomes were not rewritten or promoted. The new case contributes a new qualifying receipt only."
+      }
+    ],
+    "remaining_work": [
+      "Repeat only the read-only publication check when GitHub connectivity is available: establish local HEAD equals origin/main, PR61/62 are merged, and the publication checker succeeds with zero mismatches while frozen campaign paths remain unchanged. If those checks pass, this review found no remaining evidence-based blocker to the bounded daily-driver acceptance.",
+      "Retain the explicit limitation that exact offline replay of the original missing full request payloads is impossible; do not present the generic regression and new excerpt captures as exact historical replay or universal semantic-retention proof."
+    ],
+    "limitations": [
+      "Historical failures remain facts and are not erased by later repairs or new qualifying sessions.",
+      "The original omitted-request payloads are unavailable; replacement proof is causal regression coverage and a new nine-turn original-source capture, with first-stage excerpt scope disclosed.",
+      "Prior campaign sessions do not acquire per-turn snapshots retroactively.",
+      "Passing generated artifacts establish the tested artifacts only, not model learning or arbitrary future correctness.",
+      "Memory evidence remains a sampled containing-VM upper bound, not exact isolated allocation, continuous peak, or a universal workload bound.",
+      "No live Docker/product check was repeated in this follow-up; prior accepted runtime and product checks are reused unchanged.",
+      "Remote publication state remains unverified because the explicitly permitted GitHub query could not connect."
+    ]
+  },
+  "reviewer_session_id": "01a18012-20b9-7ad1-a1e8-45e31830e6a0",
+  "review_route": "http://127.0.0.1:4000/v1",
+  "review_model": "default",
+  "review_sandbox": "read-only; unchanged; remote denial preserved, no escalation",
+  "qualification_increment": 0,
+  "qualified_sessions": 24,
+  "per_client": {
+    "claude": 8,
+    "opencode": 9,
+    "codex": 7
+  },
+  "requirements": [
+    {
+      "criterion": "Standalone Docker local gateway, local Qwen27B3/4bit and MTP; no cloud fallback",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/final-goal-review-v1.json"
+    },
+    {
+      "criterion": "Preserve caller approvals, tools, sandbox, config and mandatory content; fail closed",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/repair-v3-independent-review.json"
+    },
+    {
+      "criterion": "Request-adaptive Sift budgeting;256k/1M raw histories within native context limits",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/vm-residency-v1/parent-review.json"
+    },
+    {
+      "criterion": "Exact65536 input+4096 output; productive daily and optional long settings",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/vm-residency-v1/parent-review.json"
+    },
+    {
+      "criterion": "Model/MTP under14decimalGB during sampled workload, containing-VM upper bound",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/review-protocol-recovery-v1.json"
+    },
+    {
+      "criterion": "Reproducible MTP on/off speed and restored original daily runtime",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/shared-mtp-pair-v1-parent-review.json"
+    },
+    {
+      "criterion": "Three real native Claude productivity tasks with actual artifact replay",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/vm-residency-v1/parent-review.json"
+    },
+    {
+      "criterion": "At least21 qualifying sessions, seven per client;9turns,>180seconds, history/tools/tests",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/codex-shared-mtp-v1-parent-review.json"
+    },
+    {
+      "criterion": "Fix Sift source/diagnostic competition with causal regressions and new native captures",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/repair-v3-recall-regressions.json"
+    },
+    {
+      "criterion": "Fix native CLI grading and archive per-turn code; preserve historical failures",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/codex-shared-mtp-v1-publication.json"
+    },
+    {
+      "criterion": "Validate actual model-generated contract repairs with unchanged checks and feedback",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/expense-feedback-v3-parent-review.json"
+    },
+    {
+      "criterion": "Improve both repositories and commit/push scoped work; verify publication",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/repair-disposition-publication-v1.json"
+    },
+    {
+      "criterion": "Reproducible setup and practical daily workflow; explicit limits",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "docs/SETUP.md"
+    },
+    {
+      "criterion": "Nonauthor full-goal review after parent audit",
+      "status": "MET_WITH_DOCUMENTED_BOUNDS",
+      "primary_evidence": "evidence/final-daily-driver-acceptance-v1.json"
+    }
+  ],
+  "parent_current_runtime": [
+    {
+      "service": "inference",
+      "image": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+      "running": true
+    },
+    {
+      "service": "gateway",
+      "image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
+      "running": true
+    }
+  ],
+  "parent_fresh_checks": {
+    "project_tests": 432,
+    "local_smoke": true,
+    "openai_smoke": true,
+    "startup_mount_byte_identity": true,
+    "app_source_hashes_unchanged": true
+  },
+  "publication_observation": {
+    "scope": "Parent-permitted read-only publication observation. Nonauthor sandbox network denial is retained, not bypassed. Reviewer may inspect this evidence but must not represent it as its own fresh network query.",
+    "artifact_commit": "2e4a380c8f92657098996b67dc3a123106fe667c",
+    "origin_main": "2e4a380c8f92657098996b67dc3a123106fe667c",
+    "all_checks_passed": true,
+    "commands": [
+      {
+        "argv": [
+          "git",
+          "rev-parse",
+          "HEAD"
+        ],
+        "observed_at": "2026-10-28T01:30:14.096702+00:00",
+        "exit_code": 0,
+        "stdout": "2e4a380c8f92657098996b67dc3a123106fe667c\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "git",
+          "ls-remote",
+          "origin",
+          "refs/heads/main"
+        ],
+        "observed_at": "2026-10-28T01:30:14.623475+00:00",
+        "exit_code": 0,
+        "stdout": "2e4a380c8f92657098996b67dc3a123106fe667c\trefs/heads/main\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "gh",
+          "pr",
+          "view",
+          "61",
+          "--repo",
+          "stancsz/sift",
+          "--json",
+          "state,mergeCommit,mergedAt,url,title"
+        ],
+        "observed_at": "2026-10-28T01:30:15.249832+00:00",
+        "exit_code": 0,
+        "stdout": "{\"mergeCommit\":{\"oid\":\"2f0ef2786345fe0868b282903712fd1ac92d43fe\"},\"mergedAt\":\"2026-10-27T02:03:12Z\",\"state\":\"MERGED\",\"title\":\"Fix historical source retention and harden native CLI acceptance\",\"url\":\"https://github.com/stancsz/sift/pull/61\"}\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "gh",
+          "pr",
+          "view",
+          "62",
+          "--repo",
+          "stancsz/sift",
+          "--json",
+          "state,mergeCommit,mergedAt,url,title"
+        ],
+        "observed_at": "2026-10-28T01:30:15.822832+00:00",
+        "exit_code": 0,
+        "stdout": "{\"mergeCommit\":{\"oid\":\"3fe2b8f560fff6a51621ec82d8f2d717a27e5c06\"},\"mergedAt\":\"2026-10-27T18:14:47Z\",\"state\":\"MERGED\",\"title\":\"Recognize native unittest counts and Windows executable quoting\",\"url\":\"https://github.com/stancsz/sift/pull/62\"}\n",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "git",
+          "diff",
+          "c5415ad",
+          "HEAD",
+          "--name-only",
+          "--",
+          "evidence/balanced-v2-sessions",
+          "evidence/balanced-v2-parent-review.json",
+          "evidence/stress-sessions",
+          "evidence/stress-summary.json"
+        ],
+        "observed_at": "2026-10-28T01:30:15.867691+00:00",
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "C:\\Program Files\\Python314\\python.exe",
+          "evidence/profile-publication-tools/check-profile-publication.py",
+          "--commit",
+          "HEAD"
+        ],
+        "observed_at": "2026-10-28T01:30:17.204001+00:00",
+        "exit_code": 0,
+        "stdout": "{\"artifact_commit\": \"2e4a380c8f92657098996b67dc3a123106fe667c\", \"manifest_reports\": [\"evidence/long-profile-v1/parent-review.json\", \"evidence/long-profile-v2/parent-review.json\", \"evidence/long-profile-v3/parent-review.json\", \"evidence/long-profile-v4/parent-review.json\", \"evidence/long-profile-v5/parent-review.json\", \"evidence/review-protocol-recovery-v1.json\", \"evidence/vm-residency-v1/parent-review.json\", \"evidence/final-goal-review-v1.json\", \"evidence/codex-shared-mtp-v1-publication.json\", \"evidence/shared-mtp-pair-v1-parent-review.json\", \"evidence/shared-mtp-launcher-v1/parent-review.json\", \"evidence/shared-mtp-review-v2.json\", \"evidence/daily-review-v5.json\", \"evidence/gpu-verification-v1/receipt.json\", \"evidence/test-discovery-v1/receipt.json\", \"evidence/mtp-quantization-dryrun-v1/receipt.json\"], \"files_verified\": 712, \"mismatches\": 0, \"qualification_increment\": 0, \"full_goal\": \"NOT_READY\"}\n",
+        "stderr": ""
+      }
+    ],
+    "collector_sha256": "24676cbbcb532105d86bc4b07de60b51feeb39890f4907a545cb9532059a2540",
+    "qualification_increment": 0
+  },
+  "credential_status": "Both same-session follow-ups used distinct scoped keys; finally blocks record successful revocation. No credential values published.",
+  "remaining_required_work": [],
+  "remaining_limits": [
+    "The GitHub network denial in the reviewer sandbox remains preserved. Remote equality and PR status are accepted from the timestamped parent command observations and stdout, not represented as my own network inspection.",
+    "The original missing full request payloads prevent exact replay of the historical omitted-request indices. The generic causal regression and new first-stage captures do not prove full-wire capture or universal semantic retention.",
+    "Historical failed campaigns and artifacts remain facts; later repairs and the new session do not retroactively qualify them.",
+    "Generated-artifact tests prove the checked artifacts and cases, not general model correctness or future generation reliability.",
+    "The memory conclusion is a sampled containing-VM upper bound for observed workloads; WDDM overreporting, alias/shared-resource overcount, unsampled transients, and lack of exact isolated allocation measurement remain disclosed. No universal workload or continuous-peak claim is made.",
+    "Provider-hosted MCP approval/opaque encrypted reasoning states are unsupported and return422, rather than silently altering caller permissions.",
+    "Normal interactive approvals were inspected in source/regressions; no universal live interactive prompt compatibility claim.",
+    "Windows launcher/platform and measured hardware only; optional equivalent-cloud savings target remains unmeasured."
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-goal-disposition-v1.exit.json.gz",
+      "raw_sha256": "98671afde0f75a53ad378aa272d553fa259e99129d75472558e37d6017351d02",
+      "compressed_sha256": "9b5d3a71aba4f922c924e10dd805a26964f6c0c0dba7c89d1f188627c57c127c"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-goal-disposition-v1.jsonl.gz",
+      "raw_sha256": "db40f0840ae86dfc17ef3eb0690d4b9b8a3155eddccc1e24c7eef95c97592b5d",
+      "compressed_sha256": "ee4ae5aee67da9fd4a28ef4d53d5513132c294baeb6aa132107a5efa1c8b9a6c"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-goal-disposition-v1.plan.json.gz",
+      "raw_sha256": "7d69fa85ce782b4b4eee8a29745a4e9e50c5fef98cfc7e4f5839f4e9592b81cc",
+      "compressed_sha256": "341a67aa6c25dfffc3864f6cb8d59455291a3620040fac720ef8fd0c09f7b7c2"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-goal-disposition-v1.prompt.txt.gz",
+      "raw_sha256": "9e52052377d78cf5744a7458c2b68e3a6677c9abea39b0de52c28683b2ed75d0",
+      "compressed_sha256": "7385f8a4a6e353c1033279f81a80a5f3478f2136fe77385d725371131aa0967c"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-goal-disposition-v1.py.gz",
+      "raw_sha256": "c9529c1e14a8abf9839522f69eabbec3a91016a5b8c21c838522cc6bb04013b7",
+      "compressed_sha256": "1a6d712ee746824aa4bed10172cf4b563adf51f0b3874a68e75ffe8da11a4d1d"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-goal-disposition-v1.revocation.json.gz",
+      "raw_sha256": "0cee91e4b6bede707f7ba2b86c1156c23dabda434788f0ba64da73cf71285e31",
+      "compressed_sha256": "6c78426c4a97fa2d22f5ac34cb5ca210646ce541f08302beba26bcf35a303bd7"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-goal-disposition-v1.stderr.log.gz",
+      "raw_sha256": "bd5b3e22ac4709b4623a5c3256a18db628b3ee4909406b3988697db5e93fa742",
+      "compressed_sha256": "3896b06db2ff3bfdc2eb8047dbc798e42b56fe8ce9bd4264c92daaa15190844c"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-publication-followup-v1.exit.json.gz",
+      "raw_sha256": "9d1037403083e38622195bc884d76737c6e27b4faff92742cde7c5e3a01f005f",
+      "compressed_sha256": "e63027c7d19195c46acc02971e0659ceb0b995833b861ba3d74de9817ab320e2"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-publication-followup-v1.jsonl.gz",
+      "raw_sha256": "7e5f52b8fcdeaaa6a82dff293f26f2de4ffe7963ba4a4c987a3c4e7ec4b491bc",
+      "compressed_sha256": "aee0d3857e67bd96f23b68bae29ac6bcea402819f841b861278c00a83f0e3062"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-publication-followup-v1.plan.json.gz",
+      "raw_sha256": "49b744f5d97ab810de4494312b0149858a9a1e01ed7e9e81776d6ea5cb2e486e",
+      "compressed_sha256": "11e87a2a481b11a56ede886aa508627cd15d85776d3e5019b1325c7b252a3c95"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-publication-followup-v1.prompt.txt.gz",
+      "raw_sha256": "ef9aebcf111aba2ca094e7450d07e86bde0a93998e318e1151e36c502a429ec0",
+      "compressed_sha256": "a4e1c400cf3fbcd9a99ad18b261e7f40ceac9149e3935e4b3ae6f4175a12ef66"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-publication-followup-v1.py.gz",
+      "raw_sha256": "596eb868f1e7e98107fd32979e8bdedd53d8928d8db679e1ec0a794c15e9cd62",
+      "compressed_sha256": "682c0f819b69778cf97a1e74e43c897fdfabc22f13366a593bcb38e91086f473"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-publication-followup-v1.revocation.json.gz",
+      "raw_sha256": "dabace2f1cdb23991e83ff436cbcf89fffec7b80fb0f98b79647c62510c203a3",
+      "compressed_sha256": "e6c8b0cc38d363b39402ae9b761519c46dc12f46097e4e3579e4b3b527acd2fb"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/codex-publication-followup-v1.stderr.log.gz",
+      "raw_sha256": "f4dfd741e9f4f334db61fbaee50b786d43595858d6893d5e3c50d8a73cdd5d4e",
+      "compressed_sha256": "a574c537fa5cd9cedddc5bd66b21bb0ebc3709581ad00dcc53f88b1b341d366d"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/publication-observation-v2.json.gz",
+      "raw_sha256": "18abf67cc436d2756d3718b4fa47e2059c80f6bcacff96b3b62df8218a9897a3",
+      "compressed_sha256": "98d9bd47cb7feb9d01f7354f8c063be49d2827334686dd7363019aeff5f94ecb"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/publication-observation-v2.py.gz",
+      "raw_sha256": "24676cbbcb532105d86bc4b07de60b51feeb39890f4907a545cb9532059a2540",
+      "compressed_sha256": "a9d6dbd7e7c4064ffaa568a472bb4bdbdafea01a1036697240271e52c282c745"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/reconcile-goal-pages-v1.py.gz",
+      "raw_sha256": "8b1bf82bab8eee74d62e4e24b86f09bb44b78612262208e18558494ac1456ecb",
+      "compressed_sha256": "05bd4835187575fcb87e2195be1987548aaa82272fb0e3110e52f3f9d916b921"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/publication-handoff-v1.py.gz",
+      "raw_sha256": "8e08394d223e3f26716d4341beb60b4a64e61784131098818ab27bff4a7021e4",
+      "compressed_sha256": "43849a2d1a58dc357c6fc2ef0de5080f3e0b6f4dea6a2fda842116b18c912a28"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/publish-final-daily-driver-v1.py.gz",
+      "raw_sha256": "834599c3a12ae0fe5d0d663648a5630914936b4485139987164e9a53127513a9",
+      "compressed_sha256": "e2e8f98ddf376f488a87d68c72576bccda98e0074f7a79d5827b1d59432d9555"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/disposition-final-local.json.gz",
+      "raw_sha256": "91a8655c861bc0ce9f7dcc8e4e7063a291d4a00126782253d9ba8f79177a524b",
+      "compressed_sha256": "f252341666d66df17f55f5b33e705677db8103faa04e84f50ff13587526fb51b"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/disposition-final-openai.json.gz",
+      "raw_sha256": "16cf22cfa515afdf2d7838764a7d11d7cab146666ef5079dcab96cbf7a48894f",
+      "compressed_sha256": "93ecdb7edce8ed2a15d3ae92aeeb8f176ed61a29c3c99b0c8e5b39cb0f18bf2c"
+    },
+    {
+      "path": "evidence/final-daily-driver-acceptance-v1/final-daily-driver-suite-v1.log.gz",
+      "raw_sha256": "955702be85a277cb26b60fd5437f51463e5eeaeb66dafdadf05e77165b884560",
+      "compressed_sha256": "063858e929845f5c982988c8e7adbd8771b8335bc95b2496acebbfafd745265c"
+    }
+  ]
+}

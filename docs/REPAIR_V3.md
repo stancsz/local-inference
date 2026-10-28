@@ -1,5 +1,7 @@
 # Sift and local inference repair
 
+Final acceptance: [full-goal nonauthor READY and parent audit](../evidence/final-daily-driver-acceptance-v1.json). The reviewer inspected actual generated artifacts, snapshots, regressions and publication evidence; it preserves the source-replay, memory and model-quality limitations. The disposition and chronological review trail below remain available, including all earlier NOT_READY findings.
+
 Current disposition (2026-10-27): the separately sealed shared-MTP Codex session passes nine turns and 42 original-source captures, reaching seven parent-qualified sessions per client. The shared-weight long profile passes exact64k+4k and all three native tasks. A later read-only nonauthor review accepts the direct containing-VM memory bound for this observed workload, while retaining a full-goal NOT_READY verdict pending campaign reconciliation and remote-publication inspection. See [review and failed protocol attempts](../evidence/review-protocol-recovery-v1.json), [current stress results](STRESS_RESULTS.md) and [profile results](PROFILE_RESULTS.md). The chronological diagnostics below preserve earlier, superseded checkpoints; they are not the current remaining-work list.
 
 | Earlier independent finding | Later repair / actual evidence | Remaining limitation |

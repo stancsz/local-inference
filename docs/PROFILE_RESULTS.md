@@ -19,7 +19,7 @@ Both v2 configurations also passed the separate 256k/1M native-token compaction-
 
 The microbatch-16 VRAM plan was rejected for missing `nvidia-smi`. Parent inspection also found an invalid `Get-Process.DedicatedMemory` verification expression. That property is absent on this host. A subsequent prompt/validator repair preserves the rejection and passes a fresh native VRAM task on the restored daily profile; see [the repair receipt](../evidence/gpu-verification-v1/receipt.json). No generated file was manually corrected.
 
-A later [direct Windows VM-counter experiment](WINDOWS_GPU_ACCOUNTING.md) repeats the same shared-weight long profile and its native tasks. It records a13.485-GB dedicated-usage upper bound for the containing VM, including all counter aliases, with no desktop subtraction. That measurement is distinct from the whole-host deltas in the table. The [read-only nonauthor follow-up](../evidence/review-protocol-recovery-v1.json) accepts the memory bound as MET_WITH_BOUNDS for the observed workload; full-goal acceptance remains NOT_READY pending other findings. The earlier rejection is preserved.
+A later [direct Windows VM-counter experiment](WINDOWS_GPU_ACCOUNTING.md) repeats the same shared-weight long profile and its native tasks. It records a13.485-GB dedicated-usage upper bound for the containing VM, including all counter aliases, with no desktop subtraction. That measurement is distinct from the whole-host deltas in the table. The [final read-only nonauthor review](../evidence/final-daily-driver-acceptance-v1.json) accepts the memory bound as MET_WITH_BOUNDS and the documented full local goal as READY. Earlier rejections are preserved.
 
 ## Reproduce the measurement analysis
 

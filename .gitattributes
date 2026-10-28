@@ -96,3 +96,5 @@
 /evidence/review-protocol-recovery-v1.json -text -whitespace
 /evidence/repair-disposition-publication-v1.json -text -whitespace
 /evidence/vm-publication-check-v1.json -text -whitespace
+/evidence/final-daily-driver-acceptance-v1/** -text -whitespace
+/evidence/final-daily-driver-acceptance-v1.json -text -whitespace

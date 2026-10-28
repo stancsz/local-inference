@@ -10,7 +10,7 @@ import subprocess
 
 ROOT=Path(__file__).resolve().parents[2]
 REPORTS=['evidence/long-profile-'+epoch+'/parent-review.json'for epoch in ('v1','v2','v3','v4','v5')]+[
-    'evidence/review-protocol-recovery-v1.json','evidence/vm-residency-v1/parent-review.json','evidence/final-goal-review-v1.json','evidence/codex-shared-mtp-v1-publication.json','evidence/shared-mtp-pair-v1-parent-review.json','evidence/shared-mtp-launcher-v1/parent-review.json','evidence/shared-mtp-review-v2.json','evidence/daily-review-v5.json','evidence/gpu-verification-v1/receipt.json',
+    'evidence/final-daily-driver-acceptance-v1.json','evidence/review-protocol-recovery-v1.json','evidence/vm-residency-v1/parent-review.json','evidence/final-goal-review-v1.json','evidence/codex-shared-mtp-v1-publication.json','evidence/shared-mtp-pair-v1-parent-review.json','evidence/shared-mtp-launcher-v1/parent-review.json','evidence/shared-mtp-review-v2.json','evidence/daily-review-v5.json','evidence/gpu-verification-v1/receipt.json',
     'evidence/test-discovery-v1/receipt.json','evidence/mtp-quantization-dryrun-v1/receipt.json']
 
 
@@ -45,7 +45,7 @@ def main():
             assert hashlib.sha256(gzip.decompress(data)).hexdigest()==digests['decompressed_sha256'],path
     assert not stream.read()
     proof={'artifact_commit':commit,'manifest_reports':REPORTS,'files_verified':len(expected),
-        'mismatches':0,'qualification_increment':0,'full_goal':'NOT_READY'}
+        'mismatches':0,'qualification_increment':0,'scope':'Immutable byte identity only; no acceptance verdict'}
     if options.output:
         with options.output.open('x',encoding='utf-8')as target:json.dump(proof,target,indent=2)
     print(json.dumps(proof))
