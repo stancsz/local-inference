@@ -10,7 +10,7 @@ import subprocess
 
 ROOT=Path(__file__).resolve().parents[2]
 REPORTS=['evidence/long-profile-'+epoch+'/parent-review.json'for epoch in ('v1','v2','v3','v4','v5')]+[
-    'evidence/workhorse-v1-preflight-publication.json','evidence/workhorse-v1-setup-failure.json','evidence/workhorse-v2-parent-review.json',
+    'evidence/workhorse-v2-independent-review.json','evidence/workhorse-v1-preflight-publication.json','evidence/workhorse-v1-setup-failure.json','evidence/workhorse-v2-parent-review.json',
     'evidence/final-daily-driver-acceptance-v1.json','evidence/review-protocol-recovery-v1.json','evidence/vm-residency-v1/parent-review.json','evidence/final-goal-review-v1.json','evidence/codex-shared-mtp-v1-publication.json','evidence/shared-mtp-pair-v1-parent-review.json','evidence/shared-mtp-launcher-v1/parent-review.json','evidence/shared-mtp-review-v2.json','evidence/daily-review-v5.json','evidence/gpu-verification-v1/receipt.json',
     'evidence/test-discovery-v1/receipt.json','evidence/mtp-quantization-dryrun-v1/receipt.json']
 

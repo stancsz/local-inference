@@ -110,3 +110,5 @@
 /evidence/workhorse-v2-parent-review.json -text -whitespace
 /evidence/workhorse-wh07-diagnostic-v2.json -text -whitespace
 /evidence/workhorse-v1-preflight-publication.json -text -whitespace
+/evidence/workhorse-v2-review/** -text -whitespace
+/evidence/workhorse-v2-independent-review.json -text -whitespace

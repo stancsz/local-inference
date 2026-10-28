@@ -2,6 +2,8 @@
 
 This stack is useful for **bounded, testable drafts and small code changes**. This trial does **not** support treating it as an unattended engineering agent. Correct output, reliable tool execution and obedience to a workflow are separate results.
 
+The [independent review](../evidence/workhorse-v2-independent-review.json) accepts this evaluation/report as READY and explicitly does not certify unattended work or cloud superiority. Observed client: Claude Code2.1.251 on this Windows host, local Qwen8090, daily40,960 context/shared-MTP4 and4,096 output cap. Explicit test-client permissions are isolated; normal caller approval/sandbox settings are unchanged.
+
 The sealed native Claude/local-Qwen batch ran all13 cases once, with at most one same-session feedback phase. One CSV case has an invalid fixture/rubric and is excluded from the usefulness denominator, while its original rejected receipts remain published. Of the12 valid cases, **8 artifacts passed first attempt and10 passed at the end**. The original strict workflow result is **0/13 first attempt,2/13 final**. No failed session is promoted by reporting a correct artifact.
 
 [Sealed task plan](../evidence/workhorse-v2-plan.json) · [Every artifact, native trace and parent replay](../evidence/workhorse-v2-parent-review.json) · [Invalid-case diagnostic](../evidence/workhorse-wh07-diagnostic-v2.json)
@@ -57,6 +59,12 @@ The CSV case's source contains codepointsU+00C3/U+0178 instead of the intended U
 The strict workflow contract also requires every supplied file to be explicitly read, including `CONTRACT.md` which duplicates the task prompt, and permits only two exact shell-command forms. Safe redundant `cd` prefixes or listings still fail that declared contract. Some correct artifacts therefore have low practical-risk workflow misses; others have genuine repeated tool errors and turn-limit failures. Treating all of them as wrong code would mislead. Feedback on artifact checks alone also fails to tell the model about a missing read; those redundant phases are a harness limitation, not evidence that local repair is impossible.
 
 The parent separately replayed every phase's artifact checks, source hashes, session continuity and successful native edit reconstruction.480 project tests pass, including48 focused pack/runner/config checks. Positive/negative controls are useful checks, but did not detect the CSV source-versus-oracle inconsistency; automated controls are not proof that a benchmark is valid.
+
+## Supplemental repository checks
+
+After the sealed trial, fresh local text/tool/overflow and OpenAI schema/output-cap checks pass. The standard three native repository tasks complete in20.05s (VRAM plan),27.95s (model audit) and22.67s (operator guide). Its original receipt reports2/3: the operator artifact is correct, but the old grader rejects its explicit setting-plus-pronoun budget wording. A new regression reproduces that false negative; a narrow grader fix passes16 focused positive/negative wording checks and the final full suite passes **483 tests**.
+
+The [separate parent/nonauthor recheck](../evidence/workhorse-v2-independent-review.json) reconstructs the same successful native Edit bytes and accepts that operator artifact. The original2/3 receipt is untouched, no model generation is repeated and the13-case primary metrics stay unchanged. These supplemental tasks and a different prompt/permission setup are not pooled into the sealed usefulness score. This is a grader correction, not evidence of improved model weights.
 
 The next useful comparative experiment would freeze representative real repository issues and run the same contracts on local and selected cloud models, with repeated seeds and calibrated human grading. That is unperformed follow-up, not an implicit claim of this result.
 

@@ -1,0 +1,369 @@
+{
+  "recorded_at": "2026-10-28T06:33:04.257996+00:00",
+  "evaluation_report": "READY",
+  "scope": "Complete bounded local-workhorse usefulness evaluation and conditional cloud-escalation guide; not a model-readiness or cloud-ranking certificate",
+  "review_route": "http://127.0.0.1:4000/v1",
+  "review_model": "default",
+  "review_session_id": "01a1812c-f9f0-7f62-b859-3b4ed231eb49",
+  "initial_review": {
+    "evaluation_report": "READY",
+    "substantive_findings": [
+      {
+        "finding": "The evidence supports a bounded-usefulness evaluation, not a model-readiness or unattended-agent certification. The report accurately separates artifact correctness, strict workflow acceptance, and practical use recommendations.",
+        "evidence": "Parent replay totals: 13 sealed cases, 8/13 first and 10/13 final artifact checks; 0/13 first and 2/13 final strict workflow passes. The report explicitly limits generalization, notes the mostly short hand-authored tasks, and does not promote rejected workflow receipts."
+      },
+      {
+        "finding": "Excluding wh07 from the usefulness denominator is justified. Its frozen source has mojibake where the expected result assumes the intended character, and the hidden expected value requires string IDs although the prompt does not specify their type. Its two original attempts correctly remain failed and unpromoted.",
+        "evidence": "Actual source has key ß and label key SS; frozen expected facts expect a match, but the actual final artifact has no match. The preserved first artifact instead has that label but numeric source IDs, which also violates the unstated string-ID expectation. The posthoc diagnostic is disclosed and not counted as a primary pass."
+      },
+      {
+        "finding": "No additional invalid task or denominator correction was evident in the six reviewed pages. The other failures shown are tied to stated requirements or observable execution problems.",
+        "evidence": "wh06 explicitly requires invalid status types to return reason permanent; artifact returns invalid_status. wh10 initially chooses 30 despite an explicit equal-authority conflict; wh11 initially omits verify_snapshot. wh12 remains PENDING after repeated failed edits. The remaining reviewed final artifacts pass their fresh hidden checks."
+      },
+      {
+        "finding": "The report appropriately identifies limitations in workflow scoring and repair feedback. Requiring reads of CONTRACT.md, which duplicates the prompt, and enforcing exact shell syntax can reject correct artifacts for low practical-risk process deviations. Artifact-only feedback also does not tell the model about a missing read.",
+        "evidence": "Several passing artifacts have strict failures only from redundant CONTRACT.md reads or command grammar; wh01, wh02, wh03, wh04, wh05, and wh13 show scope violations despite passing fresh artifact checks. The report distinguishes these from actual tool/edit errors and does not relabel them as code failures."
+      },
+      {
+        "finding": "The wh13 enhancement is a meaningful repository-module task, but evidence is limited to the isolated actual module snapshot and specified legacy/Responses/CLI compatibility checks. It was not applied to production source.",
+        "evidence": "Fresh final checks pass legacy/cache handling, Responses envelope JSON/JSONL, terminal ambiguity and boolean-usage rejection, plus CLI compatibility. Report states it is not applied to production."
+      },
+      {
+        "finding": "Cloud escalation guidance is appropriately conditional and is not presented as measured superiority or guaranteed remediation.",
+        "evidence": "The report states there is no paired cloud baseline, no measured cloud latency or savings, and no automatic cloud fallback. It recommends escalation based on observed failure, risk, and verification gates."
+      },
+      {
+        "finding": "The setup failure and prior worker defects are transparently separated from model task outcomes.",
+        "evidence": "The v1 epoch records 13 setup rejections with zero generated tokens; the corrected v2 filter preserves numeric token limits. The sealed plan records preflight defects and parent corrections. The publication page reports 480 project tests passing."
+      }
+    ],
+    "denominators": {
+      "sealed_cases": 13,
+      "invalid_excluded_cases": [
+        "wh07"
+      ],
+      "valid_usefulness_cases": 12,
+      "valid_first_artifact_pass": 8,
+      "valid_final_artifact_pass": 10,
+      "all_case_first_strict_pass": 0,
+      "all_case_final_strict_pass": 2,
+      "additional_invalid_cases_found": []
+    },
+    "actual_checks": [
+      "Ran all six requested review pages only: verifier, method, code1, code2, structured, publication.",
+      "Fresh final hidden checks were replayed by the pages for reviewed artifacts; outcomes matched parent phase records.",
+      "Verified 162 immutable Git artifacts at commit df2fd1e9260ec17efc8a7f16e4d43300eb3f30ed with zero hash mismatches.",
+      "Reviewed sealed plan, preserved v1 setup failure, full-suite log, and frozen v1/corrected filter tests; full suite reports 480 passed in 56.97 seconds."
+    ],
+    "remaining_required_report_work": [],
+    "local_unattended_workhorse_verdict": "NOT_SUPPORTED. Evidence supports bounded, testable drafts and small code changes with verification, not unattended engineering work.",
+    "cloud_superiority": {
+      "status": "UNMEASURED",
+      "limits": [
+        "No paired cloud baseline or equivalent-work comparison.",
+        "No measured cloud latency, token/dollar savings, or superiority claim.",
+        "No evidence here for universal task reliability, security-grade redaction, Sift causal attribution, or new long-context semantic-retention capability."
+      ]
+    }
+  },
+  "targeted_grader_recheck": {
+    "targeted_recheck": "READY",
+    "concrete_evidence": [
+      "The old regex required wording that the generated runbook did not use. The revised grader accepts its explicit `sift_target=32768` adaptive-anchor statement followed by “it is part of the input budget and never added to it.”",
+      "The invariant remains constrained to Sift target wording and the required budget/non-addition claim. New negative regressions reject additive wording, unrelated anchors, and an explicit negation of the invariant.",
+      "The targeted regression suite reports 16 passed. The original three-task smoke receipt remains 2/3; native success and artifact reconstruction are verified separately as a new operator-grade result. The primary 13-case metrics are unchanged and there were no model regenerations.",
+      "The Unicode page reports the frozen key codepoints as U+00C3 U+0178, not the intended U+00DF. Its casefold does not match the `SS` label, and the page confirms the fixture was already corrupted before model reading."
+    ],
+    "evaluation_report_remains": "READY",
+    "corrected_wording": "The frozen wh07 source key has codepoints U+00C3 U+0178; the intended sharp-s character would be U+00DF. The source therefore does not match the `SS` label after casefolding. The fixture/rubric exclusion remains justified; this is not evidence of Sift causality or a model promotion.",
+    "negative_limits": [
+      "The new wording acceptance fixes a grader false negative for this explicit equivalent phrasing; it does not establish general Claude smoke reliability.",
+      "The original 2/3 receipt remains unchanged; the targeted recheck is a separate result, not a regrade of primary 13-case metrics.",
+      "No model readiness, long-context capability, Sift causal attribution, or cloud superiority is inferred."
+    ],
+    "remaining_required_work": []
+  },
+  "actual_read_only_page_commands": 8,
+  "credential_status": "Both scoped review keys revoked in successful finally paths; source worker key revoked separately. No global config changes or credential values published.",
+  "project_tests": 483,
+  "fresh_api_smokes": {
+    "local": true,
+    "openai": true
+  },
+  "supplemental_native_smoke": {
+    "original_cli_exit": 1,
+    "original_grades": [
+      true,
+      true,
+      false
+    ],
+    "new_artifact_grades": [
+      true,
+      true,
+      true
+    ],
+    "reason": "Separate correct-runbook regrade after demonstrated exact-phrase false-negative fix; original receipt untouched, no model rerun.",
+    "artifacts": [
+      {
+        "task": "vram-plan",
+        "original_grade": true,
+        "new_artifact_grade": true,
+        "seconds": 20.05,
+        "sha256": "36ca50afafcf21f0b8162c4e4a0b016c4474d8a833bb1205ef359346004446c8",
+        "native_edit_reconstruction": true
+      },
+      {
+        "task": "model-audit",
+        "original_grade": true,
+        "new_artifact_grade": true,
+        "seconds": 27.95,
+        "sha256": "17110f8f2897082a4cb6b1c052e6d807f232f1611ca552de7e441892ad4c9d3d",
+        "native_edit_reconstruction": true
+      },
+      {
+        "task": "operator-guide",
+        "original_grade": false,
+        "new_artifact_grade": true,
+        "seconds": 22.67,
+        "sha256": "81c5ad90c2a096abac59ced8f63b8cf66d5f1bd57aadc0b1042a0004ec5af9e9",
+        "native_edit_reconstruction": true
+      }
+    ],
+    "primary_13_case_metrics_changed": false
+  },
+  "valid_usefulness_cases": 12,
+  "first_artifact_pass": 8,
+  "final_artifact_pass": 10,
+  "invalid_cases": [
+    "wh07"
+  ],
+  "sealed_cases": 13,
+  "first_strict_workflow_pass": 0,
+  "final_strict_workflow_pass": 2,
+  "local_unattended_workhorse": "NOT_SUPPORTED by this trial",
+  "cloud_superiority": "UNMEASURED; no paired task baseline",
+  "remaining_required_evaluation_work": [],
+  "review_limits": [
+    "Pages reuse project checkers; nonauthor inspected their source and actual artifacts, not an independent checker reimplementation.",
+    "Initial reviewer glyph wording for wh07 is clarified by its own follow-up using ASCII numeric codepoints; raw initial text remains archived.",
+    "Short hand-authored tasks plus a frozen real-module enhancement, not general large-repository engineering, broad writing quality or a new compaction-retention proof.",
+    "All invalid, failed, redundant and pre-inference attempts remain published; artifact passes do not promote strict workflow failures."
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-independent-review-v2.exit.json.gz",
+      "raw_sha256": "b16970b19ba1ef473c00105350ba5e596ced771bbb1f7181a7f1200f0cb027fa",
+      "compressed_sha256": "83948368378f67e4e18342ec76a18a3e57ed55bcddee719d9a9909e256921e63"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-independent-review-v2.jsonl.gz",
+      "raw_sha256": "2da7be1bcd8011f266f742ce452243b5c37d41245608c24cb0cd8d1f90c147a9",
+      "compressed_sha256": "6262059a09561d924dd842567a1c1b1bd40460b19b60cd86c9d6b81a4c66a322"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-independent-review-v2.plan.json.gz",
+      "raw_sha256": "0583701ba7c53b76551b06711a1b55aaec0e5fa52c0c9a3789157a2477e6a2d7",
+      "compressed_sha256": "0cdb776165daeede92da797cdc71e3ad88e306101abd65c089b68bb4e1c2589d"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-independent-review-v2.prompt.txt.gz",
+      "raw_sha256": "b40289dd3d53ea7881ed36313faa8d9cf93ba666f71ce2bf9bc4146bbde920ed",
+      "compressed_sha256": "0e7f9578354ed2289609cdc361a269969386f0322cb37d8e2e66aa5e389be274"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-independent-review-v2.py.gz",
+      "raw_sha256": "954cde5c9c072ccb4b0f21470f0f3ea2ab8eb0c21c569a98d63fe3cee7d7520a",
+      "compressed_sha256": "968370538116074f13708b5b89e8af37440e074d1a47fd623066df7065e244d8"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-independent-review-v2.revocation.json.gz",
+      "raw_sha256": "eabfbad83c23a1c154be677424f14b0690c1322bc9f0721ef685386922f5e480",
+      "compressed_sha256": "049aa879b751bbf71d910163211a62eb4875cff52fc2fd7943a7417576966c05"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-independent-review-v2.stderr.log.gz",
+      "raw_sha256": "600bf218205d07fe78b4da9845876f6144f4690fc598836a18b21d70c0f4223e",
+      "compressed_sha256": "7a5978d425a5828a8e7e03e20505d7e6770584e6a5efc870bec0f703f9210ba6"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-grader-independent-v2.exit.json.gz",
+      "raw_sha256": "6876e8b06e909686e603214a2141423c6e87639f8ef970de5be1c7fd41560542",
+      "compressed_sha256": "100f6ac5d840f552af427b5a4f213441a6c146a58ff4130e12b1bd494760762c"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-grader-independent-v2.jsonl.gz",
+      "raw_sha256": "c3c5936796a79895f0b9b83f3a8eb670771c7dd69a00e01017db2a81c163f1c4",
+      "compressed_sha256": "fefe4990109212c1396e89a124b850dc8731f571ab457a351ab6d371a8fd1385"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-grader-independent-v2.plan.json.gz",
+      "raw_sha256": "11d5d10a8dcbd94504189bef2e9ce58525636c79060806fb93a0ca5a1e5eb7d5",
+      "compressed_sha256": "3914420cc67bdfe23b4f85ab1f3856631bf8f342c094f805354b1656d7d8662e"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-grader-independent-v2.prompt.txt.gz",
+      "raw_sha256": "ee14d4bb41cdd13acd706c5f84da35bdf92a9da64dfbc8d423a330e5207fc907",
+      "compressed_sha256": "58f93a539285ec5e7dfb8727b20aa5b114c8ff5fe961136a68d6ccd06538ea9e"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-grader-independent-v2.py.gz",
+      "raw_sha256": "b64b22ee1183fff188542f1a1fee40c2e5aac4da815b05f6c4a5252a48501ec0",
+      "compressed_sha256": "c12e008f31c5d925cef6e179163bfde0a7c26882c8f5bb87587a57fb87c66e4e"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-grader-independent-v2.revocation.json.gz",
+      "raw_sha256": "1835892c085fc2ebb8575eaba1e7044aeac18b3761ace1d064e3b3154dcfd71c",
+      "compressed_sha256": "5036d29958470d671b18696d6db26c13cc8ee6df5298bff29a8119a72b407495"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/reviews/workhorse-grader-independent-v2.stderr.log.gz",
+      "raw_sha256": "0632cad93a60b89ccb946ebd165b9c2c199ddbeb8824590d40394a704be6856d",
+      "compressed_sha256": "0ffc9e83fcfd9e0e98ae74f5a190c79ac829b6406cf8ef0acba3384a58e96ead"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/checks/workhorse-review-pages-v2.py.gz",
+      "raw_sha256": "c9aa999e4ebb7864e3802d4116ce8dd7df88aa332c1ea23ba6cd90c9c684ce05",
+      "compressed_sha256": "cc76a0a4c523bf10912a292d8b9639db8681fce178fa249e4165792a79fa2d78"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/checks/workhorse-grader-recheck-v2.py.gz",
+      "raw_sha256": "7852391395d9c783d4b876694a247b318227a4b07907341026f77660ed15fdcb",
+      "compressed_sha256": "8e47af9a490dbe9f61d9237f6f435905c51a1eb3353d75c6314210b7dda828b1"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/checks/operator-budget-reference-before.log.gz",
+      "raw_sha256": "71b7039cd0af401b308781ad70048c04125159f16389b2ebf261581edb286b0b",
+      "compressed_sha256": "ebb74967099ec6043117d199545e01a0a7726f12e7586991f62fd1cc0f8aed7a"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/checks/operator-budget-reference-after.log.gz",
+      "raw_sha256": "cd963efe71bbffb90e60a411584a9ee974a8c450377fbd964f4e9c70757293bf",
+      "compressed_sha256": "086da1a910518a075ac486f288dc002d4466be9b2fa2459817e8c5a9a0701e75"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/checks/operator-budget-parent-recheck-v2.log.gz",
+      "raw_sha256": "deeb1f8b22690009a8409720af4dd67f756874ea4d1399598da8319b138178c8",
+      "compressed_sha256": "249c58368fdc08ee4b36f3f6cd6e75938c8cef1f221386f265e0db16ebe0e395"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/checks/workhorse-final-suite-v2.log.gz",
+      "raw_sha256": "feae7b3655b3f92c23d89aeafc892c8945c9ab0a8a9aec7f3d8df40f000a787a",
+      "compressed_sha256": "384f78df7619d38a212c97672ccbc9b325e050cc96fc752f3a3c9dc4111aa570"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/checks/workhorse-final-local-smoke.json.gz",
+      "raw_sha256": "8a2046c4d2ca024002d568a982a590856ea8974b90d53aeb186533e58c415d40",
+      "compressed_sha256": "5e8af5dd3e67e313f5a6f6105152bebe30c4c730fea613688bd36e2e59f1b892"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/checks/workhorse-final-openai-smoke.json.gz",
+      "raw_sha256": "30b2f3cef19f8630d4e8cbda95cd670d3e22a03d2ad205d3d72ea4d6cb9caeea",
+      "compressed_sha256": "5ec4c5d1637e801a864fa5511ae10ce0d5eabd650601591473e569ac4d6ca4fa"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/checks/workhorse-publication-v2.json.gz",
+      "raw_sha256": "569b67727bf17f824580ccb1a1f42fe06bc979d0b537688239bb6ee8ce5f86d4",
+      "compressed_sha256": "2438d3db576467a44788911a089afa93212abc94abd60b31d9b96e6f7a871e13"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/claude-acceptance.json.gz",
+      "raw_sha256": "59f39b4a09e2ea527e622cd4860058f65f0fb4bcc0481479b9bea4e459540f29",
+      "compressed_sha256": "31a907a718b5c63411a47988a6404cdb15ab0088bd8b8775fdefadfb4ac5fd66"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/model-audit.json.gz",
+      "raw_sha256": "17110f8f2897082a4cb6b1c052e6d807f232f1611ca552de7e441892ad4c9d3d",
+      "compressed_sha256": "5e0924a71573bdad8bfdf0d4aa3e5330fb78a49aa8b1091cd29de3d2d3252fae"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/model-audit.jsonl.gz",
+      "raw_sha256": "ed3a1fff4b2515fbfc4a3d9b8d0f739ac81f050c2e87516d366ebf8e39ff43c6",
+      "compressed_sha256": "ee649f4a60185d9e9adf901b4aedc66ff4cafdc3c64588a9023910937677fb5e"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/model-audit.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/OPERATIONS.md.gz",
+      "raw_sha256": "81c5ad90c2a096abac59ced8f63b8cf66d5f1bd57aadc0b1042a0004ec5af9e9",
+      "compressed_sha256": "ff0d7768bb7501657bac14a769b01b509fb6356175489782b0d19d1baa8a32a7"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/operator-guide.jsonl.gz",
+      "raw_sha256": "ca42d6e964d4b2fbcd99cacc969c057579e13cd17b304b3a3fa4a76eaa90bc04",
+      "compressed_sha256": "62bb15fdc49da72af8595cb8f825fd33436da017760bff6a2785caca905db7a0"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/operator-guide.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/published/MODEL_AUDIT.json.gz",
+      "raw_sha256": "17110f8f2897082a4cb6b1c052e6d807f232f1611ca552de7e441892ad4c9d3d",
+      "compressed_sha256": "5e0924a71573bdad8bfdf0d4aa3e5330fb78a49aa8b1091cd29de3d2d3252fae"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/published/sources/model-audit/compose.yaml.gz",
+      "raw_sha256": "010b96eeeec70e9f4b251aedc9b5cd703be5c23fb49102bc1bc5759a290e824e",
+      "compressed_sha256": "c1e30e317d923467b7aecd1fda1784a87ce5652343d80b2d8cab1351698262ec"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/published/sources/model-audit/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+      "compressed_sha256": "a112d6e8b4888c388786688a6b7c9b55cd4bb28439169fc16a75fae3c4ba2846"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/published/sources/vram-plan/host-vram.json.gz",
+      "raw_sha256": "f88818734ccb21642a5548942b22946a9da73f1175288a7de754d9bc5f25ba55",
+      "compressed_sha256": "81162a4e30df7242133ad21e492a9df33a50aa1be90e1d59c5deaecb87730bcf"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/published/sources/vram-plan/model-manifest.json.gz",
+      "raw_sha256": "63d551bb8a6cbbbb3ed596d279474fe7261fce9a9d176c8995064b92c7c18c4f",
+      "compressed_sha256": "a112d6e8b4888c388786688a6b7c9b55cd4bb28439169fc16a75fae3c4ba2846"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/published/sources/vram-plan/runtime-vram.json.gz",
+      "raw_sha256": "a74aa187a9b585143f9ea4e7e1c4c73355673cbd2804297a1cdbaca59614b731",
+      "compressed_sha256": "15c6192876b386c357adb8a2362cd6a5a720aacee101a9ad320af154d203d245"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/published/VRAM_PLAN.md.gz",
+      "raw_sha256": "36ca50afafcf21f0b8162c4e4a0b016c4474d8a833bb1205ef359346004446c8",
+      "compressed_sha256": "5dc1618845460886594d84818f6bc3845f13b8d685ace3f3ada482832e197346"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/vram-plan.jsonl.gz",
+      "raw_sha256": "cdd242fe9c92187b52eab80ad4ddd9b551aa4bff0dbde93c302779db08e4b4bc",
+      "compressed_sha256": "b8486ecaf9161d4561c80020ebe716d8e5671dcb60e666888563674da231921a"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/vram-plan.md.gz",
+      "raw_sha256": "36ca50afafcf21f0b8162c4e4a0b016c4474d8a833bb1205ef359346004446c8",
+      "compressed_sha256": "5dc1618845460886594d84818f6bc3845f13b8d685ace3f3ada482832e197346"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/supplemental-smoke/vram-plan.stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/producer/publish-workhorse-final-v2.py.gz",
+      "raw_sha256": "a543f8e358dcb3d68c5e01dc7493725ed94927eec70e7c5240a5b31ea15071a0",
+      "compressed_sha256": "6ea328da286881975ccbdc786b97a1a79c14491c5e4a4be4876f283e7d17e904"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/producer/claude_acceptance-after-grader-fix.py.gz",
+      "raw_sha256": "5af324bcd5bf166b1e7db38f589b215a784ee69cdf2f688f4c5e8c43840a8ab2",
+      "compressed_sha256": "7544bf72dfa5bc17407aaa1fad05b541fbefe1ce8bfe3f096e2e14bef446a973"
+    },
+    {
+      "path": "evidence/workhorse-v2-review/producer/test_operator_budget_reference.py.gz",
+      "raw_sha256": "5cfd9aa8c51ade9629137be546cd4ea93fd757058bacb32fe7841fe487dab498",
+      "compressed_sha256": "7f4089377a771d25f725a54b7890dda194c84b38044c505674b47630b6df19e5"
+    }
+  ]
+}
