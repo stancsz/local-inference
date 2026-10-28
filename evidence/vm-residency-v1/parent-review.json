@@ -1,0 +1,523 @@
+{
+  "epoch": "vm-residency-v1",
+  "cases": [
+    {
+      "case_id": "32",
+      "settings": {
+        "case_id": 32,
+        "gpu_layers": 99,
+        "ubatch_size": 32,
+        "cpu_weight_blocks": 0,
+        "context": 69888,
+        "sift_target": 65536,
+        "draft_tokens": 2,
+        "mtp_weight_mode": "shared-target",
+        "status": "tested",
+        "startup_host_delta_mib": 12608,
+        "startup_vm_dedicated_bound_bytes": 13233659904,
+        "shared_context_log_confirmed": true,
+        "checks": {
+          "benchmark": 0,
+          "capacity": 0,
+          "local": 0,
+          "openai": 0,
+          "context": 0,
+          "claude-feedback": 0
+        },
+        "peak_host_delta_mib": 12860,
+        "host_delta_within_limit": true,
+        "conservative_host_delta_mib": 12860,
+        "conservative_host_delta_within_limit": true
+      },
+      "memory": {
+        "case_id": "32",
+        "baseline_range_mib": [
+          1670,
+          1685
+        ],
+        "sampled_peak_host_used_mib": 14530,
+        "conservative_host_delta_mib": 12860,
+        "delta_bytes_derived_from_mib": 13484687360,
+        "limit_bytes": 14000000000,
+        "within_sampled_delta_limit": true,
+        "valid_case_samples": 422,
+        "largest_valid_case_sample_gap_seconds": 1.127661,
+        "sampling_error_rows": 0,
+        "scope": "Sampled whole-host occupancy minus the lower stopped baseline; desktop drift and unsampled transients remain confounds. Not isolated per-allocation residency."
+      },
+      "capacity": {
+        "index": 0,
+        "id_slot": 0,
+        "stop": true,
+        "model": "qwen3.8-27b",
+        "tokens_predicted": 4096,
+        "tokens_evaluated": 65536,
+        "has_new_line": true,
+        "truncated": false,
+        "stop_type": "limit",
+        "stopping_word": "",
+        "tokens_cached": 69631,
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 65536,
+          "prompt_ms": 120069.104,
+          "prompt_per_token_ms": 1.832109130859375,
+          "prompt_per_second": 545.8190143569323,
+          "predicted_n": 4096,
+          "predicted_ms": 67266.494,
+          "predicted_per_token_ms": 16.426494261294263,
+          "predicted_per_second": 60.87726231130762,
+          "draft_n": 2730,
+          "draft_n_accepted": 2730
+        },
+        "input_token_ids": 65536,
+        "runtime_context_window": 69888,
+        "runtime_build": "b11610-091b6a7fc",
+        "seconds": 187.35,
+        "host_gpu_mib": "14516 MiB, 1480 MiB",
+        "purpose": "Synthetic exact capacity; no claim of productivity or coherent long output",
+        "passed": true
+      },
+      "benchmark_source": "evidence/benchmark-vm-bound-v1-32.json",
+      "benchmark_is_prior_reference": false,
+      "tasks": [
+        {
+          "task": "vram-plan",
+          "recorded_passed": true,
+          "session_id": "89dadd0a-7687-42a7-b523-1a4cc8035fa6",
+          "raw_sha256": "a0e2065b07babcc51bbb62706a0ccf81150163f5227e597073838d62ec3cbfc7",
+          "normalized_text_sha256": "b7aba98cd42ac1269b7a00c97e8d0c7df8d97e9c28e8d7f1080aac9b28e6bb27",
+          "native_edit_reconstruction": true,
+          "parent_current_validation_errors": []
+        },
+        {
+          "task": "model-audit",
+          "recorded_passed": true,
+          "session_id": "a520d257-ddf7-42da-b4c9-919a9acef450",
+          "raw_sha256": "fd4ad95d90d4fb9c30ed10c0fa03aabdb05267fe3fa316351db3a8ebc187e13d",
+          "normalized_text_sha256": "61f1ccb23e90e2fbbc912a74a23126337788f4d123e17397213fd6e502f3b5a9",
+          "native_edit_reconstruction": true,
+          "parent_current_validation_errors": []
+        },
+        {
+          "task": "operator-guide",
+          "recorded_passed": true,
+          "session_id": "f016bba0-fecf-4a82-b820-2c4be15e8d75",
+          "raw_sha256": "792bc31c0cffed99b63e46eec8b50935224cc495cd43709c26b8af1eb75824c2",
+          "normalized_text_sha256": "5395b41f2a298c65b4be017f191642031db7fb8d5d57c7a12d08dba32f655e83",
+          "native_edit_reconstruction": true,
+          "parent_current_validation_errors": []
+        }
+      ],
+      "passed_task_count": 3,
+      "all_native_tasks_passed": true,
+      "all_artifacts_pass_current_parent_checks": true,
+      "allocation_log_note": "Raw lines include repeated reservations. Do not sum all lines or interpret them as isolated peak residency.",
+      "direct_vm_upper_bound": {
+        "case_id": "32",
+        "peak_all_vm_dedicated_bytes": 13485330432,
+        "peak_all_vm_dedicated_mib": 12860.61328125,
+        "peak_all_vm_shared_bytes": 130793472,
+        "stopped_vm_dedicated_range_bytes": [
+          24059904,
+          24059904
+        ],
+        "observed_load_increase_bytes": 13461270528,
+        "minimum_load_bytes": 10000000000,
+        "limit_bytes": 14000000000,
+        "sampled_vm_dedicated_under_limit": true,
+        "valid_case_samples": 435,
+        "largest_case_gap_seconds": 2.599182,
+        "maximum_instance_count": 3,
+        "scope": "Direct Windows dedicated GPU-memory counters summed across all VM processes/instances; may overcount shared allocations. No desktop subtraction. A containing-VM upper bound, not an exact isolated model value or continuous-time peak.",
+        "peak_all_vm_committed_bytes": 13616123904,
+        "committed_under_limit": true
+      }
+    }
+  ],
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "parent_validation_note": "Current parent checks include the later DedicatedMemory guard; original native acceptance outcomes remain unchanged.",
+  "restoration_reported": true,
+  "restoration_followup": null,
+  "measurement_plan": "evidence/vm-residency-v1-plan.json",
+  "source_limit": "Producer snapshots and the sealed plan identify the measurement sources. VM usage is a containing-process upper bound, not an exact isolated-container or continuous-time residency measurement.",
+  "artifacts": [
+    {
+      "path": "evidence/vm-residency-v1/32-allocation-lines.json",
+      "sha256": "9a98126a8cce0df98243f9d2bf4f3647d5a8a66676e0ca09e41629a2e8154d21"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-benchmark.json",
+      "sha256": "17366e3c53a9a641eef865bb8dbd55e795d93b7b60504061d425806838da8ed0"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-benchmark.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-benchmark.stdout.log",
+      "sha256": "471bc6d21461dc9b0f3e766f9b36cc1d2db5926e7e594f4df5bbc1094182b5e2"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-capacity.json",
+      "sha256": "aba4d37072c38717f1238393ed31bc8de282549bf602f1d8b47d45e6eaccc6f7"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-capacity.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-capacity.stdout.log",
+      "sha256": "aeeb7ca30f4514a44823c3362c5e9177340410f0b583ab3d72af05d5e37c47c4"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-claude-feedback.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-claude-feedback.stdout.log",
+      "sha256": "05f6cfd54fb73978d9f7c7876dc24aa560b2ffa52f02d096d7b5e97967ffc2fc"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-context.json",
+      "sha256": "01f8a6135050a50a24a2eb7467963fc505c19c2d477559a29700618bd74e20c0"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-context.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-context.stdout.log",
+      "sha256": "57c018ae2f039fdf6682d96cbfac6ce75d0d7be4d63f3cb8331f779800bfa752"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-inference.stderr.log",
+      "sha256": "4851fa651c18ba6aa7908d36a559703f3ba62fe460f74bf5d4085276fbe292cf"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-inference.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-local.json",
+      "sha256": "afc9d64957a6f0db9c76730d01e30a1bf727e6323bd8f83d0b28952e3775d621"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-local.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-local.stdout.log",
+      "sha256": "1a47d2ee5514ef68f247cb080e797ca0747b9495c5bbfd3b480b82c863f0db5a"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-openai.json",
+      "sha256": "7d08d60271022fdb0feaf8a548036f7aa5c0d06f0718c063c0e64184c88e5d18"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-openai.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-openai.stdout.log",
+      "sha256": "d25b64095a890e494223e06f2004a3eae0a141b749f7c04086e68569bca5300c"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-stop.stderr.log",
+      "sha256": "ec72e052d364149de18d29b696e1bd41d13eb580fd29d8551c099fd8d10e77ba"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-stop.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-up.stderr.log",
+      "sha256": "729ef4f1e370f29cee2cf25fed80d20c9829f928601d3eeb6714e012efafda51"
+    },
+    {
+      "path": "evidence/vm-residency-v1/32-up.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/analysis-source/claude_acceptance.py",
+      "sha256": "34f29ce9c3466a4d628bfcea968473dc15177ca4ec46ba77a1fab437d9008c5e"
+    },
+    {
+      "path": "evidence/vm-residency-v1/analysis-source/daily_acceptance.py",
+      "sha256": "6efe104b3871cf18ea4ce66ffa00360764f801b06f96aae7b50c9ea1b2918fce"
+    },
+    {
+      "path": "evidence/vm-residency-v1/analysis-source/profile_memory.py",
+      "sha256": "60b2e1d2a0447869dc66d7f615a56aad9c238379653c3e9757c941bcca42cc15"
+    },
+    {
+      "path": "evidence/vm-residency-v1/analysis-source/publish-vm-residency-v1.py",
+      "sha256": "5d8e7a0fd330a3b5574094f9494723cc5157358a65292cbd5ec2b2f04d054e25"
+    },
+    {
+      "path": "evidence/vm-residency-v1/baseline-stop.stderr.log",
+      "sha256": "ec72e052d364149de18d29b696e1bd41d13eb580fd29d8551c099fd8d10e77ba"
+    },
+    {
+      "path": "evidence/vm-residency-v1/baseline-stop.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/gpu-samples.jsonl",
+      "sha256": "dd959ca545244115c19c2b06b427bc39d9e66b706d5fead127c9a672ddc82c3a"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/model-audit/model-audit.json.gz",
+      "sha256": "0f0beedfb22986d1474126c0e34bceea487ad0602fe316ad4dce75287fd3caa0"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/model-audit/phase-0/phase.json.gz",
+      "sha256": "c2ffa974e4cfff2d72ac83a419ff76caeed4478eb95bed11c6d199c2b0a680f4"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/model-audit/phase-0/prompt.txt.gz",
+      "sha256": "bfc02cbf3da0d97008c2c2a121c065bf8d53e248449e2e8346df6cef365464d8"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/model-audit/phase-0/stderr.log.gz",
+      "sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/model-audit/phase-0/stdout.jsonl.gz",
+      "sha256": "1609c5f1a4655ee644f6e6f39402f5cb47e21ed093f51faed0723a52ad8a3916"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/model-audit/revisions/rev-0.sha256.gz",
+      "sha256": "35a7bac595a35a9dba6c6e7c9a707facf5e93cd74a99dbf9ec37f67a0c48bd38"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/model-audit/revisions/rev-0.txt.gz",
+      "sha256": "0f0beedfb22986d1474126c0e34bceea487ad0602fe316ad4dce75287fd3caa0"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/OPERATIONS.md.gz",
+      "sha256": "4ea2b732161d422b674bc6dbfa344194541f249cfa87b9f70606edf46bf2eca4"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/phase-0/phase.json.gz",
+      "sha256": "4af39737381cefd787bbbba492e6d36636e88fb77ee8d3073219af0991c2f2fa"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/phase-0/prompt.txt.gz",
+      "sha256": "331adc695304e5561d4878cf32f52816dc0f773faafa0963a6339ee2e17a39c3"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/phase-0/stderr.log.gz",
+      "sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/phase-0/stdout.jsonl.gz",
+      "sha256": "e19ad3697d9879bd822e91c2bb3121412c63cdf0d38ae79af52f7fac5cc22725"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/phase-1/phase.json.gz",
+      "sha256": "edc6f7e86a9bc2c41fa9861f301e97ae52f4c8abbd10dc5b4ebc8605d6e63c5a"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/phase-1/prompt.txt.gz",
+      "sha256": "c1e51c3102e53cbed08e1704805638a666767275fd763fa8d9c2342e4d6ebcc2"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/phase-1/stderr.log.gz",
+      "sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/phase-1/stdout.jsonl.gz",
+      "sha256": "676a23097c7c168934f0204801b3691a87c1cb94864638c556aa7824d3c06313"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/revisions/rev-0.sha256.gz",
+      "sha256": "0741d529883ed1ee681e560df8986b9e26288a25f92aefee70bba2c43c61d6a1"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/revisions/rev-0.txt.gz",
+      "sha256": "3447b1d8aa4ac9810a45e8f2806e1104e3299ba412e40bb1cb7b54bb14241444"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/revisions/rev-1.sha256.gz",
+      "sha256": "0ca86ff8765f425aebc594944ba96191db80418d12e1c975fca5740d962fc8c7"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/operator-guide/revisions/rev-1.txt.gz",
+      "sha256": "4ea2b732161d422b674bc6dbfa344194541f249cfa87b9f70606edf46bf2eca4"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/plan.json.gz",
+      "sha256": "bc7a4c685fd901d6000fa0e5da739bb07712d4e49ac42194f3e7067eb19977e8"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/run-summary.json.gz",
+      "sha256": "35db51f2b8253b729ed496ef27b3b50f23e74788b398230e21e7c057b021d196"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/vram-plan/phase-0/phase.json.gz",
+      "sha256": "f0f90272548f1a00bedb3aac54cc772dec024d1470fccd189f8b6dedf4560750"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/vram-plan/phase-0/prompt.txt.gz",
+      "sha256": "da0c55789995b6f04bfd0cdeee04058f5fba9342f11a640c1cb16aa76ad0b7e5"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/vram-plan/phase-0/stderr.log.gz",
+      "sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/vram-plan/phase-0/stdout.jsonl.gz",
+      "sha256": "4cd31d37653f7dbebb1a9d528c0d1b6b985662ac782d7d64938722dfcd88fb12"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/vram-plan/revisions/rev-0.sha256.gz",
+      "sha256": "b4b65e8440203a7638153c1a80a3d6c8ad256e42d5656134fbfb9cb9bc74d57e"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/vram-plan/revisions/rev-0.txt.gz",
+      "sha256": "0d8435f9b00623a6e3d52407374ae1309c1267e58562da541aad00cfccbd24da"
+    },
+    {
+      "path": "evidence/vm-residency-v1/native-artifacts/32/vram-plan/vram-plan.md.gz",
+      "sha256": "0d8435f9b00623a6e3d52407374ae1309c1267e58562da541aad00cfccbd24da"
+    },
+    {
+      "path": "evidence/vm-residency-v1/observations.jsonl",
+      "sha256": "b1a25e82da4297e74203e06d96b06b39b78783e95eb5c86910d34d0ab4f9bc62"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/benchmark.py",
+      "sha256": "e96f0dc5c3fb5deda0ff52156364f19818a3a71c41f5dc31289c4be8bc6e97c8"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/capacity_acceptance.py",
+      "sha256": "0407ad1736bdd5b3b7af0cbad133eb502a7f654939e09c12f6f6f1fa9085e856"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/claude_acceptance.py",
+      "sha256": "34f29ce9c3466a4d628bfcea968473dc15177ca4ec46ba77a1fab437d9008c5e"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/compose.yaml",
+      "sha256": "010b96eeeec70e9f4b251aedc9b5cd703be5c23fb49102bc1bc5759a290e824e"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/context_acceptance.py",
+      "sha256": "9e6b74700eeba882613c5b563ccb589c9d1c75c7fee60dc4b3e3bd3a18390e9f"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/daily_acceptance.py",
+      "sha256": "6efe104b3871cf18ea4ce66ffa00360764f801b06f96aae7b50c9ea1b2918fce"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/daily_artifacts.py",
+      "sha256": "f84acb51eceea37774865f4f1485d9bfb6f88952c4cab5f4871e9c6fd8a60c7f"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/local_smoke.py",
+      "sha256": "ab434fe5bc1df09803293fbc13bb333751c5ca8786888f1b63be8cc18c2bc8cc"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/main-copy-dry-run.log",
+      "sha256": "4a8fec8f40c3b16638a95e53ec192663ac00f5b6739163f9dbeaa31750b1a4fa"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/observe-vm-residency-v1.py",
+      "sha256": "a0a4201e99a373bf0ba2d16f5ef0faa035d561c6c19c1594b2e1ae99eada5138"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/openai_smoke.py",
+      "sha256": "55be99dd625363aab25dd0569a346d4b98a9579a9e6aebbd06a2fc0de5830dbd"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/profile_memory.py",
+      "sha256": "60b2e1d2a0447869dc66d7f615a56aad9c238379653c3e9757c941bcca42cc15"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/shared-mtp-source.json",
+      "sha256": "1d37230528dac98a120a2711bb0987968bc3562276628eb4ab68de2fd5feeb5d"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/start-inference-vm-bound-v1.sh",
+      "sha256": "1fdf09b86ffc222dbeb967596f5c1096792b2a64151825183992e02a06fc464e"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/vm-residency-v1-plan.json",
+      "sha256": "9ac37a5db1b41907bc32d6402b0eb789bb86b91dba54fd20e2390d4ed975fbb4"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/vm-residency-v1.py",
+      "sha256": "d38bac420464c2b06e24d40d929af6d41c840c5bcdde0137b937a5249dd6e6fe"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/watch-vm-residency-v1.py",
+      "sha256": "f9a9b42c442069b6d9f365a98bce061217b65f382d62ab193ebde708035b80aa"
+    },
+    {
+      "path": "evidence/vm-residency-v1/producer/windows_vm_gpu.ps1",
+      "sha256": "5f8ddd8a506cbf13a2767d3721d52ac28bc68a88a2501625884144820e21605e"
+    },
+    {
+      "path": "evidence/vm-residency-v1/project-tests.log",
+      "sha256": "23c259ebf1ae1b361f7032a12daa3aef4b39e2aac1097f63c599a124e432917b"
+    },
+    {
+      "path": "evidence/vm-residency-v1/restore-up.stderr.log",
+      "sha256": "729ef4f1e370f29cee2cf25fed80d20c9829f928601d3eeb6714e012efafda51"
+    },
+    {
+      "path": "evidence/vm-residency-v1/restore-up.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/restored-local.json",
+      "sha256": "3039f871da7c4bd3fba7743fbb0502ce9a363ac45b52a3e5c1412beab98ce584"
+    },
+    {
+      "path": "evidence/vm-residency-v1/restored-local.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/restored-local.stdout.log",
+      "sha256": "1a47d2ee5514ef68f247cb080e797ca0747b9495c5bbfd3b480b82c863f0db5a"
+    },
+    {
+      "path": "evidence/vm-residency-v1/restored-openai.json",
+      "sha256": "8116eba45a64c968e57c61290a3bfe88ddd7bad3aa64f98343069bb683114db7"
+    },
+    {
+      "path": "evidence/vm-residency-v1/restored-openai.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/restored-openai.stdout.log",
+      "sha256": "d25b64095a890e494223e06f2004a3eae0a141b749f7c04086e68569bca5300c"
+    },
+    {
+      "path": "evidence/vm-residency-v1/sampler.stop",
+      "sha256": "6c45cb72a36e63d522aa54ed8adbd7a29a989474f2f77e0458af8800564ef3cb"
+    },
+    {
+      "path": "evidence/vm-residency-v1/stage.txt",
+      "sha256": "ba3f95ea792a4e9bf5b9ede19f68bd73cc786234fff2de1e06387e53190e024c"
+    },
+    {
+      "path": "evidence/vm-residency-v1/state.json",
+      "sha256": "71b2e592c07aee5b7616e99a3984a6c46ead300e948968fded4c5674a0f7f967"
+    },
+    {
+      "path": "evidence/vm-residency-v1/vm-counters.jsonl",
+      "sha256": "c59c7bd69ba9f491e621ec34182cbcbd42d38bfbf657797d7b9b7e0d3b9ed92b"
+    },
+    {
+      "path": "evidence/vm-residency-v1/vm-sampler.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/vm-residency-v1/vm-sampler.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "pid": 190112,
+  "started": "2026-10-28T00:37:42.510520+00:00",
+  "status": "terminal",
+  "limit_bytes": 14000000000,
+  "limit_mib": 13351.4404296875,
+  "cases": [
+    {
+      "case_id": 32,
+      "gpu_layers": 99,
+      "ubatch_size": 32,
+      "cpu_weight_blocks": 0,
+      "context": 69888,
+      "sift_target": 65536,
+      "draft_tokens": 2,
+      "mtp_weight_mode": "shared-target",
+      "status": "tested",
+      "startup_host_delta_mib": 12608,
+      "startup_vm_dedicated_bound_bytes": 13233659904,
+      "shared_context_log_confirmed": true,
+      "checks": {
+        "benchmark": 0,
+        "capacity": 0,
+        "local": 0,
+        "openai": 0,
+        "context": 0,
+        "claude-feedback": 0
+      },
+      "peak_host_delta_mib": 12860,
+      "host_delta_within_limit": true,
+      "conservative_host_delta_mib": 12860,
+      "conservative_host_delta_within_limit": true
+    }
+  ],
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY",
+  "advisor_council": "Unavailable: NORTHSTAR_COUNCIL_MODEL is unset; no substitute provider/model selected.",
+  "original": {
+    "inference": {
+      "image": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+      "environment": {
+        "DRAFT_TOKENS": "4",
+        "GPU_LAYERS": "99",
+        "MTP_MODEL_PATH": "",
+        "SPEC_TYPE": "draft-mtp",
+        "UBATCH_SIZE": "64",
+        "CONTEXT_SIZE": "40960",
+        "DRAFT_GPU_LAYERS": "99"
+      }
+    },
+    "gateway": {
+      "image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
+      "environment": {
+        "SIFT_TARGET": "32768",
+        "CONTEXT_SIZE": "40960",
+        "SIFT_COMPRESSION_RATIO": "8"
+      }
+    }
+  },
+  "original_mounts": {
+    "gateway": [
+      {
+        "Type": "bind",
+        "Source": "c:/users/stanc/github/local-inference/evidence",
+        "Destination": "/evidence",
+        "RW": true
+      }
+    ],
+    "inference": [
+      {
+        "Type": "volume",
+        "Source": "/var/lib/docker/volumes/local-inference-models/_data",
+        "Destination": "/models",
+        "RW": false
+      },
+      {
+        "Type": "bind",
+        "Source": "c:/users/stanc/github/local-inference/docker/start-inference.sh",
+        "Destination": "/start-inference.sh",
+        "RW": false
+      }
+    ]
+  },
+  "mount_comparison": "Canonical Windows/WSL bind aliases; RW/target/type preserved; startup bytes checked",
+  "startup_script_sha256": "b2b132b622f5177970f7f71f8f7264506c8d6cfdad112079732def32467ce588",
+  "original_context": 40960,
+  "plan": {
+    "case_order": [
+      32
+    ],
+    "mtp_weight_mode": "shared-target",
+    "separate_draft_model": false,
+    "cpu_weight_blocks": 0,
+    "context": 69888,
+    "sift_target": 65536,
+    "draft_tokens": 2,
+    "ubatch": 32,
+    "capacity_input": 65536,
+    "capacity_output": 4096,
+    "capacity_timeout_seconds": 960,
+    "baseline_seconds": 30,
+    "restore_original": true,
+    "qualification_increment": 0
+  },
+  "source_commit": "9df397c26690e32b8c68ba5eaba1a4adb6ba0409",
+  "source_hashes": {
+    "vm-residency-v1.py": "d38bac420464c2b06e24d40d929af6d41c840c5bcdde0137b937a5249dd6e6fe",
+    "capacity_acceptance.py": "0407ad1736bdd5b3b7af0cbad133eb502a7f654939e09c12f6f6f1fa9085e856",
+    "local_smoke.py": "ab434fe5bc1df09803293fbc13bb333751c5ca8786888f1b63be8cc18c2bc8cc",
+    "openai_smoke.py": "55be99dd625363aab25dd0569a346d4b98a9579a9e6aebbd06a2fc0de5830dbd",
+    "benchmark.py": "e96f0dc5c3fb5deda0ff52156364f19818a3a71c41f5dc31289c4be8bc6e97c8",
+    "context_acceptance.py": "9e6b74700eeba882613c5b563ccb589c9d1c75c7fee60dc4b3e3bd3a18390e9f",
+    "claude_acceptance.py": "34f29ce9c3466a4d628bfcea968473dc15177ca4ec46ba77a1fab437d9008c5e",
+    "daily_artifacts.py": "f84acb51eceea37774865f4f1485d9bfb6f88952c4cab5f4871e9c6fd8a60c7f",
+    "daily_acceptance.py": "6efe104b3871cf18ea4ce66ffa00360764f801b06f96aae7b50c9ea1b2918fce",
+    "compose.yaml": "010b96eeeec70e9f4b251aedc9b5cd703be5c23fb49102bc1bc5759a290e824e",
+    "shared-mtp-source.json": "1d37230528dac98a120a2711bb0987968bc3562276628eb4ab68de2fd5feeb5d",
+    "main-copy-dry-run.log": "4a8fec8f40c3b16638a95e53ec192663ac00f5b6739163f9dbeaa31750b1a4fa",
+    "start-inference-vm-bound-v1.sh": "1fdf09b86ffc222dbeb967596f5c1096792b2a64151825183992e02a06fc464e",
+    "windows_vm_gpu.ps1": "5f8ddd8a506cbf13a2767d3721d52ac28bc68a88a2501625884144820e21605e",
+    "profile_memory.py": "60b2e1d2a0447869dc66d7f615a56aad9c238379653c3e9757c941bcca42cc15",
+    "vm-residency-v1-plan.json": "9ac37a5db1b41907bc32d6402b0eb789bb86b91dba54fd20e2390d4ed975fbb4"
+  },
+  "vm_sampler_pid": 191896,
+  "measurement_plan": "evidence/vm-residency-v1-plan.json",
+  "stage": "restored-checks",
+  "baseline_min_mib": 1670,
+  "restored_local_smoke_exit": 0,
+  "restored_openai_smoke_exit": 0,
+  "restored_config": {
+    "inference": {
+      "image": "sha256:b0baccbe2e00b5d74e63f85f9f023c93d61d0f329475269e1e7002e87eb875ea",
+      "environment": {
+        "DRAFT_TOKENS": "4",
+        "GPU_LAYERS": "99",
+        "MTP_MODEL_PATH": "",
+        "SPEC_TYPE": "draft-mtp",
+        "UBATCH_SIZE": "64",
+        "CONTEXT_SIZE": "40960",
+        "DRAFT_GPU_LAYERS": "99"
+      }
+    },
+    "gateway": {
+      "image": "sha256:740b273ae2f39fdfbda385b5fd39044b200a8fe93f44360eda7eacc05cd44e6e",
+      "environment": {
+        "SIFT_COMPRESSION_RATIO": "8",
+        "SIFT_TARGET": "32768",
+        "CONTEXT_SIZE": "40960"
+      }
+    }
+  },
+  "restored": true,
+  "vm_sampler_exit": 0,
+  "vm_counter_result": {
+    "case_id": "32",
+    "peak_all_vm_dedicated_bytes": 13485330432,
+    "peak_all_vm_dedicated_mib": 12860.61328125,
+    "peak_all_vm_shared_bytes": 130793472,
+    "stopped_vm_dedicated_range_bytes": [
+      24059904,
+      24059904
+    ],
+    "observed_load_increase_bytes": 13461270528,
+    "minimum_load_bytes": 10000000000,
+    "limit_bytes": 14000000000,
+    "sampled_vm_dedicated_under_limit": true,
+    "valid_case_samples": 435,
+    "largest_case_gap_seconds": 2.599182,
+    "maximum_instance_count": 3,
+    "scope": "Direct Windows dedicated GPU-memory counters summed across all VM processes/instances; may overcount shared allocations. No desktop subtraction. A containing-VM upper bound, not an exact isolated model value or continuous-time peak."
+  },
+  "baseline_range_mib": [
+    1670,
+    1685
+  ],
+  "sample_count": 507,
+  "memory_scope": "Whole-host occupancy and conservative before/after delta, not isolated per-allocation residency. Desktop drift remains a confound."
+}

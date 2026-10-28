@@ -90,3 +90,5 @@
 /evidence/final-acceptance-*.json -text -whitespace
 /evidence/final-goal-review-v1/** -text -whitespace
 /evidence/final-goal-review-v1.json -text -whitespace
+/evidence/vm-residency-v1/** -text -whitespace
+/evidence/benchmark-vm-bound-v1-32.json -text -whitespace

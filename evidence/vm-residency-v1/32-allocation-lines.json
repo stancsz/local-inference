@@ -1,0 +1,10 @@
+[
+  "0.01.327.517 I load_tensors:        CUDA0 model buffer size = 10019.96 MiB",
+  "0.03.014.586 I llama_kv_cache:      CUDA0 KV buffer size =  1228.50 MiB",
+  "0.03.038.909 I llama_memory_recurrent:      CUDA0 RS buffer size =   448.88 MiB",
+  "0.03.061.962 I sched_reserve:      CUDA0 compute buffer size =   283.78 MiB",
+  "0.03.160.811 I llama_kv_cache:      CUDA0 KV buffer size =    76.78 MiB",
+  "0.03.172.462 I sched_reserve:      CUDA0 compute buffer size =   282.53 MiB",
+  "0.03.188.385 I sched_reserve:      CUDA0 compute buffer size =   282.53 MiB",
+  "0.09.902.234 I sched_reserve:      CUDA0 compute buffer size =   283.78 MiB"
+]

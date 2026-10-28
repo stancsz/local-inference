@@ -1,0 +1,55 @@
+{
+  "sealed_at": "2026-10-28T00:37:14.740212+00:00",
+  "source_commit": "8681a198f65a3188be50f9e576a9d7be521b0936",
+  "question": "Does the containing Windows VM dedicated GPU-memory usage provide an under14-decimal-GB upper bound during the already-tested productive shared-MTP long profile?",
+  "profile": {
+    "case_id": 32,
+    "context": 69888,
+    "sift_target": 65536,
+    "gpu_layers": 99,
+    "draft_tokens": 2,
+    "ubatch": 32,
+    "mtp_model_path": "",
+    "cpu_offload": false
+  },
+  "case_count": 1,
+  "no_rerolls": true,
+  "baseline_seconds_before_and_after": 30,
+  "sample_interval_seconds": 1,
+  "maximum_accepted_gap_seconds": 5,
+  "minimum_model_load_increase_bytes": 10000000000,
+  "limit_bytes": 14000000000,
+  "primary_metric": "Sum of every dedicated_bytes counter for all enumerated vmwp processes/instances. No alias deduplication and no desktop baseline subtraction. Shared system RAM is separately recorded.",
+  "bound_inference": "All model/MTP CUDA allocations are in the Docker/WSL VM. The containing VM dedicated-use total is a conservative superset, including private and cross-process shared resources. This is an upper bound, not an exact isolated-model value. Independent validation of that inference is required.",
+  "limitations": [
+    "NVIDIA per-process usage is N/A in WDDM.",
+    "D3DKMT direct process query requires PROCESS_QUERY_INFORMATION; access to vmwp is denied (Win32 error5) for this nonadmin executor. No escalation or permission change is attempted.",
+    "Microsoft documents a Windows GPU Process Memory counter overreporting issue; preserve that caveat and the stopped/load/unload controls. Do not claim a continuous-time or per-container exact physical peak."
+  ],
+  "primary_sources": [
+    "https://devblogs.microsoft.com/directx/gpus-in-the-task-manager/",
+    "https://learn.microsoft.com/en-us/troubleshoot/windows-client/performance/gpu-process-memory-counters-report-wrong-value",
+    "https://docs.nvidia.com/deploy/nvidia-smi/index.html"
+  ],
+  "mandatory_checks": [
+    "two256-token decode samples with accepted MTP tokens",
+    "exact65536 input+4096 output/no truncation",
+    "local smoke",
+    "OpenAI smoke",
+    "256k and1M retention/differing budgets",
+    "three native Claude tasks with pre-existing max2 feedback repairs; preserve all revisions"
+  ],
+  "overall_experiment_seconds": 1800,
+  "restoration_extra_seconds": 600,
+  "original_images_env_mounts_startup_bytes_restored": true,
+  "qualification_increment": 0,
+  "acceptance_not_weakened": "The existing whole-host v5 result and NOT_READY full-goal verdict remain unchanged. Direct VM counters address measurement scope; they are not relabeled as exact isolated model accounting.",
+  "source_sha256": {
+    "tmp/stress/vm-residency-v1.py": "d38bac420464c2b06e24d40d929af6d41c840c5bcdde0137b937a5249dd6e6fe",
+    "scripts/windows_vm_gpu.ps1": "5f8ddd8a506cbf13a2767d3721d52ac28bc68a88a2501625884144820e21605e",
+    "scripts/profile_memory.py": "60b2e1d2a0447869dc66d7f615a56aad9c238379653c3e9757c941bcca42cc15",
+    "scripts/capacity_acceptance.py": "0407ad1736bdd5b3b7af0cbad133eb502a7f654939e09c12f6f6f1fa9085e856",
+    "scripts/daily_artifacts.py": "f84acb51eceea37774865f4f1485d9bfb6f88952c4cab5f4871e9c6fd8a60c7f",
+    "docker/start-inference.sh": "b2b132b622f5177970f7f71f8f7264506c8d6cfdad112079732def32467ce588"
+  }
+}

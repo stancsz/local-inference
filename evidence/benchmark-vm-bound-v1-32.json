@@ -1,0 +1,74 @@
+[
+  {
+    "iteration": 0,
+    "seconds": 3.534,
+    "usage": {
+      "completion_tokens": 256,
+      "prompt_tokens": 43,
+      "total_tokens": 299,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 43,
+      "prompt_ms": 524.735,
+      "prompt_per_token_ms": 12.203139534883721,
+      "prompt_per_second": 81.94612518699914,
+      "predicted_n": 256,
+      "predicted_ms": 2907.819,
+      "predicted_per_token_ms": 11.403211764705881,
+      "predicted_per_second": 87.69459171977347,
+      "draft_n": 182,
+      "draft_n_accepted": 164
+    },
+    "host_gpu_mib": "14516 MiB, 1480 MiB",
+    "response": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport json\nimport sys\nfrom collections import defaultdict\n\n\ndef count_http_errors_by_service(jsonl_path: str) -> None:\n    \"\"\"\n    Read a JSONL log file, count HTTP errors (status >= 400) by service,\n    and print a sorted JSON summary.\n\n    Args:\n        jsonl_path: Path to the JSONL log file.\n\n    Raises:\n        FileNotFoundError: If the file does not exist.\n        json.JSONDecodeError: If a line is not valid JSON.\n        ValueError: If a required field is missing or has an invalid type.\n    \"\"\"\n    error_counts: dict[str, int] = defaultdict(int)\n\n    try:\n        with open(jsonl_path, \"r\", encoding=\"utf-8\") as f:\n            for line_num, line in enumerate(f, start=1):\n                line = line.strip()\n                if not line:\n                    continue  # skip empty lines\n\n                try:\n                    record = json.loads(line)\n                except json.JSONDecodeError as e:\n                    raise ValueError(\n                        f\"Line {line_num}: Invalid JSON - {e}\"\n                    ) from e\n\n                # Extract"
+        }
+      }
+    ]
+  },
+  {
+    "iteration": 1,
+    "seconds": 3.343,
+    "usage": {
+      "completion_tokens": 256,
+      "prompt_tokens": 43,
+      "total_tokens": 299,
+      "prompt_tokens_details": {
+        "cached_tokens": 39
+      }
+    },
+    "timings": {
+      "cache_n": 39,
+      "prompt_n": 4,
+      "prompt_ms": 149.728,
+      "prompt_per_token_ms": 37.432,
+      "prompt_per_second": 26.715110066253473,
+      "predicted_n": 256,
+      "predicted_ms": 2912.153,
+      "predicted_per_token_ms": 11.420207843137254,
+      "predicted_per_second": 87.56408059604011,
+      "draft_n": 182,
+      "draft_n_accepted": 164
+    },
+    "host_gpu_mib": "14509 MiB, 1487 MiB",
+    "response": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```python\nimport json\nimport sys\nfrom collections import defaultdict\n\n\ndef count_http_errors_by_service(jsonl_path: str) -> None:\n    \"\"\"\n    Read a JSONL log file, count HTTP errors (status >= 400) by service,\n    and print a sorted JSON summary.\n\n    Args:\n        jsonl_path: Path to the JSONL log file.\n\n    Raises:\n        FileNotFoundError: If the file does not exist.\n        json.JSONDecodeError: If a line is not valid JSON.\n        ValueError: If a required field is missing or has an invalid type.\n    \"\"\"\n    error_counts: dict[str, int] = defaultdict(int)\n\n    try:\n        with open(jsonl_path, \"r\", encoding=\"utf-8\") as f:\n            for line_num, line in enumerate(f, start=1):\n                line = line.strip()\n                if not line:\n                    continue  # skip empty lines\n\n                try:\n                    record = json.loads(line)\n                except json.JSONDecodeError as e:\n                    raise ValueError(\n                        f\"Line {line_num}: Invalid JSON - {e}\"\n                    ) from e\n\n                # Extract"
+        }
+      }
+    ]
+  }
+]
