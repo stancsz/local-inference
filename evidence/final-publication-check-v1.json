@@ -1,0 +1,22 @@
+{
+  "artifact_commit": "110dc24924fb2f03b74c0e6ced1c0e0b474a630b",
+  "manifest_reports": [
+    "evidence/long-profile-v1/parent-review.json",
+    "evidence/long-profile-v2/parent-review.json",
+    "evidence/long-profile-v3/parent-review.json",
+    "evidence/long-profile-v4/parent-review.json",
+    "evidence/long-profile-v5/parent-review.json",
+    "evidence/codex-shared-mtp-v1-publication.json",
+    "evidence/shared-mtp-pair-v1-parent-review.json",
+    "evidence/shared-mtp-launcher-v1/parent-review.json",
+    "evidence/shared-mtp-review-v2.json",
+    "evidence/daily-review-v5.json",
+    "evidence/gpu-verification-v1/receipt.json",
+    "evidence/test-discovery-v1/receipt.json",
+    "evidence/mtp-quantization-dryrun-v1/receipt.json"
+  ],
+  "files_verified": 588,
+  "mismatches": 0,
+  "qualification_increment": 0,
+  "full_goal": "NOT_READY"
+}

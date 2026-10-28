@@ -12,7 +12,7 @@ Current long-session acceptance: the sealed Codex case is terminal, raw accepted
 
 The sealed matched40k comparison completed after the Codex case: shared MTP102.75tok/s vs none49.65tok/s, ratio2.0695. Both arms used fresh server instances and the same fixed prompt/two256-token samples. Original image/env/startup bytes were restored and both local/OpenAI smokes passed. It increments no sessions. See evidence/shared-mtp-pair-v1-parent-review.json.
 
-Remaining: final nonauthor full-goal acceptance and publication-byte reconciliation of the new artifacts. Model-generated mistakes and general semantic retention remain limits, not fixed by Sift. Isolated residency is unverified; the successful simultaneous long-profile memory result uses the explicitly stated sampled host-delta scope above. No strict isolated-memory claim is made. The optional long profile is available via compose.long.yaml; it does not replace historical results.
+Remaining: final nonauthor full-goal acceptance. Publication reconciliation at110dc24 verifies588 artifact files with zero mismatches (evidence/final-publication-check-v1.json). Model-generated mistakes and general semantic retention remain limits, not fixed by Sift. Isolated residency is unverified; the successful simultaneous long-profile memory result uses the explicitly stated sampled host-delta scope above. No strict isolated-memory claim is made. The optional long profile is available via compose.long.yaml; it does not replace historical results.
 
 ## Historical stress and repair ledger
 
