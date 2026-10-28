@@ -38,7 +38,7 @@ The gateway builds Sift from that pinned sibling source. `setup_env.py` creates 
 
 Start with the default profile: 40,960 context, at most 4,096 generated tokens, four MTP draft tokens and one inference slot. Keep requests sequential. Sift adapts the input budget to request size; its daily range with full output reservation is 24,576–36,608. Short inputs pass unchanged. Large raw histories may contain up to 1,050,000 native tokens, subject to character/node limits. That is raw history capacity, not a 1M native model context or a guarantee that every historical detail survives.
 
-Read [VERIFICATION.md](../VERIFICATION.md) before using the optional 64k-input profile: it exceeded 14 decimal GB including runtime caches/buffers. The daily profile was chosen for the tighter memory target. Free unused app VRAM after saving work; never kill DWM. Inspect with `pwsh -NoProfile -File scripts/host_vram.ps1`.
+The optional shared-weight64k-input profile passed exact65,536 input+4,096 output and the sampled containing-VM upper bound below14decimalGB on this host. Earlier separate-draft profiles exceeded that limit; preserve that distinction. Start the tested long profile with `docker compose -f compose.yaml -f compose.long.yaml up -d --force-recreate`; restore the faster daily profile with `docker compose up -d --force-recreate`. Read [the measured profiles and limits](PROFILE_RESULTS.md) first. Free unused app VRAM after saving work; never kill DWM. Inspect with `pwsh -NoProfile -File scripts/host_vram.ps1`.
 
 ## Do useful work locally
 

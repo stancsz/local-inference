@@ -10,7 +10,7 @@ The running product is an independent LiteLLM gateway at `127.0.0.1:8090` with m
 
 RTX 5070 Ti; Qwen3.8-27B UD-IQ3_XXS with its embedded MTP head sharing loaded GPU weights; q4 target/draft KV; one slot; 40,960 total context; 32,768 Sift anchor; 4,096 output limit; 256 decoder-headroom tokens; four draft tokens; microbatch 64. Thinking and context shifting are disabled. Sift budgets are now request-adaptive: histories above the anchor use `ceil(native_raw_tokens / 8)`, clamped to 24,576–65,536 and available input capacity. With full output reservation, the daily ceiling is 36,608; with 128 output tokens it is 40,576. This size policy does not classify task difficulty or measure free VRAM.
 
-Start normal Claude work with `python scripts/claude_local.py`. The wrapper changes only its child environment and uses isolated local configuration.
+Start normal Claude work with `python scripts/claude_local.py`. The wrapper selects the local route through its child environment while retaining the caller's configuration directory, approval policy, tools and CLI flags. Only explicitly scoped acceptance clients use isolated test configuration.
 
 ## Evidence
 
@@ -35,7 +35,7 @@ The short 40k-profile benchmark measured about **103–104 decode tokens/s** wit
 
 The recommended profile's observed host GPU delta ranged from approximately **13.62–13.83 decimal GB**, including runtime cache/buffer effects and desktop drift. A separate WSL VM dedicated-allocation counter was approximately **13.80 GB**. The [memory receipt](evidence/runtime-vram.json) records the actual values and caveats: host activity can drift, WDDM allocation counters can overlap, and neither is exact per-model physical allocation accounting. [Runtime source parity](evidence/runtime-source-parity.json) confirms the running app/Sift files match the inspected source and LiteLLM 1.106.4. Combined GGUF disk bytes are a separate measurement.
 
-The optional 64k-input profile uses `CONTEXT_SIZE=69888`, `SIFT_TARGET=65536`, `DRAFT_TOKENS=2`. It passed exact 64k+4k generation, but its observed runtime delta with caches/buffers was slightly above 14 decimal GB. The daily default therefore favors the stricter memory target. The initial 69,632-token capacity trial stopped two tokens short; the added 256-token headroom corrected that boundary. This synthetic capacity test does not establish coherent 4k-output quality.
+The optional shared-weight 64k-input profile uses `CONTEXT_SIZE=69888`, `SIFT_TARGET=65536`, `DRAFT_TOKENS=2`. Start it with `docker compose -f compose.yaml -f compose.long.yaml up -d --force-recreate`; return to the daily profile with `docker compose up -d --force-recreate`. The earlier separate-draft profile exceeded14decimalGB, and that result remains historical. The later shared-weight run passed exact64k+4k and sampled a13.748GB conservative host delta. A subsequent direct Windows containing-VM measurement peaked at13,485,330,432 dedicated bytes across435 case samples, with stopped controls before/after and no sampling errors; the nonauthor follow-up accepts this upper bound for the observed workload. Exact isolated residency and continuous-time peaks remain unverified. See [counter method and limits](docs/WINDOWS_GPU_ACCOUNTING.md) and [raw parent replay](evidence/vm-residency-v1/parent-review.json). The initial69,632-token capacity trial stopped two tokens short; the added256-token headroom corrected that boundary. Synthetic capacity does not establish coherent4k-output quality.
 
 ## Review and limits
 

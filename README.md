@@ -12,7 +12,7 @@ An independent, minimal LiteLLM gateway serving Dockerized Qwen3.8-27B IQ3_XXS w
 
 The [native CLI stress campaigns](docs/STRESS_RESULTS.md) are terminal: 24 parent-qualified candidate sessions across separate workload/source epochs (Claude 8, OpenCode 9, Codex 7). Full-goal acceptance remains NOT_READY. The gateway now uses Sift 0.11.1's source-coverage repair; failed historical runs stay unchanged.
 
-The latest [shared-weight MTP experiment](docs/PROFILE_RESULTS.md) passed exact **64k input + 4k output**, both 256k/1M retention checks and **3/3 native Claude tasks**. Its conservative sampled host delta was **13.748 decimal GB**; isolated GPU residency remains unmeasured. The optional profile reached 90.51 tok/s on the short decode benchmark and 60.36 tok/s at full synthetic context. All historical failures remain published; full-goal acceptance is still pending.
+The latest [shared-weight MTP experiments](docs/PROFILE_RESULTS.md) passed exact **64k input + 4k output**, both 256k/1M retention checks and **3/3 native Claude tasks**. A subsequent [direct Windows measurement](docs/WINDOWS_GPU_ACCOUNTING.md) recorded **13.485 decimal GB** peak dedicated usage for the containing VM, below14GB during the sampled workload. This is a conservative VM upper bound, not exact isolated-model residency or a continuous peak. The optional profile reached60.88tok/s at full synthetic context. All historical failures remain published; full-goal acceptance is still pending.
 
 ## Lower cloud usage, explicit tradeoffs
 
