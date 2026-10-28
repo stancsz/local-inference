@@ -106,3 +106,7 @@
 /evidence/workhorse-v1-setup-failure.json -text -whitespace
 /evidence/workhorse-v2-plan.json -text -whitespace
 /tests/test_workhorse_config_v2.py -text -whitespace
+/evidence/workhorse-v2/** -text -whitespace
+/evidence/workhorse-v2-parent-review.json -text -whitespace
+/evidence/workhorse-wh07-diagnostic-v2.json -text -whitespace
+/evidence/workhorse-v1-preflight-publication.json -text -whitespace

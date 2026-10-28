@@ -12,6 +12,8 @@ An independent, minimal LiteLLM gateway serving Dockerized Qwen3.8-27B IQ3_XXS w
 
 The [native CLI stress campaigns](docs/STRESS_RESULTS.md) are terminal: 24 qualified sessions across separate workload/source epochs (Claude 8, OpenCode 9, Codex 7). The [final nonauthor review](evidence/final-daily-driver-acceptance-v1.json) accepts the documented local daily-driver goal with explicit limits. The gateway uses Sift 0.11.1's source-coverage repair; failed historical runs stay unchanged. Generated work still needs tests and review.
 
+**Fresh usefulness test:** [13 practical tasks](docs/WORKHORSE_USEFULNESS.md), including an existing-module enhancement. Excluding one invalid CSV case,8/12 artifacts passed first attempt and10/12 passed after bounded feedback. Strict native workflow acceptance was only2/13. This supports supervised, testable local work; it does not establish unattended agent reliability or superiority to cloud models.
+
 The latest [shared-weight MTP experiments](docs/PROFILE_RESULTS.md) passed exact **64k input + 4k output**, both 256k/1M retention checks and **3/3 native Claude tasks**. A subsequent [direct Windows measurement](docs/WINDOWS_GPU_ACCOUNTING.md) recorded **13.485 decimal GB** peak dedicated usage for the containing VM, below 14 GB during the sampled workload. This is a conservative VM upper bound, not exact isolated-model residency or a continuous peak. The optional profile reached **60.88 tok/s** at full synthetic context. All historical failures remain published.
 
 ## Lower cloud usage, explicit tradeoffs

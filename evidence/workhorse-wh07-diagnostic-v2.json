@@ -1,0 +1,58 @@
+{
+  "case": "wh07",
+  "classification": "INVALID primary rubric/fixture; excluded from usefulness aggregate; original sealed outcomes unchanged",
+  "observed_key_codepoints": [
+    "0xc3",
+    "0x178"
+  ],
+  "intended_sharp_s_codepoint": "0xdf",
+  "actual_key_casefold": "ãÿ",
+  "ss_label_matches_actual_key": false,
+  "missing_contract": "source_id JSON type was not specified, but hidden equality requires strings",
+  "posthoc_diagnostic_only": [
+    {
+      "phase": 0,
+      "matches_actual_csv_after_permitting_unspecified_id_type": false
+    },
+    {
+      "phase": 1,
+      "matches_actual_csv_after_permitting_unspecified_id_type": true
+    }
+  ],
+  "qualification_increment": 0,
+  "source_based_expected": {
+    "rows": [
+      {
+        "source_id": "1",
+        "key": " Alpha ",
+        "label": "First"
+      },
+      {
+        "source_id": "2",
+        "key": "BETA",
+        "label": "Blue"
+      },
+      {
+        "source_id": "3",
+        "key": "ghost",
+        "label": null
+      },
+      {
+        "source_id": "4",
+        "key": "ÃŸ",
+        "label": null
+      },
+      {
+        "source_id": "5",
+        "key": "",
+        "label": null
+      }
+    ],
+    "unmatched": [
+      "3",
+      "4",
+      "5"
+    ]
+  },
+  "causality": "Mojibake is present in the frozen task fixture before Qwen reads it; not introduced by Sift. No model rerun or artifact repair."
+}

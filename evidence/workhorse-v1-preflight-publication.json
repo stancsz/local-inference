@@ -1,0 +1,75 @@
+{
+  "scope": "Immutable copies of supporting worker/preflight failure and repair, not model task outcomes",
+  "artifacts": [
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/workhorse-fixtures-worker-v1.exit.json.gz",
+      "raw_sha256": "b95fc15871c8056496abe3e3764ed8d82abc922664755faf3d6ce830ff7bdaf2",
+      "compressed_sha256": "b5796c202e8d87bebf1f986e71a694140472d648614f7a133983b836bb014da6"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/workhorse-fixtures-worker-v1.jsonl.gz",
+      "raw_sha256": "15476e20d960b8db3ddc38254304629ae7db80e635843da36d06d9985e0f7dd8",
+      "compressed_sha256": "0db44d2dd26a0923250c1ad9349e36600b0cc8a6669494ce3ccd9ecc0946f640"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/workhorse-fixtures-worker-v1.plan.json.gz",
+      "raw_sha256": "27128dda29a1deafc27587de3ce5c7db88d814f651316aa115a10f265db2a3f3",
+      "compressed_sha256": "287f9c2b725800b502eefc2dc272e2f158932617a364303a0e9ceacad73353be"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/workhorse-fixtures-worker-v1.prompt.txt.gz",
+      "raw_sha256": "c132871d53ecf3f59dfaced9570eb3f048284e0e6470a86c64bfdd010bd7a85c",
+      "compressed_sha256": "77311dff11aa623377cd823eb40442b9ddd2c129b932eb45eccc456169f3fe25"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/workhorse-fixtures-worker-v1.py.gz",
+      "raw_sha256": "e21add8eb25f4fdf89d4e30712b57350bc671992de9fde628d8046f3ffae42a8",
+      "compressed_sha256": "d744a3a406b0e920a6a589695e1f06a9e12d0e5ded7a3ebef2423c3448867d87"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/workhorse-fixtures-worker-v1.revocation.json.gz",
+      "raw_sha256": "f9d532fa9c00611b18d8a69690b33c4612dbfd4cd857a1c1388c4e6d6fc1d574",
+      "compressed_sha256": "a3ff575704c030f70310569ac0093baf666eed72b78ee3b116439be83455bd07"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/workhorse-fixtures-worker-v1.stderr.log.gz",
+      "raw_sha256": "dfd1597e2b93bde64164a046e351bb037f2fceadbd577b516cc4701dc2b019ad",
+      "compressed_sha256": "63702bb613dbce2877ab46e1e2acbd1bd152fd81af442a4ce038675d01610eeb"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/workhorse-pack-parent-review-v1/after.log.gz",
+      "raw_sha256": "70b492d89917d31c597bcb6e8a12fd3c2c6d491ab8e63e151c5c6ec45d4a7fa1",
+      "compressed_sha256": "2a68c449a44c984c15d4bd7fe5703dfbbca201e089b029d9c465acc85d17c265"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/workhorse-pack-parent-review-v1/before.log.gz",
+      "raw_sha256": "860231fb4f2d1e0e0b2bec85e53923523906a73e49d4efb2707c6c2c9b7d0da3",
+      "compressed_sha256": "a2b1a629a6d5d099d139bb86b3b3c7dbc49d3df27d59e388576f037aff3a4598"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/workhorse-pack-parent-review-v1/worker-cases.py.gz",
+      "raw_sha256": "70868ae3108749d989bbb0bf7aec64bd92e9a579b56c609105d2916975b2530e",
+      "compressed_sha256": "34e79ffab9a397f35bf5390bf3d9fa97c67a76bce7f25eadc9dd47bc6a985df9"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/workhorse-pack-parent-review-v1/worker-tests.py.gz",
+      "raw_sha256": "ff90622941766bedbd7f291177fbf0102146f4cb4d1b83ad527f75c6d405a917",
+      "compressed_sha256": "55db26d8f189bc867bf34de26213da7fa9762e985d5dfbbb875e82ceba4e28e1"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/finish-workhorse-pack-v1.py.gz",
+      "raw_sha256": "7c4175f8670c07a0474bfebb6250a3eb75012434d9f3c4ae4bfc9a9438b63731",
+      "compressed_sha256": "fe182477aab586ed3dac5bc1044f050551fd31eac3a552f1fa8d96db970fea7f"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/finish-workhorse-tests-v1.py.gz",
+      "raw_sha256": "a8d532e4b1026b3ba4e1325bf9f8a91e88183abfb10531f16a34954763209b5e",
+      "compressed_sha256": "535590733917baefe11afa5cc8ec279f0f64c6e811f41692e449222ee4595254"
+    },
+    {
+      "path": "evidence/workhorse-v1/preflight/stress/seal-workhorse-v1.py.gz",
+      "raw_sha256": "428fca609cac38a415b28b56299c5711d40aec8d2784bcebf9c38ad00129005e",
+      "compressed_sha256": "5a466634b6c195bf6f0571efe0dd0a6ac1beae943ece3aeb47972b35ff22d42b"
+    }
+  ]
+}

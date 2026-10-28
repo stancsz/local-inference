@@ -1,0 +1,2419 @@
+{
+  "recorded_at": "2026-10-28T06:15:11.396575+00:00",
+  "execution_commit": "6a40fe8401bae8cc459b7bc8188826cac5f2f34a",
+  "sealed_plan": "evidence/workhorse-v2-plan.json",
+  "status": "parent replay complete",
+  "totals": {
+    "cases": 13,
+    "first_artifact_pass": 8,
+    "final_artifact_pass": 10,
+    "first_strict_pass": 0,
+    "final_strict_pass": 2,
+    "repair_phases": 5,
+    "active_seconds": 634.2695527996402
+  },
+  "cases": [
+    {
+      "id": "wh01",
+      "category": "development",
+      "difficulty": "routine",
+      "artifact": "solution.py",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 25.847262699971907,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": false,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "first_duplicate_wins",
+              "passed": true
+            },
+            {
+              "name": "empty_pages",
+              "passed": true
+            },
+            {
+              "name": "generator_pages",
+              "passed": true
+            },
+            {
+              "name": "unchanged_input",
+              "passed": true
+            }
+          ],
+          "native_tools": [
+            "Bash",
+            "Read",
+            "Read",
+            "Read",
+            "Edit",
+            "Bash"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [],
+          "scope_violations": [
+            "unexpected command ls -la C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh01/workspace",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh01/workspace && python -m unittest -q test_public"
+          ],
+          "artifact_sha256": "76a97ba97ac29cd04269552491dd190bd60ce65475d78f90b5af2b2c62491159",
+          "usage": {
+            "input_tokens": 2300,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 8704,
+            "output_tokens": 522,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 2300,
+              "outputTokens": 522,
+              "cacheReadInputTokens": 8704,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.028901999999999997,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "99307add-a77a-487b-b25d-5cbcece1c2a2"
+        }
+      ],
+      "first_artifact_pass": true,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 25.847262699971907,
+      "repairs": 0
+    },
+    {
+      "id": "wh02",
+      "category": "development",
+      "difficulty": "moderate",
+      "artifact": "solution.py",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 77.90127530007157,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": false,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": false,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "redaction_and_counts",
+              "passed": true
+            },
+            {
+              "name": "invalid_shape",
+              "passed": true
+            },
+            {
+              "name": "blank_and_empty",
+              "passed": true
+            }
+          ],
+          "native_tools": [
+            "Bash",
+            "Read",
+            "Read",
+            "Read",
+            "Edit",
+            "Bash",
+            "Bash",
+            "Bash",
+            "Read"
+          ],
+          "tool_errors": 3,
+          "missing_reads": [],
+          "scope_violations": [
+            "unexpected command ls -la \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh02/workspace\"",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh02/workspace\" && python -m unittest -q test_public",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh02/workspace\" && python -c \"\nfrom solution import summarize\nr = summarize([\n  '{\\\"level\\\":\\\"info\\\",\\\"message\\\":\\\"hi\\\"}',\n  '',\n  '   ',\n  'not json',\n  '[1,2]',\n  '{\\\"message\\\":5}',\n  '{\\\"message\\\":\\\"mail me at a.b+c@x.co.uk or 1.2.3.4 and 255.255.255.255, plus 1.2.3.4.5\\\"}',\n  '{\\\"message\\\":\\\"no level here\\\"}',\n])\nprint(r)\n\"",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh02/workspace\" && python -c \"from solution import summarize; print(summarize(['{\\\"level\\\":\\\"info\\\",\\\"message\\\":\\\"hi\\\"}','','   ','not json','[1,2]','{\\\"message\\\":5}','{\\\"message\\\":\\\"mail a.b+c@x.co.uk or 1.2.3.4 and 255.255.255.255, plus 1.2.3.4.5\\\"}','{\\\"message\\\":\\\"no level\\\"}']))\"",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh02/workspace\" && python -m unittest -q test_public",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh02/workspace\" && python -c \"import json, solution as s; r=s.summarize(['{\\\"level\\\":\\\"info\\\",\\\"message\\\":\\\"hi\\\"}','not json','[1,2]','{\\\"message\\\":5}','{\\\"message\\\":\\\"mail a.b+c@x.co.uk or 1.2.3.4 and 255.255.255.255, plus 1.2.3.4.5\\\"}','{\\\"message\\\":\\\"no level\\\"}']); print(json.dumps(r,indent=1))\"",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh02/workspace\" && python -m unittest -q test_public"
+          ],
+          "artifact_sha256": "d06a9061cf8a59cb73de5e6cc116895861cb6898c4d18c68e2467974a16a777b",
+          "usage": {
+            "input_tokens": 3279,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 24183,
+            "output_tokens": 1423,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 3283,
+              "outputTokens": 1502,
+              "cacheReadInputTokens": 28338,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.06813400000000001,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "c50f0907-473a-4f60-bd2d-fefc926f118b"
+        }
+      ],
+      "first_artifact_pass": true,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 77.90127530007157,
+      "repairs": 0
+    },
+    {
+      "id": "wh03",
+      "category": "development",
+      "difficulty": "moderate",
+      "artifact": "solution.py",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 139.58684959996026,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": false,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "offset_and_fraction",
+              "passed": true
+            },
+            {
+              "name": "invalid_and_naive",
+              "passed": true
+            },
+            {
+              "name": "date_rollover",
+              "passed": true
+            }
+          ],
+          "native_tools": [
+            "Bash",
+            "Read",
+            "Read",
+            "Read",
+            "Edit",
+            "Bash",
+            "Bash",
+            "Read"
+          ],
+          "tool_errors": 1,
+          "missing_reads": [],
+          "scope_violations": [
+            "unexpected command ls -la C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh03/workspace",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh03/workspace && python -m unittest -q test_public",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh03/workspace && python -c \"\nfrom solution import normalize_timestamp as n\ncases = [\n    ('2024-01-01T01:00:00+01:00', '2024-01-01T00:00:00Z'),\n    ('2024-01-01T01:00:00Z', '2024-01-01T01:00:00Z'),\n    ('2024-01-01T01:00:00.999Z', '2024-01-01T01:00:00Z'),\n    ('2024-01-01T01:00:00.5+02:00', '2024-01-01T00:00:00Z'),\n    ('2024-01-01T01:00:00.5-05:30', '2024-01-01T06:30:00Z'),\n    ('2024-01-01T01:00:00+0100', '2024-01-01T00:00:00Z'),\n    ('2024-01-01T01:00:00+01:30', '2024-01-01T00:30:00Z'),\n    ('2024-01-01T01:00:00', None),\n    ('not a timestamp', None),\n    ('', None),\n    (None, None),\n    (12345, None),\n]\nfor inp, want in cases:\n    got = n(inp)\n    status = 'OK' if got == want else 'FAIL'\n    print(status, repr(inp), '->', repr(got), '(want', repr(want) + ')')\n\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh03/workspace && python -m unittest -q"
+          ],
+          "artifact_sha256": "1b7572ecd703dce292c34253c7d0ce282d7886873b4e01fb561ff660bcd03feb",
+          "usage": {
+            "input_tokens": 3242,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 20145,
+            "output_tokens": 1512,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 3242,
+              "outputTokens": 1512,
+              "cacheReadInputTokens": 20145,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.0640825,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "195f6da2-3c2c-4e1b-9686-f31d2bde4b21"
+        }
+      ],
+      "first_artifact_pass": true,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 139.58684959996026,
+      "repairs": 0
+    },
+    {
+      "id": "wh04",
+      "category": "development",
+      "difficulty": "routine",
+      "artifact": "solution.py",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 80.99900909990538,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": false,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": false,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "true_strings",
+              "passed": true
+            },
+            {
+              "name": "false_strings",
+              "passed": true
+            },
+            {
+              "name": "default_and_nonbool_numbers",
+              "passed": true
+            }
+          ],
+          "native_tools": [
+            "Bash",
+            "Read",
+            "Read",
+            "Read",
+            "Edit",
+            "Bash",
+            "Bash",
+            "Bash",
+            "Read"
+          ],
+          "tool_errors": 3,
+          "missing_reads": [],
+          "scope_violations": [
+            "unexpected command ls -la C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh04/workspace",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh04/workspace && python -m unittest -q test_public",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh04/workspace && python -m unittest -q",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh04/workspace && python -c \"\nfrom solution import parse_bool\ncases = [\n    (True, True), (False, False),\n    ('true', True), ('TRUE', True), (' True ', True),\n    ('yes', True), ('YES', True), ('1', True), ('on', True), (' On ', True),\n    ('false', False), ('FALSE', False), ('no', False), ('0', False), ('off', False),\n    ('maybe', False), ('', False), ('12', False), ('onx', False),\n]\nfor v, exp in cases:\n    got = parse_bool(v)\n    assert got == exp, (v, got, exp)\nassert parse_bool('maybe', True) is True\nassert parse_bool(123, 'd') == 'd'\nassert parse_bool(None, 'd') == 'd'\nassert parse_bool('yes', 'd') is True\nprint('all manual checks passed')\n\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh04/workspace && python -c \"\nfrom solution import parse_bool\nassert parse_bool(True) is True\nassert parse_bool(False) is False\nassert parse_bool('true') is True\nassert parse_bool('TRUE') is True\nassert parse_bool(' True ') is True\nassert parse_bool('yes') is True\nassert parse_bool('1') is True\nassert parse_bool('on') is True\nassert parse_bool(' On ') is True\nassert parse_bool('false') is False\nassert parse_bool('no') is False\nassert parse_bool('0') is False\nassert parse_bool('off') is False\nassert parse_bool('maybe') is False\nassert parse_bool('') is False\nassert parse_bool('12') is False\nassert parse_bool('onx') is False\nassert parse_bool('maybe', True) is True\nassert parse_bool(123, 'd') == 'd'\nassert parse_bool(None, 'd') == 'd'\nassert parse_bool('yes', 'd') is True\nprint('all manual checks passed')\n\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh04/workspace && python -c \"\nfrom solution import parse_bool\nassert parse_bool(True) is True\nassert parse_bool(False) is False\nassert parse_bool('true') is True\nassert parse_bool('TRUE') is True\nassert parse_bool(' True ') is True\nassert parse_bool('yes') is True\nassert parse_bool('1') is True\nassert parse_bool('on') is True\nassert parse_bool(' On ') is True\nassert parse_bool('false') is False\nassert parse_bool('no') is False\nassert parse_bool('0') is False\nassert parse_bool('off') is False\nassert parse_bool('maybe') is False\nassert parse_bool('') is False\nassert parse_bool('12') is False\nassert parse_bool('onx') is False\nassert parse_bool('maybe', True) is True\nassert parse_bool(123, 'd') == 'd'\nassert parse_bool(None, 'd') == 'd'\nassert parse_bool('yes', 'd') is True\nprint('all manual checks passed')\n\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh04/workspace && python -m unittest -q test_public"
+          ],
+          "artifact_sha256": "d4cee04441a69f935b248b0f8bd08260b3c8846d3ac97f5e3969e6d8322e62bc",
+          "usage": {
+            "input_tokens": 3316,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 26925,
+            "output_tokens": 1596,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 3316,
+              "outputTokens": 1596,
+              "cacheReadInputTokens": 26925,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.06994249999999999,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "e2b5d77c-e788-4b3d-af2c-c636098d3b13"
+        }
+      ],
+      "first_artifact_pass": true,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 80.99900909990538,
+      "repairs": 0
+    },
+    {
+      "id": "wh05",
+      "category": "development",
+      "difficulty": "moderate",
+      "artifact": "solution.py",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 44.72041279997211,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": false,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "duplicate_and_collision",
+              "passed": true
+            },
+            {
+              "name": "missing_unhashable",
+              "passed": true
+            },
+            {
+              "name": "no_alias_no_mutation",
+              "passed": true
+            },
+            {
+              "name": "empty_right",
+              "passed": true
+            }
+          ],
+          "native_tools": [
+            "Bash",
+            "Read",
+            "Read",
+            "Read",
+            "Bash",
+            "Edit",
+            "Bash",
+            "Bash",
+            "Read"
+          ],
+          "tool_errors": 2,
+          "missing_reads": [],
+          "scope_violations": [
+            "unexpected command ls -la C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh05/workspace",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh05/workspace && python -c \"print('py ok')\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh05/workspace && python --version",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh05/workspace && python -m unittest -q test_public",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh05/workspace && python -c \"\nfrom solution import join_rows\n\n# 1. basic enrich\nassert join_rows([{'sku':'a','qty':2}],[{'sku':'a','price':3}]) == [{'sku':'a','qty':2,'price':3}]\n\n# 2. preserve left order, ignore right-only\nassert join_rows([{'sku':'b'},{'sku':'a'}],[{'sku':'z','p':1},{'sku':'a','p':2}]) == [{'sku':'b'},{'sku':'a','p':2}]\n\n# 3. left field preserved on name collision\nassert join_rows([{'sku':'a','x':1}],[{'sku':'a','x':9,'y':2}]) == [{'sku':'a','x':1,'y':2}]\n\n# 4. duplicate right keys use last row\nassert join_rows([{'sku':'a'}],[{'sku':'a','v':1},{'sku':'a','v':2}]) == [{'sku':'a','v':2}]\n\n# 5. missing key does not match\nassert join_rows([{'qty':1}],[{'sku':'a','p':3}]) == [{'qty':1}]\n\n# 6. None is a missing key\nassert join_rows([{'sku':None}],[{'sku':None,'p':1}]) == [{'sku':None}]\n\n# 7. unhashable key does not match\nassert join_rows([{'sku':[1,2]}],[{'sku':[1,2],'p':1}]) == [{'sku':[1,2]}]\n\n# 8. no mutation of inputs\nL = [{'sku':'a','qty':2}]; R = [{'sku':'a','price':3}]\nLc, Rc = dict(L[0]), dict(R[0])\nout = join_rows(L, R)\nassert L == [Lc] and R == [Rc], (L, R)\n\n# 9. duplicate match must not alias either input row\nL = [{'sku':'a'},{'sku':'a'}]; R = [{'sku':'a','price':3}]\nout = join_rows(L, R)\nassert out[0] is not out[1]\nassert out[0] is not R[0] and out[1] is not R[0]\nassert out[0] is not L[0] and out[1] is not L[1]\n\n# 10. left row without sku still returned\nassert join_rows([{'qty':1}],[{'sku':'a'}]) == [{'qty':1}]\n\nprint('ALL EDGE CASES OK')\n\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh05/workspace && python -m unittest -q test_public"
+          ],
+          "artifact_sha256": "a4aff909026f2c654f8833baf11c5e2dedf0d3687015ad2d554db015304c9ea3",
+          "usage": {
+            "input_tokens": 2955,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 26091,
+            "output_tokens": 1761,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 2955,
+              "outputTokens": 1761,
+              "cacheReadInputTokens": 26091,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.0718455,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "b28acd4c-ccd8-470e-89bb-61e4ece6489b"
+        }
+      ],
+      "first_artifact_pass": true,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 44.72041279997211,
+      "repairs": 0
+    },
+    {
+      "id": "wh06",
+      "category": "development",
+      "difficulty": "routine",
+      "artifact": "solution.py",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 47.42831839993596,
+          "artifact_checks_pass": false,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": false,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": false,
+            "sources_unchanged": true,
+            "hidden_behavior": false
+          },
+          "checks": [
+            {
+              "name": "retry_ranges",
+              "passed": true
+            },
+            {
+              "name": "no_body_retry",
+              "passed": true
+            },
+            {
+              "name": "invalid_status_types",
+              "passed": false,
+              "error": "AssertionError: "
+            }
+          ],
+          "native_tools": [
+            "Bash",
+            "Read",
+            "Read",
+            "Read",
+            "Edit",
+            "Bash"
+          ],
+          "tool_errors": 6,
+          "missing_reads": [],
+          "scope_violations": [
+            "unexpected command ls -la C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh06/workspace",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh06/workspace && python -m unittest -q test_public",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh06/workspace && python -c \"\nfrom solution import classify_response as c\ncases = [\n (429,'x'),(500,''),(599,''),(503,''),(404,''),(200,''),(0,''),(600,''),\n (429.0,'x'),('429','x'),(True,'x'),(False,'x'),(None,'x'),(500.5,'x'),\n]\nfor s,b in cases:\n    r=c(s,b)\n    assert set(r)== {'retry','reason'} and isinstance(r['retry'],bool) and isinstance(r['reason'],str)\n    print(s, r)\n\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh06/workspace && python -c \"\nfrom solution import classify_response as c\nfor s,b in [(429,'x'),(500,''),(599,''),(404,''),(200,''),(600,''),(429.0,'x'),('429','x'),(True,'x'),(False,'x'),(None,'x')]:\n    r=c(s,b); assert set(r)=={'retry','reason'}; print(s, r)\n\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh06/workspace && python -c \"from solution import classify_response as c; print(c(429,'x')); print(c(500,'')); print(c(599,'')); print(c(404,'')); print(c(600,'')); print(c(429.0,'x')); print(c('429','x')); print(c(True,'x')); print(c(False,'x')); print(c(None,'x'))\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh06/workspace && python -c \"from solution import classify_response as c; print(c(429,'x'), c(500,''), c(599,''), c(404,''), c(600,''), c(429.0,'x'), c('429','x'), c(True,'x'), c(False,'x'), c(None,'x'))\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh06/workspace && python -c \"from solution import classify_response as c; print(c(429,'x'), c(500,''), c(599,''), c(404,''), c(600,''), c(429.0,'x'), c('429','x'), c(True,'x'), c(False,'x'), c(None,'x'))\"",
+            "unexpected command cd C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh06/workspace && python -c \"import solution as s; print(s.classify_response(429,'x')); print(s.classify_response(500,'')); print(s.classify_response(599,'')); print(s.classify_response(404,'')); print(s.classify_response(600,'')); print(s.classify_response(429.0,'x')); print(s.classify_response('429','x')); print(s.classify_response(True,'x')); print(s.classify_response(False,'x')); print(s.classify_response(None,'x'))\""
+          ],
+          "artifact_sha256": "aa313f1fd694212b4627ad4207d654a611f3b203546e4a4bcf15adbe0009a2d0",
+          "usage": {
+            "input_tokens": 3401,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 26956,
+            "output_tokens": 1615,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 3401,
+              "outputTokens": 1615,
+              "cacheReadInputTokens": 26956,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.070858,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "8cf46c09-9b3a-42f0-8dfc-0a26f2405b8c"
+        }
+      ],
+      "first_artifact_pass": false,
+      "final_artifact_pass": false,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 47.42831839993596,
+      "repairs": 0
+    },
+    {
+      "id": "wh07",
+      "category": "data",
+      "difficulty": "routine",
+      "artifact": "answer.json",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 25.632022400037386,
+          "artifact_checks_pass": false,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": false,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": false
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": false,
+              "error": "Incorrect schema, source fact or decision; reread the contract and sources."
+            }
+          ],
+          "native_tools": [
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Edit",
+            "Read"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [
+            "CONTRACT.md"
+          ],
+          "scope_violations": [],
+          "artifact_sha256": "b9fbe8bfdcd454ac5080cc49a151b699afdb29ded0a66516a676a0d5f737b224",
+          "usage": {
+            "input_tokens": 2154,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 7255,
+            "output_tokens": 999,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 2154,
+              "outputTokens": 999,
+              "cacheReadInputTokens": 7255,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.0393725,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "b26fe1ca-5af4-4a85-b5b5-37c88a0b1164"
+        },
+        {
+          "phase": 1,
+          "seconds": 24.058704999973997,
+          "artifact_checks_pass": false,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": false
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": false,
+              "error": "Incorrect schema, source fact or decision; reread the contract and sources."
+            }
+          ],
+          "native_tools": [
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Edit",
+            "Read"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [],
+          "scope_violations": [],
+          "artifact_sha256": "fc87dc34fc326ff8b87d8b4500b662fb2980846dbbbd99d9e12ae7ea0d216002",
+          "usage": {
+            "input_tokens": 2625,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 15661,
+            "output_tokens": 1282,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 2625,
+              "outputTokens": 1282,
+              "cacheReadInputTokens": 15661,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.0530055,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "b26fe1ca-5af4-4a85-b5b5-37c88a0b1164"
+        }
+      ],
+      "first_artifact_pass": false,
+      "final_artifact_pass": false,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 49.69072740001138,
+      "repairs": 1
+    },
+    {
+      "id": "wh08",
+      "category": "data",
+      "difficulty": "moderate",
+      "artifact": "answer.json",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 13.114089699927717,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": false,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": true,
+              "error": ""
+            }
+          ],
+          "native_tools": [
+            "Read",
+            "Read",
+            "Edit"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [
+            "CONTRACT.md"
+          ],
+          "scope_violations": [],
+          "artifact_sha256": "fa0375fc55ee2a2f24257c6be20d03609e4ea16ab5d8efa8e35e0d653eca24d8",
+          "usage": {
+            "input_tokens": 1673,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3000,
+            "output_tokens": 337,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 1673,
+              "outputTokens": 337,
+              "cacheReadInputTokens": 3000,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.01829,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "4eae2e60-d0b3-4590-9f42-e1068ed29973"
+        },
+        {
+          "phase": 1,
+          "seconds": 6.792955899960361,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": false,
+            "source_reads": true,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": true,
+              "error": ""
+            }
+          ],
+          "native_tools": [
+            "Read"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [],
+          "scope_violations": [],
+          "artifact_sha256": "fa0375fc55ee2a2f24257c6be20d03609e4ea16ab5d8efa8e35e0d653eca24d8",
+          "usage": {
+            "input_tokens": 848,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3489,
+            "output_tokens": 149,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 848,
+              "outputTokens": 149,
+              "cacheReadInputTokens": 3489,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.0097095,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "4eae2e60-d0b3-4590-9f42-e1068ed29973"
+        }
+      ],
+      "first_artifact_pass": true,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 19.90704559988808,
+      "repairs": 1
+    },
+    {
+      "id": "wh09",
+      "category": "operations",
+      "difficulty": "judgement",
+      "artifact": "answer.json",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 15.542404400068335,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": false,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": true,
+              "error": ""
+            }
+          ],
+          "native_tools": [
+            "Read",
+            "Read",
+            "Edit"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [
+            "CONTRACT.md"
+          ],
+          "scope_violations": [],
+          "artifact_sha256": "46134fb21eabe0a533469db630c72fb69dfd239d86292ad213808f36ae8e34ab",
+          "usage": {
+            "input_tokens": 1787,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3132,
+            "output_tokens": 536,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 1787,
+              "outputTokens": 536,
+              "cacheReadInputTokens": 3132,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.023901000000000002,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "6a7660f9-0a44-45bf-bd8e-de09b4afb6bc"
+        },
+        {
+          "phase": 1,
+          "seconds": 7.734028399921954,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": false,
+            "source_reads": true,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": true,
+              "error": ""
+            }
+          ],
+          "native_tools": [
+            "Read"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [],
+          "scope_violations": [],
+          "artifact_sha256": "46134fb21eabe0a533469db630c72fb69dfd239d86292ad213808f36ae8e34ab",
+          "usage": {
+            "input_tokens": 1158,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 3851,
+            "output_tokens": 251,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 1158,
+              "outputTokens": 251,
+              "cacheReadInputTokens": 3851,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.0139905,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "6a7660f9-0a44-45bf-bd8e-de09b4afb6bc"
+        }
+      ],
+      "first_artifact_pass": true,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 23.27643279999029,
+      "repairs": 1
+    },
+    {
+      "id": "wh10",
+      "category": "documents",
+      "difficulty": "judgement",
+      "artifact": "answer.json",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 11.430251599987969,
+          "artifact_checks_pass": false,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": false,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": false
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": false,
+              "error": "Incorrect schema, source fact or decision; reread the contract and sources."
+            }
+          ],
+          "native_tools": [
+            "Read",
+            "Read",
+            "Edit"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [
+            "CONTRACT.md"
+          ],
+          "scope_violations": [],
+          "artifact_sha256": "97bc15c2a3a4eee02fbf4e1a9ef4245af5eb4d4d8ff39036c0dfd24b0d1c8a53",
+          "usage": {
+            "input_tokens": 1628,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 2957,
+            "output_tokens": 352,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 1628,
+              "outputTokens": 352,
+              "cacheReadInputTokens": 2957,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.0184185,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "8a2fc871-0483-45d3-a911-62ff632f6f76"
+        },
+        {
+          "phase": 1,
+          "seconds": 8.891757299890742,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": true,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": true,
+              "error": ""
+            }
+          ],
+          "native_tools": [
+            "Read",
+            "Read",
+            "Edit"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [],
+          "scope_violations": [],
+          "artifact_sha256": "d68708660c04560a4b7a3246ac3b8b10ef1cfc272200c10c1e7c4d315dccc55b",
+          "usage": {
+            "input_tokens": 1173,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 5878,
+            "output_tokens": 399,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 1173,
+              "outputTokens": 399,
+              "cacheReadInputTokens": 5878,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.018778999999999997,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "8a2fc871-0483-45d3-a911-62ff632f6f76"
+        }
+      ],
+      "first_artifact_pass": false,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": true,
+      "total_active_seconds": 20.32200889987871,
+      "repairs": 1
+    },
+    {
+      "id": "wh11",
+      "category": "operations",
+      "difficulty": "moderate",
+      "artifact": "answer.json",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 9.654547000071034,
+          "artifact_checks_pass": false,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": false,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": false
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": false,
+              "error": "Incorrect schema, source fact or decision; reread the contract and sources."
+            }
+          ],
+          "native_tools": [
+            "Read",
+            "Read",
+            "Edit"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [
+            "CONTRACT.md"
+          ],
+          "scope_violations": [],
+          "artifact_sha256": "d762954ac9209daba2a8fd13f8a7b46c5f78aee38bcf96f3c849a22a5476d138",
+          "usage": {
+            "input_tokens": 1699,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 4510,
+            "output_tokens": 408,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 1699,
+              "outputTokens": 408,
+              "cacheReadInputTokens": 4510,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.02095,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "c8f69f35-e65a-4ff8-9d6f-cc6b4fe573f7"
+        },
+        {
+          "phase": 1,
+          "seconds": 8.50056139996741,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": true,
+          "criteria": {
+            "clean_native_terminal": true,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "typed_source_facts_and_decisions",
+              "passed": true,
+              "error": ""
+            }
+          ],
+          "native_tools": [
+            "Read",
+            "Read",
+            "Edit"
+          ],
+          "tool_errors": 0,
+          "missing_reads": [],
+          "scope_violations": [],
+          "artifact_sha256": "6ca5f037ac3ab1e8a4d6be583112ca0ad44950a267d37fbb5e35d74cd6b1d519",
+          "usage": {
+            "input_tokens": 1297,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 6194,
+            "output_tokens": 395,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 1297,
+              "outputTokens": 395,
+              "cacheReadInputTokens": 6194,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.019457000000000002,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "c8f69f35-e65a-4ff8-9d6f-cc6b4fe573f7"
+        }
+      ],
+      "first_artifact_pass": false,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": true,
+      "total_active_seconds": 18.155108400038444,
+      "repairs": 1
+    },
+    {
+      "id": "wh12",
+      "category": "data",
+      "difficulty": "moderate",
+      "artifact": "answer.json",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 24.4115138000343,
+          "artifact_checks_pass": false,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": false,
+            "actual_edit": false,
+            "source_reads": false,
+            "declared_commands_and_paths": true,
+            "sources_unchanged": true,
+            "hidden_behavior": false
+          },
+          "checks": [
+            {
+              "name": "valid_json",
+              "passed": false,
+              "error": "Expecting value: line 1 column 1 (char 0)"
+            }
+          ],
+          "native_tools": [
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Read"
+          ],
+          "tool_errors": 7,
+          "missing_reads": [
+            "CONTRACT.md"
+          ],
+          "scope_violations": [],
+          "artifact_sha256": "45fc7ab706e6fb509993b6fcae9d4d423c96f8e840c8f64c1a61f5c817c8a870",
+          "usage": {
+            "input_tokens": 2754,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 19455,
+            "output_tokens": 1318,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 2754,
+              "outputTokens": 1318,
+              "cacheReadInputTokens": 19455,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.056447500000000005,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "f11fcec4-c947-4eff-8fd8-bd862bd488e1"
+        }
+      ],
+      "first_artifact_pass": false,
+      "final_artifact_pass": false,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 24.4115138000343,
+      "repairs": 0
+    },
+    {
+      "id": "wh13",
+      "category": "development",
+      "difficulty": "moderate",
+      "artifact": "usage_report.py",
+      "phases": [
+        {
+          "phase": 0,
+          "seconds": 62.02358799998183,
+          "artifact_checks_pass": true,
+          "strict_workflow_pass": false,
+          "criteria": {
+            "clean_native_terminal": false,
+            "actual_edit": true,
+            "source_reads": true,
+            "declared_commands_and_paths": false,
+            "sources_unchanged": true,
+            "hidden_behavior": true
+          },
+          "checks": [
+            {
+              "name": "legacy_cache_unchanged",
+              "passed": true
+            },
+            {
+              "name": "responses_cache_not_doubled",
+              "passed": true
+            },
+            {
+              "name": "completed_envelope_json_jsonl",
+              "passed": true
+            },
+            {
+              "name": "ambiguous_terminal_rejected",
+              "passed": true
+            },
+            {
+              "name": "boolean_usage_rejected",
+              "passed": true
+            },
+            {
+              "name": "cli_report_compatibility",
+              "passed": true
+            }
+          ],
+          "native_tools": [
+            "Bash",
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Read",
+            "Edit",
+            "Edit",
+            "Read",
+            "Bash"
+          ],
+          "tool_errors": 5,
+          "missing_reads": [],
+          "scope_violations": [
+            "unexpected command ls -la \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh13/workspace\"",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh13/workspace\" && python --version && python -m unittest -q test_public",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh13/workspace\" && python -m unittest -q test_public",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh13/workspace\" && python -c \"\nfrom pathlib import Path\nfrom usage_report import tokens\nimport json\n\ndef expect_ok(path, val):\n    got = tokens(Path(path))\n    print('OK  ', path, '->', got, '(expected %s)' % val, 'PASS' if got==val else 'FAIL')\n\ndef expect_err(path, exc=ValueError):\n    try:\n        got = tokens(Path(path))\n        print('FAIL', path, 'expected %s but got %r' % (exc.__name__, got))\n    except exc as e:\n        print('OK  ', path, '->', type(e).__name__, e)\n\n# Legacy / direct JSON behavior preserved\nexpect_ok('legacy.json', 17)          # prompt_tokens path, cache ignored\nexpect_ok('openai.json', 16)         # input+output, cached_details NOT double counted\nexpect_ok('responses.json', 17)      # legacy top-level cache_read still counts\n# New envelope support\nexpect_ok('event.json', 11)          # single JSON response.completed\nexpect_ok('events.jsonl', 11)        # JSONL single response.completed\n# Rejections\nexpect_err('invalid.json')           # bool token count\n# JSONL duplicate terminal -> reject\nexpect_err('duplicate.jsonl')\n# Missing terminal in JSONL -> reject\nimport tempfile, os\nwith tempfile.NamedTemporaryFile('w', suffix='.jsonl', delete=False) as f:\n    f.write('{\\\"type\\\": \\\"response.created\\\"}\\n')\n    p=f.name\nexpect_err(p)\nos.unlink(p)\n# JSONL with two result terminals -> reject\nwith tempfile.NamedTemporaryFile('w', suffix='.jsonl', delete=False) as f:\n    f.write('{\\\"type\\\": \\\"result\\\", \\\"usage\\\": {\\\"input_tokens\\\": 1, \\\"output_tokens\\\": 1}}\\n')\n    f.write('{\\\"type\\\": \\\"result\\\", \\\"usage\\\": {\\\"input_tokens\\\": 1, \\\"output_tokens\\\": 1}}\\n')\n    p=f.name\nexpect_err(p)\nos.unlink(p)\n# Negative token -> reject\nwith tempfile.NamedTemporaryFile('w', suffix='.json', delete=False) as f:\n    f.write('{\\\"usage\\\": {\\\"input_tokens\\\": -1, \\\"output_tokens\\\": 2}}')\n    p=f.name\nexpect_err(p)\nos.unlink(p)\n# Missing token count -> reject\nwith tempfile.NamedTemporaryFile('w', suffix='.json', delete=False) as f:\n    f.write('{\\\"usage\\\": {\\\"input_tokens\\\": 5}}')\n    p=f.name\nexpect_err(p)\nos.unlink(p)\n\"",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh13/workspace\" && cat > _verify.py <<'PY'\nfrom pathlib import Path\nfrom usage_report import tokens\nimport tempfile, os\n\ndef expect_ok(path, val):\n    got = tokens(Path(path))\n    print('OK  ', path, '->', got, 'PASS' if got == val else 'FAIL (want %s)' % val)\n\ndef expect_err(path):\n    try:\n        got = tokens(Path(path))\n        print('FAIL', path, 'expected ValueError but got', got)\n    except ValueError as e:\n        print('OK  ', path, '-> ValueError:', e)\n\nexpect_ok('legacy.json', 17)\nexpect_ok('openai.json', 16)\nexpect_ok('responses.json', 17)\nexpect_ok('event.json', 11)\nexpect_ok('events.jsonl', 11)\nexpect_err('invalid.json')\nexpect_err('duplicate.jsonl')\n\ndef tmp_jsonl(lines):\n    f = tempfile.NamedTemporaryFile('w', suffix='.jsonl', delete=False)\n    f.write('\\n'.join(lines)); f.close()\n    return f.name\n\ndef tmp_json(s):\n    f = tempfile.NamedTemporaryFile('w', suffix='.json', delete=False)\n    f.write(s); f.close()\n    return f.name\n\np = tmp_jsonl(['{\"type\": \"response.created\"}']); expect_err(p); os.unlink(p)\np = tmp_jsonl(['{\"type\": \"result\", \"usage\": {\"input_tokens\": 1, \"output_tokens\": 1}}',\n              '{\"type\": \"result\", \"usage\": {\"input_tokens\": 1, \"output_tokens\": 1}}']); expect_err(p); os.unlink(p)\np = tmp_json('{\"usage\": {\"input_tokens\": -1, \"output_tokens\": 2}}'); expect_err(p); os.unlink(p)\np = tmp_json('{\"usage\": {\"input_tokens\": 5}}'); expect_err(p); os.unlink(p)\np = tmp_json('{\"usage\": {\"input_tokens\": true, \"output_tokens\": 2}}'); expect_err(p); os.unlink(p)\nprint('done')\nPY\npython _verify.py && rm _verify.py",
+            "unexpected writable path C:\\Users\\stanc\\github\\local-inference\\tmp\\workhorse-v2-20261028\\wh13\\workspace\\_verify.py",
+            "unexpected command cd \"C:/Users/stanc/github/local-inference/tmp/workhorse-v2-20261028/wh13/workspace\" && echo \"from pathlib import Path\" > _verify.py && echo \"from usage_report import tokens\" >> _verify.py && echo \"import tempfile, os\" >> _verify.py && echo \"\" >> _verify.py && echo \"def expect_ok(path, val):\" >> _verify.py && echo \"    got = tokens(Path(path))\" >> _verify.py && echo \"    print('OK  ', path, '->', got, 'PASS' if got == val else 'FAIL (want %s)' % val)\" >> _verify.py && echo \"\" >> _verify.py && echo \"def expect_err(path):\" >> _verify.py && echo \"    try:\" >> _verify.py && echo \"        got = tokens(Path(path))\" >> _verify.py && echo \"        print('FAIL', path, 'expected ValueError but got', got)\" >> _verify.py && echo \"    except ValueError as e:\" >> _verify.py && echo \"        print('OK  ', path, '-> ValueError:', e)\" >> _verify.py && echo \"\" >> _verify.py && echo \"expect_ok('legacy.json', 17)\" >> _verify.py && echo \"expect_ok('openai.json', 16)\" >> _verify.py && echo \"expect_ok('responses.json', 17)\" >> _verify.py && echo \"expect_ok('event.json', 11)\" >> _verify.py && echo \"expect_ok('events.jsonl', 11)\" >> _verify.py && echo \"expect_err('invalid.json')\" >> _verify.py && echo \"expect_err('duplicate.jsonl')\" >> _verify.py && echo \"print('done')\" >> _verify.py && python _verify.py && rm _verify.py"
+          ],
+          "artifact_sha256": "23f4dcf17dd0eff385e019137cfa2b17b6eedce78209db14a443e70eaa31b7ea",
+          "usage": {
+            "input_tokens": 6320,
+            "cache_creation_input_tokens": 0,
+            "cache_read_input_tokens": 46920,
+            "output_tokens": 3696,
+            "output_tokens_details": {
+              "thinking_tokens": 0
+            },
+            "server_tool_use": {
+              "web_search_requests": 0,
+              "web_fetch_requests": 0
+            },
+            "service_tier": "standard",
+            "cache_creation": {
+              "ephemeral_1h_input_tokens": 0,
+              "ephemeral_5m_input_tokens": 0
+            },
+            "inference_geo": "",
+            "iterations": [],
+            "speed": "standard"
+          },
+          "reported_model_usage": {
+            "qwen3.8-27b": {
+              "inputTokens": 6320,
+              "outputTokens": 3696,
+              "cacheReadInputTokens": 46920,
+              "cacheCreationInputTokens": 0,
+              "webSearchRequests": 0,
+              "costUSD": 0.14745999999999998,
+              "contextWindow": 1000000,
+              "maxOutputTokens": 32000,
+              "canonicalModel": "qwen3.8-27b",
+              "provider": "firstParty",
+              "costBasis": "unknown"
+            }
+          },
+          "session_id": "5e5ca5fe-85c0-4912-88e6-4404a58ad086"
+        }
+      ],
+      "first_artifact_pass": true,
+      "final_artifact_pass": true,
+      "first_strict_pass": false,
+      "final_strict_pass": false,
+      "total_active_seconds": 62.02358799998183,
+      "repairs": 0
+    }
+  ],
+  "limits": [
+    "Small hand-authored task set, mostly short inputs. Not a population reliability estimate or repo-scale engineering benchmark.",
+    "JSON tasks test typed facts/explicit decisions, not open-ended prose quality or unconstrained architectural judgement.",
+    "No cloud matched baseline. Cloud escalation guidance is conditional workflow/risk advice, not measured model superiority.",
+    "CLI reported cost/model pricing/context labels are not actual local electricity cost, cloud savings or the native model window. Native context was40960.",
+    "Strict command/read contract is reported separately from actual artifact correctness; rejected workflow receipts are never promoted.",
+    "Generated Python probes are bounded processes, not an OS security sandbox. Normal caller settings and production source remain unchanged."
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/workhorse-v2/plan.json.gz",
+      "raw_sha256": "71ef43aaa508565336d057acaadccbeb7cae68ef5842e412ba5854e787ab9c60",
+      "compressed_sha256": "bc15c3b5bfb4fbfe8e93906e8b167e8dbf773050bb016d0e630758c4bc4217cf"
+    },
+    {
+      "path": "evidence/workhorse-v2/state.json.gz",
+      "raw_sha256": "54bc4776478c0a2e4d727e030acd31be45504d9bf46cfa95256ef52531abae0d",
+      "compressed_sha256": "f83f441551b7c11c0adc1a0ee6444e0ccacb8d07ca7c3de588a0e3a038c1e2de"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh01/phase-0/prompt.txt.gz",
+      "raw_sha256": "d3fdef8faee5b89332e0e5ab28540ef05e79e3053613fd4a386768e8d3010c98",
+      "compressed_sha256": "c732f792be5b82b83022875610ba9d92f3b717c60298a58fdf31605855027531"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh01/phase-0/result.json.gz",
+      "raw_sha256": "0363321bd767668472140659e96599b11a53e5d7c46039905674d7aa6a3921b6",
+      "compressed_sha256": "596382a3eb384d3248c593a98c421e761e4d01049f58f50a90e94c1f7dd5daf2"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh01/phase-0/solution.py.gz",
+      "raw_sha256": "76a97ba97ac29cd04269552491dd190bd60ce65475d78f90b5af2b2c62491159",
+      "compressed_sha256": "9e6036ec030a9ebbf2eb6cd05769364b762c6862d67894c6ce69e2d7fde03b8a"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh01/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh01/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "eeae6c9c7f4446ac2aff73a393ec2bb79406a64631f6505ac7b706e59dd64ada",
+      "compressed_sha256": "99a8f6ddfce13a9293cbe57d6b59bd01703ecd911cbf27a1cde090074e6593e0"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh01/result.json.gz",
+      "raw_sha256": "04facb9e215b37f96c7ba0901ea2154c1a45f8139fd538486cf75003b9d8890e",
+      "compressed_sha256": "9ac92c9f2cb3ff4cfc5574103bff9aabf197c3defbe9410b10a014d981e3b696"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh01/workspace/CONTRACT.md.gz",
+      "raw_sha256": "ed2b01047c161f76fb5838ec5f903c4d6b6013f538c8b3e3425982f50f691aec",
+      "compressed_sha256": "c500c76b9534d4ec7beda00ba367c3dae0c0bc40920c2b5ef01d25030786c1d1"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh01/workspace/solution.py.gz",
+      "raw_sha256": "76a97ba97ac29cd04269552491dd190bd60ce65475d78f90b5af2b2c62491159",
+      "compressed_sha256": "9e6036ec030a9ebbf2eb6cd05769364b762c6862d67894c6ce69e2d7fde03b8a"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh01/workspace/test_public.py.gz",
+      "raw_sha256": "b799c21a150dcec9fe5e431545900c52855cf441f62b433f10b886e5a3f4e288",
+      "compressed_sha256": "869e0f91cedebcab1f312c7fc4395f3b704e0529d9ee4068f675e68f28cee0ab"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh02/phase-0/prompt.txt.gz",
+      "raw_sha256": "a83f4240c74a6285c440ae283650dee795d613f2d416fd3511cc354f866dffb2",
+      "compressed_sha256": "67bb541288021907879c99025290b48ad37e563d32cedce83a11cf2993a6751a"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh02/phase-0/result.json.gz",
+      "raw_sha256": "828a29dc3aff9fda2b9117db1d167112d129c2892c8ae555c5876f1ef29e0412",
+      "compressed_sha256": "a95f2e45c5bfd97b522e433cd5a514422ceee0869bb8736eb4d643b3d3df080b"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh02/phase-0/solution.py.gz",
+      "raw_sha256": "d06a9061cf8a59cb73de5e6cc116895861cb6898c4d18c68e2467974a16a777b",
+      "compressed_sha256": "ba25e1374dce0ff59499d27969fff1a9c39f504e113ef6f3b02b4e1daeb53994"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh02/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh02/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "8237b73d248ac1642857747167ed76ba10d1b3e841c6691f863aa8d96ccfbe92",
+      "compressed_sha256": "a86defd7ebde1f36828f497c4fabec0308f2448746d9d6d276f03aeaa286cfac"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh02/result.json.gz",
+      "raw_sha256": "36ee1455016d9a8e821f24baf06708c83afe4fefe9de9be18200dbbd05411bd6",
+      "compressed_sha256": "1f3530de677108b80c7e4f0f052695dfa830026c23aa4f3b619f98d9fd2dfb32"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh02/workspace/CONTRACT.md.gz",
+      "raw_sha256": "f0e7e3590c010bd7e0fd22bf44f7b03ee0adbc7971a20ba659909d383034826e",
+      "compressed_sha256": "282046fee2db03e0a62b7a1c4c0532f7e12bdd9b34be0a0c480b60bdeeccec12"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh02/workspace/solution.py.gz",
+      "raw_sha256": "d06a9061cf8a59cb73de5e6cc116895861cb6898c4d18c68e2467974a16a777b",
+      "compressed_sha256": "ba25e1374dce0ff59499d27969fff1a9c39f504e113ef6f3b02b4e1daeb53994"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh02/workspace/test_public.py.gz",
+      "raw_sha256": "acacad3c213d9e4a3b7ffacc10f99012a518e7e8b13b7b6275c6d07c32e4b942",
+      "compressed_sha256": "254b198678808c02a836067d5ce8fbbcb6319799d24e8b0422e6aa3bf7386c88"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh03/phase-0/prompt.txt.gz",
+      "raw_sha256": "7c6899eb3a2dca1d140e8d12131608a78804b98b8747e8272c307c27fc0b1730",
+      "compressed_sha256": "d7bd8b14dfc154af61bbf0193409995b3b282715460038aa8cbf5d51daaf1507"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh03/phase-0/result.json.gz",
+      "raw_sha256": "443862336a98805f8ca55eb45be5e9252d65f3d49868debc815a9bcbf516b097",
+      "compressed_sha256": "5e5762dab69ea7dad05af71938af7fd97142714132f450de88559ca94dceb9e0"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh03/phase-0/solution.py.gz",
+      "raw_sha256": "1b7572ecd703dce292c34253c7d0ce282d7886873b4e01fb561ff660bcd03feb",
+      "compressed_sha256": "474f637f8e93a09f2e745d84464eadca3e29fc459dff3bb9c41044e738f42094"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh03/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh03/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "0ebbb106a9cc37c295d608429827e356e66e05523a96f1128f1993fffe6c627c",
+      "compressed_sha256": "aa954d7134a741b9ac653e15bf0620b78597a69a9d906c12b6b301ffbc929a5c"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh03/result.json.gz",
+      "raw_sha256": "f9b8d2566d2479eac2b1b84d0a70507a103c9f25d46cea01337322b38e3ec3b3",
+      "compressed_sha256": "4721a5400c987fe4e0ed06cc3b27344393d2e766b773babb5e9909110147b9e8"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh03/workspace/CONTRACT.md.gz",
+      "raw_sha256": "e8b6b25ce4153df8ecac13b28e2bd605cf4e2da39468fb8f0e09c4a72ccbfe9b",
+      "compressed_sha256": "a5e89e563e3613cc1e29a59ae5c90c6780330c05c8a2037a7ddca44c99a6c20d"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh03/workspace/solution.py.gz",
+      "raw_sha256": "1b7572ecd703dce292c34253c7d0ce282d7886873b4e01fb561ff660bcd03feb",
+      "compressed_sha256": "474f637f8e93a09f2e745d84464eadca3e29fc459dff3bb9c41044e738f42094"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh03/workspace/test_public.py.gz",
+      "raw_sha256": "558f37e5e6634e1eb888bf125f7cccaaab07d39c8c304476a61f45ad4316f9ac",
+      "compressed_sha256": "95cb6dcdd5e7a74e8b2528779e05ca0cc4aa4cf9f11b55345cb9622324df9bf0"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh04/phase-0/prompt.txt.gz",
+      "raw_sha256": "8d57c5b9ab2561aa0a5878407eec9a8dcbeb48769bdba255e5d52ad8f0586e6a",
+      "compressed_sha256": "58e5ffd3bb259a1aeb4505ab72473322be17d1dea9c8da141b7d2786a88c95d7"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh04/phase-0/result.json.gz",
+      "raw_sha256": "620e6bc8ed477e67d6e610eef915ea046fb70798ba3a4d1a9035604901a4d8f1",
+      "compressed_sha256": "5c3c92ea7e7dcc36543b741effdeee4f37c348d5694549c0788011a1c80200d7"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh04/phase-0/solution.py.gz",
+      "raw_sha256": "d4cee04441a69f935b248b0f8bd08260b3c8846d3ac97f5e3969e6d8322e62bc",
+      "compressed_sha256": "0a09513e15ecde14ebaa688d18392baffb83e41f6518ec841ea32e31e4482ea4"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh04/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh04/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "aadbc7291d7513e734cc16ecf336666e76fcac34fa84e39fa3dc17f46d786aff",
+      "compressed_sha256": "52edfc6fd4230a7d1ad1f4cdf00c262ca234854db2f1213997897f9cd9ffd344"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh04/result.json.gz",
+      "raw_sha256": "8235e3202c3c81b09fdd722bb5f5e7f63ce4fde4109f6b4dfceec1d6f0d7ac48",
+      "compressed_sha256": "604a28154eed5b16baf22c2337afa588390b89ea085857746b44e8ef9e8662f3"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh04/workspace/CONTRACT.md.gz",
+      "raw_sha256": "96ce81e9b6e125c444eeadcaa9089eec4ec598cac05bf678c6fe50925998bc90",
+      "compressed_sha256": "9fe13646b340c4ca25c0df38685de116a2c63b7b00bb96ce863d89ee3b9538a6"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh04/workspace/solution.py.gz",
+      "raw_sha256": "d4cee04441a69f935b248b0f8bd08260b3c8846d3ac97f5e3969e6d8322e62bc",
+      "compressed_sha256": "0a09513e15ecde14ebaa688d18392baffb83e41f6518ec841ea32e31e4482ea4"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh04/workspace/test_public.py.gz",
+      "raw_sha256": "2ebbd25c8ad35204cc7fa39a975ab133906939f16e5cf669433f3d6240be44ab",
+      "compressed_sha256": "80aca6b19057ae03465716db6e9de1dfe7bb152cdf37bf7caaebbf7a9a21ef82"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh05/phase-0/prompt.txt.gz",
+      "raw_sha256": "a2cd3332cd5afa9c5499d915e8532eba240d08f9f7e7d9b5f37ad9e05c7de486",
+      "compressed_sha256": "935a0ab166cf96eb73a6f204ee048276c754bd6fed97130ece2f0528cf8478ef"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh05/phase-0/result.json.gz",
+      "raw_sha256": "ddb7bb7ccd64d2f75e1e090943caece2a640bd1953f503192b9a225696932b57",
+      "compressed_sha256": "25fb1c8ad3668bbf7f4835e11149c5bc69c2251ec275fb3856f463d394e3b7ea"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh05/phase-0/solution.py.gz",
+      "raw_sha256": "a4aff909026f2c654f8833baf11c5e2dedf0d3687015ad2d554db015304c9ea3",
+      "compressed_sha256": "ccf36ee0b16c972f6d1793b79db76cb12ffc3ae79f0f846745398c26fe6f2c45"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh05/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh05/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "2af9a079ff80bab3abdeff6f69f493c8cff05e042bb6d0ea67e4d5594552caa0",
+      "compressed_sha256": "4bf93d0548224f3b9bb997fcd40707900911b922c9cf3cfdfe909fdfac9e71fc"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh05/result.json.gz",
+      "raw_sha256": "2c5a8a7b4d21142c4eb7723a493497e786059e792ecf890e8720fdd3badf17c8",
+      "compressed_sha256": "aa731b9f659a24c46e94690076e58ebf4d01753d8db6a41816cd52cf1845ecd0"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh05/workspace/CONTRACT.md.gz",
+      "raw_sha256": "f89349f2f2928a341e19db21e70e3d7fb6d278e7fdc4264a0d024d351e320c63",
+      "compressed_sha256": "f7239d4d6bdc1733396f93e5411114575f4b3dc15951d8cd3fadf06d58a13f2d"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh05/workspace/solution.py.gz",
+      "raw_sha256": "a4aff909026f2c654f8833baf11c5e2dedf0d3687015ad2d554db015304c9ea3",
+      "compressed_sha256": "ccf36ee0b16c972f6d1793b79db76cb12ffc3ae79f0f846745398c26fe6f2c45"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh05/workspace/test_public.py.gz",
+      "raw_sha256": "6fd8225e8e2ed814c5d04e4e66e59dc7db4471434057f3f92b2f73fae1861378",
+      "compressed_sha256": "5acb4d8e1a6a020d8150cd97ed90b21e6876d8bd15a79ab028c80f177f911d07"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh06/phase-0/prompt.txt.gz",
+      "raw_sha256": "877581936000e023004ddd3755d890d63fd05cb8378f74188fad1b868bb2a7b8",
+      "compressed_sha256": "b6ebb7e03aa9ecfb63ebc976fc4e13f7c00cf81969e7c551d26b555140e50c2c"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh06/phase-0/result.json.gz",
+      "raw_sha256": "d34b367cb8f47ad17f4b7bf34f8e736402a430d824db218935cf5d590b8d0ca1",
+      "compressed_sha256": "1e15493727e8a6d1c42a06c8949086ec28efde2f926d5f819c4a93fd9c2e8750"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh06/phase-0/solution.py.gz",
+      "raw_sha256": "aa313f1fd694212b4627ad4207d654a611f3b203546e4a4bcf15adbe0009a2d0",
+      "compressed_sha256": "cab7e2784639c19cd56d0b7536e9d172ebe4b9d188fed9ba07f05f771413dd65"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh06/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh06/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "17072da03601a2c66cf1f7136ef11fce569534cac46016ec1bb55787a5dcaf9b",
+      "compressed_sha256": "53aa41275dd1c1b45910cbd5a793e891051d258febec1448ed520723705ca472"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh06/result.json.gz",
+      "raw_sha256": "03f48770d44a65236a73f7d1f5cb719d5d684cc9e9d78e7295d4ce41412defa7",
+      "compressed_sha256": "37f22e4f19ee8ff6580ea8418ec91649060db7ae240a8ff3c5928eccb1e288c4"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh06/workspace/CONTRACT.md.gz",
+      "raw_sha256": "68ae8a6044a8fefbd89d7ccb2ca44bae209b09f7e381938369c3f4028acd9ed0",
+      "compressed_sha256": "537a7be8b4852c08e7549e00b41bbac0f2f04e0225113fdbbeb017c690bbb5f4"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh06/workspace/solution.py.gz",
+      "raw_sha256": "aa313f1fd694212b4627ad4207d654a611f3b203546e4a4bcf15adbe0009a2d0",
+      "compressed_sha256": "cab7e2784639c19cd56d0b7536e9d172ebe4b9d188fed9ba07f05f771413dd65"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh06/workspace/test_public.py.gz",
+      "raw_sha256": "c94ff8bbadd66961a7ee0cbd9676728697981f561ffc116a65201f12fc8897fd",
+      "compressed_sha256": "cda13671c0baa573aac9e8f9c7dc5e931ea13ccddcb7981a241bd89003d6a7d2"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-0/answer.json.gz",
+      "raw_sha256": "b9fbe8bfdcd454ac5080cc49a151b699afdb29ded0a66516a676a0d5f737b224",
+      "compressed_sha256": "98a9a2a12e5f0729e2fc6d727e33289ebb31e4100b86d891c712dbdbc2d0db8d"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-0/prompt.txt.gz",
+      "raw_sha256": "de8925c2646af871c5d59a2e71e3a8c8b2daa24b4ea7a870acbba9d5035f1b0c",
+      "compressed_sha256": "555aa78b03ce0064cb21aae40eaf27ce874d0d5f7c9d33308cf63a4858d9e1cc"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-0/result.json.gz",
+      "raw_sha256": "de729734446b68cac22a4a4ed4cd13f73da724f0717bccce4fd506bfbf4c335c",
+      "compressed_sha256": "2f5c025dce4b2668e14947bce55d5cba60f21b00d3f3fdcce7bf48189d05f55d"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "65e9a9f38e07958716c8bff0f82c63d489a2fe33fcb9603475feead389094a70",
+      "compressed_sha256": "d1103bebab4fd50eb3fb6a835d1837f5c92cd3f377cf8bc2afc14fe6f10464b0"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-1/answer.json.gz",
+      "raw_sha256": "fc87dc34fc326ff8b87d8b4500b662fb2980846dbbbd99d9e12ae7ea0d216002",
+      "compressed_sha256": "08737ff056833ea0b940dc61c0528a7d6a18a06614fa14b1d948ace8c9fca990"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-1/prompt.txt.gz",
+      "raw_sha256": "34265ca6facc3f657cd1ee1e7c73e0fd22dc2aa3208fc8a7046b5896b4ef85e9",
+      "compressed_sha256": "880334949691630bd911fcc82cd59a9775f33c76daf92bfce24f9f1a2cef79eb"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-1/result.json.gz",
+      "raw_sha256": "6bec999a2b5c0bdcd11186b1cd3aa7b40af90197d22e3e67d9856586d8f5e58d",
+      "compressed_sha256": "7f8bec556f5617fc4c0dd3ca4e3094fa948cc0570a0a7debc76a28bd858d0ad2"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-1/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/phase-1/stdout.jsonl.gz",
+      "raw_sha256": "eebace5f25236fcb9181e99c1ae5a0192312b2cf7416c3d9aeccbf0e38625b02",
+      "compressed_sha256": "a86e8a7bd183479a5ee7ad437e7976f81db9cf62463b5f9a6237cd7cf81d63ef"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/result.json.gz",
+      "raw_sha256": "9567d2deb36f91835ad1116e9df3a98171ee0f42d6ba65730e91a8469f71d665",
+      "compressed_sha256": "569c8205f587976ff6d7a19c998072a7c13ab885ae11a452dfacabd15310f0ad"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/workspace/answer.json.gz",
+      "raw_sha256": "fc87dc34fc326ff8b87d8b4500b662fb2980846dbbbd99d9e12ae7ea0d216002",
+      "compressed_sha256": "08737ff056833ea0b940dc61c0528a7d6a18a06614fa14b1d948ace8c9fca990"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/workspace/CONTRACT.md.gz",
+      "raw_sha256": "668e3cec40bc69d0e57cdd57ac79f10ee8ac7e139789ee49d48f145839f03eac",
+      "compressed_sha256": "b2e8b8abd53aaab244d990765d987603eaa22d0826fa5ebdfe10628963946062"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/workspace/labels.csv.gz",
+      "raw_sha256": "5453384885cfa61dc45c6cdef64c6746957a9ec9d09d09e0aa6f3466ac097ca5",
+      "compressed_sha256": "26a77b945da4f73994e329d5427c76b8dec95f83e38d145b7f89c850510f735f"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh07/workspace/source.csv.gz",
+      "raw_sha256": "5c4a8fcdb75890951eb8b37a3ced916fc1a660fdf450f67c56bebf15754dd4e5",
+      "compressed_sha256": "4cb22cd19476cd574f1dbab1aa3bae92595872e3c3127777b2e7461932f56adc"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-0/answer.json.gz",
+      "raw_sha256": "fa0375fc55ee2a2f24257c6be20d03609e4ea16ab5d8efa8e35e0d653eca24d8",
+      "compressed_sha256": "ed362b63aee32090f02cf6f5af02904b62c6a42e08b6c82807b47f7d9032df97"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-0/prompt.txt.gz",
+      "raw_sha256": "25435a7cea9242995c564ce5d49820491221c20ee7c0b90b7cde0e7210dc71f1",
+      "compressed_sha256": "c12795957ed7b6afb7aee81399f74bc2ecee45dd76e7a33887a8d8626c387ec6"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-0/result.json.gz",
+      "raw_sha256": "2a49fa6ed5fca53a4e67b138cdf4d2108e720deddc7e01efc0c37cf2259a2f73",
+      "compressed_sha256": "86be562aefebd93470f7f1f2e0e230ecd0b42b76f1696e397109d9fcc4c6189c"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "903bcdff87b70665ecad79f5b3856631ac58e16f108afb3a76139a9716114205",
+      "compressed_sha256": "d2e01b18aa3d8da4e5015439d25bf9eab7b239f48a73419b18aed2759d724b53"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-1/answer.json.gz",
+      "raw_sha256": "fa0375fc55ee2a2f24257c6be20d03609e4ea16ab5d8efa8e35e0d653eca24d8",
+      "compressed_sha256": "ed362b63aee32090f02cf6f5af02904b62c6a42e08b6c82807b47f7d9032df97"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-1/prompt.txt.gz",
+      "raw_sha256": "3dd89bf7dc95bc3864cd69c0e01e992d81b0b8f91fbe2405de37136d336a727e",
+      "compressed_sha256": "1bdaa942198b9efe6557f14c7c3ec3bfc4b5140628a18449cada4593a8c63813"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-1/result.json.gz",
+      "raw_sha256": "ca55fb57d44c7376f0837fab247f6591237a96b911547af36e345efc3d8d6f27",
+      "compressed_sha256": "49bdd71efbceedff03ac5bc9f761cb3826aa4da3845f1b49961869810d9e3955"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-1/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/phase-1/stdout.jsonl.gz",
+      "raw_sha256": "762872278a68f835be1059d13bcc91ef66359a4c8371f4d2fd8ff3cbb4a60126",
+      "compressed_sha256": "55f87bb119275017b8e78e7f4aca99033662929b9cdf8e67d5e07fe848d3e5e8"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/result.json.gz",
+      "raw_sha256": "dbf3619e5a3faca6ccd28c8dc9f84b5532fd9afe2f0efa6217954409be64473d",
+      "compressed_sha256": "4ff52a7e24ff22757cb9f93cc08a57eda32ce4c0d1ab5ab04403bde7a415db0a"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/workspace/answer.json.gz",
+      "raw_sha256": "fa0375fc55ee2a2f24257c6be20d03609e4ea16ab5d8efa8e35e0d653eca24d8",
+      "compressed_sha256": "ed362b63aee32090f02cf6f5af02904b62c6a42e08b6c82807b47f7d9032df97"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/workspace/CONTRACT.md.gz",
+      "raw_sha256": "7888e6d6a42f188e1678704e62a84ad8749f14390d83ba07b11368b38be15254",
+      "compressed_sha256": "26ebef9b431d27bd9dc7ca4ead89511d15fa8db01df7f0f71d114aa9f9a9ef14"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh08/workspace/memo.txt.gz",
+      "raw_sha256": "e291b74d8c4c7b3601726a45f362cefc2bfb446766b5b73b46982178e0119c1e",
+      "compressed_sha256": "623e7fefcf9a170cd33bc5cbc3185beb328c045b863925056646cc2bf3b20f1f"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-0/answer.json.gz",
+      "raw_sha256": "46134fb21eabe0a533469db630c72fb69dfd239d86292ad213808f36ae8e34ab",
+      "compressed_sha256": "c2a030272c405ee8f2a5d39595019a6bed76661f7927b979440e5a4420110af6"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-0/prompt.txt.gz",
+      "raw_sha256": "30dc167a8c379b418609eba655f697630eef9e75680a8dbe7bf2b9573eb5c558",
+      "compressed_sha256": "11a2ae50ccf00bdbe0cd066d21808aed9b527a0045e604d16e3dea53e565d7ea"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-0/result.json.gz",
+      "raw_sha256": "75475c6e46110a60f8b76fdad4a6b900570e88fe4a4910c9d52aa4b9fd49b402",
+      "compressed_sha256": "f2e9bad2ebd14eaf25b40e3bada1677957b06cdd55e036d82cb4194bacc7e0cb"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "dfcddc150d5f8a39c8a2b1d3ef5c0e10e951f46dc676e52a0960ce06b2e2652d",
+      "compressed_sha256": "76a64a04671cd687abccdddd29c597ad2f75526dfc0d580ba285a2317190be91"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-1/answer.json.gz",
+      "raw_sha256": "46134fb21eabe0a533469db630c72fb69dfd239d86292ad213808f36ae8e34ab",
+      "compressed_sha256": "c2a030272c405ee8f2a5d39595019a6bed76661f7927b979440e5a4420110af6"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-1/prompt.txt.gz",
+      "raw_sha256": "23f40f0908a286ae52549d787bbca1449f2b7d76741f9fe4d81e832cdc4114e0",
+      "compressed_sha256": "660a8f5bb106d31a3f6cf012342a8f3fb38c5ea4d2030e7297236c08c7030702"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-1/result.json.gz",
+      "raw_sha256": "09e240f8c45e085a00894102e5e77da1d8f3a8fe84cb16c6385e0411e358f5a7",
+      "compressed_sha256": "c18636c84c635685867697dd1dd060d309fa0e5068d09ff4f0722eac658caf6b"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-1/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/phase-1/stdout.jsonl.gz",
+      "raw_sha256": "f030bb88392ec36b6b8b468d501dd6eecf984f719b37b3bde6aa331452d4f95c",
+      "compressed_sha256": "b61ebd4d72fff096b0d238e8da1e75f0edee737d4bcba4e292800463d8ebc468"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/result.json.gz",
+      "raw_sha256": "9b2209601fa9e198d23da00d67aa8081ae8f43620a56ff0bb78444f7cf2ff575",
+      "compressed_sha256": "1896fa5ea5b1460933eafdea1d3011c0da243097a556721c10e6cf8a56de8928"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/workspace/answer.json.gz",
+      "raw_sha256": "46134fb21eabe0a533469db630c72fb69dfd239d86292ad213808f36ae8e34ab",
+      "compressed_sha256": "c2a030272c405ee8f2a5d39595019a6bed76661f7927b979440e5a4420110af6"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/workspace/CONTRACT.md.gz",
+      "raw_sha256": "e7be6374888eaa28050674b6b1a9cd678098c6f1404a3c26d53e42a1ba1fd14c",
+      "compressed_sha256": "1ab08b5715f956cb780d2803000430468f29a6c54cb766a50bfed101a8a84c20"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh09/workspace/incident.txt.gz",
+      "raw_sha256": "96707badd09a2daebc7b5054ff9e33ca7fe69988558595f6a7aedf533b29f5d6",
+      "compressed_sha256": "1035590bd1c680328cf83b2eb8927e4c5891b500124c14f1668d494a2585bcc8"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-0/answer.json.gz",
+      "raw_sha256": "97bc15c2a3a4eee02fbf4e1a9ef4245af5eb4d4d8ff39036c0dfd24b0d1c8a53",
+      "compressed_sha256": "aeed8bc30cd8e47284db1cc331f9f6ce22ceca3b40c4aebb442f1048b2026a8b"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-0/prompt.txt.gz",
+      "raw_sha256": "3ba86746b986e5a37ef695246862677f27e600ce48ea95c074224be516b57397",
+      "compressed_sha256": "1760d1cc50afb22d11f5a82fd897bb28e48228cd11f0b0dcf11fb2f58641b916"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-0/result.json.gz",
+      "raw_sha256": "a6e64e390c2a905bcec47ab4165b14e081a323c2245e1074d7a22a997c89db9f",
+      "compressed_sha256": "618f8c748551ff5051ff71dc16387eb63b8bd3b07eb8db72265e6fc854b81026"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "69b701928423471360e515e54c3e28ccc094cc3a1ad5f70ea33196ce0876b9a3",
+      "compressed_sha256": "8f0848f2ef5fb7886bd986ec1a264262839ea8e351fe40f922fef1d0de9cb0a3"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-1/answer.json.gz",
+      "raw_sha256": "d68708660c04560a4b7a3246ac3b8b10ef1cfc272200c10c1e7c4d315dccc55b",
+      "compressed_sha256": "d2e9604d96f26cb7063db0a3ee2cbbbe20afe409a632aad14b9a274b85c54983"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-1/prompt.txt.gz",
+      "raw_sha256": "afcfa234a090b62edc12cfe99b61b83c418e4453a6348b80971176d716e55de8",
+      "compressed_sha256": "004953105d9575c416cc88aa3f70f827e9f8aae7193db3ed9e851fe90ae20b2f"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-1/result.json.gz",
+      "raw_sha256": "b0d23fbbfbc2af0a2f9d191ad70f64d9e342d73290539bc1453bc65124ad8cdb",
+      "compressed_sha256": "d91548c2da4bb6173fb5618dfcfedc1f61f147b6ab461e2ee53bed42a442ee80"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-1/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/phase-1/stdout.jsonl.gz",
+      "raw_sha256": "582e025791e40cc51c04f01565e0abf7a7095add180e05389a3cccd26bd64631",
+      "compressed_sha256": "e9eb193ae24852f20905a15fe5219d9d6b6eab449c00c90d0fef1c0f6d635a75"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/result.json.gz",
+      "raw_sha256": "221af7b415b3f8e8457e9cc502dc31a4a78fcc43e9d5a62f6779d30a7998898f",
+      "compressed_sha256": "6ed1a1f3f2407c3329c0e58786673dcea7a1e0efa4b8c30adde8aa013315346a"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/workspace/answer.json.gz",
+      "raw_sha256": "d68708660c04560a4b7a3246ac3b8b10ef1cfc272200c10c1e7c4d315dccc55b",
+      "compressed_sha256": "d2e9604d96f26cb7063db0a3ee2cbbbe20afe409a632aad14b9a274b85c54983"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/workspace/CONTRACT.md.gz",
+      "raw_sha256": "77c515d90dd6ad18f3271551cecbadc690aa860be13812a444f7fec9fd3df357",
+      "compressed_sha256": "4b4bf531d2965dd7ea2b6a2d00424ef9766b926ba03e0b274e354d5efd748a3f"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh10/workspace/requirements.txt.gz",
+      "raw_sha256": "23bb06a9c36c8f372824a8729b8148f9d50b59b1ec24c6863ab58f00b0329b7c",
+      "compressed_sha256": "6981127aa1582166fdd7224dec29405821a33d33608903fc31ff899dfc011436"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-0/answer.json.gz",
+      "raw_sha256": "d762954ac9209daba2a8fd13f8a7b46c5f78aee38bcf96f3c849a22a5476d138",
+      "compressed_sha256": "44b63f2069c3e9c61e03504e6d09868a30e0abca79f2fed892c3291f7ec39a8f"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-0/prompt.txt.gz",
+      "raw_sha256": "39c0f0efe682c692c0403ea3fc16e1d0b17d863985ccdf03cca1f076c90962ae",
+      "compressed_sha256": "cd856ac2389eb938da3ebe75b3eda6efcfb7192253e22d0ae4889d340072457a"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-0/result.json.gz",
+      "raw_sha256": "1c8493844b4e7034e55157e6f3cc6841c047aa3f9c1480af93b24e9287cd955e",
+      "compressed_sha256": "eca3fc29ba222a2f18c812c2cf45a4faea63d0b326d55e6e15861614f5a2a75d"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "784a7b2df8cdc02428ac333bc579609e03f12a7a25f157dd50c88428efbd9f6a",
+      "compressed_sha256": "87ad9e668bae776a1315805daefdd7dba757ae9abdd636085166339d8baf6da7"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-1/answer.json.gz",
+      "raw_sha256": "6ca5f037ac3ab1e8a4d6be583112ca0ad44950a267d37fbb5e35d74cd6b1d519",
+      "compressed_sha256": "ed3a91b3e7cc6ce4bdf9df5296eb86390e9fef97d66840ddf3af27e7dca46d84"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-1/prompt.txt.gz",
+      "raw_sha256": "e66f8459b9d501879bfc78dc3148cf57939df3d7dc234002ea17438c03cc36c0",
+      "compressed_sha256": "32b654bbeb0f27bcaed8a07666e9927f9a719b27f2dd76cf0ab798428b994a9e"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-1/result.json.gz",
+      "raw_sha256": "51a09e7f48f4ce9da7de9432eaceeed9731333f890779ea23634631ba07fa1cf",
+      "compressed_sha256": "54978a099309f681685542d1fcae7a84918924020a9d051d16f05258ff99fc45"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-1/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/phase-1/stdout.jsonl.gz",
+      "raw_sha256": "899dc44f6018ebd30097bbcd4d16b6c5f20194d91c42c7a49087003aab1889d0",
+      "compressed_sha256": "b49d8ef75af64356fc317166b68d3124f02486461ba751637ad07ff1c571ac78"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/result.json.gz",
+      "raw_sha256": "255aeca263fb9b54c659e3ef48f2b06ce4af121592ae88d46d69c543f099693b",
+      "compressed_sha256": "167ec3a0ad7c62da088445e0bcc600efac58d93abdcad529f11c547dcdc54d14"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/workspace/answer.json.gz",
+      "raw_sha256": "6ca5f037ac3ab1e8a4d6be583112ca0ad44950a267d37fbb5e35d74cd6b1d519",
+      "compressed_sha256": "ed3a91b3e7cc6ce4bdf9df5296eb86390e9fef97d66840ddf3af27e7dca46d84"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/workspace/CONTRACT.md.gz",
+      "raw_sha256": "d867b93660f8d180f73a0315d4256146df5f1124f9ae6813a4b376463e63469e",
+      "compressed_sha256": "8e0a99cd19005034fcc883b512826c3dbccb35a9f440fe73a0652c8d5a9e961f"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh11/workspace/window.txt.gz",
+      "raw_sha256": "9d682e8ecc32b64597d7e00a10251f5373d0924af2cbcd49d91083544daa8685",
+      "compressed_sha256": "5477895814a1a590c3df112a8877ec1965eb9d6493d6af9afede5ab3cc2b7960"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/phase-0/answer.json.gz",
+      "raw_sha256": "45fc7ab706e6fb509993b6fcae9d4d423c96f8e840c8f64c1a61f5c817c8a870",
+      "compressed_sha256": "5c30221595d552435e44db40cfeabfb8ef07bbb102a6e900059bbfc3a2b72f31"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/phase-0/prompt.txt.gz",
+      "raw_sha256": "a888370b302053e5ed3f87c431503093fbabd1f4de35af03562baf2640bcdbb2",
+      "compressed_sha256": "36079df05d14950a85f351dbdb3136942fe24da5c0edeff08e2795cab05a7fc0"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/phase-0/result.json.gz",
+      "raw_sha256": "70adc4be6d089a2c15beb15554bab76c265cb394294e140b3a3e5855b05f4b2e",
+      "compressed_sha256": "c5992a4ceb510b49350601066ff3418f805de699f3f4472369cd84a0136cb30c"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "5d65e7869908ad3e884d8b4882a52b4836bd144fa2f23893458949e1b406a7b0",
+      "compressed_sha256": "39d26331ab17247b36cc6f2fb0c155051f473ecd38b6477de71b98f0bc97c3a8"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/result.json.gz",
+      "raw_sha256": "d55234b22092413dbf07d529d31285317ee4256a6f4c47c1c53157645cb8b73a",
+      "compressed_sha256": "723d553aacacce1dcfd319ae457d7be24e6c664a94b390f8b4a0a79c5030f6d4"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/workspace/answer.json.gz",
+      "raw_sha256": "45fc7ab706e6fb509993b6fcae9d4d423c96f8e840c8f64c1a61f5c817c8a870",
+      "compressed_sha256": "5c30221595d552435e44db40cfeabfb8ef07bbb102a6e900059bbfc3a2b72f31"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/workspace/CONTRACT.md.gz",
+      "raw_sha256": "70db0faf1847fd78abf771d3ce4e3dd111bccb7a036ed68b582013a9369e5997",
+      "compressed_sha256": "021b620c1ccb37ee7f174e335a144a549e328475d1add08992d8e3946f3e4dc4"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/workspace/ledger.csv.gz",
+      "raw_sha256": "96422bd673504d537eacb7ffaf5e4008eb53a1db2f335a36a4a742a6da97db97",
+      "compressed_sha256": "f5a333a37753c534b02483bf4e61747bcf550761be81eb845696ab1b79fc02e4"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh12/workspace/report.txt.gz",
+      "raw_sha256": "cc1c2a8b7ad961461cd9e4a4d8a84c3124a3c2bfe0f470d8695daa46e24fd6de",
+      "compressed_sha256": "dd137df38af7afaa510ef5261fe22980f9d96bc60f7e3b77026957a2c4ad9d20"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/phase-0/prompt.txt.gz",
+      "raw_sha256": "0b2e6c6be2bb390135dcb8864bf43f3b91acd882812f24a9f35e4d07b30883e9",
+      "compressed_sha256": "e8569c2e2eb17655f8ed0c07c457edf857a8505b2cc20a7ec0f30ffb3849658b"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/phase-0/result.json.gz",
+      "raw_sha256": "b54c16b392f8fbdda1d9f17299eeff22a63c7473af13e9ec7425656825a4766f",
+      "compressed_sha256": "45a81533ec0f5f41b15c810958771ad6a67608c6802297cc44b3834f5717106a"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/phase-0/stderr.log.gz",
+      "raw_sha256": "40b39e7a6715fb8f53d9009f8315820e594e273fb879e2f82efc8ed99690da65",
+      "compressed_sha256": "975922d5363b8171acbc1478bbbe31e52c00e261ff37eb1a60233152687ad3f5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/phase-0/stdout.jsonl.gz",
+      "raw_sha256": "85b82bdd294d1ed611be4282bcef041112ea3103057699cb0890fb2f7420e93e",
+      "compressed_sha256": "b2ca353f483c45562a4c0bd30b3f410c437b8f0638461016e4a3b01adf05d8e5"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/phase-0/usage_report.py.gz",
+      "raw_sha256": "23f4dcf17dd0eff385e019137cfa2b17b6eedce78209db14a443e70eaa31b7ea",
+      "compressed_sha256": "51ba5b265b1328ddc1dbb42893cd02505df8958c1703a08c71cf6e5fc7dd6cac"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/result.json.gz",
+      "raw_sha256": "ac79214af624da652329c3e9ec8e10513fbbadbd4425814f2acedf857f7b6eaf",
+      "compressed_sha256": "bef6baad7c4bc3c0e1bf72dff6b75c6cbbc0dd07cad965e1770159bb6f8be66b"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/CONTRACT.md.gz",
+      "raw_sha256": "6cefeac21f81343474845492f05b5ee771f85287b5087ae70d9749ca23d07894",
+      "compressed_sha256": "3ddcee5904341a3c5d23e81129601f0f20c2c35acc4a1c9911f232ca7beab282"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/duplicate.jsonl.gz",
+      "raw_sha256": "4d618d4a80f49ffdbcf332c427673e7307774ffb3dd87395c96f73720b4af71c",
+      "compressed_sha256": "f4366f01e0b6979c7c169e7e3244b136df310f05a3abc2d782403d4b1e201d48"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/event.json.gz",
+      "raw_sha256": "c2b3b6cdb4aade5fcd8c9db6c2f0c9237564c487c97aa4dd18f8441692b9ad22",
+      "compressed_sha256": "2a289d305d866737d56683b7898145fc8c3335f8a31f5b9dbceba1df0b98030d"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/events.jsonl.gz",
+      "raw_sha256": "723239cc33296794e12d23d2816fa68dbcbbff69bf7f3ddb1b18129bdaafbbaf",
+      "compressed_sha256": "4678c5ec4dbcb2331f04e52e4b89e6e24788078f7f87fc40a7dad7c056443f9b"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/invalid.json.gz",
+      "raw_sha256": "55787267e19677ec215fda89f81dddf4b1e1800c2ebceab49b3a3fb5c5a4fc0a",
+      "compressed_sha256": "d144c86c304087b71cdcbbc964745530329e20f384dfc01ed582a887f193761d"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/legacy.json.gz",
+      "raw_sha256": "dba68aee23ebefce0f204908c420588192269251721e619a556a0a7746de57e9",
+      "compressed_sha256": "c2f86b529e3bfa539a6037f24b53c3a27ecbeaad4663a67a4442f8bf1c24295b"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/openai.json.gz",
+      "raw_sha256": "7d64467c82c064ae8f031780df4e0822ad771f773fffb88262a8f3610403c5be",
+      "compressed_sha256": "f39f89f8ea283a8281b4cb147ef2637c690f1a77efe46d5d23f0d80147e513b1"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/responses.json.gz",
+      "raw_sha256": "f1683c928f92abe163bff1dfd7e5ff93b1eaca82b158491243d6cfba54807d34",
+      "compressed_sha256": "ad1d4772cb6866f72891b9fe2d1a6a69a02463956ba0f7100353a6dac9cf9e7e"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/test_public.py.gz",
+      "raw_sha256": "54af9c73a3b57e64a23a2d7723ad73434ab1fbc815e4b7338037fbbb9c83072d",
+      "compressed_sha256": "7640198fa670f2661d664a65ded44502765cc80a53e1e0e1aa1725e935e76bbc"
+    },
+    {
+      "path": "evidence/workhorse-v2/wh13/workspace/usage_report.py.gz",
+      "raw_sha256": "23f4dcf17dd0eff385e019137cfa2b17b6eedce78209db14a443e70eaa31b7ea",
+      "compressed_sha256": "51ba5b265b1328ddc1dbb42893cd02505df8958c1703a08c71cf6e5fc7dd6cac"
+    },
+    {
+      "path": "evidence/workhorse-v2/producer-source/workhorse__cases_v1.py.gz",
+      "raw_sha256": "d63d0e70528946bb663d43e45ce81042a9d7c3dd0c69711bd0772c044a04864b",
+      "compressed_sha256": "3383808ba9ea18ae9208a8a10076115725df1730e26ee75b93c26fe377ec81a8"
+    },
+    {
+      "path": "evidence/workhorse-v2/producer-source/workhorse__run_v2.py.gz",
+      "raw_sha256": "c4b1de068fcbb72dfd7f5e8bcffa0bfa57a3333aafcfed44b5a3b480b2b6fc1b",
+      "compressed_sha256": "c2c8cb8a6fa365fa472586e1d6710347250233f99bd13cb9f828145091e149b6"
+    },
+    {
+      "path": "evidence/workhorse-v2/producer-source/workhorse__review_v2.py.gz",
+      "raw_sha256": "f3e441ba63f5345a8546d09742bb7108a2852dffb51724cbe844e0a2ccabcea5",
+      "compressed_sha256": "5b03ca5c486be083ecd122fc797155be017e093246544ffcfd689c136d3b29eb"
+    },
+    {
+      "path": "evidence/workhorse-v2/producer-source/tests__test_workhorse_cases_v1.py.gz",
+      "raw_sha256": "c7183a2d3434d4b404055af80802d2a4d4bd8720d379e82161d5b0f12c86a025",
+      "compressed_sha256": "5e2a1b31afa8f702936a9e66e41de189deb33e9d465ad73d77380a879c04ca85"
+    },
+    {
+      "path": "evidence/workhorse-v2/producer-source/tests__test_workhorse_runner_v1.py.gz",
+      "raw_sha256": "38ea02b24c9d9a8ae69fd919f6fa86ad145abb1b665cd77118bcec48abb7402c",
+      "compressed_sha256": "324aba94865e41607c39f50c1837f306bdae83846ff83ffd904b9f93f6b86cef"
+    },
+    {
+      "path": "evidence/workhorse-v2/producer-source/tests__test_workhorse_config_v2.py.gz",
+      "raw_sha256": "9a44c1c2517b49c37b4bca6715c8d515ba1864a6cc771c0b73956412f5704f89",
+      "compressed_sha256": "6191839b2d9832ea19acae8e481d8e05f20fdfb144e80ecdd9f8c7214c46f49c"
+    },
+    {
+      "path": "evidence/workhorse-v2/producer-source/tmp__stress__workhorse-full-suite-v2.log.gz",
+      "raw_sha256": "f2fe50da5f420869069fc65ae6d21903c66fb03b18ff851c7be170c68e7e352c",
+      "compressed_sha256": "176323169b89c17fe61a7f00192b7e8ff5b527f57b7281deba2f93103c991a45"
+    },
+    {
+      "path": "evidence/workhorse-v2/diagnostic-wh07.json.gz",
+      "raw_sha256": "f935e8482d95d1ae08a5877be3c335135c1643dc9438f53d5c5242c85d94a9fd",
+      "compressed_sha256": "e1b77631761512ca5471e7b8871866aaa9270fe32a04585dc8534ce54d598792"
+    },
+    {
+      "path": "evidence/workhorse-v2/producer-source/final-parent-review-with-read-replay.py.gz",
+      "raw_sha256": "1c5cc70259a2606e4c01aa69e3e421e2d61e92a27551bec064c748d27bdc5e8f",
+      "compressed_sha256": "2ff437ad9cf425587e22aa59119905cbd34e21765548d08e0e70edecbca90a02"
+    }
+  ],
+  "nonauthor_acceptance": "pending",
+  "qualification_increment": 0,
+  "invalid_primary_cases": [
+    "wh07"
+  ],
+  "valid_case_totals": {
+    "cases": 12,
+    "first_artifact_pass": 8,
+    "final_artifact_pass": 10
+  },
+  "posthoc_diagnostic": "evidence/workhorse-wh07-diagnostic-v2.json",
+  "further_parent_replay": "Native successful source reads additionally reparsed; unchanged totals. Both initial and final parent replay sources archived.",
+  "reported_token_usage": {
+    "input_tokens": 43609,
+    "output_tokens": 18551,
+    "cache_read_input_tokens": 255306,
+    "cache_creation_input_tokens": 0
+  },
+  "token_usage_caveat": "CLI/provider-reported sums across phases; cached-token fields and model-pricing/context labels are compatibility metadata, not proof of true model window, cloud billing, electricity cost or savings."
+}
