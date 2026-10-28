@@ -103,3 +103,6 @@
 /tests/test_workhorse_runner_v1.py -text -whitespace
 /evidence/workhorse-v1/** -text -whitespace
 /evidence/workhorse-v1-plan.json -text -whitespace
+/evidence/workhorse-v1-setup-failure.json -text -whitespace
+/evidence/workhorse-v2-plan.json -text -whitespace
+/tests/test_workhorse_config_v2.py -text -whitespace
