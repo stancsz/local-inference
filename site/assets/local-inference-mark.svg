@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 72" role="img" aria-labelledby="title desc">
+  <title id="title">Local Inference</title>
+  <desc id="desc">Two local signal paths converge on a measured inference mark.</desc>
+  <rect width="72" height="72" rx="16" fill="#111b2c" stroke="#34415a"/>
+  <path d="M15 23h11l8 12 8-12h15M15 49h11l8-12 8 12h15" fill="none" stroke="#54e5df" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="57" cy="36" r="5" fill="#bedb74"/>
+  <text x="91" y="35" fill="#f1f4f7" font-family="Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="3">LOCAL INFERENCE</text>
+  <text x="92" y="55" fill="#9daec5" font-family="Cascadia Code,Consolas,monospace" font-size="10" letter-spacing="3">MEASURE THE LOOP</text>
+</svg>

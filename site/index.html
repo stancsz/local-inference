@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a1020">
+  <meta name="description" content="A reproducible local inference setup for coding agents, with measured speed, explicit limits, and optional cloud advice.">
+  <link rel="canonical" href="https://stancsz.github.io/local-inference/">
+  <link rel="icon" href="assets/local-inference-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <title>Local Inference — Run the loop on your GPU</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#top" aria-label="Local Inference home"><img src="assets/local-inference-mark.svg" alt="" width="42" height="42"><span>LOCAL <b>INFERENCE</b><small>MEASURE THE LOOP</small></span></a>
+    <nav aria-label="Main navigation"><a href="#method">Method</a><a href="#evidence">Evidence</a><a href="#maturity">Maturity</a><a href="https://github.com/stancsz/local-inference">Source <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> A LOCAL CODING WORKSTATION / RESEARCH BUILD</p>
+        <h1 id="hero-title">Run the loop<br><em>on your GPU.</em></h1>
+        <p class="lede">Keep token-heavy coding work on a local model. Bring in a cloud advisor only when a decision needs one. Every speed or quality claim comes with its measurement boundary.</p>
+        <div class="hero-actions"><a class="button primary" href="https://github.com/stancsz/local-inference#setup">Build the workstation <span aria-hidden="true">↗</span></a><a class="button quiet" href="https://github.com/stancsz/local-inference/blob/main/VERIFICATION.md">Read verification</a></div>
+        <p class="host-note"><span>TEST HOST</span> Windows · RTX 5070 Ti · 16 GB VRAM · Docker</p>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-top"><span>LOCAL PATH / 01</span><span>OPTIONAL JUDGMENT / 02</span></div>
+        <svg viewBox="0 0 700 410" role="img" aria-labelledby="system-title system-desc">
+          <title id="system-title">Local inference request flow</title>
+          <desc id="system-desc">Claude Code sends a request to a loopback LiteLLM gateway. Sift prepares the request and local llama.cpp runs inference. A separate advisor command can send a compact decision packet to a cloud model.</desc>
+          <defs><linearGradient id="beam" x1="0" x2="1"><stop stop-color="#54e5df"/><stop offset="1" stop-color="#bedb74"/></linearGradient><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#8291a8" opacity=".22"/></pattern></defs>
+          <rect width="700" height="410" rx="22" fill="#111b2c"/><rect x="1" y="1" width="698" height="408" rx="21" fill="url(#dots)" stroke="#34415a"/>
+          <text x="30" y="42" fill="#aab7cb" font-size="12" letter-spacing="2">REQUEST CONTROL STAYS LOCAL</text>
+          <rect x="34" y="95" width="178" height="76" rx="12" fill="#202e43" stroke="#52627a"/><text x="54" y="126" fill="#eff3fa" font-size="15" font-weight="700">Claude Code</text><text x="54" y="150" fill="#aab7cb" font-size="12">client + tools</text>
+          <path d="M212 133h45" stroke="url(#beam)" stroke-width="3"/><path d="m250 126 9 7-9 7" fill="none" stroke="#54e5df" stroke-width="3"/>
+          <rect x="261" y="82" width="195" height="102" rx="12" fill="#172d3a" stroke="#54e5df"/><text x="282" y="119" fill="#eff3fa" font-size="15" font-weight="700">LiteLLM gateway</text><text x="282" y="144" fill="#83e6e0" font-size="12">127.0.0.1 · port 8090</text><text x="282" y="164" fill="#aab7cb" font-size="11">Sift callback before inference</text>
+          <path d="M456 133h48" stroke="url(#beam)" stroke-width="3"/><path d="m497 126 9 7-9 7" fill="none" stroke="#bedb74" stroke-width="3"/>
+          <rect x="507" y="95" width="160" height="76" rx="12" fill="#243329" stroke="#bedb74"/><text x="529" y="126" fill="#eff3fa" font-size="15" font-weight="700">llama.cpp</text><text x="529" y="150" fill="#cbd99a" font-size="12">Qwen · MTP</text>
+          <path d="M355 184v54" stroke="#8391a8" stroke-width="2" stroke-dasharray="5 6"/><path d="m349 231 6 8 6-8" fill="none" stroke="#8391a8" stroke-width="2"/>
+          <rect x="245" y="245" width="220" height="62" rx="12" fill="#1b2535" stroke="#52627a"/><text x="270" y="272" fill="#eff3fa" font-size="14" font-weight="700">Advisor command</text><text x="270" y="292" fill="#aab7cb" font-size="11">compact packet · manual call</text>
+          <path d="M465 276h72" stroke="#edb86b" stroke-width="2" stroke-dasharray="5 6"/><path d="m530 270 8 6-8 6" fill="none" stroke="#edb86b" stroke-width="2"/>
+          <rect x="540" y="245" width="128" height="62" rx="12" fill="#382b27" stroke="#edb86b"/><text x="562" y="272" fill="#ffe0b0" font-size="13" font-weight="700">Cloud model</text><text x="562" y="292" fill="#c3a888" font-size="11">only when asked</text>
+          <text x="34" y="364" fill="#7f8da4" font-size="11" letter-spacing="1.5">NO AUTOMATIC FALLBACK · LOCAL ENDPOINTS STAY ON LOOPBACK</text>
+        </svg>
+        <p class="visual-caption">A tested host configuration; the local path does not depend on the cloud advisor.</p>
+      </div>
+    </section>
+
+    <section class="metrics wrap" aria-label="Measured results">
+      <article><span class="metric-label">AVERAGE DECODE</span><strong>102.75 <small>tok/s</small></strong><p>Two short samples on the documented host.</p></article>
+      <article><span class="metric-label">MATCHED SPEED RATIO</span><strong>2.07×</strong><p>Shared-weight MTP vs no MTP; two samples per arm.</p></article>
+      <article><span class="metric-label">WORKHORSE TASKS</span><strong>10 / 12</strong><p>Valid artifacts passing after bounded feedback.</p></article>
+      <p class="metric-caveat">Backend decode is not end-to-end task quality. The 99% lower-cloud-token goal is still a target, not a result.</p>
+    </section>
+
+    <section class="section wrap" id="method" aria-labelledby="method-title">
+      <div class="section-head"><p class="eyebrow">DESIGN COMMITMENTS</p><h2 id="method-title">Local by default.<br><em>Explicit at the edge.</em></h2><p>One local gateway, a pinned model runtime, a deterministic context callback, and an optional judgment command. Each boundary has an owner.</p></div>
+      <div class="method-grid">
+        <article><span class="index">01 / OWNERSHIP</span><h3>Inference stays here</h3><p>The gateway binds to loopback. It does not store cloud credentials or silently fall back to a hosted model.</p></article>
+        <article><span class="index">02 / CONTEXT</span><h3>Protect the current task</h3><p>Sift counts the full request, preserves protected work, and fails closed when the required context cannot fit.</p></article>
+        <article><span class="index">03 / RESEARCH</span><h3>Keep evidence separate</h3><p>Decode speed, synthetic retention, GPU accounting, and real task results stay in different evidence classes.</p></article>
+      </div>
+    </section>
+
+    <section class="evidence-section" id="evidence" aria-labelledby="evidence-title"><div class="wrap evidence-layout">
+      <div><p class="eyebrow">REPRODUCIBLE RECEIPTS</p><h2 id="evidence-title">A number needs<br><em>its conditions.</em></h2><p>The current speed comparison generated 256 tokens from short prompts, with one cold and one cached sample in each arm. The selected context capacity was not filled during those runs.</p><a class="text-link" href="https://github.com/stancsz/local-inference/blob/main/VERIFICATION.md">Read all limits and receipts <span aria-hidden="true">↗</span></a></div>
+      <div class="bar-card" role="img" aria-label="Two-sample matched decode mean: 49.65 tokens per second without MTP and 102.75 with shared-weight MTP, on a 40k profile.">
+        <div class="bar-title"><span>40K PROFILE / MATCHED</span><span>TOKENS PER SECOND</span></div>
+        <div class="bar-row"><span>NO MTP</span><div><i class="bar base"></i></div><b>49.65</b></div>
+        <div class="bar-row"><span>SHARED MTP</span><div><i class="bar fast"></i></div><b>102.75</b></div>
+        <p>Two sequential short-prompt samples per arm. Backend decode only; task quality and full-context throughput were not compared.</p>
+      </div>
+    </div></section>
+
+    <section class="maturity wrap" id="maturity" aria-labelledby="maturity-title">
+      <div class="maturity-label"><span class="status-dot"></span> RESEARCH PROTOTYPE</div>
+      <div><h2 id="maturity-title">Verified on one host.<br><em>Not validated as a market.</em></h2><p>High VRAM, Windows/NVIDIA, Docker, model staging, and setup time narrow the audience. No independent repeat-use cohort or willingness-to-pay evidence is published.</p><a class="text-link" href="https://github.com/stancsz/local-inference/blob/main/docs/market-position.md">Read alternatives, friction, and the next pilot <span aria-hidden="true">↗</span></a></div>
+      <div class="maturity-links"><a href="https://github.com/stancsz/local-inference/blob/main/paper/main.pdf">Research draft <span aria-hidden="true">↗</span></a><a href="https://github.com/stancsz/local-inference/blob/main/docs/SETUP.md">Setup guide <span aria-hidden="true">↗</span></a><a href="https://github.com/stancsz/local-inference/issues">Report a problem <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand" href="#top"><img src="assets/local-inference-mark.svg" alt="" width="36" height="36"><span>LOCAL <b>INFERENCE</b><small>STAN CHEN · 2026</small></span></a><p>Local ownership. Measured trade-offs. Receipts included.</p><nav aria-label="Footer navigation"><a href="https://github.com/stancsz/local-inference">Source</a><a href="https://github.com/stancsz/local-inference/blob/main/README.md">README</a><a href="https://github.com/stancsz/local-inference/blob/main/LICENSE">License</a></nav></div></footer>
+</body>
+</html>

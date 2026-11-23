@@ -1,6 +1,8 @@
-# local-inference
+# Local Inference
 
-[Unpublished research draft (PDF)](paper/main.pdf) · [LaTeX source](paper/main.tex) · [Product and research values](#product-and-research-values)
+<p align="center"><img src="site/assets/local-inference-mark.svg" alt="Local Inference: measured local model serving" width="420"></p>
+
+[Official site](https://stancsz.github.io/local-inference/) · [Market position and maturity](docs/market-position.md) · [Unpublished research draft (PDF)](paper/main.pdf) · [LaTeX source](paper/main.tex) · [Product and research values](#product-and-research-values)
 
 **Do the token-heavy work locally. Bring in a strong cloud advisor for the decisions that need it.**
 
