@@ -1,5 +1,7 @@
 # local-inference
 
+[Unpublished research draft (PDF)](paper/main.pdf) · [LaTeX source](paper/main.tex) · [Product and research values](#product-and-research-values)
+
 **Do the token-heavy work locally. Bring in a strong cloud advisor for the decisions that need it.**
 
 Run a quantized 27B model with MTP at **102.75 tok/s average decode** on a 16 GB RTX 5070 Ti. Keep file reads, drafts and tool loops on your GPU; send a small evidence packet to an optional cloud advisor. Two containers, explicit limits, reproducible receipts.
@@ -115,3 +117,14 @@ The supported local profile disables thinking. OpenAI `max_completion_tokens` is
 - [MTP guide](https://unsloth.ai/docs/models/mtp)
 - [llama.cpp native Messages and token-count endpoints](https://github.com/ggml-org/llama.cpp/tree/master/tools/server)
 - [Sift request-adaptive budgets](https://github.com/stancsz/sift/pull/58)
+
+## Product and research values
+
+The product goal is supervised local development work: run token-heavy inference and tool loops on one workstation, keep the gateway local, and make optional cloud-advisor use explicit.
+
+- **Reproducible speed claim:** 102.75 tok/s is the mean of two matched MTP samples on the documented host.
+- **Separate evidence classes:** throughput, synthetic capacity, context retention, and practical task acceptance answer different questions.
+- **Bounded task evidence:** 8/12 valid artifacts passed first attempt and 10/12 after bounded feedback; strict native acceptance was 2/13.
+- **No unsupported savings or parity:** 99% lower cloud-token usage remains a target; general reliability and cloud equivalence are not established.
+
+[Unpublished research draft (PDF)](paper/main.pdf) · [LaTeX source](paper/main.tex). Not submitted to arXiv; no identifier is claimed.
